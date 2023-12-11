@@ -18,26 +18,27 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.1281.">
+    <meta name="description" content="The solution of LeetCode problem No.2455.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 1281.Subtract the Product and Sum of Digits of an Integer">
-<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/11/lc-1281/index.html">
+<meta property="og:title" content="LC 2455.Average Value of Even Numbers That Are Divisible by Three">
+<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/11/lc-2455/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.1281.">
+<meta property="og:description" content="The solution of LeetCode problem No.2455.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner2.png">
-<meta property="article:published_time" content="2023-12-11T03:23:26.000Z">
-<meta property="article:modified_time" content="2023-12-11T03:29:23.172Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner7.jpg">
+<meta property="article:published_time" content="2023-12-11T11:46:08.000Z">
+<meta property="article:modified_time" content="2023-12-11T11:49:47.768Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Math">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner2.png">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner7.jpg">
   
   
   
-  <title>LC 1281.Subtract the Product and Sum of Digits of an Integer - Abel&#39;s Blog</title>
+  <title>LC 2455.Average Value of Even Numbers That Are Divisible by Three - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,13 +244,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/12/11/banner2.png') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2023/12/11/banner7.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 1281.Subtract the Product and Sum of Digits of an Integer"></span>
+            <span id="subtitle" data-typed-text="LC 2455.Average Value of Even Numbers That Are Divisible by Three"></span>
           
         </div>
 
@@ -260,8 +261,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-11 11:23" pubdate>
-          2023年12月11日 上午
+        <time datetime="2023-12-11 19:46" pubdate>
+          2023年12月11日 晚上
         </time>
       </span>
     
@@ -273,7 +274,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 162 
+          文章字数: 183 
         
       </span>
     
@@ -330,12 +331,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 1281.Subtract the Product and Sum of Digits of an Integer</h1>
+            <h1 id="seo-header">LC 2455.Average Value of Even Numbers That Are Divisible by Three</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：9 小时前
+                    本文最后更新于：25 分钟前
                   
                 
               </p>
@@ -345,31 +346,35 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/subtract-the-product-and-sum-of-digits-of-an-integer/description/">1281.
-整数的各位积和之差</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个整数
-<code>n</code>，请你帮忙计算并返回该整数「各位数字之积」与「各位数字之和」的差。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/average-value-of-even-numbers-that-are-divisible-by-three/description/">2455.
+可被三整除的偶数的平均值</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个由正整数组成的整数数组 <code>nums</code> ，返回其中可被
+<code>3</code> 整除的所有偶数的平均值。</p>
+<p>注意：<code>n</code> 个元素的平均值等于 <code>n</code> 个元素
+<strong>求和</strong> 再除以 <code>n</code> ，结果
+<strong>向下取整</strong> 到最接近的整数。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 234<br>输出：15 <br>解释：<br>各位数之积 = 2 * 3 * 4 = 24 <br>各位数之和 = 2 + 3 + 4 = 9 <br>结果 = 24 - 9 = 15<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,3,6,10,12,15]<br>输出：9<br>解释：6 和 12 是可以被 3 整除的偶数。(6 + 12) / 2 = 9 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 4421<br>输出：21<br>解释： <br>各位数之积 = 4 * 4 * 2 * 1 = 32 <br>各位数之和 = 4 + 4 + 2 + 1 = 11 <br>结果 = 32 - 11 = 21<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,2,4,7,10]<br>输出：0<br>解释：不存在满足题目要求的整数，所以返回 0 。<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= n &lt;= 10^5</code></li>
+<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 1000</code></li>
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一模拟">方法一：模拟</h3>
-<p>根据题意每次对 <code>n</code>
-取余求出每个位数并相应地加到总和，乘到乘积中即可，最后返回差值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">subtractProductAndSum</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, mul = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> n % <span class="hljs-number">10</span>;<br>            sum += tmp;<br>            mul *= tmp;<br>            n /= <span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> mul - sum;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>根据题意，要求的就是能够 <code>6</code> 整除的数的和的平均值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">averageValue</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, count = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : nums) &#123;<br>            <span class="hljs-keyword">if</span> (num % <span class="hljs-number">6</span> == <span class="hljs-number">0</span>) &#123;<br>                sum += num;<br>                ++count;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> (count == <span class="hljs-number">0</span>) ? <span class="hljs-number">0</span> : sum / count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(\log
-n)\)</span>，其中 <code>n</code> 为整数 <code>n</code> 的大小。</p></li>
+<li><p><strong>时间复杂度</strong>：<span
+class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为数组
+<code>nums</code> 的长度。</p></li>
 <li><p><strong>空间复杂度</strong>：<span
 class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2023/12/11/banner2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2023/12/11/banner7.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -414,6 +419,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
       
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
+      
         <a href="/tags/Math/" class="print-no-link">#Math</a>
       
     </div>
@@ -426,8 +433,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 1281.Subtract the Product and Sum of Digits of an Integer</div>
-      <div>https://chen-huaneng.github.io/2023/12/11/lc-1281/</div>
+      <div>LC 2455.Average Value of Even Numbers That Are Divisible by Three</div>
+      <div>https://chen-huaneng.github.io/2023/12/11/lc-2455/</div>
     </div>
     <div class="license-meta">
       
@@ -482,9 +489,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/11/lc-1137/" title="LC 1137.N-th Tribonacci Number">
+                      <a href="/2023/12/11/lc-1290/" title="LC 1290.Convert Binary Number in a Linked List to Integer">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 1137.N-th Tribonacci Number</span>
+                        <span class="hidden-mobile">LC 1290.Convert Binary Number in a Linked List to Integer</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -492,8 +499,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/11/lc-1295/" title="LC 1295.Find Numbers with Even Number of Digits">
-                        <span class="hidden-mobile">LC 1295.Find Numbers with Even Number of Digits</span>
+                      <a href="/2023/12/11/lc-2733/" title="LC 2733.Neither Minimum nor Maximum">
+                        <span class="hidden-mobile">LC 2733.Neither Minimum nor Maximum</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

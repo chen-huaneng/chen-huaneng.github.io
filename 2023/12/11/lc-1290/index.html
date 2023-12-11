@@ -18,26 +18,26 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.1281.">
+    <meta name="description" content="The solution of LeetCode problem No.1290.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 1281.Subtract the Product and Sum of Digits of an Integer">
-<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/11/lc-1281/index.html">
+<meta property="og:title" content="LC 1290.Convert Binary Number in a Linked List to Integer">
+<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/11/lc-1290/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.1281.">
+<meta property="og:description" content="The solution of LeetCode problem No.1290.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner2.png">
-<meta property="article:published_time" content="2023-12-11T03:23:26.000Z">
-<meta property="article:modified_time" content="2023-12-11T03:29:23.172Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner8.jpg">
+<meta property="article:published_time" content="2023-12-11T12:02:40.000Z">
+<meta property="article:modified_time" content="2023-12-11T12:14:21.374Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Simulation">
 <meta property="article:tag" content="Math">
+<meta property="article:tag" content="Linked List">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner2.png">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner8.jpg">
   
   
   
-  <title>LC 1281.Subtract the Product and Sum of Digits of an Integer - Abel&#39;s Blog</title>
+  <title>LC 1290.Convert Binary Number in a Linked List to Integer - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,13 +243,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/12/11/banner2.png') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2023/12/11/banner8.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 1281.Subtract the Product and Sum of Digits of an Integer"></span>
+            <span id="subtitle" data-typed-text="LC 1290.Convert Binary Number in a Linked List to Integer"></span>
           
         </div>
 
@@ -260,8 +260,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-11 11:23" pubdate>
-          2023年12月11日 上午
+        <time datetime="2023-12-11 20:02" pubdate>
+          2023年12月11日 晚上
         </time>
       </span>
     
@@ -273,7 +273,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 162 
+          文章字数: 268 
         
       </span>
     
@@ -285,7 +285,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 2 分钟
+          阅读全文大概需要 3 分钟
         
       </span>
     
@@ -330,12 +330,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 1281.Subtract the Product and Sum of Digits of an Integer</h1>
+            <h1 id="seo-header">LC 1290.Convert Binary Number in a Linked List to Integer</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：9 小时前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -345,31 +345,52 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/subtract-the-product-and-sum-of-digits-of-an-integer/description/">1281.
-整数的各位积和之差</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个整数
-<code>n</code>，请你帮忙计算并返回该整数「各位数字之积」与「各位数字之和」的差。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-binary-number-in-a-linked-list-to-integer/description/">1290.
+二进制链表转整数</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个单链表的引用结点 <code>head</code>。链表中每个结点的值不是 0
+就是 1。已知此链表是一个整数数字的二进制表示形式。</p>
+<p>请你返回该链表所表示数字的 <strong>十进制值</strong> 。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 234<br>输出：15 <br>解释：<br>各位数之积 = 2 * 3 * 4 = 24 <br>各位数之和 = 2 + 3 + 4 = 9 <br>结果 = 24 - 9 = 15<br></code></pre></td></tr></table></figure>
+<p><img src="/imgs/posts/2023/12/11/graph-1.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：head = [1,0,1]<br>输出：5<br>解释：二进制数 (101) 转化为十进制数 (5)<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 4421<br>输出：21<br>解释： <br>各位数之积 = 4 * 4 * 2 * 1 = 32 <br>各位数之和 = 4 + 4 + 2 + 1 = 11 <br>结果 = 32 - 11 = 21<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：head = [0]<br>输出：0<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：head = [1]<br>输出：1<br></code></pre></td></tr></table></figure>
+<p><strong>示例 4：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：head = [1,0,0,1,0,0,1,1,1,0,0,0,0,0,0]<br>输出：18880<br></code></pre></td></tr></table></figure>
+<p><strong>示例 5：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：head = [0,0]<br>输出：0<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= n &lt;= 10^5</code></li>
+<li>链表不为空。</li>
+<li>链表的结点总数不超过 <code>30</code>。</li>
+<li>每个结点的值不是 <code>0</code> 就是 <code>1</code>。</li>
 </ul>
 <h2 id="解答">解答</h2>
-<h3 id="方法一模拟">方法一：模拟</h3>
-<p>根据题意每次对 <code>n</code>
-取余求出每个位数并相应地加到总和，乘到乘积中即可，最后返回差值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">subtractProductAndSum</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, mul = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> n % <span class="hljs-number">10</span>;<br>            sum += tmp;<br>            mul *= tmp;<br>            n /= <span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> mul - sum;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="方法一位运算">方法一：位运算</h3>
+<p>利用位运算的性质，左移相当于乘以 <code>2</code>
+，右边多出来的二进制位自动填零。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode() &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getDecimalValue</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> head.val;<br>        <span class="hljs-keyword">while</span> (head.next != <span class="hljs-literal">null</span>) &#123;<br>            res &lt;&lt;= <span class="hljs-number">1</span>;<br>            res += head.next.val;<br>            head = head.next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(\log
-n)\)</span>，其中 <code>n</code> 为整数 <code>n</code> 的大小。</p></li>
+<li><p><strong>时间复杂度</strong>：<span
+class="math inline">\(O(n)\)</span>，其中 <code>n</code>
+为链表的长度。</p></li>
 <li><p><strong>空间复杂度</strong>：<span
 class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
+<h3 id="方法二模拟">方法二：模拟</h3>
+<p>按照题目的要求，每次都乘二再加上下一个数，相当于二进制转换十进制的原理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getDecimalValue</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(head != <span class="hljs-literal">null</span>)&#123;<br>            res = res * <span class="hljs-number">2</span> + head.val;<br>            head = head.next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>时间复杂度</strong>：<span
+class="math inline">\(O(n)\)</span>，其中 <code>n</code>
+为链表的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span
+class="math inline">\(O(1)\)</span> 。</p></li>
+</ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2023/12/11/banner2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2023/12/11/banner8.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -412,9 +433,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
-      
         <a href="/tags/Math/" class="print-no-link">#Math</a>
+      
+        <a href="/tags/Linked-List/" class="print-no-link">#Linked List</a>
       
     </div>
   
@@ -426,8 +447,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 1281.Subtract the Product and Sum of Digits of an Integer</div>
-      <div>https://chen-huaneng.github.io/2023/12/11/lc-1281/</div>
+      <div>LC 1290.Convert Binary Number in a Linked List to Integer</div>
+      <div>https://chen-huaneng.github.io/2023/12/11/lc-1290/</div>
     </div>
     <div class="license-meta">
       
@@ -482,18 +503,12 @@ class="math inline">\(O(1)\)</span>。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/11/lc-1137/" title="LC 1137.N-th Tribonacci Number">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 1137.N-th Tribonacci Number</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/11/lc-1295/" title="LC 1295.Find Numbers with Even Number of Digits">
-                        <span class="hidden-mobile">LC 1295.Find Numbers with Even Number of Digits</span>
+                      <a href="/2023/12/11/lc-2455/" title="LC 2455.Average Value of Even Numbers That Are Divisible by Three">
+                        <span class="hidden-mobile">LC 2455.Average Value of Even Numbers That Are Divisible by Three</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
