@@ -4,6 +4,41 @@
   
   
   <entry>
+    <title>LC 1137.N-th Tribonacci Number</title>
+    <link href="/2023/12/11/lc-1137/"/>
+    <url>/2023/12/11/lc-1137/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/n-th-tribonacci-number/description/">1137.第 N 个泰波那契数</a> ，难度为<strong>简单</strong>。</p><p>泰波那契序列 Tn 定义如下：</p><p>T0 = 0, T1 = 1, T2 = 1, 且在 n &gt;= 0 的条件下 Tn+3 = Tn + Tn+1 +Tn+2</p><p>给你整数 <code>n</code>，请返回第 n 个泰波那契数 Tn 的值。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 4<br>输出：4<br>解释：<br>T<span class="hljs-emphasis">_3 = 0 + 1 + 1 = 2</span><br><span class="hljs-emphasis">T_</span>4 = 1 + 1 + 2 = 4<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 25<br>输出：1389537<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>0 &lt;= n &lt;= 37</code></li><li>答案保证是一个 32 位整数，即<code>answer &lt;= 2^31 - 1</code>。</li></ul><h2 id="解答">解答</h2><h3 id="方法一动态规划">方法一：动态规划</h3><p>给出了递推的方程之后，就是给出了状态转移方程，直接类似斐波那契数列模拟一下，为了不用处理特殊情况，向前递推两项。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">tribonacci</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">t0</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>, t1 = <span class="hljs-number">0</span>, t2 = <span class="hljs-number">0</span>; <span class="hljs-comment">// 求出T0的前两项，此时的t2就是给的条件中的T0</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> t2;<br>            t2 += t0 + t1;<br>            t0 = t1;<br>            t1 = tmp;<br>        &#125;<br>        <span class="hljs-keyword">return</span> t2;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(n)\)</span> ，其中 <code>n</code> 为数字<code>n</code> 的大小。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(1)\)</span>。</p></li></ul><h3 id="方法二矩阵快速幂">方法二：矩阵快速幂</h3><p><ahref="%5B1137.%20第%20N%20个泰波那契数%5D(https://leetcode.cn/problems/n-th-tribonacci-number/solutions/922594/gong-shui-san-xie-yi-ti-si-jie-die-dai-d-m1ie/)"><spanclass="citation"data-cites="Source:题解来源">@Source:题解来源</span></a></p><p>不了解矩阵快速幂的可以参看<ahref="2023-12-10-lc-0070.md">矩阵快速幂</a>和<ahref="https://oi-wiki.org/math/binary-exponentiation/">快速幂</a>，使用矩阵快速幂可以降低时间复杂度。</p><p>首先构建一个递推关系的矩阵形式： <span class="math display">\[\begin{bmatrix}1 &amp; 1 &amp; 1 \\1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0\end{bmatrix}\begin{bmatrix}T(n) \\T(n - 1) \\T(n - 2)\end{bmatrix}=\begin{bmatrix}T(n) + T(n - 1) + T(n - 2) \\T(n) \\T(n - 1)\end{bmatrix}=\begin{bmatrix}T(n + 1) \\T(n) \\T(n - 1)\end{bmatrix}\]</span> 因此： <span class="math display">\[\begin{bmatrix}T(n + 2) \\T(n + 1) \\T(n)\end{bmatrix}=\begin{bmatrix}1 &amp; 1 &amp; 1 \\1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0\end{bmatrix}^n\begin{bmatrix}T(2) \\T(1) \\T(0)\end{bmatrix}\]</span> 令： <span class="math display">\[M =\begin{bmatrix}1 &amp; 1 &amp; 1 \\1 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0\end{bmatrix}\]</span> 因此只要能够快速计算矩阵 <code>M</code> 的 <code>n</code>次幂，就可以快速得到 <code>T(n)</code> 的值。如果直接求 <spanclass="math inline">\(M^n\)</span> ，时间复杂度为 <spanclass="math inline">\(O(n)\)</span>，可以定义矩阵乘法，然后用快速幂来加速计算 <spanclass="math inline">\(M^n\)</span>。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">tribonacci</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-type">int</span>[][] q = &#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>&#125;, &#123;<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>&#125;, &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>&#125;&#125;;<br>        <span class="hljs-type">int</span>[][] res = pow(q, n);<br>        <span class="hljs-keyword">return</span> res[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>];<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] pow(<span class="hljs-type">int</span>[][] a, <span class="hljs-type">int</span> n) &#123;<br>        <span class="hljs-type">int</span>[][] ret = &#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>&#125;, &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>&#125;, &#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>&#125;&#125;;<br>        <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">if</span> ((n &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">1</span>) &#123; <span class="hljs-comment">// 当末尾的二进制位为非0的时候才需要乘</span><br>                ret = multiply(ret, a);<br>            &#125;<br>            n &gt;&gt;= <span class="hljs-number">1</span>;<br>            a = multiply(a, a); <span class="hljs-comment">// 计算下一个项</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] multiply(<span class="hljs-type">int</span>[][] a, <span class="hljs-type">int</span>[][] b) &#123;<br>        <span class="hljs-type">int</span>[][] c = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">3</span>][<span class="hljs-number">3</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; ++j) &#123;<br>                c[i][j] = a[i][<span class="hljs-number">0</span>] * b[<span class="hljs-number">0</span>][j] + a[i][<span class="hljs-number">1</span>] * b[<span class="hljs-number">1</span>][j] + a[i][<span class="hljs-number">2</span>] * b[<span class="hljs-number">2</span>][j];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> c;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(\logn)\)</span>，其中 <code>n</code> 为数字 <code>n</code>的大小，每次数字都折半。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(1)\)</span>。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2023/12/11/banner3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Memoization</tag>
+      
+      <tag>Math</tag>
+      
+      <tag>Dynamic Programming</tag>
+      
+      <tag>Fast Power</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 1281.Subtract the Product and Sum of Digits of an Integer</title>
     <link href="/2023/12/11/lc-1281/"/>
     <url>/2023/12/11/lc-1281/</url>
@@ -119,7 +154,7 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memorization</tag>
+      <tag>Memoization</tag>
       
       <tag>Math</tag>
       
@@ -618,11 +653,33 @@
   
   
   <entry>
+    <title>about</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<h1 id="about">About?!</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="who-am-i">Who am I?</h2><p>目前是一名普通的大三学生 ，正在自学编程中，目前正在学习<code>Java</code>和算法，以及一些基本的计算机科学知识。由于我并非科班出身，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code>极大地提高了我的写作效率（<del>改变不了我还是经常写Bug的事实</del>）；<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。甚至我觉得根本不需要<code>Word</code> 这种臃肿的东西了（之前饱受 <code>Word</code>排版摧残的我），当然平时写作可以用 <code>Markdown</code>，有更高排版要求的时候我还是会使用 <code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、陈奕迅、Lilas Ikuta（幾田 りら／いくたりら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听（也许是没有特别的偏好吧）。</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/gloria1.jpg" alt="Gloria" /></div><div class="group-image-wrap"><img src="/imgs/about/gloria2.jpg" alt="Gloria" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/gloria3.jpg" alt="Gloria" /></div><div class="group-image-wrap"><img src="/imgs/about/gloria4.jpg" alt="Gloria" /></div></div></div><h3 id="about-reading">About Reading</h3><p>之前也有一段持续读书的时光，喜欢读的书也很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><p>为什么近来读书少了？主要是事情多了起来，不得不暂时中断了读书的计划（<del>才不是懒</del>），如果有人想看我写书评也可以给我发邮件，让我重启读书计划，激励我继续读书、创作。</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法（<del>希望不是三分钟热度</del>），欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度鸭！近期也在写一些关于 <code>LeetCode</code> 刷题的解法记录。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><p><strong>关于为什么不开评论区：</strong>一是因为暂时没有那么多的时间啦，二是因为访客也不多，直接通过邮箱处理更方便一点，三是因为评论的内容其实还是比较随意的，我还是希望我的博客能够保持简洁。（也许后续会开放评论区，可以关注一下，或者通过邮件方式催我更新）</p><h3 id="why-i-write-blogs">Why I write blogs?</h3><p>关于我为什么写博客这件事，其实还是有挺多原因的：</p><ul><li>一是，我一直想搭建一个个人的博客网站，写点文章记录一下自己的生活，技术成长什么的。</li><li>二是，方便管理我的知识，之前的知识内容总是太零散，有的在微信公众号，有的在知乎，有的在本地文件夹，总之就是很乱，然后希望找一个地方存储我的知识，所以这个博客的内容应该会比较系统（<del>但愿？</del>），相应地，其他平台可能就会发得少一点了（<del>本来也不多</del>）。</li><li>三是，一直看大佬们的博客（特别是<ahref="https://sharingsource.github.io/">三叶姐姐</a>）学到了很多东西，希望通过自己的一点点微薄努力来为互联网贡献一些微不足道的内容吧。</li></ul><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2023-12-05T23:59:00">December 10, 2023 at16:07 PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/"/>
     <url>/</url>
     
     <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/** * 浏览器搞笑标题:@Source:https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html */var OriginTitle = document.title;var titleTime;document.addEventListener('visibilitychange', function() {if (document.hidden) {$('[rel="icon"]').attr('href', "/funny.ico");document.title = '╭(°A°`)╮ 页面崩溃啦 ~';clearTimeout(titleTime);} else {$('[rel="icon"]').attr('href', "/img/newtubiao.png");document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;titleTime = setTimeout(function() {document.title = OriginTitle;}, 2000);}});]]></content>
     
   </entry>
   
@@ -645,28 +702,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>about</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<h1 id="about">About?!</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="who-am-i">Who am I?</h2><p>目前是一名普通的大三学生 ，正在自学编程中，目前正在学习<code>Java</code>和算法，以及一些基本的计算机科学知识。由于我并非科班出身，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code>极大地提高了我的写作效率（<del>改变不了我还是经常写Bug的事实</del>）；<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。甚至我觉得根本不需要<code>Word</code> 这种臃肿的东西了（之前饱受 <code>Word</code>排版摧残的我），当然平时写作可以用 <code>Markdown</code>，有更高排版要求的时候我还是会使用 <code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、陈奕迅、Lilas Ikuta（幾田 りら／いくたりら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听（也许是没有特别的偏好吧）。</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/gloria1.jpg" alt="Gloria" /></div><div class="group-image-wrap"><img src="/imgs/about/gloria2.jpg" alt="Gloria" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/gloria3.jpg" alt="Gloria" /></div><div class="group-image-wrap"><img src="/imgs/about/gloria4.jpg" alt="Gloria" /></div></div></div><h3 id="about-reading">About Reading</h3><p>之前也有一段持续读书的时光，喜欢读的书也很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><p>为什么近来读书少了？主要是事情多了起来，不得不暂时中断了读书的计划（<del>才不是懒</del>），如果有人想看我写书评也可以给我发邮件，让我重启读书计划，激励我继续读书、创作。</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法（<del>希望不是三分钟热度</del>），欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度鸭！近期也在写一些关于 <code>LeetCode</code> 刷题的解法记录。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><p><strong>关于为什么不开评论区：</strong>一是因为暂时没有那么多的时间啦，二是因为访客也不多，直接通过邮箱处理更方便一点，三是因为评论的内容其实还是比较随意的，我还是希望我的博客能够保持简洁。（也许后续会开放评论区，可以关注一下，或者通过邮件方式催我更新）</p><h3 id="why-i-write-blogs">Why I write blogs?</h3><p>关于我为什么写博客这件事，其实还是有挺多原因的：</p><ul><li>一是，我一直想搭建一个个人的博客网站，写点文章记录一下自己的生活，技术成长什么的。</li><li>二是，方便管理我的知识，之前的知识内容总是太零散，有的在微信公众号，有的在知乎，有的在本地文件夹，总之就是很乱，然后希望找一个地方存储我的知识，所以这个博客的内容应该会比较系统（<del>但愿？</del>），相应地，其他平台可能就会发得少一点了（<del>本来也不多</del>）。</li><li>三是，一直看大佬们的博客（特别是<ahref="https://sharingsource.github.io/">三叶姐姐</a>）学到了很多东西，希望通过自己的一点点微薄努力来为互联网贡献一些微不足道的内容吧。</li></ul><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2023-12-05T23:59:00">December 10, 2023 at16:07 PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/** * 浏览器搞笑标题:@Source:https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html */var OriginTitle = document.title;var titleTime;document.addEventListener('visibilitychange', function() {if (document.hidden) {$('[rel="icon"]').attr('href', "/funny.ico");document.title = '╭(°A°`)╮ 页面崩溃啦 ~';clearTimeout(titleTime);} else {$('[rel="icon"]').attr('href', "/img/newtubiao.png");document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;titleTime = setTimeout(function() {document.title = OriginTitle;}, 2000);}});]]></content>
     
   </entry>
   
