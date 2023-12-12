@@ -4,6 +4,41 @@
   
   
   <entry>
+    <title>LC 1512.Number of Good Pairs</title>
+    <link href="/2023/12/12/lc-1512/"/>
+    <url>/2023/12/12/lc-1512/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/number-of-good-pairs/description/">1512.好数对的数目</a> ，难度为<strong>简单</strong>。</p><p>给你一个整数数组 <code>nums</code> 。</p><p>如果一组数字 <code>(i,j)</code> 满足 <code>nums[i]</code> ==<code>nums[j]</code> 且 <code>i</code> &lt; <code>j</code>，就可以认为这是一组 <strong>好数对</strong> 。</p><p>返回好数对的数目。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,2,3,1,1,3]<br>输出：4<br>解释：有 4 组好数对，分别是 (0,3), (0,4), (3,4), (2,5) ，下标从 0 开始<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,1,1,1]<br>输出：6<br>解释：数组中的每组数字都是好数对<br></code></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,2,3]<br>输出：0<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= nums.length &lt;= 100</code></li><li><code>1 &lt;= nums[i] &lt;= 100</code></li></ul><h2 id="解答">解答</h2><h3 id="方法一暴力枚举">方法一：暴力枚举</h3><p>最简单的方法就是遍历每一个数字并和后面的每个数字比较，如果相等就计数一次。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numIdenticalPairs</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, n = nums.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; ++i) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i + <span class="hljs-number">1</span>; j &lt; n; ++j) &#123;<br>                <span class="hljs-keyword">if</span> (nums[i] == nums[j]) &#123;<br>                    ++res;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N^2)\)</span>，其中 <code>N</code> 为<code>nums</code> 的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(1)\)</span>。</p></li></ul><h3 id="方法二哈希表">方法二：哈希表</h3><p>另一种方法是使用哈希表来统计每个数字出现的次数，事实上，因为只需要数字相等就可以，相对位置并不重要，并且可以用数学归纳法证明，当有<code>t</code> 个相同的数字在 <code>nums</code>中时，<strong>好数对</strong>的个数为 <spanclass="math inline">\(\frac{t(t + 1)}{2}\)</span>，故使用一个哈希表来计算每个数字出现的次数，最后再遍历哈希表<code>cnt</code> 统计总的<strong>好数对</strong>。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numIdenticalPairs</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span>[] cnt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">100</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; ++i) &#123;<br>            ++cnt[nums[i] - <span class="hljs-number">1</span>];<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; cnt.length; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> cnt[i] - <span class="hljs-number">1</span>; <span class="hljs-comment">// 只出现一次的不组成数对</span><br>            <span class="hljs-keyword">if</span> (t &gt; <span class="hljs-number">0</span>) &#123;<br>                res += ((t + <span class="hljs-number">1</span>) * t) &gt;&gt; <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N +K)\)</span>，其中 <code>N</code> 为 <code>nums</code> 的长度，<code>K</code> 为 <code>nums[i]</code> 的值域的大小，遍历<code>nums</code> 一次， 遍历 <code>cnt</code> 一次。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(K)\)</span>，其中 <code>K</code> 为<code>nums[i]</code>的值域大小，哈希表使用了与值域大小相关的数组。</p></li></ul><h3 id="方法三哈希表-前缀和">方法三：哈希表 + 前缀和</h3><p>根据上面的思路，还可以继续优化，由于每增加一个重复的数字，增加的<strong>好数对</strong>的数量是前一次增加相同数字时增加的<strong>好数对</strong>的数量加一，故可以用<strong>前缀和</strong>的思想只遍历一次<code>nums</code> 统计出所有的<strong>好数对</strong>。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numIdenticalPairs</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span>[] cnt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">100</span>];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; ++i) &#123;<br>            res += cnt[nums[i] - <span class="hljs-number">1</span>]++; <span class="hljs-comment">// 当只有没有相同的数时，不存在数对，因此是后自增</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code> 为<code>nums</code> 的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(K)\)</span>，其中 <code>K</code> 为<code>nums[i]</code> 值域的大小。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2023/12/12/banner8.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Hash Table</tag>
+      
+      <tag>Array</tag>
+      
+      <tag>Math</tag>
+      
+      <tag>Counting</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 1920.Build Array from Permutation</title>
     <link href="/2023/12/12/lc-1920/"/>
     <url>/2023/12/12/lc-1920/</url>
@@ -1074,17 +1109,6 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
     <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
@@ -1096,7 +1120,29 @@
     <link href="/"/>
     <url>/</url>
     
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
     <content type="html"><![CDATA[/** * 浏览器搞笑标题:@Source:https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html */var OriginTitle = document.title;var titleTime;document.addEventListener('visibilitychange', function() {if (document.hidden) {$('[rel="icon"]').attr('href', "/funny.ico");document.title = '╭(°A°`)╮ 页面崩溃啦 ~';clearTimeout(titleTime);} else {$('[rel="icon"]').attr('href', "/img/newtubiao.png");document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;titleTime = setTimeout(function() {document.title = OriginTitle;}, 2000);}});]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
@@ -1119,17 +1165,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 鼠标点击放礼花 * @Source: https://cnwjy.site/2022/01/04/Hexo-Fluid%E7%BE%8E%E5%8C%96/ */ class Circle {    constructor({ origin, speed, color, angle, context }) {      this.origin = origin      this.position = { ...this.origin }      this.color = color      this.speed = speed      this.angle = angle      this.context = context      this.renderCount = 0    }      draw() {      this.context.fillStyle = this.color      this.context.beginPath()      this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)      this.context.fill()    }      move() {      this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x      this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)      this.renderCount++    }  }    class Boom {    constructor ({ origin, context, circleCount = 16, area }) {      this.origin = origin      this.context = context      this.circleCount = circleCount      this.area = area      this.stop = false      this.circles = []    }      randomArray(range) {      const length = range.length      const randomIndex = Math.floor(length * Math.random())      return range[randomIndex]    }      randomColor() {      const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']      return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)    }      randomRange(start, end) {      return (end - start) * Math.random() + start    }      init() {      for(let i = 0; i < this.circleCount; i++) {        const circle = new Circle({          context: this.context,          origin: this.origin,          color: this.randomColor(),          angle: this.randomRange(Math.PI - 1, Math.PI + 1),          speed: this.randomRange(1, 6)        })        this.circles.push(circle)      }    }      move() {      this.circles.forEach((circle, index) => {        if (circle.position.x > this.area.width || circle.position.y > this.area.height) {          return this.circles.splice(index, 1)        }        circle.move()      })      if (this.circles.length == 0) {        this.stop = true      }    }      draw() {      this.circles.forEach(circle => circle.draw())    }  }    class CursorSpecialEffects {    constructor() {      this.computerCanvas = document.createElement('canvas')      this.renderCanvas = document.createElement('canvas')        this.computerContext = this.computerCanvas.getContext('2d')      this.renderContext = this.renderCanvas.getContext('2d')        this.globalWidth = window.innerWidth      this.globalHeight = window.innerHeight        this.booms = []      this.running = false    }      handleMouseDown(e) {      const boom = new Boom({        origin: { x: e.clientX, y: e.clientY },        context: this.computerContext,        area: {          width: this.globalWidth,          height: this.globalHeight        }      })      boom.init()      this.booms.push(boom)      this.running || this.run()    }      handlePageHide() {      this.booms = []      this.running = false    }      init() {      const style = this.renderCanvas.style      style.position = 'fixed'      style.top = style.left = 0      style.zIndex = '999999999999999999999999999999999999999999'      style.pointerEvents = 'none'        style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth      style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight        document.body.append(this.renderCanvas)        window.addEventListener('mousedown', this.handleMouseDown.bind(this))      window.addEventListener('pagehide', this.handlePageHide.bind(this))    }      run() {      this.running = true      if (this.booms.length == 0) {        return this.running = false      }        requestAnimationFrame(this.run.bind(this))        this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)      this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)        this.booms.forEach((boom, index) => {        if (boom.stop) {          return this.booms.splice(index, 1)        }        boom.move()        boom.draw()      })      this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)    }  }    const cursorSpecialEffects = new CursorSpecialEffects()  cursorSpecialEffects.init()]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
