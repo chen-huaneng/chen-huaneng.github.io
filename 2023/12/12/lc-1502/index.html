@@ -18,26 +18,27 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.2413.">
+    <meta name="description" content="The solution of LeetCode problem No.1502.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 2413.Smallest Even Multiple">
-<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/11/lc-2413/index.html">
+<meta property="og:title" content="LC 1502.Can Make Arithmetic Progression From Sequence">
+<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/12/lc-1502/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.2413.">
+<meta property="og:description" content="The solution of LeetCode problem No.1502.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner5.png">
-<meta property="article:published_time" content="2023-12-11T09:38:34.000Z">
-<meta property="article:modified_time" content="2023-12-11T09:47:22.673Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/12/banner5.jpg">
+<meta property="article:published_time" content="2023-12-12T08:12:08.000Z">
+<meta property="article:modified_time" content="2023-12-12T08:56:52.597Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="Array">
+<meta property="article:tag" content="Sorting">
 <meta property="article:tag" content="Math">
-<meta property="article:tag" content="Number Theory">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner5.png">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/12/banner5.jpg">
   
   
   
-  <title>LC 2413.Smallest Even Multiple - Abel&#39;s Blog</title>
+  <title>LC 1502.Can Make Arithmetic Progression From Sequence - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,13 +244,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/12/11/banner5.png') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2023/12/12/banner5.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 2413.Smallest Even Multiple"></span>
+            <span id="subtitle" data-typed-text="LC 1502.Can Make Arithmetic Progression From Sequence"></span>
           
         </div>
 
@@ -260,8 +261,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-11 17:38" pubdate>
-          2023年12月11日 下午
+        <time datetime="2023-12-12 16:12" pubdate>
+          2023年12月12日 下午
         </time>
       </span>
     
@@ -273,7 +274,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 141 
+          文章字数: 426 
         
       </span>
     
@@ -285,7 +286,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 2 分钟
+          阅读全文大概需要 4 分钟
         
       </span>
     
@@ -330,12 +331,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 2413.Smallest Even Multiple</h1>
+            <h1 id="seo-header">LC 1502.Can Make Arithmetic Progression From Sequence</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 天前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -345,32 +346,54 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-even-multiple/description/">2413.
-最小偶倍数</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个正整数 <code>n</code> ，返回 <code>2</code> 和 <code>n</code>
-的最小公倍数（正整数）。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/can-make-arithmetic-progression-from-sequence/description/">1502.
+判断能否形成等差数列</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个数字数组 <code>arr</code> 。</p>
+<p>如果一个数列中，任意相邻两项的差总等于同一个常数，那么这个数列就称为
+<strong>等差数列</strong> 。</p>
+<p>如果可以重新排列数组形成等差数列，请返回 <code>true</code>
+；否则，返回 <code>false</code> 。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 5<br>输出：10<br>解释：5 和 2 的最小公倍数是 10 。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：arr = [3,5,1]<br>输出：true<br>解释：对数组重新排序得到 [1,3,5] 或者 [5,3,1] ，任意相邻两项的差分别为 2 或 -2 ，可以形成等差数列。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 6<br>输出：6<br>解释：6 和 2 的最小公倍数是 6 。注意数字会是它自身的倍数。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：arr = [1,2,4]<br>输出：false<br>解释：无法通过重新排序得到等差数列。<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= n &lt;= 150</code></li>
+<li><code>2 &lt;= arr.length &lt;= 1000</code></li>
+<li><code>-10^6 &lt;= arr[i] &lt;= 10^6</code></li>
 </ul>
 <h2 id="解答">解答</h2>
-<h3 id="方法一数学">方法一：数学</h3>
-<p>按照题目的意思，如果 <code>2</code> 不是 <code>n</code>
-的因子，则要返回 <code>2n</code> ，如果 <code>2</code> 是 <code>n</code>
-的因子，则返回 <code>n</code> ，即求它们的最小公倍数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">smallestEvenMultiple</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-keyword">return</span> ((n &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">0</span>) ? n : n * <span class="hljs-number">2</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="方法一排序-遍历">方法一：排序 + 遍历</h3>
+<p>先给 <code>arr</code> 排序之后，遍历 <code>arr</code>
+判断前后两项的差值是否相等，如果不相等就不能组成等差数列。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">canMakeArithmeticProgression</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        Arrays.sort(arr);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> arr[<span class="hljs-number">1</span>] - arr[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt; arr.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (arr[i] - arr[i - <span class="hljs-number">1</span>] != tmp) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N \log
+N)\)</span>，排序的时间复杂度为 <span class="math inline">\(O(N \log
+N)\)</span>，遍历的时间复杂度为 <span
+class="math inline">\(O(N)\)</span>，故渐进时间复杂度为 <span
+class="math inline">\(O(N \log N)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span
+class="math inline">\(O(N)\)</span>，排序的空间复杂度为 <span
+class="math inline">\(O(N)\)</span>。</p></li>
+</ul>
+<h3 id="方法二等差数列性质">方法二：等差数列性质</h3>
+<p>另一种方法就是利用等差数列的性质，先遍历 <code>arr</code> 找出最大值
+<code>max</code> 和最小值 <code>min</code> ，利用等差数列的性质求出公差
+<span class="math inline">\(diff = \frac{max - min}{arr.length -
+1}\)</span> ，最后遍历判断每个数与最小值 <code>min</code>
+的差值是否为公差的倍数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">canMakeArithmeticProgression</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> Integer.MIN_VALUE, min = Integer.MAX_VALUE, n = arr.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i) &#123; <span class="hljs-comment">// 找出最值</span><br>            <span class="hljs-keyword">if</span> (max &lt; arr[i]) &#123;<br>                max = arr[i];<br>            &#125;<br>            <span class="hljs-keyword">if</span> (min &gt; arr[i]) &#123;<br>                min = arr[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> ((max - min) % (n - <span class="hljs-number">1</span>) != <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 等差数列的最值的差一定为整数倍的公差</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">diff</span> <span class="hljs-operator">=</span> (max - min) / (n - <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">if</span> (diff == <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 如果公差为0，则每个数都相等，那么一定为等差数列</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-type">boolean</span>[] exist = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[n]; <span class="hljs-comment">// 用于判断是否存在重复的数</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : arr) &#123;<br>            <span class="hljs-keyword">if</span> ((num - min) % diff == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> (num - min) / diff; <span class="hljs-comment">// 用于记录是否存在重复数的下标</span><br>                <span class="hljs-keyword">if</span> (exist[tmp] == <span class="hljs-literal">true</span>) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    exist[tmp] = <span class="hljs-literal">true</span>;<br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 差值不为公差的整数倍</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span> 。</p></li>
+class="math inline">\(O(N)\)</span>，遍历两次 <code>arr</code> ，其中
+<code>N</code> 为 <code>arr</code> 的长度。</p></li>
 <li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span> 。</p></li>
+class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
+<code>arr</code> 的长度。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2023/12/11/banner5.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2023/12/12/banner5.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -413,9 +436,11 @@ class="math inline">\(O(1)\)</span> 。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Math/" class="print-no-link">#Math</a>
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
-        <a href="/tags/Number-Theory/" class="print-no-link">#Number Theory</a>
+        <a href="/tags/Sorting/" class="print-no-link">#Sorting</a>
+      
+        <a href="/tags/Math/" class="print-no-link">#Math</a>
       
     </div>
   
@@ -427,8 +452,8 @@ class="math inline">\(O(1)\)</span> 。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 2413.Smallest Even Multiple</div>
-      <div>https://chen-huaneng.github.io/2023/12/11/lc-2413/</div>
+      <div>LC 1502.Can Make Arithmetic Progression From Sequence</div>
+      <div>https://chen-huaneng.github.io/2023/12/12/lc-1502/</div>
     </div>
     <div class="license-meta">
       
@@ -440,13 +465,13 @@ class="math inline">\(O(1)\)</span> 。</p></li>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月11日</div>
+          <div>2023年12月12日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年12月11日</div>
+          <div>2023年12月12日</div>
         </div>
       
       
@@ -483,18 +508,12 @@ class="math inline">\(O(1)\)</span> 。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/11/lc-2733/" title="LC 2733.Neither Minimum nor Maximum">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 2733.Neither Minimum nor Maximum</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/11/lc-1913/" title="LC 1913.Maximum Product Difference Between Two Pairs">
-                        <span class="hidden-mobile">LC 1913.Maximum Product Difference Between Two Pairs</span>
+                      <a href="/2023/12/12/lc-2469/" title="LC 2469.Convert the Temperature">
+                        <span class="hidden-mobile">LC 2469.Convert the Temperature</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
