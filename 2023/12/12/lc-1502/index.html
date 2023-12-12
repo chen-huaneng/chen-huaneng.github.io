@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/12/banner5.jpg">
 <meta property="article:published_time" content="2023-12-12T08:12:08.000Z">
-<meta property="article:modified_time" content="2023-12-12T08:56:52.597Z">
+<meta property="article:modified_time" content="2023-12-12T09:00:13.387Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Array">
@@ -336,7 +336,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 分钟前
+                    本文最后更新于：1 小时前
                   
                 
               </p>
@@ -380,7 +380,7 @@ class="math inline">\(O(N)\)</span>。</p></li>
 <h3 id="方法二等差数列性质">方法二：等差数列性质</h3>
 <p>另一种方法就是利用等差数列的性质，先遍历 <code>arr</code> 找出最大值
 <code>max</code> 和最小值 <code>min</code> ，利用等差数列的性质求出公差
-<span class="math inline">\(diff = \frac{max - min}{arr.length -
+<span class="math inline">\(d = \frac{max - min}{arr.length -
 1}\)</span> ，最后遍历判断每个数与最小值 <code>min</code>
 的差值是否为公差的倍数。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">canMakeArithmeticProgression</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> Integer.MIN_VALUE, min = Integer.MAX_VALUE, n = arr.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i) &#123; <span class="hljs-comment">// 找出最值</span><br>            <span class="hljs-keyword">if</span> (max &lt; arr[i]) &#123;<br>                max = arr[i];<br>            &#125;<br>            <span class="hljs-keyword">if</span> (min &gt; arr[i]) &#123;<br>                min = arr[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> ((max - min) % (n - <span class="hljs-number">1</span>) != <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 等差数列的最值的差一定为整数倍的公差</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">diff</span> <span class="hljs-operator">=</span> (max - min) / (n - <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">if</span> (diff == <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 如果公差为0，则每个数都相等，那么一定为等差数列</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-type">boolean</span>[] exist = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[n]; <span class="hljs-comment">// 用于判断是否存在重复的数</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : arr) &#123;<br>            <span class="hljs-keyword">if</span> ((num - min) % diff == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> (num - min) / diff; <span class="hljs-comment">// 用于记录是否存在重复数的下标</span><br>                <span class="hljs-keyword">if</span> (exist[tmp] == <span class="hljs-literal">true</span>) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    exist[tmp] = <span class="hljs-literal">true</span>;<br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 差值不为公差的整数倍</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -507,6 +507,12 @@ class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/12/12/lc-2351/" title="LC 2351.First Letter to Appear Twice">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LC 2351.First Letter to Appear Twice</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
