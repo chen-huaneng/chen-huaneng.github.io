@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>LC 1446.Consecutive Characters</title>
+    <link href="/2023/12/13/lc-1446/"/>
+    <url>/2023/12/13/lc-1446/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/consecutive-characters/description/">1446.连续字符</a> ，难度为<strong>简单</strong>。</p><p>给你一个字符串 <code>s</code>，字符串的<strong>「能量」</strong>定义为：只包含一种字符的最长非空子字符串的长度。</p><p>请你返回字符串 <code>s</code> 的 <strong>能量</strong>。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;leetcode&quot;<br>输出：2<br>解释：子字符串 &quot;ee&quot; 长度为 2 ，只包含字符 &#x27;e&#x27; 。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;abbcccddddeeeeedcba&quot;<br>输出：5<br>解释：子字符串 &quot;eeeee&quot; 长度为 5 ，只包含字符 &#x27;e&#x27; 。<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= s.length &lt;= 500</code></li><li><code>s</code> 只包含小写英文字母。</li></ul><h2 id="解答">解答</h2><h3 id="方法一模拟">方法一：模拟</h3><p>根据题意，对前一个字符是否和当前的字符相同进行判断，如果是就计数，最后求出最大的计数量。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxPower</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>, t = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; s.length(); ++i) &#123;<br>            <span class="hljs-keyword">if</span> (s.charAt(i) == s.charAt(i - <span class="hljs-number">1</span>)) &#123;<br>                ++t;<br>                cnt = Math.max(cnt, t);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                t = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code> 为<code>s</code> 的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(1)\)</span>。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2023/12/13/banner10.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Simulation</tag>
+      
+      <tag>String</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 1768.Merge Strings Alternately</title>
     <link href="/2023/12/13/lc-1768/"/>
     <url>/2023/12/13/lc-1768/</url>
@@ -1392,6 +1423,17 @@
   
   
   <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>about</title>
     <link href="/"/>
     <url>/</url>
@@ -1418,7 +1460,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
@@ -1441,17 +1483,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 鼠标点击放礼花 * @Source: https://cnwjy.site/2022/01/04/Hexo-Fluid%E7%BE%8E%E5%8C%96/ */ class Circle {    constructor({ origin, speed, color, angle, context }) {      this.origin = origin      this.position = { ...this.origin }      this.color = color      this.speed = speed      this.angle = angle      this.context = context      this.renderCount = 0    }      draw() {      this.context.fillStyle = this.color      this.context.beginPath()      this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)      this.context.fill()    }      move() {      this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x      this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)      this.renderCount++    }  }    class Boom {    constructor ({ origin, context, circleCount = 16, area }) {      this.origin = origin      this.context = context      this.circleCount = circleCount      this.area = area      this.stop = false      this.circles = []    }      randomArray(range) {      const length = range.length      const randomIndex = Math.floor(length * Math.random())      return range[randomIndex]    }      randomColor() {      const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']      return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)    }      randomRange(start, end) {      return (end - start) * Math.random() + start    }      init() {      for(let i = 0; i < this.circleCount; i++) {        const circle = new Circle({          context: this.context,          origin: this.origin,          color: this.randomColor(),          angle: this.randomRange(Math.PI - 1, Math.PI + 1),          speed: this.randomRange(1, 6)        })        this.circles.push(circle)      }    }      move() {      this.circles.forEach((circle, index) => {        if (circle.position.x > this.area.width || circle.position.y > this.area.height) {          return this.circles.splice(index, 1)        }        circle.move()      })      if (this.circles.length == 0) {        this.stop = true      }    }      draw() {      this.circles.forEach(circle => circle.draw())    }  }    class CursorSpecialEffects {    constructor() {      this.computerCanvas = document.createElement('canvas')      this.renderCanvas = document.createElement('canvas')        this.computerContext = this.computerCanvas.getContext('2d')      this.renderContext = this.renderCanvas.getContext('2d')        this.globalWidth = window.innerWidth      this.globalHeight = window.innerHeight        this.booms = []      this.running = false    }      handleMouseDown(e) {      const boom = new Boom({        origin: { x: e.clientX, y: e.clientY },        context: this.computerContext,        area: {          width: this.globalWidth,          height: this.globalHeight        }      })      boom.init()      this.booms.push(boom)      this.running || this.run()    }      handlePageHide() {      this.booms = []      this.running = false    }      init() {      const style = this.renderCanvas.style      style.position = 'fixed'      style.top = style.left = 0      style.zIndex = '999999999999999999999999999999999999999999'      style.pointerEvents = 'none'        style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth      style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight        document.body.append(this.renderCanvas)        window.addEventListener('mousedown', this.handleMouseDown.bind(this))      window.addEventListener('pagehide', this.handlePageHide.bind(this))    }      run() {      this.running = true      if (this.booms.length == 0) {        return this.running = false      }        requestAnimationFrame(this.run.bind(this))        this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)      this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)        this.booms.forEach((boom, index) => {        if (boom.stop) {          return this.booms.splice(index, 1)        }        boom.move()        boom.draw()      })      this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)    }  }    const cursorSpecialEffects = new CursorSpecialEffects()  cursorSpecialEffects.init()]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
