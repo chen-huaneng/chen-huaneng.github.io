@@ -18,27 +18,26 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.2788.">
+    <meta name="description" content="The solution of LeetCode problem No.0961.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 2788.Split Strings by Separator">
-<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/06/lc-2788/index.html">
+<meta property="og:title" content="LC 0961.N-Repeated Element in Size 2N Array">
+<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/13/lc-0961/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.2788.">
+<meta property="og:description" content="The solution of LeetCode problem No.0961.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/06/banner2.jpg">
-<meta property="article:published_time" content="2023-12-06T03:15:44.000Z">
-<meta property="article:modified_time" content="2023-12-06T03:27:24.076Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/13/banner.png">
+<meta property="article:published_time" content="2023-12-13T07:34:16.000Z">
+<meta property="article:modified_time" content="2023-12-13T07:45:34.338Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Hash Table">
 <meta property="article:tag" content="Array">
-<meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/06/banner2.jpg">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/13/banner.png">
   
   
   
-  <title>LC 2788.Split Strings by Separator - Abel&#39;s Blog</title>
+  <title>LC 0961.N-Repeated Element in Size 2N Array - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -244,13 +243,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/12/06/banner2.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2023/12/13/banner.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 2788.Split Strings by Separator"></span>
+            <span id="subtitle" data-typed-text="LC 0961.N-Repeated Element in Size 2N Array"></span>
           
         </div>
 
@@ -261,8 +260,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-06 11:15" pubdate>
-          2023年12月6日 上午
+        <time datetime="2023-12-13 15:34" pubdate>
+          2023年12月13日 下午
         </time>
       </span>
     
@@ -274,7 +273,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 421 
+          文章字数: 405 
         
       </span>
     
@@ -331,12 +330,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 2788.Split Strings by Separator</h1>
+            <h1 id="seo-header">LC 0961.N-Repeated Element in Size 2N Array</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：7 天前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -346,51 +345,74 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/split-strings-by-separator/description/">2788.
-按分隔符拆分字符串</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个字符串数组 <code>words</code> 和一个字符
-<code>separator</code> ，请你按 <code>separator</code> 拆分
-<code>words</code> 中的每个字符串。</p>
-<p>返回一个由拆分后的新字符串组成的字符串数组，<strong>不包括空字符串</strong>
-。</p>
-<p><strong>注意</strong></p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-repeated-element-in-size-2n-array/description/">961.
+在长度 2N 的数组中找出重复 N 次的元素</a>
+，难度为<strong>简单</strong>。</p>
+<p>给你一个整数数组 <code>nums</code> ，该数组具有以下属性：</p>
 <ul>
-<li><code>separator</code>
-用于决定拆分发生的位置，但它不包含在结果字符串中。</li>
-<li>拆分可能形成两个以上的字符串。</li>
-<li>结果字符串必须保持初始相同的先后顺序。</li>
+<li><code>nums.length == 2 * n</code>.</li>
+<li><code>nums</code> 包含 <code>n + 1</code> 个 <strong>不同的</strong>
+元素</li>
+<li><code>nums</code> 中恰有一个元素重复 <code>n</code> 次</li>
 </ul>
+<p>找出并返回重复了 <code>n</code> 次的那个元素。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;one.two.three&quot;,&quot;four.five&quot;,&quot;six&quot;], separator = &quot;.&quot;<br>输出：[&quot;one&quot;,&quot;two&quot;,&quot;three&quot;,&quot;four&quot;,&quot;five&quot;,&quot;six&quot;]<br>解释：在本示例中，我们进行下述拆分：<br><br>&quot;one.two.three&quot; 拆分为 &quot;one&quot;, &quot;two&quot;, &quot;three&quot;<br>&quot;four.five&quot; 拆分为 &quot;four&quot;, &quot;five&quot;<br>&quot;six&quot; 拆分为 &quot;six&quot; <br><br>因此，结果数组为 [&quot;one&quot;,&quot;two&quot;,&quot;three&quot;,&quot;four&quot;,&quot;five&quot;,&quot;six&quot;] 。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,2,3,3]<br>输出：3<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;$easy$&quot;,&quot;$problem$&quot;], separator = &quot;$&quot;<br>输出：[&quot;easy&quot;,&quot;problem&quot;]<br>解释：在本示例中，我们进行下述拆分：<br><br>&quot;$easy$&quot; 拆分为 &quot;easy&quot;（不包括空字符串）<br>&quot;$problem$&quot; 拆分为 &quot;problem&quot;（不包括空字符串）<br><br>因此，结果数组为 [&quot;easy&quot;,&quot;problem&quot;] 。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [2,1,2,5,3,2]<br>输出：2<br></code></pre></td></tr></table></figure>
 <p><strong>示例 3：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;|||&quot;], separator = &quot;|&quot;<br>输出：[]<br>解释：在本示例中，&quot;|||&quot; 的拆分结果将只包含一些空字符串，所以我们返回一个空数组 [] 。 <br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [5,1,5,2,5,3,5,4]<br>输出：5<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= words.length &lt;= 100</code></li>
-<li><code>1 &lt;= words[i].length &lt;= 20</code></li>
-<li><code>words[i]</code> 中的字符要么是小写英文字母，要么就是字符串
-<code>".,|$#@"</code> 中的字符（不包括引号）</li>
-<li><code>separator</code> 是字符串 <code>".,|$#@"</code>
-中的某个字符（不包括引号）</li>
+<li><code>2 &lt;= n &lt;= 5000</code></li>
+<li><code>nums.length == 2 * n</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 由 <code>n + 1</code> 个 <strong>不同的</strong>
+元素组成，且其中一个元素恰好重复 <code>n</code> 次</li>
 </ul>
 <h2 id="解答">解答</h2>
-<h3 id="方法一模拟">方法一：模拟</h3>
-<p>根据题目遍历每个字符串，然后切分字符串就行。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;String&gt; <span class="hljs-title function_">splitWordsBySeparator</span><span class="hljs-params">(List&lt;String&gt; words, <span class="hljs-type">char</span> separator)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;String&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> word : words) &#123;<br>            <span class="hljs-type">var</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> ch : word.toCharArray()) &#123;<br>                <span class="hljs-keyword">if</span> (ch == separator &amp;&amp; sb.length() != <span class="hljs-number">0</span>) &#123;<br>                    res.add(sb.toString());<br>                    sb = <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>                &#125;<br>                <span class="hljs-keyword">if</span> (ch != separator) &#123;<br>                    sb.append(ch);        <br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (sb.length() != <span class="hljs-number">0</span>) &#123;<br>                res.add(sb.toString());<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="方法一哈希表">方法一：哈希表</h3>
+<p>最简单的方法就是建立一个哈希表，每次遇到没有加入的计数，如果遇到重复的就返回该字母。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">repeatedNTimes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;Integer, Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length / <span class="hljs-number">2</span> + <span class="hljs-number">2</span>; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (hash.containsKey(nums[i])) &#123;<br>                <span class="hljs-keyword">return</span> nums[i];<br>            &#125;<br>            hash.put(nums[i], <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，其中 <code>n</code>
-为所有字符串的长度之和。</p></li>
-<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(n +
-m)\)</span>，其中 <code>n</code> 为所有字符串的长度之和， <code>m</code>
-为所有字符串中最长的字符串的长度，因为最坏情况下，每个字符都被加入到
-<code>ArrayList</code> 中，而 <code>StringBuilder</code>
-最坏情况也是每个字符都被加入到其中。</p></li>
+class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
+<code>nums</code> 的长度，最坏情况下要遍历 <code>N + 2</code>
+个元素才能找到。</p></li>
+<li><p><strong>空间复杂度</strong>：<span
+class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
+<code>nums</code> 的长度，最坏情况下要建立的哈希键值对为
+<code>N + 1</code>。</p></li>
+</ul>
+<h3 id="方法二数学">方法二：数学</h3>
+<p><a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-repeated-element-in-size-2n-array/solutions/1506096/zai-chang-du-2n-de-shu-zu-zhong-zhao-chu-w88a/"><span
+class="citation"
+data-cites="Source:题解来源">@Source:题解来源</span></a></p>
+<p>我们可以考虑重复的元素 <code>x</code> 在数组 <code>nums</code>
+中出现的位置。</p>
+<p>如果相邻的 <code>x</code> 之间至少都隔了 <code>2</code>
+个位置，那么数组的总长度至少为： <span class="math display">\[
+n + 2 (n - 1) = 3n - 2
+\]</span></p>
+<p>当 <code>n &gt; 2</code>
+时，<code>3n − 2 &gt; 2n</code>，不存在满足要求的数组。因此一定存在两个相邻的
+<code>x</code>，它们的位置是连续的，或者只隔了 <code>1</code>
+个位置。</p>
+<p>当 <code>n = 2</code> 时，数组的长度最多为
+<code>2n = 4</code>，因此最多只能隔 <code>2</code> 个位置。</p>
+<p>这样一来，我们只需要遍历所有间隔 <code>2</code>
+个位置及以内的下标对，判断对应的元素是否相等即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">repeatedNTimes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> nums[i];<br>            <span class="hljs-keyword">if</span> ((i &gt;= <span class="hljs-number">1</span> &amp;&amp; nums[i - <span class="hljs-number">1</span>] == t) ||<br>            (i &gt;= <span class="hljs-number">2</span> &amp;&amp; nums[i - <span class="hljs-number">2</span>] == t) || <br>            (i &gt;= <span class="hljs-number">3</span> &amp;&amp; nums[i - <span class="hljs-number">3</span>] == t)) &#123;<br>                <span class="hljs-keyword">return</span> t;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>时间复杂度</strong>：<span
+class="math inline">\(O(N)\)</span>，最多对数组进行三次遍历（除了
+<code>n = 2</code>之外，最多遍历两次）。</p></li>
+<li><p><strong>空间复杂度</strong>：<span
+class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2023/12/06/banner2.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2023/12/13/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -433,11 +455,9 @@ m)\)</span>，其中 <code>n</code> 为所有字符串的长度之和， <code>m
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+        <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
       
         <a href="/tags/Array/" class="print-no-link">#Array</a>
-      
-        <a href="/tags/String/" class="print-no-link">#String</a>
       
     </div>
   
@@ -449,8 +469,8 @@ m)\)</span>，其中 <code>n</code> 为所有字符串的长度之和， <code>m
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 2788.Split Strings by Separator</div>
-      <div>https://chen-huaneng.github.io/2023/12/06/lc-2788/</div>
+      <div>LC 0961.N-Repeated Element in Size 2N Array</div>
+      <div>https://chen-huaneng.github.io/2023/12/13/lc-0961/</div>
     </div>
     <div class="license-meta">
       
@@ -462,13 +482,13 @@ m)\)</span>，其中 <code>n</code> 为所有字符串的长度之和， <code>m
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月6日</div>
+          <div>2023年12月13日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年12月6日</div>
+          <div>2023年12月13日</div>
         </div>
       
       
@@ -505,18 +525,12 @@ m)\)</span>，其中 <code>n</code> 为所有字符串的长度之和， <code>m
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/06/lc-2785/" title="LC 2785.Sort Vowels in a String">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 2785.Sort Vowels in a String</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/06/lc-2784/" title="LC 2784.Check if Array is Good">
-                        <span class="hidden-mobile">LC 2784.Check if Array is Good</span>
+                      <a href="/2023/12/12/lc-1512/" title="LC 1512.Number of Good Pairs">
+                        <span class="hidden-mobile">LC 1512.Number of Good Pairs</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

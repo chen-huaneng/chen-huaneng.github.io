@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>LC 0961.N-Repeated Element in Size 2N Array</title>
+    <link href="/2023/12/13/lc-0961/"/>
+    <url>/2023/12/13/lc-0961/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/n-repeated-element-in-size-2n-array/description/">961.在长度 2N 的数组中找出重复 N 次的元素</a>，难度为<strong>简单</strong>。</p><p>给你一个整数数组 <code>nums</code> ，该数组具有以下属性：</p><ul><li><code>nums.length == 2 * n</code>.</li><li><code>nums</code> 包含 <code>n + 1</code> 个 <strong>不同的</strong>元素</li><li><code>nums</code> 中恰有一个元素重复 <code>n</code> 次</li></ul><p>找出并返回重复了 <code>n</code> 次的那个元素。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,2,3,3]<br>输出：3<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [2,1,2,5,3,2]<br>输出：2<br></code></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [5,1,5,2,5,3,5,4]<br>输出：5<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>2 &lt;= n &lt;= 5000</code></li><li><code>nums.length == 2 * n</code></li><li><code>0 &lt;= nums[i] &lt;= 104</code></li><li><code>nums</code> 由 <code>n + 1</code> 个 <strong>不同的</strong>元素组成，且其中一个元素恰好重复 <code>n</code> 次</li></ul><h2 id="解答">解答</h2><h3 id="方法一哈希表">方法一：哈希表</h3><p>最简单的方法就是建立一个哈希表，每次遇到没有加入的计数，如果遇到重复的就返回该字母。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">repeatedNTimes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;Integer, Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length / <span class="hljs-number">2</span> + <span class="hljs-number">2</span>; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (hash.containsKey(nums[i])) &#123;<br>                <span class="hljs-keyword">return</span> nums[i];<br>            &#125;<br>            hash.put(nums[i], <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code> 为<code>nums</code> 的长度，最坏情况下要遍历 <code>N + 2</code>个元素才能找到。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code> 为<code>nums</code> 的长度，最坏情况下要建立的哈希键值对为<code>N + 1</code>。</p></li></ul><h3 id="方法二数学">方法二：数学</h3><p><ahref="https://leetcode.cn/problems/n-repeated-element-in-size-2n-array/solutions/1506096/zai-chang-du-2n-de-shu-zu-zhong-zhao-chu-w88a/"><spanclass="citation"data-cites="Source:题解来源">@Source:题解来源</span></a></p><p>我们可以考虑重复的元素 <code>x</code> 在数组 <code>nums</code>中出现的位置。</p><p>如果相邻的 <code>x</code> 之间至少都隔了 <code>2</code>个位置，那么数组的总长度至少为： <span class="math display">\[n + 2 (n - 1) = 3n - 2\]</span></p><p>当 <code>n &gt; 2</code>时，<code>3n − 2 &gt; 2n</code>，不存在满足要求的数组。因此一定存在两个相邻的<code>x</code>，它们的位置是连续的，或者只隔了 <code>1</code>个位置。</p><p>当 <code>n = 2</code> 时，数组的长度最多为<code>2n = 4</code>，因此最多只能隔 <code>2</code> 个位置。</p><p>这样一来，我们只需要遍历所有间隔 <code>2</code>个位置及以内的下标对，判断对应的元素是否相等即可。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">repeatedNTimes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> nums[i];<br>            <span class="hljs-keyword">if</span> ((i &gt;= <span class="hljs-number">1</span> &amp;&amp; nums[i - <span class="hljs-number">1</span>] == t) ||<br>            (i &gt;= <span class="hljs-number">2</span> &amp;&amp; nums[i - <span class="hljs-number">2</span>] == t) || <br>            (i &gt;= <span class="hljs-number">3</span> &amp;&amp; nums[i - <span class="hljs-number">3</span>] == t)) &#123;<br>                <span class="hljs-keyword">return</span> t;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，最多对数组进行三次遍历（除了<code>n = 2</code>之外，最多遍历两次）。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(1)\)</span>。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2023/12/13/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Hash Table</tag>
+      
+      <tag>Array</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 1512.Number of Good Pairs</title>
     <link href="/2023/12/12/lc-1512/"/>
     <url>/2023/12/12/lc-1512/</url>
@@ -862,9 +893,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1127,6 +1158,17 @@
   
   
   <entry>
+    <title>about</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<h1 id="about">About?!</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="who-am-i">Who am I?</h2><p>目前是一名普通的大三学生 ，正在自学编程中，目前正在学习<code>Java</code>和算法，以及一些基本的计算机科学知识。由于我并非科班出身，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code>极大地提高了我的写作效率（<del>改变不了我还是经常写Bug的事实</del>）；<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。甚至我觉得根本不需要<code>Word</code> 这种臃肿的东西了（之前饱受 <code>Word</code>排版摧残的我），当然平时写作可以用 <code>Markdown</code>，有更高排版要求的时候我还是会使用 <code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、陈奕迅、Lilas Ikuta（幾田 りら／いくたりら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听（也许是没有特别的偏好吧）。</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/gloria1.jpg" alt="Gloria" /></div><div class="group-image-wrap"><img src="/imgs/about/gloria2.jpg" alt="Gloria" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/gloria3.jpg" alt="Gloria" /></div><div class="group-image-wrap"><img src="/imgs/about/gloria4.jpg" alt="Gloria" /></div></div></div><h3 id="about-reading">About Reading</h3><p>之前也有一段持续读书的时光，喜欢读的书也很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><p>为什么近来读书少了？主要是事情多了起来，不得不暂时中断了读书的计划（<del>才不是懒</del>），如果有人想看我写书评也可以给我发邮件，让我重启读书计划，激励我继续读书、创作。</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法（<del>希望不是三分钟热度</del>），欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度鸭！近期也在写一些关于 <code>LeetCode</code> 刷题的解法记录。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><p><strong>关于为什么不开评论区：</strong>一是因为暂时没有那么多的时间啦，二是因为访客也不多，直接通过邮箱处理更方便一点，三是因为评论的内容其实还是比较随意的，我还是希望我的博客能够保持简洁。（也许后续会开放评论区，可以关注一下，或者通过邮件方式催我更新）</p><h3 id="why-i-write-blogs">Why I write blogs?</h3><p>关于我为什么写博客这件事，其实还是有挺多原因的：</p><ul><li>一是，我一直想搭建一个个人的博客网站，写点文章记录一下自己的生活，技术成长什么的。</li><li>二是，方便管理我的知识，之前的知识内容总是太零散，有的在微信公众号，有的在知乎，有的在本地文件夹，总之就是很乱，然后希望找一个地方存储我的知识，所以这个博客的内容应该会比较系统（<del>但愿？</del>），相应地，其他平台可能就会发得少一点了（<del>本来也不多</del>）。</li><li>三是，一直看大佬们的博客（特别是<ahref="https://sharingsource.github.io/">三叶姐姐</a>）学到了很多东西，希望通过自己的一点点微薄努力来为互联网贡献一些微不足道的内容吧。</li></ul><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2023-12-05T23:59:00">December 10, 2023 at16:07 PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/"/>
     <url>/</url>
@@ -1143,17 +1185,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>about</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<h1 id="about">About?!</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="who-am-i">Who am I?</h2><p>目前是一名普通的大三学生 ，正在自学编程中，目前正在学习<code>Java</code>和算法，以及一些基本的计算机科学知识。由于我并非科班出身，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code>极大地提高了我的写作效率（<del>改变不了我还是经常写Bug的事实</del>）；<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。甚至我觉得根本不需要<code>Word</code> 这种臃肿的东西了（之前饱受 <code>Word</code>排版摧残的我），当然平时写作可以用 <code>Markdown</code>，有更高排版要求的时候我还是会使用 <code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、陈奕迅、Lilas Ikuta（幾田 りら／いくたりら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听（也许是没有特别的偏好吧）。</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/gloria1.jpg" alt="Gloria" /></div><div class="group-image-wrap"><img src="/imgs/about/gloria2.jpg" alt="Gloria" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/gloria3.jpg" alt="Gloria" /></div><div class="group-image-wrap"><img src="/imgs/about/gloria4.jpg" alt="Gloria" /></div></div></div><h3 id="about-reading">About Reading</h3><p>之前也有一段持续读书的时光，喜欢读的书也很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><p>为什么近来读书少了？主要是事情多了起来，不得不暂时中断了读书的计划（<del>才不是懒</del>），如果有人想看我写书评也可以给我发邮件，让我重启读书计划，激励我继续读书、创作。</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法（<del>希望不是三分钟热度</del>），欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度鸭！近期也在写一些关于 <code>LeetCode</code> 刷题的解法记录。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><p><strong>关于为什么不开评论区：</strong>一是因为暂时没有那么多的时间啦，二是因为访客也不多，直接通过邮箱处理更方便一点，三是因为评论的内容其实还是比较随意的，我还是希望我的博客能够保持简洁。（也许后续会开放评论区，可以关注一下，或者通过邮件方式催我更新）</p><h3 id="why-i-write-blogs">Why I write blogs?</h3><p>关于我为什么写博客这件事，其实还是有挺多原因的：</p><ul><li>一是，我一直想搭建一个个人的博客网站，写点文章记录一下自己的生活，技术成长什么的。</li><li>二是，方便管理我的知识，之前的知识内容总是太零散，有的在微信公众号，有的在知乎，有的在本地文件夹，总之就是很乱，然后希望找一个地方存储我的知识，所以这个博客的内容应该会比较系统（<del>但愿？</del>），相应地，其他平台可能就会发得少一点了（<del>本来也不多</del>）。</li><li>三是，一直看大佬们的博客（特别是<ahref="https://sharingsource.github.io/">三叶姐姐</a>）学到了很多东西，希望通过自己的一点点微薄努力来为互联网贡献一些微不足道的内容吧。</li></ul><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2023-12-05T23:59:00">December 10, 2023 at16:07 PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
     
   </entry>
   
