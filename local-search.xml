@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>LC 2697.Lexicographically Smallest Palindrome</title>
+    <link href="/2023/12/13/lc-2697/"/>
+    <url>/2023/12/13/lc-2697/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/lexicographically-smallest-palindrome/description/">2697.字典序最小回文串</a> ，难度为<strong>简单</strong>。</p><p>给你一个由 <strong>小写英文字母</strong> 组成的字符串 <code>s</code>，你可以对其执行一些操作。在一步操作中，你可以用其他小写英文字母<strong>替换</strong> <code>s</code> 中的一个字符。</p><p>请你执行 <strong>尽可能少的操作</strong> ，使 <code>s</code> 变成一个<strong>回文串</strong> 。如果执行 <strong>最少</strong>操作次数的方案不止一种，则只需选取 <strong>字典序最小</strong>的方案。</p><p>对于两个长度相同的字符串 <code>a</code> 和 <code>b</code> ，在<code>a</code> 和 <code>b</code> 出现不同的第一个位置，如果该位置上<code>a</code> 中对应字母比 <code>b</code>中对应字母在字母表中出现顺序更早，则认为 <code>a</code> 的字典序比<code>b</code> 的字典序要小。</p><p>返回最终的回文字符串。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;egcfe&quot;<br>输出：&quot;efcfe&quot;<br>解释：将 &quot;egcfe&quot; 变成回文字符串的最小操作次数为 1 ，修改 1 次得到的字典序最小回文字符串是 &quot;efcfe&quot;，只需将 &#x27;g&#x27; 改为 &#x27;f&#x27; 。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;abcd&quot;<br>输出：&quot;abba&quot;<br>解释：将 &quot;abcd&quot; 变成回文字符串的最小操作次数为 2 ，修改 2 次得到的字典序最小回文字符串是 &quot;abba&quot; 。<br></code></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;seven&quot;<br>输出：&quot;neven&quot;<br>解释：将 &quot;seven&quot; 变成回文字符串的最小操作次数为 1 ，修改 1 次得到的字典序最小回文字符串是 &quot;neven&quot; 。<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= s.length &lt;= 1000</code></li><li><code>s</code> 仅由小写英文字母组成</li></ul><h2 id="解答">解答</h2><h3 id="方法一双指针">方法一：双指针</h3><p>分别设定两个指针指向字符串的头和尾，然后遍历字符串，如果遇到不同的就替换成<code>ASCII</code> 码值更小的字符。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">makeSmallestPalindrome</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">char</span>[] arr = s.toCharArray();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, j = arr.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt;= j) &#123;<br>            <span class="hljs-keyword">if</span> (arr[i] != arr[j]) &#123;<br>                arr[i] = arr[j] = (<span class="hljs-type">char</span>) Math.min(arr[i], arr[j]);<br>            &#125;<br>            ++i;<br>            --j;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(arr);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code>是字符串的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，由于 <code>Java</code>不能直接对字符串进行修改，需要创建临时字符数组来存储。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2023/12/13/banner2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Greedy</tag>
+      
+      <tag>String</tag>
+      
+      <tag>Two Pointers</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 0961.N-Repeated Element in Size 2N Array</title>
     <link href="/2023/12/13/lc-0961/"/>
     <url>/2023/12/13/lc-0961/</url>
@@ -893,9 +926,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1140,7 +1173,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -1162,18 +1195,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/** * 浏览器搞笑标题:@Source:https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html */var OriginTitle = document.title;var titleTime;document.addEventListener('visibilitychange', function() {if (document.hidden) {$('[rel="icon"]').attr('href', "/funny.ico");document.title = '╭(°A°`)╮ 页面崩溃啦 ~';clearTimeout(titleTime);} else {$('[rel="icon"]').attr('href', "/img/newtubiao.png");document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;titleTime = setTimeout(function() {document.title = OriginTitle;}, 2000);}});]]></content>
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
   
@@ -1185,6 +1207,17 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/** * 浏览器搞笑标题:@Source:https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html */var OriginTitle = document.title;var titleTime;document.addEventListener('visibilitychange', function() {if (document.hidden) {$('[rel="icon"]').attr('href', "/funny.ico");document.title = '╭(°A°`)╮ 页面崩溃啦 ~';clearTimeout(titleTime);} else {$('[rel="icon"]').attr('href', "/img/newtubiao.png");document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;titleTime = setTimeout(function() {document.title = OriginTitle;}, 2000);}});]]></content>
     
   </entry>
   
