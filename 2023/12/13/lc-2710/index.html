@@ -18,26 +18,26 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.1374.">
+    <meta name="description" content="The solution of LeetCode problem No.2710.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 1374.Generate a String With Characters That Have Odd Counts">
-<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/13/lc-1374/index.html">
+<meta property="og:title" content="LC 2710.Remove Trailing Zeros From a String">
+<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/13/lc-2710/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.1374.">
+<meta property="og:description" content="The solution of LeetCode problem No.2710.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/13/banner5.png">
-<meta property="article:published_time" content="2023-12-13T08:30:19.000Z">
-<meta property="article:modified_time" content="2023-12-13T08:42:36.166Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/13/banner6.png">
+<meta property="article:published_time" content="2023-12-13T08:48:18.000Z">
+<meta property="article:modified_time" content="2023-12-13T08:51:23.772Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Simulation">
 <meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/13/banner5.png">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/13/banner6.png">
   
   
   
-  <title>LC 1374.Generate a String With Characters That Have Odd Counts - Abel&#39;s Blog</title>
+  <title>LC 2710.Remove Trailing Zeros From a String - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,13 +243,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/12/13/banner5.png') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2023/12/13/banner6.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 1374.Generate a String With Characters That Have Odd Counts"></span>
+            <span id="subtitle" data-typed-text="LC 2710.Remove Trailing Zeros From a String"></span>
           
         </div>
 
@@ -260,7 +260,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-13 16:30" pubdate>
+        <time datetime="2023-12-13 16:48" pubdate>
           2023年12月13日 下午
         </time>
       </span>
@@ -273,7 +273,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 292 
+          文章字数: 160 
         
       </span>
     
@@ -285,7 +285,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 3 分钟
+          阅读全文大概需要 2 分钟
         
       </span>
     
@@ -330,12 +330,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 1374.Generate a String With Characters That Have Odd Counts</h1>
+            <h1 id="seo-header">LC 2710.Remove Trailing Zeros From a String</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：9 分钟前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -345,36 +345,33 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/generate-a-string-with-characters-that-have-odd-counts/description/">1374.
-生成每种字符都是奇数个的字符串</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个整数 <code>n</code>，请你返回一个含 <em><code>n</code></em>
-个字符的字符串，其中每种字符在该字符串中都恰好出现
-<strong>奇数次</strong> <strong><em>。</em></strong></p>
-<p>返回的字符串必须只含小写英文字母。如果存在多个满足题目要求的字符串，则返回其中任意一个即可。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-trailing-zeros-from-a-string/description/">2710.
+移除字符串中的尾随零</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个用字符串表示的正整数 <code>num</code>
+，请你以字符串形式返回不含尾随零的整数 <code>num</code> 。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 4<br>输出：&quot;pppz&quot;<br>解释：&quot;pppz&quot; 是一个满足题目要求的字符串，因为 &#x27;p&#x27; 出现 3 次，且 &#x27;z&#x27; 出现 1 次。当然，还有很多其他字符串也满足题目要求，比如：&quot;ohhh&quot; 和 &quot;love&quot;。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：num = &quot;51230100&quot;<br>输出：&quot;512301&quot;<br>解释：整数 &quot;51230100&quot; 有 2 个尾随零，移除并返回整数 &quot;512301&quot; 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 2<br>输出：&quot;xy&quot;<br>解释：&quot;xy&quot; 是一个满足题目要求的字符串，因为 &#x27;x&#x27; 和 &#x27;y&#x27; 各出现 1 次。当然，还有很多其他字符串也满足题目要求，比如：&quot;ag&quot; 和 &quot;ur&quot;。<br></code></pre></td></tr></table></figure>
-<p><strong>示例 3：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 7<br>输出：&quot;holasss&quot;<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：num = &quot;123&quot;<br>输出：&quot;123&quot;<br>解释：整数 &quot;123&quot; 不含尾随零，返回整数 &quot;123&quot; 。<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= n &lt;= 500</code></li>
+<li><code>1 &lt;= num.length &lt;= 1000</code></li>
+<li><code>num</code> 仅由数字 <code>0</code> 到 <code>9</code> 组成</li>
+<li><code>num</code> 不含前导零</li>
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一模拟">方法一：模拟</h3>
-<p>题目没有规定说单个字符最大出现的次数，所以直接根据 <code>n</code>
-的奇偶性来构造相应的字符串即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">generateTheString</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>        sb.append(((n &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">1</span>) ? <span class="hljs-string">&#x27;a&#x27;</span> : <span class="hljs-string">&#x27;b&#x27;</span>);<br>        <span class="hljs-keyword">while</span>(--n &gt; <span class="hljs-number">0</span>) &#123;<br>            sb.append(<span class="hljs-string">&#x27;a&#x27;</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> sb.toString();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>按照要求找到不是尾随零的位置，返回子串即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">removeTrailingZeros</span><span class="hljs-params">(String num)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">pos</span> <span class="hljs-operator">=</span> num.length() - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (num.charAt(pos) == <span class="hljs-string">&#x27;0&#x27;</span>) &#123;<br>            --pos;<br>        &#125;<br>        <span class="hljs-keyword">return</span> num.substring(<span class="hljs-number">0</span>, pos + <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li><p><strong>时间复杂度</strong>：<span
 class="math inline">\(O(N)\)</span>，其中 <code>N</code>
-为要返回的字符串的长度。</p></li>
+为字符串的长度。</p></li>
 <li><p><strong>空间复杂度</strong>：<span
 class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2023/12/13/banner5.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2023/12/13/banner6.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -431,8 +428,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 1374.Generate a String With Characters That Have Odd Counts</div>
-      <div>https://chen-huaneng.github.io/2023/12/13/lc-1374/</div>
+      <div>LC 2710.Remove Trailing Zeros From a String</div>
+      <div>https://chen-huaneng.github.io/2023/12/13/lc-2710/</div>
     </div>
     <div class="license-meta">
       
@@ -487,18 +484,12 @@ class="math inline">\(O(1)\)</span>。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/13/lc-2710/" title="LC 2710.Remove Trailing Zeros From a String">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 2710.Remove Trailing Zeros From a String</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/13/lc-1342/" title="LC 1342.Number of Steps to Reduce a Number to Zero">
-                        <span class="hidden-mobile">LC 1342.Number of Steps to Reduce a Number to Zero</span>
+                      <a href="/2023/12/13/lc-1374/" title="LC 1374.Generate a String With Characters That Have Odd Counts">
+                        <span class="hidden-mobile">LC 1374.Generate a String With Characters That Have Odd Counts</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
