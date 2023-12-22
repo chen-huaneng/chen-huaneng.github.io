@@ -30,8 +30,8 @@
 <meta property="article:modified_time" content="2023-12-12T03:00:21.038Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Hash Table">
+<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Sorting">
 <meta property="article:tag" content="Counting">
 <meta name="twitter:card" content="summary_large_image">
@@ -82,7 +82,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.jpg","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.jpg","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -275,7 +275,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 547 
+          文章字数: 869 
         
       </span>
     
@@ -287,7 +287,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 5 分钟
+          阅读全文大概需要 8 分钟
         
       </span>
     
@@ -334,11 +334,13 @@
           <article class="post-content mx-auto">
             <h1 id="seo-header">LC 1365.How Many Numbers Are Smaller Than the Current Number</h1>
             
-              <p class="note note-info">
+              <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：1 天前
+                    本文最后更新于：2023-12-12T11:00:21+08:00
                   
+                  
+
                 
               </p>
             
@@ -458,9 +460,9 @@ class="math inline">\(O(K)\)</span>，其中 <code>K</code>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
-      
         <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
+      
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
         <a href="/tags/Sorting/" class="print-no-link">#Sorting</a>
       
@@ -732,6 +734,33 @@ class="math inline">\(O(K)\)</span>，其中 <code>K</code>
   
 
 
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
 
 
   
