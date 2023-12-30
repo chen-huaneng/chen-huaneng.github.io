@@ -18,29 +18,25 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.2441.">
+    <meta name="description" content="The solution of LeetCode problem No.1185.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 2441.Largest Positive Integer That Exists With Its Negative">
-<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/29/lc-2441/index.html">
+<meta property="og:title" content="LC 1185.Day of the Week">
+<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/30/lc-1185/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.2441.">
+<meta property="og:description" content="The solution of LeetCode problem No.1185.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/29/banner1.png">
-<meta property="article:published_time" content="2023-12-29T15:19:44.000Z">
-<meta property="article:modified_time" content="2023-12-29T15:26:52.748Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/30/banner.jpg">
+<meta property="article:published_time" content="2023-12-30T02:03:34.000Z">
+<meta property="article:modified_time" content="2023-12-30T02:35:35.981Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Hash Table">
-<meta property="article:tag" content="Simulation">
-<meta property="article:tag" content="Array">
-<meta property="article:tag" content="Sorting">
-<meta property="article:tag" content="Two Pointers">
+<meta property="article:tag" content="Math">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/29/banner1.png">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/30/banner.jpg">
   
   
   
-  <title>LC 2441.Largest Positive Integer That Exists With Its Negative - Abel&#39;s Blog</title>
+  <title>LC 1185.Day of the Week - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -246,13 +242,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/12/29/banner1.png') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2023/12/30/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 2441.Largest Positive Integer That Exists With Its Negative"></span>
+            <span id="subtitle" data-typed-text="LC 1185.Day of the Week"></span>
           
         </div>
 
@@ -263,8 +259,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-29 23:19" pubdate>
-          2023年12月29日 晚上
+        <time datetime="2023-12-30 10:03" pubdate>
+          2023年12月30日 上午
         </time>
       </span>
     
@@ -276,7 +272,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 334 
+          文章字数: 1.4k 
         
       </span>
     
@@ -288,7 +284,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 3 分钟
+          阅读全文大概需要 12 分钟
         
       </span>
     
@@ -333,12 +329,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 2441.Largest Positive Integer That Exists With Its Negative</h1>
+            <h1 id="seo-header">LC 1185.Day of the Week</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2023-12-29T23:26:52+08:00
+                    本文最后更新于：2023-12-30T10:35:35+08:00
                   
                   
 
@@ -350,38 +346,120 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/largest-positive-integer-that-exists-with-its-negative/description/">2441.
-与对应负数同时存在的最大正整数</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个 <strong>不包含</strong> 任何零的整数数组 <code>nums</code>
-，找出自身与对应的负数都在数组中存在的最大正整数 <code>k</code> 。</p>
-<p>返回正整数 <code>k</code> ，如果不存在这样的整数，返回
-<code>-1</code> 。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/day-of-the-week/description/">1185.
+一周中的第几天</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个日期，请你设计一个算法来判断它是对应一周中的哪一天。</p>
+<p>输入为三个整数：<code>day</code>、<code>month</code> 和
+<code>year</code>，分别表示日、月、年。</p>
+<p>您返回的结果必须是这几个值中的一个
+<code>&#123;"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"&#125;</code>。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [-1,2,-3,3]<br>输出：3<br>解释：3 是数组中唯一一个满足题目要求的 k 。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：day = 31, month = 8, year = 2019<br>输出：&quot;Saturday&quot;<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [-1,10,6,7,-7,1]<br>输出：7<br>解释：数组中存在 1 和 7 对应的负数，7 的值更大。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：day = 18, month = 7, year = 1999<br>输出：&quot;Sunday&quot;<br></code></pre></td></tr></table></figure>
 <p><strong>示例 3：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [-10,8,6,7,-2,-3]<br>输出：-1<br>解释：不存在满足题目要求的 k ，返回 -1 。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：day = 15, month = 8, year = 1993<br>输出：&quot;Sunday&quot;<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
-<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
-<li><code>nums[i] != 0</code></li>
+<li>给出的日期一定是在 <code>1971</code> 到 <code>2100</code>
+年之间的有效日期。</li>
 </ul>
 <h2 id="解答">解答</h2>
-<h3 id="方法一哈希表">方法一：哈希表</h3>
-<p>根据题意，将不同的数存入哈希表中，查找哈希表中是否包含其相反数，如果包含判断是否为更大的值，如果是则更新最大的返回值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findMaxK</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;Integer&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> x : nums) &#123;<br>            <span class="hljs-keyword">if</span> (hash.contains(-x)) &#123;<br>                res = Math.max(res, Math.abs(x));<br>            &#125;<br>            hash.add(x);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="方法一模拟">方法一：模拟</h3>
+<p><a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/day-of-the-week/solutions/1189149/gong-shui-san-xie-jian-dan-ri-qi-tong-ji-czt6/"><span
+class="citation"
+data-cites="Source:题解来源">@Source:题解来源</span></a></p>
+<p>题目保证日期是在 1971 到 2100 之间，我们可以计算给定日期距离 1970
+的最后一天（星期四）间隔了多少天，从而得知给定日期是周几。</p>
+<p>具体的，可以先通过循环处理计算年份在 [1971,year−1]
+时间段，经过了多少天（注意平年为 365，闰年为 366）；然后再处理当前年
+year 的月份在 [1,month−1] 时间段
+，经过了多少天（注意当天年是否为闰年，特殊处理 2 月份），最后计算当前月
+month 经过了多少天，即再增加 day 天。</p>
+<p>得到距离 1970
+的最后一天（星期四）的天数后进行取模，即可映射回答案。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">static</span> String[] ss = <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>[]&#123;<span class="hljs-string">&quot;Sunday&quot;</span>, <span class="hljs-string">&quot;Monday&quot;</span>, <span class="hljs-string">&quot;Tuesday&quot;</span>, <span class="hljs-string">&quot;Wednesday&quot;</span>, <span class="hljs-string">&quot;Thursday&quot;</span>, <span class="hljs-string">&quot;Friday&quot;</span>, <span class="hljs-string">&quot;Saturday&quot;</span>&#125;;<br>    <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>[] nums = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;<span class="hljs-number">31</span>, <span class="hljs-number">28</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>&#125;;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">dayOfTheWeek</span><span class="hljs-params">(<span class="hljs-type">int</span> day, <span class="hljs-type">int</span> month, <span class="hljs-type">int</span> year)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">4</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1971</span>; i &lt; year; i++) &#123;<br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">isLeap</span> <span class="hljs-operator">=</span> (i % <span class="hljs-number">4</span> == <span class="hljs-number">0</span> &amp;&amp; i % <span class="hljs-number">100</span> != <span class="hljs-number">0</span>) || i % <span class="hljs-number">400</span> == <span class="hljs-number">0</span>;<br>            ans += isLeap ? <span class="hljs-number">366</span> : <span class="hljs-number">365</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; month; i++) &#123;<br>            ans += nums[i - <span class="hljs-number">1</span>];<br>            <span class="hljs-keyword">if</span> (i == <span class="hljs-number">2</span> &amp;&amp; ((year % <span class="hljs-number">4</span> == <span class="hljs-number">0</span> &amp;&amp; year % <span class="hljs-number">100</span> != <span class="hljs-number">0</span>) || year % <span class="hljs-number">400</span> == <span class="hljs-number">0</span>)) ans++;<br>        &#125;<br>        ans += day;<br>        <span class="hljs-keyword">return</span> ss[ans % <span class="hljs-number">7</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度。</p></li>
+class="math inline">\(O(C)\)</span>，令当前时间
+<code>2100-12-xx</code>，此时达到数据范围对应的计算量上界，设为
+<code>C</code> 。整体复杂度为 <span
+class="math inline">\(O(C)\)</span>。</p></li>
 <li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度。</p></li>
+class="math inline">\(O(1)\)</span></p></li>
+</ul>
+<h3 id="方法二蔡勒公式">方法二：蔡勒公式</h3>
+<p>参考<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/蔡勒公式">蔡勒公式 -
+维基百科，自由的百科全书 (wikipedia.org)</a>。 <span
+class="math display">\[
+D = \lfloor \frac{c}{4} \rfloor - 2c + y + \lfloor \frac{y}{4} \rfloor +
+\lfloor \frac{13(m + 1)}{5}\rfloor + d - 1
+\]</span></p>
+<p><span class="math display">\[
+W = D \mod 7
+\]</span></p>
+<p>其中：</p>
+<ul>
+<li><code>c</code> 是世纪数减一，也就是年份的前两位</li>
+<li><code>y</code> 是年份的后两位</li>
+<li><code>m</code> 是月份。<code>m</code> 的取值范围为 [3,
+14]，因为某年的1、2月份要看作上一年的13、14月</li>
+<li><code>d</code> 是该月的第几天</li>
+<li>除法是向下取整的除法</li>
+<li>以周日为一周的第一天，也就是数组的下标为 <code>0</code></li>
+</ul>
+<p>由于蔡勒公式最后计算 D 可能为负数，需要处理一下。方法很多：这里由 D
+计算式发现减的内容最大为 199 所以可以加上一个大于 199 且是 7
+的倍数的数。我随便取一个 210 加上保证结果为正。</p>
+<p>以下补充内容摘自<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%94%A1%E5%8B%92%E5%85%AC%E5%BC%8F/10491767?fr=aladdin">百度百科</a>。</p>
+<blockquote>
+<p>蔡勒公式只适合于1582年（中国明朝万历十年）10月15日之后的情形。罗马教皇格里高利十三世在1582年组织了一批天文学家，根据哥白尼日心说计算出来的数据，对儒略历作了修改。将1582年10月5日到14日之间的10天宣布撤销，继10月4日之后为10月15日。
+后来人们将这一新的历法称为“格里高利历”，也就是今天世界上所通用的历法，简称格里历或公历。</p>
+</blockquote>
+<p>因此：由于历史原因以上公式仅适用于1582年10月15日及以后的情形(本题的数据范围满足此公式)，如果要计算
+1582.10.4 及之前的需要修改 D 的计算式，把最后的 d - 1 改成 d +
+2即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">static</span> String[] weeks = &#123; <span class="hljs-string">&quot;Sunday&quot;</span>, <span class="hljs-string">&quot;Monday&quot;</span>, <span class="hljs-string">&quot;Tuesday&quot;</span>, <span class="hljs-string">&quot;Wednesday&quot;</span>, <span class="hljs-string">&quot;Thursday&quot;</span>, <span class="hljs-string">&quot;Friday&quot;</span>, <span class="hljs-string">&quot;Saturday&quot;</span>&#125;;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">dayOfTheWeek</span><span class="hljs-params">(<span class="hljs-type">int</span> day, <span class="hljs-type">int</span> month, <span class="hljs-type">int</span> year)</span> &#123;<br>        <span class="hljs-keyword">if</span> (month &lt; <span class="hljs-number">3</span>) &#123;<br>            month += <span class="hljs-number">12</span>;<br>            --year;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">C</span> <span class="hljs-operator">=</span> year / <span class="hljs-number">100</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">Y</span> <span class="hljs-operator">=</span> year % <span class="hljs-number">100</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">idx</span> <span class="hljs-operator">=</span> C / <span class="hljs-number">4</span> - <span class="hljs-number">2</span> * C + Y + Y / <span class="hljs-number">4</span> + (<span class="hljs-number">13</span> * (month + <span class="hljs-number">1</span>)) / <span class="hljs-number">5</span> + day - <span class="hljs-number">1</span> + <span class="hljs-number">210</span>;<br>        <span class="hljs-keyword">return</span> weeks[idx % <span class="hljs-number">7</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>时间复杂度</strong>：<span
+class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span
+class="math inline">\(O(1)\)</span>。</p></li>
+</ul>
+<h3 id="方法三基姆拉尔森计算公式">方法三：基姆拉尔森计算公式</h3>
+<p>这个计算公式比蔡勒公式更简单一些，不用考虑世纪数，并且不会出现负数。
+根据<a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Zeller&#39;s_congruence">维基百科</a>中的说明，该公式实际上是对蔡勒公式在计算机中计算的一种常见优化，中文网站上会把这个优化公式称为
+基姆拉尔森计算公式。 <span class="math display">\[
+D = y + \lfloor\frac{y}{4} \rfloor - \lfloor \frac{y}{100} \rfloor +
+\lfloor \frac{y}{400} \rfloor + 2m + \lfloor \frac{3(m + 1)}{5} \rfloor
++ d + 1
+\]</span></p>
+<p><span class="math display">\[
+W = D \mod 7
+\]</span></p>
+<p>其中：</p>
+<ul>
+<li><code>c</code> 是世纪数减一，也就是年份的前两位</li>
+<li><code>y</code> 是年份的后两位</li>
+<li><code>m</code> 是月份。<code>m</code> 的取值范围为 [3,
+14]，因为某年的1、2月份要看作上一年的13、14月</li>
+<li><code>d</code> 是该月的第几天</li>
+<li>除法是向下取整的除法</li>
+<li>以周日为一周的第一天，也就是数组的下标为 <code>0</code></li>
+</ul>
+<p>同样由于历史原因以上公式仅适用于1582年10月15日及以后的情形</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">static</span> String[] weeks = &#123; <span class="hljs-string">&quot;Sunday&quot;</span>, <span class="hljs-string">&quot;Monday&quot;</span>, <span class="hljs-string">&quot;Tuesday&quot;</span>, <span class="hljs-string">&quot;Wednesday&quot;</span>, <span class="hljs-string">&quot;Thursday&quot;</span>, <span class="hljs-string">&quot;Friday&quot;</span>, <span class="hljs-string">&quot;Saturday&quot;</span>&#125;;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">dayOfTheWeek</span><span class="hljs-params">(<span class="hljs-type">int</span> day, <span class="hljs-type">int</span> month, <span class="hljs-type">int</span> year)</span> &#123;<br>        <span class="hljs-keyword">if</span> (month &lt; <span class="hljs-number">3</span>) &#123;<br>            month += <span class="hljs-number">12</span>;<br>            --year;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">idx</span> <span class="hljs-operator">=</span> year + year / <span class="hljs-number">4</span> - year / <span class="hljs-number">100</span> + year / <span class="hljs-number">400</span> + <span class="hljs-number">2</span> * month + (<span class="hljs-number">3</span> * (month + <span class="hljs-number">1</span>)) / <span class="hljs-number">5</span> + day + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">return</span> weeks[idx % <span class="hljs-number">7</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>时间复杂度</strong>：<span
+class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span
+class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2023/12/29/banner1.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2023/12/30/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -424,15 +502,7 @@ class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
-      
-        <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
-      
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
-      
-        <a href="/tags/Sorting/" class="print-no-link">#Sorting</a>
-      
-        <a href="/tags/Two-Pointers/" class="print-no-link">#Two Pointers</a>
+        <a href="/tags/Math/" class="print-no-link">#Math</a>
       
     </div>
   
@@ -444,8 +514,8 @@ class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 2441.Largest Positive Integer That Exists With Its Negative</div>
-      <div>https://chen-huaneng.github.io/2023/12/29/lc-2441/</div>
+      <div>LC 1185.Day of the Week</div>
+      <div>https://chen-huaneng.github.io/2023/12/30/lc-1185/</div>
     </div>
     <div class="license-meta">
       
@@ -457,13 +527,13 @@ class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月29日</div>
+          <div>2023年12月30日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年12月29日</div>
+          <div>2023年12月30日</div>
         </div>
       
       
@@ -500,18 +570,12 @@ class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/30/lc-1185/" title="LC 1185.Day of the Week">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 1185.Day of the Week</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/29/lc-1304/" title="LC 1304.Find N Unique Integers Sum up to Zero">
-                        <span class="hidden-mobile">LC 1304.Find N Unique Integers Sum up to Zero</span>
+                      <a href="/2023/12/29/lc-2441/" title="LC 2441.Largest Positive Integer That Exists With Its Negative">
+                        <span class="hidden-mobile">LC 2441.Largest Positive Integer That Exists With Its Negative</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
