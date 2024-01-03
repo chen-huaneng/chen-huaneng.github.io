@@ -18,26 +18,24 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.0961.">
+    <meta name="description" content="按照时间顺序记录我看过的一些动漫，顺便记录一些感悟。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 0961.N-Repeated Element in Size 2N Array">
-<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/13/lc-0961/index.html">
+<meta property="og:title" content="Anime I Watched">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/02/Anime-I-Watched/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.0961.">
+<meta property="og:description" content="按照时间顺序记录我看过的一些动漫，顺便记录一些感悟。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/13/banner.png">
-<meta property="article:published_time" content="2023-12-13T07:34:16.000Z">
-<meta property="article:modified_time" content="2023-12-13T07:45:34.338Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/2/banner1.jpeg">
+<meta property="article:published_time" content="2024-01-02T15:44:30.000Z">
+<meta property="article:modified_time" content="2024-01-03T02:10:07.694Z">
 <meta property="article:author" content="Abel">
-<meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Hash Table">
-<meta property="article:tag" content="Array">
+<meta property="article:tag" content="Anime">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/13/banner.png">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/2/banner1.jpeg">
   
   
   
-  <title>LC 0961.N-Repeated Element in Size 2N Array - Abel&#39;s Blog</title>
+  <title>Anime I Watched - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,13 +241,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/12/13/banner.png') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/1/2/banner1.jpeg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 0961.N-Repeated Element in Size 2N Array"></span>
+            <span id="subtitle" data-typed-text="Anime I Watched"></span>
           
         </div>
 
@@ -260,8 +258,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-13 15:34" pubdate>
-          2023年12月13日 下午
+        <time datetime="2024-01-02 23:44" pubdate>
+          2024年1月2日 晚上
         </time>
       </span>
     
@@ -273,7 +271,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 595 
+          文章字数: 365 
         
       </span>
     
@@ -285,7 +283,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 5 分钟
+          阅读全文大概需要 4 分钟
         
       </span>
     
@@ -330,12 +328,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 0961.N-Repeated Element in Size 2N Array</h1>
+            <h1 id="seo-header">Anime I Watched</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2023-12-13T15:45:34+08:00
+                    本文最后更新于：2024-01-03T10:10:07+08:00
                   
                   
 
@@ -345,76 +343,63 @@
             
               <div class="markdown-body">
                 
-                <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-repeated-element-in-size-2n-array/description/">961.
-在长度 2N 的数组中找出重复 N 次的元素</a>
-，难度为<strong>简单</strong>。</p>
-<p>给你一个整数数组 <code>nums</code> ，该数组具有以下属性：</p>
-<ul>
-<li><code>nums.length == 2 * n</code>.</li>
-<li><code>nums</code> 包含 <code>n + 1</code> 个 <strong>不同的</strong>
-元素</li>
-<li><code>nums</code> 中恰有一个元素重复 <code>n</code> 次</li>
-</ul>
-<p>找出并返回重复了 <code>n</code> 次的那个元素。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,2,3,3]<br>输出：3<br></code></pre></td></tr></table></figure>
-<p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [2,1,2,5,3,2]<br>输出：2<br></code></pre></td></tr></table></figure>
-<p><strong>示例 3：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [5,1,5,2,5,3,5,4]<br>输出：5<br></code></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>2 &lt;= n &lt;= 5000</code></li>
-<li><code>nums.length == 2 * n</code></li>
-<li><code>0 &lt;= nums[i] &lt;= 104</code></li>
-<li><code>nums</code> 由 <code>n + 1</code> 个 <strong>不同的</strong>
-元素组成，且其中一个元素恰好重复 <code>n</code> 次</li>
-</ul>
-<h2 id="解答">解答</h2>
-<h3 id="方法一哈希表">方法一：哈希表</h3>
-<p>最简单的方法就是建立一个哈希表，每次遇到没有加入的计数，如果遇到重复的就返回该字母。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">repeatedNTimes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;Integer, Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length / <span class="hljs-number">2</span> + <span class="hljs-number">2</span>; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (hash.containsKey(nums[i])) &#123;<br>                <span class="hljs-keyword">return</span> nums[i];<br>            &#125;<br>            hash.put(nums[i], <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度，最坏情况下要遍历 <code>N + 2</code>
-个元素才能找到。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度，最坏情况下要建立的哈希键值对为
-<code>N + 1</code>。</p></li>
-</ul>
-<h3 id="方法二数学">方法二：数学</h3>
-<p><a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-repeated-element-in-size-2n-array/solutions/1506096/zai-chang-du-2n-de-shu-zu-zhong-zhao-chu-w88a/"><span
-class="citation"
-data-cites="Source:题解来源">@Source:题解来源</span></a></p>
-<p>我们可以考虑重复的元素 <code>x</code> 在数组 <code>nums</code>
-中出现的位置。</p>
-<p>如果相邻的 <code>x</code> 之间至少都隔了 <code>2</code>
-个位置，那么数组的总长度至少为： <span class="math display">\[
-n + 2 (n - 1) = 3n - 2
-\]</span></p>
-<p>当 <code>n &gt; 2</code>
-时，<code>3n − 2 &gt; 2n</code>，不存在满足要求的数组。因此一定存在两个相邻的
-<code>x</code>，它们的位置是连续的，或者只隔了 <code>1</code>
-个位置。</p>
-<p>当 <code>n = 2</code> 时，数组的长度最多为
-<code>2n = 4</code>，因此最多只能隔 <code>2</code> 个位置。</p>
-<p>这样一来，我们只需要遍历所有间隔 <code>2</code>
-个位置及以内的下标对，判断对应的元素是否相等即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">repeatedNTimes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> nums[i];<br>            <span class="hljs-keyword">if</span> ((i &gt;= <span class="hljs-number">1</span> &amp;&amp; nums[i - <span class="hljs-number">1</span>] == t) ||<br>            (i &gt;= <span class="hljs-number">2</span> &amp;&amp; nums[i - <span class="hljs-number">2</span>] == t) || <br>            (i &gt;= <span class="hljs-number">3</span> &amp;&amp; nums[i - <span class="hljs-number">3</span>] == t)) &#123;<br>                <span class="hljs-keyword">return</span> t;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，最多对数组进行三次遍历（除了
-<code>n = 2</code>之外，最多遍历两次）。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
-</ul>
-<h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2023/12/13/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+                <h2
+id="反叛的鲁路修-code-geass-lelouch-of-the-rebellion-コードギアス-反逆のルルーシュ">反叛的鲁路修
+<em>Code Geass Lelouch of the Rebellion</em> コードギアス
+反逆のルルーシュ</h2>
+<h3 id="反叛的鲁路修2006">反叛的鲁路修(2006)</h3>
+<h3 id="反叛的鲁路修r22008">反叛的鲁路修R2(2008)</h3>
+<h3 id="复活的鲁路修2019">复活的鲁路修(2019)</h3>
+<h2 id="赛博朋克边缘行者-cyberpunk-edgerunners-2022">赛博朋克：边缘行者
+<em>Cyberpunk: Edgerunners</em> (2022)</h2>
+<h2
+id="紫罗兰永恒花园-violet-evergarden-ヴァイオレットエヴァーガーデン">紫罗兰永恒花园
+<em>Violet Evergarden</em> ヴァイオレット・エヴァーガーデン</h2>
+<h3 id="紫罗兰永恒花园-2018">紫罗兰永恒花园 (2018)</h3>
+<h3
+id="紫罗兰永恒花园外传永远与自动手记人偶-ヴァイオレットエヴァーガーデン-外伝---永遠と自動手記人形-2019">紫罗兰永恒花园外传：永远与自动手记人偶
+ヴァイオレット・エヴァーガーデン 外伝 - 永遠と自動手記人形 (2019)</h3>
+<h3
+id="紫罗兰永恒花园-extra-episode-ヴァイオレットエヴァーガーデン-extra-episode-2018">紫罗兰永恒花园
+Extra Episode ヴァイオレット・エヴァーガーデン Extra Episode (2018)</h3>
+<h3
+id="紫罗兰永恒花园-剧场版-劇場版-ヴァイオレットエヴァーガーデン-2020">紫罗兰永恒花园
+剧场版 劇場版 ヴァイオレット・エヴァーガーデン (2020)</h3>
+<h2
+id="辉夜大小姐想让我告白天才们的恋爱头脑战-kaguya-sama-love-is-war-かぐや様は告らせたい天才たちの恋愛頭脳戦">辉夜大小姐想让我告白：天才们的恋爱头脑战
+<em>Kaguya-sama: Love Is War</em>
+かぐや様は告らせたい～天才たちの恋愛頭脳戦～</h2>
+<h3
+id="辉夜大小姐想让我告白天才们的恋爱头脑战-第一季-かぐや様は告らせたい天才たちの恋愛頭脳戦-2019">辉夜大小姐想让我告白：天才们的恋爱头脑战
+第一季 かぐや様は告らせたい～天才たちの恋愛頭脳戦～ (2019)</h3>
+<h3
+id="辉夜大小姐想让我告白天才们的恋爱头脑战-第二季-かぐや様は告らせたい天才たちの恋愛頭脳戦-2020">辉夜大小姐想让我告白：天才们的恋爱头脑战
+第二季 かぐや様は告らせたい？～天才たちの恋愛頭脳戦～ (2020)</h3>
+<h3
+id="辉夜大小姐想让我告白天才们的恋爱头脑战-ova-かぐや様は告らせたい天才たちの恋愛頭脳戦-ova-2021">辉夜大小姐想让我告白：天才们的恋爱头脑战
+OVA かぐや様は告らせたい？～天才たちの恋愛頭脳戦～ OVA (2021)</h3>
+<h3
+id="辉夜大小姐想让我告白究极浪漫-かぐや様は告らせたい-ウルトラロマンティック--2022">辉夜大小姐想让我告白：究极浪漫
+かぐや様は告らせたい-ウルトラロマンティック- (2022)</h3>
+<h3
+id="辉夜大小姐想让我告白初吻不会结束-かぐや様は告らせたい-ファーストキッスは終わらない--2022">辉夜大小姐想让我告白：初吻不会结束
+かぐや様は告らせたい-ファーストキッスは終わらない- (2022)</h3>
+<h2 id="我推的孩子oshi-no-ko-推しの子2023">【我推的孩子】<em>Oshi no
+Ko</em> 【推しの子】(2023)</h2>
+<h2 id="间谍过家家-spyfamily-スパイファミリー">间谍过家家
+<em>SPY×FAMILY</em> スパイファミリー</h2>
+<h3 id="间谍过家家-第一季-spyfamily-2022">间谍过家家 第一季 SPY×FAMILY
+(2022)</h3>
+<h3 id="间谍过家家-第一季-part.2-spyfamily-第2クール-2022">间谍过家家
+第一季 Part.2 SPY×FAMILY 第2クール (2022)</h3>
+<h3 id="间谍过家家-第二季-spyfamily-season-2-2023">间谍过家家 第二季
+SPY×FAMILY Season 2 (2023)</h3>
+<h2 id="暗杀教室-assassination-classroom-暗殺教室">暗杀教室
+<em>Assassination Classroom</em> 暗殺教室</h2>
+<h3 id="暗杀教室-第一期-assassination-classroom-2015">暗杀教室 第一期
+<em>Assassination Classroom</em> (2015)</h3>
+<h3 id="暗杀教室-第二期-assassination-classroom-2016">暗杀教室 第二期
+<em>Assassination Classroom</em> (2016)</h3>
 
                 
               </div>
@@ -433,15 +418,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
     
       <span class="category-chain">
         
-  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
+  <a href="/categories/Anime/" class="category-chain-item">Anime</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/LeetCode/Easy/" class="category-chain-item">Easy</a>
-  
-  
-
   
 
       </span>
@@ -455,11 +433,7 @@ class="math inline">\(O(1)\)</span>。</p></li>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
-      
-        <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
-      
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
+        <a href="/tags/Anime/" class="print-no-link">#Anime</a>
       
     </div>
   
@@ -471,8 +445,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 0961.N-Repeated Element in Size 2N Array</div>
-      <div>https://chen-huaneng.github.io/2023/12/13/lc-0961/</div>
+      <div>Anime I Watched</div>
+      <div>https://chen-huaneng.github.io/2024/01/02/Anime-I-Watched/</div>
     </div>
     <div class="license-meta">
       
@@ -484,13 +458,13 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月13日</div>
+          <div>2024年1月2日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年12月13日</div>
+          <div>2024年1月3日</div>
         </div>
       
       
@@ -527,9 +501,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/13/lc-2697/" title="LC 2697.Lexicographically Smallest Palindrome">
+                      <a href="/2024/01/03/lc-2215/" title="LC 2215.Find the Difference of Two Arrays">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 2697.Lexicographically Smallest Palindrome</span>
+                        <span class="hidden-mobile">LC 2215.Find the Difference of Two Arrays</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -537,8 +511,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/12/lc-1512/" title="LC 1512.Number of Good Pairs">
-                        <span class="hidden-mobile">LC 1512.Number of Good Pairs</span>
+                      <a href="/2024/01/02/lc-1704/" title="LC 1704.Determine if String Halves Are Alike">
+                        <span class="hidden-mobile">LC 1704.Determine if String Halves Are Alike</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -626,12 +600,6 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -879,49 +847,6 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 

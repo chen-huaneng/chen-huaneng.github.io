@@ -4,6 +4,62 @@
   
   
   <entry>
+    <title>LC 2215.Find the Difference of Two Arrays</title>
+    <link href="/2024/01/03/lc-2215/"/>
+    <url>/2024/01/03/lc-2215/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/find-the-difference-of-two-arrays/description/">2215.找出两数组的不同</a> ，难度为<strong>简单</strong>。</p><p>给你两个下标从 <code>0</code> 开始的整数数组 <code>nums1</code> 和<code>nums2</code> ，请你返回一个长度为 <code>2</code> 的列表<code>answer</code> ，其中：</p><ul><li><code>answer[0]</code> 是 <code>nums1</code> 中所有<strong>不</strong> 存在于 <code>nums2</code> 中的 <strong>不同</strong>整数组成的列表。</li><li><code>answer[1]</code> 是 <code>nums2</code> 中所有<strong>不</strong> 存在于 <code>nums1</code> 中的 <strong>不同</strong>整数组成的列表。</li></ul><p><strong>注意：</strong>列表中的整数可以按 <strong>任意</strong>顺序返回。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums1 = [1,2,3], nums2 = [2,4,6]<br>输出：[[1,3],[4,6]]<br>解释：<br>对于 nums1 ，nums1[1] = 2 出现在 nums2 中下标 0 处，然而 nums1[0] = 1 和 nums1[2] = 3 没有出现在 nums2 中。因此，answer[0] = [1,3]。<br>对于 nums2 ，nums2[0] = 2 出现在 nums1 中下标 1 处，然而 nums2[1] = 4 和 nums2[2] = 6 没有出现在 nums2 中。因此，answer[1] = [4,6]。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums1 = [1,2,3,3], nums2 = [1,1,2,2]<br>输出：[[3],[]]<br>解释：<br>对于 nums1 ，nums1[2] 和 nums1[3] 没有出现在 nums2 中。由于 nums1[2] == nums1[3] ，二者的值只需要在 answer[0] 中出现一次，故 answer[0] = [3]。<br>nums2 中的每个整数都在 nums1 中出现，因此，answer[1] = [] 。 <br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= nums1.length, nums2.length &lt;= 1000</code></li><li><code>-1000 &lt;= nums1[i], nums2[i] &lt;= 1000</code></li></ul><h2 id="解答">解答</h2><h3 id="方法一哈希表">方法一：哈希表</h3><p>根据题目的意思，先找出两个数组的交集，然后再分别遍历两个数组，找出与交集不同的数即可。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="hljs-title function_">findDifference</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums1.length; ++i) &#123;<br>            tmp.add(nums1[i]);<br>        &#125;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums2.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (tmp.contains(nums2[i])) &#123;<br>                hash.add(nums2[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">set1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums1.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (!hash.contains(nums1[i])) &#123;<br>                set1.add(nums1[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">set2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums2.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (!hash.contains(nums2[i])) &#123;<br>                set2.add(nums2[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> Arrays.asList(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;(set1), <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;(set2));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N_1 +N_2)\)</span>，其中 <span class="math inline">\(N_1\)</span> 和 <spanclass="math inline">\(N_2\)</span> 分别为数组 <code>nums1</code> 和<code>nums2</code> 的长度。</p></li><li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N_1 +N_2)\)</span>，对应两个数组的哈希表的空间开销。</p></li></ul><h3 id="方法二数组模拟哈希表">方法二：数组模拟哈希表</h3><p>用数组模拟哈希表，在遍历第二个数组的过程中就可以添加不在交集中的数，其基本思想和方法一一致。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="hljs-title function_">findDifference</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2)</span> &#123;<br>        List&lt;List&lt;Integer&gt;&gt; resList = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        List&lt;Integer&gt; res1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        List&lt;Integer&gt; res2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> table[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">2001</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : nums1)&#123;<br>            table[n + <span class="hljs-number">1000</span>] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : nums2)&#123;<br>            <span class="hljs-keyword">if</span> (table[n + <span class="hljs-number">1000</span>] == <span class="hljs-number">0</span>) &#123;<br>                res2.add(n);<br>            &#125;<br>            table[n + <span class="hljs-number">1000</span>] = <span class="hljs-number">2</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : nums1) &#123;<br>            <span class="hljs-keyword">if</span>(table[n + <span class="hljs-number">1000</span>] == <span class="hljs-number">1</span>) &#123;<br>                res1.add(n);<br>            &#125;<br>            table[n + <span class="hljs-number">1000</span>] = <span class="hljs-number">2</span>;<br>        &#125;<br>        resList.add(res1);<br>        resList.add(res2);<br>        <span class="hljs-keyword">return</span> resList;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N_1 +N_2)\)</span>，其中 <span class="math inline">\(N_1\)</span> 和 <spanclass="math inline">\(N_2\)</span> 分别为数组 <code>nums1</code> 和<code>nums2</code> 的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，<code>N</code>为两个数组的值域大小。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2024/1/3/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Hash Table</tag>
+      
+      <tag>Array</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Anime I Watched</title>
+    <link href="/2024/01/02/Anime-I-Watched/"/>
+    <url>/2024/01/02/Anime-I-Watched/</url>
+    
+    <content type="html"><![CDATA[<h2id="反叛的鲁路修-code-geass-lelouch-of-the-rebellion-コードギアス-反逆のルルーシュ">反叛的鲁路修<em>Code Geass Lelouch of the Rebellion</em> コードギアス反逆のルルーシュ</h2><h3 id="反叛的鲁路修2006">反叛的鲁路修(2006)</h3><h3 id="反叛的鲁路修r22008">反叛的鲁路修R2(2008)</h3><h3 id="复活的鲁路修2019">复活的鲁路修(2019)</h3><h2 id="赛博朋克边缘行者-cyberpunk-edgerunners-2022">赛博朋克：边缘行者<em>Cyberpunk: Edgerunners</em> (2022)</h2><h2id="紫罗兰永恒花园-violet-evergarden-ヴァイオレットエヴァーガーデン">紫罗兰永恒花园<em>Violet Evergarden</em> ヴァイオレット・エヴァーガーデン</h2><h3 id="紫罗兰永恒花园-2018">紫罗兰永恒花园 (2018)</h3><h3id="紫罗兰永恒花园外传永远与自动手记人偶-ヴァイオレットエヴァーガーデン-外伝---永遠と自動手記人形-2019">紫罗兰永恒花园外传：永远与自动手记人偶ヴァイオレット・エヴァーガーデン 外伝 - 永遠と自動手記人形 (2019)</h3><h3id="紫罗兰永恒花园-extra-episode-ヴァイオレットエヴァーガーデン-extra-episode-2018">紫罗兰永恒花园Extra Episode ヴァイオレット・エヴァーガーデン Extra Episode (2018)</h3><h3id="紫罗兰永恒花园-剧场版-劇場版-ヴァイオレットエヴァーガーデン-2020">紫罗兰永恒花园剧场版 劇場版 ヴァイオレット・エヴァーガーデン (2020)</h3><h2id="辉夜大小姐想让我告白天才们的恋爱头脑战-kaguya-sama-love-is-war-かぐや様は告らせたい天才たちの恋愛頭脳戦">辉夜大小姐想让我告白：天才们的恋爱头脑战<em>Kaguya-sama: Love Is War</em>かぐや様は告らせたい～天才たちの恋愛頭脳戦～</h2><h3id="辉夜大小姐想让我告白天才们的恋爱头脑战-第一季-かぐや様は告らせたい天才たちの恋愛頭脳戦-2019">辉夜大小姐想让我告白：天才们的恋爱头脑战第一季 かぐや様は告らせたい～天才たちの恋愛頭脳戦～ (2019)</h3><h3id="辉夜大小姐想让我告白天才们的恋爱头脑战-第二季-かぐや様は告らせたい天才たちの恋愛頭脳戦-2020">辉夜大小姐想让我告白：天才们的恋爱头脑战第二季 かぐや様は告らせたい？～天才たちの恋愛頭脳戦～ (2020)</h3><h3id="辉夜大小姐想让我告白天才们的恋爱头脑战-ova-かぐや様は告らせたい天才たちの恋愛頭脳戦-ova-2021">辉夜大小姐想让我告白：天才们的恋爱头脑战OVA かぐや様は告らせたい？～天才たちの恋愛頭脳戦～ OVA (2021)</h3><h3id="辉夜大小姐想让我告白究极浪漫-かぐや様は告らせたい-ウルトラロマンティック--2022">辉夜大小姐想让我告白：究极浪漫かぐや様は告らせたい-ウルトラロマンティック- (2022)</h3><h3id="辉夜大小姐想让我告白初吻不会结束-かぐや様は告らせたい-ファーストキッスは終わらない--2022">辉夜大小姐想让我告白：初吻不会结束かぐや様は告らせたい-ファーストキッスは終わらない- (2022)</h3><h2 id="我推的孩子oshi-no-ko-推しの子2023">【我推的孩子】<em>Oshi noKo</em> 【推しの子】(2023)</h2><h2 id="间谍过家家-spyfamily-スパイファミリー">间谍过家家<em>SPY×FAMILY</em> スパイファミリー</h2><h3 id="间谍过家家-第一季-spyfamily-2022">间谍过家家 第一季 SPY×FAMILY(2022)</h3><h3 id="间谍过家家-第一季-part.2-spyfamily-第2クール-2022">间谍过家家第一季 Part.2 SPY×FAMILY 第2クール (2022)</h3><h3 id="间谍过家家-第二季-spyfamily-season-2-2023">间谍过家家 第二季SPY×FAMILY Season 2 (2023)</h3><h2 id="暗杀教室-assassination-classroom-暗殺教室">暗杀教室<em>Assassination Classroom</em> 暗殺教室</h2><h3 id="暗杀教室-第一期-assassination-classroom-2015">暗杀教室 第一期<em>Assassination Classroom</em> (2015)</h3><h3 id="暗杀教室-第二期-assassination-classroom-2016">暗杀教室 第二期<em>Assassination Classroom</em> (2016)</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>Anime</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Anime</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 1704.Determine if String Halves Are Alike</title>
     <link href="/2024/01/02/lc-1704/"/>
     <url>/2024/01/02/lc-1704/</url>
@@ -24,9 +80,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
       <tag>Counting</tag>
       
@@ -146,13 +202,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
+      <tag>Hash Table</tag>
       
       <tag>Simulation</tag>
       
-      <tag>Sorting</tag>
+      <tag>Array</tag>
       
-      <tag>Hash Table</tag>
+      <tag>Sorting</tag>
       
       <tag>Two Pointers</tag>
       
@@ -183,9 +239,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Math</tag>
       
@@ -216,11 +272,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -249,9 +305,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -280,9 +336,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
       <tag>Two Pointers</tag>
       
@@ -313,9 +369,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -344,11 +400,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -377,9 +433,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -408,9 +464,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -472,9 +528,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -536,9 +592,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -567,9 +623,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>Array</tag>
       
       <tag>Math</tag>
       
@@ -602,9 +658,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -633,9 +689,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>String</tag>
       
       <tag>Counting</tag>
       
@@ -763,11 +819,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Hash Table</tag>
+      
       <tag>Array</tag>
       
       <tag>Sorting</tag>
-      
-      <tag>Hash Table</tag>
       
       <tag>Counting</tag>
       
@@ -798,9 +854,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -829,11 +885,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Hash Table</tag>
+      
       <tag>Array</tag>
       
       <tag>Sorting</tag>
-      
-      <tag>Hash Table</tag>
       
     </tags>
     
@@ -893,9 +949,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Math</tag>
       
@@ -1217,9 +1273,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1281,9 +1337,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1312,9 +1368,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1374,9 +1430,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1436,11 +1492,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -1469,13 +1525,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
+      <tag>Hash Table</tag>
       
       <tag>Simulation</tag>
       
-      <tag>Sorting</tag>
+      <tag>Array</tag>
       
-      <tag>Hash Table</tag>
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1504,9 +1560,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -1535,11 +1591,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
+      <tag>Hash Table</tag>
       
       <tag>Simulation</tag>
       
-      <tag>Hash Table</tag>
+      <tag>Array</tag>
       
     </tags>
     
@@ -1648,11 +1704,44 @@
   
   
   <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>about</title>
     <link href="/"/>
     <url>/</url>
     
     <content type="html"><![CDATA[<h1 id="about">About?!</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="who-am-i">Who am I?</h2><p>目前是一名普通的大三学生 ，正在自学编程中，目前正在学习<code>Java</code>和算法，以及一些基本的计算机科学知识。由于我并非科班出身，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code>极大地提高了我的写作效率（<del>改变不了我还是经常写Bug的事实</del>）；<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。甚至我觉得根本不需要<code>Word</code> 这种臃肿的东西了（之前饱受 <code>Word</code>排版摧残的我），当然平时写作可以用 <code>Markdown</code>，有更高排版要求的时候我还是会使用 <code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、陈奕迅、Lilas Ikuta（幾田 りら／いくたりら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听（也许是没有特别的偏好吧）。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>之前也有一段持续读书的时光，喜欢读的书也很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><p>为什么近来读书少了？主要是事情多了起来，不得不暂时中断了读书的计划（<del>才不是懒</del>），如果有人想看我写书评也可以给我发邮件，让我重启读书计划，激励我继续读书、创作。</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h3 id="why-i-write-blogs">Why I write blogs?</h3><p>关于我为什么写博客这件事，其实还是有挺多原因的：</p><ul><li>一是，我一直想搭建一个个人的博客网站，写点文章记录一下自己的生活，技术成长什么的。</li><li>二是，方便管理我的知识，之前的知识内容总是太零散，有的在微信公众号，有的在知乎，有的在本地文件夹，总之就是很乱，然后希望找一个地方存储我的知识，所以这个博客的内容应该会比较系统，相应地，其他平台可能就会发得少一点了（<del>本来也不多</del>）。</li><li>三是，一直看大佬们的博客（特别是<ahref="https://sharingsource.github.io/">三叶姐姐</a>）学到了很多东西，希望通过自己的一点点微薄努力来为互联网贡献一些微不足道的内容吧。</li></ul><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2023-12-31T11:59:00">December 31, 2023 at11:59 AM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/** 鼠标点击放礼花 * @Source: https://cnwjy.site/2022/01/04/Hexo-Fluid%E7%BE%8E%E5%8C%96/ */ class Circle {    constructor({ origin, speed, color, angle, context }) {      this.origin = origin      this.position = { ...this.origin }      this.color = color      this.speed = speed      this.angle = angle      this.context = context      this.renderCount = 0    }      draw() {      this.context.fillStyle = this.color      this.context.beginPath()      this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)      this.context.fill()    }      move() {      this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x      this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)      this.renderCount++    }  }    class Boom {    constructor ({ origin, context, circleCount = 16, area }) {      this.origin = origin      this.context = context      this.circleCount = circleCount      this.area = area      this.stop = false      this.circles = []    }      randomArray(range) {      const length = range.length      const randomIndex = Math.floor(length * Math.random())      return range[randomIndex]    }      randomColor() {      const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']      return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)    }      randomRange(start, end) {      return (end - start) * Math.random() + start    }      init() {      for(let i = 0; i < this.circleCount; i++) {        const circle = new Circle({          context: this.context,          origin: this.origin,          color: this.randomColor(),          angle: this.randomRange(Math.PI - 1, Math.PI + 1),          speed: this.randomRange(1, 6)        })        this.circles.push(circle)      }    }      move() {      this.circles.forEach((circle, index) => {        if (circle.position.x > this.area.width || circle.position.y > this.area.height) {          return this.circles.splice(index, 1)        }        circle.move()      })      if (this.circles.length == 0) {        this.stop = true      }    }      draw() {      this.circles.forEach(circle => circle.draw())    }  }    class CursorSpecialEffects {    constructor() {      this.computerCanvas = document.createElement('canvas')      this.renderCanvas = document.createElement('canvas')        this.computerContext = this.computerCanvas.getContext('2d')      this.renderContext = this.renderCanvas.getContext('2d')        this.globalWidth = window.innerWidth      this.globalHeight = window.innerHeight        this.booms = []      this.running = false    }      handleMouseDown(e) {      const boom = new Boom({        origin: { x: e.clientX, y: e.clientY },        context: this.computerContext,        area: {          width: this.globalWidth,          height: this.globalHeight        }      })      boom.init()      this.booms.push(boom)      this.running || this.run()    }      handlePageHide() {      this.booms = []      this.running = false    }      init() {      const style = this.renderCanvas.style      style.position = 'fixed'      style.top = style.left = 0      style.zIndex = '999999999999999999999999999999999999999999'      style.pointerEvents = 'none'        style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth      style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight        document.body.append(this.renderCanvas)        window.addEventListener('mousedown', this.handleMouseDown.bind(this))      window.addEventListener('pagehide', this.handlePageHide.bind(this))    }      run() {      this.running = true      if (this.booms.length == 0) {        return this.running = false      }        requestAnimationFrame(this.run.bind(this))        this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)      this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)        this.booms.forEach((boom, index) => {        if (boom.stop) {          return this.booms.splice(index, 1)        }        boom.move()        boom.draw()      })      this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)    }  }    const cursorSpecialEffects = new CursorSpecialEffects()  cursorSpecialEffects.init()]]></content>
     
   </entry>
   
@@ -1674,40 +1763,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
     <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/** 鼠标点击放礼花 * @Source: https://cnwjy.site/2022/01/04/Hexo-Fluid%E7%BE%8E%E5%8C%96/ */ class Circle {    constructor({ origin, speed, color, angle, context }) {      this.origin = origin      this.position = { ...this.origin }      this.color = color      this.speed = speed      this.angle = angle      this.context = context      this.renderCount = 0    }      draw() {      this.context.fillStyle = this.color      this.context.beginPath()      this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)      this.context.fill()    }      move() {      this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x      this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)      this.renderCount++    }  }    class Boom {    constructor ({ origin, context, circleCount = 16, area }) {      this.origin = origin      this.context = context      this.circleCount = circleCount      this.area = area      this.stop = false      this.circles = []    }      randomArray(range) {      const length = range.length      const randomIndex = Math.floor(length * Math.random())      return range[randomIndex]    }      randomColor() {      const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']      return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)    }      randomRange(start, end) {      return (end - start) * Math.random() + start    }      init() {      for(let i = 0; i < this.circleCount; i++) {        const circle = new Circle({          context: this.context,          origin: this.origin,          color: this.randomColor(),          angle: this.randomRange(Math.PI - 1, Math.PI + 1),          speed: this.randomRange(1, 6)        })        this.circles.push(circle)      }    }      move() {      this.circles.forEach((circle, index) => {        if (circle.position.x > this.area.width || circle.position.y > this.area.height) {          return this.circles.splice(index, 1)        }        circle.move()      })      if (this.circles.length == 0) {        this.stop = true      }    }      draw() {      this.circles.forEach(circle => circle.draw())    }  }    class CursorSpecialEffects {    constructor() {      this.computerCanvas = document.createElement('canvas')      this.renderCanvas = document.createElement('canvas')        this.computerContext = this.computerCanvas.getContext('2d')      this.renderContext = this.renderCanvas.getContext('2d')        this.globalWidth = window.innerWidth      this.globalHeight = window.innerHeight        this.booms = []      this.running = false    }      handleMouseDown(e) {      const boom = new Boom({        origin: { x: e.clientX, y: e.clientY },        context: this.computerContext,        area: {          width: this.globalWidth,          height: this.globalHeight        }      })      boom.init()      this.booms.push(boom)      this.running || this.run()    }      handlePageHide() {      this.booms = []      this.running = false    }      init() {      const style = this.renderCanvas.style      style.position = 'fixed'      style.top = style.left = 0      style.zIndex = '999999999999999999999999999999999999999999'      style.pointerEvents = 'none'        style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth      style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight        document.body.append(this.renderCanvas)        window.addEventListener('mousedown', this.handleMouseDown.bind(this))      window.addEventListener('pagehide', this.handlePageHide.bind(this))    }      run() {      this.running = true      if (this.booms.length == 0) {        return this.running = false      }        requestAnimationFrame(this.run.bind(this))        this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)      this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)        this.booms.forEach((boom, index) => {        if (boom.stop) {          return this.booms.splice(index, 1)        }        boom.move()        boom.draw()      })      this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)    }  }    const cursorSpecialEffects = new CursorSpecialEffects()  cursorSpecialEffects.init()]]></content>
     
   </entry>
   
