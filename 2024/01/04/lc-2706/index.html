@@ -18,26 +18,26 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.2215.">
+    <meta name="description" content="The solution of LeetCode problem No.2706.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 2215.Find the Difference of Two Arrays">
-<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/03/lc-2215/index.html">
+<meta property="og:title" content="LC 2706.Buy Two Chocolates">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/04/lc-2706/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.2215.">
+<meta property="og:description" content="The solution of LeetCode problem No.2706.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/3/banner.jpg">
-<meta property="article:published_time" content="2024-01-03T01:44:39.000Z">
-<meta property="article:modified_time" content="2024-01-03T01:59:41.416Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner.jpg">
+<meta property="article:published_time" content="2024-01-04T07:15:56.000Z">
+<meta property="article:modified_time" content="2024-01-04T07:19:43.955Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Hash Table">
 <meta property="article:tag" content="Array">
+<meta property="article:tag" content="Sorting">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/3/banner.jpg">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner.jpg">
   
   
   
-  <title>LC 2215.Find the Difference of Two Arrays - Abel&#39;s Blog</title>
+  <title>LC 2706.Buy Two Chocolates - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,13 +243,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2024/1/3/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/1/4/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 2215.Find the Difference of Two Arrays"></span>
+            <span id="subtitle" data-typed-text="LC 2706.Buy Two Chocolates"></span>
           
         </div>
 
@@ -260,8 +260,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-03 09:44" pubdate>
-          2024年1月3日 上午
+        <time datetime="2024-01-04 15:15" pubdate>
+          2024年1月4日 下午
         </time>
       </span>
     
@@ -273,7 +273,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 713 
+          文章字数: 388 
         
       </span>
     
@@ -285,7 +285,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 6 分钟
+          阅读全文大概需要 4 分钟
         
       </span>
     
@@ -330,12 +330,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 2215.Find the Difference of Two Arrays</h1>
+            <h1 id="seo-header">LC 2706.Buy Two Chocolates</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-01-03T09:59:41+08:00
+                    本文最后更新于：2024-01-04T15:19:43+08:00
                   
                   
 
@@ -347,56 +347,38 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-difference-of-two-arrays/description/">2215.
-找出两数组的不同</a> ，难度为<strong>简单</strong>。</p>
-<p>给你两个下标从 <code>0</code> 开始的整数数组 <code>nums1</code> 和
-<code>nums2</code> ，请你返回一个长度为 <code>2</code> 的列表
-<code>answer</code> ，其中：</p>
-<ul>
-<li><code>answer[0]</code> 是 <code>nums1</code> 中所有
-<strong>不</strong> 存在于 <code>nums2</code> 中的 <strong>不同</strong>
-整数组成的列表。</li>
-<li><code>answer[1]</code> 是 <code>nums2</code> 中所有
-<strong>不</strong> 存在于 <code>nums1</code> 中的 <strong>不同</strong>
-整数组成的列表。</li>
-</ul>
-<p><strong>注意：</strong>列表中的整数可以按 <strong>任意</strong>
-顺序返回。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/buy-two-chocolates/description/">2706.
+购买两块巧克力</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个整数数组 <code>prices</code>
+，它表示一个商店里若干巧克力的价格。同时给你一个整数 <code>money</code>
+，表示你一开始拥有的钱数。</p>
+<p>你必须购买 <strong>恰好</strong> 两块巧克力，而且剩余的钱数必须是
+<strong>非负数</strong> 。同时你想最小化购买两块巧克力的总花费。</p>
+<p>请你返回在购买两块巧克力后，最多能剩下多少钱。如果购买任意两块巧克力都超过了你拥有的钱，请你返回
+<code>money</code> 。注意剩余钱数必须是非负数。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums1 = [1,2,3], nums2 = [2,4,6]<br>输出：[[1,3],[4,6]]<br>解释：<br>对于 nums1 ，nums1[1] = 2 出现在 nums2 中下标 0 处，然而 nums1[0] = 1 和 nums1[2] = 3 没有出现在 nums2 中。因此，answer[0] = [1,3]。<br>对于 nums2 ，nums2[0] = 2 出现在 nums1 中下标 1 处，然而 nums2[1] = 4 和 nums2[2] = 6 没有出现在 nums2 中。因此，answer[1] = [4,6]。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：prices = [1,2,2], money = 3<br>输出：0<br>解释：分别购买价格为 1 和 2 的巧克力。你剩下 3 - 3 = 0 块钱。所以我们返回 0 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums1 = [1,2,3,3], nums2 = [1,1,2,2]<br>输出：[[3],[]]<br>解释：<br>对于 nums1 ，nums1[2] 和 nums1[3] 没有出现在 nums2 中。由于 nums1[2] == nums1[3] ，二者的值只需要在 answer[0] 中出现一次，故 answer[0] = [3]。<br>nums2 中的每个整数都在 nums1 中出现，因此，answer[1] = [] 。 <br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：prices = [3,2,3], money = 3<br>输出：3<br>解释：购买任意 2 块巧克力都会超过你拥有的钱数，所以我们返回 3 。<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= nums1.length, nums2.length &lt;= 1000</code></li>
-<li><code>-1000 &lt;= nums1[i], nums2[i] &lt;= 1000</code></li>
+<li><code>2 &lt;= prices.length &lt;= 50</code></li>
+<li><code>1 &lt;= prices[i] &lt;= 100</code></li>
+<li><code>1 &lt;= money &lt;= 100</code></li>
 </ul>
 <h2 id="解答">解答</h2>
-<h3 id="方法一哈希表">方法一：哈希表</h3>
-<p>根据题目的意思，先找出两个数组的交集，然后再分别遍历两个数组，找出与交集不同的数即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="hljs-title function_">findDifference</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums1.length; ++i) &#123;<br>            tmp.add(nums1[i]);<br>        &#125;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums2.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (tmp.contains(nums2[i])) &#123;<br>                hash.add(nums2[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">set1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums1.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (!hash.contains(nums1[i])) &#123;<br>                set1.add(nums1[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">set2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums2.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (!hash.contains(nums2[i])) &#123;<br>                set2.add(nums2[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> Arrays.asList(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;(set1), <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;(set2));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="方法一模拟">方法一：模拟</h3>
+<p>根据题目的意思，只需要找出最小值和次小值即可，故只需一次遍历。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">buyChoco</span><span class="hljs-params">(<span class="hljs-type">int</span>[] prices, <span class="hljs-type">int</span> money)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> <span class="hljs-number">101</span>, pre = min;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; prices.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (prices[i] &lt; min) &#123;<br>                pre = min;<br>                min = prices[i];<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (prices[i] &lt; pre) &#123;<br>                pre = prices[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> money - pre - min &gt;= <span class="hljs-number">0</span> ? money - pre - min : money;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N_1 +
-N_2)\)</span>，其中 <span class="math inline">\(N_1\)</span> 和 <span
-class="math inline">\(N_2\)</span> 分别为数组 <code>nums1</code> 和
-<code>nums2</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N_1 +
-N_2)\)</span>，对应两个数组的哈希表的空间开销。</p></li>
-</ul>
-<h3 id="方法二数组模拟哈希表">方法二：数组模拟哈希表</h3>
-<p>用数组模拟哈希表，在遍历第二个数组的过程中就可以添加不在交集中的数，其基本思想和方法一一致。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="hljs-title function_">findDifference</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2)</span> &#123;<br>        List&lt;List&lt;Integer&gt;&gt; resList = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        List&lt;Integer&gt; res1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        List&lt;Integer&gt; res2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> table[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">2001</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : nums1)&#123;<br>            table[n + <span class="hljs-number">1000</span>] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : nums2)&#123;<br>            <span class="hljs-keyword">if</span> (table[n + <span class="hljs-number">1000</span>] == <span class="hljs-number">0</span>) &#123;<br>                res2.add(n);<br>            &#125;<br>            table[n + <span class="hljs-number">1000</span>] = <span class="hljs-number">2</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : nums1) &#123;<br>            <span class="hljs-keyword">if</span>(table[n + <span class="hljs-number">1000</span>] == <span class="hljs-number">1</span>) &#123;<br>                res1.add(n);<br>            &#125;<br>            table[n + <span class="hljs-number">1000</span>] = <span class="hljs-number">2</span>;<br>        &#125;<br>        resList.add(res1);<br>        resList.add(res2);<br>        <span class="hljs-keyword">return</span> resList;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N_1 +
-N_2)\)</span>，其中 <span class="math inline">\(N_1\)</span> 和 <span
-class="math inline">\(N_2\)</span> 分别为数组 <code>nums1</code> 和
-<code>nums2</code> 的长度。</p></li>
+<li><p><strong>时间复杂度</strong>：<span
+class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组
+<code>prices</code> 的长度。</p></li>
 <li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，<code>N</code>
-为两个数组的值域大小。</p></li>
+class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2024/1/3/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2024/1/4/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -439,9 +421,9 @@ class="math inline">\(O(N)\)</span>，<code>N</code>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
-      
         <a href="/tags/Array/" class="print-no-link">#Array</a>
+      
+        <a href="/tags/Sorting/" class="print-no-link">#Sorting</a>
       
     </div>
   
@@ -453,8 +435,8 @@ class="math inline">\(O(N)\)</span>，<code>N</code>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 2215.Find the Difference of Two Arrays</div>
-      <div>https://chen-huaneng.github.io/2024/01/03/lc-2215/</div>
+      <div>LC 2706.Buy Two Chocolates</div>
+      <div>https://chen-huaneng.github.io/2024/01/04/lc-2706/</div>
     </div>
     <div class="license-meta">
       
@@ -466,13 +448,13 @@ class="math inline">\(O(N)\)</span>，<code>N</code>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年1月3日</div>
+          <div>2024年1月4日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年1月3日</div>
+          <div>2024年1月4日</div>
         </div>
       
       
@@ -509,18 +491,12 @@ class="math inline">\(O(N)\)</span>，<code>N</code>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/04/lc-2706/" title="LC 2706.Buy Two Chocolates">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 2706.Buy Two Chocolates</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/02/Anime-I-Watched/" title="Anime I Watched">
-                        <span class="hidden-mobile">Anime I Watched</span>
+                      <a href="/2024/01/03/lc-2215/" title="LC 2215.Find the Difference of Two Arrays">
+                        <span class="hidden-mobile">LC 2215.Find the Difference of Two Arrays</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
