@@ -18,26 +18,26 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.2785.">
+    <meta name="description" content="The solution of LeetCode problem No.2057.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 2785.Sort Vowels in a String">
-<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/06/lc-2785/index.html">
+<meta property="og:title" content="LC 2057.Smallest Index With Equal Value">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/04/lc-2057/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.2785.">
+<meta property="og:description" content="The solution of LeetCode problem No.2057.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/06/banner3.jpg">
-<meta property="article:published_time" content="2023-12-06T07:18:31.000Z">
-<meta property="article:modified_time" content="2023-12-06T07:33:12.031Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner2.jpg">
+<meta property="article:published_time" content="2024-01-04T13:39:45.000Z">
+<meta property="article:modified_time" content="2024-01-04T13:42:30.107Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="String">
-<meta property="article:tag" content="Sorting">
+<meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Array">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/06/banner3.jpg">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner2.jpg">
   
   
   
-  <title>LC 2785.Sort Vowels in a String - Abel&#39;s Blog</title>
+  <title>LC 2057.Smallest Index With Equal Value - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,13 +243,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/12/06/banner3.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/1/4/banner2.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 2785.Sort Vowels in a String"></span>
+            <span id="subtitle" data-typed-text="LC 2057.Smallest Index With Equal Value"></span>
           
         </div>
 
@@ -260,8 +260,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-06 15:18" pubdate>
-          2023年12月6日 下午
+        <time datetime="2024-01-04 21:39" pubdate>
+          2024年1月4日 晚上
         </time>
       </span>
     
@@ -273,7 +273,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 724 
+          文章字数: 328 
         
       </span>
     
@@ -285,7 +285,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 7 分钟
+          阅读全文大概需要 3 分钟
         
       </span>
     
@@ -330,12 +330,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 2785.Sort Vowels in a String</h1>
+            <h1 id="seo-header">LC 2057.Smallest Index With Equal Value</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2023-12-06T15:33:12+08:00
+                    本文最后更新于：2024-01-04T21:42:30+08:00
                   
                   
 
@@ -347,66 +347,39 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/sort-vowels-in-a-string/">2785.
-将字符串中的元音字母排序</a> ，难度为<strong>中等</strong>。</p>
-<p>给你一个下标从 <strong>0</strong> 开始的字符串 <code>s</code> ，将
-<code>s</code> 中的元素重新 <strong>排列</strong> 得到新的字符串
-<code>t</code> ，它满足：</p>
-<ul>
-<li>所有辅音字母都在原来的位置上。更正式的，如果满足
-<code>0 &lt;= i &lt; s.length</code> 的下标 <code>i</code> 处的
-<code>s[i]</code> 是个辅音字母，那么 <code>t[i] = s[i]</code> 。</li>
-<li>元音字母都必须以他们的 <strong>ASCII</strong> 值按
-<strong>非递减</strong> 顺序排列。更正式的，对于满足
-<code>0 &lt;= i &lt; j &lt; s.length</code> 的下标 <code>i</code> 和
-<code>j</code> ，如果 <code>s[i]</code> 和 <code>s[j]</code>
-都是元音字母，那么 <code>t[i]</code> 的 ASCII 值不能大于
-<code>t[j]</code> 的 ASCII 值。</li>
-</ul>
-<p>请你返回结果字母串。</p>
-<p>元音字母为 <code>'a'</code> ，<code>'e'</code> ，<code>'i'</code>
-，<code>'o'</code> 和 <code>'u'</code>
-，它们可能是小写字母也可能是大写字母，辅音字母是除了这 5
-个字母以外的所有字母。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-index-with-equal-value/description/">2057.
+值相等的最小索引</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个下标从 0 开始的整数数组 <code>nums</code> ，返回
+<code>nums</code> 中满足 <code>i mod 10 == nums[i]</code> 的最小下标
+<code>i</code> ；如果不存在这样的下标，返回 <code>-1</code> 。</p>
+<p><code>x mod y</code> 表示 <code>x</code> 除以 <code>y</code> 的
+<strong>余数</strong> 。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;lEetcOde&quot;<br>输出：&quot;lEOtcede&quot;<br>解释：&#x27;E&#x27; ，&#x27;O&#x27; 和 &#x27;e&#x27; 是 s 中的元音字母，&#x27;l&#x27; ，&#x27;t&#x27; ，&#x27;c&#x27; 和 &#x27;d&#x27; 是所有的辅音。将元音字母按照 ASCII 值排序，辅音字母留在原地。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [0,1,2]<br>输出：0<br>解释：<br>i=0: 0 mod 10 = 0 == nums[0].<br>i=1: 1 mod 10 = 1 == nums[1].<br>i=2: 2 mod 10 = 2 == nums[2].<br>所有下标都满足 i mod 10 == nums[i] ，所以返回最小下标 0<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;lYmpH&quot;<br>输出：&quot;lYmpH&quot;<br>解释：s 中没有元音字母（s 中都为辅音字母），所以我们返回 &quot;lYmpH&quot; 。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [4,3,2,1]<br>输出：2<br>解释：<br>i=0: 0 mod 10 = 0 != nums[0].<br>i=1: 1 mod 10 = 1 != nums[1].<br>i=2: 2 mod 10 = 2 == nums[2].<br>i=3: 3 mod 10 = 3 != nums[3].<br>2 唯一一个满足 i mod 10 == nums[i] 的下标<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,2,3,4,5,6,7,8,9,0]<br>输出：-1<br>解释：不存在满足 i mod 10 == nums[i] 的下标<br></code></pre></td></tr></table></figure>
+<p><strong>示例 4：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [2,1,3,5,2]<br>输出：1<br>解释：1 是唯一一个满足 i mod 10 == nums[i] 的下标<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= s.length &lt;= 10^5</code></li>
-<li><code>s</code> 只包含英语字母表中的 <strong>大写</strong> 和
-<strong>小写</strong> 字母。</li>
+<li><code>1 &lt;= nums.length &lt;= 100</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 9</code></li>
 </ul>
 <h2 id="解答">解答</h2>
-<h3 id="方法一哈希表">方法一：哈希表</h3>
-<p><code>A</code> 的 <code>ASCII</code> 码值为65，而 <code>u</code> 的
-<code>ASCII</code> 码值为117，于是创建哈希数组 <code>hash</code>
-的长度为53，将字符串中可能出现的元音字母映射到数组 <code>hash</code>
-上，顺便记住当前字符的位置 <code>i</code>
-，然后就是遍历要插入的元音字符位置的动态数组 <code>pos</code> ，按照
-<code>ASCII</code> 码值的顺序遍历 <code>hash</code>
-数组，逐一将值添加到最终要返回的数组中。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">sortVowels</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">pos</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;Integer&gt;();<br>        <span class="hljs-type">var</span> <span class="hljs-variable">cs</span> <span class="hljs-operator">=</span> s.toCharArray();<br>        <span class="hljs-type">int</span>[] hash = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">53</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; cs.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;aeiouAEIOU&quot;</span>.indexOf(cs[i]) &gt;= <span class="hljs-number">0</span>) &#123;<br>                ++hash[cs[i] - <span class="hljs-number">65</span>];<br>                pos.add(i);<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i : pos) &#123;<br>            <span class="hljs-keyword">while</span> (hash[j] == <span class="hljs-number">0</span>) &#123;<br>                ++j;<br>            &#125;<br>            cs[i] = (<span class="hljs-type">char</span>) (j + <span class="hljs-number">65</span>);<br>            --hash[j];<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(cs);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="方法一模拟">方法一：模拟</h3>
+<p>根据题目要求进行模拟即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">smallestEqual</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (i % <span class="hljs-number">10</span> == nums[i]) &#123;<br>                ans = i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，其中 <code>n</code>
-为字符串的长度，遍历字符串的时间复杂度为 <span
-class="math inline">\(O(n)\)</span>
-，而最坏情况下就是整个字符串都是元音字母，再次遍历插入位置数组的时间复杂度为<span
-class="math inline">\(O(n)\)</span>，所以最终的时间复杂度为<span
-class="math inline">\(O(n)\)</span>。</p></li>
+class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组
+<code>nums</code> 的长度。</p></li>
 <li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，其中 <code>n</code>
-为字符串的长度，存储插入位置的 <code>LinkedList</code>
-最差情况存储整个字符串的每个位置，而 <code>cs</code>
-存储一个字符串数组长度的字符， <code>hash</code> 和 <code>j</code>
-的空间复杂度为 <span
-class="math inline">\(O(1)\)</span>，所以最终的空间复杂度为<span
-class="math inline">\(O(n)\)</span>。</p></li>
+class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2023/12/06/banner3.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2024/1/4/banner2.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -430,7 +403,7 @@ class="math inline">\(O(n)\)</span>。</p></li>
   
     <span>></span>
     
-  <a href="/categories/LeetCode/Middle/" class="category-chain-item">Middle</a>
+  <a href="/categories/LeetCode/Easy/" class="category-chain-item">Easy</a>
   
   
 
@@ -449,9 +422,9 @@ class="math inline">\(O(n)\)</span>。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/String/" class="print-no-link">#String</a>
+        <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
       
-        <a href="/tags/Sorting/" class="print-no-link">#Sorting</a>
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
     </div>
   
@@ -463,8 +436,8 @@ class="math inline">\(O(n)\)</span>。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 2785.Sort Vowels in a String</div>
-      <div>https://chen-huaneng.github.io/2023/12/06/lc-2785/</div>
+      <div>LC 2057.Smallest Index With Equal Value</div>
+      <div>https://chen-huaneng.github.io/2024/01/04/lc-2057/</div>
     </div>
     <div class="license-meta">
       
@@ -476,13 +449,13 @@ class="math inline">\(O(n)\)</span>。</p></li>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月6日</div>
+          <div>2024年1月4日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年12月6日</div>
+          <div>2024年1月4日</div>
         </div>
       
       
@@ -519,18 +492,12 @@ class="math inline">\(O(n)\)</span>。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/06/lc-1470/" title="LC 1470.Shuffle the Array">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 1470.Shuffle the Array</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/06/lc-2788/" title="LC 2788.Split Strings by Separator">
-                        <span class="hidden-mobile">LC 2788.Split Strings by Separator</span>
+                      <a href="/2024/01/04/lc-1380/" title="LC 1380.Lucky Numbers in a Matrix">
+                        <span class="hidden-mobile">LC 1380.Lucky Numbers in a Matrix</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
