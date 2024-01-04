@@ -18,26 +18,27 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.2706.">
+    <meta name="description" content="The solution of LeetCode problem No.1380.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 2706.Buy Two Chocolates">
-<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/04/lc-2706/index.html">
+<meta property="og:title" content="LC 1380.Lucky Numbers in a Matrix">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/04/lc-1380/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.2706.">
+<meta property="og:description" content="The solution of LeetCode problem No.1380.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner.jpg">
-<meta property="article:published_time" content="2024-01-04T07:15:56.000Z">
-<meta property="article:modified_time" content="2024-01-04T07:19:43.955Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner1.jpg">
+<meta property="article:published_time" content="2024-01-04T07:55:18.000Z">
+<meta property="article:modified_time" content="2024-01-04T08:03:14.455Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="Simulation">
 <meta property="article:tag" content="Array">
-<meta property="article:tag" content="Sorting">
+<meta property="article:tag" content="Matrix">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner.jpg">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner1.jpg">
   
   
   
-  <title>LC 2706.Buy Two Chocolates - Abel&#39;s Blog</title>
+  <title>LC 1380.Lucky Numbers in a Matrix - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,13 +244,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2024/1/4/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/1/4/banner1.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 2706.Buy Two Chocolates"></span>
+            <span id="subtitle" data-typed-text="LC 1380.Lucky Numbers in a Matrix"></span>
           
         </div>
 
@@ -260,7 +261,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-04 15:15" pubdate>
+        <time datetime="2024-01-04 15:55" pubdate>
           2024年1月4日 下午
         </time>
       </span>
@@ -273,7 +274,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 388 
+          文章字数: 484 
         
       </span>
     
@@ -285,7 +286,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 4 分钟
+          阅读全文大概需要 5 分钟
         
       </span>
     
@@ -330,12 +331,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 2706.Buy Two Chocolates</h1>
+            <h1 id="seo-header">LC 1380.Lucky Numbers in a Matrix</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-01-04T15:19:43+08:00
+                    本文最后更新于：2024-01-04T16:03:14+08:00
                   
                   
 
@@ -347,38 +348,43 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/buy-two-chocolates/description/">2706.
-购买两块巧克力</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个整数数组 <code>prices</code>
-，它表示一个商店里若干巧克力的价格。同时给你一个整数 <code>money</code>
-，表示你一开始拥有的钱数。</p>
-<p>你必须购买 <strong>恰好</strong> 两块巧克力，而且剩余的钱数必须是
-<strong>非负数</strong> 。同时你想最小化购买两块巧克力的总花费。</p>
-<p>请你返回在购买两块巧克力后，最多能剩下多少钱。如果购买任意两块巧克力都超过了你拥有的钱，请你返回
-<code>money</code> 。注意剩余钱数必须是非负数。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/lucky-numbers-in-a-matrix/description/">1380.
+矩阵中的幸运数</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个 <code>m * n</code> 的矩阵，矩阵中的数字
+<strong>各不相同</strong> 。请你按 <strong>任意</strong>
+顺序返回矩阵中的所有幸运数。</p>
+<p><strong>幸运数</strong> 是指矩阵中满足同时下列两个条件的元素：</p>
+<ul>
+<li>在同一行的所有元素中最小</li>
+<li>在同一列的所有元素中最大</li>
+</ul>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：prices = [1,2,2], money = 3<br>输出：0<br>解释：分别购买价格为 1 和 2 的巧克力。你剩下 3 - 3 = 0 块钱。所以我们返回 0 。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：matrix = [[3,7,8],[9,11,13],[15,16,17]]<br>输出：[15]<br>解释：15 是唯一的幸运数，因为它是其所在行中的最小值，也是所在列中的最大值。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：prices = [3,2,3], money = 3<br>输出：3<br>解释：购买任意 2 块巧克力都会超过你拥有的钱数，所以我们返回 3 。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：matrix = [[1,10,4,2],[9,3,8,7],[15,16,17,12]]<br>输出：[12]<br>解释：12 是唯一的幸运数，因为它是其所在行中的最小值，也是所在列中的最大值。<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：matrix = [[7,8],[1,2]]<br>输出：[7]<br>解释：7是唯一的幸运数字，因为它是行中的最小值，列中的最大值。<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>2 &lt;= prices.length &lt;= 50</code></li>
-<li><code>1 &lt;= prices[i] &lt;= 100</code></li>
-<li><code>1 &lt;= money &lt;= 100</code></li>
+<li><code>m == mat.length</code></li>
+<li><code>n == mat[i].length</code></li>
+<li><code>1 &lt;= n, m &lt;= 50</code></li>
+<li><code>1 &lt;= matrix[i][j] &lt;= 10^5</code></li>
+<li>矩阵中的所有元素都是不同的</li>
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一模拟">方法一：模拟</h3>
-<p>根据题目的意思，只需要找出最小值和次小值即可，故只需一次遍历。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">buyChoco</span><span class="hljs-params">(<span class="hljs-type">int</span>[] prices, <span class="hljs-type">int</span> money)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> <span class="hljs-number">101</span>, pre = min;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; prices.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (prices[i] &lt; min) &#123;<br>                pre = min;<br>                min = prices[i];<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (prices[i] &lt; pre) &#123;<br>                pre = prices[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> money - pre - min &gt;= <span class="hljs-number">0</span> ? money - pre - min : money;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>由于矩阵中的数都是不同的，所以我们遍历矩阵的每一行，先找出行的最小值，然后判断该最小值是否为同一列的最大值，如果是则添加到返回的数组中，如果不是则跳过。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title function_">luckyNumbers</span> <span class="hljs-params">(<span class="hljs-type">int</span>[][] matrix)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; matrix.length; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">row</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; matrix[<span class="hljs-number">0</span>].length; ++j) &#123;<br>                <span class="hljs-keyword">if</span> (matrix[i][row] &gt; matrix[i][j]) &#123;<br>                    row = j;<br>                &#125;<br>            &#125;<br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">isMax</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; matrix.length; ++j) &#123;<br>                <span class="hljs-keyword">if</span> (matrix[i][row] &lt; matrix[j][row]) &#123;<br>                    isMax = <span class="hljs-literal">false</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (isMax) &#123;<br>                res.add(matrix[i][row]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组
-<code>prices</code> 的长度。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(M(M +
+N))\)</span>，其中 <code>M</code> 为矩阵的行数， <code>N</code>
+为矩阵的列数。</p></li>
 <li><p><strong>空间复杂度</strong>：<span
 class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2024/1/4/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2024/1/4/banner1.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -421,9 +427,11 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
+        <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+      
         <a href="/tags/Array/" class="print-no-link">#Array</a>
       
-        <a href="/tags/Sorting/" class="print-no-link">#Sorting</a>
+        <a href="/tags/Matrix/" class="print-no-link">#Matrix</a>
       
     </div>
   
@@ -435,8 +443,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 2706.Buy Two Chocolates</div>
-      <div>https://chen-huaneng.github.io/2024/01/04/lc-2706/</div>
+      <div>LC 1380.Lucky Numbers in a Matrix</div>
+      <div>https://chen-huaneng.github.io/2024/01/04/lc-1380/</div>
     </div>
     <div class="license-meta">
       
@@ -491,18 +499,12 @@ class="math inline">\(O(1)\)</span>。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/04/lc-1380/" title="LC 1380.Lucky Numbers in a Matrix">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 1380.Lucky Numbers in a Matrix</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/03/lc-2215/" title="LC 2215.Find the Difference of Two Arrays">
-                        <span class="hidden-mobile">LC 2215.Find the Difference of Two Arrays</span>
+                      <a href="/2024/01/04/lc-2706/" title="LC 2706.Buy Two Chocolates">
+                        <span class="hidden-mobile">LC 2706.Buy Two Chocolates</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
