@@ -18,26 +18,25 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.2057.">
+    <meta name="description" content="如何用 Scoop 优雅地下载、卸载、安装、管理Windows系统的软件，快速配置开发环境。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 2057.Smallest Index With Equal Value">
-<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/04/lc-2057/index.html">
+<meta property="og:title" content="Scoop - A command-line installer for Windows">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/04/Scoop/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.2057.">
+<meta property="og:description" content="如何用 Scoop 优雅地下载、卸载、安装、管理Windows系统的软件，快速配置开发环境。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner2.jpg">
-<meta property="article:published_time" content="2024-01-04T13:39:45.000Z">
-<meta property="article:modified_time" content="2024-01-04T13:42:30.107Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner3.jpg">
+<meta property="article:published_time" content="2024-01-04T14:35:00.000Z">
+<meta property="article:modified_time" content="2024-01-04T15:00:39.161Z">
 <meta property="article:author" content="Abel">
-<meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Simulation">
-<meta property="article:tag" content="Array">
+<meta property="article:tag" content="Tool">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner2.jpg">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner3.jpg">
   
   
   
-  <title>LC 2057.Smallest Index With Equal Value - Abel&#39;s Blog</title>
+  <title>Scoop - A command-line installer for Windows - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,13 +242,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2024/1/4/banner2.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/1/4/banner3.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 2057.Smallest Index With Equal Value"></span>
+            <span id="subtitle" data-typed-text="Scoop - A command-line installer for Windows"></span>
           
         </div>
 
@@ -260,7 +259,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-04 21:39" pubdate>
+        <time datetime="2024-01-04 22:35" pubdate>
           2024年1月4日 晚上
         </time>
       </span>
@@ -273,7 +272,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 328 
+          文章字数: 726 
         
       </span>
     
@@ -285,7 +284,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 3 分钟
+          阅读全文大概需要 7 分钟
         
       </span>
     
@@ -330,12 +329,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 2057.Smallest Index With Equal Value</h1>
+            <h1 id="seo-header">Scoop - A command-line installer for Windows</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-01-04T21:42:30+08:00
+                    本文最后更新于：2024-01-04T23:00:39+08:00
                   
                   
 
@@ -345,41 +344,70 @@
             
               <div class="markdown-body">
                 
-                <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-index-with-equal-value/description/">2057.
-值相等的最小索引</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个下标从 0 开始的整数数组 <code>nums</code> ，返回
-<code>nums</code> 中满足 <code>i mod 10 == nums[i]</code> 的最小下标
-<code>i</code> ；如果不存在这样的下标，返回 <code>-1</code> 。</p>
-<p><code>x mod y</code> 表示 <code>x</code> 除以 <code>y</code> 的
-<strong>余数</strong> 。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [0,1,2]<br>输出：0<br>解释：<br>i=0: 0 mod 10 = 0 == nums[0].<br>i=1: 1 mod 10 = 1 == nums[1].<br>i=2: 2 mod 10 = 2 == nums[2].<br>所有下标都满足 i mod 10 == nums[i] ，所以返回最小下标 0<br></code></pre></td></tr></table></figure>
-<p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [4,3,2,1]<br>输出：2<br>解释：<br>i=0: 0 mod 10 = 0 != nums[0].<br>i=1: 1 mod 10 = 1 != nums[1].<br>i=2: 2 mod 10 = 2 == nums[2].<br>i=3: 3 mod 10 = 3 != nums[3].<br>2 唯一一个满足 i mod 10 == nums[i] 的下标<br></code></pre></td></tr></table></figure>
-<p><strong>示例 3：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,2,3,4,5,6,7,8,9,0]<br>输出：-1<br>解释：不存在满足 i mod 10 == nums[i] 的下标<br></code></pre></td></tr></table></figure>
-<p><strong>示例 4：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [2,1,3,5,2]<br>输出：1<br>解释：1 是唯一一个满足 i mod 10 == nums[i] 的下标<br></code></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
+                <blockquote>
+<p>本文部分内容摘抄自 <a
+target="_blank" rel="noopener" href="https://csdiy.wiki/必学工具/Scoop/#python2">Scoop - CS自学指南</a>
+，如有侵权请联系我进行删除。</p>
+</blockquote>
+<h2 id="为什么使用scoop">为什么使用Scoop</h2>
+<p>在 Windows
+下，搭建开发环境一直是一个复杂且困难的问题。由于没有一个统一的标准，导致各种开发环境的安装方式差异巨大，需要付出很多不必要的时间成本。而
+<code>Scoop</code>
+可以帮助你统一安装并管理常见的开发软件，省去了手动下载安装，配置环境变量等繁琐步骤。</p>
+<p>例如安装 <code>python</code> 和 <code>nodejs</code> 以及
+<code>VS Code</code> 只需要执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop install python<br>scoop install nodejs<br>scoop install vscode<br></code></pre></td></tr></table></figure>
+<p>剩下的就完全交给 <code>Scoop</code>
+去管理，安装依赖、检验哈希值、创建快捷方式……你甚至不需要按照平时安装软件时，用鼠标不断点击下一步的多余操作。因此学习使用
+<code>Scoop</code> 会给你的生活和软件管理带来极大的便利。</p>
+<h2 id="安装-scoop">安装 Scoop</h2>
+<p><code>Scoop</code> 需要 <a target="_blank" rel="noopener" href="https://aka.ms/wmf5download">Windows
+PowerShell 5.1</a> 或者 <a
+target="_blank" rel="noopener" href="https://aka.ms/powershell">PowerShell</a>
+作为运行环境，如果你使用的是 Windows 10 及以上版本，Windows PowerShell
+是内置在系统中的。而 Windows 7 内置的 Windows PowerShell
+版本过于陈旧，你需要手动安装新版本的 PowerShell。</p>
+<blockquote>
+<p>由于发现很多同学在设置 Windows
+用户时使用了中文用户名，导致了用户目录也变成了中文名。如果按照 Scoop
+的默认方式将软件安装到用户目录下，可能会造成部分软件执行错误。所以这里推荐安装到自定义目录，如果需要其他安装方式请参考：
+<a
+target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Install">ScoopInstaller/Install</a></p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 设置 PowerShell 执行策略</span><br><span class="hljs-built_in">Set-ExecutionPolicy</span> <span class="hljs-literal">-ExecutionPolicy</span> RemoteSigned <span class="hljs-literal">-Scope</span> CurrentUser<br><span class="hljs-comment"># 下载安装脚本</span><br><span class="hljs-built_in">irm</span> get.scoop.sh <span class="hljs-literal">-outfile</span> <span class="hljs-string">&#x27;install.ps1&#x27;</span><br><span class="hljs-comment"># 执行安装, --ScoopDir 参数指定 Scoop 安装路径</span><br>.\install.ps1 <span class="hljs-literal">-ScoopDir</span> <span class="hljs-string">&#x27;C:\Scoop&#x27;</span><br></code></pre></td></tr></table></figure>
+<h2 id="使用-scoop">使用 Scoop</h2>
+<p>Scoop 的官方文档对于新手非常友好，相对于在此处赘述更推荐阅读 <a
+target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Scoop">官方文档</a> 或 <a
+target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Scoop/wiki/Quick-Start">快速入门</a>
+。</p>
+<h2 id="一些可能有帮助的文章">一些可能有帮助的文章</h2>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 100</code></li>
-<li><code>0 &lt;= nums[i] &lt;= 9</code></li>
+<li><a target="_blank" rel="noopener" href="https://sspai.com/post/52710#!">给 Scoop
+加上这些软件仓库，让它变成强大的 Windows 软件管理器 - 少数派
+(sspai.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/135278662">你需要掌握的Scoop技巧和知识
+- 知乎 (zhihu.com)</a></li>
 </ul>
-<h2 id="解答">解答</h2>
-<h3 id="方法一模拟">方法一：模拟</h3>
-<p>根据题目要求进行模拟即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">smallestEqual</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (i % <span class="hljs-number">10</span> == nums[i]) &#123;<br>                ans = i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组
-<code>nums</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
-</ul>
-<h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2024/1/4/banner2.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<h2 id="qa">Q&amp;A</h2>
+<h3 id="scoop-能配置镜像源吗">Scoop 能配置镜像源吗？</h3>
+<p>Scoop
+社区仅维护安装配置，所有的软件都是从该软件官方提供的下载链接进行下载，所以无法提供镜像源。如果因为你的网络环境导致多次下载失败，那么你需要一点点
+<a target="_blank" rel="noopener" href="https://csdiy.wiki/必学工具/翻墙/">魔法</a>。</p>
+<h3 id="为什么找不到-java8">为什么找不到 Java8？</h3>
+<p>原因同上，官方已不再提供 Java8 的下载链接，推荐使用 <a
+target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Java/blob/master/bucket/ojdkbuild8.json">ojdkbuild8</a>
+替代。</p>
+<h3 id="我需要安装-python2-该如何操作">我需要安装 python2
+该如何操作？</h3>
+<p>对于已经过时弃用的软件，Scoop 社区会将其从 <a
+target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Main">ScoopInstaller/Main</a>
+中移除并将其添加到 <a
+target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Versions">ScoopInstaller/Versions</a>
+中。如果你需要这些软件的话需要手动添加 bucket：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop bucket add versions<br>scoop install python27<br></code></pre></td></tr></table></figure>
+<h3 id="我忘记了-scoop-的命令怎么办">我忘记了 Scoop 的命令怎么办</h3>
+<p>在命令行中输入 <code>scoop help</code> 来查看内置的帮助文档。</p>
 
                 
               </div>
@@ -398,13 +426,20 @@ class="math inline">\(O(1)\)</span>。</p></li>
     
       <span class="category-chain">
         
-  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
+  <a href="/categories/Blog/" class="category-chain-item">Blog</a>
   
   
     <span>></span>
     
-  <a href="/categories/LeetCode/Easy/" class="category-chain-item">Easy</a>
+  <a href="/categories/Blog/Windows/" class="category-chain-item">Windows</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/Blog/Windows/Scoop/" class="category-chain-item">Scoop</a>
+  
+  
+
   
 
   
@@ -420,11 +455,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
+        <a href="/tags/Tool/" class="print-no-link">#Tool</a>
       
-        <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
-      
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
+        <a href="/tags/Windows/" class="print-no-link">#Windows</a>
       
     </div>
   
@@ -436,8 +469,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 2057.Smallest Index With Equal Value</div>
-      <div>https://chen-huaneng.github.io/2024/01/04/lc-2057/</div>
+      <div>Scoop - A command-line installer for Windows</div>
+      <div>https://chen-huaneng.github.io/2024/01/04/Scoop/</div>
     </div>
     <div class="license-meta">
       
@@ -492,18 +525,12 @@ class="math inline">\(O(1)\)</span>。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/04/Scoop/" title="Scoop - A command-line installer for Windows">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Scoop - A command-line installer for Windows</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/04/lc-1380/" title="LC 1380.Lucky Numbers in a Matrix">
-                        <span class="hidden-mobile">LC 1380.Lucky Numbers in a Matrix</span>
+                      <a href="/2024/01/04/lc-2057/" title="LC 2057.Smallest Index With Equal Value">
+                        <span class="hidden-mobile">LC 2057.Smallest Index With Equal Value</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -591,12 +618,6 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -844,49 +865,6 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
