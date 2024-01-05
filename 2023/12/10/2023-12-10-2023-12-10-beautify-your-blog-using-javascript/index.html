@@ -1,0 +1,860 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar_round.png">
+  <link rel="icon" href="/imgs/banner/avatar_round.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Abel">
+  <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
+  
+    <meta name="description" content="This Article is teaching you how to using javascript to beautify your website.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beautify your blog using javascript">
+<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/10/2023-12-10-2023-12-10-beautify-your-blog-using-javascript/index.html">
+<meta property="og:site_name" content="Abel&#39;s Blog">
+<meta property="og:description" content="This Article is teaching you how to using javascript to beautify your website.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/10/banner2.png">
+<meta property="article:published_time" content="2023-12-10T13:53:19.000Z">
+<meta property="article:modified_time" content="2023-12-10T14:37:41.585Z">
+<meta property="article:author" content="Abel">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="Website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/10/banner2.png">
+  
+  
+  
+  <title>Beautify your blog using javascript - Abel&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/scrollbar.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.jpg","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>AbelのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友情链接</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/imgs/posts/2023/12/10/banner2.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Beautify your blog using javascript"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-10 21:53" pubdate>
+          2023年12月10日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          文章字数: 2.6k 
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          阅读全文大概需要 22 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          阅读次数: <span id="leancloud-page-views"></span> 
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Beautify your blog using javascript</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于：2023-12-10T22:37:41+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2
+id="如何在hexo的fluid主题中实现雪花的效果">如何在Hexo的Fluid主题中实现雪花的效果</h2>
+<p>首先要在 <code>_config.fluid.yml</code> 的 <code>custom_js:</code>
+选项中指定实现雪花效果的 <code>js</code>
+文件的路径，具体的路径及其设置参考<a
+target="_blank" rel="noopener" href="https://fluid-dev.github.io/hexo-fluid-docs/guide/#自定义-js-css-html">官方文档的配置指南
+| Hexo Fluid 用户手册</a>。我的配置文件如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js</span><br><span class="hljs-comment"># Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`</span><br><span class="hljs-attr">custom_js:</span> <br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/js/custom.js</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/js/duration.js</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/js/snow.js</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/js/firework.js</span><br></code></pre></td></tr></table></figure>
+<p>配置完这个文件之后，在相应路径下创建相关的 <code>js</code>
+文件，记得文件名和路径要和 <code>yml</code>
+文件中指定的一致，然后在相应的 <code>js</code>
+文件中写入如下的代码就可以实现相应的效果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 雪花飘落效果:</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Source</span>: https://blog.musnow.top/posts/138502038/index.html</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Source</span>: https://cnhuazhu.gitee.io/2021/02/24/Hexo%E9%AD%94%E6%94%B9/Hexo%E6%B7%BB%E5%8A%A0%E9%9B%AA%E8%8A%B1%E5%8A%A8%E6%80%81%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF/index.html</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Source</span>: https://cnhuazhu.top/butterfly/2021/02/24/Hexo%E9%AD%94%E6%94%B9/Hexo%E6%B7%BB%E5%8A%A0%E9%9B%AA%E8%8A%B1%E5%8A%A8%E6%80%81%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF/</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-comment">/** 第一个版本的雪花 */</span><br><span class="hljs-keyword">if</span> ((navigator.<span class="hljs-property">userAgent</span>.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i</span>))) &#123;<br>    <span class="hljs-comment">// 移动端不显示</span><br>&#125;<br><span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class="hljs-string">&#x27;&lt;canvas id=&quot;snow&quot; style=&quot;position:fixed;top:0;left:0;width:100%;height:100%;z-index:100;pointer-events:none&quot;&gt;&lt;/canvas&gt;&#x27;</span>);<br><br>    <span class="hljs-variable language_">window</span> &amp;&amp; (<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-keyword">let</span> e = &#123;<br>            <span class="hljs-attr">flakeCount</span>: <span class="hljs-number">50</span>,<br>            <span class="hljs-attr">minDist</span>: <span class="hljs-number">150</span>,<br>            <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;255, 255, 255&quot;</span>,<br>            <span class="hljs-attr">size</span>: <span class="hljs-number">2</span>,<br>            <span class="hljs-attr">speed</span>: <span class="hljs-number">.5</span>,<br>            <span class="hljs-attr">opacity</span>: <span class="hljs-number">.2</span>,<br>            <span class="hljs-attr">stepsize</span>: <span class="hljs-number">.5</span><br>        &#125;;<br>        <span class="hljs-keyword">const</span> t = <span class="hljs-variable language_">window</span>.<span class="hljs-property">requestAnimationFrame</span> || <span class="hljs-variable language_">window</span>.<span class="hljs-property">mozRequestAnimationFrame</span> || <span class="hljs-variable language_">window</span>.<span class="hljs-property">webkitRequestAnimationFrame</span> || <span class="hljs-variable language_">window</span>.<span class="hljs-property">msRequestAnimationFrame</span> || <span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) &#123;<br>            <span class="hljs-variable language_">window</span>.<span class="hljs-built_in">setTimeout</span>(e, <span class="hljs-number">1e3</span> / <span class="hljs-number">60</span>)<br>        &#125;<br>            ;<br>        <span class="hljs-variable language_">window</span>.<span class="hljs-property">requestAnimationFrame</span> = t;<br>        <span class="hljs-keyword">const</span> i = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;snow&quot;</span>),<br>            n = i.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&quot;2d&quot;</span>),<br>            o = e.<span class="hljs-property">flakeCount</span>;<br>        <span class="hljs-keyword">let</span> a = -<span class="hljs-number">100</span>,<br>            d = -<span class="hljs-number">100</span>,<br>            s = [];<br>        i.<span class="hljs-property">width</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span>,<br>            i.<span class="hljs-property">height</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span>;<br>        <span class="hljs-keyword">const</span> <span class="hljs-title function_">h</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>            n.<span class="hljs-title function_">clearRect</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, i.<span class="hljs-property">width</span>, i.<span class="hljs-property">height</span>);<br>            <span class="hljs-keyword">const</span> r = e.<span class="hljs-property">minDist</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> t = <span class="hljs-number">0</span>; t &lt; o; t++) &#123;<br>                <span class="hljs-keyword">let</span> o = s[t];<br>                <span class="hljs-keyword">const</span> h = a,<br>                    w = d,<br>                    m = o.<span class="hljs-property">x</span>,<br>                    c = o.<span class="hljs-property">y</span>,<br>                    p = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sqrt</span>((h - m) * (h - m) + (w - c) * (w - c));<br>                <span class="hljs-keyword">if</span> (p &lt; r) &#123;<br>                    <span class="hljs-keyword">const</span> e = (h - m) / p,<br>                        t = (w - c) / p,<br>                        i = r / (p * p) / <span class="hljs-number">2</span>;<br>                    o.<span class="hljs-property">velX</span> -= i * e,<br>                        o.<span class="hljs-property">velY</span> -= i * t<br>                &#125; <span class="hljs-keyword">else</span><br>                    o.<span class="hljs-property">velX</span> *= <span class="hljs-number">.98</span>,<br>                        o.<span class="hljs-property">velY</span> &lt; o.<span class="hljs-property">speed</span> &amp;&amp; o.<span class="hljs-property">speed</span> - o.<span class="hljs-property">velY</span> &gt; <span class="hljs-number">.01</span> &amp;&amp; (o.<span class="hljs-property">velY</span> += <span class="hljs-number">.01</span> * (o.<span class="hljs-property">speed</span> - o.<span class="hljs-property">velY</span>)),<br>                        o.<span class="hljs-property">velX</span> += <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">cos</span>(o.<span class="hljs-property">step</span> += <span class="hljs-number">.05</span>) * o.<span class="hljs-property">stepSize</span>;<br>                n.<span class="hljs-property">fillStyle</span> = <span class="hljs-string">&quot;rgba(&quot;</span> + e.<span class="hljs-property">color</span> + <span class="hljs-string">&quot;, &quot;</span> + o.<span class="hljs-property">opacity</span> + <span class="hljs-string">&quot;)&quot;</span>,<br>                    o.<span class="hljs-property">y</span> += o.<span class="hljs-property">velY</span>,<br>                    o.<span class="hljs-property">x</span> += o.<span class="hljs-property">velX</span>,<br>                    (o.<span class="hljs-property">y</span> &gt;= i.<span class="hljs-property">height</span> || o.<span class="hljs-property">y</span> &lt;= <span class="hljs-number">0</span>) &amp;&amp; <span class="hljs-title function_">l</span>(o),<br>                    (o.<span class="hljs-property">x</span> &gt;= i.<span class="hljs-property">width</span> || o.<span class="hljs-property">x</span> &lt;= <span class="hljs-number">0</span>) &amp;&amp; <span class="hljs-title function_">l</span>(o),<br>                    n.<span class="hljs-title function_">beginPath</span>(),<br>                    n.<span class="hljs-title function_">arc</span>(o.<span class="hljs-property">x</span>, o.<span class="hljs-property">y</span>, o.<span class="hljs-property">size</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span>),<br>                    n.<span class="hljs-title function_">fill</span>()<br>            &#125;<br>            <span class="hljs-title function_">t</span>(h)<br>        &#125;<br>            , l = <span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> &#123;<br>                e.<span class="hljs-property">x</span> = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * i.<span class="hljs-property">width</span>),<br>                    e.<span class="hljs-property">y</span> = <span class="hljs-number">0</span>,<br>                    e.<span class="hljs-property">size</span> = <span class="hljs-number">3</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() + <span class="hljs-number">2</span>,<br>                    e.<span class="hljs-property">speed</span> = <span class="hljs-number">1</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() + <span class="hljs-number">.5</span>,<br>                    e.<span class="hljs-property">velY</span> = e.<span class="hljs-property">speed</span>,<br>                    e.<span class="hljs-property">velX</span> = <span class="hljs-number">0</span>,<br>                    e.<span class="hljs-property">opacity</span> = <span class="hljs-number">.5</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() + <span class="hljs-number">.3</span><br>            &#125;<br>            ;<br>        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;mousemove&quot;</span>, (<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> &#123;<br>            a = e.<span class="hljs-property">clientX</span>,<br>                d = e.<span class="hljs-property">clientY</span><br>        &#125;<br>        )),<br>            <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;resize&quot;</span>, (<span class="hljs-function">() =&gt;</span> &#123;<br>                i.<span class="hljs-property">width</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span>,<br>                    i.<span class="hljs-property">height</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span><br>            &#125;<br>            )),<br>            (<span class="hljs-function">() =&gt;</span> &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> t = <span class="hljs-number">0</span>; t &lt; o; t++) &#123;<br>                    <span class="hljs-keyword">const</span> t = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * i.<span class="hljs-property">width</span>)<br>                        , n = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * i.<span class="hljs-property">height</span>)<br>                        , o = <span class="hljs-number">3</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() + e.<span class="hljs-property">size</span><br>                        , a = <span class="hljs-number">1</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() + e.<span class="hljs-property">speed</span><br>                        , d = <span class="hljs-number">.5</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() + e.<span class="hljs-property">opacity</span>;<br>                    s.<span class="hljs-title function_">push</span>(&#123;<br>                        <span class="hljs-attr">speed</span>: a,<br>                        <span class="hljs-attr">velX</span>: <span class="hljs-number">0</span>,<br>                        <span class="hljs-attr">velY</span>: a,<br>                        <span class="hljs-attr">x</span>: t,<br>                        <span class="hljs-attr">y</span>: n,<br>                        <span class="hljs-attr">size</span>: o,<br>                        <span class="hljs-attr">stepSize</span>: <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() / <span class="hljs-number">30</span> * e.<span class="hljs-property">stepsize</span>,<br>                        <span class="hljs-attr">step</span>: <span class="hljs-number">0</span>,<br>                        <span class="hljs-attr">angle</span>: <span class="hljs-number">180</span>,<br>                        <span class="hljs-attr">opacity</span>: d<br>                    &#125;)<br>                &#125;<br>                <span class="hljs-title function_">h</span>()<br>            &#125;<br>            )()<br>    &#125;<br>    )();<br>&#125;<br><br><span class="hljs-comment">// 移动端不显示</span><br><span class="hljs-keyword">if</span> (!(navigator.<span class="hljs-property">userAgent</span>.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i</span>))) &#123;<br>    (<span class="hljs-keyword">function</span> (<span class="hljs-params">$</span>) &#123;<br>        $.fn.<span class="hljs-property">snow</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) &#123;<br>            <span class="hljs-keyword">var</span> $flake = $(<span class="hljs-string">&#x27;&lt;div id=&quot;snowbox&quot; /&gt;&#x27;</span>).<span class="hljs-title function_">css</span>(&#123; <span class="hljs-string">&#x27;position&#x27;</span>: <span class="hljs-string">&#x27;absolute&#x27;</span>, <span class="hljs-string">&#x27;z-index&#x27;</span>: <span class="hljs-string">&#x27;9999&#x27;</span>, <span class="hljs-string">&#x27;top&#x27;</span>: <span class="hljs-string">&#x27;-50px&#x27;</span> &#125;).<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;&amp;#10052;&#x27;</span>),<br>                documentheight = $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">height</span>(),<br>                documentwidth = $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">width</span>(),<br>                defaults = &#123;<br>                    <span class="hljs-attr">minsize</span>: <span class="hljs-number">10</span>,<br>                    <span class="hljs-attr">maxsize</span>: <span class="hljs-number">20</span>,<br>                    <span class="hljs-attr">newon</span>: <span class="hljs-number">1000</span>,<br>                    <span class="hljs-attr">flakecolor</span>: <span class="hljs-string">&quot;#afdaef&quot;</span> <span class="hljs-comment">/* 此处可以定义雪花颜色，若要白色可以改为#ffffff */</span><br>                &#125;,<br>                options = $.<span class="hljs-title function_">extend</span>(&#123;&#125;, defaults, options);<br>            <span class="hljs-keyword">var</span> interval = <span class="hljs-built_in">setInterval</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>                <span class="hljs-keyword">var</span> startpositionleft = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * documentwidth - <span class="hljs-number">100</span>,<br>                    startopacity = <span class="hljs-number">0.5</span> + <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>(),<br>                    sizeflake = options.<span class="hljs-property">minsize</span> + <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * options.<span class="hljs-property">maxsize</span>,<br>                    endpositiontop = documentheight - <span class="hljs-number">200</span>,<br>                    endpositionleft = startpositionleft - <span class="hljs-number">500</span> + <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">500</span>,<br>                    durationfall = documentheight * <span class="hljs-number">10</span> + <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">5000</span>;<br>                $flake.<span class="hljs-title function_">clone</span>().<span class="hljs-title function_">appendTo</span>(<span class="hljs-string">&#x27;body&#x27;</span>).<span class="hljs-title function_">css</span>(&#123;<br>                    <span class="hljs-attr">left</span>: startpositionleft,<br>                    <span class="hljs-attr">opacity</span>: startopacity,<br>                    <span class="hljs-string">&#x27;font-size&#x27;</span>: sizeflake,<br>                    <span class="hljs-attr">color</span>: options.<span class="hljs-property">flakecolor</span><br>                &#125;).<span class="hljs-title function_">animate</span>(&#123;<br>                    <span class="hljs-attr">top</span>: endpositiontop,<br>                    <span class="hljs-attr">left</span>: endpositionleft,<br>                    <span class="hljs-attr">opacity</span>: <span class="hljs-number">0.2</span><br>                &#125;, durationfall, <span class="hljs-string">&#x27;linear&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>                    $(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">remove</span>();<br>                &#125;);<br>            &#125;, options.<span class="hljs-property">newon</span>);<br>        &#125;;<br>    &#125;)(jQuery);<br><br>    $(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>        $.fn.<span class="hljs-title function_">snow</span>(&#123;<br>            <span class="hljs-attr">minsize</span>: <span class="hljs-number">5</span>, <span class="hljs-comment">/* 定义雪花最小尺寸 */</span><br>            <span class="hljs-attr">maxsize</span>: <span class="hljs-number">25</span>,<span class="hljs-comment">/* 定义雪花最大尺寸 */</span><br>            <span class="hljs-attr">newon</span>: <span class="hljs-number">800</span>  <span class="hljs-comment">/* 定义密集程度，数字越小越密集 */</span><br>        &#125;);<br>    &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>顺便把另外一个版本的雪花也贴上来：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/** 另一个版本的雪花 */</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">snowFall</span>(<span class="hljs-params">snow</span>) &#123;<br>    <span class="hljs-comment">/* 可配置属性 */</span><br>    snow = snow || &#123;&#125;;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">maxFlake</span> = snow.<span class="hljs-property">maxFlake</span> || <span class="hljs-number">600</span>; <span class="hljs-comment">/* 最多片数 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">flakeSize</span> = snow.<span class="hljs-property">flakeSize</span> || <span class="hljs-number">10</span>; <span class="hljs-comment">/* 雪花形状 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">fallSpeed</span> = snow.<span class="hljs-property">fallSpeed</span> || <span class="hljs-number">1</span>; <span class="hljs-comment">/* 坠落速度 */</span><br>&#125;<br><br><span class="hljs-comment">/* 兼容写法 */</span><br>requestAnimationFrame = <span class="hljs-variable language_">window</span>.<span class="hljs-property">requestAnimationFrame</span> ||<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">mozRequestAnimationFrame</span> ||<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">webkitRequestAnimationFrame</span> ||<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">msRequestAnimationFrame</span> ||<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">oRequestAnimationFrame</span> ||<br>    <span class="hljs-keyword">function</span> (<span class="hljs-params">callback</span>) &#123;<br>        <span class="hljs-built_in">setTimeout</span>(callback, <span class="hljs-number">1000</span> / <span class="hljs-number">60</span>);<br>    &#125;;<br><br>cancelAnimationFrame = <span class="hljs-variable language_">window</span>.<span class="hljs-property">cancelAnimationFrame</span> ||<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">mozCancelAnimationFrame</span> ||<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">webkitCancelAnimationFrame</span> ||<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">msCancelAnimationFrame</span> ||<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">oCancelAnimationFrame</span>;<br><br><span class="hljs-comment">/* 开始下雪 */</span><br>snowFall.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">start</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">/* 创建画布 */</span><br>    snowCanvas.<span class="hljs-title function_">apply</span>(<span class="hljs-variable language_">this</span>);<br>    <span class="hljs-comment">/* 创建雪花形状 */</span><br>    createFlakes.<span class="hljs-title function_">apply</span>(<span class="hljs-variable language_">this</span>);<br>    <span class="hljs-comment">/* 画雪 */</span><br>    drawSnow.<span class="hljs-title function_">apply</span>(<span class="hljs-variable language_">this</span>);<br>&#125;<br><br><span class="hljs-comment">/* 创建画布 */</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">snowCanvas</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-comment">/* 添加Dom结点 */</span><br>    <span class="hljs-keyword">var</span> snowcanvas = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;canvas&quot;</span>);<br>    snowcanvas.<span class="hljs-property">id</span> = <span class="hljs-string">&quot;snowfall&quot;</span>;<br>    snowcanvas.<span class="hljs-property">width</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span>;<br>    snowcanvas.<span class="hljs-property">height</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">scrollHeight</span>; <span class="hljs-comment">// 使用scrollHeight获取完整文档高度</span><br>    snowcanvas.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;style&quot;</span>, <span class="hljs-string">&quot;position:fixed; top: 0; left: 0; z-index: 1; pointer-events: none;&quot;</span>);<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(snowcanvas);<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">canvas</span> = snowcanvas;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span> = snowcanvas.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&quot;2d&quot;</span>);<br>    <span class="hljs-comment">/* 窗口大小改变的处理 */</span><br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">onresize</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>        snowcanvas.<span class="hljs-property">width</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span>;<br>        snowcanvas.<span class="hljs-property">height</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">scrollHeight</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">/* 雪运动对象 */</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">flakeMove</span>(<span class="hljs-params">canvasWidth, canvasHeight, flakeSize, fallSpeed</span>) &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * canvasWidth); <span class="hljs-comment">/* x坐标 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * canvasHeight); <span class="hljs-comment">/* y坐标 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">size</span> = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * flakeSize + <span class="hljs-number">2</span>; <span class="hljs-comment">/* 形状 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">maxSize</span> = flakeSize; <span class="hljs-comment">/* 最大形状 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span> = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">1</span> + fallSpeed; <span class="hljs-comment">/* 坠落速度 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">fallSpeed</span> = fallSpeed; <span class="hljs-comment">/* 坠落速度 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">velY</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span>; <span class="hljs-comment">/* Y方向速度 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">velX</span> = <span class="hljs-number">0</span>; <span class="hljs-comment">/* X方向速度 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">stepSize</span> = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() / <span class="hljs-number">30</span>; <span class="hljs-comment">/* 步长 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">step</span> = <span class="hljs-number">0</span> <span class="hljs-comment">/* 步数 */</span><br>&#125;<br><br>flakeMove.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">update</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> x = <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>,<br>        y = <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>;<br>    <span class="hljs-comment">/* 左右摆动(余弦) */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">velX</span> *= <span class="hljs-number">0.98</span>;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">velY</span> &lt;= <span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span>) &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">velY</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span><br>    &#125;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">velX</span> += <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">cos</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">step</span> += <span class="hljs-number">.05</span>) * <span class="hljs-variable language_">this</span>.<span class="hljs-property">stepSize</span>;<br><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> += <span class="hljs-variable language_">this</span>.<span class="hljs-property">velY</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> += <span class="hljs-variable language_">this</span>.<span class="hljs-property">velX</span>;<br>    <span class="hljs-comment">/* 飞出边界的处理 */</span><br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> &gt;= canvas.<span class="hljs-property">width</span> || <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> &lt;= <span class="hljs-number">0</span> || <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> &gt;= canvas.<span class="hljs-property">height</span> || <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> &lt;= <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">reset</span>(canvas.<span class="hljs-property">width</span>, canvas.<span class="hljs-property">height</span>)<br>    &#125;<br>&#125;;<br><br><span class="hljs-comment">/* 飞出边界-放置最顶端继续坠落 */</span><br>flakeMove.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">reset</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">width, height</span>) &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * width);<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = <span class="hljs-number">0</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">size</span> = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-variable language_">this</span>.<span class="hljs-property">maxSize</span> + <span class="hljs-number">2</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span> = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">1</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">fallSpeed</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">velY</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">velX</span> = <span class="hljs-number">0</span>;<br>&#125;;<br><br><span class="hljs-comment">// 渲染雪花-随机形状（此处可修改雪花颜色！！！）</span><br>flakeMove.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">render</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">ctx</span>) &#123;<br>    <span class="hljs-keyword">var</span> snowFlake = ctx.<span class="hljs-title function_">createRadialGradient</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> - <span class="hljs-variable language_">window</span>.<span class="hljs-property">scrollY</span>, <span class="hljs-number">0</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> - <span class="hljs-variable language_">window</span>.<span class="hljs-property">scrollY</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">size</span>);<br>    snowFlake.<span class="hljs-title function_">addColorStop</span>(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;rgba(255, 255, 255, 0.9)&quot;</span>); <span class="hljs-comment">/* 此处是雪花颜色，默认是白色 */</span><br>    snowFlake.<span class="hljs-title function_">addColorStop</span>(<span class="hljs-number">.5</span>, <span class="hljs-string">&quot;rgba(255, 255, 255, 0.5)&quot;</span>); <span class="hljs-comment">/* 若要改为其他颜色，请自行查 */</span><br>    snowFlake.<span class="hljs-title function_">addColorStop</span>(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;rgba(255, 255, 255, 0)&quot;</span>); <span class="hljs-comment">/* 找16进制的RGB 颜色代码。 */</span><br>    ctx.<span class="hljs-title function_">save</span>();<br>    ctx.<span class="hljs-property">fillStyle</span> = snowFlake;<br>    ctx.<span class="hljs-title function_">beginPath</span>();<br>    ctx.<span class="hljs-title function_">arc</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> - <span class="hljs-variable language_">window</span>.<span class="hljs-property">scrollY</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">size</span>, <span class="hljs-number">0</span>, <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span> * <span class="hljs-number">2</span>);<br>    ctx.<span class="hljs-title function_">fill</span>();<br>    ctx.<span class="hljs-title function_">restore</span>();<br>&#125;;<br><br><span class="hljs-comment">/* 创建雪花-定义形状 */</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">createFlakes</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> maxFlake = <span class="hljs-variable language_">this</span>.<span class="hljs-property">maxFlake</span>,<br>        flakes = <span class="hljs-variable language_">this</span>.<span class="hljs-property">flakes</span> = [],<br>        canvas = <span class="hljs-variable language_">this</span>.<span class="hljs-property">canvas</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; maxFlake; i++) &#123;<br>        flakes.<span class="hljs-title function_">push</span>(<span class="hljs-keyword">new</span> <span class="hljs-title function_">flakeMove</span>(canvas.<span class="hljs-property">width</span>, canvas.<span class="hljs-property">height</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">flakeSize</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">fallSpeed</span>))<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">/* 画雪 */</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">drawSnow</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> maxFlake = <span class="hljs-variable language_">this</span>.<span class="hljs-property">maxFlake</span>,<br>        flakes = <span class="hljs-variable language_">this</span>.<span class="hljs-property">flakes</span>;<br>    ctx = <span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>, canvas = <span class="hljs-variable language_">this</span>.<span class="hljs-property">canvas</span>, that = <span class="hljs-variable language_">this</span>;<br>    <span class="hljs-comment">/* 清空雪花 */</span><br>    ctx.<span class="hljs-title function_">clearRect</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.<span class="hljs-property">width</span>, canvas.<span class="hljs-property">height</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> e = <span class="hljs-number">0</span>; e &lt; maxFlake; e++) &#123;<br>        flakes[e].<span class="hljs-title function_">update</span>();<br>        flakes[e].<span class="hljs-title function_">render</span>(ctx);<br>    &#125;<br>    <span class="hljs-comment">/*  一帧一帧的画 */</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">loop</span> = <span class="hljs-title function_">requestAnimationFrame</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>        drawSnow.<span class="hljs-title function_">apply</span>(that);<br>    &#125;);<br>&#125;<br><br><span class="hljs-comment">/** 只有一种雪花就取消注释下面这段代码，然后注释掉后面的新雪花的代码 */</span><br><span class="hljs-comment">/* 调用及控制方法 */</span><br><span class="hljs-comment">// var snow = new snowfall(&#123;</span><br><span class="hljs-comment">//     maxflake: 60</span><br><span class="hljs-comment">// &#125;);</span><br><span class="hljs-comment">// snow.start();</span><br><br><span class="hljs-comment">/** 新雪花代码 */</span><br>(<span class="hljs-keyword">function</span> (<span class="hljs-params">$</span>) &#123;<br>    $.fn.<span class="hljs-property">snow</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) &#123;<br>        <span class="hljs-keyword">var</span> $flake = $(<span class="hljs-string">&#x27;&lt;div class=&quot;snowflake&quot; /&gt;&#x27;</span>).<span class="hljs-title function_">css</span>(&#123;<br>            <span class="hljs-string">&#x27;position&#x27;</span>: <span class="hljs-string">&#x27;absolute&#x27;</span>,<br>            <span class="hljs-string">&#x27;z-index&#x27;</span>: <span class="hljs-string">&#x27;9999&#x27;</span>,<br>            <span class="hljs-string">&#x27;top&#x27;</span>: <span class="hljs-string">&#x27;-50px&#x27;</span><br>        &#125;).<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;&amp;#10052;&#x27;</span>),<br>            documentHeight = $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">height</span>(),<br>            documentWidth = $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">width</span>(),<br>            defaults = &#123;<br>                <span class="hljs-attr">minSize</span>: <span class="hljs-number">10</span>,<br>                <span class="hljs-attr">maxSize</span>: <span class="hljs-number">20</span>,<br>                <span class="hljs-attr">newOn</span>: <span class="hljs-number">1000</span>,<br>                <span class="hljs-attr">flakeColor</span>: <span class="hljs-string">&quot;#AFDAEF&quot;</span> <span class="hljs-comment">/* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */</span><br>            &#125;,<br>            options = $.<span class="hljs-title function_">extend</span>(&#123;&#125;, defaults, options);<br><br>        <span class="hljs-keyword">var</span> interval = <span class="hljs-built_in">setInterval</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>            <span class="hljs-keyword">var</span> startPositionLeft = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * documentWidth - <span class="hljs-number">100</span>,<br>                startOpacity = <span class="hljs-number">0.5</span> + <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>(),<br>                sizeFlake = options.<span class="hljs-property">minSize</span> + <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * options.<span class="hljs-property">maxSize</span>,<br>                endPositionTop = documentHeight - <span class="hljs-number">200</span>,<br>                endPositionLeft = startPositionLeft - <span class="hljs-number">500</span> + <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">500</span>,<br>                durationFall = documentHeight * <span class="hljs-number">10</span> + <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">5000</span>;<br><br>            $flake.<span class="hljs-title function_">clone</span>().<span class="hljs-title function_">appendTo</span>(<span class="hljs-string">&#x27;body&#x27;</span>).<span class="hljs-title function_">css</span>(&#123;<br>                <span class="hljs-attr">left</span>: startPositionLeft,<br>                <span class="hljs-attr">opacity</span>: startOpacity,<br>                <span class="hljs-string">&#x27;font-size&#x27;</span>: sizeFlake,<br>                <span class="hljs-attr">color</span>: options.<span class="hljs-property">flakeColor</span><br>            &#125;).<span class="hljs-title function_">animate</span>(&#123;<br>                <span class="hljs-attr">top</span>: endPositionTop,<br>                <span class="hljs-attr">left</span>: endPositionLeft,<br>                <span class="hljs-attr">opacity</span>: <span class="hljs-number">0.2</span><br>            &#125;, durationFall, <span class="hljs-string">&#x27;linear&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>                $(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">remove</span>();<br>            &#125;);<br>        &#125;, options.<span class="hljs-property">newOn</span>);<br>    &#125;;<br>&#125;)(jQuery);<br><br>$(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>    $.fn.<span class="hljs-title function_">snow</span>(&#123;<br>        <span class="hljs-attr">minSize</span>: <span class="hljs-number">5</span>, <span class="hljs-comment">/* 定义雪花最小尺寸 */</span><br>        <span class="hljs-attr">maxSize</span>: <span class="hljs-number">25</span>, <span class="hljs-comment">/* 定义雪花最大尺寸 */</span><br>        <span class="hljs-attr">newOn</span>: <span class="hljs-number">800</span> <span class="hljs-comment">/* 定义密集程度，数字越小越密集 */</span><br>    &#125;);<br><br>    <span class="hljs-comment">// 调用新的雪花效果</span><br>    <span class="hljs-keyword">var</span> snowflake = <span class="hljs-keyword">new</span> <span class="hljs-title function_">snowFall</span>(&#123;<br>        <span class="hljs-attr">maxFlake</span>: <span class="hljs-number">30</span><br>    &#125;);<br>    snowflake.<span class="hljs-title function_">start</span>();<br>&#125;);<br></code></pre></td></tr></table></figure>
+<h2
+id="如何在hexo的fluid主题中实现鼠标点击的烟花效果">如何在Hexo的Fluid主题中实现鼠标点击的烟花效果</h2>
+<p>加入 <code>js</code>
+代码的步骤和前面的实现雪花的步骤类似，这里就不再赘述，下面直接给出实现的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/** 鼠标点击放礼花</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Source</span>: https://cnwjy.site/2022/01/04/Hexo-Fluid%E7%BE%8E%E5%8C%96/</span><br><span class="hljs-comment"> */</span> <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Circle</span> &#123;<br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">&#123; origin, speed, color, angle, context &#125;</span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">origin</span> = origin<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span> = &#123; ...<span class="hljs-variable language_">this</span>.<span class="hljs-property">origin</span> &#125;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span> = color<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span> = speed<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">angle</span> = angle<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span> = context<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderCount</span> = <span class="hljs-number">0</span><br>    &#125;<br>  <br>    <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span>.<span class="hljs-property">fillStyle</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span><br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span>.<span class="hljs-title function_">beginPath</span>()<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span>.<span class="hljs-title function_">arc</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">x</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">y</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span> * <span class="hljs-number">2</span>)<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span>.<span class="hljs-title function_">fill</span>()<br>    &#125;<br>  <br>    <span class="hljs-title function_">move</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">x</span> = (<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sin</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">angle</span>) * <span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span>) + <span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">x</span><br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">y</span> = (<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">cos</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">angle</span>) * <span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span>) + <span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">y</span> + (<span class="hljs-variable language_">this</span>.<span class="hljs-property">renderCount</span> * <span class="hljs-number">0.3</span>)<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderCount</span>++<br>    &#125;<br>  &#125;<br>  <br>  <span class="hljs-keyword">class</span> <span class="hljs-title class_">Boom</span> &#123;<br>    <span class="hljs-title function_">constructor</span> (&#123; origin, context, circleCount = <span class="hljs-number">16</span>, area &#125;) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">origin</span> = origin<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span> = context<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">circleCount</span> = circleCount<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">area</span> = area<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">stop</span> = <span class="hljs-literal">false</span><br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">circles</span> = []<br>    &#125;<br>  <br>    <span class="hljs-title function_">randomArray</span>(<span class="hljs-params">range</span>) &#123;<br>      <span class="hljs-keyword">const</span> length = range.<span class="hljs-property">length</span><br>      <span class="hljs-keyword">const</span> randomIndex = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(length * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>())<br>      <span class="hljs-keyword">return</span> range[randomIndex]<br>    &#125;<br>  <br>    <span class="hljs-title function_">randomColor</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">const</span> range = [<span class="hljs-string">&#x27;8&#x27;</span>, <span class="hljs-string">&#x27;9&#x27;</span>, <span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>, <span class="hljs-string">&#x27;D&#x27;</span>, <span class="hljs-string">&#x27;E&#x27;</span>, <span class="hljs-string">&#x27;F&#x27;</span>]<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;#&#x27;</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">randomArray</span>(range) + <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">randomArray</span>(range) + <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">randomArray</span>(range) + <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">randomArray</span>(range) + <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">randomArray</span>(range) + <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">randomArray</span>(range)<br>    &#125;<br>  <br>    <span class="hljs-title function_">randomRange</span>(<span class="hljs-params">start, end</span>) &#123;<br>      <span class="hljs-keyword">return</span> (end - start) * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() + start<br>    &#125;<br>  <br>    <span class="hljs-title function_">init</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable language_">this</span>.<span class="hljs-property">circleCount</span>; i++) &#123;<br>        <span class="hljs-keyword">const</span> circle = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Circle</span>(&#123;<br>          <span class="hljs-attr">context</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span>,<br>          <span class="hljs-attr">origin</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">origin</span>,<br>          <span class="hljs-attr">color</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">randomColor</span>(),<br>          <span class="hljs-attr">angle</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">randomRange</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span> - <span class="hljs-number">1</span>, <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span> + <span class="hljs-number">1</span>),<br>          <span class="hljs-attr">speed</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">randomRange</span>(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>)<br>        &#125;)<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">circles</span>.<span class="hljs-title function_">push</span>(circle)<br>      &#125;<br>    &#125;<br>  <br>    <span class="hljs-title function_">move</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">circles</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">circle, index</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (circle.<span class="hljs-property">position</span>.<span class="hljs-property">x</span> &gt; <span class="hljs-variable language_">this</span>.<span class="hljs-property">area</span>.<span class="hljs-property">width</span> || circle.<span class="hljs-property">position</span>.<span class="hljs-property">y</span> &gt; <span class="hljs-variable language_">this</span>.<span class="hljs-property">area</span>.<span class="hljs-property">height</span>) &#123;<br>          <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">circles</span>.<span class="hljs-title function_">splice</span>(index, <span class="hljs-number">1</span>)<br>        &#125;<br>        circle.<span class="hljs-title function_">move</span>()<br>      &#125;)<br>      <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">circles</span>.<span class="hljs-property">length</span> == <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">stop</span> = <span class="hljs-literal">true</span><br>      &#125;<br>    &#125;<br>  <br>    <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">circles</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">circle</span> =&gt;</span> circle.<span class="hljs-title function_">draw</span>())<br>    &#125;<br>  &#125;<br>  <br>  <span class="hljs-keyword">class</span> <span class="hljs-title class_">CursorSpecialEffects</span> &#123;<br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">computerCanvas</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;canvas&#x27;</span>)<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderCanvas</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;canvas&#x27;</span>)<br>  <br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">computerContext</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">computerCanvas</span>.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&#x27;2d&#x27;</span>)<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderContext</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderCanvas</span>.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&#x27;2d&#x27;</span>)<br>  <br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalWidth</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span><br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalHeight</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span><br>  <br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">booms</span> = []<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">running</span> = <span class="hljs-literal">false</span><br>    &#125;<br>  <br>    <span class="hljs-title function_">handleMouseDown</span>(<span class="hljs-params">e</span>) &#123;<br>      <span class="hljs-keyword">const</span> boom = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Boom</span>(&#123;<br>        <span class="hljs-attr">origin</span>: &#123; <span class="hljs-attr">x</span>: e.<span class="hljs-property">clientX</span>, <span class="hljs-attr">y</span>: e.<span class="hljs-property">clientY</span> &#125;,<br>        <span class="hljs-attr">context</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">computerContext</span>,<br>        <span class="hljs-attr">area</span>: &#123;<br>          <span class="hljs-attr">width</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalWidth</span>,<br>          <span class="hljs-attr">height</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalHeight</span><br>        &#125;<br>      &#125;)<br>      boom.<span class="hljs-title function_">init</span>()<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">booms</span>.<span class="hljs-title function_">push</span>(boom)<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">running</span> || <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">run</span>()<br>    &#125;<br>  <br>    <span class="hljs-title function_">handlePageHide</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">booms</span> = []<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">running</span> = <span class="hljs-literal">false</span><br>    &#125;<br>  <br>    <span class="hljs-title function_">init</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">const</span> style = <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderCanvas</span>.<span class="hljs-property">style</span><br>      style.<span class="hljs-property">position</span> = <span class="hljs-string">&#x27;fixed&#x27;</span><br>      style.<span class="hljs-property">top</span> = style.<span class="hljs-property">left</span> = <span class="hljs-number">0</span><br>      style.<span class="hljs-property">zIndex</span> = <span class="hljs-string">&#x27;999999999999999999999999999999999999999999&#x27;</span><br>      style.<span class="hljs-property">pointerEvents</span> = <span class="hljs-string">&#x27;none&#x27;</span><br>  <br>      style.<span class="hljs-property">width</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderCanvas</span>.<span class="hljs-property">width</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">computerCanvas</span>.<span class="hljs-property">width</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalWidth</span><br>      style.<span class="hljs-property">height</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderCanvas</span>.<span class="hljs-property">height</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">computerCanvas</span>.<span class="hljs-property">height</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalHeight</span><br>  <br>      <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">append</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">renderCanvas</span>)<br>  <br>      <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;mousedown&#x27;</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">handleMouseDown</span>.<span class="hljs-title function_">bind</span>(<span class="hljs-variable language_">this</span>))<br>      <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;pagehide&#x27;</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">handlePageHide</span>.<span class="hljs-title function_">bind</span>(<span class="hljs-variable language_">this</span>))<br>    &#125;<br>  <br>    <span class="hljs-title function_">run</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">running</span> = <span class="hljs-literal">true</span><br>      <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">booms</span>.<span class="hljs-property">length</span> == <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">running</span> = <span class="hljs-literal">false</span><br>      &#125;<br>  <br>      <span class="hljs-title function_">requestAnimationFrame</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">run</span>.<span class="hljs-title function_">bind</span>(<span class="hljs-variable language_">this</span>))<br>  <br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">computerContext</span>.<span class="hljs-title function_">clearRect</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalWidth</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalHeight</span>)<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderContext</span>.<span class="hljs-title function_">clearRect</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalWidth</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalHeight</span>)<br>  <br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">booms</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">boom, index</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (boom.<span class="hljs-property">stop</span>) &#123;<br>          <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">booms</span>.<span class="hljs-title function_">splice</span>(index, <span class="hljs-number">1</span>)<br>        &#125;<br>        boom.<span class="hljs-title function_">move</span>()<br>        boom.<span class="hljs-title function_">draw</span>()<br>      &#125;)<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderContext</span>.<span class="hljs-title function_">drawImage</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">computerCanvas</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalWidth</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">globalHeight</span>)<br>    &#125;<br>  &#125;<br>  <br>  <span class="hljs-keyword">const</span> cursorSpecialEffects = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CursorSpecialEffects</span>()<br>  cursorSpecialEffects.<span class="hljs-title function_">init</span>()<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Blog/" class="category-chain-item">Blog</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Blog/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Blog/Hexo/Fluid/" class="category-chain-item">Fluid</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+      
+        <a href="/tags/Website/" class="print-no-link">#Website</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Beautify your blog using javascript</div>
+      <div>https://chen-huaneng.github.io/2023/12/10/2023-12-10-2023-12-10-beautify-your-blog-using-javascript/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Abel</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年12月10日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年12月10日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/12/11/2023-12-11-2023-12-11-lc-1295/" title="LC 1295.Find Numbers with Even Number of Digits">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LC 1295.Find Numbers with Even Number of Digits</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/12/10/2023-12-10-2023-12-10-lc-0070/" title="LC 0070.Climbing Stairs">
+                        <span class="hidden-mobile">LC 0070.Climbing Stairs</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","appKey":"E986Wb0NvdKXW5IypTNvcH0T","path":"window.location.pathname","placeholder":"发一条友善的评论吧(为了方便交流,记得填上方的昵称和邮箱再留言哦~🍭)","avatar":"retro","meta":["nick","mail"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size: 0.85rem"> Copyright <i class="iconfont icon-copyright"> 2023 <a href="/about" target="_blank" rel="nofollow noopener"> <span> <strong>Abel</strong> </span> </a>  </i> | Power by  <a href="https://hexo.io" target="_blank" rel="nofollow noopener"> <span> <strong>Hexo</strong> </span> </a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <span> <strong>Fluid</strong> </span> </a> </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        <i class="iconfont icon-friends"></i>总访问量 
+        <span id="leancloud-site-pv"></span>
+         次 | 
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        <i class="iconfont icon-users"></i>总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+<script src="/js/duration.js"></script>
+<script src="/js/snow.js"></script>
+<script src="/js/firework.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
