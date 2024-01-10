@@ -18,27 +18,26 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.1351.">
+    <meta name="description" content="The solution of LeetCode problem No.1822.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 1351.Count Negative Numbers in a Sorted Matrix">
-<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/09/2023-12-9-2023-12-09-lc-1351/index.html">
+<meta property="og:title" content="LC 1822.Sign of the Product of an Array">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/10/2024-1-10-2024-01-10-lc-1822/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.1351.">
+<meta property="og:description" content="The solution of LeetCode problem No.1822.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/09/banner.jpg">
-<meta property="article:published_time" content="2023-12-09T15:14:51.000Z">
-<meta property="article:modified_time" content="2023-12-09T16:54:07.448Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/10/banner.jpg">
+<meta property="article:published_time" content="2024-01-10T13:37:52.000Z">
+<meta property="article:modified_time" content="2024-01-10T13:41:33.300Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Array">
-<meta property="article:tag" content="Matrix">
-<meta property="article:tag" content="Binary Search">
+<meta property="article:tag" content="Simulation">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/09/banner.jpg">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/10/banner.jpg">
   
   
   
-  <title>LC 1351.Count Negative Numbers in a Sorted Matrix - Abel&#39;s Blog</title>
+  <title>LC 1822.Sign of the Product of an Array - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -244,13 +243,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/12/09/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/1/10/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 1351.Count Negative Numbers in a Sorted Matrix"></span>
+            <span id="subtitle" data-typed-text="LC 1822.Sign of the Product of an Array"></span>
           
         </div>
 
@@ -261,8 +260,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-09 23:14" pubdate>
-          2023年12月9日 晚上
+        <time datetime="2024-01-10 21:37" pubdate>
+          2024年1月10日 晚上
         </time>
       </span>
     
@@ -274,7 +273,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 1.2k 
+          文章字数: 286 
         
       </span>
     
@@ -286,7 +285,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 11 分钟
+          阅读全文大概需要 3 分钟
         
       </span>
     
@@ -331,12 +330,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 1351.Count Negative Numbers in a Sorted Matrix</h1>
+            <h1 id="seo-header">LC 1822.Sign of the Product of an Array</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2023-12-10T00:54:07+08:00
+                    本文最后更新于：2024-01-10T21:41:33+08:00
                   
                   
 
@@ -348,93 +347,43 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-negative-numbers-in-a-sorted-matrix/description/">1351.
-统计有序矩阵中的负数</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个 <code>m * n</code> 的矩阵
-<code>grid</code>，矩阵中的元素无论是按行还是按列，都以非递增顺序排列。
-请你统计并返回 <code>grid</code> 中 <strong>负数</strong> 的数目。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/sign-of-the-product-of-an-array/description/">1822.
+数组元素积的符号</a> ，难度为<strong>简单</strong>。</p>
+<p>已知函数 <code>signFunc(x)</code> 将会根据 <code>x</code>
+的正负返回特定值：</p>
+<ul>
+<li>如果 <code>x</code> 是正数，返回 <code>1</code> 。</li>
+<li>如果 <code>x</code> 是负数，返回 <code>-1</code> 。</li>
+<li>如果 <code>x</code> 是等于 <code>0</code> ，返回 <code>0</code>
+。</li>
+</ul>
+<p>给你一个整数数组 <code>nums</code> 。令 <code>product</code> 为数组
+<code>nums</code> 中所有元素值的乘积。</p>
+<p>返回 <code>signFunc(product)</code> 。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：grid = [[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]]<br>输出：8<br>解释：矩阵中共有 8 个负数。<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [-1,-2,-3,-4,3,2,1]<br>输出：1<br>解释：数组中所有值的乘积是 144 ，且 signFunc(144) = 1<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：grid = [[3,2],[1,0]]<br>输出：0<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,5,0,2,-3]<br>输出：0<br>解释：数组中所有值的乘积是 0 ，且 signFunc(0) = 0<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [-1,1,-1,1,-1]<br>输出：-1<br>解释：数组中所有值的乘积是 -1 ，且 signFunc(-1) = -1<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>m == grid.length</code></li>
-<li><code>n == grid[i].length</code></li>
-<li><code>1 &lt;= m, n &lt;= 100</code></li>
-<li><code>-100 &lt;= grid[i][j] &lt;= 100</code></li>
+<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+<li><code>-100 &lt;= nums[i] &lt;= 100</code></li>
 </ul>
-<p><strong>进阶：</strong>你可以设计一个时间复杂度为
-<code>O(n + m)</code> 的解决方案吗？</p>
 <h2 id="解答">解答</h2>
-<h3 id="方法一暴力">方法一：暴力</h3>
-<p>最简单的方法就是遍历一遍整个矩阵，统计负数的数量。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">countNegatives</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] grid)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> grid.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> grid[<span class="hljs-number">0</span>].length - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; --j) &#123;<br>                <span class="hljs-keyword">if</span> (grid[i][j] &lt; <span class="hljs-number">0</span>) &#123;<br>                    ++count;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="方法一模拟">方法一：模拟</h3>
+<p>根据题目要求模拟即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">arraySign</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] &lt; <span class="hljs-number">0</span>) &#123;<br>                res *= -<span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(mn)\)</span>，其中 <code>m</code>
-表示矩阵的列数， <code>n</code>
-表示矩阵的行数，即整个矩阵的元素总个数。</p></li>
+class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组
+<code>nums</code> 的长度。</p></li>
 <li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>，用了一个 <code>count</code>
-计数。</p></li>
-</ul>
-<h3 id="方法二二分查找">方法二：二分查找</h3>
-<p>由于题目中提到矩阵的行和列都是按照非递增的顺序排列，所以可以利用这个性质来优化暴力解法。<strong>通过二分查找来寻找每一行从前往后的第一个出现的负数，那么这个位置之后的数都是负数</strong>，所以可以直接统计。</p>
-<ol type="1">
-<li>遍历矩阵的每一行。</li>
-<li>二分查找到该行从前往后的第一个负数，考虑第 <code>i</code>
-行，记第一个负数的位置为 <span class="math inline">\(pos_i\)</span>
-，那么第 <code>i</code> 行 <span class="math inline">\([pos_i, m -
-1]\)</span> 中的所有数都是负数，所以这一行的负数个数为 <span
-class="math inline">\(m - 1 - pos_i + 1 = m - pos_i\)</span> 。</li>
-<li>所以最后的数量就是 <span class="math inline">\(\sum_{i = 0}^{n - 1}
-(m - pos_i)\)</span> 。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">countNegatives</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] grid)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> row : grid) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, r = grid[<span class="hljs-number">0</span>].length - <span class="hljs-number">1</span>, pos = -<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">while</span> (l &lt;= r) &#123; <span class="hljs-comment">// 要注意边界条件</span><br>                <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> l + ((r - l) &gt;&gt; <span class="hljs-number">1</span>); <span class="hljs-comment">// 这个位操作就是对2取余的操作，但是效率更高</span><br>                <span class="hljs-keyword">if</span> (row[mid] &lt; <span class="hljs-number">0</span>) &#123;<br>                    pos = mid;<br>                    r = mid - <span class="hljs-number">1</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    l = mid + <span class="hljs-number">1</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (pos &gt;= <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 如果是C++判断条件可以写成~pos</span><br>                num += row.length - pos;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n \log
-m)\)</span>，由于二分查找每一行的时间复杂度为 <span
-class="math inline">\(\log m\)</span> ，而矩阵共 <code>n</code>
-行，所以时间复杂度为 <span class="math inline">\(n \log
-m\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>，只使用了常数个变量。</p></li>
-</ul>
-<h3 id="方法三倒序遍历">方法三：倒序遍历</h3>
-<p>在二分查找中我们只使用了每行的数是非递增的条件，但是实际上<strong>这个矩阵的行和列都是非递增的</strong>，所以可以进一步优化。由于矩阵的列也是非递增的，所以对于第
-<code>i</code> 行设第一个负数出现的位置为 <span
-class="math inline">\(pos_i\)</span> ，我们有如下的不等式： <span
-class="math display">\[
-pos_0 \geq pos_1 \geq pos_2 \geq \ldots \geq pos_i \geq \ldots \geq
-pos_{n - 1}
-\]</span>
-因此，在遍历的时候我们可以选择倒序遍历（正序遍历也可以，思路是一样的），用
-<code>pre</code> 来存储上一次遍历第 <code>i + 1</code>
-行时从前往后第一个出现的负数的位置 <span class="math inline">\(pos_{i +
-1}\)</span> （即<span class="math inline">\(pos_{i + 1} = pre\)</span>）
-，当遍历第 <code>i</code> 行的时候，从前往后出现的第一个负数的位置一定在
-<code>[pre, n - 1]</code> 的范围内（其中 <code>n</code>
-为每行的元素个数），由此可以让第 <code>i</code> 行的左边界变为
-<code>pre</code>
-，从而缩小二分查找的范围，进而优化时间复杂度。（感兴趣的也可以使用分治法解决，是类似的思路，可以参考<a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-negative-numbers-in-a-sorted-matrix/solutions/101204/tong-ji-you-xu-ju-zhen-zhong-de-fu-shu-by-leetcode/">1351-LeetCode官方解法</a>）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">countNegatives</span><span class="hljs-params">(<span class="hljs-type">int</span>[][] grid)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, pre = <span class="hljs-number">0</span>; <span class="hljs-comment">// 用pre而不是一个数组来存储前一行的位置，因为每次只需要前一行的位置即可</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> grid.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> pre, r = grid[<span class="hljs-number">0</span>].length - <span class="hljs-number">1</span>, pos = -<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">while</span> (l &lt;= r) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> l + ((r - l) &gt;&gt; <span class="hljs-number">1</span>);<br>                <span class="hljs-keyword">if</span> (grid[i][mid] &lt; <span class="hljs-number">0</span>) &#123;<br>                    pos = mid;<br>                    pre = mid; <span class="hljs-comment">// 记录当前行第一个负数的位置</span><br>                    r = mid - <span class="hljs-number">1</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    l = mid + <span class="hljs-number">1</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (pos &gt;= <span class="hljs-number">0</span>) &#123;<br>                num += grid[<span class="hljs-number">0</span>].length - pos;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>正序遍历的解法，代码来源于<a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-negative-numbers-in-a-sorted-matrix/solutions/101204/tong-ji-you-xu-ju-zhen-zhong-de-fu-shu-by-leetcode/">1351-LeetCode官方解法</a>：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">countNegatives</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; grid)</span> </span>&#123;<br>        <span class="hljs-type">int</span> num = <span class="hljs-number">0</span>, m = (<span class="hljs-type">int</span>) grid[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>(), pos = (<span class="hljs-type">int</span>) grid[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x : grid) &#123;<br>            <span class="hljs-type">int</span> i;<br>            <span class="hljs-keyword">for</span> (i = pos; i &gt;= <span class="hljs-number">0</span>; --i) &#123;<br>                <span class="hljs-keyword">if</span> (x[i] &gt;= <span class="hljs-number">0</span>) &#123;<br>                    <span class="hljs-keyword">if</span> (i + <span class="hljs-number">1</span> &lt; m) &#123;<br>                        pos = i + <span class="hljs-number">1</span>;<br>                        num += m - pos;<br>                    &#125;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (i == <span class="hljs-number">-1</span>) &#123;<br>                num += m;<br>                pos = <span class="hljs-number">-1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n +
-m)\)</span>，其中 <code>n</code> 是行数， <code>m</code>
-是列数，外层循环遍历了每一行，时间复杂度为 <span
-class="math inline">\(O(n)\)</span> ，而内层循环最多只需要移动
-<code>m</code> 次位置即可，所以总的时间复杂度为 <span
-class="math inline">\(O(m + n)\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>，只使用了常数个变量。</p></li>
+class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2023/12/09/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2024/1/10/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -479,9 +428,7 @@ class="math inline">\(O(1)\)</span>，只使用了常数个变量。</p></li>
       
         <a href="/tags/Array/" class="print-no-link">#Array</a>
       
-        <a href="/tags/Matrix/" class="print-no-link">#Matrix</a>
-      
-        <a href="/tags/Binary-Search/" class="print-no-link">#Binary Search</a>
+        <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
       
     </div>
   
@@ -493,8 +440,8 @@ class="math inline">\(O(1)\)</span>，只使用了常数个变量。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 1351.Count Negative Numbers in a Sorted Matrix</div>
-      <div>https://chen-huaneng.github.io/2023/12/09/2023-12-9-2023-12-09-lc-1351/</div>
+      <div>LC 1822.Sign of the Product of an Array</div>
+      <div>https://chen-huaneng.github.io/2024/01/10/2024-1-10-2024-01-10-lc-1822/</div>
     </div>
     <div class="license-meta">
       
@@ -506,13 +453,13 @@ class="math inline">\(O(1)\)</span>，只使用了常数个变量。</p></li>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月9日</div>
+          <div>2024年1月10日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年12月10日</div>
+          <div>2024年1月10日</div>
         </div>
       
       
@@ -549,18 +496,12 @@ class="math inline">\(O(1)\)</span>，只使用了常数个变量。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/10/2023-12-10-2023-12-10-lc-0070/" title="LC 0070.Climbing Stairs">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 0070.Climbing Stairs</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/07/2023-12-7-2023-12-07-lc-1929/" title="LC 1929.Concatenation of Array">
-                        <span class="hidden-mobile">LC 1929.Concatenation of Array</span>
+                      <a href="/2024/01/09/2024-1-9-2024-01-09-lc-1523/" title="LC 1523.Count Odd Numbers in an Interval Range">
+                        <span class="hidden-mobile">LC 1523.Count Odd Numbers in an Interval Range</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
