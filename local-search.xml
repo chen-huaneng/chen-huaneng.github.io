@@ -4,6 +4,70 @@
   
   
   <entry>
+    <title>LC 2656.Maximum Sum With Exactly K Elements</title>
+    <link href="/2024/01/11/2024-1-11-2024-01-11-lc-2656/"/>
+    <url>/2024/01/11/2024-1-11-2024-01-11-lc-2656/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/maximum-sum-with-exactly-k-elements/description/">2656.K 个元素的最大和</a> ，难度为<strong>简单</strong>。</p><p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code>和一个整数 <code>k</code> 。你需要执行以下操作 <strong>恰好</strong><code>k</code> 次，最大化你的得分：</p><ol type="1"><li>从 <code>nums</code> 中选择一个元素 <code>m</code> 。</li><li>将选中的元素 <code>m</code> 从数组中删除。</li><li>将新元素 <code>m + 1</code> 添加到数组中。</li><li>你的得分增加 <code>m</code> 。</li></ol><p>请你返回执行以上操作恰好 <code>k</code> 次后的最大得分。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,2,3,4,5], k = 3<br>输出：18<br>解释：我们需要从 nums 中恰好选择 3 个元素并最大化得分。<br>第一次选择 5 。和为 5 ，nums = [1,2,3,4,6] 。<br>第二次选择 6 。和为 6 ，nums = [1,2,3,4,7] 。<br>第三次选择 7 。和为 5 + 6 + 7 = 18 ，nums = [1,2,3,4,8] 。<br>所以我们返回 18 。<br>18 是可以得到的最大答案。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [5,5,5], k = 2<br>输出：11<br>解释：我们需要从 nums 中恰好选择 2 个元素并最大化得分。<br>第一次选择 5 。和为 5 ，nums = [5,5,6] 。<br>第二次选择 6 。和为 6 ，nums = [5,5,7] 。<br>所以我们返回 11 。<br>11 是可以得到的最大答案。<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= nums.length &lt;= 100</code></li><li><code>1 &lt;= nums[i] &lt;= 100</code></li><li><code>1 &lt;= k &lt;= 100</code></li></ul><h2 id="解答">解答</h2><h3 id="方法一模拟">方法一：模拟</h3><p>根据题目要求，现找出最大值，然后求从最大值开始的前 <code>k</code>个连续等差数列的和就是要求的结果。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maximizeSum</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; nums.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] &gt; max) &#123;<br>                max = nums[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> max * k + (((k - <span class="hljs-number">1</span>) * k) &gt;&gt; <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组<code>nums</code> 的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(1)\)</span>。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2024/1/11/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Array</tag>
+      
+      <tag>Greedy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>LC 1475.Final Prices With a Special Discount in a Shop</title>
+    <link href="/2024/01/10/2024-1-10-2024-01-10-lc-1475/"/>
+    <url>/2024/01/10/2024-1-10-2024-01-10-lc-1475/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/description/">1475.商品折扣后的最终价格</a> ，难度为<strong>简单</strong>。</p><p>给你一个数组 <code>prices</code> ，其中 <code>prices[i]</code>是商店里第 <code>i</code> 件商品的价格。</p><p>商店里正在进行促销活动，如果你要买第 <code>i</code>件商品，那么你可以得到与 <code>prices[j]</code> 相等的折扣，其中<code>j</code> 是满足 <code>j &gt; i</code> 且<code>prices[j] &lt;= prices[i]</code> 的 <strong>最小下标</strong>，如果没有满足条件的 <code>j</code> ，你将没有任何折扣。</p><p>请你返回一个数组，数组中第 <code>i</code> 个元素是折扣后你购买商品<code>i</code> 最终需要支付的价格。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：prices = [8,4,6,2,3]<br>输出：[4,2,4,2,3]<br>解释：<br>商品 0 的价格为 price[0]=8 ，你将得到 prices[1]=4 的折扣，所以最终价格为 8 - 4 = 4 。<br>商品 1 的价格为 price[1]=4 ，你将得到 prices[3]=2 的折扣，所以最终价格为 4 - 2 = 2 。<br>商品 2 的价格为 price[2]=6 ，你将得到 prices[3]=2 的折扣，所以最终价格为 6 - 2 = 4 。<br>商品 3 和 4 都没有折扣。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：prices = [1,2,3,4,5]<br>输出：[1,2,3,4,5]<br>解释：在这个例子中，所有商品都没有折扣。<br></code></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：prices = [10,1,1,6]<br>输出：[9,0,1,6]<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= prices.length &lt;= 500</code></li><li><code>1 &lt;= prices[i] &lt;= 10^3</code></li></ul><h2 id="解答">解答</h2><h3 id="方法一模拟">方法一：模拟</h3><p>最简单方法是根据题目要求进行模拟，每次都判断当前元素之后的第一个最小元素。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] finalPrices(<span class="hljs-type">int</span>[] prices) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; prices.length; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i + <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">while</span> (j &lt; prices.length &amp;&amp; prices[j] &gt; prices[i]) &#123;<br>                ++j;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (j &lt; prices.length) &#123;<br>                prices[i] -= prices[j];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> prices;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N^2)\)</span>，其中 <code>N</code> 为<code>prices</code> 的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(1)\)</span>。</p></li></ul><h3 id="方法二逆向遍历-单调栈">方法二：逆向遍历 + 单调栈</h3><p><ahref="https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/solutions/1790574/by-muse-77-nh2d/"><spanclass="citation" data-cites="Source">@Source</span>: 题解来源</a></p><p>题目其实就是要求当前元素后面比其小的第一个元素，反过来想也就是从后面开始遍历时，在其前面比当前元素大的第一个元素，要记录比当前元素小的元素（因为前面的元素可能比当前记录的元素小，所以要记录在这之前比当前记录元素小的元素）可以使用单调栈（也就是满足单调性质的栈，这里使用的是栈顶元素到栈底元素单调递减的栈）。</p><p>具体的步骤就是，从数组末尾开始遍历并更新当前元素，如果当前遍历的元素比单调栈中的栈顶元素大，则入栈并更新当前元素并放入要返回的数组中，如果当前遍历的元素比单调栈中的栈顶元素小，<strong>说明对接下来要遍历的元素来说，在其前面的第一个比其小的元素不可能是当前的栈顶元素</strong>（因为当前遍历的元素比栈顶元素小，所以应该是先当前遍历的元素）。所以将栈顶元素一个一个弹出单调栈，直到栈顶元素比当前遍历的元素小或者为空栈（维护了单调栈的性质）。</p><blockquote><p>当数据的值域较大的时候，可以采用单调栈中存储索引而不是数值。</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] finalPrices(<span class="hljs-type">int</span>[] prices) &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> prices.length;<br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        Deque&lt;Integer&gt; deque = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) &#123;<br>            <span class="hljs-keyword">while</span> (!deque.isEmpty() &amp;&amp; deque.peekLast() &gt; prices[i]) &#123;<br>                deque.removeLast();<br>            &#125;<br>            res[i] = deque.isEmpty() ? prices[i] : prices[i] - deque.peekLast();<br>            deque.addLast(prices[i]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组<code>prices</code> 的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，存储单调栈的空间复杂度为 <spanclass="math inline">\(O(N)\)</span>，<code>N</code> 为<code>prices</code> 的长度，返回值不计入空间复杂度。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2024/1/10/banner2.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Array</tag>
+      
+      <tag>Stack</tag>
+      
+      <tag>Monotonic Stack</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 1413.Minimum Value to Get Positive Step by Step Sum</title>
     <link href="/2024/01/10/2024-1-10-2024-01-10-lc-1413/"/>
     <url>/2024/01/10/2024-1-10-2024-01-10-lc-1413/</url>
@@ -24,9 +88,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Prefix Sum</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Prefix Sum</tag>
       
     </tags>
     
@@ -55,9 +119,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -115,9 +179,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -146,11 +210,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
+      <tag>Hash Table</tag>
       
       <tag>Counting</tag>
       
-      <tag>Hash Table</tag>
+      <tag>String</tag>
       
     </tags>
     
@@ -214,9 +278,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -276,9 +340,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -307,9 +371,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Matrix</tag>
       
@@ -429,9 +493,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -549,9 +613,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -588,9 +652,9 @@
       
       <tag>Math</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -619,9 +683,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -716,9 +780,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -747,9 +811,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -974,9 +1038,9 @@
       
       <tag>Array</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1005,9 +1069,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1036,11 +1100,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
+      <tag>Hash Table</tag>
       
       <tag>Counting</tag>
       
-      <tag>Hash Table</tag>
+      <tag>String</tag>
       
     </tags>
     
@@ -1168,11 +1232,11 @@
       
       <tag>Array</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1201,9 +1265,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1298,9 +1362,9 @@
       
       <tag>Math</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1422,9 +1486,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -1552,9 +1616,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -1589,9 +1653,9 @@
       
       <tag>Array</tag>
       
-      <tag>Matrix</tag>
-      
       <tag>Binary Search</tag>
+      
+      <tag>Matrix</tag>
       
     </tags>
     
@@ -1620,9 +1684,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1684,9 +1748,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1777,9 +1841,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1808,9 +1872,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1839,9 +1903,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -1872,9 +1936,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -1938,9 +2002,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -2000,13 +2064,13 @@
     
     <tags>
       
-      <tag>Tool</tag>
-      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
       
       <tag>Website</tag>
+      
+      <tag>Tool</tag>
       
     </tags>
     
@@ -2055,17 +2119,6 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
     <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
@@ -2088,7 +2141,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** * 浏览器搞笑标题:@Source:https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html */var OriginTitle = document.title;var titleTime;document.addEventListener('visibilitychange', function() {if (document.hidden) {$('[rel="icon"]').attr('href', "/funny.ico");document.title = '╭(°A°`)╮ 页面崩溃啦 ~';clearTimeout(titleTime);} else {$('[rel="icon"]').attr('href', "/img/newtubiao.png");document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;titleTime = setTimeout(function() {document.title = OriginTitle;}, 2000);}});]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -2111,6 +2164,17 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 鼠标点击放礼花 * @Source: https://cnwjy.site/2022/01/04/Hexo-Fluid%E7%BE%8E%E5%8C%96/ */ class Circle {    constructor({ origin, speed, color, angle, context }) {      this.origin = origin      this.position = { ...this.origin }      this.color = color      this.speed = speed      this.angle = angle      this.context = context      this.renderCount = 0    }      draw() {      this.context.fillStyle = this.color      this.context.beginPath()      this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)      this.context.fill()    }      move() {      this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x      this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)      this.renderCount++    }  }    class Boom {    constructor ({ origin, context, circleCount = 16, area }) {      this.origin = origin      this.context = context      this.circleCount = circleCount      this.area = area      this.stop = false      this.circles = []    }      randomArray(range) {      const length = range.length      const randomIndex = Math.floor(length * Math.random())      return range[randomIndex]    }      randomColor() {      const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']      return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)    }      randomRange(start, end) {      return (end - start) * Math.random() + start    }      init() {      for(let i = 0; i < this.circleCount; i++) {        const circle = new Circle({          context: this.context,          origin: this.origin,          color: this.randomColor(),          angle: this.randomRange(Math.PI - 1, Math.PI + 1),          speed: this.randomRange(1, 6)        })        this.circles.push(circle)      }    }      move() {      this.circles.forEach((circle, index) => {        if (circle.position.x > this.area.width || circle.position.y > this.area.height) {          return this.circles.splice(index, 1)        }        circle.move()      })      if (this.circles.length == 0) {        this.stop = true      }    }      draw() {      this.circles.forEach(circle => circle.draw())    }  }    class CursorSpecialEffects {    constructor() {      this.computerCanvas = document.createElement('canvas')      this.renderCanvas = document.createElement('canvas')        this.computerContext = this.computerCanvas.getContext('2d')      this.renderContext = this.renderCanvas.getContext('2d')        this.globalWidth = window.innerWidth      this.globalHeight = window.innerHeight        this.booms = []      this.running = false    }      handleMouseDown(e) {      const boom = new Boom({        origin: { x: e.clientX, y: e.clientY },        context: this.computerContext,        area: {          width: this.globalWidth,          height: this.globalHeight        }      })      boom.init()      this.booms.push(boom)      this.running || this.run()    }      handlePageHide() {      this.booms = []      this.running = false    }      init() {      const style = this.renderCanvas.style      style.position = 'fixed'      style.top = style.left = 0      style.zIndex = '999999999999999999999999999999999999999999'      style.pointerEvents = 'none'        style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth      style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight        document.body.append(this.renderCanvas)        window.addEventListener('mousedown', this.handleMouseDown.bind(this))      window.addEventListener('pagehide', this.handlePageHide.bind(this))    }      run() {      this.running = true      if (this.booms.length == 0) {        return this.running = false      }        requestAnimationFrame(this.run.bind(this))        this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)      this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)        this.booms.forEach((boom, index) => {        if (boom.stop) {          return this.booms.splice(index, 1)        }        boom.move()        boom.draw()      })      this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)    }  }    const cursorSpecialEffects = new CursorSpecialEffects()  cursorSpecialEffects.init()]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/** * 浏览器搞笑标题:@Source:https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html */var OriginTitle = document.title;var titleTime;document.addEventListener('visibilitychange', function() {if (document.hidden) {$('[rel="icon"]').attr('href', "/funny.ico");document.title = '╭(°A°`)╮ 页面崩溃啦 ~';clearTimeout(titleTime);} else {$('[rel="icon"]').attr('href', "/img/newtubiao.png");document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;titleTime = setTimeout(function() {document.title = OriginTitle;}, 2000);}});]]></content>
     
   </entry>
   
