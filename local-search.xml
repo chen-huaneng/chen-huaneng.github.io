@@ -4,6 +4,41 @@
   
   
   <entry>
+    <title>LC 2085.Count Common Words With One Occurrence</title>
+    <link href="/2024/01/12/2024-1-12-2024-01-12-lc-2085/"/>
+    <url>/2024/01/12/2024-1-12-2024-01-12-lc-2085/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/count-common-words-with-one-occurrence/description/">2085.统计出现过一次的公共字符串</a> ，难度为<strong>简单</strong>。</p><p>给你两个字符串数组 <code>words1</code> 和 <code>words2</code>，请你返回在两个字符串数组中 <strong>都恰好出现一次</strong>的字符串的数目。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words1 = [&quot;leetcode&quot;,&quot;is&quot;,&quot;amazing&quot;,&quot;as&quot;,&quot;is&quot;], words2 = [&quot;amazing&quot;,&quot;leetcode&quot;,&quot;is&quot;]<br>输出：2<br>解释：<br><span class="hljs-bullet">-</span> &quot;leetcode&quot; 在两个数组中都恰好出现一次，计入答案。<br><span class="hljs-bullet">-</span> &quot;amazing&quot; 在两个数组中都恰好出现一次，计入答案。<br><span class="hljs-bullet">-</span> &quot;is&quot; 在两个数组中都出现过，但在 words1 中出现了 2 次，不计入答案。<br><span class="hljs-bullet">-</span> &quot;as&quot; 在 words1 中出现了一次，但是在 words2 中没有出现过，不计入答案。<br>所以，有 2 个字符串在两个数组中都恰好出现了一次。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words1 = [&quot;b&quot;,&quot;bb&quot;,&quot;bbb&quot;], words2 = [&quot;a&quot;,&quot;aa&quot;,&quot;aaa&quot;]<br>输出：0<br>解释：没有字符串在两个数组中都恰好出现一次。<br></code></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words1 = [&quot;a&quot;,&quot;ab&quot;], words2 = [&quot;a&quot;,&quot;a&quot;,&quot;a&quot;,&quot;ab&quot;]<br>输出：1<br>解释：唯一在两个数组中都出现一次的字符串是 &quot;ab&quot; 。<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= words1.length, words2.length &lt;= 1000</code></li><li><code>1 &lt;= words1[i].length, words2[j].length &lt;= 30</code></li><li><code>words1[i]</code> 和 <code>words2[j]</code>都只包含小写英文字母。</li></ul><h2 id="解答">解答</h2><h3 id="方法一哈希表">方法一：哈希表</h3><p>第一次遍历用哈希表存储 <code>word1</code>中的字符串，第二次遍历，根据第一次遍历的结果来确定是否只出现了一次，如果只出现了一次就增加<code>res</code> ，并且把对应的值改成 <code>0</code> ，如果第二次遇到<code>0</code>，则说明这个字符串在 <code>word2</code>中至少出现了两次，前面多统计了一次，所以要减一并且把值改成<code>-1</code>，防止接下来再次遇到。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">countWords</span><span class="hljs-params">(String[] words1, String[] words2)</span> &#123;<br>        Map&lt;String, Integer&gt; hash = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (String w : words1) &#123;<br>            hash.put(w, hash.getOrDefault(w, <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (String w : words2) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> hash.getOrDefault(w, -<span class="hljs-number">1</span>);<br>            <span class="hljs-keyword">if</span> (key == <span class="hljs-number">1</span>) &#123;<br>                ++res;<br>                hash.put(w, <span class="hljs-number">0</span>);<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key == <span class="hljs-number">0</span>) &#123;<br>                --res;<br>                hash.put(w, -<span class="hljs-number">1</span>);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(M +N)\)</span>，其中 <code>N</code> 为 <code>word1</code> 的长度，<code>M</code> 为 <code>word2</code> 的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code> 为<code>word1</code> 的长度。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2024/1/12/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Array</tag>
+      
+      <tag>Hash Table</tag>
+      
+      <tag>String</tag>
+      
+      <tag>Counting</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 2656.Maximum Sum With Exactly K Elements</title>
     <link href="/2024/01/11/2024-1-11-2024-01-11-lc-2656/"/>
     <url>/2024/01/11/2024-1-11-2024-01-11-lc-2656/</url>
@@ -119,9 +154,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -179,9 +214,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -212,9 +247,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -278,9 +313,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -340,9 +375,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -371,9 +406,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Matrix</tag>
       
@@ -493,9 +528,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -524,9 +559,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Prefix Sum</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -613,9 +648,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Hash Table</tag>
       
@@ -650,11 +685,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Array</tag>
+      
       <tag>Math</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Array</tag>
       
     </tags>
     
@@ -683,9 +718,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -811,9 +846,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -970,11 +1005,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Greedy</tag>
+      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
-      
-      <tag>Greedy</tag>
       
     </tags>
     
@@ -1034,9 +1069,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
       <tag>Hash Table</tag>
       
@@ -1069,9 +1104,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1102,9 +1137,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1133,9 +1168,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
       <tag>Sorting</tag>
       
@@ -1234,9 +1269,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1265,9 +1300,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1360,11 +1395,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Array</tag>
+      
       <tag>Math</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Array</tag>
       
     </tags>
     
@@ -1486,9 +1521,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memoization</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Memoization</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -1552,9 +1587,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1616,9 +1651,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memoization</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Memoization</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -1653,9 +1688,9 @@
       
       <tag>Array</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Matrix</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -1684,9 +1719,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1748,9 +1783,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1841,9 +1876,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1872,9 +1907,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1903,9 +1938,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -1936,9 +1971,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Hash Table</tag>
       
@@ -2002,9 +2037,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Hash Table</tag>
       
@@ -2064,13 +2099,13 @@
     
     <tags>
       
+      <tag>Tool</tag>
+      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
       
       <tag>Website</tag>
-      
-      <tag>Tool</tag>
       
     </tags>
     
@@ -2119,7 +2154,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -2141,7 +2176,18 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/** * 浏览器搞笑标题:@Source:https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html */var OriginTitle = document.title;var titleTime;document.addEventListener('visibilitychange', function() {if (document.hidden) {$('[rel="icon"]').attr('href', "/funny.ico");document.title = '╭(°A°`)╮ 页面崩溃啦 ~';clearTimeout(titleTime);} else {$('[rel="icon"]').attr('href', "/img/newtubiao.png");document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;titleTime = setTimeout(function() {document.title = OriginTitle;}, 2000);}});]]></content>
     
   </entry>
   
@@ -2164,17 +2210,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 鼠标点击放礼花 * @Source: https://cnwjy.site/2022/01/04/Hexo-Fluid%E7%BE%8E%E5%8C%96/ */ class Circle {    constructor({ origin, speed, color, angle, context }) {      this.origin = origin      this.position = { ...this.origin }      this.color = color      this.speed = speed      this.angle = angle      this.context = context      this.renderCount = 0    }      draw() {      this.context.fillStyle = this.color      this.context.beginPath()      this.context.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2)      this.context.fill()    }      move() {      this.position.x = (Math.sin(this.angle) * this.speed) + this.position.x      this.position.y = (Math.cos(this.angle) * this.speed) + this.position.y + (this.renderCount * 0.3)      this.renderCount++    }  }    class Boom {    constructor ({ origin, context, circleCount = 16, area }) {      this.origin = origin      this.context = context      this.circleCount = circleCount      this.area = area      this.stop = false      this.circles = []    }      randomArray(range) {      const length = range.length      const randomIndex = Math.floor(length * Math.random())      return range[randomIndex]    }      randomColor() {      const range = ['8', '9', 'A', 'B', 'C', 'D', 'E', 'F']      return '#' + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range) + this.randomArray(range)    }      randomRange(start, end) {      return (end - start) * Math.random() + start    }      init() {      for(let i = 0; i < this.circleCount; i++) {        const circle = new Circle({          context: this.context,          origin: this.origin,          color: this.randomColor(),          angle: this.randomRange(Math.PI - 1, Math.PI + 1),          speed: this.randomRange(1, 6)        })        this.circles.push(circle)      }    }      move() {      this.circles.forEach((circle, index) => {        if (circle.position.x > this.area.width || circle.position.y > this.area.height) {          return this.circles.splice(index, 1)        }        circle.move()      })      if (this.circles.length == 0) {        this.stop = true      }    }      draw() {      this.circles.forEach(circle => circle.draw())    }  }    class CursorSpecialEffects {    constructor() {      this.computerCanvas = document.createElement('canvas')      this.renderCanvas = document.createElement('canvas')        this.computerContext = this.computerCanvas.getContext('2d')      this.renderContext = this.renderCanvas.getContext('2d')        this.globalWidth = window.innerWidth      this.globalHeight = window.innerHeight        this.booms = []      this.running = false    }      handleMouseDown(e) {      const boom = new Boom({        origin: { x: e.clientX, y: e.clientY },        context: this.computerContext,        area: {          width: this.globalWidth,          height: this.globalHeight        }      })      boom.init()      this.booms.push(boom)      this.running || this.run()    }      handlePageHide() {      this.booms = []      this.running = false    }      init() {      const style = this.renderCanvas.style      style.position = 'fixed'      style.top = style.left = 0      style.zIndex = '999999999999999999999999999999999999999999'      style.pointerEvents = 'none'        style.width = this.renderCanvas.width = this.computerCanvas.width = this.globalWidth      style.height = this.renderCanvas.height = this.computerCanvas.height = this.globalHeight        document.body.append(this.renderCanvas)        window.addEventListener('mousedown', this.handleMouseDown.bind(this))      window.addEventListener('pagehide', this.handlePageHide.bind(this))    }      run() {      this.running = true      if (this.booms.length == 0) {        return this.running = false      }        requestAnimationFrame(this.run.bind(this))        this.computerContext.clearRect(0, 0, this.globalWidth, this.globalHeight)      this.renderContext.clearRect(0, 0, this.globalWidth, this.globalHeight)        this.booms.forEach((boom, index) => {        if (boom.stop) {          return this.booms.splice(index, 1)        }        boom.move()        boom.draw()      })      this.renderContext.drawImage(this.computerCanvas, 0, 0, this.globalWidth, this.globalHeight)    }  }    const cursorSpecialEffects = new CursorSpecialEffects()  cursorSpecialEffects.init()]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/** * 浏览器搞笑标题:@Source:https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html */var OriginTitle = document.title;var titleTime;document.addEventListener('visibilitychange', function() {if (document.hidden) {$('[rel="icon"]').attr('href', "/funny.ico");document.title = '╭(°A°`)╮ 页面崩溃啦 ~';clearTimeout(titleTime);} else {$('[rel="icon"]').attr('href', "/img/newtubiao.png");document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;titleTime = setTimeout(function() {document.title = OriginTitle;}, 2000);}});]]></content>
     
   </entry>
   
