@@ -18,26 +18,28 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.1920.">
+    <meta name="description" content="The solution of LeetCode problem No.2744.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 1920.Build Array from Permutation">
-<meta property="og:url" content="https://chen-huaneng.github.io/2023/12/12/2023-12-12-2023-12-12-lc-1920/index.html">
+<meta property="og:title" content="LC 2744.Find Maximum Number of String Pairs">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/17/2024-1-17-2024-01-17-lc-2744/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.1920.">
+<meta property="og:description" content="The solution of LeetCode problem No.2744.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/12/banner7.jpg">
-<meta property="article:published_time" content="2023-12-12T09:54:23.000Z">
-<meta property="article:modified_time" content="2023-12-12T10:11:35.163Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/17/banner.jpg">
+<meta property="article:published_time" content="2024-01-17T09:47:18.000Z">
+<meta property="article:modified_time" content="2024-01-17T09:55:35.696Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Array">
+<meta property="article:tag" content="Hash Table">
+<meta property="article:tag" content="String">
 <meta property="article:tag" content="Simulation">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/12/banner7.jpg">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/17/banner.jpg">
   
   
   
-  <title>LC 1920.Build Array from Permutation - Abel&#39;s Blog</title>
+  <title>LC 2744.Find Maximum Number of String Pairs - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,13 +245,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/12/12/banner7.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/1/17/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 1920.Build Array from Permutation"></span>
+            <span id="subtitle" data-typed-text="LC 2744.Find Maximum Number of String Pairs"></span>
           
         </div>
 
@@ -260,8 +262,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-12 17:54" pubdate>
-          2023年12月12日 下午
+        <time datetime="2024-01-17 17:47" pubdate>
+          2024年1月17日 下午
         </time>
       </span>
     
@@ -273,7 +275,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 765 
+          文章字数: 512 
         
       </span>
     
@@ -285,7 +287,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 7 分钟
+          阅读全文大概需要 5 分钟
         
       </span>
     
@@ -330,12 +332,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 1920.Build Array from Permutation</h1>
+            <h1 id="seo-header">LC 2744.Find Maximum Number of String Pairs</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2023-12-12T18:11:35+08:00
+                    本文最后更新于：2024-01-17T17:55:35+08:00
                   
                   
 
@@ -347,77 +349,46 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/build-array-from-permutation/description/">1920.
-基于排列构建数组</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个 <strong>从 0 开始的排列</strong>
-<code>nums</code>（<strong>下标也从 0 开始</strong>）。请你构建一个
-<strong>同样长度</strong> 的数组 <code>ans</code> ，其中，对于每个
-<code>i</code>（<code>0 &lt;= i &lt; nums.length</code>），都满足
-<code>ans[i] = nums[nums[i]]</code> 。返回构建好的数组 <code>ans</code>
-。</p>
-<p><strong>从 0 开始的排列</strong> <code>nums</code> 是一个由
-<code>0</code> 到 <code>nums.length - 1</code>（<code>0</code> 和
-<code>nums.length - 1</code> 也包含在内）的不同整数组成的数组。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-maximum-number-of-string-pairs/description/">2744.
+最大字符串配对数目</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个下标从 <strong>0</strong> 开始的数组 <code>words</code>
+，数组中包含 <strong>互不相同</strong> 的字符串。</p>
+<p>如果字符串 <code>words[i]</code> 与字符串 <code>words[j]</code>
+满足以下条件，我们称它们可以匹配：</p>
+<ul>
+<li>字符串 <code>words[i]</code> 等于 <code>words[j]</code>
+的反转字符串。</li>
+<li><code>0 &lt;= i &lt; j &lt; words.length</code></li>
+</ul>
+<p>请你返回数组 <code>words</code> 中的 <strong>最大</strong>
+匹配数目。</p>
+<p>注意，每个字符串最多匹配一次。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [0,2,1,5,3,4]<br>输出：[0,1,2,4,5,3]<br>解释：数组 ans 构建如下：<br>ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]<br><span class="hljs-code">    = [nums[0], nums[2], nums[1], nums[5], nums[3], nums[4]]</span><br><span class="hljs-code">    = [0,1,2,4,5,3]</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;cd&quot;,&quot;ac&quot;,&quot;dc&quot;,&quot;ca&quot;,&quot;zz&quot;]<br>输出：2<br>解释：在此示例中，我们可以通过以下方式匹配 2 对字符串：<br><span class="hljs-bullet">-</span> 我们将第 0 个字符串与第 2 个字符串匹配，因为 word[0] 的反转字符串是 &quot;dc&quot; 并且等于 words[2]。<br><span class="hljs-bullet">-</span> 我们将第 1 个字符串与第 3 个字符串匹配，因为 word[1] 的反转字符串是 &quot;ca&quot; 并且等于 words[3]。<br>可以证明最多匹配数目是 2 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [5,0,1,2,3,4]<br>输出：[4,5,0,1,2,3]<br>解释：数组 ans 构建如下：<br>ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]<br><span class="hljs-code">    = [nums[5], nums[0], nums[1], nums[2], nums[3], nums[4]]</span><br><span class="hljs-code">    = [4,5,0,1,2,3]</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;ab&quot;,&quot;ba&quot;,&quot;cc&quot;]<br>输出：1<br>解释：在此示例中，我们可以通过以下方式匹配 1 对字符串：<br><span class="hljs-bullet">-</span> 我们将第 0 个字符串与第 1 个字符串匹配，因为 words[1] 的反转字符串 &quot;ab&quot; 与 words[0] 相等。<br>可以证明最多匹配数目是 1 。<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;aa&quot;,&quot;ab&quot;]<br>输出：0<br>解释：这个例子中，无法匹配任何字符串。<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
-<li><code>0 &lt;= nums[i] &lt; nums.length</code></li>
-<li><code>nums</code> 中的元素 <strong>互不相同</strong></li>
+<li><code>1 &lt;= words.length &lt;= 50</code></li>
+<li><code>words[i].length == 2</code></li>
+<li><code>words</code> 包含的字符串互不相同。</li>
+<li><code>words[i]</code> 只包含小写英文字母。</li>
 </ul>
 <h2 id="解答">解答</h2>
-<h3 id="方法一模拟">方法一：模拟</h3>
-<p>根据题目要求模拟即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] buildArray(<span class="hljs-type">int</span>[] nums) &#123;<br>        <span class="hljs-type">int</span>[] ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[nums.length];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; ++i) &#123;<br>            ans[i] = nums[nums[i]];<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="方法一哈希表">方法一：哈希表</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maximumNumberOfStringPairs</span><span class="hljs-params">(String[] words)</span> &#123;<br>        Set&lt;Integer&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (String s : words) &#123;<br>            <span class="hljs-keyword">if</span> (set.contains(s.charAt(<span class="hljs-number">1</span>) * <span class="hljs-number">100</span> + s.charAt(<span class="hljs-number">0</span>))) &#123;<br>                ++cnt;<br>            &#125;<br>            set.add(s.charAt(<span class="hljs-number">0</span>) * <span class="hljs-number">100</span> + s.charAt(<span class="hljs-number">1</span>));<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度。</p></li>
+class="math inline">\(O(N)\)</span>，其中 <code>N</code>
+为字符串数组的长度。</p></li>
 <li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>，输出数组不计入空间复杂度。</p></li>
-</ul>
-<h3 id="方法二原地构建">方法二：原地构建</h3>
-<p><a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/build-array-from-permutation/solutions/858017/ji-yu-pai-lie-gou-jian-shu-zu-by-leetcod-gjcn/"><span
-class="citation"
-data-cites="Source:题解来源">@Source:题解来源</span></a></p>
-<p>我们也可以直接对原数组 <code>nums</code> 进行修改。</p>
-<p>为了使得构建过程可以完整进行，我们需要让
-<code>nums</code>中的每个元素 <code>nums[i]</code>
-能够同时存储「当前值」（即 <code>nums[i]</code> ）和「最终值」（即
-<code>nums[nums[i]]</code> ）。</p>
-<p>我们注意到 <code>nums</code>中元素的取值范围为<code>[0,999]</code>
-闭区间，这意味着 <code>nums</code>
-中的每个元素的「当前值」和「最终值」都在 <code>[0,999]</code>
-闭区间内。</p>
-<p>因此，我们可以使用类似「<code>1000</code>
-进制」的思路来表示每个元素的「当前值」和「最终值」。对于每个元素，我们用它除以
-<code>1000</code>
-的商数表示它的「最终值」，而用余数表示它的「当前值」。</p>
-<p>那么，我们首先遍历
-<code>nums</code>，计算每个元素的「最终值」，并乘以 <code>1000</code>
-加在该元素上。随后，我们再次遍历数组，并将每个元素的值除以
-<code>1000</code> 保留其商数。此时 <code>nums</code>
-即为构建完成的数组，我们返回该数组作为答案。</p>
-<p><strong>细节</strong></p>
-<p>在计算
-<code>nums[i]</code>的「最终值」并修改该元素时，我们需要计算修改前
-<code>nums[nums[i]]</code> 的值，而 <code>nums</code> 中下标为
-<code>nums[i]</code> 的元素可能已被修改，因此我们需要将取下标得到的值对
-<code>1000</code> 取模得到「最终值」。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] buildArray(<span class="hljs-type">int</span>[] nums) &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            nums[i] += <span class="hljs-number">1000</span> * (nums[nums[i]] % <span class="hljs-number">1000</span>);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            nums[i] /= <span class="hljs-number">1000</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，一共遍历了两次 <code>nums</code>
-数组，其中 <code>N</code> 为 <code>nums</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+class="math inline">\(O(N)\)</span>，其中 <code>N</code>
+为哈希表需要的空间。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2023/12/12/banner7.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2024/1/17/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -462,6 +433,10 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Array/" class="print-no-link">#Array</a>
       
+        <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
+      
+        <a href="/tags/String/" class="print-no-link">#String</a>
+      
         <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
       
     </div>
@@ -474,8 +449,8 @@ class="math inline">\(O(1)\)</span>。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 1920.Build Array from Permutation</div>
-      <div>https://chen-huaneng.github.io/2023/12/12/2023-12-12-2023-12-12-lc-1920/</div>
+      <div>LC 2744.Find Maximum Number of String Pairs</div>
+      <div>https://chen-huaneng.github.io/2024/01/17/2024-1-17-2024-01-17-lc-2744/</div>
     </div>
     <div class="license-meta">
       
@@ -487,13 +462,13 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月12日</div>
+          <div>2024年1月17日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年12月12日</div>
+          <div>2024年1月17日</div>
         </div>
       
       
@@ -530,18 +505,12 @@ class="math inline">\(O(1)\)</span>。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/12/2023-12-12-2023-12-12-lc-1512/" title="LC 1512.Number of Good Pairs">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 1512.Number of Good Pairs</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/12/2023-12-12-2023-12-12-lc-2351/" title="LC 2351.First Letter to Appear Twice">
-                        <span class="hidden-mobile">LC 2351.First Letter to Appear Twice</span>
+                      <a href="/2024/01/16/2024-1-16-2024-01-16-lc-0917/" title="LC 0917.Reverse Only Letters">
+                        <span class="hidden-mobile">LC 0917.Reverse Only Letters</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
