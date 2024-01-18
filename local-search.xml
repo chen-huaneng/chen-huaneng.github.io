@@ -4,11 +4,42 @@
   
   
   <entry>
+    <title>LC 1800.Maximum Ascending Subarray Sum</title>
+    <link href="/2024/01/18/2024-1-18-2024-01-18-lc-1800/"/>
+    <url>/2024/01/18/2024-1-18-2024-01-18-lc-1800/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/maximum-ascending-subarray-sum/description/">1800.最大升序子数组和</a> ，难度为<strong>简单</strong>。</p><p>给你一个正整数组成的数组 <code>nums</code> ，返回 <code>nums</code>中一个 <strong>升序</strong> 子数组的最大可能元素和。</p><p>子数组是数组中的一个连续数字序列。</p><p>已知子数组 <code>[numsl, numsl+1, ..., numsr-1, numsr]</code>，若对所有<code>i</code>（<code>l &lt;= i &lt; r</code>），<code>numsi  &lt; numsi+1</code>都成立，则称这一子数组为 <strong>升序</strong> 子数组。注意，大小为<code>1</code> 的子数组也视作 <strong>升序</strong> 子数组。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [10,20,30,5,10,50]<br>输出：65<br>解释：[5,10,50] 是元素和最大的升序子数组，最大元素和为 65 。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [10,20,30,40,50]<br>输出：150<br>解释：[10,20,30,40,50] 是元素和最大的升序子数组，最大元素和为 150 。 <br></code></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [12,17,15,13,10,11,12]<br>输出：33<br>解释：[10,11,12] 是元素和最大的升序子数组，最大元素和为 33 。 <br></code></pre></td></tr></table></figure><p><strong>示例 4：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [100,10,1]<br>输出：100<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= nums.length &lt;= 100</code></li><li><code>1 &lt;= nums[i] &lt;= 100</code></li></ul><h2 id="解答">解答</h2><h3 id="方法一模拟">方法一：模拟</h3><p>根据题目要求进行模拟，如果当前的元素递增则加到升序数组和中，如果不是则更新最大的元素为当前元素，继续判断是否递增。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxAscendingSum</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, sum = <span class="hljs-number">0</span>, cur = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i : nums) &#123;<br>            <span class="hljs-keyword">if</span> (max &lt; i) &#123;<br>                cur += i;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                cur = i;<br>            &#125;<br>            max = i;<br>            <span class="hljs-keyword">if</span> (cur &gt; sum) &#123;<br>                sum = cur;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code> 为<code>nums</code> 数组的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(1)\)</span>。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2024/1/18/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Array</tag>
+      
+      <tag>Simulation</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 2744.Find Maximum Number of String Pairs</title>
     <link href="/2024/01/17/2024-1-17-2024-01-17-lc-2744/"/>
     <url>/2024/01/17/2024-1-17-2024-01-17-lc-2744/</url>
     
-    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/find-maximum-number-of-string-pairs/description/">2744.最大字符串配对数目</a> ，难度为<strong>简单</strong>。</p><p>给你一个下标从 <strong>0</strong> 开始的数组 <code>words</code>，数组中包含 <strong>互不相同</strong> 的字符串。</p><p>如果字符串 <code>words[i]</code> 与字符串 <code>words[j]</code>满足以下条件，我们称它们可以匹配：</p><ul><li>字符串 <code>words[i]</code> 等于 <code>words[j]</code>的反转字符串。</li><li><code>0 &lt;= i &lt; j &lt; words.length</code></li></ul><p>请你返回数组 <code>words</code> 中的 <strong>最大</strong>匹配数目。</p><p>注意，每个字符串最多匹配一次。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;cd&quot;,&quot;ac&quot;,&quot;dc&quot;,&quot;ca&quot;,&quot;zz&quot;]<br>输出：2<br>解释：在此示例中，我们可以通过以下方式匹配 2 对字符串：<br><span class="hljs-bullet">-</span> 我们将第 0 个字符串与第 2 个字符串匹配，因为 word[0] 的反转字符串是 &quot;dc&quot; 并且等于 words[2]。<br><span class="hljs-bullet">-</span> 我们将第 1 个字符串与第 3 个字符串匹配，因为 word[1] 的反转字符串是 &quot;ca&quot; 并且等于 words[3]。<br>可以证明最多匹配数目是 2 。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;ab&quot;,&quot;ba&quot;,&quot;cc&quot;]<br>输出：1<br>解释：在此示例中，我们可以通过以下方式匹配 1 对字符串：<br><span class="hljs-bullet">-</span> 我们将第 0 个字符串与第 1 个字符串匹配，因为 words[1] 的反转字符串 &quot;ab&quot; 与 words[0] 相等。<br>可以证明最多匹配数目是 1 。<br></code></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;aa&quot;,&quot;ab&quot;]<br>输出：0<br>解释：这个例子中，无法匹配任何字符串。<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= words.length &lt;= 50</code></li><li><code>words[i].length == 2</code></li><li><code>words</code> 包含的字符串互不相同。</li><li><code>words[i]</code> 只包含小写英文字母。</li></ul><h2 id="解答">解答</h2><h3 id="方法一哈希表">方法一：哈希表</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maximumNumberOfStringPairs</span><span class="hljs-params">(String[] words)</span> &#123;<br>        Set&lt;Integer&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (String s : words) &#123;<br>            <span class="hljs-keyword">if</span> (set.contains(s.charAt(<span class="hljs-number">1</span>) * <span class="hljs-number">100</span> + s.charAt(<span class="hljs-number">0</span>))) &#123;<br>                ++cnt;<br>            &#125;<br>            set.add(s.charAt(<span class="hljs-number">0</span>) * <span class="hljs-number">100</span> + s.charAt(<span class="hljs-number">1</span>));<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code>为字符串数组的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code>为哈希表需要的空间。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2024/1/17/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/find-maximum-number-of-string-pairs/description/">2744.最大字符串配对数目</a> ，难度为<strong>简单</strong>。</p><p>给你一个下标从 <strong>0</strong> 开始的数组 <code>words</code>，数组中包含 <strong>互不相同</strong> 的字符串。</p><p>如果字符串 <code>words[i]</code> 与字符串 <code>words[j]</code>满足以下条件，我们称它们可以匹配：</p><ul><li>字符串 <code>words[i]</code> 等于 <code>words[j]</code>的反转字符串。</li><li><code>0 &lt;= i &lt; j &lt; words.length</code></li></ul><p>请你返回数组 <code>words</code> 中的 <strong>最大</strong>匹配数目。</p><p>注意，每个字符串最多匹配一次。</p><p><strong>示例 1：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;cd&quot;,&quot;ac&quot;,&quot;dc&quot;,&quot;ca&quot;,&quot;zz&quot;]<br>输出：2<br>解释：在此示例中，我们可以通过以下方式匹配 2 对字符串：<br><span class="hljs-bullet">-</span> 我们将第 0 个字符串与第 2 个字符串匹配，因为 word[0] 的反转字符串是 &quot;dc&quot; 并且等于 words[2]。<br><span class="hljs-bullet">-</span> 我们将第 1 个字符串与第 3 个字符串匹配，因为 word[1] 的反转字符串是 &quot;ca&quot; 并且等于 words[3]。<br>可以证明最多匹配数目是 2 。<br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;ab&quot;,&quot;ba&quot;,&quot;cc&quot;]<br>输出：1<br>解释：在此示例中，我们可以通过以下方式匹配 1 对字符串：<br><span class="hljs-bullet">-</span> 我们将第 0 个字符串与第 1 个字符串匹配，因为 words[1] 的反转字符串 &quot;ab&quot; 与 words[0] 相等。<br>可以证明最多匹配数目是 1 。<br></code></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;aa&quot;,&quot;ab&quot;]<br>输出：0<br>解释：这个例子中，无法匹配任何字符串。<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= words.length &lt;= 50</code></li><li><code>words[i].length == 2</code></li><li><code>words</code> 包含的字符串互不相同。</li><li><code>words[i]</code> 只包含小写英文字母。</li></ul><h2 id="解答">解答</h2><h3 id="方法一哈希表">方法一：哈希表</h3><p>根据题目的提示，字符串只有两个字符，所以可以使用 <code>200</code>以内的整数来代表字符串的哈希值，通过哈希值来判断字符串的反转是否在哈希表中，如果存在则增加匹配的次数。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maximumNumberOfStringPairs</span><span class="hljs-params">(String[] words)</span> &#123;<br>        Set&lt;Integer&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (String s : words) &#123;<br>            <span class="hljs-keyword">if</span> (set.contains(s.charAt(<span class="hljs-number">1</span>) * <span class="hljs-number">100</span> + s.charAt(<span class="hljs-number">0</span>))) &#123;<br>                ++cnt;<br>            &#125;<br>            set.add(s.charAt(<span class="hljs-number">0</span>) * <span class="hljs-number">100</span> + s.charAt(<span class="hljs-number">1</span>));<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code>为字符串数组的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(N)\)</span>，其中 <code>N</code>为哈希表需要的空间。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2024/1/17/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
     
     
     <categories>
@@ -466,9 +497,9 @@
       
       <tag>Math</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Linked List</tag>
       
       <tag>Number Theory</tag>
       
@@ -838,9 +869,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Two Pointers</tag>
       
       <tag>Sorting</tag>
       
@@ -970,9 +1001,9 @@
       
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -2336,11 +2367,22 @@
   
   
   <entry>
+    <title>about</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<h1 id="about">About?!</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="who-am-i">Who am I?</h2><p>目前是一名普通的大三学生 ，正在自学编程中，目前正在学习<code>Java</code>和算法，以及一些基本的计算机科学知识。由于我并非科班出身，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code>极大地提高了我的写作效率（<del>改变不了我还是经常写Bug的事实</del>）；<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。甚至我觉得根本不需要<code>Word</code> 这种臃肿的东西了（之前饱受 <code>Word</code>排版摧残的我），当然平时写作可以用 <code>Markdown</code>，有更高排版要求的时候我还是会使用 <code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、陈奕迅、Lilas Ikuta（幾田 りら／いくたりら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听（也许是没有特别的偏好吧）。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>之前也有一段持续读书的时光，喜欢读的书也很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><p>为什么近来读书少了？主要是事情多了起来，不得不暂时中断了读书的计划（<del>才不是懒</del>），如果有人想看我写书评也可以给我发邮件，让我重启读书计划，激励我继续读书、创作。</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h3 id="why-i-write-blogs">Why I write blogs?</h3><p>关于我为什么写博客这件事，其实还是有挺多原因的：</p><ul><li>一是，我一直想搭建一个个人的博客网站，写点文章记录一下自己的生活，技术成长什么的。</li><li>二是，方便管理我的知识，之前的知识内容总是太零散，有的在微信公众号，有的在知乎，有的在本地文件夹，总之就是很乱，然后希望找一个地方存储我的知识，所以这个博客的内容应该会比较系统，相应地，其他平台可能就会发得少一点了（<del>本来也不多</del>）。</li><li>三是，一直看大佬们的博客（特别是<ahref="https://sharingsource.github.io/">三叶姐姐</a>）学到了很多东西，希望通过自己的一点点微薄努力来为互联网贡献一些微不足道的内容吧。</li></ul><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2023-12-31T11:59:00">December 31, 2023 at11:59 AM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -2358,22 +2400,11 @@
   
   
   <entry>
-    <title>about</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<h1 id="about">About?!</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="who-am-i">Who am I?</h2><p>目前是一名普通的大三学生 ，正在自学编程中，目前正在学习<code>Java</code>和算法，以及一些基本的计算机科学知识。由于我并非科班出身，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code>极大地提高了我的写作效率（<del>改变不了我还是经常写Bug的事实</del>）；<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。甚至我觉得根本不需要<code>Word</code> 这种臃肿的东西了（之前饱受 <code>Word</code>排版摧残的我），当然平时写作可以用 <code>Markdown</code>，有更高排版要求的时候我还是会使用 <code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、陈奕迅、Lilas Ikuta（幾田 りら／いくたりら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听（也许是没有特别的偏好吧）。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>之前也有一段持续读书的时光，喜欢读的书也很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><p>为什么近来读书少了？主要是事情多了起来，不得不暂时中断了读书的计划（<del>才不是懒</del>），如果有人想看我写书评也可以给我发邮件，让我重启读书计划，激励我继续读书、创作。</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h3 id="why-i-write-blogs">Why I write blogs?</h3><p>关于我为什么写博客这件事，其实还是有挺多原因的：</p><ul><li>一是，我一直想搭建一个个人的博客网站，写点文章记录一下自己的生活，技术成长什么的。</li><li>二是，方便管理我的知识，之前的知识内容总是太零散，有的在微信公众号，有的在知乎，有的在本地文件夹，总之就是很乱，然后希望找一个地方存储我的知识，所以这个博客的内容应该会比较系统，相应地，其他平台可能就会发得少一点了（<del>本来也不多</del>）。</li><li>三是，一直看大佬们的博客（特别是<ahref="https://sharingsource.github.io/">三叶姐姐</a>）学到了很多东西，希望通过自己的一点点微薄努力来为互联网贡献一些微不足道的内容吧。</li></ul><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2023-12-31T11:59:00">December 31, 2023 at11:59 AM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
