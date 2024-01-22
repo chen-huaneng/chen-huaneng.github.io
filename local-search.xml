@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>LC 0670. Maximum Swap</title>
+    <link href="/2024/01/22/2024-1-22-2024-01-22-lc-0670/"/>
+    <url>/2024/01/22/2024-1-22-2024-01-22-lc-0670/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/maximum-swap/description/">670.最大交换 - 力扣（LeetCode）</a> ，难度为<strong>简单</strong>。</p><p>给定一个非负整数，你<strong>至多</strong>可以交换一次数字中的任意两位。返回你能得到的最大值。</p><p><strong>示例 1 :</strong></p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">输入: 2736</span><br><span class="hljs-section">输出: 7236</span><br><span class="hljs-section">解释: 交换数字2和数字7。</span><br></code></pre></td></tr></table></figure><p><strong>示例 2 :</strong></p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">输入: 9973</span><br><span class="hljs-section">输出: 9973</span><br><span class="hljs-section">解释: 不需要交换。</span><br></code></pre></td></tr></table></figure><p><strong>注意:</strong></p><ol type="1"><li>给定数字的范围是 [0, 10^8]</li></ol><h2 id="解答">解答</h2><h3 id="方法一模拟">方法一：模拟</h3><p>首先取出该数字的每一位整数存储在数组 <code>arr</code>中，然后遍历数组 <code>arr</code>的每一位，<strong>在其位数的后面寻找最小位上的数字比当前位的数字大的数进行交换</strong>，就可以得到比当前数还要大的数，由于要寻找的最小位上的数字是最大的，可能存在多个相同的位数上的最大数相同，此时要选择位数更小的位，所以选择逆序遍历。比如<code>1992</code> 这个数要选择第二个 <code>9</code> 和 <code>1</code>交换才能得到更大的数字。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maximumSwap</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span> &#123;<br>        <span class="hljs-type">int</span>[] arr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">9</span>];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, i = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (num &gt; <span class="hljs-number">0</span>) &#123;<br>            arr[i++] = num % <span class="hljs-number">10</span>;<br>            num /= <span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; --j) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">idx</span> <span class="hljs-operator">=</span> j;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; j; ++k) &#123; <span class="hljs-comment">// 逆序遍历寻找相同位数最大的最小位</span><br>                <span class="hljs-keyword">if</span> (arr[k] &gt; arr[idx]) &#123;<br>                    idx = k;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (idx != j) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> arr[j];<br>                arr[j] = arr[idx];<br>                arr[idx] = tmp;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> i - <span class="hljs-number">1</span>; k &gt;= <span class="hljs-number">0</span>; --k) &#123;<br>            ans += arr[k];<br>            ans *= <span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans / <span class="hljs-number">10</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<spanclass="math inline">\(O((\log_{10}num)^2)\)</span>。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(\log_{10}num)\)</span>。</p></li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2024/1/22/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
+      
+      <tag>Greedy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 1967.Number of Strings That Appear as Substrings in Word</title>
     <link href="/2024/01/21/2024-1-21-2024-01-21-lc-1967/"/>
     <url>/2024/01/21/2024-1-21-2024-01-21-lc-1967/</url>
@@ -146,11 +177,11 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
-      <tag>Simulation</tag>
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -295,11 +326,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Greedy</tag>
+      
       <tag>String</tag>
       
       <tag>Counting</tag>
-      
-      <tag>Greedy</tag>
       
       <tag>Two Pointers</tag>
       
@@ -332,11 +363,11 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
       
       <tag>Counting</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -429,9 +460,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Prefix Sum</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Prefix Sum</tag>
       
     </tags>
     
@@ -551,11 +582,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
       
       <tag>Counting</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -584,9 +615,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Math</tag>
       
       <tag>Linked List</tag>
       
@@ -832,11 +863,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>String</tag>
       
       <tag>Counting</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -865,9 +896,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Prefix Sum</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -956,11 +987,11 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Simulation</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
       
@@ -991,11 +1022,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
       
       <tag>Simulation</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1026,9 +1057,9 @@
       
       <tag>Array</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1057,9 +1088,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1088,9 +1119,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1121,9 +1152,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -1154,9 +1185,9 @@
       
       <tag>Array</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1185,9 +1216,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1216,9 +1247,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1247,9 +1278,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Math</tag>
       
       <tag>Bit Manipulation</tag>
       
@@ -1280,9 +1311,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1311,9 +1342,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Greedy</tag>
+      
+      <tag>String</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1375,13 +1406,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
+      <tag>Math</tag>
       
       <tag>Counting</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -1441,11 +1472,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
       
       <tag>Counting</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -1474,9 +1505,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
       <tag>Sorting</tag>
       
@@ -1507,9 +1538,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1573,9 +1604,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
       
@@ -1701,11 +1732,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
       
       <tag>Simulation</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1862,9 +1893,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1893,9 +1924,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -2120,9 +2151,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2246,9 +2277,9 @@
       
       <tag>Array</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2279,9 +2310,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
       
@@ -2345,9 +2376,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -2482,7 +2513,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -2493,7 +2524,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
