@@ -4,6 +4,41 @@
   
   
   <entry>
+    <title>LC 1385.Find the Distance Value Between Two Arrays</title>
+    <link href="/2024/01/28/2024-1-28-2024-01-28-lc-1385/"/>
+    <url>/2024/01/28/2024-1-28-2024-01-28-lc-1385/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述">题目描述</h2><p>这是 <code>LeetCode</code> 上的 <ahref="https://leetcode.cn/problems/find-the-distance-value-between-two-arrays/description/">1385.两个数组间的距离值 - 力扣（LeetCode）</a>，难度为<strong>简单</strong>。</p><p>给你两个整数数组 <code>arr1</code> ， <code>arr2</code> 和一个整数<code>d</code> ，请你返回两个数组之间的 <strong>距离值</strong> 。</p><p>「<strong>距离值</strong>」 定义为符合此距离要求的元素数目：对于元素<code>arr1[i]</code> ，不存在任何元素 <code>arr2[j]</code> 满足<code>|arr1[i]-arr2[j]| &lt;= d</code> 。</p><p><strong>示例 1：</strong></p><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs coq">输入：arr1 = [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">8</span>], arr2 = [<span class="hljs-number">10</span>,<span class="hljs-number">9</span>,<span class="hljs-number">1</span>,<span class="hljs-number">8</span>], d = <span class="hljs-number">2</span><br>输出：<span class="hljs-number">2</span><br>解释：<br>对于 arr1[<span class="hljs-number">0</span>]=<span class="hljs-number">4</span> 我们有：<br>|<span class="hljs-type">4</span><span class="hljs-number">-10</span>|<span class="hljs-type">=6</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">4</span><span class="hljs-number">-9</span>|<span class="hljs-type">=5</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">4</span><span class="hljs-number">-1</span>|<span class="hljs-type">=3</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">4</span><span class="hljs-number">-8</span>|<span class="hljs-type">=4</span> &gt; d=<span class="hljs-number">2</span> <br>所以 arr1[<span class="hljs-number">0</span>]=<span class="hljs-number">4</span> 符合距离要求<br><br>对于 arr1[<span class="hljs-number">1</span>]=<span class="hljs-number">5</span> 我们有：<br>|<span class="hljs-type">5</span><span class="hljs-number">-10</span>|<span class="hljs-type">=5</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">5</span><span class="hljs-number">-9</span>|<span class="hljs-type">=4</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">5</span><span class="hljs-number">-1</span>|<span class="hljs-type">=4</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">5</span><span class="hljs-number">-8</span>|<span class="hljs-type">=3</span> &gt; d=<span class="hljs-number">2</span><br>所以 arr1[<span class="hljs-number">1</span>]=<span class="hljs-number">5</span> 也符合距离要求<br><br>对于 arr1[<span class="hljs-number">2</span>]=<span class="hljs-number">8</span> 我们有：<br>|<span class="hljs-type">8</span><span class="hljs-number">-10</span>|<span class="hljs-type">=2</span> &lt;= d=<span class="hljs-number">2</span><br>|<span class="hljs-type">8</span><span class="hljs-number">-9</span>|<span class="hljs-type">=1</span> &lt;= d=<span class="hljs-number">2</span><br>|<span class="hljs-type">8</span><span class="hljs-number">-1</span>|<span class="hljs-type">=7</span> &gt; d=<span class="hljs-number">2</span><br>|<span class="hljs-type">8</span><span class="hljs-number">-8</span>|<span class="hljs-type">=0</span> &lt;= d=<span class="hljs-number">2</span><br>存在距离小于等于 <span class="hljs-number">2</span> 的情况，不符合距离要求 <br><br>故而只有 arr1[<span class="hljs-number">0</span>]=<span class="hljs-number">4</span> 和 arr1[<span class="hljs-number">1</span>]=<span class="hljs-number">5</span> 两个符合距离要求，距离值为 <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：arr1 = [<span class="hljs-number">1,4,2,3</span>], arr2 = [-<span class="hljs-number">4</span>,-<span class="hljs-number">3,6,10,20</span>,<span class="hljs-number">30</span>], d = <span class="hljs-number">3</span><br>输出：<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs subunit">输入：arr1 = [2,1,100,3], arr2 = [<span class="hljs-string">-5</span>,<span class="hljs-string">-2</span>,10,<span class="hljs-string">-3</span>,7], d = 6<br>输出：1<br></code></pre></td></tr></table></figure><p><strong>提示：</strong></p><ul><li><code>1 &lt;= arr1.length, arr2.length &lt;= 500</code></li><li><code>-10^3 &lt;= arr1[i], arr2[j] &lt;= 10^3</code></li><li><code>0 &lt;= d &lt;= 100</code></li></ul><h2 id="解答">解答</h2><h3 id="方法一模拟">方法一：模拟</h3><p>根据题目要求进行暴力模拟即可。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findTheDistanceValue</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr1, <span class="hljs-type">int</span>[] arr2, <span class="hljs-type">int</span> d)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> arr1.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i : arr1) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j : arr2) &#123;<br>                <span class="hljs-keyword">if</span> (Math.abs(i - j) &lt;= d) &#123;<br>                    --cnt;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n\times m)\)</span>，其中 <code>n</code> 和 <code>m</code> 分别为<code>arr1</code> 和 <code>arr2</code> 的长度。</p></li><li><p><strong>空间复杂度</strong>：<spanclass="math inline">\(O(1)\)</span>。</p></li></ul><h3 id="方法二二分查找">方法二：二分查找</h3><p>根据题目要求，并不需要遍历整个 <code>arr2</code>数组，只需要查看改数组中是否存在超过或者小于 <code>arr1[i]</code>的距离为 <code>d</code>的数，如果存在则不满足要求，如果不存在则满足要求，因此可以先将<code>arr2</code> 排序之后进行二分查找。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findTheDistanceValue</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr1, <span class="hljs-type">int</span>[] arr2, <span class="hljs-type">int</span> d)</span> &#123;<br>        Arrays.sort(arr2);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i : arr1) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">low</span> <span class="hljs-operator">=</span> i - d, high = i + d;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">idx1</span> <span class="hljs-operator">=</span> Arrays.binarySearch(arr2, low);<br>            <span class="hljs-type">int</span> <span class="hljs-variable">idx2</span> <span class="hljs-operator">=</span> Arrays.binarySearch(arr2, high);<br>            <span class="hljs-keyword">if</span> (idx1 &lt; <span class="hljs-number">0</span> &amp;&amp; idx1 == idx2) &#123;<br>                ++cnt;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ul><li><strong>时间复杂度</strong>：<span class="math inline">\(O(（n + m)\log m)\)</span>，给 <code>arr2</code> 排序的时间代价是 <spanclass="math inline">\(O(m \log m)\)</span> ，对于 <code>arr1</code>中的每个元素都在 <code>arr2</code> 中二分的时间代价是 <spanclass="math inline">\(O(n \log m)\)</span>，故渐进时间复杂度为 <spanclass="math inline">\(O((n + m) \log m)\)</span>。</li><li><strong>空间复杂度</strong>：<spanclass="math inline">\(O(1)\)</span>。</li></ul><h2 id="每题一图">每题一图</h2><p><img src="/imgs/posts/2024/1/28/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+      <category>Easy</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+      <tag>Array</tag>
+      
+      <tag>Sorting</tag>
+      
+      <tag>Binary Search</tag>
+      
+      <tag>Two Points</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 989.Add to Array-Form of Integer</title>
     <link href="/2024/01/27/2024-1-27-2024-01-27-lc-0989/"/>
     <url>/2024/01/27/2024-1-27-2024-01-27-lc-0989/</url>
@@ -84,9 +119,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Bit Manipulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -239,9 +274,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Linked List</tag>
       
     </tags>
     
@@ -396,9 +431,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Linked List</tag>
       
     </tags>
     
@@ -481,13 +516,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
       
       <tag>Greedy</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -520,9 +555,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -739,9 +774,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -772,9 +807,9 @@
       
       <tag>Math</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Linked List</tag>
       
       <tag>Number Theory</tag>
       
@@ -1020,9 +1055,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1146,9 +1181,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1435,9 +1470,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Bit Manipulation</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1629,9 +1664,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2013,9 +2048,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2143,9 +2178,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2244,9 +2279,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2399,9 +2434,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2642,6 +2677,17 @@
   
   
   <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>about</title>
     <link href="/"/>
     <url>/</url>
@@ -2658,17 +2704,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
   

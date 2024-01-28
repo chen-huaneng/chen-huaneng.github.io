@@ -18,27 +18,28 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.0383.">
+    <meta name="description" content="The solution of LeetCode problem No.1385.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 0383.Ransom Note">
-<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/07/2024-1-7-2024-01-07-lc-0383/index.html">
+<meta property="og:title" content="LC 1385.Find the Distance Value Between Two Arrays">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/28/2024-1-28-2024-01-28-lc-1385/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="The solution of LeetCode problem No.0383.">
+<meta property="og:description" content="The solution of LeetCode problem No.1385.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/7/banner.jpg">
-<meta property="article:published_time" content="2024-01-07T14:59:42.000Z">
-<meta property="article:modified_time" content="2024-01-07T15:15:53.375Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/28/banner.jpg">
+<meta property="article:published_time" content="2024-01-28T07:01:36.000Z">
+<meta property="article:modified_time" content="2024-01-28T07:22:13.093Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Hash Table">
-<meta property="article:tag" content="String">
-<meta property="article:tag" content="Counting">
+<meta property="article:tag" content="Array">
+<meta property="article:tag" content="Sorting">
+<meta property="article:tag" content="Binary Search">
+<meta property="article:tag" content="Two Points">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/7/banner.jpg">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/28/banner.jpg">
   
   
   
-  <title>LC 0383.Ransom Note - Abel&#39;s Blog</title>
+  <title>LC 1385.Find the Distance Value Between Two Arrays - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -244,13 +245,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2024/1/7/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/1/28/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 0383.Ransom Note"></span>
+            <span id="subtitle" data-typed-text="LC 1385.Find the Distance Value Between Two Arrays"></span>
           
         </div>
 
@@ -261,8 +262,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-07 22:59" pubdate>
-          2024年1月7日 晚上
+        <time datetime="2024-01-28 15:01" pubdate>
+          2024年1月28日 下午
         </time>
       </span>
     
@@ -274,7 +275,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 362 
+          文章字数: 631 
         
       </span>
     
@@ -286,7 +287,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 4 分钟
+          阅读全文大概需要 6 分钟
         
       </span>
     
@@ -331,12 +332,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 0383.Ransom Note</h1>
+            <h1 id="seo-header">LC 1385.Find the Distance Value Between Two Arrays</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-01-07T23:15:53+08:00
+                    本文最后更新于：2024-01-28T15:22:13+08:00
                   
                   
 
@@ -348,49 +349,56 @@
                 
                 <h2 id="题目描述">题目描述</h2>
 <p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/ransom-note/description/">383.
-赎金信</a> ，难度为<strong>简单</strong>。</p>
-<p>给你两个字符串：<code>ransomNote</code> 和 <code>magazine</code>
-，判断 <code>ransomNote</code> 能不能由 <code>magazine</code>
-里面的字符构成。</p>
-<p>如果可以，返回 <code>true</code> ；否则返回 <code>false</code> 。</p>
-<p><code>magazine</code> 中的每个字符只能在 <code>ransomNote</code>
-中使用一次。</p>
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-distance-value-between-two-arrays/description/">1385.
+两个数组间的距离值 - 力扣（LeetCode）</a>
+，难度为<strong>简单</strong>。</p>
+<p>给你两个整数数组 <code>arr1</code> ， <code>arr2</code> 和一个整数
+<code>d</code> ，请你返回两个数组之间的 <strong>距离值</strong> 。</p>
+<p>「<strong>距离值</strong>」 定义为符合此距离要求的元素数目：对于元素
+<code>arr1[i]</code> ，不存在任何元素 <code>arr2[j]</code> 满足
+<code>|arr1[i]-arr2[j]| &lt;= d</code> 。</p>
 <p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：ransomNote = &quot;a&quot;, magazine = &quot;b&quot;<br>输出：false<br></code></pre></td></tr></table></figure>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs coq">输入：arr1 = [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">8</span>], arr2 = [<span class="hljs-number">10</span>,<span class="hljs-number">9</span>,<span class="hljs-number">1</span>,<span class="hljs-number">8</span>], d = <span class="hljs-number">2</span><br>输出：<span class="hljs-number">2</span><br>解释：<br>对于 arr1[<span class="hljs-number">0</span>]=<span class="hljs-number">4</span> 我们有：<br>|<span class="hljs-type">4</span><span class="hljs-number">-10</span>|<span class="hljs-type">=6</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">4</span><span class="hljs-number">-9</span>|<span class="hljs-type">=5</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">4</span><span class="hljs-number">-1</span>|<span class="hljs-type">=3</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">4</span><span class="hljs-number">-8</span>|<span class="hljs-type">=4</span> &gt; d=<span class="hljs-number">2</span> <br>所以 arr1[<span class="hljs-number">0</span>]=<span class="hljs-number">4</span> 符合距离要求<br><br>对于 arr1[<span class="hljs-number">1</span>]=<span class="hljs-number">5</span> 我们有：<br>|<span class="hljs-type">5</span><span class="hljs-number">-10</span>|<span class="hljs-type">=5</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">5</span><span class="hljs-number">-9</span>|<span class="hljs-type">=4</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">5</span><span class="hljs-number">-1</span>|<span class="hljs-type">=4</span> &gt; d=<span class="hljs-number">2</span> <br>|<span class="hljs-type">5</span><span class="hljs-number">-8</span>|<span class="hljs-type">=3</span> &gt; d=<span class="hljs-number">2</span><br>所以 arr1[<span class="hljs-number">1</span>]=<span class="hljs-number">5</span> 也符合距离要求<br><br>对于 arr1[<span class="hljs-number">2</span>]=<span class="hljs-number">8</span> 我们有：<br>|<span class="hljs-type">8</span><span class="hljs-number">-10</span>|<span class="hljs-type">=2</span> &lt;= d=<span class="hljs-number">2</span><br>|<span class="hljs-type">8</span><span class="hljs-number">-9</span>|<span class="hljs-type">=1</span> &lt;= d=<span class="hljs-number">2</span><br>|<span class="hljs-type">8</span><span class="hljs-number">-1</span>|<span class="hljs-type">=7</span> &gt; d=<span class="hljs-number">2</span><br>|<span class="hljs-type">8</span><span class="hljs-number">-8</span>|<span class="hljs-type">=0</span> &lt;= d=<span class="hljs-number">2</span><br>存在距离小于等于 <span class="hljs-number">2</span> 的情况，不符合距离要求 <br><br>故而只有 arr1[<span class="hljs-number">0</span>]=<span class="hljs-number">4</span> 和 arr1[<span class="hljs-number">1</span>]=<span class="hljs-number">5</span> 两个符合距离要求，距离值为 <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：ransomNote = &quot;aa&quot;, magazine = &quot;ab&quot;<br>输出：false<br></code></pre></td></tr></table></figure>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：arr1 = [<span class="hljs-number">1,4,2,3</span>], arr2 = [-<span class="hljs-number">4</span>,-<span class="hljs-number">3,6,10,20</span>,<span class="hljs-number">30</span>], d = <span class="hljs-number">3</span><br>输出：<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
 <p><strong>示例 3：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：ransomNote = &quot;aa&quot;, magazine = &quot;aab&quot;<br>输出：true<br></code></pre></td></tr></table></figure>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs subunit">输入：arr1 = [2,1,100,3], arr2 = [<span class="hljs-string">-5</span>,<span class="hljs-string">-2</span>,10,<span class="hljs-string">-3</span>,7], d = 6<br>输出：1<br></code></pre></td></tr></table></figure>
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= ransomNote.length, magazine.length &lt;= 10^5</code></li>
-<li><code>ransomNote</code> 和 <code>magazine</code>
-由小写英文字母组成</li>
+<li><code>1 &lt;= arr1.length, arr2.length &lt;= 500</code></li>
+<li><code>-10^3 &lt;= arr1[i], arr2[j] &lt;= 10^3</code></li>
+<li><code>0 &lt;= d &lt;= 100</code></li>
 </ul>
 <h2 id="解答">解答</h2>
-<h3 id="方法一计数模拟">方法一：计数模拟</h3>
-<p>根据题目的要求，如果 <code>magazine</code> 字符串的长度小于
-<code>ransomNote</code> 字符串的长度则返回 <code>false</code>
-，否则用数组来模拟哈希表统计 <code>magazine</code>
-中小写字符的数目，如果 <code>magazine</code> 中小写字符的数目小于
-<code>ransomNote</code> 中小写字符的数目则返回 <code>false</code>
-，否则返回 <code>true</code> 。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">canConstruct</span><span class="hljs-params">(String ransomNote, String magazine)</span> &#123;<br>        <span class="hljs-keyword">if</span> (magazine.length() &lt; ransomNote.length()) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-type">int</span>[] cnt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">26</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : magazine.toCharArray()) &#123;<br>            ++cnt[c - <span class="hljs-string">&#x27;a&#x27;</span>];<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : ransomNote.toCharArray()) &#123;<br>            --cnt[c - <span class="hljs-string">&#x27;a&#x27;</span>];<br>            <span class="hljs-keyword">if</span> (cnt[c - <span class="hljs-string">&#x27;a&#x27;</span>] &lt; <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="方法一模拟">方法一：模拟</h3>
+<p>根据题目要求进行暴力模拟即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findTheDistanceValue</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr1, <span class="hljs-type">int</span>[] arr2, <span class="hljs-type">int</span> d)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> arr1.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i : arr1) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j : arr2) &#123;<br>                <span class="hljs-keyword">if</span> (Math.abs(i - j) &lt;= d) &#123;<br>                    --cnt;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(M +
-N)\)</span> ，其中 <code>M</code> 为 <code>magazine</code>
-字符串的长度，<code>N</code> 为 <code>ransomNote</code>
-字符串的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(M + N
-+ C)\)</span>，如果使用 <code>toCharArray</code> 的话复杂度为 <span
-class="math inline">\(O(M + N + C)\)</span>，其中 <code>M</code> 、
-<code>N</code> 含义同上， <code>C</code> 为字符集的大小，如果使用
-<code>charAt</code> 的话复杂度为 <span
-class="math inline">\(O(C)\)</span> 。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n
+\times m)\)</span>，其中 <code>n</code> 和 <code>m</code> 分别为
+<code>arr1</code> 和 <code>arr2</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span
+class="math inline">\(O(1)\)</span>。</p></li>
+</ul>
+<h3 id="方法二二分查找">方法二：二分查找</h3>
+<p>根据题目要求，并不需要遍历整个 <code>arr2</code>
+数组，只需要查看改数组中是否存在超过或者小于 <code>arr1[i]</code>
+的距离为 <code>d</code>
+的数，如果存在则不满足要求，如果不存在则满足要求，因此可以先将
+<code>arr2</code> 排序之后进行二分查找。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findTheDistanceValue</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr1, <span class="hljs-type">int</span>[] arr2, <span class="hljs-type">int</span> d)</span> &#123;<br>        Arrays.sort(arr2);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i : arr1) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">low</span> <span class="hljs-operator">=</span> i - d, high = i + d;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">idx1</span> <span class="hljs-operator">=</span> Arrays.binarySearch(arr2, low);<br>            <span class="hljs-type">int</span> <span class="hljs-variable">idx2</span> <span class="hljs-operator">=</span> Arrays.binarySearch(arr2, high);<br>            <span class="hljs-keyword">if</span> (idx1 &lt; <span class="hljs-number">0</span> &amp;&amp; idx1 == idx2) &#123;<br>                ++cnt;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li><strong>时间复杂度</strong>：<span class="math inline">\(O(（n + m)
+\log m)\)</span>，给 <code>arr2</code> 排序的时间代价是 <span
+class="math inline">\(O(m \log m)\)</span> ，对于 <code>arr1</code>
+中的每个元素都在 <code>arr2</code> 中二分的时间代价是 <span
+class="math inline">\(O(n \log m)\)</span>，故渐进时间复杂度为 <span
+class="math inline">\(O((n + m) \log m)\)</span>。</li>
+<li><strong>空间复杂度</strong>：<span
+class="math inline">\(O(1)\)</span>。</li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2024/1/7/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><img src="/imgs/posts/2024/1/28/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 
               </div>
@@ -433,11 +441,13 @@ class="math inline">\(O(C)\)</span> 。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
-        <a href="/tags/String/" class="print-no-link">#String</a>
+        <a href="/tags/Sorting/" class="print-no-link">#Sorting</a>
       
-        <a href="/tags/Counting/" class="print-no-link">#Counting</a>
+        <a href="/tags/Binary-Search/" class="print-no-link">#Binary Search</a>
+      
+        <a href="/tags/Two-Points/" class="print-no-link">#Two Points</a>
       
     </div>
   
@@ -449,8 +459,8 @@ class="math inline">\(O(C)\)</span> 。</p></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 0383.Ransom Note</div>
-      <div>https://chen-huaneng.github.io/2024/01/07/2024-1-7-2024-01-07-lc-0383/</div>
+      <div>LC 1385.Find the Distance Value Between Two Arrays</div>
+      <div>https://chen-huaneng.github.io/2024/01/28/2024-1-28-2024-01-28-lc-1385/</div>
     </div>
     <div class="license-meta">
       
@@ -462,13 +472,13 @@ class="math inline">\(O(C)\)</span> 。</p></li>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年1月7日</div>
+          <div>2024年1月28日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年1月7日</div>
+          <div>2024年1月28日</div>
         </div>
       
       
@@ -505,18 +515,12 @@ class="math inline">\(O(C)\)</span> 。</p></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/08/2024-1-8-2024-01-08-lc-1389/" title="LC 1389.Create Target Array in the Given Order">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC 1389.Create Target Array in the Given Order</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/06/2024-1-6-2024-01-06-lc-2807/" title="LC 2807.Insert Greatest Common Divisors in Linked List">
-                        <span class="hidden-mobile">LC 2807.Insert Greatest Common Divisors in Linked List</span>
+                      <a href="/2024/01/27/2024-1-27-2024-01-27-lc-0989/" title="LC 989.Add to Array-Form of Integer">
+                        <span class="hidden-mobile">LC 989.Add to Array-Form of Integer</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
