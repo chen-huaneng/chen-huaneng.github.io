@@ -55,11 +55,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -90,11 +90,11 @@
       
       <tag>Array</tag>
       
-      <tag>Two Points</tag>
+      <tag>Sorting</tag>
       
       <tag>Binary Search</tag>
       
-      <tag>Sorting</tag>
+      <tag>Two Points</tag>
       
     </tags>
     
@@ -123,9 +123,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -398,9 +398,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -429,13 +429,13 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -580,13 +580,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
       
-      <tag>Greedy</tag>
+      <tag>String</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -619,9 +619,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -745,9 +745,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -805,9 +805,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -838,9 +838,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -869,11 +869,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Math</tag>
       
       <tag>Simulation</tag>
+      
+      <tag>Linked List</tag>
       
       <tag>Number Theory</tag>
       
@@ -904,9 +904,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -966,9 +966,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -997,9 +997,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Matrix</tag>
       
@@ -1117,11 +1117,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
+      <tag>Simulation</tag>
       
       <tag>Counting</tag>
       
-      <tag>Simulation</tag>
+      <tag>String</tag>
       
     </tags>
     
@@ -1239,15 +1239,15 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Two Pointers</tag>
-      
-      <tag>Simulation</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1276,11 +1276,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
       
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1309,11 +1309,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -1342,9 +1342,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1373,11 +1373,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -1437,11 +1437,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -1470,9 +1470,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1501,9 +1501,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1565,9 +1565,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1598,9 +1598,9 @@
       
       <tag>String</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -1660,13 +1660,13 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Math</tag>
+      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>Counting</tag>
-      
-      <tag>Math</tag>
       
     </tags>
     
@@ -1695,9 +1695,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1728,9 +1728,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1759,9 +1759,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Array</tag>
       
       <tag>Sorting</tag>
       
@@ -1825,9 +1825,9 @@
       
       <tag>Array</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -1860,9 +1860,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1891,9 +1891,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1955,9 +1955,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Linked List</tag>
       
     </tags>
     
@@ -1986,11 +1986,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
       
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2112,9 +2112,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2178,9 +2178,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2242,9 +2242,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2310,9 +2310,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2343,9 +2343,9 @@
       
       <tag>Array</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -2374,9 +2374,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2405,9 +2405,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2467,9 +2467,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2498,9 +2498,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2529,11 +2529,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -2562,11 +2562,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
-      
-      <tag>Simulation</tag>
       
       <tag>Sorting</tag>
       
@@ -2628,11 +2628,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -2690,13 +2690,13 @@
     
     <tags>
       
-      <tag>Tool</tag>
-      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
       
       <tag>Website</tag>
+      
+      <tag>Tool</tag>
       
     </tags>
     
@@ -2741,6 +2741,17 @@
   
   
   <entry>
+    <title>about</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<h1 id="about">About?!</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="who-am-i">Who am I?</h2><p>目前是一名普通的大三学生，正在自学计算机科学知识。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code> 极大地提高了写作效率；而<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去进行备份；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。当然有更高排版需求的时候还是会使用<code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、陈奕迅、Lilas Ikuta（幾田 りら／いくたりら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容和技术文章。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2024-03-29T18:13:00">March 29, 2024 at 18:13PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/"/>
     <url>/</url>
@@ -2768,17 +2779,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>about</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<h1 id="about">About?!</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="who-am-i">Who am I?</h2><p>目前是一名普通的大三学生 ，正在自学编程中，目前正在学习<code>Java</code>和算法，以及一些基本的计算机科学知识。由于我并非科班出身，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code>极大地提高了我的写作效率（<del>改变不了我还是经常写Bug的事实</del>）；<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。甚至我觉得根本不需要<code>Word</code> 这种臃肿的东西了（之前饱受 <code>Word</code>排版摧残的我），当然平时写作可以用 <code>Markdown</code>，有更高排版要求的时候我还是会使用 <code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、陈奕迅、Lilas Ikuta（幾田 りら／いくたりら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听（也许是没有特别的偏好吧）。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>之前也有一段持续读书的时光，喜欢读的书也很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><p>为什么近来读书少了？主要是事情多了起来，不得不暂时中断了读书的计划（<del>才不是懒</del>），如果有人想看我写书评也可以给我发邮件，让我重启读书计划，激励我继续读书、创作。</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h3 id="why-i-write-blogs">Why I write blogs?</h3><p>关于我为什么写博客这件事，其实还是有挺多原因的：</p><ul><li>一是，我一直想搭建一个个人的博客网站，写点文章记录一下自己的生活，技术成长什么的。</li><li>二是，方便管理我的知识，之前的知识内容总是太零散，有的在微信公众号，有的在知乎，有的在本地文件夹，总之就是很乱，然后希望找一个地方存储我的知识，所以这个博客的内容应该会比较系统，相应地，其他平台可能就会发得少一点了（<del>本来也不多</del>）。</li><li>三是，一直看大佬们的博客（特别是<ahref="https://sharingsource.github.io/">三叶姐姐</a>）学到了很多东西，希望通过自己的一点点微薄努力来为互联网贡献一些微不足道的内容吧。</li></ul><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2023-12-31T11:59:00">December 31, 2023 at11:59 AM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
     
   </entry>
   
