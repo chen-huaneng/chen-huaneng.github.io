@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>Python tkinter</title>
+    <link href="/2024/03/29/2024-3-29-2024-03-29-Python-tkinter/"/>
+    <url>/2024/03/29/2024-3-29-2024-03-29-Python-tkinter/</url>
+    
+    <content type="html"><![CDATA[<h2 id="tkinter是什么">Tkinter是什么</h2><p><code>tkinter</code> 是 <code>Python</code>标准的GUI库，可以使用这个库快速地创建GUI应用。</p><h2 id="如何将-python-文件编译成-.exe-文件">如何将 <code>Python</code>文件编译成 <code>.exe</code> 文件</h2><ol type="1"><li><p>安装编译工具 <code>pyinstaller</code></p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br></code></pre></td></tr></table></figure></li><li><p>在文件路径下执行编译命令，其中 <code>-w</code> 参数是为了使得<code>dos</code> 窗口不会随着 <code>tkinter</code> 窗口出现</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w demo.py #demo.py是待编译的代码文件名<br></code></pre></td></tr></table></figure></li><li><p>编译完成后一般会在当前文件夹中生成一个 <code>dist</code>的文件夹，一个 <code>build</code> 文件夹和 一个 <code>demo.spec</code>文件，编译后的 <code>.exe</code> 文件就在 <code>dist</code>文件夹中。</p></li></ol><h3 id="编译后-.exe-文件太大的问题">编译后 <code>.exe</code>文件太大的问题</h3><p>原因是在编译时会把 <code>Python</code> 环境及库一起打包到<code>.exe</code> 文件中，如果当前的 <code>Python</code>环境中安装了很多的包，那么就会把所有的库带上，导致编译后的<code>.exe</code> 文件过大。</p><p>因此解决方案就是为该文件单独创建相应的 <code>Python</code>虚拟环境，只安装要编译 <code>Python</code>文件所依赖的库。具体步骤如下：</p><ol type="1"><li><p>安装 <code>virtualenv</code> 用于创建虚拟环境</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install virtualenv<br></code></pre></td></tr></table></figure></li><li><p>创建一个虚拟环境，建议将这个虚拟环境放在需要打包的<code>Python</code> 文件夹中，便于后面的处理</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">virtualenv py3exe_env #自定义命名虚拟环境的名称，这里是py3exe_env<br></code></pre></td></tr></table></figure></li><li><p>创建完成之后进入到该目录</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">cd</span> py3exe_env/Script<br></code></pre></td></tr></table></figure></li><li><p>在该目录下找到 <code>activate.ps1</code> 并执行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">activate.ps1<br></code></pre></td></tr></table></figure></li><li><p>然后在该虚拟环境下安装要编译的文件需要依赖的 <code>Python</code>库，当然也要重新安装 <code>pyinstaller</code>。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br>pip install conda #比如这里安装conda<br></code></pre></td></tr></table></figure></li><li><p>然后在该虚拟环境中回到要编译的文件目录下输入编译命令：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w test.py #运行时不出现dos命令窗口<br></code></pre></td></tr></table></figure></li></ol><h2 id="参考文档">参考文档</h2><ul><li><ahref="https://blog.csdn.net/weixin_47920722/article/details/128546996">【python】tkinter程序打包成exe可执行文件全流程记录（windows系统）_tkinter打包exe-CSDN博客</a></li><li><ahref="https://docs.python.org/zh-cn/3/library/tk.html">Tk图形用户界面(GUI)— Python 3.12.2 文档</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Python</category>
+      
+      <category>tkinter</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+      <tag>tkinter</tag>
+      
+      <tag>GUI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC 1816. Truncate Sentence</title>
     <link href="/2024/01/29/2024-1-29-2024-01-29-lc-1816/"/>
     <url>/2024/01/29/2024-1-29-2024-01-29-lc-1816/</url>
@@ -24,11 +55,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -59,11 +90,11 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
+      <tag>Two Points</tag>
       
       <tag>Binary Search</tag>
       
-      <tag>Two Points</tag>
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -92,9 +123,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -367,9 +398,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -398,13 +429,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -549,13 +580,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Counting</tag>
       
       <tag>Greedy</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -588,9 +619,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -714,9 +745,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -774,9 +805,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -807,9 +838,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -838,11 +869,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Linked List</tag>
+      
       <tag>Math</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Linked List</tag>
       
       <tag>Number Theory</tag>
       
@@ -873,9 +904,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -935,9 +966,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -966,9 +997,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Matrix</tag>
       
@@ -1086,11 +1117,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
+      <tag>String</tag>
       
       <tag>Counting</tag>
       
-      <tag>String</tag>
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1208,15 +1239,15 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Simulation</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1245,11 +1276,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Array</tag>
+      
       <tag>Math</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Array</tag>
       
     </tags>
     
@@ -1278,11 +1309,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1311,9 +1342,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1342,11 +1373,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1406,11 +1437,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1439,9 +1470,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1470,9 +1501,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1534,9 +1565,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1567,9 +1598,9 @@
       
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Greedy</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1629,13 +1660,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>Counting</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1664,9 +1695,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1697,9 +1728,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1728,9 +1759,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
       <tag>Sorting</tag>
       
@@ -1794,9 +1825,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Binary Search</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1829,9 +1860,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1860,9 +1891,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1924,9 +1955,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Linked List</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1955,11 +1986,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Array</tag>
+      
       <tag>Math</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Array</tag>
       
     </tags>
     
@@ -2081,9 +2112,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memoization</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Memoization</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2147,9 +2178,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -2211,9 +2242,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memoization</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Memoization</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2279,9 +2310,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2312,9 +2343,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2343,9 +2374,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2374,9 +2405,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2436,9 +2467,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2467,9 +2498,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2498,11 +2529,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2531,11 +2562,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Sorting</tag>
       
@@ -2597,11 +2628,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2659,13 +2690,13 @@
     
     <tags>
       
+      <tag>Tool</tag>
+      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
       
       <tag>Website</tag>
-      
-      <tag>Tool</tag>
       
     </tags>
     
@@ -2725,7 +2756,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -2736,7 +2767,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
