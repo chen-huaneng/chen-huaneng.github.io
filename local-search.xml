@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Interview - 面试和笔试问题汇总</title>
+    <link href="/2024/10/11/2024-10-11-2024-10-11-interview-questions/"/>
+    <url>/2024/10/11/2024-10-11-2024-10-11-interview-questions/</url>
+    
+    <content type="html"><![CDATA[<h2 id="bytedance-实习-测试岗-2023.6">Bytedance 实习 测试岗 2023.6</h2><h3 id="丢西瓜捡芝麻策略">丢西瓜捡芝麻策略</h3><p><img src="/imgs/posts/2024/10/11/question.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><strong>解法一：</strong>直接从起点开始走，遇到比手上有的物品价格低的就换成买价格低的物品，直到终点，这样就能确保买到的价格最低。算法的时间复杂度为<span class="math inline">\(O(n)\)</span>。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAX 100</span><br><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Expense</span></span><br><span class="hljs-class">&#123;</span><br><span class="hljs-type">long</span> <span class="hljs-type">int</span> day;<br><span class="hljs-type">long</span> <span class="hljs-type">int</span> cost;<br>&#125;;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>Expense arr[MAX];<br><span class="hljs-type">long</span> <span class="hljs-type">int</span> min_cost = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br><span class="hljs-type">int</span> k = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-type">int</span> M, N, ans = <span class="hljs-number">0</span>;<br><span class="hljs-built_in">memset</span>(arr, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(arr));<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lld%lld&quot;</span>, &amp;M, &amp;N);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)<br>&#123;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%ld%ld&quot;</span>, &amp;arr[i].day, &amp;arr[i].cost);<br>&#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)<br>&#123;<br><span class="hljs-keyword">if</span> (arr[i].cost &lt; min_cost)<br>&#123;<br>ans += arr[k].cost * (arr[i].day - arr[k].day);<br>k = i;<br>min_cost = arr[i].cost;<br>&#125;<br>&#125;<br>ans += arr[k].cost * (M - arr[k].day);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>, ans);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>解法二（贪心算法+计数排序）：</strong>先用计数排序从小到大排好各个补给站的物品价格，先选最小的物品价格作为起点，然后在该物品的补给站之前找到最小的物品价格，如此迭代，直到回到起点为止，这样取得的同样是最小的花费。算法时间复杂度为<span class="math inline">\(O(m*n)\)</span></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAX 10000</span><br><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Travel</span></span><br><span class="hljs-class">&#123;</span><br><span class="hljs-type">long</span> <span class="hljs-type">int</span> day;<br><span class="hljs-type">long</span> <span class="hljs-type">int</span> cost;<br>&#125;Expense;<br><br><br><span class="hljs-type">void</span> <span class="hljs-title function_">print_arr</span><span class="hljs-params">(Expense* arr, <span class="hljs-type">int</span> n)</span> <span class="hljs-comment">//打印排序结果</span><br>&#123;<br>    <span class="hljs-type">int</span> i;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, arr[<span class="hljs-number">0</span>].cost);<br>    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt; n; i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot; %d&quot;</span>, arr[i].cost);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<br>&#125;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-type">int</span> M, N;<br>    <span class="hljs-type">int</span>* count_arr = (<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>) * MAX);<br><br>    <span class="hljs-built_in">memset</span>(count_arr, <span class="hljs-number">0</span>, MAX);<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lld%lld&quot;</span>, &amp;M, &amp;N);<br>    Expense* sorted_arr = (Expense*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Expense) * N);<br>    Expense* arr = (Expense*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Expense) * N);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)<br>    &#123;<br>        arr[i].cost = arr[i].day = <span class="hljs-number">0</span>;<br>    &#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)<br>&#123;<br>        <span class="hljs-type">int</span> j = <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%ld%ld&quot;</span>, &amp;arr[i].day, &amp;arr[i].cost);<br>        <span class="hljs-keyword">if</span> (j == <span class="hljs-number">2</span>) <span class="hljs-comment">//计数排序</span><br>        &#123;<br>            count_arr[arr[i].cost]++;<br>        &#125;<br><span class="hljs-keyword">while</span> (<span class="hljs-type">char</span> ch = getchar() != <span class="hljs-string">&#x27;\n&#x27;</span>);<br>&#125;<br>    print_arr(arr, N);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">1</span>; k &lt; MAX; k++)<span class="hljs-comment">//累加次数</span><br>    &#123;<br>        count_arr[k] += count_arr[k - <span class="hljs-number">1</span>];<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = N; j &gt; <span class="hljs-number">0</span>; j--)<br>    &#123;<br>        sorted_arr[--count_arr[arr[j - <span class="hljs-number">1</span>].cost]] = arr[j - <span class="hljs-number">1</span>];<br>    &#125;<br>    print_arr(sorted_arr, N);<br>    <span class="hljs-type">int</span> k = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">long</span> <span class="hljs-type">int</span> remain_day = M, day = sorted_arr[k].day;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-type">int</span> total_cost = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">do</span><br>    &#123;<br>        total_cost += (remain_day - sorted_arr[k].day) * sorted_arr[k].cost;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span> (sorted_arr[i].day &lt; sorted_arr[k].day)<br>            &#123;<br>                day = sorted_arr[k].day;<br>                remain_day = sorted_arr[k].day;<br>                k = i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>    &#125; <span class="hljs-keyword">while</span> (sorted_arr[k].day != <span class="hljs-number">0</span>);<br>    total_cost += day * sorted_arr[k].cost;    <br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld&quot;</span>, total_cost);<br>    <span class="hljs-built_in">free</span>(arr);<br>    <span class="hljs-built_in">free</span>(count_arr);<br>    <span class="hljs-built_in">free</span>(sorted_arr);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="计数排序参考">计数排序参考：</h3><ul><li><p><a href="https://www.runoob.com/w3cnote/counting-sort.html">1.8计数排序 | 菜鸟教程 (runoob.com)</a></p></li><li><p><ahref="https://github.com/hustcc/JS-Sorting-Algorithm/blob/master/8.countingSort.md">JS-Sorting-Algorithm/8.countingSort.mdat master · hustcc/JS-Sorting-Algorithm (github.com)</a></p></li><li><p><a href="https://zh.wikipedia.org/wiki/计数排序">计数排序 -维基百科，自由的百科全书 (wikipedia.org)</a></p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Interview</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Interview</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java - 常见问题及解答</title>
     <link href="/2024/10/11/2024-10-11-2024-10-11-java-faq/"/>
     <url>/2024/10/11/2024-10-11-2024-10-11-java-faq/</url>
@@ -23,8 +48,6 @@
     <tags>
       
       <tag>Java</tag>
-      
-      <tag>FAQ</tag>
       
     </tags>
     
@@ -142,11 +165,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -177,11 +200,11 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
+      <tag>Two Pointers</tag>
       
       <tag>Binary Search</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -485,9 +508,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -516,13 +539,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -667,13 +690,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Counting</tag>
       
       <tag>Greedy</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -706,9 +729,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -801,9 +824,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Prefix Sum</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -832,9 +855,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -892,9 +915,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -925,9 +948,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -991,9 +1014,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1053,9 +1076,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1084,9 +1107,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Matrix</tag>
       
@@ -1204,11 +1227,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
+      <tag>String</tag>
       
       <tag>Counting</tag>
       
-      <tag>String</tag>
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1326,15 +1349,15 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
+      <tag>Simulation</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1365,9 +1388,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1396,11 +1419,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1429,9 +1452,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1460,9 +1483,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1524,11 +1547,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1557,9 +1580,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1588,9 +1611,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1652,9 +1675,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1685,9 +1708,9 @@
       
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Greedy</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1782,9 +1805,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1815,9 +1838,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1912,9 +1935,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Binary Search</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1947,9 +1970,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1978,9 +2001,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2075,9 +2098,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2199,9 +2222,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memoization</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Memoization</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2329,9 +2352,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memoization</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Memoization</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2397,9 +2420,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2430,9 +2453,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2461,9 +2484,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2492,9 +2515,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2554,9 +2577,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2585,9 +2608,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2616,11 +2639,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2649,11 +2672,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Sorting</tag>
       
@@ -2715,11 +2738,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2777,13 +2800,13 @@
     
     <tags>
       
+      <tag>Tool</tag>
+      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
       
       <tag>Website</tag>
-      
-      <tag>Tool</tag>
       
     </tags>
     
