@@ -1,0 +1,1733 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar_round.png">
+  <link rel="icon" href="/imgs/banner/avatar_round.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Abel">
+  <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
+  
+    <meta name="description" content="有关Java的一些常见问题及答案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java - 常见问题及解答">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/10/11/2024-10-11-2024-10-11-java-faq/index.html">
+<meta property="og:site_name" content="Abel&#39;s Blog">
+<meta property="og:description" content="有关Java的一些常见问题及答案。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/11/banner3.png">
+<meta property="article:published_time" content="2024-10-11T13:20:13.000Z">
+<meta property="article:modified_time" content="2024-10-11T13:48:13.795Z">
+<meta property="article:author" content="Abel">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="FAQ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/11/banner3.png">
+  
+  
+  
+  <title>Java - 常见问题及解答 - Abel&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/scrollbar.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.jpg","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>AbelのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友情链接</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/imgs/posts/2024/10/11/banner.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java - 常见问题及解答"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-10-11 21:20" pubdate>
+          2024年10月11日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          文章字数: 1.2k 
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          阅读全文大概需要 10 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          阅读次数: <span id="leancloud-page-views"></span> 
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Java - 常见问题及解答</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于：2024-10-11T21:48:13+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="qa">Q&amp;A</h1>
+<h2 id="compile-and-execution">Compile and Execution</h2>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://medium.com/javarevisited/how-java-code-compiled-and-run-e4702fb83ffa">Java
+Compiling and Running Process | by amirreza lotfi | Javarevisited |
+Medium</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/compilation-execution-java-program/">Compilation
+and Execution of a Java Program - GeeksforGeeks</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.quora.com/What-are-the-things-are-checked-at-compile-time-by-Java">What
+are the things are checked at compile time by Java? - Quora</a></li>
+</ul>
+<h2 id="different-behaviour-in-jshell">Different behaviour in
+JShell</h2>
+<p>Question:</p>
+<ol type="1">
+<li>Why when execute <code>int a;</code> ,the variable <code>a</code>
+was initialized to <code>0</code> rather than compile error?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/49585003/different-behaviour-of-same-statement-while-executing-on-jshell">java
+- Different behaviour of same statement while executing on JShell -
+Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://openjdk.org/jeps/222#Snippets">JEP 222: jshell: The
+Java Shell (Read-Eval-Print Loop) (openjdk.org)</a></li>
+<li><a target="_blank" rel="noopener" href="https://openjdk.org/jeps/222#State">JEP 222: jshell: The
+Java Shell (Read-Eval-Print Loop) (openjdk.org)</a></li>
+</ul>
+<h2 id="memory-usage">Memory usage</h2>
+<h3 id="objects">Objects</h3>
+<p>Question:</p>
+<ol type="1">
+<li>How many memory usage of objects in java?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.javamex.com/tutorials/memory/">Memory usage of
+objects in Java (javamex.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.javamex.com/tutorials/memory/object_memory_usage.shtml">How
+to calculate the memory usage of Java objects (javamex.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="http://blog.kiyanpro.com/2016/10/07/system_design/memory-usage-estimation-in-java/">Memory
+Usage Estimation in Java | Better Programmer (kiyanpro.com)</a></li>
+</ul>
+<h2 id="conversion">Conversion</h2>
+<h3 id="primitive-conversion">Primitive Conversion</h3>
+<p>Question:</p>
+<ol type="1">
+<li>What is conversion between primitive like char, int, float,
+double…?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-5.html">Chapter
+5. Conversions and Contexts (oracle.com)</a> Widening and Narrowing</li>
+</ul>
+<h3 id="autoboxing-and-unboxing">Autoboxing and Unboxing</h3>
+<p>Question:</p>
+<ol start="3" type="1">
+<li>What is autoboxing?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html">Autoboxing
+and Unboxing (The Java™ Tutorials &gt; Learning the Java Language &gt;
+Numbers and Strings) (oracle.com)</a></li>
+<li>Also see the <code>5.4 Object Wrappers and Autoboxing</code> of
+<code>Core-Java-Volume-I-Fundamentals-12th-Edition-Cay-S.-Horstmann</code></li>
+</ul>
+<p>Question:</p>
+<ol start="4" type="1">
+<li>What will happen if i use <code>==</code> to compare two
+<code>Integer</code> ?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1514910/how-can-i-properly-compare-two-integers-in-java">How
+can I properly compare two Integers in Java? - Stack Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-5.html#jls-5.1.7">Chapter 5. Conversions
+and Contexts (oracle.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#valueOf-int-">Integer
+(Java Platform SE 8 ) (oracle.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Java_gotchas#Immutable_Objects_.2F_Wrapper_Class_Caching">Java
+gotchas - OWASP</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-integer-cache/">Java
+Integer Cache - GeeksforGeeks</a></li>
+<li><a target="_blank" rel="noopener" href="https://pedrorijo.com/blog/java-integer-cache/">When 1 + 1
+= 3 (pedrorijo.com)</a></li>
+<li>Also see the <code>5.4 Object Wrappers and Autoboxing</code> of
+<code>Core-Java-Volume-I-Fundamentals-12th-Edition-Cay-S.-Horstmann</code><br />
+</li>
+<li><a
+target="_blank" rel="noopener" href="https://www.thegeekyway.com/java-autoboxing-xxautoboxcachemax/">The
+Geeky Way – Java: Autoboxing and -XX:AutoBoxCacheMax</a></li>
+<li>Also see the <code>private static class IntegerCache</code> in the
+<code>Integer.java</code> source code.</li>
+<li><a target="_blank" rel="noopener" href="https://javapapers.com/java/java-integer-cache/">Java
+Integer Cache - Javapapers</a>——<em>The better one</em></li>
+<li><a
+target="_blank" rel="noopener" href="https://javarevisited.blogspot.com/2012/07/auto-boxing-and-unboxing-in-java-be.html">What
+is Autoboxing and Unboxing in Java ? Example, Tutorial and Corner cases
+(javarevisited.blogspot.com)</a></li>
+<li><a
+href="https://chen-huaneng.github.io/2023/12/04/2023-12-4-2023-12-04-java-integer-cache/">Java
+- Integer Cache - Abel's Blog (chen-huaneng.github.io)</a></li>
+</ul>
+<p>Note:</p>
+<p>In the source code <code>Integer.java</code>, there are a
+<code>private static class IntegerCache</code> to cache the
+<code>Integer</code> in range of -128 and 127. You can modify the range
+on command-line option like
+<code>java -XX:AutoBoxCacheMax=1000 YOURCLASSNAME</code> which will
+cache <code>Integer</code> range -128 to 1000 rather than the
+default.</p>
+<p>How to using <code>-XX:AutoBoxCachMax=&lt;size&gt;</code> to change
+the cache range.</p>
+<blockquote>
+<p><span class="citation" data-cites="Source">@Source</span> <a
+target="_blank" rel="noopener" href="https://www.opsian.com/blog/aggressive-opts/">Java’s
+-XX:+AggressiveOpts: Can it slow you down? (opsian.com)</a></p>
+<h4 id="autoboxcachemax">AutoBoxCacheMax</h4>
+<p>For those less familiar with Java, <a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html">AutoBoxing</a> is
+where the compiler automatically converts between primitive and boxed
+types. E.g <code>int</code> and <code>Integer</code>. Autoboxing is
+mostly a code readability feature without which there would need to be a
+lot more casting when mixing primitives and boxed types.</p>
+<p>Boxing integers repeatedly can be expensive and since Java’s boxed
+types are immutable there exists a cache where a configurable range of
+values are pre-allocated and calls to create one
+(via <code>Integer.valueOf</code> for example) actually result in a
+reference to a cached object. Intuitively the mostly commonly used boxed
+numbers in an application often fall within a common range for example
+1-10.</p>
+<p>Savvy readers will realise this means that some equal pairs of
+Integer objects have reference equality (<code>==</code>) and others
+don’t. You should always use the <code>.equals()</code> method when
+comparing boxes numeric types in Java.</p>
+<p>Byte, Integer and Long all support caching between -128 and 127 but
+the upper limit of Integers cache is configurable via AutoBoxCacheMax.
+AggressiveOpts sets the AutoBoxCacheMax to 20000 which means all
+Integers between -128 and 20000 are cached.</p>
+</blockquote>
+<p>Why caching this range.</p>
+<blockquote>
+<p><span class="citation" data-cites="Source">@Source</span> <a
+target="_blank" rel="noopener" href="https://www.thegeekyway.com/java-autoboxing-xxautoboxcachemax/">The
+Geeky Way – Java: Autoboxing and -XX:AutoBoxCacheMax</a></p>
+<p><strong>Why caching this range :</strong></p>
+<p>This short range are generally used and  performance of</p>
+<p><strong><em>public static valueOf( i)</em></strong></p>
+<p>as this method is likely to yield significantly better space and time
+performance by caching frequently requested values.</p>
+<p><strong>Max size of -XX:AutoBoxCacheMax ;</strong></p>
+<p>Max cache size can't be more than -Xmx (which is JVM heap size) .
+Heap size is defined by vm argument -Xmxm .<br />
+But, you as soon as JVM initialized, it allocate the memory for caching
+purpose. But you can't allocate whole (-Xmx in byte)/4 (4byte is size
+of  int) for AutoBoxCache because of other object needed to be loaded
+and you might end up with</p>
+<p><em>java.lang.OutOfMemoryError: Java heap space</em></p>
+<p>Also, note that for other wrapper classes except Integer , have fixed
+caching size upto 127 only.</p>
+</blockquote>
+<p>Other wrapper type also have cache mechanism.</p>
+<blockquote>
+<p><span class="citation" data-cites="Source">@Source</span> <a
+target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Java_gotchas#Immutable_Objects_.2F_Wrapper_Class_Caching">Java
+gotchas - OWASP</a></p>
+<p>The other wrapper classes (Byte, Short, Long, Character) also contain
+this caching mechanism. The Byte, Short and Long all contain the same
+caching principle to the Integer object. The Character class caches from
+0 to 127. The negative cache is not created for the Character wrapper as
+these values do not represent a corresponding character. There is no
+caching for the Float object.</p>
+<p>BigDecimal also uses caching but uses a different mechanism. While
+the other objects contain a inner class to deal with caching this is not
+true for BigDecimal, the caching is pre-defined in a static array and
+only covers 11 numbers, 0 to 10:</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// Cache of common small BigDecimal values.</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> BigDecimal zeroThroughTen[] = &#123;<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.ZERO,		<span class="hljs-number">0</span>,  <span class="hljs-number">0</span>),<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.ONE,		<span class="hljs-number">1</span>,  <span class="hljs-number">0</span>),<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.valueOf(<span class="hljs-number">2</span>),	<span class="hljs-number">2</span>,  <span class="hljs-number">0</span>),<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.valueOf(<span class="hljs-number">3</span>),	<span class="hljs-number">3</span>,  <span class="hljs-number">0</span>),<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.valueOf(<span class="hljs-number">4</span>),	<span class="hljs-number">4</span>,  <span class="hljs-number">0</span>),<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.valueOf(<span class="hljs-number">5</span>),	<span class="hljs-number">5</span>,  <span class="hljs-number">0</span>),<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.valueOf(<span class="hljs-number">6</span>),	<span class="hljs-number">6</span>,  <span class="hljs-number">0</span>),<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.valueOf(<span class="hljs-number">7</span>),	<span class="hljs-number">7</span>,  <span class="hljs-number">0</span>),<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.valueOf(<span class="hljs-number">8</span>),	<span class="hljs-number">8</span>,  <span class="hljs-number">0</span>),<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.valueOf(<span class="hljs-number">9</span>),	<span class="hljs-number">9</span>,  <span class="hljs-number">0</span>),<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">BigDecimal</span>(BigInteger.TEN,		<span class="hljs-number">10</span>, <span class="hljs-number">0</span>),<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>Cache only for autoboxing rather than built using constructor.</p>
+<blockquote>
+<p><span class="citation" data-cites="Source">@Source</span> <a
+target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-integer-cache/">Java Integer
+Cache - GeeksforGeeks</a></p>
+<p><strong>Java Integer Cache Implementation:</strong></p>
+<p>In Java 5, a new feature was introduced to save the memory and
+improve performance for Integer type objects handling. Integer objects
+are cached internally and reused via the same referenced objects.</p>
+<ul>
+<li>This is applicable for Integer values in the range between –128 to
++127.</li>
+<li><strong>This Integer caching works only on auto-boxing. Integer
+objects will not be cached when they are built using the
+constructor.</strong></li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;<br><span class="hljs-type">Integer</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>;<br><span class="hljs-type">Integer</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Integer</span>(<span class="hljs-number">3</span>);<br>i == j <span class="hljs-comment">// true because Integer unboxing into int</span><br>i == k <span class="hljs-comment">// true because the same reason above</span><br>j == k <span class="hljs-comment">// false because Integer objects will not be cached when they are built using the constructor. </span><br></code></pre></td></tr></table></figure>
+<p><em>And do not using constructor to new Integer object, but using
+autoboxing, because the constructor is deprecated and marked for
+removal.</em></p>
+<blockquote>
+<p><span class="citation" data-cites="Source">@Source</span> <a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#valueOf-int-">Integer
+(Java Platform SE 8 ) (oracle.com)</a></p>
+<p>Returns an <code>Integer</code> instance representing the
+specified <code>int</code> value. If a new <code>Integer</code> instance
+is not required, this method should generally be used in preference to
+the constructor <a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#Integer-int-"><code>Integer(int)</code></a>,
+as this method is likely to yield significantly better space and time
+performance by caching frequently requested values. This method will
+always cache values in the range -128 to 127, inclusive, and may cache
+other values outside of this range.</p>
+</blockquote>
+<p>The history of Integer cache and why is -128 to 127.</p>
+<blockquote>
+<p><span class="citation" data-cites="Source">@Source</span> <a
+target="_blank" rel="noopener" href="https://javapapers.com/java/java-integer-cache/">Java Integer
+Cache - Javapapers</a></p>
+<p>Actually when this feature was first introduced in Java 5, the range
+was fixed to –127 to +127. Later in Java 6, the high end of the range
+was mapped to java.lang.Integer.IntegerCache.high and a VM argument
+allowed us to set the high number. Which has given flexibility to tune
+the performance according to our application use case. What is should
+have been the reason behind choosing this range of numbers from –127 to
+127. This is conceived to be the widely most range of integer numbers.
+The first usage of Integer in a program has to take that extra amount of
+time to cache the instances.</p>
+</blockquote>
+<p>And more for Integer Cache from
+<code>Java Language Specification(JLS)</code>.</p>
+<blockquote>
+<p><span class="citation" data-cites="Source">@Source</span> <a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-5.html#jls-5.1.7">Chapter 5. Conversions
+and Contexts (oracle.com)</a></p>
+<p>If the value <code>p</code> being boxed is an integer literal of
+type <code>int</code> between <code>-128</code> and <code>127</code> inclusive
+(<a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-3.10.1"
+title="3.10.1. Integer Literals">§3.10.1</a>), or the boolean
+literal <code>true</code> or <code>false</code> (<a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-3.10.3"
+title="3.10.3. Boolean Literals">§3.10.3</a>), or a character literal
+between <code>'\u0000'</code> and <code>'\u007f'</code> inclusive (<a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-3.10.4"
+title="3.10.4. Character Literals">§3.10.4</a>), then
+let <code>a</code> and <code>b</code> be the results of any two boxing
+conversions of <code>p</code>. It is always the case
+that <code>a</code> <code>==</code> <code>b</code>.</p>
+<p>Ideally, boxing a primitive value would always yield an identical
+reference. In practice, this may not be feasible using existing
+implementation techniques. The rule above is a pragmatic compromise,
+requiring that certain common values always be boxed into
+indistinguishable objects. The implementation may cache these, lazily or
+eagerly. For other values, the rule disallows any assumptions about the
+identity of the boxed values on the programmer's part. This allows (but
+does not require) sharing of some or all of these references. Notice
+that integer literals of type <code>long</code> are allowed, but not
+required, to be shared.</p>
+<p>This ensures that in most common cases, the behavior will be the
+desired one, without imposing an undue performance penalty, especially
+on small devices. Less memory-limited implementations might, for
+example, cache all <code>char</code> and <code>short</code> values, as
+well as <code>int</code> and <code>long</code> values in the range of
+-32K to +32K.</p>
+<p>A boxing conversion may result in an <code>OutOfMemoryError</code> if
+a new instance of one of the wrapper classes
+(<code>Boolean</code>, <code>Byte</code>, <code>Character</code>, <code>Short</code>, <code>Integer</code>, <code>Long</code>, <code>Float</code>,
+or <code>Double</code>) needs to be allocated and insufficient storage
+is available.</p>
+</blockquote>
+<h2 id="more-details-about-java">More details about Java</h2>
+<p>Question:</p>
+<ol type="1">
+<li>What will happen if the supertypes of a class or interface provide
+multiple default methods with the same signature?</li>
+</ol>
+<p>Answer:</p>
+<blockquote>
+<p><span class="citation" data-cites="Source">@Source</span>: <a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/IandI/override.html">Overriding
+and Hiding Methods (The Java™ Tutorials &gt; Learning the Java Language
+&gt; Interfaces and Inheritance) (oracle.com)</a></p>
+<h2 id="interface-methods">Interface Methods</h2>
+<p><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html">Default
+methods</a> and <a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">abstract
+methods</a> in interfaces are inherited like instance methods. However,
+when the supertypes of a class or interface provide multiple default
+methods with the same signature, the Java compiler follows inheritance
+rules to resolve the name conflict. These rules are driven by the
+following two principles:</p>
+<ul>
+<li><p>Instance methods are preferred over interface default
+methods.</p>
+<p>Consider the following classes and interfaces:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Horse</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">identifyMyself</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;I am a horse.&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Flyer</span> &#123;<br>    <span class="hljs-keyword">default</span> <span class="hljs-keyword">public</span> String <span class="hljs-title function_">identifyMyself</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;I am able to fly.&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Mythical</span> &#123;<br>    <span class="hljs-keyword">default</span> <span class="hljs-keyword">public</span> String <span class="hljs-title function_">identifyMyself</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;I am a mythical creature.&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Pegasus</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Horse</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Flyer</span>, Mythical &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String... args)</span> &#123;<br>        <span class="hljs-type">Pegasus</span> <span class="hljs-variable">myApp</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Pegasus</span>();<br>        System.out.println(myApp.identifyMyself());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>The method <code>Pegasus.identifyMyself</code> returns the string
+<code>I am a horse.</code></p></li>
+<li><p>Methods that are already overridden by other candidates are
+ignored. This circumstance can arise when supertypes share a common
+ancestor.</p>
+<p>Consider the following interfaces and classes:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Animal</span> &#123;<br>    <span class="hljs-keyword">default</span> <span class="hljs-keyword">public</span> String <span class="hljs-title function_">identifyMyself</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;I am an animal.&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">EggLayer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Animal</span> &#123;<br>    <span class="hljs-keyword">default</span> <span class="hljs-keyword">public</span> String <span class="hljs-title function_">identifyMyself</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;I am able to lay eggs.&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">FireBreather</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Animal</span> &#123; &#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Dragon</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">EggLayer</span>, FireBreather &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span> <span class="hljs-params">(String... args)</span> &#123;<br>        <span class="hljs-type">Dragon</span> <span class="hljs-variable">myApp</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Dragon</span>();<br>        System.out.println(myApp.identifyMyself());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>The method <code>Dragon.identifyMyself</code> returns the string
+<code>I am able to lay eggs.</code></p></li>
+</ul>
+<p>If two or more independently defined default methods conflict, or a
+default method conflicts with an abstract method, then the Java compiler
+produces a compiler error. You must explicitly override the supertype
+methods.</p>
+<p>Consider the example about computer-controlled cars that can now fly.
+You have two interfaces (<code>OperateCar</code> and
+<code>FlyCar</code>) that provide default implementations for the same
+method, (<code>startEngine</code>):</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">OperateCar</span> &#123;<br>    <span class="hljs-comment">// ...</span><br>    <span class="hljs-keyword">default</span> <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">startEngine</span><span class="hljs-params">(EncryptedKey key)</span> &#123;<br>        <span class="hljs-comment">// Implementation</span><br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">FlyCar</span> &#123;<br>    <span class="hljs-comment">// ...</span><br>    <span class="hljs-keyword">default</span> <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">startEngine</span><span class="hljs-params">(EncryptedKey key)</span> &#123;<br>        <span class="hljs-comment">// Implementation</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>A class that implements both <code>OperateCar</code> and
+<code>FlyCar</code> must override the method <code>startEngine</code>.
+You could invoke any of the of the default implementations with the
+<code>super</code> keyword.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FlyingCar</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">OperateCar</span>, FlyCar &#123;<br>    <span class="hljs-comment">// ...</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">startEngine</span><span class="hljs-params">(EncryptedKey key)</span> &#123;<br>        FlyCar.<span class="hljs-built_in">super</span>.startEngine(key);<br>        OperateCar.<span class="hljs-built_in">super</span>.startEngine(key);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>The name preceding <code>super</code> (in this example,
+<code>FlyCar</code> or <code>OperateCar</code>) must refer to a direct
+superinterface that defines or inherits a default for the invoked
+method. This form of method invocation is not restricted to
+differentiating between multiple implemented interfaces that contain
+default methods with the same signature. You can use the
+<code>super</code> keyword to invoke a default method in both classes
+and interfaces.</p>
+<p>Inherited instance methods from classes can override abstract
+interface methods. Consider the following interfaces and classes:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Mammal</span> &#123;<br>    String <span class="hljs-title function_">identifyMyself</span><span class="hljs-params">()</span>;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Horse</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">identifyMyself</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;I am a horse.&quot;</span>;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Mustang</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Horse</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Mammal</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String... args)</span> &#123;<br>        <span class="hljs-type">Mustang</span> <span class="hljs-variable">myApp</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Mustang</span>();<br>        System.out.println(myApp.identifyMyself());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>The method <code>Mustang.identifyMyself</code> returns the string
+<code>I am a horse.</code> The class <code>Mustang</code> inherits the
+method <code>identifyMyself</code> from the class <code>Horse</code>,
+which overrides the abstract method of the same name in the interface
+<code>Mammal</code>.</p>
+<p><strong>Note</strong>: Static methods in interfaces are never
+inherited.</p>
+<h2 id="modifiers">Modifiers</h2>
+<p>The access specifier for an overriding method can allow more, but not
+less, access than the overridden method. For example, a protected
+instance method in the superclass can be made public, but not private,
+in the subclass.</p>
+<p>You will get a compile-time error if you attempt to change an
+instance method in the superclass to a static method in the subclass,
+and vice versa.</p>
+<h2 id="summary">Summary</h2>
+<p>The following table summarizes what happens when you define a method
+with the same signature as a method in a superclass.</p>
+<table>
+
+<thead>
+<tr>
+<th></th>
+<th>Superclass Instance Method</th>
+<th>Superclass Static Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subclass Instance Method</td>
+<td>Overrides</td>
+<td>Generates a compile-time error</td>
+</tr>
+<tr>
+<td>Subclass Static Method</td>
+<td>Generates a compile-time error</td>
+<td>Hides</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Note:</strong> In a subclass, you can overload the methods
+inherited from the superclass. Such overloaded methods neither hide nor
+override the superclass instance methods—they are new methods, unique to
+the subclass.</p>
+</blockquote>
+<p>Question:</p>
+<ol start="2" type="1">
+<li>Why does adding a String and int take effect?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/11651689/why-does-adding-a-string-and-an-int-act-this-way">java
+- Why does adding a String and an int act this way? - Stack
+Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.18.1">Chapter 15. Expressions
+(oracle.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html">String
+(Java SE 17 &amp; JDK 17) (oracle.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String
+(Java Platform SE 8 ) (oracle.com)</a></li>
+</ul>
+<h3
+id="overload-vs-override-dynamic-binding-vs-static-binding-declared-type-vs-actual-type">Overload
+vs Override, Dynamic binding vs Static binding, Declared type vs Actual
+type</h3>
+<h4 id="myself-understanding-and-note-in-this-topic">Myself
+understanding and note in this topic</h4>
+<h5 id="why-java-have-dynamic-binding-and-static-binding">Why Java have
+Dynamic binding and Static binding?</h5>
+<p>According to the article of <a
+target="_blank" rel="noopener" href="https://javarevisited.blogspot.com/2012/03/what-is-static-and-dynamic-binding-in.html">What
+is Static and Dynamic binding in Java with Example
+(javarevisited.blogspot.com)</a></p>
+<blockquote>
+<p>If you have more than one method of the same name (<a
+target="_blank" rel="noopener" href="http://javarevisited.blogspot.com/2011/12/method-overloading-vs-method-overriding.html">method
+overriding</a>) or two variables of the same name in the same class
+hierarchy it gets tricky to find out which one is used during runtime as
+a result of their reference in code. This problem is resolved
+using <em>static and dynamic binding in Java</em>. For those who are not
+familiar with the binding operation, its process is used to a link which
+method or variable to be called as a result of their reference in
+code.</p>
+</blockquote>
+<blockquote>
+<p><em>The difference between static and dynamic binding</em> is a <a
+target="_blank" rel="noopener" href="http://javarevisited.blogspot.com/2011/04/top-20-core-java-interview-questions.html">popular
+Java programming interview question</a> that tries to explore
+candidates' knowledge on having compiler and <a
+target="_blank" rel="noopener" href="http://javarevisited.blogspot.com/2011/12/jre-jvm-jdk-jit-in-java-programming.html">JVM</a> finds
+which methods to call if there is more than one method of the same name
+as it's the case in method overloading and overriding.</p>
+</blockquote>
+<p>So, in order to solve above problems, Java introduce the
+dynamic/run-time binding and static/compile binding. And we also known
+that Java execute compile before interpret, so compile-time is earlier
+than run-time. For example, in command-line, we have</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">javac Animal.java # which call the java compile<br>java Animal # which means java interpret<br></code></pre></td></tr></table></figure>
+<p>and that's why <strong>JVM</strong> first using static binding and
+then check for dynamic binding.</p>
+<h5 id="what-are-declared-type-and-actual-type">What are declared type
+and actual type?</h5>
+<p>First of all, we should know what is declared type and actual type.
+An example is</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">callEat</span><span class="hljs-params">(Animal animal)</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;Animal is eating&quot;</span>);<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">callEat</span><span class="hljs-params">(Dog dog)</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;Dog is eating&quot;</span>);<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span><br>&#123;<br>    <span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Dog</span>();<br>    callEat(a);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>which <code>Animal</code> is the declared type and <code>Dog</code>
+is the actual type of <code>a</code>.</p>
+<h5 id="what-is-the-difference-between-override-and-overload">What is
+the difference between Override and Overload?</h5>
+<p>Before we introduce dynamic binding and static binding, we first come
+to see what is override and overload, according to <a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html">Defining
+Methods (The Java™ Tutorials &gt; Learning the Java Language &gt;
+Classes and Objects) (oracle.com)</a> and <a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/IandI/override.html">Overriding
+and Hiding Methods (The Java™ Tutorials &gt; Learning the Java Language
+&gt; Interfaces and Inheritance) (oracle.com)</a>:</p>
+<blockquote>
+<h1 id="overloading-methods">Overloading Methods</h1>
+<p>The Java programming language supports <em>overloading</em> methods,
+and Java can distinguish between methods with different <em>method
+signatures</em>. This means that methods within a class can have the
+same name if they have different parameter lists.</p>
+<h1 id="overriding-and-hiding-methods">Overriding and Hiding
+Methods</h1>
+<h2 id="instance-methods">Instance Methods</h2>
+<p>An instance method in a subclass with the same signature (name, plus
+the number and the type of its parameters) and return type as an
+instance method in the superclass <em>overrides</em> the superclass's
+method.</p>
+<p>The ability of a subclass to override a method allows a class to
+inherit from a superclass whose behavior is "close enough" and then to
+modify behavior as needed. The overriding method has the same name,
+number and type of parameters, and return type as the method that it
+overrides. An overriding method can also return a subtype of the type
+returned by the overridden method. This subtype is called
+a <em>covariant return type</em>.</p>
+<h2 id="static-methods">Static Methods</h2>
+<p>If a subclass defines a static method with the same signature as a
+static method in the superclass, then the method in the
+subclass <em>hides</em> the one in the superclass.</p>
+<p>The distinction between hiding a static method and overriding an
+instance method has important implications:</p>
+<ul>
+<li>The version of the overridden instance method that gets invoked is
+the one in the subclass.</li>
+<li>The version of the hidden static method that gets invoked depends on
+whether it is invoked from the superclass or the subclass.</li>
+</ul>
+</blockquote>
+<h5 id="what-happen-when-method-calls">What happen when method
+calls</h5>
+<p>According to <code>5.1.6 Understanding Method Calls</code> of
+<code>Core-Java-Volume-I-Fundamentals-12th-Edition-Cay-S.-Horstmann</code>
+:</p>
+<blockquote>
+<p>It is important to understand exactly how a method call is applied to
+an object. Let’s say we call x.f(args), and the implicit parameter x is
+declared to be an object of class C. Here is what happens:</p>
+<ol type="1">
+<li>The compiler looks at the declared type of the object and the method
+name. Note that there may be multiple methods, all with the same name,
+f, but with different parameter types. For example, there may be a
+method f(int) and a method f(String). The compiler enumerates all
+methods called f in the class C and all accessible methods called f in
+the superclasses of C. (Private methods of the superclass are not
+accessible.) Now the compiler knows all possible candidates for the
+method to be called.</li>
+<li>Next, the compiler determines the types of the arguments supplied in
+the method call. If among all the methods called f there is a unique
+method whose parameter types are a best match for the supplied
+arguments, that method is chosen to be called. This process is called
+overloading resolution. For example, in a call x.f("Hello"), the
+compiler picks f(String) and not f(int). The situation can get complex
+because of type conversions (int to double, Manager to Employee, and so
+on). If the compiler cannot find any method with matching parameter
+types or if multiple methods all match after applying conversions, the
+compiler reports an error. Now the compiler knows the name and parameter
+types of the method that needs to be called</li>
+<li>If the method is private, static, final, or a constructor, then the
+compiler knows exactly which method to call. (The final modifier is
+explained in the next section.) This is called static binding.
+Otherwise, the method to be called depends on the actual type of the
+implicit parameter, and dynamic binding must be used at runtime. In our
+example, the compiler would generate an instruction to call f(String)
+with dynamic binding.</li>
+<li>When the program runs and uses dynamic binding to call a method, the
+virtual machine must call the version of the method that is appropriate
+for the actual type of the object to which x refers. Let’s say the
+actual type is D, a subclass of C. If the class D defines a method
+f(String), that method is called. If not, D’s superclass is searched for
+a method f(String), and so on.</li>
+</ol>
+<p>It would be time-consuming to carry out this search every time a
+method is called. Instead, the virtual machine precomputes a method
+table for each class. The method table lists all method signatures and
+the actual methods to be called.</p>
+<p>The virtual machine can build the method table after loading a class,
+by combining the methods that it finds in the class file with the method
+table of the superclass.</p>
+<p>When a method is actually called, the virtual machine simply makes a
+table lookup. In our example, the virtual machine consults the method
+table for the class D and looks up the method to call for f(String).
+That method may be D.f(String) or X.f(String), where X is some
+superclass of D.</p>
+<p>There is one twist to this scenario. If the call is super.f(param),
+then the virtual machine consults the method table of the
+superclass.</p>
+</blockquote>
+<h5
+id="now-lets-see-the-mystery-of-the-dynamic-binding-and-static-binding">Now,
+let's see the mystery of the dynamic binding and static binding</h5>
+<p><em>note:</em> overloading bind at compile time "static binding"
+while overriding binds at run time "dynamic binding".</p>
+<p>To conclude:</p>
+<blockquote>
+<h2
+id="what-is-static-and-dynamic-binding-in-java-with-example-javarevisited.blogspot.com"><a
+target="_blank" rel="noopener" href="https://javarevisited.blogspot.com/2012/03/what-is-static-and-dynamic-binding-in.html">What
+is Static and Dynamic binding in Java with Example
+(javarevisited.blogspot.com)</a></h2>
+<ol type="1">
+<li><p>Static binding in Java occurs during Compile time while Dynamic
+binding occurs during Runtime.</p></li>
+<li><p><a
+target="_blank" rel="noopener" href="http://docs.oracle.com/javase/tutorial/java/javaOO/variables.html">private</a>, <a
+target="_blank" rel="noopener" href="http://javarevisited.blogspot.com/2011/12/final-variable-method-class-java.html">final</a> and <a
+target="_blank" rel="noopener" href="http://javarevisited.blogspot.com/2011/11/static-keyword-method-variable-java.html">static</a> methods
+and variables use static binding and are bonded by the compiler while
+virtual methods are bonded during runtime based upon runtime
+object.</p></li>
+<li><p>Static binding uses Type(<a
+target="_blank" rel="noopener" href="http://javarevisited.blogspot.com/2011/10/class-in-java-programming-general.html">Class
+in Java</a>)  information for binding while Dynamic binding
+uses Object to resolve to bind.</p></li>
+<li><p><a
+target="_blank" rel="noopener" href="http://javarevisited.blogspot.com/2011/12/method-overloading-vs-method-overriding.html">Overloaded
+methods</a> are bonded using static binding while overridden methods are
+bonded using dynamic binding at runtime. Here is an example that will
+help you to understand both static and dynamic binding in Java.</p></li>
+</ol>
+</blockquote>
+<h4 id="references">References</h4>
+<p>Question:</p>
+<ol type="1">
+<li>Overloaded and overridden in Java</li>
+<li>Overriding and Hiding Methods</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/10568772/overloaded-and-overridden-in-java#comment74040843_10568780">overriding
+- Overloaded and overridden in Java - Stack Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html">Defining
+Methods (The Java™ Tutorials &gt; Learning the Java Language &gt;
+Classes and Objects) (oracle.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/IandI/override.html">Overriding
+and Hiding Methods (The Java™ Tutorials &gt; Learning the Java Language
+&gt; Interfaces and Inheritance) (oracle.com)</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>Overriding vs Hiding</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/10594052/overriding-vs-hiding-java-confused">inheritance
+- Overriding vs Hiding Java - Confused - Stack Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/IandI/override.html">Overriding
+and Hiding Methods (The Java™ Tutorials &gt; Learning the Java Language
+&gt; Interfaces and Inheritance) (oracle.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://coderanch.com/wiki/659959/Overriding-Hiding">Overriding Vs
+Hiding (Wiki forum at Coderanch)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.baeldung.com/java-variable-method-hiding#local">Variable
+and Method Hiding in Java | Baeldung</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>Dynamic binding/run-time binding vs Static binding/compile-time
+binding</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/16647590/static-binding-and-dynamic-binding">java
+- Static Binding and Dynamic Binding - Stack Overflow</a></li>
+<li>Also see <code>5.1.6 Understanding Method Calls</code> of
+<code>Core-Java-Volume-I-Fundamentals-12th-Edition-Cay-S.-Horstmann</code><br />
+</li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html">Understanding
+Class Members (The Java™ Tutorials &gt; Learning the Java Language &gt;
+Classes and Objects) (oracle.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html">Polymorphism
+(The Java™ Tutorials &gt; Learning the Java Language &gt; Interfaces and
+Inheritance) (oracle.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://javarevisited.blogspot.com/2012/03/what-is-static-and-dynamic-binding-in.html">What
+is Static and Dynamic binding in Java with Example
+(javarevisited.blogspot.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/19017258/static-vs-dynamic-binding-in-java">Static
+Vs. Dynamic Binding in Java - Stack Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="http://skeletoncoder.blogspot.com/2006/09/java-tutorials-overloading-is-compile.html">Skeleton
+Coder: Java Tutorials: Overloading is compile-time binding</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://javarevisited.blogspot.com/2012/03/what-is-static-and-dynamic-binding-in.html">What
+is Static and Dynamic binding in Java with Example
+(javarevisited.blogspot.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/321864/java-dynamic-binding-and-method-overriding">inheritance
+- Java dynamic binding and method overriding - Stack Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/20783266/what-is-the-difference-between-dynamic-and-static-polymorphism-in-java">oop
+- What is the difference between dynamic and static polymorphism in
+Java? - Stack Overflow</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>compile-time error when calling a subclass method using superclass
+reference?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/37853463/why-do-i-get-a-compile-time-error-when-calling-a-subclass-method-using-superclas">java
+- Why do I get a compile-time error when calling a subclass method using
+superclass reference? - Stack Overflow</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>Static type(not static binding)</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/20504714/difference-between-dynamic-and-static-type-assignments-in-java">inheritance
+- Difference between Dynamic and Static type assignments in Java - Stack
+Overflow</a></li>
+</ul>
+<h3 id="other-question">Other Question</h3>
+<p>Question:</p>
+<ol type="1">
+<li>Does casting change the declared/reference type at run-time?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/17120698/does-casting-change-the-declared-reference-type-at-run-time">java
+- Does casting change the declared/reference type at run-time? - Stack
+Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/20096297/explicit-type-casting-example-in-java">Explicit
+type casting example in Java - Stack Overflow</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>Class hierarchy terms, ancestor- vs. parent-class</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/10993304/class-hierarchy-terms-ancestor-vs-parent-class">oop
+- Class hierarchy terms, ancestor- vs. parent-class - Stack
+Overflow</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>Is constructor a member or method of class</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/2574276/java-how-can-a-constructor-return-a-value">Java:
+How can a constructor return a value? - Stack Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/24963718/java-void-and-non-void-constructor">java
+"void" and "non void" constructor - Stack Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.8">Chapter 8. Classes
+(oracle.com)</a></li>
+<li>Also see the <code>4.3.4 First Steps with Constructors</code> of
+<code>Core-Java-Volume-I-Fundamentals-12th-Edition-Cay-S.-Horstmann</code></li>
+</ul>
+<p>Question:</p>
+<ol start="2" type="1">
+<li>The sequence of constructor was invoked when subclass object is
+constructed?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li>Also see the <code>5.1.3 Subclass Constructors</code> of
+<code>Core-Java-Volume-I-Fundamentals-12th-Edition-Cay-S.-Horstmann</code></li>
+</ul>
+<p>Quesrion:</p>
+<ol type="1">
+<li>What is the difference between <code>==</code> and
+<code>java.lang.Object.equals()</code>?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/7520432/what-is-the-difference-between-and-equals-in-java/7520464#7520464">identity
+- What is the difference between == and equals() in Java? - Stack
+Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)">Object
+(Java SE 17 &amp; JDK 17) (oracle.com)</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>How do I compare Strings in Java?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java">How
+do I compare strings in Java? - Stack Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/5153496/how-can-i-compare-two-strings-in-java-and-define-which-of-them-is-smaller-than-t">How
+can I compare two strings in java and define which of them is smaller
+than the other alphabetically? - Stack Overflow</a></li>
+</ul>
+<p>Qusetion:</p>
+<ol type="1">
+<li>How to check if object is null or not?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/25642585/how-to-check-if-object-is-null-or-not-except-null">java
+- How to check if object is null or not except == null - Stack
+Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/Objects.html#isNull-java.lang.Object-">Objects
+(Java Platform SE 8 ) (oracle.com)</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>Is java pass-by-value or pass-by-reference</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.javadude.com/articles/passbyvalue.htm">Java is
+Pass-by-Value, Dammit! | JavaDude.com</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value/73021#73021">methods
+- Is Java "pass-by-reference" or "pass-by-value"? - Stack
+Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/373419/whats-the-difference-between-passing-by-reference-vs-passing-by-value/430958#430958">language
+agnostic - What's the difference between passing by reference vs.
+passing by value? - Stack Overflow</a></li>
+<li>Also see the <code>4.5 Method Parameters</code> of
+<code>Core-Java-Volume-I-Fundamentals-12th-Edition-Cay-S.-Horstmann</code></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>What is reference type and value type in Java?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Value_type_and_reference_type">Value
+type and reference type - Wikipedia</a></li>
+<li>Also see the <code>2.1 Mystery of the Walrus</code> of <a
+target="_blank" rel="noopener" href="https://joshhug.gitbooks.io/hug61b/content/chap2/chap21.html">2.1
+Mystery of the Walrus · Hug61B (gitbooks.io)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/8790809/whats-the-difference-between-primitive-and-reference-types">java
+- What's the difference between primitive and reference types? - Stack
+Overflow</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>How to call object member in static method</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/2392028/static-method-in-java">Static
+method in java - Stack Overflow</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/46860422/objects-calling-object-instance-inside-a-static-method">java
+- objects - calling object instance inside a static method - Stack
+Overflow</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>Hiding vs Shadow</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.java67.com/2019/04/difference-between-overloading-overriding-hiding-shadowing-and-obscuring-in-java-oop.html">Difference
+in Method Overloading, Overriding, Hiding, Shadowing and Obscuring in
+Java and Object-Oriented Programming? | Java67</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.scaler.com/topics/java/variable-hiding-and-variable-shadowing-in-java/">Variable
+Hiding and Variable Shadowing in Java - Scaler Topics</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>Interface vs Abstract Class</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/18777989/how-should-i-have-explained-the-difference-between-an-interface-and-an-abstract">java
+- How should I have explained the difference between an Interface and an
+Abstract class? - Stack Overflow</a></li>
+<li>Also see the <code>6.1.3 Interfaces and Abstract Classes</code> of
+<code>Core-Java-Volume-I-Fundamentals-12th-Edition-Cay-S.-Horstmann</code></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>How to convert String into double?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/5769669/convert-string-to-double-in-java">Convert
+String to double in Java - Stack Overflow</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>Why does accessing an array element take constant time?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.quora.com/Why-does-accessing-an-array-element-take-constant-time">Why
+does accessing an array element take constant time? - Quora</a></li>
+</ul>
+<h2 id="style-about-java">Style about Java</h2>
+<p>Question:</p>
+<ol start="4" type="1">
+<li>Is calling static methods via an object "bad form"?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://stackoverflow.com/questions/7884004/is-calling-static-methods-via-an-object-bad-form-why">java
+- Is calling static methods via an object "bad form"? Why? - Stack
+Overflow</a></li>
+</ul>
+<p>Question:</p>
+<ol type="1">
+<li>When to use <code>var</code> in Java ?</li>
+</ol>
+<p>Answer:</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://web.archive.org/web/20211013201458/https://openjdk.java.net/projects/amber/LVTIstyle.html">Local
+Variable Type Inference: Style Guidelines (archive.org)</a></li>
+<li>Also see the <code>4.3.5 Declaring Local Variables with var</code>
+and <code>6.3.6 Anonymous Inner Classes</code> of
+<code>Core-Java-Volume-I-Fundamentals-12th-Edition-Cay-S.-Horstmann</code></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Java/FAQ/" class="category-chain-item">FAQ</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
+      
+        <a href="/tags/FAQ/" class="print-no-link">#FAQ</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java - 常见问题及解答</div>
+      <div>https://chen-huaneng.github.io/2024/10/11/2024-10-11-2024-10-11-java-faq/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Abel</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年10月11日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024年10月11日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/11/2024-10-11-2024-10-11-how-to-use-obsidian-callout/" title="Obsidian - Callout语法">
+                        <span class="hidden-mobile">Obsidian - Callout语法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","appKey":"E986Wb0NvdKXW5IypTNvcH0T","path":"window.location.pathname","placeholder":"发一条友善的评论吧(为了方便交流,记得填上方的昵称和邮箱再留言哦~🍭)","avatar":"retro","meta":["nick","mail"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size: 0.85rem"> Copyright <i class="iconfont icon-copyright">  <script>document.write(new Date().getFullYear());</script> <a href="/about" target="_blank" rel="nofollow noopener"> <span> <strong>Abel</strong> </span> </a>  </i> | Power by  <a href="https://hexo.io" target="_blank" rel="nofollow noopener"> <span> <strong>Hexo</strong> </span> </a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <span> <strong>Fluid</strong> </span> </a> </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        <i class="iconfont icon-friends"></i>总访问量 
+        <span id="leancloud-site-pv"></span>
+         次 | 
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        <i class="iconfont icon-users"></i>总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/duration.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
