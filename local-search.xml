@@ -4,11 +4,42 @@
   
   
   <entry>
+    <title>ML - Coursera: Machine Learning</title>
+    <link href="/2024/10/13/2024-10-13-2024-10-13-ml/"/>
+    <url>/2024/10/13/2024-10-13-2024-10-13-ml/</url>
+    
+    <content type="html"><![CDATA[<h2 id="课程资源">课程资源</h2><ul><li><a href="https://csdiy.wiki/机器学习/ML/">Coursera: Machine Learning- CS自学指南 (csdiy.wiki)</a> - 课程相关的资源</li><li><ahref="https://www.coursera.org/specializations/machine-learning-introduction#about">MachineLearning | Coursera</a> - 课程官网（可以申请助学金）</li><li><ahref="https://www.bilibili.com/video/BV1Bq421A74G/?share_source=copy_web&amp;vd_source=343bef2897116ac8457328069e8fc81a">(超爽中英!)2024公认最好的【吴恩达机器学习】教程！附课件代码 Machine LearningSpecialization_哔哩哔哩_bilibili</a> -不能科学上网和对英文有困难的同学可以参考翻译版</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Course</category>
+      
+      <category>Machine Learning</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Math</tag>
+      
+      <tag>Machine Learning</tag>
+      
+      <tag>CS Course</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CS50 - This is CS50x</title>
     <link href="/2024/10/13/2024-10-13-2024-10-13-cs50/"/>
     <url>/2024/10/13/2024-10-13-2024-10-13-cs50/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="课程资源">课程资源</h2><ul><li><a href="https://csdiy.wiki/编程入门/C/CS50/">Harvard CS50: This isCS50x - CS自学指南 (csdiy.wiki)</a>- 课程相关的资源</li><li><a href="https://cs50.harvard.edu/x/2024/">CS50x 2024(harvard.edu)</a> - 课程官网</li><li><ahref="https://www.bilibili.com/video/BV1HW4y1A7Yi/?spm_id_from=333.999.0.0&amp;vd_source=a4d76d1247665a7e7bec15d15fd12349">【2024最新版】哈佛大学CS50- 全世界公认最好的《计算机导论》课程，拿走不谢！全长24个小时完整课程（中英字幕）_哔哩哔哩_bilibili</a> -不能科学上网和对英文有困难的同学可以参考翻译版</li></ul>]]></content>
     
     
     <categories>
@@ -75,8 +106,6 @@
     <tags>
       
       <tag>Math</tag>
-      
-      <tag>CS Course</tag>
       
       <tag>Machine Learning</tag>
       
@@ -285,9 +314,9 @@
       
       <tag>Sorting</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -773,11 +802,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Counting</tag>
       
       <tag>Greedy</tag>
       
@@ -812,9 +841,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1031,9 +1060,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1312,9 +1341,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1921,9 +1950,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2956,7 +2985,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -2967,7 +2996,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
