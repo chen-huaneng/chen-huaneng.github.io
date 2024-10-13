@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/03/banner.jpg">
 <meta property="article:published_time" content="2023-12-02T13:34:22.000Z">
-<meta property="article:modified_time" content="2024-10-11T11:08:54.120Z">
+<meta property="article:modified_time" content="2024-10-13T03:53:44.059Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
@@ -261,7 +261,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 2.6k 
+          文章字数: 3.4k 
         
       </span>
     
@@ -273,7 +273,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 22 分钟
+          阅读全文大概需要 29 分钟
         
       </span>
     
@@ -324,7 +324,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-10-11T19:08:54+08:00
+                    本文最后更新于：2024-10-13T11:53:44+08:00
                   
                   
 
@@ -388,7 +388,7 @@ a Hexo site · Cloudflare Pages docs</a></li>
 target="_blank" rel="noopener" href="https://www.laoluowl.cn/archives/35">【持续更新】44个二次元、三次元随机图API接口分享及预览
 - 老罗的小屋 (laoluowl.cn)</a></li>
 </ul>
-<h2 id="前端知识的学习材料">前端知识的学习材料</h2>
+<h2 id="前端知识的学习资料">前端知识的学习资料</h2>
 <p>搭建个人博客网站避免不了需要了解一些前端的相关知识，下面是你可能需要的学习资料。</p>
 <ul>
 <li><a
@@ -400,6 +400,19 @@ target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Le
 <h2 id="如何发布一篇博客">如何发布一篇博客</h2>
 <p>接下来的内容假设你已经搭建好了个人博客并且通过
 <code>Github Pages</code> 发布了个人博客。</p>
+<h3 id="创建博客文章">创建博客文章</h3>
+<p>创建博客文章的一般方法可以参考<a
+target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/writing">Hexo的相关文档</a>，这里主要介绍我自己使用的自动化方案。</p>
+<p>我的博客文章存放方案：按照日期放在相应的文件夹中，比如今天是2024年10月13日，那么今天写的文章就会存放在
+<code>source\_posts\2024\10\13</code> 这个文件夹中，相应的图片会存放在
+<code>source\imgs\posts\2024\10\13</code> 这个文件夹当中。</p>
+<p>我的需求：我输入文章的标题，剩下的工作交给脚本执行——自动检测是否存在同名文件，创建文件，移动文件到相应的目录等功能。</p>
+<p>我的实现方案：写一个 <code>Python</code>
+脚本来实现（借助AI写出脚本代码）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> shutil<br><span class="hljs-keyword">import</span> subprocess<br><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">create_hexo_post</span>(<span class="hljs-params">post_name</span>):<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-comment"># 获取当前日期</span><br>        today = datetime.today()<br>        year = today.strftime(<span class="hljs-string">&quot;%Y&quot;</span>)<br>        month = today.strftime(<span class="hljs-string">&quot;%m&quot;</span>)<br>        day = today.strftime(<span class="hljs-string">&quot;%d&quot;</span>)<br><br>        <span class="hljs-comment"># 定义文件路径</span><br>        base_dir = <span class="hljs-string">r&quot;E:\ChenHuaneng\Article\Blogs\source&quot;</span><br>        post_dir = os.path.join(base_dir, <span class="hljs-string">&quot;_posts&quot;</span>, year, month, day)<br>        img_dir = os.path.join(base_dir, <span class="hljs-string">&quot;imgs&quot;</span>, <span class="hljs-string">&quot;posts&quot;</span>, year, month, day)<br><br>        <span class="hljs-comment"># 创建日期文件夹（如果不存在）</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(post_dir):<br>            os.makedirs(post_dir)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;创建文章文件夹: <span class="hljs-subst">&#123;post_dir&#125;</span>&quot;</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文章文件夹已存在: <span class="hljs-subst">&#123;post_dir&#125;</span>&quot;</span>)<br><br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(img_dir):<br>            os.makedirs(img_dir)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;创建图片文件夹: <span class="hljs-subst">&#123;img_dir&#125;</span>&quot;</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;图片文件夹已存在: <span class="hljs-subst">&#123;img_dir&#125;</span>&quot;</span>)<br><br>        <span class="hljs-comment"># 检查同名文件是否存在</span><br>        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>            post_filename = <span class="hljs-string">f&quot;<span class="hljs-subst">&#123;year&#125;</span>-<span class="hljs-subst">&#123;month&#125;</span>-<span class="hljs-subst">&#123;day&#125;</span>-<span class="hljs-subst">&#123;post_name&#125;</span>.md&quot;</span><br>            new_post_path = os.path.join(post_dir, post_filename)<br><br>            <span class="hljs-keyword">if</span> os.path.exists(new_post_path):<br>                <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文件 &#x27;<span class="hljs-subst">&#123;new_post_path&#125;</span>&#x27; 已存在，正在打开该文件。请重新输入新的文章名称。&quot;</span>)<br>                open_file(new_post_path)  <span class="hljs-comment"># 打开已有文件</span><br>                post_name = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入新的文章名称: &quot;</span>)  <span class="hljs-comment"># 重新输入名称</span><br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-comment"># 创建新文章</span><br>                os.system(<span class="hljs-string">f&quot;hexo new post \&quot;<span class="hljs-subst">&#123;post_name&#125;</span>\&quot;&quot;</span>)<br>                post_path = os.path.join(base_dir, <span class="hljs-string">&quot;_posts&quot;</span>, post_filename)<br><br>                <span class="hljs-comment"># 移动创建的文件到相应的日期文件夹</span><br>                <span class="hljs-keyword">if</span> os.path.exists(post_path):<br>                    shutil.move(post_path, new_post_path)<br>                    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文章已创建并移动到: <span class="hljs-subst">&#123;new_post_path&#125;</span>&quot;</span>)<br>                <span class="hljs-keyword">else</span>:<br>                    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;未找到要移动的文章文件: <span class="hljs-subst">&#123;post_path&#125;</span>&quot;</span>)<br>                <span class="hljs-keyword">break</span>  <span class="hljs-comment"># 退出循环</span><br><br>        <span class="hljs-comment"># 自动打开新创建的文件</span><br>        open_file(new_post_path)<br><br>        <span class="hljs-comment"># 自动打开图片文件夹</span><br>        open_folder(img_dir)<br><br>    <span class="hljs-keyword">except</span> KeyboardInterrupt:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\n程序已被用户中止。&quot;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">open_file</span>(<span class="hljs-params">file_path</span>):<br>    <span class="hljs-comment"># 检查文件是否存在</span><br>    <span class="hljs-keyword">if</span> os.path.exists(file_path):<br>        <span class="hljs-comment"># Windows 系统使用 os.startfile 来打开文件</span><br>        <span class="hljs-keyword">if</span> os.name == <span class="hljs-string">&#x27;nt&#x27;</span>:<br>            os.startfile(file_path)<br>        <span class="hljs-comment"># macOS 使用 &quot;open&quot; 命令，Linux 使用 &quot;xdg-open&quot;</span><br>        <span class="hljs-keyword">elif</span> os.name == <span class="hljs-string">&#x27;posix&#x27;</span>:<br>            opener = <span class="hljs-string">&quot;open&quot;</span> <span class="hljs-keyword">if</span> sys.platform == <span class="hljs-string">&quot;darwin&quot;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;xdg-open&quot;</span><br>            subprocess.call([opener, file_path])<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;已打开文件: <span class="hljs-subst">&#123;file_path&#125;</span>&quot;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文件不存在: <span class="hljs-subst">&#123;file_path&#125;</span>&quot;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">open_folder</span>(<span class="hljs-params">folder_path</span>):<br>    <span class="hljs-comment"># 检查文件夹是否存在</span><br>    <span class="hljs-keyword">if</span> os.path.exists(folder_path):<br>        <span class="hljs-comment"># Windows 系统使用 os.startfile 来打开文件夹</span><br>        <span class="hljs-keyword">if</span> os.name == <span class="hljs-string">&#x27;nt&#x27;</span>:<br>            os.startfile(folder_path)<br>        <span class="hljs-comment"># macOS 使用 &quot;open&quot; 命令，Linux 使用 &quot;xdg-open&quot;</span><br>        <span class="hljs-keyword">elif</span> os.name == <span class="hljs-string">&#x27;posix&#x27;</span>:<br>            opener = <span class="hljs-string">&quot;open&quot;</span> <span class="hljs-keyword">if</span> sys.platform == <span class="hljs-string">&quot;darwin&quot;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;xdg-open&quot;</span><br>            subprocess.call([opener, folder_path])<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;已打开文件夹: <span class="hljs-subst">&#123;folder_path&#125;</span>&quot;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文件夹不存在: <span class="hljs-subst">&#123;folder_path&#125;</span>&quot;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    <span class="hljs-keyword">try</span>:<br>        post_name = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入文章名称: &quot;</span>)<br>        create_hexo_post(post_name)<br>    <span class="hljs-keyword">except</span> KeyboardInterrupt:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\n程序已被用户中止。&quot;</span>)<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>提醒：自动化脚本可以做的内容远不止这些，还可以完成很多重复繁琐的工作，所以当你遇到一个重复性的工作的时候，可以思考一下是否可以用自动化的脚本来实现。</p>
+</blockquote>
 <h3 id="编辑博客">编辑博客</h3>
 <h4 id="使用-markdown-编辑器">使用 <code>Markdown</code> 编辑器</h4>
 <p>编辑博客一般是在本地编辑完，然后通过本地查看之后没有问题再推送到远程仓库来实现发布。</p>
@@ -538,10 +551,10 @@ target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#脚�
     </div>
 
     <div class="fold">
-      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-2063547c" role="button" aria-expanded="false" aria-controls="collapse-2063547c">
+      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-12442369" role="button" aria-expanded="false" aria-controls="collapse-12442369">
         <div class="fold-arrow">▶</div>折叠代码
       </div>
-      <div class="fold-collapse collapse" id="collapse-2063547c">
+      <div class="fold-collapse collapse" id="collapse-12442369">
         <div class="fold-content">
           <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
         </div>
@@ -681,13 +694,6 @@ References
   <a href="/categories/Blog/Hexo/" class="category-chain-item">Hexo</a>
   
   
-    <span>></span>
-    
-  <a href="/categories/Blog/Hexo/Fluid/" class="category-chain-item">Fluid</a>
-  
-  
-
-  
 
   
 
@@ -739,7 +745,7 @@ References
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年10月11日</div>
+          <div>2024年10月13日</div>
         </div>
       
       

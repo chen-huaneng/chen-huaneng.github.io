@@ -21,26 +21,24 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="本文简要介绍了Machine Learning的相关知识，包括Conda的基本使用和环境安装等内容。">
+    <meta name="description" content="我的CS50课程学习记录，这门课连续多年被哈佛大学学生评为最受欢迎的公选课程，计算机的入门课程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ML - 简单入门">
-<meta property="og:url" content="https://chen-huaneng.github.io/2024/10/12/2024-10-12-2024-10-12-machine-learning/index.html">
+<meta property="og:title" content="CS50 - This is CS50x">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/10/13/2024-10-13-2024-10-13-cs50/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="本文简要介绍了Machine Learning的相关知识，包括Conda的基本使用和环境安装等内容。">
+<meta property="og:description" content="我的CS50课程学习记录，这门课连续多年被哈佛大学学生评为最受欢迎的公选课程，计算机的入门课程。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/12/banner.png">
-<meta property="article:published_time" content="2024-10-12T02:00:29.000Z">
-<meta property="article:modified_time" content="2024-10-13T03:49:29.613Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/13/banner.png">
+<meta property="article:published_time" content="2024-10-13T02:55:34.000Z">
+<meta property="article:modified_time" content="2024-10-13T03:44:39.253Z">
 <meta property="article:author" content="Abel">
-<meta property="article:tag" content="Math">
 <meta property="article:tag" content="CS Course">
-<meta property="article:tag" content="Machine Learning">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/12/banner.png">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/13/banner.png">
   
   
   
-  <title>ML - 简单入门 - Abel&#39;s Blog</title>
+  <title>CS50 - This is CS50x - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,13 +228,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2024/10/12/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/10/13/banner.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ML - 简单入门"></span>
+            <span id="subtitle" data-typed-text="CS50 - This is CS50x"></span>
           
         </div>
 
@@ -247,8 +245,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-12 10:00" pubdate>
-          2024年10月12日 上午
+        <time datetime="2024-10-13 10:55" pubdate>
+          2024年10月13日 上午
         </time>
       </span>
     
@@ -260,7 +258,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 529 
+          文章字数: 0 
         
       </span>
     
@@ -272,7 +270,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 5 分钟
+          阅读全文大概需要 1 分钟
         
       </span>
     
@@ -318,12 +316,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ML - 简单入门</h1>
+            <h1 id="seo-header">CS50 - This is CS50x</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-10-13T11:49:29+08:00
+                    本文最后更新于：2024-10-13T11:44:39+08:00
                   
                   
 
@@ -333,51 +331,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="环境配置">环境配置</h1>
-<p>由于较新的版本可能出现部分库不兼容的问题，因此本文采用
-<code>Python 3.8</code>，推荐使用 <code>Conda</code> 来隔离不同的
-<code>Python</code> 环境，方便后面出现问题进行调试。</p>
-<p>首先在 <code>Conda</code> 中创建一个名为 <code>ml</code>
-的新环境，激活环境并安装一些机器学习常用的库。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda create --name ml python=3.8<br>conda activate ml<br>conda install numpy pandas scikit-learn scikit-plot jupyterlab<br></code></pre></td></tr></table></figure>
-<p>这里可以安装 <code>Jupyter Notebook</code> 也可以安装
-<code>JupyterLab</code>（<code>Jupyter Notebook</code>
-的更加现代化的版本）。</p>
-<h2 id="conda-的基本使用"><code>Conda</code> 的基本使用</h2>
-<p><code>Conda</code> 是一个开源的包管理系统和环境管理器，常用于管理
-<code>Python</code> 和 <code>R</code> 语言的依赖包和虚拟环境。</p>
-<p>检查 <code>Conda</code> 版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure>
-<p>获取帮助：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure>
-<p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python
-版本：</p>
-<blockquote>
-<p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure>
-<p>在创建环境后，可以通过以下命令激活环境： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure></p>
-<p>要退出当前激活的环境，使用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure></p>
-<p>如果想删除某个环境，可以使用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure></p>
-<p>查看系统上所有的 <code>Conda</code> 环境： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure></p>
-<p>要在当前激活的环境中安装一个包（如
-<code>numpy</code>），使用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure></p>
-<p>还可以指定安装包的版本： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure></p>
-<p>使用以下命令查看当前环境中已安装的包： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure></p>
-<p>可以使用 <code>conda update</code> 命令升级指定的包：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure></p>
-<p>也可以升级当前环境下所有的包： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure></p>
-<p>如果需要删除某个包，使用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure></p>
-<p>可以使用以下命令查找特定包： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure></p>
-<p>可以将环境的配置导出为 <code>YAML</code>
-文件，方便在其他设备上重现相同环境： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure></p>
-<p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure></p>
-<p>可以克隆已有的环境： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure></p>
-<p>要更新 <code>conda</code> 本身，使用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure></p>
-<p><code>Conda</code>
-会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure>
+                
 
                 
               </div>
@@ -401,7 +355,7 @@
   
     <span>></span>
     
-  <a href="/categories/Course/Machine-Learning/" class="category-chain-item">Machine Learning</a>
+  <a href="/categories/Course/Introduction-to-Programming/" class="category-chain-item">Introduction to Programming</a>
   
   
 
@@ -418,11 +372,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Math/" class="print-no-link">#Math</a>
-      
         <a href="/tags/CS-Course/" class="print-no-link">#CS Course</a>
-      
-        <a href="/tags/Machine-Learning/" class="print-no-link">#Machine Learning</a>
       
     </div>
   
@@ -434,8 +384,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ML - 简单入门</div>
-      <div>https://chen-huaneng.github.io/2024/10/12/2024-10-12-2024-10-12-machine-learning/</div>
+      <div>CS50 - This is CS50x</div>
+      <div>https://chen-huaneng.github.io/2024/10/13/2024-10-13-2024-10-13-cs50/</div>
     </div>
     <div class="license-meta">
       
@@ -447,7 +397,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月12日</div>
+          <div>2024年10月13日</div>
         </div>
       
       
@@ -490,18 +440,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/12/2024-10-12-2024-10-12-linux/" title="Linux - 学习路线">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux - 学习路线</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/11/2024-10-11-2024-10-11-interview-questions/" title="Interview - 面试和笔试问题汇总">
-                        <span class="hidden-mobile">Interview - 面试和笔试问题汇总</span>
+                      <a href="/2024/10/12/2024-10-12-2024-10-12-linux/" title="Linux - 学习路线">
+                        <span class="hidden-mobile">Linux - 学习路线</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
