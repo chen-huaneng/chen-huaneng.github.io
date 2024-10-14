@@ -8,7 +8,7 @@
     <link href="/2024/10/13/2024-10-13-2024-10-13-ml/"/>
     <url>/2024/10/13/2024-10-13-2024-10-13-ml/</url>
     
-    <content type="html"><![CDATA[<h2 id="课程资源">课程资源</h2><ul><li><a href="https://csdiy.wiki/机器学习/ML/">Coursera: Machine Learning- CS自学指南 (csdiy.wiki)</a> - 课程相关的资源</li><li><ahref="https://www.coursera.org/specializations/machine-learning-introduction#about">MachineLearning | Coursera</a> - 课程官网（可以申请助学金）</li><li><ahref="https://www.bilibili.com/video/BV1Bq421A74G/?share_source=copy_web&amp;vd_source=343bef2897116ac8457328069e8fc81a">(超爽中英!)2024公认最好的【吴恩达机器学习】教程！附课件代码 Machine LearningSpecialization_哔哩哔哩_bilibili</a> -不能科学上网和对英文有困难的同学可以参考翻译版</li></ul><h2 id="课程学习">课程学习</h2><h3 id="week-1---什么是机器学习">Week 1 - 什么是机器学习？</h3><p>四种机器学习的算法</p><ul><li>Supervised learning 监督式机器学习：给定 <code>x</code> 和<code>y</code>的标签，根据已有的 <code>x</code> 和 <code>y</code>之间的关系，预测给出 <code>x</code> 的 <code>y</code> 的可能值。Learnsfrom being given “right answers”<ul><li>Regression 回归：从无数多种可能的值中预测 predict a numberinfinitely many possible outputs</li><li>Classification 分类：从有限种可能的值中预测 predict categories smallnumber of possible outputs</li></ul></li><li>Unsupervised learning 非监督式机器学习：Find something interestingin unlabelled data<ul><li>Clustering algorithm 聚类：不给定标签让机器进行分类 Group similardata points together</li><li>Anomaly detection 异常检测：Find unusual data points</li><li>Dimensionality reduction 降维：compress data using fewernumbers</li></ul></li><li>Recommander systems 推荐系统</li><li>Reinforcement learning 强化学习</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="课程资源">课程资源</h2><ul><li><a href="https://csdiy.wiki/机器学习/ML/">Coursera: Machine Learning- CS自学指南 (csdiy.wiki)</a> - 课程相关的资源</li><li><ahref="https://www.coursera.org/specializations/machine-learning-introduction#courses">MachineLearning | Coursera</a> - 课程官网（可以申请助学金）</li><li><ahref="https://www.bilibili.com/video/BV1Bq421A74G/?share_source=copy_web&amp;vd_source=343bef2897116ac8457328069e8fc81a">(超爽中英!)2024公认最好的【吴恩达机器学习】教程！附课件代码 Machine LearningSpecialization_哔哩哔哩_bilibili</a> -不能科学上网和对英文有困难的同学可以参考翻译版</li></ul><h2 id="课程学习">课程学习</h2><h3 id="week-1---什么是机器学习">Week 1 - 什么是机器学习？</h3><p>四种机器学习的算法</p><ul><li>Supervised learning 监督式机器学习：给定 <code>x</code> 和<code>y</code>的标签，根据已有的 <code>x</code> 和 <code>y</code>之间的关系，预测给出 <code>x</code> 的 <code>y</code> 的可能值。Learnsfrom being given “right answers”<ul><li>Regression 回归：从无数多种可能的值中预测 predict a numberinfinitely many possible outputs</li><li>Classification 分类：从有限种可能的值中预测 predict categories smallnumber of possible outputs</li></ul></li><li>Unsupervised learning 非监督式机器学习：Find something interestingin unlabelled data<ul><li>Clustering algorithm 聚类：不给定标签让机器进行分类 Group similardata points together</li><li>Anomaly detection 异常检测：Find unusual data points</li><li>Dimensionality reduction 降维：compress data using fewernumbers</li></ul></li><li>Recommander systems 推荐系统</li><li>Reinforcement learning 强化学习</li></ul>]]></content>
     
     
     <categories>
@@ -39,7 +39,7 @@
     <link href="/2024/10/13/2024-10-13-2024-10-13-cs50/"/>
     <url>/2024/10/13/2024-10-13-2024-10-13-cs50/</url>
     
-    <content type="html"><![CDATA[<h2 id="课程资源">课程资源</h2><ul><li><a href="https://csdiy.wiki/编程入门/C/CS50/">Harvard CS50: This isCS50x - CS自学指南 (csdiy.wiki)</a>- 课程相关的资源</li><li><a href="https://cs50.harvard.edu/x/2024/">CS50x 2024(harvard.edu)</a> - 课程官网</li><li><ahref="https://www.bilibili.com/video/BV1HW4y1A7Yi/?spm_id_from=333.999.0.0&amp;vd_source=a4d76d1247665a7e7bec15d15fd12349">【2024最新版】哈佛大学CS50- 全世界公认最好的《计算机导论》课程，拿走不谢！全长24个小时完整课程（中英字幕）_哔哩哔哩_bilibili</a> -不能科学上网和对英文有困难的同学可以参考翻译版</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="课程资源">课程资源</h2><ul><li><a href="https://csdiy.wiki/编程入门/C/CS50/">Harvard CS50: This isCS50x - CS自学指南 (csdiy.wiki)</a>- 课程相关的资源</li><li><a href="https://cs50.harvard.edu/x/2024/">CS50x 2024(harvard.edu)</a> - 课程官网</li><li><ahref="https://www.bilibili.com/video/BV1HW4y1A7Yi/?spm_id_from=333.999.0.0&amp;vd_source=a4d76d1247665a7e7bec15d15fd12349">【2024最新版】哈佛大学CS50- 全世界公认最好的《计算机导论》课程，拿走不谢！全长24个小时完整课程（中英字幕）_哔哩哔哩_bilibili</a> -不能科学上网和对英文有困难的同学可以参考翻译版</li></ul><h2 id="课程学习">课程学习</h2><p>课程目标借用授课教授的话：</p><blockquote><p>what ultimately matters in this course is not so much where you endup relative to your classmates but where you end up relative to yourselfwhen you began</p></blockquote><h3 id="week-0---scratch">Week 0 - Scratch</h3><p>第0周的课程主要讲了计算机解决问题的思想（通过算法将输入转化为需要的输出），计算机如何存储数据（二进制、十进制、十六进制……），<code>ASCII</code>和<code>Unicode</code>，计算机如何表示颜色（RGB）、图片（像素）、视频（帧）、声音（MIDI），算法（大O表示法），伪代码，AI，Scratch的使用（MIT开发的可视化编程语言）。</p><p><img src="/imgs/posts/2024/10/13/blackbox.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>让我印象深刻的是开头和结尾的配乐和视频展现，给我一种看电影的错觉（甚至支持4k画质），还有教授手撕黄页展示二分查找的经典名场面。这门课还专门弄了一个<ahref="https://cs50.ai/chat">小黄鸭AI</a>用于答疑，以及在课堂上波士顿机器狗<a href="https://bostondynamics.com/products/spot/">Spot</a>的<del>搞笑</del>表现。</p><ul class="task-list"><li><label><input type="checkbox" checked="" /><ahref="https://cs50.harvard.edu/x/2024/weeks/0/">WatchLecture</a></label></li><li><label><input type="checkbox" checked="" /><ahref="https://cs50.harvard.edu/x/2024/notes/0/">Notes</a></label></li><li><label><input type="checkbox" checked="" /><ahref="https://github.com/chen-huaneng/CS50/tree/main/week%200">ProblemSet 0</a></label></li></ul><h3 id="week-1---c">Week 1 - C</h3>]]></content>
     
     
     <categories>
@@ -314,9 +314,9 @@
       
       <tag>Two Pointers</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Binary Search</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -802,11 +802,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>String</tag>
       
       <tag>Counting</tag>
+      
+      <tag>Greedy</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1818,9 +1818,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>String</tag>
+      
+      <tag>Greedy</tag>
       
       <tag>Two Pointers</tag>
       
@@ -2047,9 +2047,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Binary Search</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2959,11 +2959,11 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[<h1 id="about">About</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="about-me">About me</h2><p>目前是一名普通的大四学生，正在自学计算机科学知识。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code> 极大地提高了写作效率；而<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去进行备份；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。当然有更高排版需求的时候还是会使用<code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容和技术文章。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2024-10-07T15:03:00">October 7, 2024 at 15:03PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
     
   </entry>
   
@@ -2981,11 +2981,11 @@
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<h1 id="about">About</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="about-me">About me</h2><p>目前是一名普通的大四学生，正在自学计算机科学知识。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code> 极大地提高了写作效率；而<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去进行备份；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。当然有更高排版需求的时候还是会使用<code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容和技术文章。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2024-10-07T15:03:00">October 7, 2024 at 15:03PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
