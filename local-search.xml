@@ -24,9 +24,9 @@
       
       <tag>Math</tag>
       
-      <tag>Machine Learning</tag>
-      
       <tag>CS Course</tag>
+      
+      <tag>Machine Learning</tag>
       
     </tags>
     
@@ -39,7 +39,7 @@
     <link href="/2024/10/13/2024-10-13-2024-10-13-cs50/"/>
     <url>/2024/10/13/2024-10-13-2024-10-13-cs50/</url>
     
-    <content type="html"><![CDATA[<h2 id="课程资源">课程资源</h2><ul><li><a href="https://csdiy.wiki/编程入门/C/CS50/">Harvard CS50: This isCS50x - CS自学指南 (csdiy.wiki)</a>- 课程相关的资源</li><li><a href="https://cs50.harvard.edu/x/2024/">CS50x 2024(harvard.edu)</a> - 课程官网</li><li><ahref="https://www.bilibili.com/video/BV1HW4y1A7Yi/?spm_id_from=333.999.0.0&amp;vd_source=a4d76d1247665a7e7bec15d15fd12349">【2024最新版】哈佛大学CS50- 全世界公认最好的《计算机导论》课程，拿走不谢！全长24个小时完整课程（中英字幕）_哔哩哔哩_bilibili</a> -不能科学上网和对英文有困难的同学可以参考翻译版</li></ul><h2 id="课程学习">课程学习</h2><p>课程目标借用授课教授的话：</p><blockquote><p>what ultimately matters in this course is not so much where you endup relative to your classmates but where you end up relative to yourselfwhen you began</p></blockquote><h3 id="week-0---scratch">Week 0 - Scratch</h3><p>第0周的课程主要讲了计算机解决问题的思想（通过算法将输入转化为需要的输出），计算机如何存储数据（二进制、十进制、十六进制……），<code>ASCII</code>和<code>Unicode</code>，计算机如何表示颜色（RGB）、图片（像素）、视频（帧）、声音（MIDI），算法（大O表示法），伪代码，AI，Scratch的使用（MIT开发的可视化编程语言）。</p><p><img src="/imgs/posts/2024/10/13/blackbox.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>让我印象深刻的是开头和结尾的配乐和视频展现，给我一种看电影的错觉（甚至支持4k画质），还有教授手撕黄页展示二分查找的经典名场面。这门课还专门弄了一个<ahref="https://cs50.ai/chat">小黄鸭AI</a>用于答疑，以及在课堂上波士顿机器狗<a href="https://bostondynamics.com/products/spot/">Spot</a>的<del>搞笑</del>表现。</p><ul class="task-list"><li><label><input type="checkbox" checked="" /><ahref="https://cs50.harvard.edu/x/2024/weeks/0/">WatchLecture</a></label></li><li><label><input type="checkbox" checked="" /><ahref="https://cs50.harvard.edu/x/2024/notes/0/">Notes</a></label></li><li><label><input type="checkbox" checked="" /><ahref="https://github.com/chen-huaneng/CS50/tree/main/week%200">ProblemSet 0</a></label></li></ul><h3 id="week-1---c">Week 1 - C</h3>]]></content>
+    <content type="html"><![CDATA[<h2 id="课程资源">课程资源</h2><ul><li><a href="https://csdiy.wiki/编程入门/C/CS50/">Harvard CS50: This isCS50x - CS自学指南 (csdiy.wiki)</a>- 课程相关的资源</li><li><a href="https://cs50.harvard.edu/x/2024/">CS50x 2024(harvard.edu)</a> - 课程官网</li><li><ahref="https://www.bilibili.com/video/BV1HW4y1A7Yi/?spm_id_from=333.999.0.0&amp;vd_source=a4d76d1247665a7e7bec15d15fd12349">【2024最新版】哈佛大学CS50- 全世界公认最好的《计算机导论》课程，拿走不谢！全长24个小时完整课程（中英字幕）_哔哩哔哩_bilibili</a> -不能科学上网和对英文有困难的同学可以参考翻译版</li><li><a href="https://github.com/chen-huaneng/CS50">chen-huaneng/CS50:Harvard CS50x 2024 Solutions (github.com)</a> - 我的作业实现</li></ul><h2 id="课程学习">课程学习</h2><p>课程目标借用授课教授的话：</p><blockquote><p>what ultimately matters in this course is not so much where you endup relative to your classmates but where you end up relative to yourselfwhen you began</p></blockquote><h3 id="week-0---scratch">Week 0 - Scratch</h3><p>第0周的课程主要讲了计算机解决问题的思想（通过算法将输入转化为需要的输出），计算机如何存储数据（二进制、十进制、十六进制……），<code>ASCII</code>和<code>Unicode</code>，计算机如何表示颜色（RGB）、图片（像素）、视频（帧）、声音（MIDI），算法（大O表示法），伪代码，AI，Scratch的使用（MIT开发的可视化编程语言）。</p><p><img src="/imgs/posts/2024/10/13/blackbox.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>让我印象深刻的是开头和结尾的配乐和视频展现，给我一种看电影的错觉（甚至支持4k画质），还有教授手撕黄页展示二分查找的经典名场面。这门课还专门弄了一个<ahref="https://cs50.ai/chat">小黄鸭AI</a>用于答疑，以及在课堂上波士顿机器狗<a href="https://bostondynamics.com/products/spot/">Spot</a>的<del>搞笑</del>表现。</p><ul class="task-list"><li><label><input type="checkbox" checked="" /><ahref="https://cs50.harvard.edu/x/2024/weeks/0/">WatchLecture</a></label></li><li><label><input type="checkbox" checked="" /><ahref="https://cs50.harvard.edu/x/2024/notes/0/">Notes</a></label></li><li><label><input type="checkbox" checked="" /><ahref="https://github.com/chen-huaneng/CS50/tree/main/week%200">ProblemSet 0</a></label></li></ul><h3 id="week-1---c">Week 1 - C</h3>]]></content>
     
     
     <categories>
@@ -279,9 +279,9 @@
       
       <tag>Array</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -653,11 +653,11 @@
       
       <tag>Array</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Hash Table</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -802,11 +802,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Greedy</tag>
+      
       <tag>String</tag>
       
       <tag>Counting</tag>
-      
-      <tag>Greedy</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1339,11 +1339,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>String</tag>
       
       <tag>Counting</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -1463,9 +1463,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1533,9 +1533,9 @@
       
       <tag>Array</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1564,9 +1564,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1595,9 +1595,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1661,9 +1661,9 @@
       
       <tag>Array</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1692,9 +1692,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1723,9 +1723,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1787,9 +1787,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1818,9 +1818,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Greedy</tag>
+      
+      <tag>String</tag>
       
       <tag>Two Pointers</tag>
       
@@ -2625,9 +2625,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2751,9 +2751,9 @@
       
       <tag>Array</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2784,9 +2784,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
       
@@ -2850,9 +2850,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -2974,17 +2974,6 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
     <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
@@ -2997,6 +2986,17 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
   
