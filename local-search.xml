@@ -53,9 +53,9 @@
       
       <tag>Math</tag>
       
-      <tag>CS Course</tag>
-      
       <tag>Machine Learning</tag>
+      
+      <tag>CS Course</tag>
       
     </tags>
     
@@ -116,18 +116,18 @@
   
   
   <entry>
-    <title>ML - 简单入门</title>
+    <title>Data Mining - 简单入门</title>
     <link href="/2024/10/12/2024-10-12-2024-10-12-machine-learning/"/>
     <url>/2024/10/12/2024-10-12-2024-10-12-machine-learning/</url>
     
-    <content type="html"><![CDATA[<h2 id="环境配置">环境配置</h2><h3 id="创建虚拟环境">创建虚拟环境</h3><p>由于较新的版本可能出现部分库不兼容的问题，因此本文采用<code>Python 3.8</code>，推荐使用 <code>Conda</code> 来隔离不同的<code>Python</code> 环境，方便后面出现问题进行调试。</p><p>首先在 <code>Conda</code> 中创建一个名为 <code>ml</code>的新环境，激活环境并安装一些机器学习常用的库。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda create --name ml python=3.8<br>conda activate ml<br>conda install numpy pandas scikit-learn scikit-plot jupyterlab<br></code></pre></td></tr></table></figure><p>这里可以安装 <code>Jupyter Notebook</code> 也可以安装<code>JupyterLab</code>（<code>Jupyter notebook</code>的更加现代化的版本）。</p><h3id="jupyter-notebook-可视化切换虚拟环境"><code>Jupyter Notebook</code>可视化切换虚拟环境</h3><p>鉴于每次启用虚拟环境都需要进行繁琐的命令行操作，下面介绍一个可以实现打开<code>Jupyter notebook</code> 之后切换虚拟环境的办法。</p><p>首先按照前面说明的方法创建虚拟环境 <code>ml</code> 并启动虚拟环境<code>conda activate ml</code>，接下来的操作都需要在这个虚拟环境中执行：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda install ipykernel<br>python -m ipykernel install --name &lt;虚拟环境的名字，如ml&gt; --display-name &lt;你想显示的名称，比如&quot;machine learning&quot;&gt;<br></code></pre></td></tr></table></figure><p>接下来就可以直接打开 <code>Jupyter notebook</code>直接切换虚拟环境了。</p><p><img src="/imgs/posts/2024/10/12/jupyter.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>同样，在 <code>Jupyter Lab</code> 中也可以直接切换虚拟环境：</p><p>新建一个在 <code>ml</code> 虚拟环境下的新 <code>.ipynb</code>文件，默认在当前目录下新建。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>在已有的 <code>.ipynb</code> 文件下切换内核。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="/imgs/posts/2024/10/12/jupyterlab3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><h2 id="conda-的基本使用"><code>Conda</code> 的基本使用</h2><p><code>Conda</code> 是一个开源的包管理系统和环境管理器，常用于管理<code>Python</code> 和 <code>R</code> 语言的依赖包和虚拟环境。</p><p>检查 <code>Conda</code> 版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>获取帮助：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure><p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python版本：</p><blockquote><p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure><p>在创建环境后，可以通过以下命令激活环境： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure></p><p>要退出当前激活的环境，使用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure></p><p>如果想删除某个环境，可以使用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure></p><p>查看系统上所有的 <code>Conda</code> 环境： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure></p><p>要在当前激活的环境中安装一个包（如<code>numpy</code>），使用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure></p><p>还可以指定安装包的版本： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure></p><p>使用以下命令查看当前环境中已安装的包： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure></p><p>可以使用 <code>conda update</code> 命令升级指定的包：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure></p><p>也可以升级当前环境下所有的包： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure></p><p>如果需要删除某个包，使用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure></p><p>可以使用以下命令查找特定包： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure></p><p>可以将环境的配置导出为 <code>YAML</code>文件，方便在其他设备上重现相同环境： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure></p><p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure></p><p>可以克隆已有的环境： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure></p><p>要更新 <code>conda</code> 本身，使用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure></p><p><code>Conda</code>会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="环境配置">环境配置</h2><h3 id="创建虚拟环境">创建虚拟环境</h3><p>由于较新的版本可能出现部分库不兼容的问题，因此本文采用<code>Python 3.8</code>，推荐使用 <code>Conda</code> 来隔离不同的<code>Python</code> 环境，方便后面出现问题进行调试。</p><p>首先在 <code>Conda</code> 中创建一个名为 <code>ml</code>的新环境，激活环境并安装一些机器学习常用的库。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda create --name ml python=3.8<br>conda activate ml<br>conda install numpy pandas scikit-learn scikit-plot jupyterlab<br></code></pre></td></tr></table></figure><p>这里可以安装 <code>Jupyter Notebook</code> 也可以安装<code>JupyterLab</code>（<code>Jupyter notebook</code>的更加现代化的版本）。</p><h3id="jupyter-notebook-可视化切换虚拟环境"><code>Jupyter Notebook</code>可视化切换虚拟环境</h3><p>鉴于每次启用虚拟环境都需要进行繁琐的命令行操作，下面介绍一个可以实现打开<code>Jupyter notebook</code> 之后切换虚拟环境的办法。</p><p>首先按照前面说明的方法创建虚拟环境 <code>ml</code> 并启动虚拟环境<code>conda activate ml</code>，接下来的操作都需要在这个虚拟环境中执行：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda install ipykernel<br>python -m ipykernel install --name &lt;虚拟环境的名字，如ml&gt; --display-name &lt;你想显示的名称，比如&quot;machine learning&quot;&gt;<br></code></pre></td></tr></table></figure><p>接下来就可以直接打开 <code>Jupyter notebook</code>直接切换虚拟环境了。</p><p><img src="/imgs/posts/2024/10/12/jupyter.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>同样，在 <code>Jupyter Lab</code> 中也可以直接切换虚拟环境：</p><p>新建一个在 <code>ml</code> 虚拟环境下的新 <code>.ipynb</code>文件，默认在当前目录下新建。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>在已有的 <code>.ipynb</code> 文件下切换内核。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="/imgs/posts/2024/10/12/jupyterlab3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><h3 id="conda-的基本使用"><code>Conda</code> 的基本使用</h3><p><code>Conda</code> 是一个开源的包管理系统和环境管理器，常用于管理<code>Python</code> 和 <code>R</code> 语言的依赖包和虚拟环境。</p><p>检查 <code>Conda</code> 版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>获取帮助：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure><p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python版本：</p><blockquote><p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure><p>在创建环境后，可以通过以下命令激活环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure><p>要退出当前激活的环境，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure><p>如果想删除某个环境，可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure><p>查看系统上所有的 <code>Conda</code> 环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure><p>要在当前激活的环境中安装一个包（如<code>numpy</code>），使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure><p>还可以指定安装包的版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure><p>使用以下命令查看当前环境中已安装的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure><p>可以使用 <code>conda update</code> 命令升级指定的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure><p>也可以升级当前环境下所有的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure><p>如果需要删除某个包，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure><p>可以使用以下命令查找特定包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure><p>可以将环境的配置导出为 <code>YAML</code>文件，方便在其他设备上重现相同环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure><p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure><p>可以克隆已有的环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure><p>要更新 <code>conda</code> 本身，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure><p><code>Conda</code>会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure><h2 id="数据挖掘">数据挖掘</h2><h3 id="什么是数据挖掘">什么是数据挖掘</h3><p>数据挖掘（<strong>Data mining</strong>）：Extraction of interesting(non-trivial, implicit, previously unknown and potentially useful)patterns or knowledge from huge amount of data. 也叫做<strong>Knowledgediscovery (mining) in databases (KDD)</strong>。</p><p><img src="/imgs/posts/2024/10/12/datamining.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>一个好的数据挖掘得到的模式应该具有以下特征：</p><ul><li>easily understood by humans</li><li>valid on new or test data with some degree of certainty</li><li>potentially useful</li><li>novel</li></ul><p>数据挖掘的任务：</p><ul><li>Regression: Predicting missing or unavailable<strong>numerical</strong> data values (predictive)</li><li>Classification: Finding a model that describes and distinguishes<strong>categorical</strong> data classes (predictive)<ul><li>Methods: Decision trees, naive Bayesian classification, supportvector machines, neural networks, logistic regression</li></ul></li><li>Clustering: Finding hidden patterns in data by isolating groups of<strong>similar</strong> objects (descriptive)<ul><li>Principle: Maximizing intra-class similarity &amp; minimizinginterclass similarity</li></ul></li><li>Association: Finding items that occur together frequently in data(descriptive)</li><li>Sequence analysis: Discovering sequential patterns(descriptive/predictive)</li><li>Outlier(异常值) detection: Detecting significant deviation fromnormal behavior (predictive)</li></ul><h3 id="模型评估和选择">模型评估和选择</h3><h4id="过拟合overfitting和欠拟合underfitting1">过拟合（Overfitting）和欠拟合（underfitting）<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[欠拟合、过拟合及如何防止过拟合 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/72038532)">[1]</span></a></sup></h4><p>用一张图形象地表示过拟合和欠拟合：</p><p><img src="/imgs/posts/2024/10/12/datamining4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>对于深度学习或机器学习模型而言，我们不仅要求它对训练数据集有很好的拟合（训练误差），同时也希望它可以对未知数据集（测试集）有很好的拟合结果（泛化能力），所产生的测试误差被称为泛化误差。度量泛化能力的好坏，最直观的表现就是模型的过拟合（overfitting）和欠拟合（underfitting）。过拟合和欠拟合是用于描述模型在训练过程中的两种状态。一般来说，训练过程会是如下所示的一个曲线图。</p><p><img src="/imgs/posts/2024/10/12/datamining2.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>训练刚开始的时候，模型还在学习过程中，处于欠拟合区域。随着训练的进行，训练误差和泛化误差都下降。在到达一个临界点之后，训练集的误差下降，测试集的误差上升了，这个时候就进入了过拟合区域——由于训练出来的模型过度拟合了训练集，对训练集以外的数据却不能准确预测。</p><h5 id="欠拟合是什么以及如何解决">欠拟合是什么以及如何解决</h5><p>欠拟合是指模型不能在训练集上获得足够低的误差。换句换说，就是模型复杂度低，模型在训练集上就表现很差，没法学习到数据背后的规律。</p><p>欠拟合基本上都会发生在训练刚开始的时候，经过不断训练之后欠拟合应该不怎么需要考虑了。但是如果还是存在欠拟合，则可以通过增加网络复杂度或者在模型中增加特征的方法来解决欠拟合问题。</p><h5 id="过拟合是什么以及如何解决">过拟合是什么以及如何解决</h5><p>过拟合是指训练误差和测试误差之间的差距太大。换句换说，就是模型复杂度高于实际问题，模型在训练集上表现很好，但在测试集上却表现很差。模型对训练集"死记硬背"（记住了不适用于测试集的训练集性质或特点），没有理解数据背后的规律，泛化能力差。</p><p><img src="/imgs/posts/2024/10/12/datamining3.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>造成过拟合的原因主要有以下几种可能：</p><ul><li><strong>训练数据集样本单一，样本不足。</strong>如果训练样本只有负样本，然后拿生成的模型去预测正样本，这肯定会导致预测不准确。所以训练样本要尽可能的全面，尽可能覆盖所有的数据类型。</li><li><strong>训练数据中噪声干扰过大。</strong>噪声指训练数据中的干扰数据。过多的干扰会导致记录了很多噪声特征，忽略了真实输入和输出之间的关系。</li><li><strong>模型过于复杂。</strong>模型太复杂，已经能够“死记硬背”记下了训练数据的信息，但是遇到没有见过的数据的时候却不能够变通，泛化能力太差。但是我们希望模型对不同的数据都有稳定的输出，所以有时应该尽量简化模型。</li></ul><p>要想解决过拟合问题，就要显著减少测试误差而不过度增加训练误差，从而提高模型的泛化能力。我们可以使用正则化（Regularization）方法。<strong>正则化是指修改学习算法，使其降低泛化误差而非训练误差。</strong></p><p>常用的正则化方法根据具体的使用策略不同可分为：</p><ol type="1"><li>直接提供正则化约束的参数正则化方法，如L1/L2正则化</li><li>通过工程上的技巧来实现更低泛化误差的方法，如提前终止（Earlystopping）和Dropout</li><li>不直接提供约束的隐式正则化方法，如数据增强等。</li></ol><p><strong>方法一：获取和使用更多的数据（数据集增强）——解决过拟合的根本性方法</strong></p><p>让机器学习或深度学习模型泛化能力更好的办法就是使用更多的数据进行训练。但是在实践中，我们拥有的数据量是有限的。解决这个问题的一种方法就是创建“假数据”并添加到训练集中——数据集增强。通过增加训练集的额外副本来增加训练集的大小，进而改进模型的泛化能力。</p><p>以图像数据集举例，可以通过旋转图像、缩放图像、随机裁剪、加入随机噪声、平移、镜像等方式来增加数据量。另外，在物体分类问题中，CNN在图像识别的过程中有强大的“不变性”规则，即待辨识的物体在图像中的形状、姿势、位置、图像整体明暗度都不会影响分类结果。这样我们就可以通过图像平移、翻转、缩放、切割等手段将数据库成倍扩充。</p><p><strong>方法二：采用合适的模型（控制模型的复杂度）</strong></p><p>过于复杂的模型会带来过拟合问题。对于模型的设计，目前公认的一个深度学习规律"deeperisbetter"。国内外各种大牛通过实验和竞赛发现，对于CNN来说，层数越多效果越好，但是也更容易产生过拟合，并且计算所耗费的时间也越长。</p><p>根据<ahref="https://en.wikipedia.org/wiki/Occam%27s_razor">奥卡姆剃刀原理（Occam'sRazor）</a>：在同样能够解释已知观测现象的假设中，我们应该挑选“最简单”的那一个。对于模型的设计而言，我们应该选择简单、合适的模型解决复杂的问题。</p><p><strong>方法三：降低特征的数量</strong></p><p>对于一些特征工程而言，可以降低特征的数量——删除冗余特征，人工选择保留哪些特征。这种方法也可以解决过拟合问题。</p><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://zhuanlan.zhihu.com/p/72038532">欠拟合、过拟合及如何防止过拟合- 知乎 (zhihu.com)</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
     
     
     <categories>
       
       <category>Course</category>
       
-      <category>Machine Learning</category>
+      <category>Data Mining</category>
       
     </categories>
     
@@ -137,6 +137,8 @@
       <tag>Math</tag>
       
       <tag>Machine Learning</tag>
+      
+      <tag>Data Mining</tag>
       
     </tags>
     
@@ -306,9 +308,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -341,11 +343,11 @@
       
       <tag>Array</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Sorting</tag>
       
       <tag>Binary Search</tag>
       
-      <tag>Sorting</tag>
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -589,9 +591,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Linked List</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -649,9 +651,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -680,9 +682,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -746,9 +748,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Linked List</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -831,13 +833,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
       
-      <tag>Greedy</tag>
+      <tag>String</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -870,9 +872,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -965,9 +967,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Prefix Sum</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Prefix Sum</tag>
       
     </tags>
     
@@ -996,9 +998,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1056,9 +1058,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1089,9 +1091,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1155,9 +1157,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1217,9 +1219,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1248,9 +1250,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Matrix</tag>
       
@@ -1370,9 +1372,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1490,15 +1492,15 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1529,9 +1531,9 @@
       
       <tag>Math</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1560,9 +1562,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -1688,9 +1690,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -1849,9 +1851,9 @@
       
       <tag>String</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -1946,9 +1948,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1979,9 +1981,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2076,9 +2078,9 @@
       
       <tag>Array</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -2111,9 +2113,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2142,9 +2144,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2239,9 +2241,9 @@
       
       <tag>Math</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2363,9 +2365,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2491,9 +2493,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2559,9 +2561,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2592,9 +2594,9 @@
       
       <tag>Array</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -2623,9 +2625,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2716,9 +2718,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2747,9 +2749,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2778,9 +2780,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -2811,9 +2813,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -2877,9 +2879,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -2937,13 +2939,13 @@
     
     <tags>
       
-      <tag>Tool</tag>
-      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
       
       <tag>Website</tag>
+      
+      <tag>Tool</tag>
       
     </tags>
     
@@ -3014,7 +3016,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -3025,7 +3027,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
