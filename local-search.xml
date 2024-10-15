@@ -120,7 +120,7 @@
     <link href="/2024/10/12/2024-10-12-2024-10-12-machine-learning/"/>
     <url>/2024/10/12/2024-10-12-2024-10-12-machine-learning/</url>
     
-    <content type="html"><![CDATA[<h2 id="环境配置">环境配置</h2><h3 id="创建虚拟环境">创建虚拟环境</h3><p>由于较新的版本可能出现部分库不兼容的问题，因此本文采用<code>Python 3.8</code>，推荐使用 <code>Conda</code> 来隔离不同的<code>Python</code> 环境，方便后面出现问题进行调试。</p><p>首先在 <code>Conda</code> 中创建一个名为 <code>ml</code>的新环境，激活环境并安装一些机器学习常用的库。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda create --name ml python=3.8<br>conda activate ml<br>conda install numpy pandas scikit-learn scikit-plot jupyterlab<br></code></pre></td></tr></table></figure><p>这里可以安装 <code>Jupyter Notebook</code> 也可以安装<code>JupyterLab</code>（<code>Jupyter notebook</code>的更加现代化的版本）。</p><h3id="jupyter-notebook-可视化切换虚拟环境"><code>Jupyter Notebook</code>可视化切换虚拟环境</h3><p>鉴于每次启用虚拟环境都需要进行繁琐的命令行操作，下面介绍一个可以实现打开<code>Jupyter notebook</code> 之后切换虚拟环境的办法。</p><p>首先按照前面说明的方法创建虚拟环境 <code>ml</code> 并启动虚拟环境<code>conda activate ml</code>，接下来的操作都需要在这个虚拟环境中执行：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda install ipykernel<br>python -m ipykernel install --name &lt;虚拟环境的名字，如ml&gt; --display-name &lt;你想显示的名称，比如&quot;machine learning&quot;&gt;<br></code></pre></td></tr></table></figure><p>接下来就可以直接打开 <code>Jupyter notebook</code>直接切换虚拟环境了。</p><p><img src="/imgs/posts/2024/10/12/jupyter.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>同样，在 <code>Jupyter Lab</code> 中也可以直接切换虚拟环境：</p><p>新建一个在 <code>ml</code> 虚拟环境下的新 <code>.ipynb</code>文件，默认在当前目录下新建。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>在已有的 <code>.ipynb</code> 文件下切换内核。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="/imgs/posts/2024/10/12/jupyterlab3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><h3 id="conda-的基本使用"><code>Conda</code> 的基本使用</h3><p><code>Conda</code> 是一个开源的包管理系统和环境管理器，常用于管理<code>Python</code> 和 <code>R</code> 语言的依赖包和虚拟环境。</p><p>检查 <code>Conda</code> 版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>获取帮助：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure><p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python版本：</p><blockquote><p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure><p>在创建环境后，可以通过以下命令激活环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure><p>要退出当前激活的环境，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure><p>如果想删除某个环境，可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure><p>查看系统上所有的 <code>Conda</code> 环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure><p>要在当前激活的环境中安装一个包（如<code>numpy</code>），使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure><p>还可以指定安装包的版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure><p>使用以下命令查看当前环境中已安装的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure><p>可以使用 <code>conda update</code> 命令升级指定的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure><p>也可以升级当前环境下所有的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure><p>如果需要删除某个包，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure><p>可以使用以下命令查找特定包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure><p>可以将环境的配置导出为 <code>YAML</code>文件，方便在其他设备上重现相同环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure><p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure><p>可以克隆已有的环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure><p>要更新 <code>conda</code> 本身，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure><p><code>Conda</code>会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure><h2 id="数据挖掘">数据挖掘</h2><h3 id="什么是数据挖掘">什么是数据挖掘</h3><p>数据挖掘（<strong>Data mining</strong>）：Extraction of interesting(non-trivial, implicit, previously unknown and potentially useful)patterns or knowledge from huge amount of data. 也叫做<strong>Knowledgediscovery (mining) in databases (KDD)</strong>。</p><p><img src="/imgs/posts/2024/10/12/datamining.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>一个好的数据挖掘得到的模式应该具有以下特征：</p><ul><li>easily understood by humans</li><li>valid on new or test data with some degree of certainty</li><li>potentially useful</li><li>novel</li></ul><p>数据挖掘的任务：</p><ul><li>Regression: Predicting missing or unavailable<strong>numerical</strong> data values (predictive)</li><li>Classification: Finding a model that describes and distinguishes<strong>categorical</strong> data classes (predictive)<ul><li>Methods: Decision trees, naive Bayesian classification, supportvector machines, neural networks, logistic regression</li></ul></li><li>Clustering: Finding hidden patterns in data by isolating groups of<strong>similar</strong> objects (descriptive)<ul><li>Principle: Maximizing intra-class similarity &amp; minimizinginterclass similarity</li></ul></li><li>Association: Finding items that occur together frequently in data(descriptive)</li><li>Sequence analysis: Discovering sequential patterns(descriptive/predictive)</li><li>Outlier(异常值) detection: Detecting significant deviation fromnormal behavior (predictive)</li></ul><h3 id="模型评估和选择">模型评估和选择</h3><h4id="过拟合overfitting和欠拟合underfitting1">过拟合（Overfitting）和欠拟合（underfitting）<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[欠拟合、过拟合及如何防止过拟合 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/72038532)">[1]</span></a></sup></h4><p>用一张图形象地表示过拟合和欠拟合：</p><p><img src="/imgs/posts/2024/10/12/datamining4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>对于深度学习或机器学习模型而言，我们不仅要求它对训练数据集有很好的拟合（训练误差），同时也希望它可以对未知数据集（测试集）有很好的拟合结果（泛化能力），所产生的测试误差被称为泛化误差。度量泛化能力的好坏，最直观的表现就是模型的过拟合（overfitting）和欠拟合（underfitting）。过拟合和欠拟合是用于描述模型在训练过程中的两种状态。一般来说，训练过程会是如下所示的一个曲线图。</p><p><img src="/imgs/posts/2024/10/12/datamining2.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>训练刚开始的时候，模型还在学习过程中，处于欠拟合区域。随着训练的进行，训练误差和泛化误差都下降。在到达一个临界点之后，训练集的误差下降，测试集的误差上升了，这个时候就进入了过拟合区域——由于训练出来的模型过度拟合了训练集，对训练集以外的数据却不能准确预测。</p><h5 id="欠拟合是什么以及如何解决">欠拟合是什么以及如何解决</h5><p>欠拟合是指模型不能在训练集上获得足够低的误差。换句换说，就是模型复杂度低，模型在训练集上就表现很差，没法学习到数据背后的规律。</p><p>欠拟合基本上都会发生在训练刚开始的时候，经过不断训练之后欠拟合应该不怎么需要考虑了。但是如果还是存在欠拟合，则可以通过增加网络复杂度或者在模型中增加特征的方法来解决欠拟合问题。</p><h5 id="过拟合是什么以及如何解决">过拟合是什么以及如何解决</h5><p>过拟合是指训练误差和测试误差之间的差距太大。换句换说，就是模型复杂度高于实际问题，模型在训练集上表现很好，但在测试集上却表现很差。模型对训练集"死记硬背"（记住了不适用于测试集的训练集性质或特点），没有理解数据背后的规律，泛化能力差。</p><p><img src="/imgs/posts/2024/10/12/datamining3.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>造成过拟合的原因主要有以下几种可能：</p><ul><li><strong>训练数据集样本单一，样本不足。</strong>如果训练样本只有负样本，然后拿生成的模型去预测正样本，这肯定会导致预测不准确。所以训练样本要尽可能的全面，尽可能覆盖所有的数据类型。</li><li><strong>训练数据中噪声干扰过大。</strong>噪声指训练数据中的干扰数据。过多的干扰会导致记录了很多噪声特征，忽略了真实输入和输出之间的关系。</li><li><strong>模型过于复杂。</strong>模型太复杂，已经能够“死记硬背”记下了训练数据的信息，但是遇到没有见过的数据的时候却不能够变通，泛化能力太差。但是我们希望模型对不同的数据都有稳定的输出，所以有时应该尽量简化模型。</li></ul><p>要想解决过拟合问题，就要显著减少测试误差而不过度增加训练误差，从而提高模型的泛化能力。我们可以使用正则化（Regularization）方法。<strong>正则化是指修改学习算法，使其降低泛化误差而非训练误差。</strong></p><p>常用的正则化方法根据具体的使用策略不同可分为：</p><ol type="1"><li>直接提供正则化约束的参数正则化方法，如L1/L2正则化</li><li>通过工程上的技巧来实现更低泛化误差的方法，如提前终止（Earlystopping）和Dropout</li><li>不直接提供约束的隐式正则化方法，如数据增强等。</li></ol><p><strong>方法一：获取和使用更多的数据（数据集增强）——解决过拟合的根本性方法</strong></p><p>让机器学习或深度学习模型泛化能力更好的办法就是使用更多的数据进行训练。但是在实践中，我们拥有的数据量是有限的。解决这个问题的一种方法就是创建“假数据”并添加到训练集中——数据集增强。通过增加训练集的额外副本来增加训练集的大小，进而改进模型的泛化能力。</p><p>以图像数据集举例，可以通过旋转图像、缩放图像、随机裁剪、加入随机噪声、平移、镜像等方式来增加数据量。另外，在物体分类问题中，CNN在图像识别的过程中有强大的“不变性”规则，即待辨识的物体在图像中的形状、姿势、位置、图像整体明暗度都不会影响分类结果。这样我们就可以通过图像平移、翻转、缩放、切割等手段将数据库成倍扩充。</p><p><strong>方法二：采用合适的模型（控制模型的复杂度）</strong></p><p>过于复杂的模型会带来过拟合问题。对于模型的设计，目前公认的一个深度学习规律"deeperisbetter"。国内外各种大牛通过实验和竞赛发现，对于CNN来说，层数越多效果越好，但是也更容易产生过拟合，并且计算所耗费的时间也越长。</p><p>根据<ahref="https://en.wikipedia.org/wiki/Occam%27s_razor">奥卡姆剃刀原理（Occam'sRazor）</a>：在同样能够解释已知观测现象的假设中，我们应该挑选“最简单”的那一个。对于模型的设计而言，我们应该选择简单、合适的模型解决复杂的问题。</p><p><strong>方法三：降低特征的数量</strong></p><p>对于一些特征工程而言，可以降低特征的数量——删除冗余特征，人工选择保留哪些特征。这种方法也可以解决过拟合问题。</p><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://zhuanlan.zhihu.com/p/72038532">欠拟合、过拟合及如何防止过拟合- 知乎 (zhihu.com)</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>注：关于参考文献的格式可以参考<ahref="https://lib.tsinghua.edu.cn/info/1147/3359.htm">清华大学的研究帮助</a>，本文没有严格按照参考文献的格式引用。</p></blockquote><h2 id="环境配置">环境配置</h2><h3 id="创建虚拟环境">创建虚拟环境</h3><p>由于较新的版本可能出现部分库不兼容的问题，因此本文采用<code>Python 3.8</code>，推荐使用 <code>Conda</code> 来隔离不同的<code>Python</code> 环境，方便后面出现问题进行调试。</p><p>首先在 <code>Conda</code> 中创建一个名为 <code>ml</code>的新环境，激活环境并安装一些机器学习常用的库。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda create --name ml python=3.8<br>conda activate ml<br>conda install numpy pandas scikit-learn scikit-plot jupyterlab<br></code></pre></td></tr></table></figure><p>这里可以安装 <code>Jupyter Notebook</code> 也可以安装<code>JupyterLab</code>（<code>Jupyter notebook</code>的更加现代化的版本）。</p><h3id="jupyter-notebook-可视化切换虚拟环境"><code>Jupyter Notebook</code>可视化切换虚拟环境</h3><p>鉴于每次启用虚拟环境都需要进行繁琐的命令行操作，下面介绍一个可以实现打开<code>Jupyter notebook</code> 之后切换虚拟环境的办法。</p><p>首先按照前面说明的方法创建虚拟环境 <code>ml</code> 并启动虚拟环境<code>conda activate ml</code>，接下来的操作都需要在这个虚拟环境中执行：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda install ipykernel<br>python -m ipykernel install --name &lt;虚拟环境的名字，如ml&gt; --display-name &lt;你想显示的名称，比如&quot;machine learning&quot;&gt;<br></code></pre></td></tr></table></figure><p>接下来就可以直接打开 <code>Jupyter notebook</code>直接切换虚拟环境了。</p><p><img src="/imgs/posts/2024/10/12/jupyter.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>同样，在 <code>Jupyter Lab</code> 中也可以直接切换虚拟环境：</p><p>新建一个在 <code>ml</code> 虚拟环境下的新 <code>.ipynb</code>文件，默认在当前目录下新建。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>在已有的 <code>.ipynb</code> 文件下切换内核。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="/imgs/posts/2024/10/12/jupyterlab3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><h3 id="conda-的基本使用"><code>Conda</code> 的基本使用</h3><p><code>Conda</code> 是一个开源的包管理系统和环境管理器，常用于管理<code>Python</code> 和 <code>R</code> 语言的依赖包和虚拟环境。</p><p>检查 <code>Conda</code> 版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>获取帮助：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure><p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python版本：</p><blockquote><p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure><p>在创建环境后，可以通过以下命令激活环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure><p>要退出当前激活的环境，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure><p>如果想删除某个环境，可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure><p>查看系统上所有的 <code>Conda</code> 环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure><p>要在当前激活的环境中安装一个包（如<code>numpy</code>），使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure><p>还可以指定安装包的版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure><p>使用以下命令查看当前环境中已安装的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure><p>可以使用 <code>conda update</code> 命令升级指定的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure><p>也可以升级当前环境下所有的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure><p>如果需要删除某个包，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure><p>可以使用以下命令查找特定包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure><p>可以将环境的配置导出为 <code>YAML</code>文件，方便在其他设备上重现相同环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure><p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure><p>可以克隆已有的环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure><p>要更新 <code>conda</code> 本身，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure><p><code>Conda</code>会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure><h2 id="数据挖掘">数据挖掘</h2><h3 id="什么是数据挖掘">什么是数据挖掘</h3><p>数据挖掘（<strong>Data mining</strong>）：Extraction of interesting(non-trivial, implicit, previously unknown and potentially useful)patterns or knowledge from huge amount of data. 也叫做<strong>Knowledgediscovery (mining) in databases (KDD)</strong>。</p><p><img src="/imgs/posts/2024/10/12/datamining.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>一个好的数据挖掘得到的模式应该具有以下特征：</p><ul><li>easily understood by humans</li><li>valid on new or test data with some degree of certainty</li><li>potentially useful</li><li>novel</li></ul><p>数据挖掘的任务：</p><ul><li>Regression: Predicting missing or unavailable<strong>numerical</strong> data values (predictive)</li><li>Classification: Finding a model that describes and distinguishes<strong>categorical</strong> data classes (predictive)<ul><li>Methods: Decision trees, naive Bayesian classification, supportvector machines, neural networks, logistic regression</li></ul></li><li>Clustering: Finding hidden patterns in data by isolating groups of<strong>similar</strong> objects (descriptive)<ul><li>Principle: Maximizing intra-class similarity &amp; minimizinginterclass similarity</li></ul></li><li>Association: Finding items that occur together frequently in data(descriptive)</li><li>Sequence analysis: Discovering sequential patterns(descriptive/predictive)</li><li>Outlier(异常值) detection: Detecting significant deviation fromnormal behavior (predictive)</li></ul><h3 id="模型评估和选择">模型评估和选择</h3><h4id="过拟合overfitting和欠拟合underfitting1">过拟合（Overfitting）和欠拟合（underfitting）<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[欠拟合、过拟合及如何防止过拟合 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/72038532)">[1]</span></a></sup></h4><p>用一张图形象地表示过拟合和欠拟合：</p><p><img src="/imgs/posts/2024/10/12/datamining4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>对于深度学习或机器学习模型而言，我们不仅要求它对训练数据集有很好的拟合（训练误差），同时也希望它可以对未知数据集（测试集）有很好的拟合结果（泛化能力），所产生的测试误差被称为泛化误差。度量泛化能力的好坏，最直观的表现就是模型的过拟合（overfitting）和欠拟合（underfitting）。过拟合和欠拟合是用于描述模型在训练过程中的两种状态。一般来说，训练过程会是如下所示的一个曲线图。</p><p><img src="/imgs/posts/2024/10/12/datamining2.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>训练刚开始的时候，模型还在学习过程中，处于欠拟合区域。随着训练的进行，训练误差和泛化误差都下降。在到达一个临界点之后，训练集的误差下降，测试集的误差上升了，这个时候就进入了过拟合区域——由于训练出来的模型过度拟合了训练集，对训练集以外的数据却不能准确预测。</p><h5 id="欠拟合是什么以及如何解决">欠拟合是什么以及如何解决</h5><p>欠拟合是指模型不能在训练集上获得足够低的误差。换句换说，就是模型复杂度低，模型在训练集上就表现很差，没法学习到数据背后的规律。</p><p>欠拟合基本上都会发生在训练刚开始的时候，经过不断训练之后欠拟合应该不怎么需要考虑了。但是如果还是存在欠拟合，则可以通过增加网络复杂度或者在模型中增加特征的方法来解决欠拟合问题。</p><h5 id="过拟合是什么以及如何解决">过拟合是什么以及如何解决</h5><p>过拟合是指训练误差和测试误差之间的差距太大。换句换说，就是模型复杂度高于实际问题，模型在训练集上表现很好，但在测试集上却表现很差。模型对训练集"死记硬背"（记住了不适用于测试集的训练集性质或特点），没有理解数据背后的规律，泛化能力差。</p><p><img src="/imgs/posts/2024/10/12/datamining3.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>造成过拟合的原因主要有以下几种可能：</p><ul><li><strong>训练数据集样本单一，样本不足。</strong>如果训练样本只有负样本，然后拿生成的模型去预测正样本，这肯定会导致预测不准确。所以训练样本要尽可能的全面，尽可能覆盖所有的数据类型。</li><li><strong>训练数据中噪声干扰过大。</strong>噪声指训练数据中的干扰数据。过多的干扰会导致记录了很多噪声特征，忽略了真实输入和输出之间的关系。</li><li><strong>模型过于复杂。</strong>模型太复杂，已经能够“死记硬背”记下了训练数据的信息，但是遇到没有见过的数据的时候却不能够变通，泛化能力太差。但是我们希望模型对不同的数据都有稳定的输出，所以有时应该尽量简化模型。</li></ul><p>要想解决过拟合问题，就要显著减少测试误差而不过度增加训练误差，从而提高模型的泛化能力。我们可以使用正则化（Regularization）方法。<strong>正则化是指修改学习算法，使其降低泛化误差而非训练误差。</strong></p><p>常用的正则化方法根据具体的使用策略不同可分为：</p><ol type="1"><li>直接提供正则化约束的参数正则化方法，如L1/L2正则化</li><li>通过工程上的技巧来实现更低泛化误差的方法，如提前终止（Earlystopping）和Dropout</li><li>不直接提供约束的隐式正则化方法，如数据增强等。</li></ol><p><strong>方法一：获取和使用更多的数据（数据集增强）——解决过拟合的根本性方法</strong></p><p>让机器学习或深度学习模型泛化能力更好的办法就是使用更多的数据进行训练。但是在实践中，我们拥有的数据量是有限的。解决这个问题的一种方法就是创建“假数据”并添加到训练集中——数据集增强。通过增加训练集的额外副本来增加训练集的大小，进而改进模型的泛化能力。</p><p>以图像数据集举例，可以通过旋转图像、缩放图像、随机裁剪、加入随机噪声、平移、镜像等方式来增加数据量。另外，在物体分类问题中，CNN在图像识别的过程中有强大的“不变性”规则，即待辨识的物体在图像中的形状、姿势、位置、图像整体明暗度都不会影响分类结果。这样我们就可以通过图像平移、翻转、缩放、切割等手段将数据库成倍扩充。</p><p><strong>方法二：采用合适的模型（控制模型的复杂度）</strong></p><p>过于复杂的模型会带来过拟合问题。对于模型的设计，目前公认的一个深度学习规律"deeperisbetter"。国内外各种大牛通过实验和竞赛发现，对于CNN来说，层数越多效果越好，但是也更容易产生过拟合，并且计算所耗费的时间也越长。</p><p>根据<ahref="https://en.wikipedia.org/wiki/Occam%27s_razor">奥卡姆剃刀原理（Occam'sRazor）</a>：在同样能够解释已知观测现象的假设中，我们应该挑选“最简单”的那一个。对于模型的设计而言，我们应该选择简单、合适的模型解决复杂的问题。</p><p><strong>方法三：降低特征的数量</strong></p><p>对于一些特征工程而言，可以降低特征的数量——删除冗余特征，人工选择保留哪些特征。这种方法也可以解决过拟合问题。</p><h4id="误差error偏差bias方差variance以及噪声noise之间的关系23">误差（Error），偏差（Bias），方差（Variance）以及噪声（Noise）之间的关系<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[机器学习 -偏差与方差 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/397672531)">[2]</span></a></sup><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[误差，偏差，方差，噪声的关系 | GitHub (ustccoder.github.io)](https://ustccoder.github.io/2020/05/19/deep learning variance bias/)">[3]</span></a></sup></h4><p>在前面提到了模型的过拟合和欠拟合，那么应该如何刻画这两种情况，或者换句话说，对学习算法除了通过实验估计其泛化性能之外，还能通过什么方式去评估学习算法的好坏，它为什么具有这样的性能。“偏差-方差分解”（bias-variancedecomposition）就是从偏差和方差的角度来解释学习算法泛化性能的一种重要工具。</p><p>在机器学习中，我们用训练数据集去训练一个模型，通常的做法是定义一个误差（Loss）函数，通过将这个误差的最小化过程，来提高模型的性能。在训练数据集上得到的Loss称之为<strong>训练误差（trainingerror）</strong>，在测试集上得到的Loss称之为<strong>泛化误差（generalizationerror）</strong>，也即学习模型对训练数据集的预测值和训练数据集的真实值之间的差异叫训练误差，学习模型对新样本（可以是测试集）数据的预测值和真实值之间的差异叫泛化误差。</p><p>泛化误差可以通过数学上的变换<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="周志华. 机器学习[M]. 北京：清华大学出版社，2016: 44.">[4]</span></a></sup>将其分解为偏差（Bias）、方差（Variance）和噪声（Noise）。</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2024/10/12/formula1.png" srcset="/imgs/banner/loading.jpg" lazyload /></div></div><div class="group-image-row"><div class="group-image-wrap"><imgsrc="/imgs/posts/2024/10/12/formula2.png" srcset="/imgs/banner/loading.jpg" lazyload /></div></div></div><p>然而我们训练一个学习模型的目的是为了解决训练数据集这个领域中的一般化问题，而不是针对训练数据集这个特定集合的问题，因此单纯地将训练数据集的损失最小化，并不能保证在解决更一般的问题时模型仍然是最优，甚至不能保证模型是可用的。</p><p>比如拿热带雨林的树叶作为训练数据集来训练识别树叶的学习模型，我们希望得到的模型应该能够识别所有的树叶，但是这个模型可能在识别寒带、温带的树叶时表现就不好，甚至不能正确识别树叶。</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2024/10/12/leaf1.jfif" srcset="/imgs/banner/loading.jpg" lazyload /></div><div class="group-image-wrap"><imgsrc="/imgs/posts/2024/10/12/leaf2.jfif" srcset="/imgs/banner/loading.jpg" lazyload /></div></div></div><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://zhuanlan.zhihu.com/p/72038532">欠拟合、过拟合及如何防止过拟合- 知乎 (zhihu.com)</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2"class="footnote-text"><span><a href="https://zhuanlan.zhihu.com/p/397672531">机器学习-偏差与方差 - 知乎 (zhihu.com)</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://ustccoder.github.io/2020/05/19/deep%20learning%20variance%20bias/">误差，偏差，方差，噪声的关系| GitHub (ustccoder.github.io)</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:4" class="footnote-text"><span>周志华. 机器学习[M].北京：清华大学出版社，2016: 44.<a href="#fnref:4" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
     
     
     <categories>
@@ -308,11 +308,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -343,11 +343,11 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
+      <tag>Two Pointers</tag>
       
       <tag>Binary Search</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -591,9 +591,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Linked List</tag>
       
     </tags>
     
@@ -651,9 +651,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -682,13 +682,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -748,9 +748,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Linked List</tag>
       
     </tags>
     
@@ -833,13 +833,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
+      <tag>Greedy</tag>
       
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Counting</tag>
       
-      <tag>Greedy</tag>
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -872,9 +872,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -967,9 +967,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Prefix Sum</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -998,9 +998,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1058,9 +1058,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1091,9 +1091,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1157,9 +1157,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1219,9 +1219,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1250,9 +1250,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Matrix</tag>
       
@@ -1370,11 +1370,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
+      <tag>String</tag>
       
       <tag>Counting</tag>
       
-      <tag>String</tag>
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1492,15 +1492,15 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
+      <tag>Simulation</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1531,9 +1531,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1562,11 +1562,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1595,9 +1595,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1626,9 +1626,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1690,11 +1690,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1723,9 +1723,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1754,9 +1754,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1818,9 +1818,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1849,11 +1849,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Greedy</tag>
+      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
-      
-      <tag>Greedy</tag>
       
     </tags>
     
@@ -1948,9 +1948,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1981,9 +1981,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2078,9 +2078,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Binary Search</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2113,9 +2113,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2144,9 +2144,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2241,9 +2241,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2365,9 +2365,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memoization</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Memoization</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2493,9 +2493,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memoization</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Memoization</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2561,9 +2561,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2594,9 +2594,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2625,9 +2625,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2656,9 +2656,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2718,9 +2718,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2749,9 +2749,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2780,11 +2780,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2813,11 +2813,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Sorting</tag>
       
@@ -2879,11 +2879,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2925,7 +2925,7 @@
     <link href="/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/"/>
     <url>/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/</url>
     
-    <content type="html"><![CDATA[<h2 id="下载hexo和安装fluid主题">下载Hexo和安装Fluid主题</h2><p>关于这部分的内容可以参考Hexo和Fluid的官方文档来配置和下载，里面会有详细的说明，这边就不赘述。</p><ul><li><a href="https://hexo.fluid-dev.com/docs/">Hexo Fluid 用户手册(fluid-dev.com)</a></li><li><a href="https://hexo.io/zh-cn/">Hexo</a></li><li><a href="https://hexo.fluid-dev.com/">Hexo Theme Fluid(fluid-dev.com)</a></li></ul><h2 id="美化魔改fluid主题">美化（魔改）Fluid主题</h2><p>关于美化Fluid主题，这个属于个人的偏好，可以通过搜索引擎的关键词<code>Hexo</code> 和 <code>Fluid</code>来找到相关的资料，下面是我参考过的一些资料，可以按需取用。</p><ul><li><ahref="https://emoryhuang.cn/blog/1729600336.html#%E5%AE%89%E8%A3%85">Hexo+ Fluid 美化 | EmoryHuang's Blog</a></li><li><a href="https://www.erenship.com/posts/40222.html">Hexo's Fluid主题私人定制（持续更新） - Eren の 宇宙船 (erenship.com)</a></li><li><ahref="https://qingshaner.com/hexoFluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">🔵HexoFluid主题美化 - 清山的博客 (qingshaner.com)</a></li><li><ahref="https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html#0x13-%E6%A0%87%E7%AD%BE%E6%81%B6%E6%90%9E">Fluid魔改笔记- Asteri5m (gitee.io)</a></li><li><ahref="https://cnwjy.site/2022/01/04/Hexo-Fluid%E7%BE%8E%E5%8C%96/">Hexo-Fluid美化- 柯南简Akkn (cnwjy.site)</a></li></ul><h2 id="部署个人网站到github">部署个人网站到Github</h2><p>如果对Github比较熟悉的同学应该都知道 <code>Github Page</code>可以做成个人网站，这个在网上也有很夺教程，这边也不重复了，下面给的是一些用<code>CDN</code> 来加速网站加载的文章，可以参考。</p><ul><li><ahref="https://lalalalisa.me/2023/03/03/Hexo-Gtihub-CFP/">（●´3｀●）Goooood(lalalalisa.me)</a></li><li><ahref="https://developers.cloudflare.com/pages/framework-guides/deploy-a-hexo-site/">Deploya Hexo site · Cloudflare Pages docs</a></li><li><a href="https://www.julydate.com/post/60859300/">你不爱我了QAQ(julydate.com)</a></li><li><a href="https://docs.github.com/zh/pages/quickstart">GitHub Pages快速入门 - GitHub 文档</a></li></ul><h2 id="一些有用的api">一些有用的API</h2><p>也许你还需要一些 <code>API</code> 来实现一些功能，比如展示<code>Github</code>的热力图、每日一图、优美的英文句子等，下面我也提供了一些可能有用的文章。</p><ul><li><ahref="https://www.laoluowl.cn/archives/35">【持续更新】44个二次元、三次元随机图API接口分享及预览- 老罗的小屋 (laoluowl.cn)</a></li></ul><h2 id="前端知识的学习资料">前端知识的学习资料</h2><p>搭建个人博客网站避免不了需要了解一些前端的相关知识，下面是你可能需要的学习资料。</p><ul><li><ahref="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web">web入门 - 学习 Web 开发 | MDN (mozilla.org)</a></li><li><a href="https://web.qianguyihao.com/">前言 | 千古前端图文教程(qianguyihao.com)</a></li></ul><h2 id="如何发布一篇博客">如何发布一篇博客</h2><p>接下来的内容假设你已经搭建好了个人博客并且通过<code>Github Pages</code> 发布了个人博客。</p><h3 id="创建博客文章">创建博客文章</h3><p>创建博客文章的一般方法可以参考<ahref="https://hexo.io/zh-cn/docs/writing">Hexo的相关文档</a>，这里主要介绍我自己使用的自动化方案。</p><p>我的博客文章存放方案：按照日期放在相应的文件夹中，比如今天是2024年10月13日，那么今天写的文章就会存放在<code>source\_posts\2024\10\13</code> 这个文件夹中，相应的图片会存放在<code>source\imgs\posts\2024\10\13</code> 这个文件夹当中。</p><p>我的需求：我输入文章的标题，剩下的工作交给脚本执行——自动检测是否存在同名文件，创建文件，移动文件到相应的目录等功能。</p><p>我的实现方案：写一个 <code>Python</code>脚本来实现（借助AI写出脚本代码）。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> shutil<br><span class="hljs-keyword">import</span> subprocess<br><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">create_hexo_post</span>(<span class="hljs-params">post_name</span>):<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-comment"># 获取当前日期</span><br>        today = datetime.today()<br>        year = today.strftime(<span class="hljs-string">&quot;%Y&quot;</span>)<br>        month = today.strftime(<span class="hljs-string">&quot;%m&quot;</span>)<br>        day = today.strftime(<span class="hljs-string">&quot;%d&quot;</span>)<br><br>        <span class="hljs-comment"># 定义文件路径</span><br>        base_dir = <span class="hljs-string">r&quot;E:\ChenHuaneng\Article\Blogs\source&quot;</span><br>        post_dir = os.path.join(base_dir, <span class="hljs-string">&quot;_posts&quot;</span>, year, month, day)<br>        img_dir = os.path.join(base_dir, <span class="hljs-string">&quot;imgs&quot;</span>, <span class="hljs-string">&quot;posts&quot;</span>, year, month, day)<br><br>        <span class="hljs-comment"># 创建日期文件夹（如果不存在）</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(post_dir):<br>            os.makedirs(post_dir)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;创建文章文件夹: <span class="hljs-subst">&#123;post_dir&#125;</span>&quot;</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文章文件夹已存在: <span class="hljs-subst">&#123;post_dir&#125;</span>&quot;</span>)<br><br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(img_dir):<br>            os.makedirs(img_dir)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;创建图片文件夹: <span class="hljs-subst">&#123;img_dir&#125;</span>&quot;</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;图片文件夹已存在: <span class="hljs-subst">&#123;img_dir&#125;</span>&quot;</span>)<br><br>        <span class="hljs-comment"># 检查同名文件是否存在</span><br>        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>            post_filename = <span class="hljs-string">f&quot;<span class="hljs-subst">&#123;year&#125;</span>-<span class="hljs-subst">&#123;month&#125;</span>-<span class="hljs-subst">&#123;day&#125;</span>-<span class="hljs-subst">&#123;post_name&#125;</span>.md&quot;</span><br>            new_post_path = os.path.join(post_dir, post_filename)<br><br>            <span class="hljs-keyword">if</span> os.path.exists(new_post_path):<br>                <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文件 &#x27;<span class="hljs-subst">&#123;new_post_path&#125;</span>&#x27; 已存在，正在打开该文件。请重新输入新的文章名称。&quot;</span>)<br>                open_file(new_post_path)  <span class="hljs-comment"># 打开已有文件</span><br>                post_name = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入新的文章名称: &quot;</span>)  <span class="hljs-comment"># 重新输入名称</span><br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-comment"># 创建新文章</span><br>                os.system(<span class="hljs-string">f&quot;hexo new post \&quot;<span class="hljs-subst">&#123;post_name&#125;</span>\&quot;&quot;</span>)<br>                post_path = os.path.join(base_dir, <span class="hljs-string">&quot;_posts&quot;</span>, post_filename)<br><br>                <span class="hljs-comment"># 移动创建的文件到相应的日期文件夹</span><br>                <span class="hljs-keyword">if</span> os.path.exists(post_path):<br>                    shutil.move(post_path, new_post_path)<br>                    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文章已创建并移动到: <span class="hljs-subst">&#123;new_post_path&#125;</span>&quot;</span>)<br>                <span class="hljs-keyword">else</span>:<br>                    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;未找到要移动的文章文件: <span class="hljs-subst">&#123;post_path&#125;</span>&quot;</span>)<br>                <span class="hljs-keyword">break</span>  <span class="hljs-comment"># 退出循环</span><br><br>        <span class="hljs-comment"># 自动打开新创建的文件</span><br>        open_file(new_post_path)<br><br>        <span class="hljs-comment"># 自动打开图片文件夹</span><br>        open_folder(img_dir)<br><br>    <span class="hljs-keyword">except</span> KeyboardInterrupt:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\n程序已被用户中止。&quot;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">open_file</span>(<span class="hljs-params">file_path</span>):<br>    <span class="hljs-comment"># 检查文件是否存在</span><br>    <span class="hljs-keyword">if</span> os.path.exists(file_path):<br>        <span class="hljs-comment"># Windows 系统使用 os.startfile 来打开文件</span><br>        <span class="hljs-keyword">if</span> os.name == <span class="hljs-string">&#x27;nt&#x27;</span>:<br>            os.startfile(file_path)<br>        <span class="hljs-comment"># macOS 使用 &quot;open&quot; 命令，Linux 使用 &quot;xdg-open&quot;</span><br>        <span class="hljs-keyword">elif</span> os.name == <span class="hljs-string">&#x27;posix&#x27;</span>:<br>            opener = <span class="hljs-string">&quot;open&quot;</span> <span class="hljs-keyword">if</span> sys.platform == <span class="hljs-string">&quot;darwin&quot;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;xdg-open&quot;</span><br>            subprocess.call([opener, file_path])<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;已打开文件: <span class="hljs-subst">&#123;file_path&#125;</span>&quot;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文件不存在: <span class="hljs-subst">&#123;file_path&#125;</span>&quot;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">open_folder</span>(<span class="hljs-params">folder_path</span>):<br>    <span class="hljs-comment"># 检查文件夹是否存在</span><br>    <span class="hljs-keyword">if</span> os.path.exists(folder_path):<br>        <span class="hljs-comment"># Windows 系统使用 os.startfile 来打开文件夹</span><br>        <span class="hljs-keyword">if</span> os.name == <span class="hljs-string">&#x27;nt&#x27;</span>:<br>            os.startfile(folder_path)<br>        <span class="hljs-comment"># macOS 使用 &quot;open&quot; 命令，Linux 使用 &quot;xdg-open&quot;</span><br>        <span class="hljs-keyword">elif</span> os.name == <span class="hljs-string">&#x27;posix&#x27;</span>:<br>            opener = <span class="hljs-string">&quot;open&quot;</span> <span class="hljs-keyword">if</span> sys.platform == <span class="hljs-string">&quot;darwin&quot;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;xdg-open&quot;</span><br>            subprocess.call([opener, folder_path])<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;已打开文件夹: <span class="hljs-subst">&#123;folder_path&#125;</span>&quot;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文件夹不存在: <span class="hljs-subst">&#123;folder_path&#125;</span>&quot;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    <span class="hljs-keyword">try</span>:<br>        post_name = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入文章名称: &quot;</span>)<br>        create_hexo_post(post_name)<br>    <span class="hljs-keyword">except</span> KeyboardInterrupt:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\n程序已被用户中止。&quot;</span>)<br></code></pre></td></tr></table></figure><blockquote><p>提醒：自动化脚本可以做的内容远不止这些，还可以完成很多重复繁琐的工作，所以当你遇到一个重复性的工作的时候，可以思考一下是否可以用自动化的脚本来实现。</p></blockquote><h3 id="编辑博客">编辑博客</h3><h4 id="使用-markdown-编辑器">使用 <code>Markdown</code> 编辑器</h4><p>编辑博客一般是在本地编辑完，然后通过本地查看之后没有问题再推送到远程仓库来实现发布。</p><p>编辑博客有两种方式，一种是先使用 <code>hexo</code> 创建文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new post --path 20231203Hello/Hello # 指定路径创建名为Hello的.md文件，路径可以省略<br></code></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new &quot;Hello World!&quot; # 默认是post，如果博客名称有空格需要用双引号包裹起来<br></code></pre></td></tr></table></figure><p>然后使用类似<code>Typora</code>、<code>sublime</code>、<code>Obsidian</code> 等<code>Markdown</code> 编辑器编辑完之后再用 <code>hexo</code>的命令在本地预览，没有问题之后再推送到远程仓库。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo clean # 清除缓存<br>hexo g # hexo generate<br>hexo s # hexo server<br><span class="hljs-meta prompt_"># </span><span class="language-bash">详细的命令说明: https://hexo.io/zh-cn/</span><br></code></pre></td></tr></table></figure><h4 id="使用-hexo-admin-插件">使用 <code>Hexo-admin</code> 插件</h4><p>关于详细的安装和使用说明可以参考这个链接: <ahref="https://github.com/jaredly/hexo-admin?tab=readme-ov-file#3-profit">jaredly/hexo-admin:An Admin Interface for Hexo (github.com)</a></p><p>安装的命令 <code>npm install --save hexo-admin</code>，安装之后在博客的目录下执行 <code>hexo server -d</code>然后在浏览器打开 <code>http://localhost:4000/admin/</code>就可以进行博客的编辑了。之后的推送到远程仓库的步骤是一样的。</p><h3 id="本地预览">本地预览</h3><p>要本地预览编辑完的博客可以使用 <code>hexo clean</code>清除缓存，然后用 <code>hexo g</code> 生成必要的文件，然后执行<code>hexo s</code> 来启动本地的服务，之后在浏览器打开<code>http://localhost:4000/</code>就能看到编辑完之后的效果。如果效果满意就可以准备推送到远程仓库了。</p><p>如果觉得每次在本地预览都要重新输入三个命令显得很麻烦可以将这三个命令写成一个<code>PowerShell</code> (针对<code>Windows 10</code>)的脚本，然后每次在本地预览的时候执行这个脚本即可。比如我写了一个脚本来执行上面这三个操作简化我的工作：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npx hexo clean<br>npx hexo g<br>npx hexo s <span class="hljs-literal">-p</span> <span class="hljs-number">8080</span><br></code></pre></td></tr></table></figure><h3 id="推送编辑完的博客到远程仓库">推送编辑完的博客到远程仓库</h3><p><code>Git</code> 推送到远程仓库的一般步骤：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">git pull origin main --rebase # 也可以不是rebase，按需选择<br>git add . # 个人习惯把修改的内容全部一次添加<br>git commit -m &quot;message&quot; # 提交的说明<br>git push -u origin main # 提交到远程仓库<br></code></pre></td></tr></table></figure><p>推送之后到个人的 <code>Github</code>相关的仓库查看是否推送成功，如果推送成功就可以在发布的Page中查看了，比如我的个人博客的<code>Github</code> 地址就是<code>https://chen-huaneng.github.io/</code> 。</p><h3 id="使用-hexo-提供的一键部署方案">使用 <code>Hexo</code>提供的一键部署方案</h3><p>除了使用 <code>Github Actions</code> 实现自动部署之外，还可以采用<code>Hexo</code> 提供的一键部署方案，只需要一行命令即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo deploy<br></code></pre></td></tr></table></figure><p>具体的配置参考官方文档:<ahref="https://hexo.io/zh-cn/docs/one-command-deployment">一键部署 |Hexo</a></p><h2 id="有用的一些编辑技巧">有用的一些编辑技巧</h2><p>下面是一些有用的编辑技巧，注意下面的技巧适用于发布博客，并且使用的主题是<code>Fluid</code> ，用 <code>Hexo</code> 驱动，可能存在部分语法和<code>Markdown</code> 不兼容，比如图片可能在 <code>Markdown</code>编辑器中并不能实时渲染。</p><h3 id="在文本中插入一张图片">在文本中插入一张图片</h3><p>在 <code>Fluid</code> 主题中，默认的路径是博客文件夹下的<code>source</code>文件夹，所以你可以通过相对路径来引用一张图片，比如我现在要引用一张<code>source/imgs/posts/2023/12/03/banner.jpg</code> 那么我就可以在<code>Markdown</code> 使用</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">Banner</span>](<span class="hljs-link">/imgs/posts/2023/12/03/banner.jpg</span>)<br></code></pre></td></tr></table></figure><p>来引用，效果如下：</p><figure><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="Banner" /><figcaption aria-hidden="true">Banner</figcaption></figure><h3 id="在文本中插入代码块">在文本中插入代码块</h3><p>如果想要在博客的文章中插入代码块，可以参考<ahref="https://hexo.io/zh-cn/docs/syntax-highlight">代码高亮 |Hexo</a>的说明来写，当然如果你使用 <code>Fluid</code>并且配置了相关的设置，那么使用正常的 <code>Markdown</code>语法是能够正常渲染出来的。下面是一个演示：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure><p>要渲染上面的代码块，在 <code>Markdown</code> 中的语法是：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-code">```java</span><br><span class="hljs-code">public static void main(String args[]) &#123;</span><br><span class="hljs-code">    System.out.println(&quot;Hello World!&quot;);</span><br><span class="hljs-code">&#125;</span><br><span class="hljs-code">```</span><br></code></pre></td></tr></table></figure><h3 id="在文本中使用脚注">在文本中使用脚注</h3><p>在 <code>Fluid</code> 主题中支持自动生成脚注的引用，相关说明参考<ahref="https://hexo.fluid-dev.com/docs/guide/#脚注">配置指南 | Hexo Fluid用户手册 (fluid-dev.com)</a>，下面是一个演示：</p><p>这是一句话<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="这是对应的脚注">[1]</span></a></sup> ，下面有脚注。</p><p>相关的 <code>Markdown</code>语法是，建议把所有的脚注放在文章末尾，方便管理：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">这是一句话\[^1\]，下面有脚注。<br></code></pre></td></tr></table></figure><h3 id="tag插件">Tag插件</h3><p><code>Fluid</code>主题还内置了一些相关的Tag插件可以使用，详细的说明参考<ahref="https://hexo.fluid-dev.com/docs/guide/#脚注">配置指南 | Hexo Fluid用户手册 (fluid-dev.com)</a>。</p><p>在 markdown 中加入如下的代码来使用便签：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% note success %&#125;<br>文字 或者 <span class="hljs-code">`markdown`</span> 均可<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure><p>或者使用 HTML 形式：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-primary&quot;</span>&gt;</span>标签<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure><p>效果展示：</p><p class="note note-primary">标签</p><div class="note note-success">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><p>可选便签：</p><ul><li><p>primary</p></li><li><p>secondary</p></li><li><p>success</p></li><li><p>danger</p></li><li><p>warning</p></li><li><p>info</p></li><li><p>light</p></li></ul><div class="note note-warning">            <p>使用时 <code>&amp;{&amp;% note primary &amp;%&amp;}</code> 和<code>&amp;{&amp;% endnote &amp;%&amp;}</code>需单独一行，否则会出现问题</p>          </div><h4 id="行内标签">行内标签</h4><p>在 markdown 中加入如下的代码来使用 Label：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% label primary @text %&#125;<br></code></pre></td></tr></table></figure><p>可选 Label：</p><span class="label label-primary">primary</span><span class="label label-default">default</span><span class="label label-info">info</span><span class="label label-success">success</span><span class="label label-warning">warning</span><span class="label label-danger">danger</span><h4 id="折叠块">折叠块</h4><p>使用折叠块，可以折叠代码、图片、文字等任何内容，你可以在 markdown中按如下格式：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% fold info @title %&#125;<br>需要折叠的一段内容，支持 markdown<br>&#123;% endfold %&#125;<br></code></pre></td></tr></table></figure><p>info: 和行内标签类似的可选参数 title:折叠块上的标题，下面是一些例子。</p>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-b5714680" role="button" aria-expanded="false" aria-controls="collapse-b5714680">        <div class="fold-arrow">▶</div>折叠文字      </div>      <div class="fold-collapse collapse" id="collapse-b5714680">        <div class="fold-content">          <p>需要折叠的一段内容，支持 markdown</p>        </div>      </div>    </div>    <div class="fold">      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-12442369" role="button" aria-expanded="false" aria-controls="collapse-12442369">        <div class="fold-arrow">▶</div>折叠代码      </div>      <div class="fold-collapse collapse" id="collapse-12442369">        <div class="fold-content">          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>        </div>      </div>    </div>    <div class="fold">      <div class="fold-title fold-success collapsed" data-toggle="collapse" href="#collapse-8e37f58b" role="button" aria-expanded="false" aria-controls="collapse-8e37f58b">        <div class="fold-arrow">▶</div>折叠图片      </div>      <div class="fold-collapse collapse" id="collapse-8e37f58b">        <div class="fold-content">          <figure><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /><figcaption aria-hidden="true">banner</figcaption></figure>        </div>      </div>    </div><h4 id="勾选框">勾选框</h4><p>在 markdown 中加入如下的代码来使用 Checkbox：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% cb text, checked?, incline? %&#125;<br></code></pre></td></tr></table></figure><p>text：显示的文字 checked：默认是否已勾选，默认 false incline:是否内联（可以理解为后面的文字是否换行），默认 false</p><p>示例：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% cb 普通示例 %&#125;<br><br>&#123;% cb 默认选中, true %&#125;<br><br>&#123;% cb 内联示例, false, true %&#125; 后面文字不换行<br><br>&#123;% cb false %&#125; 也可以只传入一个参数，文字写在后边（这样不支持外联）<br></code></pre></td></tr></table></figure><div>            <input type="checkbox"  >普通示例          </div><div>            <input type="checkbox"  checked="checked">默认选中          </div>            <input type="checkbox"  >内联示例          <p>后面文字不换行</p><input type="checkbox" disabled ><p>也可以只传入一个参数，文字写在后边（这样不支持外联）</p><h4 id="按钮">按钮</h4><p>你可以在 markdown 中加入如下的代码来使用 Button：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% btn url, text, title %&#125;<br></code></pre></td></tr></table></figure><p>或者使用 HTML 形式：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>text<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure><p>url：跳转链接 text：显示的文字title：鼠标悬停时显示的文字（可选）</p><p>效果展示：</p><a class="btn" href="url"  title="title" target="_blank">text</a><p><a class="btn" href="url" title="title">text</a></p><h4 id="组图">组图</h4><p>如果想把多张图片按一定布局组合显示，你可以在 markdown中按如下格式：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% gi total n1-n2-... %&#125;<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>&#123;% endgi %&#125;<br></code></pre></td></tr></table></figure><p>total：图片总数量，对应中间包含的图片 url 数量n1-n2-...：每行的图片数量，可以省略，默认单行最多 3 张图，求和必须相等于total，否则按默认样式。下面是示例：</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/about.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="about" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/about.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="about" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/about.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="about" /></div></div></div><hr /><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div></div></div><hr /><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/home.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="home" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/home.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="home" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/home.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="home" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/home.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="home" /></div></div></div><h3 id="latexs数学公式">LaTeXs数学公式</h3><div class="note note-info">            <p>Hexo 5.0 以上，可尝试 Hexo 官方的 <ahref="https://github.com/hexojs/hexo-math">hexo-math (opens newwindow)</a>插件，支持更多定制化参数，使用方式参照链接内的文档，以下介绍的是主题内置的LaTeX 功能。</p>          </div><p>当需要使用 <ahref="https://www.latex-project.org/help/documentation/">LaTeX (opensnewwindow)</a>语法的数学公式时，可手动开启本功能，需要完成三步操作：</p><p><strong>1. 设置主题配置</strong></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post:</span><br>  <span class="hljs-attr">math:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">specific:</span> <span class="hljs-literal">false</span><br>    <span class="hljs-attr">engine:</span> <span class="hljs-string">mathjax</span><br></code></pre></td></tr></table></figure><p><code>specific</code>: 建议开启。当为 true 时，只有在文章 <ahref="https://hexo.io/zh-cn/docs/front-matter">front-matter (opens newwindow)</a>里指定 <code>math: true</code>才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度。</p><p><code>engine</code>: 公式引擎，目前支持 <code>mathjax</code> 或<code>katex</code>。</p><p><strong>2. 更换 Markdown 渲染器</strong></p><p>由于 Hexo 默认的 Markdown渲染器不支持复杂公式，所以需要更换渲染器（mathjax 可选择性更换）。</p><p>然后根据上方配置不同的 <code>engine</code>，推荐更换如下渲染器：</p><p>mathjax</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm uninstall hexo-renderer-marked --save<br>npm install hexo-renderer-pandoc --save<br></code></pre></td></tr></table></figure><p><strong>并且还需<ahref="https://github.com/jgm/pandoc/blob/master/INSTALL.md">安装Pandoc(opens new window)</a></strong></p><p>katex</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm uninstall hexo-renderer-marked --save<br>npm install hexo-renderer-markdown-it --save<br>npm install @traptitech/markdown-it-katex --save<br></code></pre></td></tr></table></figure><p>然后在<strong>站点配置</strong>中添加：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">markdown:</span><br>  <span class="hljs-attr">plugins:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;@traptitech/markdown-it-katex&quot;</span><br></code></pre></td></tr></table></figure><p><strong>3. 安装完成后执行 <code>hexo clean</code></strong></p><p>书写公式的格式：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">$$<br>E=mc^2<br>$$<br></code></pre></td></tr></table></figure><p>数学公式行间示例： <span class="math display">\[E = mc^2\]</span> 没有意义的行内展示：<span class="math inline">\(h =\frac{v}{2}\)</span>。</p><div class="note note-warning">            <ul><li>如果公式没有被正确渲染，请仔细检查是否符合上面三步操作。</li><li>不可以同时安装多个渲染插件，包括 <code>hexo-math</code> 或者<code>hexo-katex</code> 这类插件，请注意检查<code>package.json</code>。</li><li>如果更换公式引擎，对应渲染器也要一并更换。</li><li>不同的渲染器，可能会导致一些 Markdown语法不支持，或者渲染样式有细微差异。</li><li>自定义页面默认不加载渲染，如需使用，需在 front-matter 中指定<code>math: true</code></li></ul>          </div><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>这是对应的脚注<a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
+    <content type="html"><![CDATA[<h2 id="下载hexo和安装fluid主题">下载Hexo和安装Fluid主题</h2><p>关于这部分的内容可以参考Hexo和Fluid的官方文档来配置和下载，里面会有详细的说明，这边就不赘述。</p><ul><li><a href="https://hexo.fluid-dev.com/docs/">Hexo Fluid 用户手册(fluid-dev.com)</a></li><li><a href="https://hexo.io/zh-cn/">Hexo</a></li><li><a href="https://hexo.fluid-dev.com/">Hexo Theme Fluid(fluid-dev.com)</a></li></ul><h2 id="美化魔改fluid主题">美化（魔改）Fluid主题</h2><p>关于美化Fluid主题，这个属于个人的偏好，可以通过搜索引擎的关键词<code>Hexo</code> 和 <code>Fluid</code>来找到相关的资料，下面是我参考过的一些资料，可以按需取用。</p><ul><li><ahref="https://emoryhuang.cn/blog/1729600336.html#%E5%AE%89%E8%A3%85">Hexo+ Fluid 美化 | EmoryHuang's Blog</a></li><li><a href="https://www.erenship.com/posts/40222.html">Hexo's Fluid主题私人定制（持续更新） - Eren の 宇宙船 (erenship.com)</a></li><li><ahref="https://qingshaner.com/hexoFluid%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">🔵HexoFluid主题美化 - 清山的博客 (qingshaner.com)</a></li><li><ahref="https://asteri5m.gitee.io/archives/Fluid%E9%AD%94%E6%94%B9%E7%AC%94%E8%AE%B0.html#0x13-%E6%A0%87%E7%AD%BE%E6%81%B6%E6%90%9E">Fluid魔改笔记- Asteri5m (gitee.io)</a></li><li><ahref="https://cnwjy.site/2022/01/04/Hexo-Fluid%E7%BE%8E%E5%8C%96/">Hexo-Fluid美化- 柯南简Akkn (cnwjy.site)</a></li></ul><h2 id="部署个人网站到github">部署个人网站到Github</h2><p>如果对Github比较熟悉的同学应该都知道 <code>Github Page</code>可以做成个人网站，这个在网上也有很夺教程，这边也不重复了，下面给的是一些用<code>CDN</code> 来加速网站加载的文章，可以参考。</p><ul><li><ahref="https://lalalalisa.me/2023/03/03/Hexo-Gtihub-CFP/">（●´3｀●）Goooood(lalalalisa.me)</a></li><li><ahref="https://developers.cloudflare.com/pages/framework-guides/deploy-a-hexo-site/">Deploya Hexo site · Cloudflare Pages docs</a></li><li><a href="https://www.julydate.com/post/60859300/">你不爱我了QAQ(julydate.com)</a></li><li><a href="https://docs.github.com/zh/pages/quickstart">GitHub Pages快速入门 - GitHub 文档</a></li></ul><h2 id="一些有用的api">一些有用的API</h2><p>也许你还需要一些 <code>API</code> 来实现一些功能，比如展示<code>Github</code>的热力图、每日一图、优美的英文句子等，下面我也提供了一些可能有用的文章。</p><ul><li><ahref="https://www.laoluowl.cn/archives/35">【持续更新】44个二次元、三次元随机图API接口分享及预览- 老罗的小屋 (laoluowl.cn)</a></li></ul><h2 id="前端知识的学习资料">前端知识的学习资料</h2><p>搭建个人博客网站避免不了需要了解一些前端的相关知识，下面是你可能需要的学习资料。</p><ul><li><ahref="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web">web入门 - 学习 Web 开发 | MDN (mozilla.org)</a></li><li><a href="https://web.qianguyihao.com/">前言 | 千古前端图文教程(qianguyihao.com)</a></li></ul><h2 id="如何发布一篇博客">如何发布一篇博客</h2><p>接下来的内容假设你已经搭建好了个人博客并且通过<code>Github Pages</code> 发布了个人博客。</p><p><a id="anchor1"></a></p><h3 id="创建博客文章">创建博客文章</h3><p>创建博客文章的一般方法可以参考<ahref="https://hexo.io/zh-cn/docs/writing">Hexo的相关文档</a>，这里主要介绍我自己使用的自动化方案。</p><p>我的博客文章存放方案：按照日期放在相应的文件夹中，比如今天是2024年10月13日，那么今天写的文章就会存放在<code>source\_posts\2024\10\13</code> 这个文件夹中，相应的图片会存放在<code>source\imgs\posts\2024\10\13</code> 这个文件夹当中。</p><p>我的需求：我输入文章的标题，剩下的工作交给脚本执行——自动检测是否存在同名文件，创建文件，移动文件到相应的目录等功能。</p><p>我的实现方案：写一个 <code>Python</code>脚本来实现（借助AI写出脚本代码）。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> shutil<br><span class="hljs-keyword">import</span> subprocess<br><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">create_hexo_post</span>(<span class="hljs-params">post_name</span>):<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-comment"># 获取当前日期</span><br>        today = datetime.today()<br>        year = today.strftime(<span class="hljs-string">&quot;%Y&quot;</span>)<br>        month = today.strftime(<span class="hljs-string">&quot;%m&quot;</span>)<br>        day = today.strftime(<span class="hljs-string">&quot;%d&quot;</span>)<br><br>        <span class="hljs-comment"># 定义文件路径</span><br>        base_dir = <span class="hljs-string">r&quot;E:\ChenHuaneng\Article\Blogs\source&quot;</span><br>        post_dir = os.path.join(base_dir, <span class="hljs-string">&quot;_posts&quot;</span>, year, month, day)<br>        img_dir = os.path.join(base_dir, <span class="hljs-string">&quot;imgs&quot;</span>, <span class="hljs-string">&quot;posts&quot;</span>, year, month, day)<br><br>        <span class="hljs-comment"># 创建日期文件夹（如果不存在）</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(post_dir):<br>            os.makedirs(post_dir)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;创建文章文件夹: <span class="hljs-subst">&#123;post_dir&#125;</span>&quot;</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文章文件夹已存在: <span class="hljs-subst">&#123;post_dir&#125;</span>&quot;</span>)<br><br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(img_dir):<br>            os.makedirs(img_dir)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;创建图片文件夹: <span class="hljs-subst">&#123;img_dir&#125;</span>&quot;</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;图片文件夹已存在: <span class="hljs-subst">&#123;img_dir&#125;</span>&quot;</span>)<br><br>        <span class="hljs-comment"># 检查同名文件是否存在</span><br>        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>            post_filename = <span class="hljs-string">f&quot;<span class="hljs-subst">&#123;year&#125;</span>-<span class="hljs-subst">&#123;month&#125;</span>-<span class="hljs-subst">&#123;day&#125;</span>-<span class="hljs-subst">&#123;post_name&#125;</span>.md&quot;</span><br>            new_post_path = os.path.join(post_dir, post_filename)<br><br>            <span class="hljs-keyword">if</span> os.path.exists(new_post_path):<br>                <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文件 &#x27;<span class="hljs-subst">&#123;new_post_path&#125;</span>&#x27; 已存在，正在打开该文件。请重新输入新的文章名称。&quot;</span>)<br>                open_file(new_post_path)  <span class="hljs-comment"># 打开已有文件</span><br>                post_name = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入新的文章名称: &quot;</span>)  <span class="hljs-comment"># 重新输入名称</span><br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-comment"># 创建新文章</span><br>                os.system(<span class="hljs-string">f&quot;hexo new post \&quot;<span class="hljs-subst">&#123;post_name&#125;</span>\&quot;&quot;</span>)<br>                post_path = os.path.join(base_dir, <span class="hljs-string">&quot;_posts&quot;</span>, post_filename)<br><br>                <span class="hljs-comment"># 移动创建的文件到相应的日期文件夹</span><br>                <span class="hljs-keyword">if</span> os.path.exists(post_path):<br>                    shutil.move(post_path, new_post_path)<br>                    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文章已创建并移动到: <span class="hljs-subst">&#123;new_post_path&#125;</span>&quot;</span>)<br>                <span class="hljs-keyword">else</span>:<br>                    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;未找到要移动的文章文件: <span class="hljs-subst">&#123;post_path&#125;</span>&quot;</span>)<br>                <span class="hljs-keyword">break</span>  <span class="hljs-comment"># 退出循环</span><br><br>        <span class="hljs-comment"># 自动打开新创建的文件</span><br>        open_file(new_post_path)<br><br>        <span class="hljs-comment"># 自动打开图片文件夹</span><br>        open_folder(img_dir)<br><br>    <span class="hljs-keyword">except</span> KeyboardInterrupt:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\n程序已被用户中止。&quot;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">open_file</span>(<span class="hljs-params">file_path</span>):<br>    <span class="hljs-comment"># 检查文件是否存在</span><br>    <span class="hljs-keyword">if</span> os.path.exists(file_path):<br>        <span class="hljs-comment"># Windows 系统使用 os.startfile 来打开文件</span><br>        <span class="hljs-keyword">if</span> os.name == <span class="hljs-string">&#x27;nt&#x27;</span>:<br>            os.startfile(file_path)<br>        <span class="hljs-comment"># macOS 使用 &quot;open&quot; 命令，Linux 使用 &quot;xdg-open&quot;</span><br>        <span class="hljs-keyword">elif</span> os.name == <span class="hljs-string">&#x27;posix&#x27;</span>:<br>            opener = <span class="hljs-string">&quot;open&quot;</span> <span class="hljs-keyword">if</span> sys.platform == <span class="hljs-string">&quot;darwin&quot;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;xdg-open&quot;</span><br>            subprocess.call([opener, file_path])<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;已打开文件: <span class="hljs-subst">&#123;file_path&#125;</span>&quot;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文件不存在: <span class="hljs-subst">&#123;file_path&#125;</span>&quot;</span>)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">open_folder</span>(<span class="hljs-params">folder_path</span>):<br>    <span class="hljs-comment"># 检查文件夹是否存在</span><br>    <span class="hljs-keyword">if</span> os.path.exists(folder_path):<br>        <span class="hljs-comment"># Windows 系统使用 os.startfile 来打开文件夹</span><br>        <span class="hljs-keyword">if</span> os.name == <span class="hljs-string">&#x27;nt&#x27;</span>:<br>            os.startfile(folder_path)<br>        <span class="hljs-comment"># macOS 使用 &quot;open&quot; 命令，Linux 使用 &quot;xdg-open&quot;</span><br>        <span class="hljs-keyword">elif</span> os.name == <span class="hljs-string">&#x27;posix&#x27;</span>:<br>            opener = <span class="hljs-string">&quot;open&quot;</span> <span class="hljs-keyword">if</span> sys.platform == <span class="hljs-string">&quot;darwin&quot;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;xdg-open&quot;</span><br>            subprocess.call([opener, folder_path])<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;已打开文件夹: <span class="hljs-subst">&#123;folder_path&#125;</span>&quot;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文件夹不存在: <span class="hljs-subst">&#123;folder_path&#125;</span>&quot;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    <span class="hljs-keyword">try</span>:<br>        post_name = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入文章名称: &quot;</span>)<br>        create_hexo_post(post_name)<br>    <span class="hljs-keyword">except</span> KeyboardInterrupt:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\n程序已被用户中止。&quot;</span>)<br></code></pre></td></tr></table></figure><blockquote><p>提醒：自动化脚本可以做的内容远不止这些，还可以完成很多重复繁琐的工作，所以当你遇到一个重复性的工作的时候，可以思考一下是否可以用自动化的脚本来实现。</p></blockquote><h3 id="编辑博客">编辑博客</h3><h4 id="使用-markdown-编辑器">使用 <code>Markdown</code> 编辑器</h4><p>编辑博客一般是在本地编辑完，然后通过本地查看之后没有问题再推送到远程仓库来实现发布。</p><p>编辑博客有两种方式，一种是先使用 <code>hexo</code> 创建文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new post --path 20231203Hello/Hello # 指定路径创建名为Hello的.md文件，路径可以省略<br></code></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new &quot;Hello World!&quot; # 默认是post，如果博客名称有空格需要用双引号包裹起来<br></code></pre></td></tr></table></figure><p>然后使用类似<code>Typora</code>、<code>sublime</code>、<code>Obsidian</code> 等<code>Markdown</code> 编辑器编辑完之后再用 <code>hexo</code>的命令在本地预览，没有问题之后再推送到远程仓库。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo clean # 清除缓存<br>hexo g # hexo generate<br>hexo s # hexo server<br><span class="hljs-meta prompt_"># </span><span class="language-bash">详细的命令说明: https://hexo.io/zh-cn/</span><br></code></pre></td></tr></table></figure><h4 id="使用-hexo-admin-插件">使用 <code>Hexo-admin</code> 插件</h4><p>关于详细的安装和使用说明可以参考这个链接: <ahref="https://github.com/jaredly/hexo-admin?tab=readme-ov-file#3-profit">jaredly/hexo-admin:An Admin Interface for Hexo (github.com)</a></p><p>安装的命令 <code>npm install --save hexo-admin</code>，安装之后在博客的目录下执行 <code>hexo server -d</code>然后在浏览器打开 <code>http://localhost:4000/admin/</code>就可以进行博客的编辑了。之后的推送到远程仓库的步骤是一样的。</p><h3 id="本地预览">本地预览</h3><p><a id="anchor2"></a></p><p>要本地预览编辑完的博客可以使用 <code>hexo clean</code>清除缓存，然后用 <code>hexo g</code> 生成必要的文件，然后执行<code>hexo s</code> 来启动本地的服务，之后在浏览器打开<code>http://localhost:4000/</code>就能看到编辑完之后的效果。如果效果满意就可以准备推送到远程仓库了。</p><p>如果觉得每次在本地预览都要重新输入三个命令显得很麻烦可以将这三个命令写成一个<code>PowerShell</code> (针对<code>Windows 10</code>)的脚本，然后每次在本地预览的时候执行这个脚本即可。比如我写了一个脚本来执行上面这三个操作简化我的工作：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npx hexo clean<br>npx hexo g<br>npx hexo s <span class="hljs-literal">-p</span> <span class="hljs-number">8080</span><br></code></pre></td></tr></table></figure><h3 id="推送编辑完的博客到远程仓库">推送编辑完的博客到远程仓库</h3><p><code>Git</code> 推送到远程仓库的一般步骤：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">git pull origin main --rebase # 也可以不是rebase，按需选择<br>git add . # 个人习惯把修改的内容全部一次添加<br>git commit -m &quot;message&quot; # 提交的说明<br>git push -u origin main # 提交到远程仓库<br></code></pre></td></tr></table></figure><p>推送之后到个人的 <code>Github</code>相关的仓库查看是否推送成功，如果推送成功就可以在发布的Page中查看了，比如我的个人博客的<code>Github</code> 地址就是<code>https://chen-huaneng.github.io/</code> 。</p><h3 id="使用-hexo-提供的一键部署方案">使用 <code>Hexo</code>提供的一键部署方案</h3><p>除了使用 <code>Github Actions</code> 实现自动部署之外，还可以采用<code>Hexo</code> 提供的一键部署方案，只需要一行命令即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo deploy<br></code></pre></td></tr></table></figure><p>具体的配置参考官方文档:<ahref="https://hexo.io/zh-cn/docs/one-command-deployment">一键部署 |Hexo</a></p><h2 id="有用的一些编辑技巧">有用的一些编辑技巧</h2><p>下面是一些有用的编辑技巧，注意下面的技巧适用于发布博客，并且使用的主题是<code>Fluid</code> ，用 <code>Hexo</code> 驱动，可能存在部分语法和<code>Markdown</code> 不兼容，比如图片可能在 <code>Markdown</code>编辑器中并不能实时渲染。</p><h3 id="在文本中插入一张图片">在文本中插入一张图片</h3><p>在 <code>Fluid</code> 主题中，默认的路径是博客文件夹下的<code>source</code>文件夹，所以你可以通过相对路径来引用一张图片，比如我现在要引用一张<code>source/imgs/posts/2023/12/03/banner.jpg</code> 那么我就可以在<code>Markdown</code> 使用</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">Banner</span>](<span class="hljs-link">/imgs/posts/2023/12/03/banner.jpg</span>)<br></code></pre></td></tr></table></figure><p>来引用，效果如下：</p><figure><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="Banner" /><figcaption aria-hidden="true">Banner</figcaption></figure><h3 id="在文本中插入代码块">在文本中插入代码块</h3><p>如果想要在博客的文章中插入代码块，可以参考<ahref="https://hexo.io/zh-cn/docs/syntax-highlight">代码高亮 |Hexo</a>的说明来写，当然如果你使用 <code>Fluid</code>并且配置了相关的设置，那么使用正常的 <code>Markdown</code>语法是能够正常渲染出来的。下面是一个演示：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure><p>要渲染上面的代码块，在 <code>Markdown</code> 中的语法是：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-code">```java</span><br><span class="hljs-code">public static void main(String args[]) &#123;</span><br><span class="hljs-code">    System.out.println(&quot;Hello World!&quot;);</span><br><span class="hljs-code">&#125;</span><br><span class="hljs-code">```</span><br></code></pre></td></tr></table></figure><h3 id="在文本中使用脚注">在文本中使用脚注</h3><p>在 <code>Fluid</code> 主题中支持自动生成脚注的引用，相关说明参考<ahref="https://hexo.fluid-dev.com/docs/guide/#脚注">配置指南 | Hexo Fluid用户手册 (fluid-dev.com)</a>，下面是一个演示：</p><p>这是一句话<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="这是对应的脚注">[1]</span></a></sup> ，下面有脚注。</p><p>相关的 <code>Markdown</code>语法是，建议把所有的脚注放在文章末尾，方便管理：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">这是一句话\[^1\]，下面有脚注。<br></code></pre></td></tr></table></figure><h3 id="tag插件">Tag插件</h3><p><code>Fluid</code>主题还内置了一些相关的Tag插件可以使用，详细的说明参考<ahref="https://hexo.fluid-dev.com/docs/guide/#脚注">配置指南 | Hexo Fluid用户手册 (fluid-dev.com)</a>。</p><p>在 markdown 中加入如下的代码来使用便签：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% note success %&#125;<br>文字 或者 <span class="hljs-code">`markdown`</span> 均可<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure><p>或者使用 HTML 形式：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-primary&quot;</span>&gt;</span>标签<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure><p>效果展示：</p><p class="note note-primary">标签</p><div class="note note-success">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><p>可选便签：</p><ul><li><p>primary</p></li><li><p>secondary</p></li><li><p>success</p></li><li><p>danger</p></li><li><p>warning</p></li><li><p>info</p></li><li><p>light</p></li></ul><div class="note note-warning">            <p>使用时 <code>&amp;{&amp;% note primary &amp;%&amp;}</code> 和<code>&amp;{&amp;% endnote &amp;%&amp;}</code>需单独一行，否则会出现问题</p>          </div><h4 id="行内标签">行内标签</h4><p>在 markdown 中加入如下的代码来使用 Label：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% label primary @text %&#125;<br></code></pre></td></tr></table></figure><p>可选 Label：</p><span class="label label-primary">primary</span><span class="label label-default">default</span><span class="label label-info">info</span><span class="label label-success">success</span><span class="label label-warning">warning</span><span class="label label-danger">danger</span><h4 id="折叠块">折叠块</h4><p>使用折叠块，可以折叠代码、图片、文字等任何内容，你可以在 markdown中按如下格式：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% fold info @title %&#125;<br>需要折叠的一段内容，支持 markdown<br>&#123;% endfold %&#125;<br></code></pre></td></tr></table></figure><p>info: 和行内标签类似的可选参数 title:折叠块上的标题，下面是一些例子。</p>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-b5714680" role="button" aria-expanded="false" aria-controls="collapse-b5714680">        <div class="fold-arrow">▶</div>折叠文字      </div>      <div class="fold-collapse collapse" id="collapse-b5714680">        <div class="fold-content">          <p>需要折叠的一段内容，支持 markdown</p>        </div>      </div>    </div>    <div class="fold">      <div class="fold-title fold-primary collapsed" data-toggle="collapse" href="#collapse-12442369" role="button" aria-expanded="false" aria-controls="collapse-12442369">        <div class="fold-arrow">▶</div>折叠代码      </div>      <div class="fold-collapse collapse" id="collapse-12442369">        <div class="fold-content">          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span> &#123;<br>    System.out.println(<span class="hljs-string">&quot;Hello World!&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>        </div>      </div>    </div>    <div class="fold">      <div class="fold-title fold-success collapsed" data-toggle="collapse" href="#collapse-8e37f58b" role="button" aria-expanded="false" aria-controls="collapse-8e37f58b">        <div class="fold-arrow">▶</div>折叠图片      </div>      <div class="fold-collapse collapse" id="collapse-8e37f58b">        <div class="fold-content">          <figure><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /><figcaption aria-hidden="true">banner</figcaption></figure>        </div>      </div>    </div><h4 id="勾选框">勾选框</h4><p>在 markdown 中加入如下的代码来使用 Checkbox：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% cb text, checked?, incline? %&#125;<br></code></pre></td></tr></table></figure><p>text：显示的文字 checked：默认是否已勾选，默认 false incline:是否内联（可以理解为后面的文字是否换行），默认 false</p><p>示例：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% cb 普通示例 %&#125;<br><br>&#123;% cb 默认选中, true %&#125;<br><br>&#123;% cb 内联示例, false, true %&#125; 后面文字不换行<br><br>&#123;% cb false %&#125; 也可以只传入一个参数，文字写在后边（这样不支持外联）<br></code></pre></td></tr></table></figure><div>            <input type="checkbox"  >普通示例          </div><div>            <input type="checkbox"  checked="checked">默认选中          </div>            <input type="checkbox"  >内联示例          <p>后面文字不换行</p><input type="checkbox" disabled ><p>也可以只传入一个参数，文字写在后边（这样不支持外联）</p><h4 id="按钮">按钮</h4><p>你可以在 markdown 中加入如下的代码来使用 Button：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% btn url, text, title %&#125;<br></code></pre></td></tr></table></figure><p>或者使用 HTML 形式：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>text<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure><p>url：跳转链接 text：显示的文字title：鼠标悬停时显示的文字（可选）</p><p>效果展示：</p><a class="btn" href="url"  title="title" target="_blank">text</a><p><a class="btn" href="url" title="title">text</a></p><h4 id="组图">组图</h4><p>如果想把多张图片按一定布局组合显示，你可以在 markdown中按如下格式：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% gi total n1-n2-... %&#125;<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>&#123;% endgi %&#125;<br></code></pre></td></tr></table></figure><p>total：图片总数量，对应中间包含的图片 url 数量n1-n2-...：每行的图片数量，可以省略，默认单行最多 3 张图，求和必须相等于total，否则按默认样式。下面是示例：</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/about.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="about" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/about.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="about" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/about.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="about" /></div></div></div><hr /><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="banner" /></div></div></div><hr /><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/home.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="home" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/home.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="home" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/home.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="home" /></div><div class="group-image-wrap"><img src="/imgs/posts/2023/12/03/home.jpg" srcset="/imgs/banner/loading.jpg" lazyload alt="home" /></div></div></div><h3 id="latex数学公式">LaTeX数学公式</h3><div class="note note-info">            <p>Hexo 5.0 以上，可尝试 Hexo 官方的 <ahref="https://github.com/hexojs/hexo-math">hexo-math (opens newwindow)</a>插件，支持更多定制化参数，使用方式参照链接内的文档，以下介绍的是主题内置的LaTeX 功能。</p>          </div><p>当需要使用 <ahref="https://www.latex-project.org/help/documentation/">LaTeX (opensnewwindow)</a>语法的数学公式时，可手动开启本功能，需要完成三步操作：</p><p><strong>1. 设置主题配置</strong></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post:</span><br>  <span class="hljs-attr">math:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">specific:</span> <span class="hljs-literal">false</span><br>    <span class="hljs-attr">engine:</span> <span class="hljs-string">mathjax</span><br></code></pre></td></tr></table></figure><p><code>specific</code>: 建议开启。当为 true 时，只有在文章 <ahref="https://hexo.io/zh-cn/docs/front-matter">front-matter (opens newwindow)</a>里指定 <code>math: true</code>才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度。</p><p><code>engine</code>: 公式引擎，目前支持 <code>mathjax</code> 或<code>katex</code>。</p><p><strong>2. 更换 Markdown 渲染器</strong></p><p>由于 Hexo 默认的 Markdown渲染器不支持复杂公式，所以需要更换渲染器（mathjax 可选择性更换）。</p><p>然后根据上方配置不同的 <code>engine</code>，推荐更换如下渲染器：</p><p>mathjax</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm uninstall hexo-renderer-marked --save<br>npm install hexo-renderer-pandoc --save<br></code></pre></td></tr></table></figure><p><strong>并且还需<ahref="https://github.com/jgm/pandoc/blob/master/INSTALL.md">安装Pandoc(opens new window)</a></strong></p><p>katex</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm uninstall hexo-renderer-marked --save<br>npm install hexo-renderer-markdown-it --save<br>npm install @traptitech/markdown-it-katex --save<br></code></pre></td></tr></table></figure><p>然后在<strong>站点配置</strong>中添加：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">markdown:</span><br>  <span class="hljs-attr">plugins:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;@traptitech/markdown-it-katex&quot;</span><br></code></pre></td></tr></table></figure><p><strong>3. 安装完成后执行 <code>hexo clean</code></strong></p><p>书写公式的格式：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">$$<br>E=mc^2<br>$$<br></code></pre></td></tr></table></figure><p>数学公式行间示例： <span class="math display">\[E = mc^2\]</span> 没有意义的行内展示：<span class="math inline">\(h =\frac{v}{2}\)</span>。</p><div class="note note-warning">            <ul><li>如果公式没有被正确渲染，请仔细检查是否符合上面三步操作。</li><li>不可以同时安装多个渲染插件，包括 <code>hexo-math</code> 或者<code>hexo-katex</code> 这类插件，请注意检查<code>package.json</code>。</li><li>如果更换公式引擎，对应渲染器也要一并更换。</li><li>不同的渲染器，可能会导致一些 Markdown语法不支持，或者渲染样式有细微差异。</li><li>自定义页面默认不加载渲染，如需使用，需在 front-matter 中指定<code>math: true</code></li></ul>          </div><h3 id="文档内部任意跳转">文档内部任意跳转</h3><p>文档内部任意跳转主要是方便某些较长的文章在某个地方要引用到文章自身的某个段落或者标题，或者要建立类似于目录之类的方便跳转的关系。比如下面的代码就实现了跳转到<code>创建博客文章</code> 标题和跳转到 <code>本地预览</code>标题下的第一段的功能：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--跳转到标题--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;anchor1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>### 创建博客文章<br>...<br>[跳转到 `创建博客文章` 标题](#anchor1)<br><br><span class="hljs-comment">&lt;!--跳转到段落--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;anchor2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>要本地预览编辑完的博客可以使用 `hexo clean` 清除缓存，然后用 `hexo g` 生成必要的文件，然后执行 `hexo s` 来启动本地的服务，之后在浏览器打开 `http://localhost:4000/` 就能看到编辑完之后的效果。如果效果满意就可以准备推送到远程仓库了。<br>...<br>[跳转到 `本地预览` 标题下的第一段](#anchor2)<br></code></pre></td></tr></table></figure><p>效果展示：</p><p><a href="#anchor1">跳转到 <code>创建博客文章</code> 标题</a></p><p><a href="#anchor2">跳转到 <code>本地预览</code>标题下的第一段</a></p><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>这是对应的脚注<a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
     
     
     <categories>
@@ -2939,13 +2939,13 @@
     
     <tags>
       
+      <tag>Tool</tag>
+      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
       
       <tag>Website</tag>
-      
-      <tag>Tool</tag>
       
     </tags>
     

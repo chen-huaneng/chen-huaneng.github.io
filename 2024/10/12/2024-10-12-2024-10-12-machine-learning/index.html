@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/12/banner.webp">
 <meta property="article:published_time" content="2024-10-12T02:00:29.000Z">
-<meta property="article:modified_time" content="2024-10-15T04:09:13.053Z">
+<meta property="article:modified_time" content="2024-10-15T14:44:40.632Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Math">
 <meta property="article:tag" content="Machine Learning">
@@ -260,7 +260,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 2.3k 
+          文章字数: 3k 
         
       </span>
     
@@ -272,7 +272,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 20 分钟
+          阅读全文大概需要 25 分钟
         
       </span>
     
@@ -323,7 +323,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-10-15T12:09:13+08:00
+                    本文最后更新于：2024-10-15T22:44:40+08:00
                   
                   
 
@@ -333,7 +333,11 @@
             
               <div class="markdown-body">
                 
-                <h2 id="环境配置">环境配置</h2>
+                <blockquote>
+<p>注：关于参考文献的格式可以参考<a
+target="_blank" rel="noopener" href="https://lib.tsinghua.edu.cn/info/1147/3359.htm">清华大学的研究帮助</a>，本文没有严格按照参考文献的格式引用。</p>
+</blockquote>
+<h2 id="环境配置">环境配置</h2>
 <h3 id="创建虚拟环境">创建虚拟环境</h3>
 <p>由于较新的版本可能出现部分库不兼容的问题，因此本文采用
 <code>Python 3.8</code>，推荐使用 <code>Conda</code> 来隔离不同的
@@ -489,6 +493,26 @@ target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Occam%27s_raz
 Razor）</a>：在同样能够解释已知观测现象的假设中，我们应该挑选“最简单”的那一个。对于模型的设计而言，我们应该选择简单、合适的模型解决复杂的问题。</p>
 <p><strong>方法三：降低特征的数量</strong></p>
 <p>对于一些特征工程而言，可以降低特征的数量——删除冗余特征，人工选择保留哪些特征。这种方法也可以解决过拟合问题。</p>
+<h4
+id="误差error偏差bias方差variance以及噪声noise之间的关系23">误差（Error），偏差（Bias），方差（Variance）以及噪声（Noise）之间的关系<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[机器学习 -偏差与方差 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/397672531)">[2]</span></a></sup><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[误差，偏差，方差，噪声的关系 | GitHub (ustccoder.github.io)](https://ustccoder.github.io/2020/05/19/deep learning variance bias/)">[3]</span></a></sup></h4>
+<p>在前面提到了模型的过拟合和欠拟合，那么应该如何刻画这两种情况，或者换句话说，对学习算法除了通过实验估计其泛化性能之外，还能通过什么方式去评估学习算法的好坏，它为什么具有这样的性能。“偏差-方差分解”（bias-variance
+decomposition）就是从偏差和方差的角度来解释学习算法泛化性能的一种重要工具。</p>
+<p>在机器学习中，我们用训练数据集去训练一个模型，通常的做法是定义一个误差（Loss）函数，通过将这个误差的最小化过程，来提高模型的性能。在训练数据集上得到的Loss称之为<strong>训练误差（training
+error）</strong>，在测试集上得到的Loss称之为<strong>泛化误差（generalization
+error）</strong>，也即学习模型对训练数据集的预测值和训练数据集的真实值之间的差异叫训练误差，学习模型对新样本（可以是测试集）数据的预测值和真实值之间的差异叫泛化误差。</p>
+<p>泛化误差可以通过数学上的变换<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="周志华. 机器学习[M]. 北京：清华大学出版社，2016: 44.">[4]</span></a></sup>将其分解为偏差（Bias）、方差（Variance）和噪声（Noise）。</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2024/10/12/formula1.png" srcset="/imgs/banner/loading.jpg" lazyload /></div></div><div class="group-image-row"><div class="group-image-wrap"><img
+src="/imgs/posts/2024/10/12/formula2.png" srcset="/imgs/banner/loading.jpg" lazyload /></div></div></div>
+<p>然而我们训练一个学习模型的目的是为了解决训练数据集这个领域中的一般化问题，而不是针对训练数据集这个特定集合的问题，因此单纯地将训练数据集的损失最小化，并不能保证在解决更一般的问题时模型仍然是最优，甚至不能保证模型是可用的。</p>
+<p>比如拿热带雨林的树叶作为训练数据集来训练识别树叶的学习模型，我们希望得到的模型应该能够识别所有的树叶，但是这个模型可能在识别寒带、温带的树叶时表现就不好，甚至不能正确识别树叶。</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2024/10/12/leaf1.jfif" srcset="/imgs/banner/loading.jpg" lazyload /></div><div class="group-image-wrap"><img
+src="/imgs/posts/2024/10/12/leaf2.jfif" srcset="/imgs/banner/loading.jpg" lazyload /></div></div></div>
 <section class="footnotes">
 <h2>
 References
@@ -500,6 +524,26 @@ References
 target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/72038532">欠拟合、过拟合及如何防止过拟合
 - 知乎 (zhihu.com)</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:2"
+class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/397672531">机器学习
+-偏差与方差 - 知乎 (zhihu.com)</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:3" class="footnote-text"><span><a
+target="_blank" rel="noopener" href="https://ustccoder.github.io/2020/05/19/deep%20learning%20variance%20bias/">误差，偏差，方差，噪声的关系
+| GitHub (ustccoder.github.io)</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:4" class="footnote-text"><span>周志华. 机器学习[M].
+北京：清华大学出版社，2016: 44.
+<a href="#fnref:4" rev="footnote" class="footnote-backref">
 ↩︎</a></span></span>
 </li>
 </ol>
