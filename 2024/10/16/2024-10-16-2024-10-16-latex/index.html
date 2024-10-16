@@ -1,0 +1,1346 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar_round.png">
+  <link rel="icon" href="/imgs/banner/avatar_round.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Abel">
+  <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
+  
+    <meta name="description" content="本文主要介绍了LaTeX的基本用法并给出了一些参考资料以供学习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTeX - 简单入门">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/10/16/2024-10-16-2024-10-16-latex/index.html">
+<meta property="og:site_name" content="Abel&#39;s Blog">
+<meta property="og:description" content="本文主要介绍了LaTeX的基本用法并给出了一些参考资料以供学习。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/16/banner2.webp">
+<meta property="article:published_time" content="2024-10-16T08:55:30.000Z">
+<meta property="article:modified_time" content="2024-10-16T10:13:51.223Z">
+<meta property="article:author" content="Abel">
+<meta property="article:tag" content="Math">
+<meta property="article:tag" content="Tool">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/16/banner2.webp">
+  
+  
+  
+  <title>LaTeX - 简单入门 - Abel&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/scrollbar.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.jpg","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>AbelのBlog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友情链接</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/imgs/posts/2024/10/16/banner2.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="LaTeX - 简单入门"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-10-16 16:55" pubdate>
+          2024年10月16日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          文章字数: 3.3k 
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          阅读全文大概需要 28 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          阅读次数: <span id="leancloud-page-views"></span> 
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">LaTeX - 简单入门</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于：2024-10-16T18:13:51+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="latex-介绍"><span class="math inline">\(\LaTeX\)</span>
+介绍</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://sspai.com/post/77684#!">LaTeX使用指南：从入门到精通
+- 少数派 (sspai.com)</a></li>
+</ul>
+<h2 id="如何学习-latex">如何学习 <span
+class="math inline">\(\LaTeX\)</span></h2>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://csdiy.wiki/%E5%BF%85%E5%AD%A6%E5%B7%A5%E5%85%B7/LaTeX/">LaTeX
+- CS自学指南 (csdiy.wiki)</a></li>
+</ul>
+<blockquote>
+<p>快速入门 <span class="math inline">\(\LaTeX\)</span> ：</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.overleaf.com/learn/latex/Free_online_introduction_to_LaTeX_(part_1)">Free
+online introduction to LaTeX (part 1) - Overleaf, Online LaTeX
+Editor</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.overleaf.com/learn/latex/Free_online_introduction_to_LaTeX_(part_2)">Free
+online introduction to LaTeX (part 2) - Overleaf, Online LaTeX
+Editor</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.overleaf.com/learn/latex/Free_online_introduction_to_LaTeX_(part_3)">Free
+online introduction to LaTeX (part 3) - Overleaf, Online LaTeX
+Editor</a></li>
+</ul>
+</blockquote>
+<h2 id="如何使用-latex">如何使用 <span
+class="math inline">\(\LaTeX\)</span></h2>
+<h3 id="使用本地编辑器">使用本地编辑器</h3>
+<p>怎么下载编辑器：<a
+target="_blank" rel="noopener" href="https://github.com/OsbertWang/install-latex-guide-zh-cn">OsbertWang/install-latex-guide-zh-cn:
+一份简短的关于 LaTeX 安装的介绍 (github.com)</a></p>
+<blockquote>
+<p><span class="math inline">\(\TeX\)</span> Live 指南</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.tug.org/texlive/doc/texlive-en/texlive-en.pdf">texlive-en.pdf
+(tug.org)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf">texlive-zh-cn.pdf
+(tug.org)</a></li>
+</ul>
+</blockquote>
+<h3 id="使用其他编辑器">使用其他编辑器</h3>
+<h5 id="选择合适的编辑器">选择合适的编辑器</h5>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Comparison_of_TeX_editors">Comparison
+of TeX editors - Wikipedia</a></li>
+</ul>
+<h5 id="vim">Vim</h5>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/vim-latex/">Vim-Latex
+download | SourceForge.net</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.ejmastnak.com/tutorials/vim-latex/intro/">Turbocharged
+LaTeX using Vim/Neovim, VimTeX, and snippets | ejmastnak</a></li>
+</ul>
+<h5 id="vs-code">VS Code</h5>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/OsbertWang/latex-editor-sumatrapdf">OsbertWang/latex-editor-sumatrapdf:
+记录一下一些 LaTeX 编辑器如何配合 sumatrapdf (github.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/EthanDeng/vscode-latex">EthanDeng/vscode-latex:
+LaTeX 编译环境配置：Visual Studio Code 配置简介 (github.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/James-Yu/LaTeX-Workshop/wiki">Home ·
+James-Yu/LaTeX-Workshop Wiki (github.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
+舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/166523064">Visual Studio Code
+(vscode)配置LaTeX - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38178015">使用VSCode编写LaTeX
+- 知乎 (zhihu.com)</a></li>
+</ul>
+<h3 id="使用在线编辑器">使用在线编辑器</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.overleaf.com/">Overleaf, Online LaTeX
+Editor</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.latexlive.com/">在线LaTeX公式编辑器-编辑器
+(latexlive.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://latex.codecogs.com/eqneditor/editor.php">Online
+LaTeX Equation Editor - create, integrate and download
+(codecogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.texpage.com/">TeXPage - LaTeX 在线编辑器 |
+LaTeX 在线编译</a></li>
+<li><a target="_blank" rel="noopener" href="https://editor.codecogs.com/">Equation Editor for online
+mathematics - create, integrate and download (codecogs.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="http://www.sciweavers.org/free-online-latex-equation-editor">Online
+Latex Equation Editor - Sciweavers</a></li>
+</ul>
+<h2 id="latex-编辑技巧"><span class="math inline">\(\LaTeX\)</span>
+编辑技巧</h2>
+<h3 id="模板">模板</h3>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/379360037">【LaTeX】自用简洁模板（三）：课程笔记
+- 知乎 (zhihu.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/Wandmalfarbe/pandoc-latex-template">Wandmalfarbe/pandoc-latex-template:
+A pandoc LaTeX template to convert markdown files to PDF or LaTeX.
+(github.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/latexstudio-org/mcmthesis">latexstudio-org/mcmthesis:
+LaTeX2e Template designed for MCM/ICM (github.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/F5Soft/xmu-template">F5Soft/xmu-template:
+厦门大学本科毕业论文 LaTeX 模版和毕业答辩幻灯片 LaTeX 模版
+(github.com)</a></li>
+</ul>
+<h3 id="宏包">宏包</h3>
+<h4 id="各种宏包的作用">各种宏包的作用</h4>
+<ul>
+<li>beamer: for presentations</li>
+<li>todonotes: comments and TODO management</li>
+<li>tikz: make amazing graphics</li>
+<li>pgfplots: create graphs in $$</li>
+<li>listings: source code printer for <span
+class="math inline">\(\LaTeX\)</span></li>
+<li><a target="_blank" rel="noopener" href="https://www.ctan.org/pkg/spreadtab">spreadtab</a>: create
+spreadsheets in <span class="math inline">\(\LaTeX\)</span></li>
+<li>gchords, guitar: guitar chords and tabulature</li>
+<li>cwpuzzle: crossword puzzles</li>
+<li>geometry: 设置页面参数（页边距、页眉、页脚、纸张大小等）</li>
+<li>multicol: 在一个页面中分多栏</li>
+<li>fancyhdr: 改善页眉页脚样式的定义方式</li>
+<li><a
+target="_blank" rel="noopener" href="https://www.ams.org/arc/resources/amslatex-about.html">AMS-LaTeX</a>:
+数学公式amsmath包
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://reformship.github.io/pages/1capacity/4writing/LaTeX公式.pdf">LaTeX公式.pdf
+(reformship.github.io)</a> - 中文版数学公式速查手册</li>
+<li><a
+target="_blank" rel="noopener" href="https://ftp.kddilabs.jp/CTAN/info/short-math-guide/short-math-guide.pdf">short-math-guide.pdf
+(kddilabs.jp)</a> - 英文版数学公式速查手册</li>
+</ul></li>
+</ul>
+<h4 id="有关宏包的文档">有关宏包的文档</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.overleaf.com/latex/examples">Examples -
+Equations, Formatting, TikZ, Packages and More - Overleaf, Online LaTeX
+Editor</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.overleaf.com/latex/examples">Examples -
+Equations, Formatting, TikZ, Packages and More - Overleaf, Online LaTeX
+Editor</a></li>
+<li><a target="_blank" rel="noopener" href="https://mirrors.sustech.edu.cn/CTAN/">The CTAN archive
+(sustech.edu.cn)</a> - 基本上所有的宏包都能在这里和其他镜像站点找到</li>
+</ul>
+<h3 id="在-latex-中如何输出中文">在 <span
+class="math inline">\(\LaTeX\)</span> 中如何输出中文</h3>
+<h4 id="使用-ctex-宏集首选">使用 CTeX 宏集（首选）</h4>
+<p><strong>以 UTF-8 编码保存，使用 XeLaTeX 编译</strong>：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>[UTF8]&#123;ctexart&#125;<br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br>	你好，world!<br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="使用-xecjk-宏包">使用 xeCJK 宏包</h4>
+<p>使用XeLaTeX编译：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>&#123;article&#125;<br><span class="hljs-keyword">\usepackage</span>&#123;xeCJK&#125; <span class="hljs-comment">%调用 xeCJK 宏包</span><br><span class="hljs-keyword">\setCJKmainfont</span>&#123;SimSun&#125; <span class="hljs-comment">%设置 CJK 主字体为 SimSun （宋体）</span><br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br>你好，world!<br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></td></tr></table></figure>
+<p>此种方式适用于有特定文档类型的情况，如 beamer。</p>
+<h3 id="文本模式">文本模式</h3>
+<h4 id="语法查询手册">语法查询手册</h4>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://flowus.cn/latex/share/66110e84-b24a-4cd5-b8a7-2ba2afb35a30">常用
+LaTeX 代码 (flowus.cn)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/456055339">【LaTeX】新手教程：从入门到日常使用
+- 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/451875135">LaTeX 常用语法汇总
+- 知乎 (zhihu.com)</a></li>
+</ul>
+<blockquote>
+<p>数学公式查询手册：</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/veager/articles/15874130.html">LaTeX 入门
+- 数学公式 - veager - 博客园 (cnblogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.uinio.com/Math/LaTex/">通用 LaTeX
+数学公式语法手册 - UinIO.com 电子技术博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/110756681">LaTeX 公式篇 - 知乎
+(zhihu.com)</a></li>
+</ul>
+</blockquote>
+<h4 id="上标下标">上标，下标</h4>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/262907455">如何用latex编写上标、下标？
+- 知乎 (zhihu.com)</a></li>
+</ul>
+<h4 id="图片">图片</h4>
+<h5 id="绘图">绘图</h5>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48300815">[LaTeX 绘图指南 -
+001] TikZ 的简介、资源以及学习方法 - 知乎 (zhihu.com)</a></li>
+</ul>
+<h5 id="插入图片">插入图片</h5>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/41322252/answer/1554995191">LaTeX
+如何让两张图并排显示？ - 知乎 (zhihu.com)</a></li>
+</ul>
+<h3 id="数学模式区别于文本模式">数学模式（区别于文本模式）</h3>
+<p>以下部分片段选自<a
+target="_blank" rel="noopener" href="https://liam.page/2014/09/08/latex-introduction/">一份其实很短的
+LaTeX 入门文档 | 始终 (liam.page)</a>。</p>
+<h4 id="行间公式和行内公式">行间公式和行内公式</h4>
+<p>首先在导言区导入<code>amsmath</code>宏包，使用<code>$...$</code>插入行内公式，使用<code>\[...\]</code>插入不带编号行间公式，如果需要对行间公式进行编号，可以使用<code>equation</code>环境：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;equation&#125;<br>...<br><span class="hljs-keyword">\end</span>&#123;equation&#125;<br></code></pre></td></tr></table></figure>
+<p>虽然也有其他的方式实现上述的需求，但是相比之下，上面所使用的实现方式在语法上更为简洁，故采用。</p>
+<p>行内公式也可以使用 <code>\(...\)</code> 或者 <code>\begin&#123;math&#125; ... \end&#123;math&#125;</code> 来插入，但略显麻烦。
+无编号的行间公式也可以使用 <code>\begin&#123;displaymath&#125; ... \end&#123;displaymath&#125;</code> 或者 <code>\begin&#123;equation*&#125; ... \end&#123;equation*&#125;</code> 来插入，但略显麻烦。（<code>equation*</code> 中的 <code>*</code> 表示环境不编号），也有
+plainTeX 风格的 <code>$$ ... $$</code> 来插入不编号的行间公式。但是在
+LaTeX 中这样做会改变行文的默认行间距，不推荐。</p>
+<h4 id="上下标">上下标</h4>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\documentclass</span>&#123;article&#125;<br><span class="hljs-keyword">\usepackage</span>&#123;amsmath&#125;<br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br>Einstein &#x27;s <span class="hljs-built_in">$</span>E=mc<span class="hljs-built_in">^</span>2<span class="hljs-built_in">$</span>.<br><br><span class="hljs-keyword">\[</span> E=mc<span class="hljs-built_in">^</span>2. <span class="hljs-keyword">\]</span><br><br><span class="hljs-keyword">\begin</span>&#123;equation&#125;<br>E=mc<span class="hljs-built_in">^</span>2.<br><span class="hljs-keyword">\end</span>&#123;equation&#125;<br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></td></tr></table></figure>
+<p>行内公式和行间公式对标点的要求是不同的：行内公式的标点，应该放在数学模式的限定符之外，而行间公式则应该放在数学模式限定符之内。</p>
+<p>在数学模式中，需要表示上标，可以使用 <code>^</code> 来实现（下标则是 <code>_</code>）。<strong>它默认只作用于之后的一个字符</strong>，如果想对连续的几个字符起作用，请将这些字符用花括号 <code>&#123;&#125;</code> 括起来，例如：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\[</span> z = r<span class="hljs-keyword">\cdot</span> e<span class="hljs-built_in">^</span>&#123;2<span class="hljs-keyword">\pi</span> i&#125;. <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+z = r\cdot e^{2\pi i}
+\]</span></p>
+<h4 id="根式与分式">根式与分式</h4>
+<p>根式用 <code>\sqrt&#123;·&#125;</code> 来表示，分式用 <code>\frac&#123;·&#125;&#123;·&#125;</code> 来表示（第一个参数为分子，第二个为分母）。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-built_in">$</span><span class="hljs-keyword">\sqrt</span>&#123;x&#125;<span class="hljs-built_in">$</span>, <span class="hljs-built_in">$</span><span class="hljs-keyword">\frac</span>&#123;1&#125;&#123;2&#125;<span class="hljs-built_in">$</span>.  <br>  <br><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\sqrt</span>&#123;x&#125;, <span class="hljs-keyword">\]</span>  <br>  <br><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\frac</span>&#123;1&#125;&#123;2&#125;. <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+\sqrt{x}, \frac{1}{2}
+\]</span></p>
+<p>可以发现，在行间公式和行内公式中，分式的输出效果是有差异的。如果要强制行内模式的分式显示为行间模式的大小，可以使用 <code>\dfrac</code>,
+反之可以使用 <code>\tfrac</code>。</p>
+<blockquote>
+<p>在行内写分式，你可能会喜欢 <code>xfrac</code> 宏包提供的 <code>\sfrac</code> 命令的效果。</p>
+</blockquote>
+<blockquote>
+<p>排版繁分式，你应该使用 <code>\cfrac</code> 命令。</p>
+</blockquote>
+<h4 id="运算符">运算符</h4>
+<p>一些小的运算符，可以在数学模式下直接输入；另一些需要用控制序列生成，如</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\pm</span><span class="hljs-keyword">\;</span> <span class="hljs-keyword">\times</span> <span class="hljs-keyword">\;</span> <span class="hljs-keyword">\div</span><span class="hljs-keyword">\;</span> <span class="hljs-keyword">\cdot</span><span class="hljs-keyword">\;</span> <span class="hljs-keyword">\cap</span><span class="hljs-keyword">\;</span> <span class="hljs-keyword">\cup</span><span class="hljs-keyword">\;</span><br><span class="hljs-keyword">\geq</span><span class="hljs-keyword">\;</span> <span class="hljs-keyword">\leq</span><span class="hljs-keyword">\;</span> <span class="hljs-keyword">\neq</span><span class="hljs-keyword">\;</span> <span class="hljs-keyword">\approx</span> <span class="hljs-keyword">\;</span> <span class="hljs-keyword">\equiv</span> <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+\pm\; \times \; \div\; \cdot\; \cap\; \cup\;
+\geq\; \leq\; \neq\; \approx \; \equiv
+\]</span></p>
+<p>连加、连乘、极限、积分等大型运算符分别用 <code>\sum</code>, <code>\prod</code>, <code>\lim</code>, <code>\int</code> 生成。他们的上下标在行内公式中被压缩，以适应行高。我们可以用 <code>\limits</code> 和 <code>\nolimits</code> 来强制显式地指定是否压缩这些上下标。例如：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-built_in">$</span> <span class="hljs-keyword">\sum</span><span class="hljs-built_in">_</span>&#123;i=1&#125;<span class="hljs-built_in">^</span>n i<span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\prod</span><span class="hljs-built_in">_</span>&#123;i=1&#125;<span class="hljs-built_in">^</span>n <span class="hljs-built_in">$</span><br><span class="hljs-built_in">$</span> <span class="hljs-keyword">\sum</span><span class="hljs-keyword">\limits</span> <span class="hljs-built_in">_</span>&#123;i=1&#125;<span class="hljs-built_in">^</span>n i<span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\prod</span><span class="hljs-keyword">\limits</span> <span class="hljs-built_in">_</span>&#123;i=1&#125;<span class="hljs-built_in">^</span>n <span class="hljs-built_in">$</span><br><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\lim</span><span class="hljs-built_in">_</span>&#123;x<span class="hljs-keyword">\to</span>0&#125;x<span class="hljs-built_in">^</span>2 <span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\int</span><span class="hljs-built_in">_</span>a<span class="hljs-built_in">^</span>b x<span class="hljs-built_in">^</span>2 dx <span class="hljs-keyword">\]</span><br><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\lim</span><span class="hljs-keyword">\nolimits</span> <span class="hljs-built_in">_</span>&#123;x<span class="hljs-keyword">\to</span>0&#125;x<span class="hljs-built_in">^</span>2<span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\int</span><span class="hljs-keyword">\nolimits</span><span class="hljs-built_in">_</span>a<span class="hljs-built_in">^</span>b x<span class="hljs-built_in">^</span>2 dx <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+\sum_{i=1}^n i\quad \prod_{i=1}^n
+\sum\limits _{i=1}^n i\quad \prod\limits _{i=1}^n
+\lim_{x\to0}x^2 \quad \int_a^b x^2 dx
+\lim\nolimits _{x\to0}x^2\quad \int\nolimits_a^b x^2 dx
+\]</span></p>
+<p>多重积分可以使用 <code>\iint</code>, <code>\iiint</code>, <code>\iiiint</code>, <code>\idotsint</code> 等命令输入。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\iint</span><span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\iiint</span><span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\iiiint</span><span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\idotsint</span> <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+\iint\quad \iiint\quad \iiiint\quad \idotsint
+\]</span></p>
+<h4 id="定界符括号等">定界符（括号等）</h4>
+<p>各种括号用 <code>()</code>, <code>[]</code>, <code>\&#123;\&#125;</code>, <code>\langle\rangle</code> 等命令表示；注意花括号通常用来输入命令和环境的参数，所以在数学公式中它们前面要加 <code>\</code>。因为
+LaTeX 中 <code>|</code> 和 <code>\|</code> 的应用过于随意，amsmath
+宏包推荐用 <code>\lvert\rvert</code> 和 <code>\lVert\rVert</code> 取而代之。</p>
+<p>为了调整这些定界符的大小，amsmath
+宏包推荐使用 <code>\big</code>, <code>\Big</code>, <code>\bigg</code>, <code>\Bigg</code> 等一系列命令放在上述括号前面调整大小。</p>
+<blockquote>
+<p>有时你可能会觉得 amsmath
+宏包提供的定界符放大命令不太够用。通常这意味着你的公式太过复杂。此时你应当首先考虑将公式中的部分提出去，以字母符号代替以简化公式。如果你真的想要排版如此复杂的公式，可以参考<a
+target="_blank" rel="noopener" href="https://liam.page/2018/11/09/the-bigger-than-bigger-delimiter-in-LaTeX/">这篇博文</a>。</p>
+</blockquote>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\Biggl</span>(<span class="hljs-keyword">\biggl</span>(<span class="hljs-keyword">\Bigl</span>(<span class="hljs-keyword">\bigl</span>((x)<span class="hljs-keyword">\bigr</span>)<span class="hljs-keyword">\Bigr</span>)<span class="hljs-keyword">\biggr</span>)<span class="hljs-keyword">\Biggr</span>) <span class="hljs-keyword">\]</span><br><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\Biggl</span>[<span class="hljs-keyword">\biggl</span>[<span class="hljs-keyword">\Bigl</span>[<span class="hljs-keyword">\bigl</span>[[x]<span class="hljs-keyword">\bigr</span>]<span class="hljs-keyword">\Bigr</span>]<span class="hljs-keyword">\biggr</span>]<span class="hljs-keyword">\Biggr</span>] <span class="hljs-keyword">\]</span><br><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\Biggl</span> <span class="hljs-keyword">\&#123;</span><span class="hljs-keyword">\biggl</span> <span class="hljs-keyword">\&#123;</span><span class="hljs-keyword">\Bigl</span> <span class="hljs-keyword">\&#123;</span><span class="hljs-keyword">\bigl</span> <span class="hljs-keyword">\&#123;</span><span class="hljs-keyword">\&#123;</span>x<span class="hljs-keyword">\&#125;</span><span class="hljs-keyword">\bigr</span> <span class="hljs-keyword">\&#125;</span><span class="hljs-keyword">\Bigr</span> <span class="hljs-keyword">\&#125;</span><span class="hljs-keyword">\biggr</span> <span class="hljs-keyword">\&#125;</span><span class="hljs-keyword">\Biggr</span><span class="hljs-keyword">\&#125;</span> <span class="hljs-keyword">\]</span><br><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\Biggl</span><span class="hljs-keyword">\langle</span><span class="hljs-keyword">\biggl</span><span class="hljs-keyword">\langle</span><span class="hljs-keyword">\Bigl</span><span class="hljs-keyword">\langle</span><span class="hljs-keyword">\bigl</span><span class="hljs-keyword">\langle</span><span class="hljs-keyword">\langle</span> x<br><span class="hljs-keyword">\rangle</span><span class="hljs-keyword">\bigr</span><span class="hljs-keyword">\rangle</span><span class="hljs-keyword">\Bigr</span><span class="hljs-keyword">\rangle</span><span class="hljs-keyword">\biggr</span><span class="hljs-keyword">\rangle</span><span class="hljs-keyword">\Biggr</span><span class="hljs-keyword">\rangle</span> <span class="hljs-keyword">\]</span><br><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\Biggl</span><span class="hljs-keyword">\lvert</span><span class="hljs-keyword">\biggl</span><span class="hljs-keyword">\lvert</span><span class="hljs-keyword">\Bigl</span><span class="hljs-keyword">\lvert</span><span class="hljs-keyword">\bigl</span><span class="hljs-keyword">\lvert</span><span class="hljs-keyword">\lvert</span> x<br><span class="hljs-keyword">\rvert</span><span class="hljs-keyword">\bigr</span><span class="hljs-keyword">\rvert</span><span class="hljs-keyword">\Bigr</span><span class="hljs-keyword">\rvert</span><span class="hljs-keyword">\biggr</span><span class="hljs-keyword">\rvert</span><span class="hljs-keyword">\Biggr</span><span class="hljs-keyword">\rvert</span> <span class="hljs-keyword">\]</span><br><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\Biggl</span><span class="hljs-keyword">\lVert</span><span class="hljs-keyword">\biggl</span><span class="hljs-keyword">\lVert</span><span class="hljs-keyword">\Bigl</span><span class="hljs-keyword">\lVert</span><span class="hljs-keyword">\bigl</span><span class="hljs-keyword">\lVert</span><span class="hljs-keyword">\lVert</span> x<br><span class="hljs-keyword">\rVert</span><span class="hljs-keyword">\bigr</span><span class="hljs-keyword">\rVert</span><span class="hljs-keyword">\Bigr</span><span class="hljs-keyword">\rVert</span><span class="hljs-keyword">\biggr</span><span class="hljs-keyword">\rVert</span><span class="hljs-keyword">\Biggr</span><span class="hljs-keyword">\rVert</span> <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) \\
+\Biggl[\biggl[\Bigl[\bigl[[x]\bigr]\Bigr]\biggr]\Biggr] \\
+\Biggl \{\biggl \{\Bigl \{\bigl \{\{x\}\bigr \}\Bigr \}\biggr \}\Biggr\}
+\\
+\Biggl\langle\biggl\langle\Bigl\langle\bigl\langle\langle x
+\rangle\bigr\rangle\Bigr\rangle\biggr\rangle\Biggr\rangle \\
+\Biggl\lvert\biggl\lvert\Bigl\lvert\bigl\lvert\lvert x
+\rvert\bigr\rvert\Bigr\rvert\biggr\rvert\Biggr\rvert \\
+\Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
+\rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert
+\]</span> <img src="/imgs/posts/2024/10/16/latex1.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<h4 id="省略号">省略号</h4>
+<p>略号用 <code>\dots</code>, <code>\cdots</code>, <code>\vdots</code>, <code>\ddots</code> 等命令表示。<code>\dots</code> 和 <code>\cdots</code> 的纵向位置不同，前者一般用于有下标的序列。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\[</span> x<span class="hljs-built_in">_</span>1,x<span class="hljs-built_in">_</span>2,<span class="hljs-keyword">\dots</span> ,x<span class="hljs-built_in">_</span>n<span class="hljs-keyword">\quad</span> 1,2,<span class="hljs-keyword">\cdots</span> ,n<span class="hljs-keyword">\quad</span><br><span class="hljs-keyword">\vdots</span><span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\ddots</span> <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+x_1,x_2,\dots ,x_n\quad 1,2,\cdots ,n\quad
+\vdots\quad \ddots
+\]</span></p>
+<h4 id="矩阵">矩阵</h4>
+<p><code>amsmath</code> 的 <code>pmatrix</code>, <code>bmatrix</code>, <code>Bmatrix</code>, <code>vmatrix</code>, <code>Vmatrix</code> 等环境可以在矩阵两边加上各种分隔符。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\[</span> <span class="hljs-keyword">\begin</span>&#123;pmatrix&#125; a<span class="hljs-built_in">&amp;</span>b<span class="hljs-keyword">\\</span>c<span class="hljs-built_in">&amp;</span>d <span class="hljs-keyword">\end</span>&#123;pmatrix&#125; <span class="hljs-keyword">\quad</span><br><span class="hljs-keyword">\begin</span>&#123;bmatrix&#125; a<span class="hljs-built_in">&amp;</span>b<span class="hljs-keyword">\\</span>c<span class="hljs-built_in">&amp;</span>d <span class="hljs-keyword">\end</span>&#123;bmatrix&#125; <span class="hljs-keyword">\quad</span><br><span class="hljs-keyword">\begin</span>&#123;Bmatrix&#125; a<span class="hljs-built_in">&amp;</span>b<span class="hljs-keyword">\\</span>c<span class="hljs-built_in">&amp;</span>d <span class="hljs-keyword">\end</span>&#123;Bmatrix&#125; <span class="hljs-keyword">\quad</span><br><span class="hljs-keyword">\begin</span>&#123;vmatrix&#125; a<span class="hljs-built_in">&amp;</span>b<span class="hljs-keyword">\\</span>c<span class="hljs-built_in">&amp;</span>d <span class="hljs-keyword">\end</span>&#123;vmatrix&#125; <span class="hljs-keyword">\quad</span><br><span class="hljs-keyword">\begin</span>&#123;Vmatrix&#125; a<span class="hljs-built_in">&amp;</span>b<span class="hljs-keyword">\\</span>c<span class="hljs-built_in">&amp;</span>d <span class="hljs-keyword">\end</span>&#123;Vmatrix&#125; <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+\begin{pmatrix} a&amp;b\\c&amp;d \end{pmatrix} \quad
+\begin{bmatrix} a&amp;b\\c&amp;d \end{bmatrix} \quad
+\begin{Bmatrix} a&amp;b\\c&amp;d \end{Bmatrix} \quad
+\begin{vmatrix} a&amp;b\\c&amp;d \end{vmatrix} \quad
+\begin{Vmatrix} a&amp;b\\c&amp;d \end{Vmatrix}
+\]</span></p>
+<p><img src="/imgs/posts/2024/10/16/latex2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p>使用 <code>smallmatrix</code> 环境，可以生成行内公式的小矩阵。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex">Marry has a little matrix <span class="hljs-built_in">$</span> ( <span class="hljs-keyword">\begin</span>&#123;smallmatrix&#125; a<span class="hljs-built_in">&amp;</span>b<span class="hljs-keyword">\\</span>c<span class="hljs-built_in">&amp;</span>d <span class="hljs-keyword">\end</span>&#123;smallmatrix&#125; ) <span class="hljs-built_in">$</span>.<br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+\text{Marry has a little matrix } ( \begin{smallmatrix} a&amp;b\\c&amp;d
+\end{smallmatrix} ) .
+\]</span></p>
+<p><img src="/imgs/posts/2024/10/16/latex3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<h4 id="多行公式">多行公式</h4>
+<p>有的公式特别长，我们需要手动为他们换行；有几个公式是一组，我们需要将他们放在一起；还有些类似分段函数，我们需要给它加上一个左边的花括号。</p>
+<h5 id="长公式">长公式</h5>
+<p><strong>不对齐</strong></p>
+<p>无须对齐的长公式可以使用 <code>multline</code> 环境。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;multline&#125;<br>x = a+b+c+&#123;&#125; <span class="hljs-keyword">\\</span><br>d+e+f+g<br><span class="hljs-keyword">\end</span>&#123;multline&#125;<br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+\begin{multline}
+x = a+b+c+{} \\
+d+e+f+g
+\end{multline}
+\]</span></p>
+<p><img src="/imgs/posts/2024/10/16/latex4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p>如果不需要编号，可以使用 <code>multline*</code> 环境代替。</p>
+<p><strong>对齐</strong></p>
+<p>需要对齐的公式，可以使用 <code>aligned</code> <em>次环境</em>
+来实现，它必须包含在数学环境之内。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\[</span><span class="hljs-keyword">\begin</span>&#123;aligned&#125;<br>x =&#123;&#125;<span class="hljs-built_in">&amp;</span> a+b+c+&#123;&#125; <span class="hljs-keyword">\\</span><br><span class="hljs-built_in">&amp;</span>d+e+f+g<br><span class="hljs-keyword">\end</span>&#123;aligned&#125;<span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+\begin{aligned}
+x ={}&amp; a+b+c+{} \\
+&amp;d+e+f+g
+\end{aligned}
+\]</span></p>
+<p><img src="/imgs/posts/2024/10/16/latex5.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<h5 id="公式组">公式组</h5>
+<p>无需对齐的公式组可以使用 <code>gather</code> 环境，需要对齐的公式组可以使用 <code>align</code> 环境。他们都带有编号，如果不需要编号可以使用带星花的版本。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;gather&#125;<br>a = b+c+d <span class="hljs-keyword">\\</span><br>x = y+z<br><span class="hljs-keyword">\end</span>&#123;gather&#125;<br><span class="hljs-keyword">\begin</span>&#123;align&#125;<br>a <span class="hljs-built_in">&amp;</span>= b+c+d <span class="hljs-keyword">\\</span><br>x <span class="hljs-built_in">&amp;</span>= y+z<br><span class="hljs-keyword">\end</span>&#123;align&#125;<br></code></pre></td></tr></table></figure>
+<p>效果展示：</p>
+<p><img src="/imgs/posts/2024/10/16/latex6.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<blockquote>
+<p>请注意，不要使用 <code>eqnarray</code> 环境。原因可以参考：</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="http://www.math.uiuc.edu/~hildebr/tex/displays.html"><code>eqnarray</code> 是糟糕的</a></li>
+<li><a
+target="_blank" rel="noopener" href="http://texblog.net/latex-archive/maths/eqnarray-align-environment/"><code>eqnarray</code> 是有害的</a></li>
+<li><a
+target="_blank" rel="noopener" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=eqnarray"><code>eqnarray</code> 是恼人的</a></li>
+<li><a
+target="_blank" rel="noopener" href="http://www.tug.org/pracjourn/2006-4/madsen/"><code>eqnarray</code> 是邪恶的</a></li>
+</ul>
+</blockquote>
+<h4 id="分段函数">分段函数</h4>
+<p>分段函数可以用<code>cases</code>次环境来实现，它必须包含在数学环境之内。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\[</span> y= <span class="hljs-keyword">\begin</span>&#123;cases&#125;<br>-x,<span class="hljs-keyword">\quad</span> x<span class="hljs-keyword">\leq</span> 0 <span class="hljs-keyword">\\</span><br>x,<span class="hljs-keyword">\quad</span> x&gt;0<br><span class="hljs-keyword">\end</span>&#123;cases&#125; <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
+<p>效果展示： <span class="math display">\[
+y= \begin{cases}
+-x,\quad x\leq 0 \\
+x,\quad x&gt;0
+\end{cases}
+\]</span></p>
+<p><img src="/imgs/posts/2024/10/16/latex7.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<h3 id="其他技巧">其他技巧</h3>
+<h4 id="只查看出错的代码">只查看出错的代码</h4>
+<p>使用工具宏包syntonly，加载这个宏包之后，在导言区使用<code>\syntonly</code>命令，可以使得LaTeX编译后不生成DVI或者PDF文档，只排查错误，编译速度会快不少：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\usepackage</span>&#123;syntonly&#125;<br><span class="hljs-keyword">\syntonly</span><br></code></pre></td></tr></table></figure>
+<p>如果想生成文档，用<code>%</code>注释掉<code>syntonly</code>命令就可以。</p>
+<h4 id="优化代码环境">优化代码环境</h4>
+<p>LaTeX原生支持代码环境verbatim，verbatim宏包优化了verbatim环境的内部命令，并提供了<code>\verbatiminput</code>命令用来直接读入文件生成代码环境。fancyvrb宏包提供了可定制格式的Verbatim环境；listings宏包更进一步，可生成关键字高亮的代码环境，支持各种程序设计语言的语法和关键字。</p>
+<h2 id="附录">附录</h2>
+<h3 id="在哪里可以找到资源">在哪里可以找到资源</h3>
+<ul>
+<li>🌟<a target="_blank" rel="noopener" href="https://tug.org/interest.html#editors">TeX Resources on
+the Web - TeX Users Group (tug.org)</a></li>
+</ul>
+<h3 id="相关的博客">相关的博客</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://castel.dev/">Home | Gilles Castel</a></li>
+<li><a target="_blank" rel="noopener" href="https://reformship.github.io/pages/index.html">模型视角
+(reformship.github.io)</a></li>
+</ul>
+<h3 id="有关的介绍">有关的介绍</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.overleaf.com/learn">Documentation - Overleaf,
+Online LaTeX Editor</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikibooks.org/wiki/LaTeX">LaTeX - Wikibooks,
+open books for an open world</a></li>
+</ul>
+<h3 id="有关的书籍">有关的书籍</h3>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/26645810/answer/33515971">自学
+LaTeX 可以读什么书入门？ - 知乎 (zhihu.com)</a></li>
+</ul>
+<blockquote>
+<p>一份（不太）简短的 LATEX 2ε 介绍：</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/CTeX-org/lshort-zh-cn">CTeX-org/lshort-zh-cn: A
+Chi­nese edi­tion of the Not So Short Introduction to LaTeX2ε
+(github.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://mirrors.pku.edu.cn/ctan/info/lshort/chinese/lshort-zh-cn.pdf">The
+Short Introduction to LaTeX2e (Chinese Simplified) (pku.edu.cn)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/info/lshort/">Index of
+/CTAN/info/lshort/ | 清华大学开源软件镜像站 | Tsinghua Open Source
+Mirror</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/info/lshort/chinese/">Index
+of /CTAN/info/lshort/chinese/ | 清华大学开源软件镜像站 | Tsinghua Open
+Source Mirror</a></li>
+</ul>
+</blockquote>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/stone-zeng/latex-talk">stone-zeng/latex-talk:
+Modern LaTeX in a Nutshell (github.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://liam.page/2014/09/08/latex-introduction/">一份其实很短的
+LaTeX 入门文档 | 始终 (liam.page)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/wklchris/Note-by-LaTeX">wklchris/Note-by-LaTeX:
+《简单粗暴 LaTeX》出版图书开源仓库 | The opensource repo for my
+published LaTeX book. (github.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://pics.latexstudio.net/uploads/20210525/a00919a39b58e6f12fc1f1915bf4f207.pdf">LaTeX-cn
+(latexstudio.net)</a></li>
+</ul>
+<h3 id="社区">社区</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.latexstudio.net/">LaTeX 工作室
+(latexstudio.net)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.latexstudio.net/hulatex/index.htm">LaTeX 编辑部
+(latexstudio.net)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.latexstudio.net/category/texshuji.html">TeX书籍
+- LaTeX科技排版工作室 (latexstudio.net)</a></li>
+<li><a target="_blank" rel="noopener" href="https://tex.stackexchange.com/">TeX - LaTeX Stack
+Exchange</a></li>
+<li><a target="_blank" rel="noopener" href="https://latex.org/forum/">LaTeX.org - Index page</a></li>
+<li><a target="_blank" rel="noopener" href="https://ctan.org/">CTAN: Comprehensive TeX Archive
+Network</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CTeX-org/forum/issues">Issues ·
+CTeX-org/forum (github.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/CTeX-org">Chinese TeX Society
+(github.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.latex-project.org/">LaTeX - A document
+preparation system (latex-project.org)</a></li>
+</ul>
+<h3 id="有用的工具">有用的工具</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://detexify.kirelabs.org/classify.html">Detexify LaTeX
+handwritten symbol recognition (kirelabs.org)</a> -
+允许用户用鼠标在输入区绘制单个数学符号的样式，系统会根据样式返回对应的
+<span class="math inline">\(\LaTeX\)</span>
+代码（和所需的宏包）。这在查询不熟悉的数学符号时特别有用。</li>
+<li><a target="_blank" rel="noopener" href="https://mathpix.com/">Mathpix: AI-powered document
+automation</a> - 能够通过热键呼出截屏，而后将截屏中的公式转换成 <span
+class="math inline">\(\LaTeX\)</span> 数学公式的代码。</li>
+</ul>
+<h3 id="相关的课程">相关的课程</h3>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://open.163.com/newview/movie/courseintro?newurl=NHKF1R5RB">西北农林科技大学公开课：LaTeX学习-网易公开课
+(163.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14g4y1q7pb/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">如何优雅的编辑数学公式？LaTeX公式入门_哔哩哔哩_bilibili</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1s7411U7Pr/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">刘海洋
+· LaTeX 不快速的入门 - 跟着大神学习最纯正的 LaTeX
+知识_哔哩哔哩_bilibili</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://space.bilibili.com/209746320">LaTeX_工作室的个人空间_哔哩哔哩_bilibili</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1sf4y1q7HK/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">如何用
+LaTeX 排版论文 - 汪彧之_哔哩哔哩_bilibili</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://math.ecnu.edu.cn/~jypan/Latex/index.html">LaTeX科技排版
+(ecnu.edu.cn)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/tuna/thulib-latex-talk">tuna/thulib-latex-talk:
+《如何使用 LaTeX 排版论文》讲稿 (github.com)</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/stone-zeng/latex-talk">stone-zeng/latex-talk:
+Modern LaTeX in a Nutshell (github.com)</a></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Tools/" class="category-chain-item">Tools</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Tools/LaTeX/" class="category-chain-item">LaTeX</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Math/" class="print-no-link">#Math</a>
+      
+        <a href="/tags/Tool/" class="print-no-link">#Tool</a>
+      
+        <a href="/tags/LaTeX/" class="print-no-link">#LaTeX</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>LaTeX - 简单入门</div>
+      <div>https://chen-huaneng.github.io/2024/10/16/2024-10-16-2024-10-16-latex/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Abel</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年10月16日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024年10月16日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/16/2024-10-16-2024-10-16-license/" title="Open Source License - 常见开源协议介绍">
+                        <span class="hidden-mobile">Open Source License - 常见开源协议介绍</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","appKey":"E986Wb0NvdKXW5IypTNvcH0T","path":"window.location.pathname","placeholder":"发一条友善的评论吧(为了方便交流,记得填上方的昵称和邮箱再留言哦~🍭)","avatar":"retro","meta":["nick","mail"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size: 0.85rem"> Copyright <i class="iconfont icon-copyright">  <script>document.write(new Date().getFullYear());</script> <a href="/about" target="_blank" rel="nofollow noopener"> <span> <strong>Abel</strong> </span> </a>  </i> | Power by  <a href="https://hexo.io" target="_blank" rel="nofollow noopener"> <span> <strong>Hexo</strong> </span> </a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <span> <strong>Fluid</strong> </span> </a> </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        <i class="iconfont icon-friends"></i>总访问量 
+        <span id="leancloud-site-pv"></span>
+         次 | 
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        <i class="iconfont icon-users"></i>总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/duration.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

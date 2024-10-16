@@ -21,16 +21,16 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="本文简要介绍了Data Mining的相关知识，包括Conda的基本使用和环境安装等内容。">
+    <meta name="description" content="本文简要介绍了Data Mining的相关知识，包括Conda的基本使用和环境安装、数据挖掘是什么、怎么评估和选择合适的模型等内容。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Data Mining - 简单入门">
+<meta property="og:title" content="Data Mining - 数据挖掘（一）简单入门">
 <meta property="og:url" content="https://chen-huaneng.github.io/2024/10/12/2024-10-12-2024-10-12-machine-learning/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="本文简要介绍了Data Mining的相关知识，包括Conda的基本使用和环境安装等内容。">
+<meta property="og:description" content="本文简要介绍了Data Mining的相关知识，包括Conda的基本使用和环境安装、数据挖掘是什么、怎么评估和选择合适的模型等内容。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/12/banner.webp">
 <meta property="article:published_time" content="2024-10-12T02:00:29.000Z">
-<meta property="article:modified_time" content="2024-10-16T04:09:36.986Z">
+<meta property="article:modified_time" content="2024-10-16T10:00:18.879Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Math">
 <meta property="article:tag" content="Machine Learning">
@@ -40,7 +40,7 @@
   
   
   
-  <title>Data Mining - 简单入门 - Abel&#39;s Blog</title>
+  <title>Data Mining - 数据挖掘（一）简单入门 - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -236,7 +236,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Data Mining - 简单入门"></span>
+            <span id="subtitle" data-typed-text="Data Mining - 数据挖掘（一）简单入门"></span>
           
         </div>
 
@@ -260,7 +260,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 5.9k 
+          文章字数: 7.6k 
         
       </span>
     
@@ -272,7 +272,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 50 分钟
+          阅读全文大概需要 64 分钟
         
       </span>
     
@@ -318,12 +318,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Data Mining - 简单入门</h1>
+            <h1 id="seo-header">Data Mining - 数据挖掘（一）简单入门</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-10-16T12:09:36+08:00
+                    本文最后更新于：2024-10-16T18:00:18+08:00
                   
                   
 
@@ -368,52 +368,19 @@ id="jupyter-notebook-可视化切换虚拟环境"><code>Jupyter Notebook</code>
 <p><img src="/imgs/posts/2024/10/12/jupyterlab3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <h3 id="conda-的基本使用"><code>Conda</code> 的基本使用</h3>
 <p><code>Conda</code> 是一个开源的包管理系统和环境管理器，常用于管理
-<code>Python</code> 和 <code>R</code> 语言的依赖包和虚拟环境。</p>
-<p>检查 <code>Conda</code> 版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure>
-<p>获取帮助：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure>
-<p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python
-版本：</p>
-<blockquote>
-<p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure>
-<p>在创建环境后，可以通过以下命令激活环境：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure>
-<p>要退出当前激活的环境，使用以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure>
-<p>如果想删除某个环境，可以使用以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure>
-<p>查看系统上所有的 <code>Conda</code> 环境：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure>
-<p>要在当前激活的环境中安装一个包（如
-<code>numpy</code>），使用以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure>
-<p>还可以指定安装包的版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure>
-<p>使用以下命令查看当前环境中已安装的包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure>
-<p>可以使用 <code>conda update</code> 命令升级指定的包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure>
-<p>也可以升级当前环境下所有的包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure>
-<p>如果需要删除某个包，使用以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure>
-<p>可以使用以下命令查找特定包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure>
-<p>可以将环境的配置导出为 <code>YAML</code>
-文件，方便在其他设备上重现相同环境：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure>
-<p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure>
-<p>可以克隆已有的环境：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure>
-<p>要更新 <code>conda</code> 本身，使用以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure>
-<p><code>Conda</code>
-会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure>
+<code>Python</code> 和 <code>R</code>
+语言的依赖包和虚拟环境（展开下面的折叠块查看常用的命令）。</p>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-b94e7bf6" role="button" aria-expanded="false" aria-controls="collapse-b94e7bf6">
+        <div class="fold-arrow">▶</div>Conda的常用命令
+      </div>
+      <div class="fold-collapse collapse" id="collapse-b94e7bf6">
+        <div class="fold-content">
+          <p>检查 <code>Conda</code> 版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>获取帮助：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure><p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python版本：</p><blockquote><p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure><p>在创建环境后，可以通过以下命令激活环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure><p>要退出当前激活的环境，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure><p>如果想删除某个环境，可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure><p>查看系统上所有的 <code>Conda</code> 环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure><p>要在当前激活的环境中安装一个包（如<code>numpy</code>），使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure><p>还可以指定安装包的版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure><p>使用以下命令查看当前环境中已安装的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure><p>可以使用 <code>conda update</code> 命令升级指定的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure><p>也可以升级当前环境下所有的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure><p>如果需要删除某个包，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure><p>可以使用以下命令查找特定包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure><p>可以将环境的配置导出为 <code>YAML</code>文件，方便在其他设备上重现相同环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure><p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure><p>可以克隆已有的环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure><p>要更新 <code>conda</code> 本身，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure><p><code>Conda</code>会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
 <h2 id="数据挖掘">数据挖掘</h2>
 <h3 id="什么是数据挖掘">什么是数据挖掘</h3>
 <p>数据挖掘（<strong>Data mining</strong>）：Extraction of interesting
@@ -451,7 +418,17 @@ interclass similarity</li>
 <li>Outlier(异常值) detection: Detecting significant deviation from
 normal behavior (predictive)</li>
 </ul>
-<h3 id="模型评估和选择">模型评估和选择</h3>
+<p>机器学习则是致力于研究如何通过计算的手段，利用经验来改善系统的性能。可以理解为计算机从数据中产生“模型”（model）的算法，即“学习算法”（learning
+algorithm）。</p>
+<p>机器学习作为计算机科学的重要分支，当然也和计算机科学的核心思想类似：给定一个输入空间（训练集、验证集等），通过学习算法实例化一个模型，用这个模型去预测、分类、检测、聚类测试集（或者是没见过的“新样本”）得到一个输出空间。</p>
+<p><img src="/imgs/posts/2024/10/12/blackbox.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p>学得模型适用于新样本的能力，称为“泛化”(generalization)能力。具有强泛化能力的模型能很好地适用于整个样本空间。于是，尽管训练集通常只是样本空间的一个很小的采样，我们仍希望它能很好地反映出样本空间的特性，否则就很难期望在训练集上学得的模型能在整个样本空间上都工作得很好。通常假设样本空间中全体样本服从一个未知“分布”(distribution)D,我们获得的每个样本都是独立地从这个分布上采样获得的,即“独立同分布”(independent
+and identicallydistributed,简称
+i.i.d.).一般而言,训练样本越多,我们得到的关于D的信息</p>
+<h3 id="过拟合欠拟合和误差">过拟合、欠拟合和误差</h3>
+<blockquote>
+<p>模型有时也称为“学习器”（learner），可以看作学习算法在给定数据和参数空间上的实例化。学习算法通常有参数需要设置，使用不同的参数值和（或）训练数据，将产生不同的结果。</p>
+</blockquote>
 <h4
 id="过拟合overfitting和欠拟合underfitting1">过拟合（Overfitting）和欠拟合（underfitting）<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span
 class="hint--top hint--rounded"
@@ -509,7 +486,7 @@ class="hint--top hint--rounded"
 aria-label="周志华. 机器学习[M]. 北京：清华大学出版社，2016: 44.">[4]</span></a></sup>将其分解为偏差（Bias）、方差（Variance）和噪声（Noise）。<a id="anchor1"></a></p>
 <p><img src="/imgs/posts/2024/10/12/formula1.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <p>然而我们训练一个学习模型的目的是为了解决训练数据集这个领域中的一般化问题，而不是针对训练数据集这个特定集合的问题，因此单纯地将训练数据集的损失最小化，并不能保证在解决更一般的问题时模型仍然是最优，甚至不能保证模型是可用的。</p>
-<p>比如拿热带雨林的树叶作为训练数据集来训练识别树叶的学习模型，我们希望得到的模型应该能够识别所有的树叶，但是这个模型可能在识别寒带、温带的树叶时表现就不好，甚至不能正确识别树叶。</p>
+<p>比如拿热带雨林的树叶作为训练数据集来训练识别树叶的学习模型，我们希望得到的模型应该能够识别所有的树叶，但是这个模型可能在识别寒带、温带的树叶时表现就不好，甚至不能正确识别树叶。<a id="anchor2"></a></p>
 <div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2024/10/12/leaf1.jfif" srcset="/imgs/banner/loading.jpg" lazyload /></div><div class="group-image-wrap"><img
 src="/imgs/posts/2024/10/12/leaf2.jfif" srcset="/imgs/banner/loading.jpg" lazyload /></div></div></div>
 <p>如果我们能够获得所有可能的数据集合，并在这个数据集合上将损失最小化，那么学习得到的模型就可以称之为“真实模型”。当然，在现实生活中我们不可能获取并训练所有可能的数据，所以即使“真实模型”存在，我们也无法获得，或者获得这个模型的成本过高。因此，我们的最终目的是学习一个模型使其更加接近这个真实模型。</p>
@@ -542,6 +519,17 @@ alt="bias-variance dilemma" />
 <figcaption aria-hidden="true">bias-variance dilemma</figcaption>
 </figure>
 <p>换句话说，<strong>随着模型复杂度，模型迭代次数的增加，方差和偏差可能会出现此消彼长的现象</strong>，训练不足，或者模型过于简单时会出现<strong>Under-fitting(欠拟合)</strong>，此时的模型误差主要来自于偏差，表现为模型在训练集和验证集上面的准确率都不高，说明出现了欠拟合。而训练太多，或者模型过于复杂时会出现<strong>Over-fitting(过拟合)</strong>，此时的模型误差主要来自于方差，表现为模型在训练集上的准确率非常高，但在验证集上面的准确率不高，说明出现了过拟合。</p>
+
+    <div class="fold">
+      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-f9ee5ff3" role="button" aria-expanded="false" aria-controls="collapse-f9ee5ff3">
+        <div class="fold-arrow">▶</div>训练集、验证集和测试集的区别和关系
+      </div>
+      <div class="fold-collapse collapse" id="collapse-f9ee5ff3">
+        <div class="fold-content">
+          <p>训练集、验证集和测试集这三个名词在机器学习领域极其常见，但很多人并不是特别清楚，尤其是后两个经常被人混用<sup id="fnref:5" class="footnote-ref"><a href="#fn:5" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[训练集，验证集，测试集分别是什么_训练集 验证集 测试集-CSDN博客](https://blog.csdn.net/qq_24884193/article/details/104071664)">[5]</span></a></sup>。</p><p>在有监督(supervised)的机器学习中，数据集常被分成2~3个，即：训练集(trainset)，验证集(validation set)，测试集(test set)。</p><figure><img src="/imgs/posts/2024/10/12/datamining9.png" srcset="/imgs/banner/loading.jpg" lazyloadalt="bias-variance dilemma" /><figcaption aria-hidden="true">bias-variance dilemma</figcaption></figure><p>如果给定的样本数据充足，我们通常使用均匀随机抽样的方式将数据集划分成3个部分——训练集、验证集和测试集，这三个集合不能有交集，常见的比例是8:1:1。需要注意的是，通常都会给定训练集和测试集，而不会给验证集。这时候验证集该从哪里得到呢？一般的做法是，从训练集中均匀随机抽样一部分样本作为验证集。</p><p><strong>训练集</strong>：训练集用来训练模型，即确定模型的权重和偏置这些参数，通常我们称这些参数为学习参数。</p><p><strong>验证集</strong>：而验证集用于模型的选择，更具体地来说，验证集并不参与学习参数的确定，也就是验证集并没有参与梯度下降的过程。验证集只是为了选择超参数，比如网络层数、网络节点数、迭代次数、学习率这些都叫超参数。比如在KNN算法中，K值就是一个超参数。所以可以使用验证集来求出误差率最小的K。</p><blockquote><p><strong>参数</strong>是模型中可被学习和调整的参数，通过训练数据进行学习和优化；而<strong>超参数</strong>则是手动设置的参数。</p></blockquote><p><strong>测试集</strong>：测试集只使用一次，即在训练完成后评价最终的模型时使用。它既不参与学习参数过程，也不参数超参数选择过程，而仅仅使用于模型的评价。值得注意的是，千万不能在训练过程中使用测试集，而后再用相同的测试集去测试模型。这样做其实是一个cheat，使得模型测试时准确率很高，或者说这时模型已经过拟合了。</p><p>为什么需要划分成三个部分呢？简而言之，这样做是为了防止过拟合。如果我们把所有数据都用来训练模型的话，建立的模型自然是最契合这些数据的，测试表现也好。但换了其它数据集测试这个模型效果可能就没那么好了。还是前面<ahref="#anchor2">树叶那个例子</a>，你把所有热带雨林的树叶都拿去训练了，这个模型识别热带雨林的树叶的效果很好，但是用寒带的树叶来测试这个模型，可能识别树叶的效果就没有识别热带雨林的树叶效果那么好。总而言之，训练集和测试集相同的话，模型评估结果可能比实际要好。</p><p>如果训练集比较小怎么办呢？这个时候<strong>交叉验证</strong>就登场了。因为训练集比较小，无法直接像前面那样直接分出训练集，验证集，测试集就可以了（简单交叉验证）。</p><p>需要说明的是，在实际情况下，人们不是很喜欢用交叉验证，主要是因为它会耗费较多的计算资源。一般直接把训练集按照50%-90%的比例分成训练集和验证集。但这也是根据具体情况来定的：如果超参数数量多，你可能就想用更大的验证集，而如果验证集的数量不够，那么最好还是用交叉验证吧。至于分成几份比较好，一般都是分成3、5和10份。</p><figure><img src="/imgs/posts/2024/10/12/datamining10.png" srcset="/imgs/banner/loading.jpg" lazyloadalt="bias-variance dilemma" /><figcaption aria-hidden="true">bias-variance dilemma</figcaption></figure><p>图最上面的部分表示我们拥有的数据，而后我们对数据进行了再次分割，主要是对训练集，假设将训练集分成5份（该数目被称为<strong>折数</strong>，5-fold交叉验证），每次都用其中4份来训练模型，黄色的那份用来验证4份训练出来的模型的准确率，记下准确率。然后再次在这5份中取另外4份做训练集，1份做验证集，再次得到一个模型的准确率，一共做五次（每个fold都做一次验证集）。直到所有5份都做过1次验证集，也即验证集名额循环了一圈，交叉验证的过程就结束。算得这5次准确率的均值，留下准确率最高的模型，即确定该模型的超参数，也即确定了最终模型的超参数。</p>
+        </div>
+      </div>
+    </div>
 <h4
 id="偏差方差和过拟合欠拟合的关系">偏差、方差和过拟合、欠拟合的关系</h4>
 <p>一般来说，简单的模型会有一个较大的偏差和较小的方差，复杂的模型偏差较小方差较大。</p>
@@ -599,6 +587,7 @@ CV = \frac{1}{K}\sum^K_{k=1}\frac{1}{m}\sum^m_{i=1}(\hat{f}^k-y_i)^2
 <li><strong>降低模型复杂度</strong>，或者采用早停，减少迭代周期。</li>
 <li><strong>交叉验证法</strong>。</li>
 </ol>
+<h3 id="评估方法">评估方法</h3>
 <section class="footnotes">
 <h2>
 References
@@ -630,6 +619,13 @@ target="_blank" rel="noopener" href="https://ustccoder.github.io/2020/05/19/deep
 <span id="fn:4" class="footnote-text"><span>周志华. 机器学习[M].
 北京：清华大学出版社，2016: 44.
 <a href="#fnref:4" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:5" class="footnote-text"><span><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qq_24884193/article/details/104071664">训练集，验证集，测试集分别是什么_训练集
+验证集 测试集-CSDN博客</a>
+<a href="#fnref:5" rev="footnote" class="footnote-backref">
 ↩︎</a></span></span>
 </li>
 </ol>
@@ -691,7 +687,7 @@ target="_blank" rel="noopener" href="https://ustccoder.github.io/2020/05/19/deep
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Data Mining - 简单入门</div>
+      <div>Data Mining - 数据挖掘（一）简单入门</div>
       <div>https://chen-huaneng.github.io/2024/10/12/2024-10-12-2024-10-12-machine-learning/</div>
     </div>
     <div class="license-meta">
