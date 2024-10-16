@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/12/banner.webp">
 <meta property="article:published_time" content="2024-10-12T02:00:29.000Z">
-<meta property="article:modified_time" content="2024-10-16T10:00:18.879Z">
+<meta property="article:modified_time" content="2024-10-16T10:21:14.977Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Math">
 <meta property="article:tag" content="Machine Learning">
@@ -323,7 +323,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-10-16T18:00:18+08:00
+                    本文最后更新于：2024-10-16T18:21:14+08:00
                   
                   
 
@@ -422,9 +422,13 @@ normal behavior (predictive)</li>
 algorithm）。</p>
 <p>机器学习作为计算机科学的重要分支，当然也和计算机科学的核心思想类似：给定一个输入空间（训练集、验证集等），通过学习算法实例化一个模型，用这个模型去预测、分类、检测、聚类测试集（或者是没见过的“新样本”）得到一个输出空间。</p>
 <p><img src="/imgs/posts/2024/10/12/blackbox.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
-<p>学得模型适用于新样本的能力，称为“泛化”(generalization)能力。具有强泛化能力的模型能很好地适用于整个样本空间。于是，尽管训练集通常只是样本空间的一个很小的采样，我们仍希望它能很好地反映出样本空间的特性，否则就很难期望在训练集上学得的模型能在整个样本空间上都工作得很好。通常假设样本空间中全体样本服从一个未知“分布”(distribution)D,我们获得的每个样本都是独立地从这个分布上采样获得的,即“独立同分布”(independent
-and identicallydistributed,简称
-i.i.d.).一般而言,训练样本越多,我们得到的关于D的信息</p>
+<p>学得模型适用于新样本的能力，称为“泛化”(generalization)能力。具有强泛化能力的模型能很好地适用于整个样本空间。于是，尽管训练集通常只是样本空间的一个很小的采样，我们仍希望它能很好地反映出样本空间的特性，否则就很难期望在训练集上学得的模型能在整个样本空间上都工作得很好。通常假设样本空间中全体样本服从一个未知“分布”(distribution)
+<span
+class="math inline">\(\mathcal{D}\)</span>，我们获得的每个样本都是独立地从这个分布上采样获得的，即“独立同分布”(independent
+and identically distributed，简称 <span
+class="math inline">\(i.i.d.\)</span>)。一般而言，训练样本越多，我们得到的关于
+<span class="math inline">\(\mathcal{D}\)</span>
+的信息越多，这样就越有可能通过学习获得具有强泛化能力的模型。</p>
 <h3 id="过拟合欠拟合和误差">过拟合、欠拟合和误差</h3>
 <blockquote>
 <p>模型有时也称为“学习器”（learner），可以看作学习算法在给定数据和参数空间上的实例化。学习算法通常有参数需要设置，使用不同的参数值和（或）训练数据，将产生不同的结果。</p>
