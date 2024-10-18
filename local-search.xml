@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Windows - 疑难问题解答记录</title>
+    <link href="/2024/10/18/2024-10-18-2024-10-18-windows/"/>
+    <url>/2024/10/18/2024-10-18-2024-10-18-windows/</url>
+    
+    <content type="html"><![CDATA[<h3 id="windows-users用户目录下看不到自己当前用户文件夹1">WindowsUsers用户目录下看不到自己当前用户文件夹<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[解决windows Users用户目录下看不到自己的问题_用户不在目录中-CSDN博客](https://blog.csdn.net/weixin_43031092/article/details/109115922)">[1]</span></a></sup></h3><p>一般来说，在 <code>C:\Users</code>这个路径下应该有一个当前用户的文件夹，比如在下面的图中应该有一个<code>Abel</code>的文件夹，并且查看选项中已经勾选了显示隐藏文件这一个选项：</p><p><img src="./windows.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>在查看菜单最右边有一个选项，单击打开“文件夹选项”，选中“查看”一栏，在高级设置里取消勾选“隐藏受操作系统保护的文件”，应用后就能看到自己的用户文件夹，最后选择确定。</p><p><img src="./windows2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="./windows3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="./windows4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><blockquote><p>提示：找到你想要的文件做好修改之后最后还是把这些文件隐藏显示会安全一点。</p></blockquote><h3id="重定向桌面路径和下载路径时不小心将下载路径和桌面路径合并了23">重定向桌面路径和下载路径时不小心将下载路径和桌面路径合并了<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[windows桌面和下载成一个文件夹了，怎么分开? - 知乎 (zhihu.com)](https://www.zhihu.com/question/457965061)">[2]</span></a></sup><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[不小心把桌面路径改成下载路径了现在下载文件夹变桌面文件夹了 - Microsoft Community](https://answers.microsoft.com/zh-hans/windows/forum/all/不小心把桌/f8a784af-a6d5-47c3-9f4a-0b40f1bdba41)">[3]</span></a></sup></h3><p>在系统C盘存储不够时，我们常常会把系统自带的文件路径移动到除C盘以外的其他盘去，但是一不小心就将文件移动到其他盘的根路径去了，这时候再通过简单的更换路径是更换不了的，系统这些自带的桌面、下载、图片、文档、音乐、视频本身就是一个文件夹，只是windows系统将他们单独拿出来方便大家使用。</p><p>这里是将下载的路径移动到C盘根路径去了，再次通过<code>右键-&gt;属性-&gt;位置</code>移动到其他路径各种报错。</p><p><img src="./windows5.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>我们本身已经将下载位置移动到C盘根路径了，再次右键打开的属性已经是C盘磁盘分区的属性了，修改磁盘分区的路径本身就是一种错误的操作，解决思路是通过修改注册表直接修改下载的文件存储位置。</p><ol type="1"><li>按 <code>Win + R</code> 调出命令行运行窗口，输入<code>regedit</code> 并按回车。</li><li>在弹出的注册表窗口里，打开下面路径<code>计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</code>，直接将路径复制上去打开也可以。</li><li>找到下载对应的ID串需要修改的项，修改对应值为你要设置的路径位置。</li></ol><p>具体ID对应的名称如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs mysql">&#123;F42EE2D3-909F-4907-8871-4C22FC0BF756&#125;  Document文档<br>&#123;A0C69A99-21C8-4671-8703-7934162FCF1D&#125;  Music音乐<br>&#123;7d83ee9b-2244-4e70-b1f5-5393042af1e4&#125;  Downloads下载<br>&#123;374DE290-123F-4565-9164-39C4925E467B&#125;  Downloads下载<br>&#123;754AC886-DF64-4CBA-86B5-F7FBF4FBCEF5&#125;  Desktop桌面<br>&#123;35286A68-3C57-41A1-BBB1-0EAE73D76C95&#125;  Videos视频<br>&#123;0DDD015D-B06C-45D5-8C4C-F59713854639&#125;  Pictures图片<br></code></pre></td></tr></table></figure><p><img src="./windows6.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>最后重启电脑即可。</p><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://blog.csdn.net/weixin_43031092/article/details/109115922">解决windowsUsers用户目录下看不到自己的问题_用户不在目录中-CSDN博客</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><ahref="https://www.zhihu.com/question/457965061">windows桌面和下载成一个文件夹了，怎么分开?- 知乎 (zhihu.com)</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://answers.microsoft.com/zh-hans/windows/forum/all/不小心把桌/f8a784af-a6d5-47c3-9f4a-0b40f1bdba41">不小心把桌面路径改成下载路径了现在下载文件夹变桌面文件夹了- Microsoft Community</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    <categories>
+      
+      <category>Blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>GitHub - 代码远程存储仓库</title>
     <link href="/2024/10/18/2024-10-18-2024-10-18-github/"/>
     <url>/2024/10/18/2024-10-18-2024-10-18-github/</url>
@@ -1209,9 +1234,9 @@
       
       <tag>Math</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Linked List</tag>
       
       <tag>Number Theory</tag>
       
@@ -3073,6 +3098,17 @@
   
   
   <entry>
+    <title>about</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<h1 id="about">About</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="about-me">About me</h2><p>目前是一名普通的大四学生，正在自学计算机科学知识。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code> 极大地提高了写作效率；而<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去进行备份；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。当然有更高排版需求的时候还是会使用<code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容和技术文章。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2024-10-07T15:03:00">October 7, 2024 at 15:03PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/"/>
     <url>/</url>
@@ -3089,17 +3125,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>about</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<h1 id="about">About</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="about-me">About me</h2><p>目前是一名普通的大四学生，正在自学计算机科学知识。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code> 极大地提高了写作效率；而<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去进行备份；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。当然有更高排版需求的时候还是会使用<code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容和技术文章。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2024-10-07T15:03:00">October 7, 2024 at 15:03PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
     
   </entry>
   
