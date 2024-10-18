@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>GitHub - 代码远程存储仓库</title>
+    <link href="/2024/10/18/2024-10-18-2024-10-18-github/"/>
+    <url>/2024/10/18/2024-10-18-2024-10-18-github/</url>
+    
+    <content type="html"><![CDATA[<h2 id="github-使用技巧"><code>GitHub</code> 使用技巧</h2><h3 id="如何根据-github-用户的名称找到邮箱1">如何根据<code>GitHub</code>用户的名称找到邮箱<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[一日一技：如何找到Github用户的邮箱？ | 谢乾坤 | Kingname](https://kingname.info/2024/06/02/find-email-of-github/)">[1]</span></a></sup></h3><p>有时候会遇到这样的情况，当你找到一个很不错的项目的时候，想和开发者交流一些相关的问题。于是你找到该用户的主页，一般情况下，开发者会在<code>GitHub</code> 主页留下自己的联系邮箱，如下图所示，这是我的<code>GitHub</code> 个人主页：</p><p><img src="./github.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>但是有的开发者不会留邮箱，比如：</p><p><img src="./github2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>这种情况下你可以发Issus，但是这样别人也会看到，但是还有一个更隐蔽的方法，可以拿到这个开发者的邮箱。</p><p>首先，找到这个开发者的一个Repo，随便找一条Commit记录：</p><p><img src="./github3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>这个Commit对应的链接是<code>https://github.com/helloworld/benchmark-fastapi-template/commit/7745a07900d2f0e5487f4125a21348f23c1148ba</code>，现在只需要在这个链接的末尾加上 <code>.patch</code> ，变成<code>https://github.com/helloworld/benchmark-fastapi-template/commit/7745a07900d2f0e5487f4125a21348f23c1148ba.patch</code>就可以看到纯文本形式的Commit记录。而开发者的邮箱就在上面。</p><p><img src="./github4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>如果开发者设置了邮箱不可见的选项，就可能看不到邮箱，但是可以通过找Repo里面最早的提交记录来获取，也许有机会在开发者刚开始Commit的时候还没有设置邮箱不可见，如果还是不能成功，还是发Issue或者通过其他渠道获取吧。</p><p><img src="./github5.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><blockquote><p>注意：如果自己设置了邮箱不可见，记得在本地的 <code>Git</code> 中设置<code>git config --global user.email "username@users.noreply.github.com"</code>，如果在设置之前提交了还要记得重置上次提交的作者信息<code>git commit --amend --reset-authorc</code>，否则远程仓库会拒绝提交<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[github启用了隐私邮箱后如何git push-腾讯云开发者社区-腾讯云 (tencent.com)](https://cloud.tencent.com/developer/article/1835148)">[2]</span></a></sup>。</p></blockquote><h3 id="如何查看-github-用户的注册时间34">如何查看 <code>GitHub</code>用户的注册时间<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[Getting started with the REST API - GitHub Docs](https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api?apiVersion=2022-11-28#rate-limiting)">[3]</span></a></sup><sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[Setting your commit email address - GitHub Docs](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address)">[4]</span></a></sup></h3><ol type="1"><li>打开一个新的浏览器标签页，输入以下链接：<code>https://api.github.com/users/&#123;your-username&#125;</code>，将<code>&#123;your-username&#125;</code> 替换成 <code>GitHub</code> 用户名。</li><li>按下回车键后，会得到一个JSON格式的返回结果。</li><li>在返回结果中，可以找到一个 <code>created_at</code>字段，值就是用户注册时间。</li></ol><p><img src="./github6.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><h3 id="如何美化-github-个人主页">如何美化 <code>GitHub</code>个人主页</h3><ul><li><a href="https://www.cnblogs.com/PeterJXL/p/18437094">超详细的GitHub 个人主页美化教程 - peterjxl - 博客园 (cnblogs.com)</a></li></ul><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://kingname.info/2024/06/02/find-email-of-github/">一日一技：如何找到Github用户的邮箱？| 谢乾坤 | Kingname</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><ahref="https://cloud.tencent.com/developer/article/1835148">github启用了隐私邮箱后如何gitpush-腾讯云开发者社区-腾讯云 (tencent.com)</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api?apiVersion=2022-11-28#rate-limiting">Gettingstarted with the REST API - GitHub Docs</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:4" class="footnote-text"><span><ahref="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address">Settingyour commit email address - GitHub Docs</a><a href="#fnref:4" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tools</category>
+      
+      <category>Git</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+      <tag>Github</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LaTeX - 简单入门</title>
     <link href="/2024/10/16/2024-10-16-2024-10-16-latex/"/>
     <url>/2024/10/16/2024-10-16-2024-10-16-latex/</url>
@@ -1180,9 +1209,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Linked List</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Number Theory</tag>
       
@@ -3044,17 +3073,6 @@
   
   
   <entry>
-    <title>about</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<h1 id="about">About</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="about-me">About me</h2><p>目前是一名普通的大四学生，正在自学计算机科学知识。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code> 极大地提高了写作效率；而<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去进行备份；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。当然有更高排版需求的时候还是会使用<code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容和技术文章。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2024-10-07T15:03:00">October 7, 2024 at 15:03PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title></title>
     <link href="/"/>
     <url>/</url>
@@ -3071,6 +3089,17 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>about</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<h1 id="about">About</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="about-me">About me</h2><p>目前是一名普通的大四学生，正在自学计算机科学知识。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code> 极大地提高了写作效率；而<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去进行备份；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。当然有更高排版需求的时候还是会使用<code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容和技术文章。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2024-10-07T15:03:00">October 7, 2024 at 15:03PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
     
   </entry>
   
