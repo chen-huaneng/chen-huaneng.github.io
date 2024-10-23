@@ -76,9 +76,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Tool</tag>
+      
+      <tag>Math</tag>
       
       <tag>LaTeX</tag>
       
@@ -161,9 +161,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Machine Learning</tag>
+      
+      <tag>Math</tag>
       
       <tag>CS Course</tag>
       
@@ -230,7 +230,7 @@
     <link href="/2024/10/12/2024-10-12-2024-10-12-machine-learning/"/>
     <url>/2024/10/12/2024-10-12-2024-10-12-machine-learning/</url>
     
-    <content type="html"><![CDATA[<blockquote><p>注：关于参考文献的格式可以参考<ahref="https://lib.tsinghua.edu.cn/info/1147/3359.htm">清华大学的研究帮助</a>，本文没有严格按照参考文献的格式引用。</p></blockquote><h2 id="环境配置">环境配置</h2><h3 id="创建虚拟环境">创建虚拟环境</h3><p>由于较新的版本可能出现部分库不兼容的问题，因此本文采用<code>Python 3.8</code>，推荐使用 <code>Conda</code> 来隔离不同的<code>Python</code> 环境，方便后面出现问题进行调试。</p><p>首先在 <code>Conda</code> 中创建一个名为 <code>ml</code>的新环境，激活环境并安装一些机器学习常用的库。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda create --name ml python=3.8<br>conda activate ml<br>conda install numpy pandas scikit-learn scikit-plot jupyterlab<br></code></pre></td></tr></table></figure><p>这里可以安装 <code>Jupyter Notebook</code> 也可以安装<code>JupyterLab</code>（<code>Jupyter notebook</code>的更加现代化的版本）。</p><h3id="jupyter-notebook-可视化切换虚拟环境"><code>Jupyter Notebook</code>可视化切换虚拟环境</h3><p>鉴于每次启用虚拟环境都需要进行繁琐的命令行操作，下面介绍一个可以实现打开<code>Jupyter notebook</code> 之后切换虚拟环境的办法。</p><p>首先按照前面说明的方法创建虚拟环境 <code>ml</code> 并启动虚拟环境<code>conda activate ml</code>，接下来的操作都需要在这个虚拟环境中执行：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda install ipykernel<br>python -m ipykernel install --name &lt;虚拟环境的名字，如ml&gt; --display-name &lt;你想显示的名称，比如&quot;machine learning&quot;&gt;<br></code></pre></td></tr></table></figure><p>接下来就可以直接打开 <code>Jupyter notebook</code>直接切换虚拟环境了。</p><p><img src="/imgs/posts/2024/10/12/jupyter.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>同样，在 <code>Jupyter Lab</code> 中也可以直接切换虚拟环境：</p><p>新建一个在 <code>ml</code> 虚拟环境下的新 <code>.ipynb</code>文件，默认在当前目录下新建。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>在已有的 <code>.ipynb</code> 文件下切换内核。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="/imgs/posts/2024/10/12/jupyterlab3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><h3 id="conda-的基本使用"><code>Conda</code> 的基本使用</h3><p><code>Conda</code> 是一个开源的包管理系统和环境管理器，常用于管理<code>Python</code> 和 <code>R</code>语言的依赖包和虚拟环境（展开下面的折叠块查看常用的命令）。</p>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-b94e7bf6" role="button" aria-expanded="false" aria-controls="collapse-b94e7bf6">        <div class="fold-arrow">▶</div>Conda的常用命令      </div>      <div class="fold-collapse collapse" id="collapse-b94e7bf6">        <div class="fold-content">          <p>检查 <code>Conda</code> 版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>获取帮助：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure><p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python版本：</p><blockquote><p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure><p>在创建环境后，可以通过以下命令激活环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure><p>要退出当前激活的环境，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure><p>如果想删除某个环境，可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure><p>查看系统上所有的 <code>Conda</code> 环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure><p>要在当前激活的环境中安装一个包（如<code>numpy</code>），使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure><p>还可以指定安装包的版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure><p>使用以下命令查看当前环境中已安装的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure><p>可以使用 <code>conda update</code> 命令升级指定的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure><p>也可以升级当前环境下所有的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure><p>如果需要删除某个包，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure><p>可以使用以下命令查找特定包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure><p>可以将环境的配置导出为 <code>YAML</code>文件，方便在其他设备上重现相同环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure><p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure><p>可以克隆已有的环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure><p>要更新 <code>conda</code> 本身，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure><p><code>Conda</code>会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure>        </div>      </div>    </div><h2 id="机器学习和数据挖掘">机器学习和数据挖掘</h2><h3 id="什么是数据挖掘">什么是数据挖掘</h3><p>数据挖掘（<strong>Data mining</strong>）：Extraction of interesting(non-trivial, implicit, previously unknown and potentially useful)patterns or knowledge from huge amount of data. 也叫做<strong>Knowledgediscovery (mining) in databases (KDD)</strong>。</p><p><img src="/imgs/posts/2024/10/12/datamining.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>一个好的数据挖掘得到的模式应该具有以下特征：</p><ul><li>easily understood by humans</li><li>valid on new or test data with some degree of certainty</li><li>potentially useful</li><li>novel</li></ul><p>数据挖掘的任务：</p><ul><li>Regression: Predicting missing or unavailable<strong>numerical</strong> data values (predictive)</li><li>Classification: Finding a model that describes and distinguishes<strong>categorical</strong> data classes (predictive)<ul><li>Methods: Decision trees, naive Bayesian classification, supportvector machines, neural networks, logistic regression</li></ul></li><li>Clustering: Finding hidden patterns in data by isolating groups of<strong>similar</strong> objects (descriptive)<ul><li>Principle: Maximizing intra-class similarity &amp; minimizinginterclass similarity</li></ul></li><li>Association: Finding items that occur together frequently in data(descriptive)</li><li>Sequence analysis: Discovering sequential patterns(descriptive/predictive)</li><li>Outlier(异常值) detection: Detecting significant deviation fromnormal behavior (predictive)</li></ul><h3 id="机器学习">机器学习</h3><p>机器学习则是致力于研究如何通过计算的手段，利用经验来改善系统的性能。可以理解为计算机从数据中产生“模型”（model）的算法，即“学习算法”（learningalgorithm）。</p><p>机器学习作为计算机科学的重要分支，当然也和计算机科学的核心思想类似：给定一个输入空间（训练集、验证集等），通过学习算法实例化一个模型，用这个模型去预测、分类、检测、聚类测试集（或者是没见过的“新样本”）得到一个输出空间。</p><p><img src="/imgs/posts/2024/10/12/blackbox.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>学得模型适用于新样本的能力，称为“泛化”(generalization)能力。具有强泛化能力的模型能很好地适用于整个样本空间。于是，尽管训练集通常只是样本空间的一个很小的采样，我们仍希望它能很好地反映出样本空间的特性，否则就很难期望在训练集上学得的模型能在整个样本空间上都工作得很好。通常假设样本空间中全体样本服从一个未知“分布”(distribution)<spanclass="math inline">\(\mathcal{D}\)</span>，我们获得的每个样本都是独立地从这个分布上采样获得的，即“独立同分布”(independentand identically distributed，简称 <spanclass="math inline">\(i.i.d.\)</span>)。一般而言，训练样本越多，我们得到的关于<span class="math inline">\(\mathcal{D}\)</span>的信息越多，这样就越有可能通过学习获得具有强泛化能力的模型。</p><p>我们可以把学习过程看作一个在所有假设(hypothesis)组成的空间中进行搜索的过程，搜索目标是找到与训练集“匹配”(fit)的假设，比如说我们要训练一个模型来识别一个西瓜是不是“好瓜”，可能的假设包含对根蒂、敲声、色泽等属性的规定。假设的表示一旦确定，假设空间及其规模大小就确定了，确定了假设空间之后就可以根据训练集来减少假设的可能性和（或）增加规则来形成模型，比如训练集中只有根蒂蜷缩、敲声清脆的西瓜是“好瓜”，那么就可以排除根蒂和敲声其他情况的假设。</p><p>当然可能存在一个训练集对应于多个假设的情况出现，这时就需要模型的归纳偏好来发挥作用。归纳偏好可看作学习算法自身在一个可能很庞大的假设空间中对假设进行选择的启发式或“价值观”。如果学习算法没有归纳偏好，那么这个模型对同一个训练集做出的判断可能不一致，比如在判断一个新样本中的西瓜是不是“好瓜”的过程中，可能第一次做出的判断是基于根蒂蜷缩假设，而第二次是基于敲声清脆假设，那么就可能存在对一个根蒂不蜷缩，但是敲声清脆的西瓜的判断不一致的情况，而这样的学习结果是没有意义的。</p><p>事实上，归纳偏好对应了学习算法本身所做出的关于“什么样的模型更好”的假设。在具体的现实问题中，这个假设是否成立，即算法的归纳偏好是否与问题本身匹配，大多数时候直接决定了算法能否取得好的性能。</p><p>事实上，没有完美的归纳偏好可以使得一个模型适用于所有的情况，换句话说，对于一个学习算法<span class="math inline">\(\mathfrak{L_a}\)</span>而言，若它在某些问题上比学习算法 <spanclass="math inline">\(\mathfrak{L_b}\)</span>好，则必存在另一些问题，在那里 <spanclass="math inline">\(\mathfrak{L_b}\)</span> 比 <spanclass="math inline">\(\mathfrak{L_a}\)</span>好。这个结论对任何算法均成立。也叫“没有免费的午餐”定理（No Free LunchTheorem，简称 NFL 定理）：无论学习算法 <spanclass="math inline">\(\mathfrak{L_a}\)</span> 多聪明、学习算法 <spanclass="math inline">\(\mathfrak{L_b}\)</span>多笨拙，它们的期望性能是一样的。</p><p><img src="/imgs/posts/2024/10/12/datamining11.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>但是这并不意味着机器学习没有任何作用，我们需注意到，NFL定理有一个重要前提：所有“问题”出现的机会相同、或所有问题同等重要。但实际情形并不是这样。很多时候，我们只关注自己正在试图解决的问题（例如某个具体应用任务），希望为它找到一个解决方案至于这个解决方案在别的问题、甚至在相似的问题上是否为好方案，我们并不关心，例如，为了快速从A地到达B地，如果我们正在考虑的A地是南京鼓楼、B地是南京新街口，那么“骑自行车”是很好的解决方案；这个方案对A地是南京鼓楼、B地是北京新街口的情形显然很糟糕，但我们对此并不关心。</p><p>另外，NFL定理还包含了均匀分布的假设，但是在实际情况中，一些假设出现的可能性比另外一些假设出现的可能性要高得多，比如圆粒的豌豆比皱粒的豌豆更常见，抛硬币是正反两面着地的情况比侧面着地的情况更常见。</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2024/10/12/datamining12.png" srcset="/imgs/banner/loading.jpg" lazyload /></div><div class="group-image-wrap"><imgsrc="/imgs/posts/2024/10/12/datamining13.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></div></div></div><p>所以，NFL定理最重要的寓意，是让我们清楚地认识到，脱离具体问题,空泛地谈论“什么学习算法更好”毫无意义，因为若考虑所有潜在的问题，则所有学习算法都一样好。要谈论算法的相对优劣，必须要针对具体的学习问题；在某些问题上表现好的学习算法，在另一些问题上却可能不尽如人意，学习算法自身的归纳偏好与问题是否相配，往往会起到决定性的作用。</p><p>数据挖掘是从海量数据中发掘知识，这就必然涉及对“海量数据”的管理和分析。大体来说,数据库领域的研究为数据挖掘提供数据管理技术，而机器学习和统计学的研究为数据挖掘提供数据分析技术。由于统计学界的研究成果通常需要经由机器学习研究来形成有效的学习算法，之后再进入数据挖掘领域，因此从这个意义上说，统计学主要是通过机器学习对数据挖掘发挥影响，而机器学习领域和数据库领域则是数据挖掘的两大支撑。</p><h3 id="过拟合欠拟合和误差">过拟合、欠拟合和误差</h3><blockquote><p>模型有时也称为“学习器”（learner），可以看作学习算法在给定数据和参数空间上的实例化。学习算法通常有参数需要设置，使用不同的参数值和（或）训练数据，将产生不同的结果。</p></blockquote><h4id="过拟合overfitting和欠拟合underfitting1">过拟合（Overfitting）和欠拟合（underfitting）<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[欠拟合、过拟合及如何防止过拟合 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/72038532)">[1]</span></a></sup></h4><blockquote><p>过拟合也叫“过配”，欠拟合也叫“欠配”。</p></blockquote><p>用一张图形象地表示过拟合和欠拟合：</p><p><img src="/imgs/posts/2024/10/12/datamining4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>对于深度学习或机器学习模型而言，我们不仅要求它对训练数据集有很好的拟合（训练误差），同时也希望它可以对未知数据集（测试集）有很好的拟合结果（泛化能力），所产生的测试误差被称为泛化误差。度量泛化能力的好坏，最直观的表现就是模型的过拟合（overfitting）和欠拟合（underfitting）。过拟合和欠拟合是用于描述模型在训练过程中的两种状态。一般来说，训练过程会是如下所示的一个曲线图。</p><p><img src="/imgs/posts/2024/10/12/datamining2.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>训练刚开始的时候，模型还在学习过程中，处于欠拟合区域。随着训练的进行，训练误差和泛化误差都下降。在到达一个临界点之后，训练集的误差下降，测试集的误差上升了，这个时候就进入了过拟合区域——由于训练出来的模型过度拟合了训练集，对训练集以外的数据却不能准确预测。</p><h5 id="欠拟合是什么以及如何解决">欠拟合是什么以及如何解决</h5><p>欠拟合是指模型不能在训练集上获得足够低的误差。换句换说，就是模型复杂度低，模型在训练集上就表现很差，没法学习到数据背后的规律。</p><p>欠拟合基本上都会发生在训练刚开始的时候，经过不断训练之后欠拟合应该不怎么需要考虑了。但是如果还是存在欠拟合，则可以通过增加网络复杂度或者在模型中增加特征的方法来解决欠拟合问题。</p><h5 id="过拟合是什么以及如何解决">过拟合是什么以及如何解决</h5><p>过拟合是指训练误差和测试误差之间的差距太大。换句换说，就是模型复杂度高于实际问题，模型在训练集上表现很好，但在测试集上却表现很差。模型对训练集"死记硬背"（记住了不适用于测试集的训练集性质或特点），没有理解数据背后的规律，泛化能力差。</p><p><img src="/imgs/posts/2024/10/12/datamining3.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>造成过拟合的原因主要有以下几种可能：</p><ul><li><strong>训练数据集样本单一，样本不足。</strong>如果训练样本只有负样本，然后拿生成的模型去预测正样本，这肯定会导致预测不准确。所以训练样本要尽可能的全面，尽可能覆盖所有的数据类型。</li><li><strong>训练数据中噪声干扰过大。</strong>噪声指训练数据中的干扰数据。过多的干扰会导致记录了很多噪声特征，忽略了真实输入和输出之间的关系。</li><li><strong>模型过于复杂。</strong>模型太复杂，已经能够“死记硬背”记下了训练数据的信息，但是遇到没有见过的数据的时候却不能够变通，泛化能力太差。但是我们希望模型对不同的数据都有稳定的输出，所以有时应该尽量简化模型。</li></ul><p>要想解决过拟合问题，就要显著减少测试误差而不过度增加训练误差，从而提高模型的泛化能力。我们可以使用正则化（Regularization）方法。<strong>正则化是指修改学习算法，使其降低泛化误差而非训练误差。</strong></p><p>常用的正则化方法根据具体的使用策略不同可分为：</p><ol type="1"><li>直接提供正则化约束的参数正则化方法，如L1/L2正则化</li><li>通过工程上的技巧来实现更低泛化误差的方法，如提前终止（Earlystopping）和Dropout</li><li>不直接提供约束的隐式正则化方法，如数据增强等。</li></ol><p><strong>方法一：获取和使用更多的数据（数据集增强）——解决过拟合的根本性方法</strong></p><p>让机器学习或深度学习模型泛化能力更好的办法就是使用更多的数据进行训练。但是在实践中，我们拥有的数据量是有限的。解决这个问题的一种方法就是创建“假数据”并添加到训练集中——数据集增强。通过增加训练集的额外副本来增加训练集的大小，进而改进模型的泛化能力。</p><p>以图像数据集举例，可以通过旋转图像、缩放图像、随机裁剪、加入随机噪声、平移、镜像等方式来增加数据量。另外，在物体分类问题中，CNN在图像识别的过程中有强大的“不变性”规则，即待辨识的物体在图像中的形状、姿势、位置、图像整体明暗度都不会影响分类结果。这样我们就可以通过图像平移、翻转、缩放、切割等手段将数据库成倍扩充。</p><p><strong>方法二：采用合适的模型（控制模型的复杂度）</strong></p><p>过于复杂的模型会带来过拟合问题。对于模型的设计，目前公认的一个深度学习规律"deeperisbetter"。国内外各种大牛通过实验和竞赛发现，对于CNN来说，层数越多效果越好，但是也更容易产生过拟合，并且计算所耗费的时间也越长。</p><p>根据<ahref="https://en.wikipedia.org/wiki/Occam%27s_razor">奥卡姆剃刀原理（Occam'sRazor）</a>：在同样能够解释已知观测现象的假设中，我们应该挑选“最简单”的那一个。对于模型的设计而言，我们应该选择简单、合适的模型解决复杂的问题。</p><p><strong>方法三：降低特征的数量</strong></p><p>对于一些特征工程而言，可以降低特征的数量——删除冗余特征，人工选择保留哪些特征。这种方法也可以解决过拟合问题。</p><h4id="误差error偏差bias方差variance以及噪声noise之间的关系23">误差（Error），偏差（Bias），方差（Variance）以及噪声（Noise）之间的关系<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[机器学习 -偏差与方差 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/397672531)">[2]</span></a></sup><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[误差，偏差，方差，噪声的关系 | GitHub (ustccoder.github.io)](https://ustccoder.github.io/2020/05/19/deep learning variance bias/)">[3]</span></a></sup></h4><p>在前面提到了模型的过拟合和欠拟合，那么应该如何刻画这两种情况，或者换句话说，对学习算法除了通过实验估计其泛化性能之外，还能通过什么方式去评估学习算法的好坏，它为什么具有这样的性能。“偏差-方差分解”（bias-variancedecomposition）就是从偏差和方差的角度来解释学习算法泛化性能的一种重要工具。</p><p>在机器学习中，我们用训练数据集去训练一个模型，通常的做法是定义一个误差（Loss）函数，通过将这个误差的最小化过程，来提高模型的性能。在训练数据集上得到的Loss称之为<strong>训练误差（trainingerror）</strong>，在测试集上得到的Loss称之为<strong>泛化误差（generalizationerror）</strong>，也即学习模型对训练数据集的预测值和训练数据集的真实值之间的差异叫训练误差，学习模型对新样本（可以是测试集）数据的预测值和真实值之间的差异叫泛化误差。</p><p>泛化误差可以通过数学上的变换<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="周志华. 机器学习[M]. 北京：清华大学出版社，2016: 44.">[4]</span></a></sup>将其分解为偏差（Bias）、方差（Variance）和噪声（Noise）。<a id="anchor1"></a></p><p><img src="/imgs/posts/2024/10/12/formula1.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>然而我们训练一个学习模型的目的是为了解决训练数据集这个领域中的一般化问题，而不是针对训练数据集这个特定集合的问题，因此单纯地将训练数据集的损失最小化，并不能保证在解决更一般的问题时模型仍然是最优，甚至不能保证模型是可用的。</p><p>比如拿热带雨林的树叶作为训练数据集来训练识别树叶的学习模型，我们希望得到的模型应该能够识别所有的树叶，但是这个模型可能在识别寒带、温带的树叶时表现就不好，甚至不能正确识别树叶。<a id="anchor2"></a></p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2024/10/12/leaf1.jfif" srcset="/imgs/banner/loading.jpg" lazyload /></div><div class="group-image-wrap"><imgsrc="/imgs/posts/2024/10/12/leaf2.jfif" srcset="/imgs/banner/loading.jpg" lazyload /></div></div></div><p>如果我们能够获得所有可能的数据集合，并在这个数据集合上将损失最小化，那么学习得到的模型就可以称之为“真实模型”。当然，在现实生活中我们不可能获取并训练所有可能的数据，所以即使“真实模型”存在，我们也无法获得，或者获得这个模型的成本过高。因此，我们的最终目的是学习一个模型使其更加接近这个真实模型。</p><blockquote><p>注意：我们能够用来学习的训练数据集只是全部数据中的一个子集。想象一下，我们现在收集几组不同的数据，因为每一组数据的不同，我们学习到模型的最小损失值也会有所不同，它们与“真实模型”的最小损失也是不一样的。</p></blockquote><p>Bias和Variance分别从两个方面来描述我们学习到的模型与真实模型之间的差距。</p><ul><li><p><strong>Bias</strong>（偏差）是用<strong>所有可能的训练数据集</strong>训练出的<strong>所有模型</strong>的输出的<strong>平均值</strong>与<strong>真实模型</strong>的输出值之间的差异，度量了学习算法的期望预测与真实结果的偏离程度。刻画了<strong>学习算法本身的拟合能力</strong>。</p></li><li><p><strong>Variance</strong>（方差）是<strong>不同的训练数据集</strong>训练出的模型输出值之间的差异（预测值离散程度），度量了<strong>同样大小</strong>的训练集的变动导致的学习性能的变化。刻画了<strong>数据扰动所带来的影响</strong>。</p></li><li><p><strong>Noise</strong>（噪声）的存在是学习算法所无法解决的问题，数据的质量决定了学习的上限。假设在数据已经给定的情况下，此时上限已定，我们要做的就是尽可能的接近这个上限。也即在当前任务下<strong>任何学习算法</strong>所能达到的期望泛化误差的下界。刻画了<strong>学习问题本身的难度</strong>。</p></li></ul><p>可以理解为：偏差度量的是单个模型的学习能力，而方差度量的是同一个模型在不同数据集上的稳定性，噪声则是数据的label 本身就是不准确的，因此模型无论如何学习都不可能消除。</p><p><img src="/imgs/posts/2024/10/12/datamining5.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>从前面的公式推导中可以得到泛化误差、偏差、方差以及噪声之间的关系<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="周志华. 机器学习[M]. 北京：清华大学出版社，2016: 44.">[4]</span></a></sup>，也就是说，泛化误差可以表示为偏差、方差和噪声之和（证明过程参考<ahref="#anchor1">西瓜书</a>）： <span class="math display">\[\text{泛化误差} = \text{错误率（error）} = E(f;D) = bias^2(x) + var(x) +\varepsilon^2\]</span>“偏差-方差分解”说明，泛化性能是由学习算法的能力、数据的充分性以及学习任务本身的难度所共同决定的。给定学习任务，为了取得好的泛化性能，则需使偏差较小，即能够充分拟合数据，并且使方差较小，即使得数据扰动产生的影响小。</p><h4 id="偏差方差窘境">偏差、方差窘境</h4><p>一般来说，偏差与方差是有冲突的，这称为偏差-方差窘境（bias-variancedilemma）。给定学习任务，假定我们能控制学习算法的训练程度，则在训练不足时，学习器的拟合能力不够强，训练数据的扰动不足以使学习器产生显著变化，此时偏差主导了泛化错误率；随着训练程度的加深，学习器的拟合能力逐渐增强，训练数据发生的扰动渐渐能被学习器学到，方差逐渐主导了泛化错误率；在训练程度充足后，学习器的拟合能力已经非常强，训练数据发生的轻微扰动都会导致学习器发生显著变化，若训练数据自身的、非全局的特性被学习器学到了，则将发生过拟合。</p><figure><img src="/imgs/posts/2024/10/12/datamining6.png" srcset="/imgs/banner/loading.jpg" lazyloadalt="bias-variance dilemma" /><figcaption aria-hidden="true">bias-variance dilemma</figcaption></figure><p>换句话说，<strong>随着模型复杂度，模型迭代次数的增加，方差和偏差可能会出现此消彼长的现象</strong>，训练不足，或者模型过于简单时会出现<strong>Under-fitting(欠拟合)</strong>，此时的模型误差主要来自于偏差，表现为模型在训练集和验证集上面的准确率都不高，说明出现了欠拟合。而训练太多，或者模型过于复杂时会出现<strong>Over-fitting(过拟合)</strong>，此时的模型误差主要来自于方差，表现为模型在训练集上的准确率非常高，但在验证集上面的准确率不高，说明出现了过拟合。</p>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-f9ee5ff3" role="button" aria-expanded="false" aria-controls="collapse-f9ee5ff3">        <div class="fold-arrow">▶</div>训练集、验证集和测试集的区别和关系      </div>      <div class="fold-collapse collapse" id="collapse-f9ee5ff3">        <div class="fold-content">          <p>训练集、验证集和测试集这三个名词在机器学习领域极其常见，但很多人并不是特别清楚，尤其是后两个经常被人混用<sup id="fnref:5" class="footnote-ref"><a href="#fn:5" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[训练集，验证集，测试集分别是什么_训练集 验证集 测试集-CSDN博客](https://blog.csdn.net/qq_24884193/article/details/104071664)">[5]</span></a></sup>。</p><p>在有监督(supervised)的机器学习中，数据集常被分成2~3个，即：训练集(trainset)，验证集(validation set)，测试集(test set)。</p><figure><img src="/imgs/posts/2024/10/12/datamining9.png" srcset="/imgs/banner/loading.jpg" lazyloadalt="bias-variance dilemma" /><figcaption aria-hidden="true">bias-variance dilemma</figcaption></figure><p>如果给定的样本数据充足，我们通常使用均匀随机抽样的方式将数据集划分成3个部分——训练集、验证集和测试集，这三个集合不能有交集，常见的比例是8:1:1。需要注意的是，通常都会给定训练集和测试集，而不会给验证集。这时候验证集该从哪里得到呢？一般的做法是，从训练集中均匀随机抽样一部分样本作为验证集。</p><p><strong>训练集</strong>：训练集用来训练模型，即确定模型的权重和偏置这些参数，通常我们称这些参数为学习参数。</p><p><strong>验证集</strong>：而验证集用于模型的选择，更具体地来说，验证集并不参与学习参数的确定，也就是验证集并没有参与梯度下降的过程。验证集只是为了选择超参数，比如网络层数、网络节点数、迭代次数、学习率这些都叫超参数。比如在KNN算法中，K值就是一个超参数。所以可以使用验证集来求出误差率最小的K。</p><blockquote><p><strong>参数</strong>是模型中可被学习和调整的参数，通过训练数据进行学习和优化；而<strong>超参数</strong>则是手动设置的参数。</p></blockquote><p><strong>测试集</strong>：测试集只使用一次，即在训练完成后评价最终的模型时使用。它既不参与学习参数过程，也不参数超参数选择过程，而仅仅使用于模型的评价。值得注意的是，千万不能在训练过程中使用测试集，而后再用相同的测试集去测试模型。这样做其实是一个cheat，使得模型测试时准确率很高，或者说这时模型已经过拟合了。</p><p>为什么需要划分成三个部分呢？简而言之，这样做是为了防止过拟合。如果我们把所有数据都用来训练模型的话，建立的模型自然是最契合这些数据的，测试表现也好。但换了其它数据集测试这个模型效果可能就没那么好了。还是前面<ahref="#anchor2">树叶那个例子</a>，你把所有热带雨林的树叶都拿去训练了，这个模型识别热带雨林的树叶的效果很好，但是用寒带的树叶来测试这个模型，可能识别树叶的效果就没有识别热带雨林的树叶效果那么好。总而言之，训练集和测试集相同的话，模型评估结果可能比实际要好。</p><p>如果训练集比较小怎么办呢？这个时候<strong>交叉验证</strong>就登场了。因为训练集比较小，无法直接像前面那样直接分出训练集，验证集，测试集就可以了（简单交叉验证）。</p><p>需要说明的是，在实际情况下，人们不是很喜欢用交叉验证，主要是因为它会耗费较多的计算资源。一般直接把训练集按照50%-90%的比例分成训练集和验证集。但这也是根据具体情况来定的：如果超参数数量多，你可能就想用更大的验证集，而如果验证集的数量不够，那么最好还是用交叉验证吧。至于分成几份比较好，一般都是分成3、5和10份。</p><figure><img src="/imgs/posts/2024/10/12/datamining10.png" srcset="/imgs/banner/loading.jpg" lazyloadalt="bias-variance dilemma" /><figcaption aria-hidden="true">bias-variance dilemma</figcaption></figure><p>图最上面的部分表示我们拥有的数据，而后我们对数据进行了再次分割，主要是对训练集，假设将训练集分成5份（该数目被称为<strong>折数</strong>，5-fold交叉验证），每次都用其中4份来训练模型，黄色的那份用来验证4份训练出来的模型的准确率，记下准确率。然后再次在这5份中取另外4份做训练集，1份做验证集，再次得到一个模型的准确率，一共做五次（每个fold都做一次验证集）。直到所有5份都做过1次验证集，也即验证集名额循环了一圈，交叉验证的过程就结束。算得这5次准确率的均值，留下准确率最高的模型，即确定该模型的超参数，也即确定了最终模型的超参数。</p>        </div>      </div>    </div><h4id="偏差方差和过拟合欠拟合的关系">偏差、方差和过拟合、欠拟合的关系</h4><p>一般来说，简单的模型会有一个较大的偏差和较小的方差，复杂的模型偏差较小方差较大。</p><p>欠拟合：模型不能适配训练样本，有一个很大的偏差，但方差比较小。比如，我们有一个本质上是多项式的连续非线性数据，但模型只能表示线性关系。在此情况下，我们向模型提供多少数据不重要，因为模型根本无法表示数据的基本关系，模型不能适配训练样本，有一个很大的偏差，因此我们需要更复杂的模型。那么，是不是模型越复杂拟合程度越高越好呢？也不是，因为还有方差。</p><p><img src="/imgs/posts/2024/10/12/datamining7.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>过拟合：模型很好的适配训练样本，但在测试集上表现很糟，有一个很大的方差，但偏差较小。方差大就是指模型过于拟合训练数据，以至于没办法把模型的结果泛化。而泛化正是机器学习要解决的问题，如果一个模型只能对一组特定的数据有效，换了数据就无效，我们就说这个模型过拟合。这就是模型很好的适配训练样本，但在测试集上表现很糟，有一个很大的方差。</p><h4 id="偏差方差与模型复杂度的关系">偏差、方差与模型复杂度的关系</h4><p>由前面偏差和方差的介绍，我们来总结一下偏差和方差的来源：我们训练的机器学习模型，必不可少地对数据依赖。但是，如果你不清楚数据服从一个什么样的分布，或是没办法拿到所有可能的数据（大部分情况下拿不到所有数据），那么我们训练出来的模型和真实模型之间存在不一致性。这种不一致性表现在两个方面：偏差和方差。</p><p>那么，既然偏差和方差是这么来的，而且还是无法避免的，那么我们有什么办法尽量减少它对模型的影响呢？</p><p>一个好的办法就是<strong>正确选择模型的复杂度</strong>。复杂度高的模型通常对训练数据有很好的拟合能力，但是对测试数据就不一定了。而复杂度太低的模型又不能很好的拟合训练数据，更不能很好的拟合测试数据。因此，选择合适的模型复杂度显得尤为重要。</p><p><img src="/imgs/posts/2024/10/12/datamining8.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><h4id="偏差方差与baggingboosting的关系">偏差、方差与bagging、boosting的关系</h4><p>Bagging算法是对训练样本进行采样，产生出若干不同的子集，再从每个数据子集中训练出一个分类器，取这些分类器的平均，所以是降低模型的方差（variance）。Bagging算法和RandomForest这种并行算法都有这个效果。</p><p>Boosting则是迭代算法，每一次迭代都根据上一次迭代的预测结果对样本进行权重调整，所以随着迭代不断进行，误差会越来越小，所以模型的偏差（bias）会不断降低。</p><h4 id="偏差方差和k折交叉验证的关系">偏差、方差和K折交叉验证的关系</h4><p>K-fold Cross Validation的思想：将原始数据分成 <code>K</code>组(一般是均分)，将每个子集数据分别做一次验证集，其余的 <code>K-1</code>组子集数据作为训练集，这样会得到 <code>K</code> 个模型，用这<code>K</code> 个模型最终的验证集的分类准确率的平均数作为此 K-CV下分类器的性能指标。</p><p>对于一系列模型 <span class="math inline">\(F(\hat{f},\theta)\)</span>， 我们使用CrossValidation的目的是获得预测误差的无偏估计量CV，从而可以用来选择一个最优的Theta*，使得CV最小。假设K-foldscrossvalidation，CV统计量定义为每个子集中误差的平均值，而K的大小和CV平均值的bias和variance是有关的：<span class="math display">\[CV = \frac{1}{K}\sum^K_{k=1}\frac{1}{m}\sum^m_{i=1}(\hat{f}^k-y_i)^2\]</span> 其中，<span class="math inline">\(m = \frac{N}{K}\)</span>代表每个子集的大小， <code>N</code> 是总的训练样本量，<code>K</code>是子集的数目。</p><p>当 <code>K</code> 较大时，<code>m</code> 较小，模型建立在较大的<code>N-m</code>上，经过更多次数的平均可以学习得到更符合真实数据分布的模型，Bias就小了，但是这样一来模型就更加拟合训练数据集，再去测试集上预测的时候预测误差的期望值就变大了，从而Variance就大了；<code>K</code>较小的时候，模型不会过度拟合训练数据，从而Bias较大，但是正因为没有过度拟合训练数据，Variance也较小。</p><h4 id="如何降低泛化误差">如何降低泛化误差</h4><p>在这里我们不讨论如何降低噪声，在我们获得数据集时，数据集本身可能就会存在噪声，因此很难进行降低。我们主要讨论如何通过降低偏差和方差来降低泛化误差。同时，由于偏差和方差是无法完全避免的，因此我们只能尽量减少其影响。</p><p>整体思路：</p><ol type="1"><li>在避免偏差时，<strong>需尽量选择正确的模型</strong>，一个非线性问题而我们一直用线性模型去解决，那无论如何，高偏差是无法避免的。</li><li>有了正确的模型，<strong>我们还要慎重选择数据集的大小</strong>，通常数据集越大越好，但大到数据集已经对整体所有数据有了一定的代表性后，再多的数据已经不能提升模型了，反而会带来计算量的增加。而训练数据太小一定是不好的，这会带来过拟合，模型复杂度太高，方差很大，不同数据集训练出来的模型变化非常大。</li><li>最后，<strong>要选择合适的模型复杂度</strong>，复杂度高的模型通常对训练数据有很好的拟合能力，但是也容易造成过拟合。</li></ol><p>如何降低偏差：</p><ol type="1"><li><strong>增加算法复杂度</strong>，但是要注意单纯的增加算法复杂度可能会导致方差的增加，可以结合正则项进行惩罚。</li><li><strong>进行合理的特征工程</strong>，检查是否遗漏重要特征，寻找更具有代表性的特征，使用更多的特征（增加模型复杂度）。</li><li><strong>优化网络结构</strong>，因为偏差大意味着网络的拟合效果不好，因此可以更换网络层。</li></ol><p>如何降低方差：</p><ol type="1"><li><strong>增加训练样本</strong>，使用更多的数据，减少数据扰动所造成的影响。样本代表性不足是方差大的首要原因，增加样本也是降低方差最简单的方法。</li><li><strong>引入正则项</strong>（L1正则，L2正则，Dropout等）。</li><li><strong>特征提取</strong>，对输入的特征进行提取，特征变少方差也会减小。</li><li><strong>降低模型复杂度</strong>，或者采用早停，减少迭代周期。</li><li><strong>交叉验证法</strong>。</li></ol><h3 id="评估方法">评估方法</h3><p>通常我们把分类错误的样本数占样本总数的比例称为“错误率”（errorrate），即如果在 <code>m</code> 个样本中有 <code>a</code>个样本分类错误，则错误率 <span class="math inline">\(E =\frac{a}{m}\)</span> ；相应地， <span class="math inline">\(1 -\frac{a}{m}\)</span> 称为“精度”（accuracy），即“精度 = 1 -错误率”。更一般地，我们把学习器的实际预测输出与样本的真实输出之间的差异称为“误差”（error），学习器在训练集上的误差称为“训练误差”）trainingerror）或“经验误差”（empiricalerror），在新样本上的误差称为“泛化误差”（generalizationerror）。显然，我们希望得到泛化误差小的学习器。然而，我们事先并不知道新样本是什么样，实际能做的是努力使经验误差最小化。在很多情况下，我们可以学得一个经验误差很小、在训练集上表现很好的学习器，例如甚至对所有训练样本都分类正确，即分类错误率为零，分类精度为100%。但这是不是我们想要的学习器呢？遗憾的是，这样的学习器在多数情况下都不好。</p><blockquote><p>这里所说的“误差”均指误差期望。</p></blockquote><h4 id="留出法hold-out">留出法（hold-out）</h4><h4id="交叉验证法cross-validationk折交叉验证k-fold-cross-validation">交叉验证法（crossvalidation）——k折交叉验证（k-fold cross validation）</h4><h4 id="自助法bootstrapping">自助法（bootstrapping）</h4><h4 id="调参与最终模型">调参与最终模型</h4><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://zhuanlan.zhihu.com/p/72038532">欠拟合、过拟合及如何防止过拟合- 知乎 (zhihu.com)</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2"class="footnote-text"><span><a href="https://zhuanlan.zhihu.com/p/397672531">机器学习-偏差与方差 - 知乎 (zhihu.com)</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://ustccoder.github.io/2020/05/19/deep%20learning%20variance%20bias/">误差，偏差，方差，噪声的关系| GitHub (ustccoder.github.io)</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:4" class="footnote-text"><span>周志华. 机器学习[M].北京：清华大学出版社，2016: 44.<a href="#fnref:4" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:5" class="footnote-text"><span><ahref="https://blog.csdn.net/qq_24884193/article/details/104071664">训练集，验证集，测试集分别是什么_训练集验证集 测试集-CSDN博客</a><a href="#fnref:5" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>注：关于参考文献的格式可以参考<ahref="https://lib.tsinghua.edu.cn/info/1147/3359.htm">清华大学的研究帮助</a>，本文没有严格按照参考文献的格式引用。</p></blockquote><h2 id="环境配置">环境配置</h2><h3 id="创建虚拟环境">创建虚拟环境</h3><p>由于较新的版本可能出现部分库不兼容的问题，因此本文采用<code>Python 3.8</code>，推荐使用 <code>Conda</code> 来隔离不同的<code>Python</code> 环境，方便后面出现问题进行调试。</p><p>首先在 <code>Conda</code> 中创建一个名为 <code>ml</code>的新环境，激活环境并安装一些机器学习常用的库。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda create --name ml python=3.8<br>conda activate ml<br>conda install numpy pandas scikit-learn scikit-plot jupyterlab<br></code></pre></td></tr></table></figure><p>这里可以安装 <code>Jupyter Notebook</code> 也可以安装<code>JupyterLab</code>（<code>Jupyter notebook</code>的更加现代化的版本）。</p><h3id="jupyter-notebook-可视化切换虚拟环境"><code>Jupyter Notebook</code>可视化切换虚拟环境</h3><p>鉴于每次启用虚拟环境都需要进行繁琐的命令行操作，下面介绍一个可以实现打开<code>Jupyter notebook</code> 之后切换虚拟环境的办法。</p><p>首先按照前面说明的方法创建虚拟环境 <code>ml</code> 并启动虚拟环境<code>conda activate ml</code>，接下来的操作都需要在这个虚拟环境中执行：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda install ipykernel<br>python -m ipykernel install --name &lt;虚拟环境的名字，如ml&gt; --display-name &lt;你想显示的名称，比如&quot;machine learning&quot;&gt;<br></code></pre></td></tr></table></figure><p>接下来就可以直接打开 <code>Jupyter notebook</code>直接切换虚拟环境了。</p><p><img src="/imgs/posts/2024/10/12/jupyter.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>同样，在 <code>Jupyter Lab</code> 中也可以直接切换虚拟环境：</p><p>新建一个在 <code>ml</code> 虚拟环境下的新 <code>.ipynb</code>文件，默认在当前目录下新建。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>在已有的 <code>.ipynb</code> 文件下切换内核。</p><p><img src="/imgs/posts/2024/10/12/jupyterlab2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="/imgs/posts/2024/10/12/jupyterlab3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><h3 id="conda-的基本使用"><code>Conda</code> 的基本使用</h3><p><code>Conda</code> 是一个开源的包管理系统和环境管理器，常用于管理<code>Python</code> 和 <code>R</code>语言的依赖包和虚拟环境（展开下面的折叠块查看常用的命令）。</p>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-b94e7bf6" role="button" aria-expanded="false" aria-controls="collapse-b94e7bf6">        <div class="fold-arrow">▶</div>Conda的常用命令      </div>      <div class="fold-collapse collapse" id="collapse-b94e7bf6">        <div class="fold-content">          <p>检查 <code>Conda</code> 版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>获取帮助：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure><p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python版本：</p><blockquote><p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure><p>在创建环境后，可以通过以下命令激活环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure><p>要退出当前激活的环境，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure><p>如果想删除某个环境，可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure><p>查看系统上所有的 <code>Conda</code> 环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure><p>要在当前激活的环境中安装一个包（如<code>numpy</code>），使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure><p>还可以指定安装包的版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure><p>使用以下命令查看当前环境中已安装的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure><p>可以使用 <code>conda update</code> 命令升级指定的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure><p>也可以升级当前环境下所有的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure><p>如果需要删除某个包，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure><p>可以使用以下命令查找特定包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure><p>可以将环境的配置导出为 <code>YAML</code>文件，方便在其他设备上重现相同环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure><p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure><p>可以克隆已有的环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure><p>要更新 <code>conda</code> 本身，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure><p><code>Conda</code>会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure>        </div>      </div>    </div><h3 id="利用-cuda-进行gpu加速">利用 <code>CUDA</code> 进行GPU加速</h3><p>用 CPU 进行机器学习速度比较慢，可以考虑利用 GPU进行加速，以下是可以参考的安装教程：</p><ul><li><p><ahref="https://blog.csdn.net/YYDS_WV/article/details/137825313">CUDA与CUDNN在Windows下的安装与配置（超级详细版）_cudnn安装windows-CSDN博客</a></p></li><li><p><ahref="https://blog.csdn.net/qlkaicx/article/details/134577555">全网最详细的安装pytorchGPU方法，一次安装成功！！包括安装失败后的处理方法！-CSDN博客</a></p></li></ul><h2 id="机器学习和数据挖掘">机器学习和数据挖掘</h2><h3 id="什么是数据挖掘">什么是数据挖掘</h3><p>数据挖掘（<strong>Data mining</strong>）：Extraction of interesting(non-trivial, implicit, previously unknown and potentially useful)patterns or knowledge from huge amount of data. 也叫做<strong>Knowledgediscovery (mining) in databases (KDD)</strong>。</p><p><img src="/imgs/posts/2024/10/12/datamining.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>一个好的数据挖掘得到的模式应该具有以下特征：</p><ul><li>easily understood by humans</li><li>valid on new or test data with some degree of certainty</li><li>potentially useful</li><li>novel</li></ul><p>数据挖掘的任务：</p><ul><li>Regression: Predicting missing or unavailable<strong>numerical</strong> data values (predictive)</li><li>Classification: Finding a model that describes and distinguishes<strong>categorical</strong> data classes (predictive)<ul><li>Methods: Decision trees, naive Bayesian classification, supportvector machines, neural networks, logistic regression</li></ul></li><li>Clustering: Finding hidden patterns in data by isolating groups of<strong>similar</strong> objects (descriptive)<ul><li>Principle: Maximizing intra-class similarity &amp; minimizinginterclass similarity</li></ul></li><li>Association: Finding items that occur together frequently in data(descriptive)</li><li>Sequence analysis: Discovering sequential patterns(descriptive/predictive)</li><li>Outlier(异常值) detection: Detecting significant deviation fromnormal behavior (predictive)</li></ul><h3 id="机器学习">机器学习</h3><p>机器学习则是致力于研究如何通过计算的手段，利用经验来改善系统的性能。可以理解为计算机从数据中产生“模型”（model）的算法，即“学习算法”（learningalgorithm）。</p><p>机器学习作为计算机科学的重要分支，当然也和计算机科学的核心思想类似：给定一个输入空间（训练集、验证集等），通过学习算法实例化一个模型，用这个模型去预测、分类、检测、聚类测试集（或者是没见过的“新样本”）得到一个输出空间。</p><p><img src="/imgs/posts/2024/10/12/blackbox.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>学得模型适用于新样本的能力，称为“泛化”(generalization)能力。具有强泛化能力的模型能很好地适用于整个样本空间。于是，尽管训练集通常只是样本空间的一个很小的采样，我们仍希望它能很好地反映出样本空间的特性，否则就很难期望在训练集上学得的模型能在整个样本空间上都工作得很好。通常假设样本空间中全体样本服从一个未知“分布”(distribution)<spanclass="math inline">\(\mathcal{D}\)</span>，我们获得的每个样本都是独立地从这个分布上采样获得的，即“独立同分布”(independentand identically distributed，简称 <spanclass="math inline">\(i.i.d.\)</span>)。一般而言，训练样本越多，我们得到的关于<span class="math inline">\(\mathcal{D}\)</span>的信息越多，这样就越有可能通过学习获得具有强泛化能力的模型。</p><p>我们可以把学习过程看作一个在所有假设(hypothesis)组成的空间中进行搜索的过程，搜索目标是找到与训练集“匹配”(fit)的假设，比如说我们要训练一个模型来识别一个西瓜是不是“好瓜”，可能的假设包含对根蒂、敲声、色泽等属性的规定。假设的表示一旦确定，假设空间及其规模大小就确定了，确定了假设空间之后就可以根据训练集来减少假设的可能性和（或）增加规则来形成模型，比如训练集中只有根蒂蜷缩、敲声清脆的西瓜是“好瓜”，那么就可以排除根蒂和敲声其他情况的假设。</p><p>当然可能存在一个训练集对应于多个假设的情况出现，这时就需要模型的归纳偏好来发挥作用。归纳偏好可看作学习算法自身在一个可能很庞大的假设空间中对假设进行选择的启发式或“价值观”。如果学习算法没有归纳偏好，那么这个模型对同一个训练集做出的判断可能不一致，比如在判断一个新样本中的西瓜是不是“好瓜”的过程中，可能第一次做出的判断是基于根蒂蜷缩假设，而第二次是基于敲声清脆假设，那么就可能存在对一个根蒂不蜷缩，但是敲声清脆的西瓜的判断不一致的情况，而这样的学习结果是没有意义的。</p><p>事实上，归纳偏好对应了学习算法本身所做出的关于“什么样的模型更好”的假设。在具体的现实问题中，这个假设是否成立，即算法的归纳偏好是否与问题本身匹配，大多数时候直接决定了算法能否取得好的性能。</p><p>事实上，没有完美的归纳偏好可以使得一个模型适用于所有的情况，换句话说，对于一个学习算法<span class="math inline">\(\mathfrak{L_a}\)</span>而言，若它在某些问题上比学习算法 <spanclass="math inline">\(\mathfrak{L_b}\)</span>好，则必存在另一些问题，在那里 <spanclass="math inline">\(\mathfrak{L_b}\)</span> 比 <spanclass="math inline">\(\mathfrak{L_a}\)</span>好。这个结论对任何算法均成立。也叫“没有免费的午餐”定理（No Free LunchTheorem，简称 NFL 定理）：无论学习算法 <spanclass="math inline">\(\mathfrak{L_a}\)</span> 多聪明、学习算法 <spanclass="math inline">\(\mathfrak{L_b}\)</span>多笨拙，它们的期望性能是一样的。</p><p><img src="/imgs/posts/2024/10/12/datamining11.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>但是这并不意味着机器学习没有任何作用，我们需注意到，NFL定理有一个重要前提：所有“问题”出现的机会相同、或所有问题同等重要。但实际情形并不是这样。很多时候，我们只关注自己正在试图解决的问题（例如某个具体应用任务），希望为它找到一个解决方案至于这个解决方案在别的问题、甚至在相似的问题上是否为好方案，我们并不关心，例如，为了快速从A地到达B地，如果我们正在考虑的A地是南京鼓楼、B地是南京新街口，那么“骑自行车”是很好的解决方案；这个方案对A地是南京鼓楼、B地是北京新街口的情形显然很糟糕，但我们对此并不关心。</p><p>另外，NFL定理还包含了均匀分布的假设，但是在实际情况中，一些假设出现的可能性比另外一些假设出现的可能性要高得多，比如圆粒的豌豆比皱粒的豌豆更常见，抛硬币是正反两面着地的情况比侧面着地的情况更常见。</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2024/10/12/datamining12.png" srcset="/imgs/banner/loading.jpg" lazyload /></div><div class="group-image-wrap"><imgsrc="/imgs/posts/2024/10/12/datamining13.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></div></div></div><p>所以，NFL定理最重要的寓意，是让我们清楚地认识到，脱离具体问题,空泛地谈论“什么学习算法更好”毫无意义，因为若考虑所有潜在的问题，则所有学习算法都一样好。要谈论算法的相对优劣，必须要针对具体的学习问题；在某些问题上表现好的学习算法，在另一些问题上却可能不尽如人意，学习算法自身的归纳偏好与问题是否相配，往往会起到决定性的作用。</p><p>数据挖掘是从海量数据中发掘知识，这就必然涉及对“海量数据”的管理和分析。大体来说,数据库领域的研究为数据挖掘提供数据管理技术，而机器学习和统计学的研究为数据挖掘提供数据分析技术。由于统计学界的研究成果通常需要经由机器学习研究来形成有效的学习算法，之后再进入数据挖掘领域，因此从这个意义上说，统计学主要是通过机器学习对数据挖掘发挥影响，而机器学习领域和数据库领域则是数据挖掘的两大支撑。</p><h3 id="过拟合欠拟合和误差">过拟合、欠拟合和误差</h3><blockquote><p>模型有时也称为“学习器”（learner），可以看作学习算法在给定数据和参数空间上的实例化。学习算法通常有参数需要设置，使用不同的参数值和（或）训练数据，将产生不同的结果。</p></blockquote><h4id="过拟合overfitting和欠拟合underfitting1">过拟合（Overfitting）和欠拟合（underfitting）<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[欠拟合、过拟合及如何防止过拟合 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/72038532)">[1]</span></a></sup></h4><blockquote><p>过拟合也叫“过配”，欠拟合也叫“欠配”。</p></blockquote><p>用一张图形象地表示过拟合和欠拟合：</p><p><img src="/imgs/posts/2024/10/12/datamining4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>对于深度学习或机器学习模型而言，我们不仅要求它对训练数据集有很好的拟合（训练误差），同时也希望它可以对未知数据集（测试集）有很好的拟合结果（泛化能力），所产生的测试误差被称为泛化误差。度量泛化能力的好坏，最直观的表现就是模型的过拟合（overfitting）和欠拟合（underfitting）。过拟合和欠拟合是用于描述模型在训练过程中的两种状态。一般来说，训练过程会是如下所示的一个曲线图。</p><p><img src="/imgs/posts/2024/10/12/datamining2.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>训练刚开始的时候，模型还在学习过程中，处于欠拟合区域。随着训练的进行，训练误差和泛化误差都下降。在到达一个临界点之后，训练集的误差下降，测试集的误差上升了，这个时候就进入了过拟合区域——由于训练出来的模型过度拟合了训练集，对训练集以外的数据却不能准确预测。</p><h5 id="欠拟合是什么以及如何解决">欠拟合是什么以及如何解决</h5><p>欠拟合是指模型不能在训练集上获得足够低的误差。换句换说，就是模型复杂度低，模型在训练集上就表现很差，没法学习到数据背后的规律。</p><p>欠拟合基本上都会发生在训练刚开始的时候，经过不断训练之后欠拟合应该不怎么需要考虑了。但是如果还是存在欠拟合，则可以通过增加网络复杂度或者在模型中增加特征的方法来解决欠拟合问题。</p><h5 id="过拟合是什么以及如何解决">过拟合是什么以及如何解决</h5><p>过拟合是指训练误差和测试误差之间的差距太大。换句换说，就是模型复杂度高于实际问题，模型在训练集上表现很好，但在测试集上却表现很差。模型对训练集"死记硬背"（记住了不适用于测试集的训练集性质或特点），没有理解数据背后的规律，泛化能力差。</p><p><img src="/imgs/posts/2024/10/12/datamining3.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>造成过拟合的原因主要有以下几种可能：</p><ul><li><strong>训练数据集样本单一，样本不足。</strong>如果训练样本只有负样本，然后拿生成的模型去预测正样本，这肯定会导致预测不准确。所以训练样本要尽可能的全面，尽可能覆盖所有的数据类型。</li><li><strong>训练数据中噪声干扰过大。</strong>噪声指训练数据中的干扰数据。过多的干扰会导致记录了很多噪声特征，忽略了真实输入和输出之间的关系。</li><li><strong>模型过于复杂。</strong>模型太复杂，已经能够“死记硬背”记下了训练数据的信息，但是遇到没有见过的数据的时候却不能够变通，泛化能力太差。但是我们希望模型对不同的数据都有稳定的输出，所以有时应该尽量简化模型。</li></ul><p>要想解决过拟合问题，就要显著减少测试误差而不过度增加训练误差，从而提高模型的泛化能力。我们可以使用正则化（Regularization）方法。<strong>正则化是指修改学习算法，使其降低泛化误差而非训练误差。</strong></p><p>常用的正则化方法根据具体的使用策略不同可分为：</p><ol type="1"><li>直接提供正则化约束的参数正则化方法，如L1/L2正则化</li><li>通过工程上的技巧来实现更低泛化误差的方法，如提前终止（Earlystopping）和Dropout</li><li>不直接提供约束的隐式正则化方法，如数据增强等。</li></ol><p><strong>方法一：获取和使用更多的数据（数据集增强）——解决过拟合的根本性方法</strong></p><p>让机器学习或深度学习模型泛化能力更好的办法就是使用更多的数据进行训练。但是在实践中，我们拥有的数据量是有限的。解决这个问题的一种方法就是创建“假数据”并添加到训练集中——数据集增强。通过增加训练集的额外副本来增加训练集的大小，进而改进模型的泛化能力。</p><p>以图像数据集举例，可以通过旋转图像、缩放图像、随机裁剪、加入随机噪声、平移、镜像等方式来增加数据量。另外，在物体分类问题中，CNN在图像识别的过程中有强大的“不变性”规则，即待辨识的物体在图像中的形状、姿势、位置、图像整体明暗度都不会影响分类结果。这样我们就可以通过图像平移、翻转、缩放、切割等手段将数据库成倍扩充。</p><p><strong>方法二：采用合适的模型（控制模型的复杂度）</strong></p><p>过于复杂的模型会带来过拟合问题。对于模型的设计，目前公认的一个深度学习规律"deeperisbetter"。国内外各种大牛通过实验和竞赛发现，对于CNN来说，层数越多效果越好，但是也更容易产生过拟合，并且计算所耗费的时间也越长。</p><p>根据<ahref="https://en.wikipedia.org/wiki/Occam%27s_razor">奥卡姆剃刀原理（Occam'sRazor）</a>：在同样能够解释已知观测现象的假设中，我们应该挑选“最简单”的那一个。对于模型的设计而言，我们应该选择简单、合适的模型解决复杂的问题。</p><p><strong>方法三：降低特征的数量</strong></p><p>对于一些特征工程而言，可以降低特征的数量——删除冗余特征，人工选择保留哪些特征。这种方法也可以解决过拟合问题。</p><h4id="误差error偏差bias方差variance以及噪声noise之间的关系23">误差（Error），偏差（Bias），方差（Variance）以及噪声（Noise）之间的关系<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[机器学习 -偏差与方差 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/397672531)">[2]</span></a></sup><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[误差，偏差，方差，噪声的关系 | GitHub (ustccoder.github.io)](https://ustccoder.github.io/2020/05/19/deep learning variance bias/)">[3]</span></a></sup></h4><p>在前面提到了模型的过拟合和欠拟合，那么应该如何刻画这两种情况，或者换句话说，对学习算法除了通过实验估计其泛化性能之外，还能通过什么方式去评估学习算法的好坏，它为什么具有这样的性能。“偏差-方差分解”（bias-variancedecomposition）就是从偏差和方差的角度来解释学习算法泛化性能的一种重要工具。</p><p>在机器学习中，我们用训练数据集去训练一个模型，通常的做法是定义一个误差（Loss）函数，通过将这个误差的最小化过程，来提高模型的性能。在训练数据集上得到的Loss称之为<strong>训练误差（trainingerror）</strong>，在测试集上得到的Loss称之为<strong>泛化误差（generalizationerror）</strong>，也即学习模型对训练数据集的预测值和训练数据集的真实值之间的差异叫训练误差，学习模型对新样本（可以是测试集）数据的预测值和真实值之间的差异叫泛化误差。</p><p>泛化误差可以通过数学上的变换<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="周志华. 机器学习[M]. 北京：清华大学出版社，2016: 44.">[4]</span></a></sup>将其分解为偏差（Bias）、方差（Variance）和噪声（Noise）。<a id="anchor1"></a></p><p><img src="/imgs/posts/2024/10/12/formula1.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>然而我们训练一个学习模型的目的是为了解决训练数据集这个领域中的一般化问题，而不是针对训练数据集这个特定集合的问题，因此单纯地将训练数据集的损失最小化，并不能保证在解决更一般的问题时模型仍然是最优，甚至不能保证模型是可用的。</p><p>比如拿热带雨林的树叶作为训练数据集来训练识别树叶的学习模型，我们希望得到的模型应该能够识别所有的树叶，但是这个模型可能在识别寒带、温带的树叶时表现就不好，甚至不能正确识别树叶。<a id="anchor2"></a></p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/posts/2024/10/12/leaf1.jfif" srcset="/imgs/banner/loading.jpg" lazyload /></div><div class="group-image-wrap"><imgsrc="/imgs/posts/2024/10/12/leaf2.jfif" srcset="/imgs/banner/loading.jpg" lazyload /></div></div></div><p>如果我们能够获得所有可能的数据集合，并在这个数据集合上将损失最小化，那么学习得到的模型就可以称之为“真实模型”。当然，在现实生活中我们不可能获取并训练所有可能的数据，所以即使“真实模型”存在，我们也无法获得，或者获得这个模型的成本过高。因此，我们的最终目的是学习一个模型使其更加接近这个真实模型。</p><blockquote><p>注意：我们能够用来学习的训练数据集只是全部数据中的一个子集。想象一下，我们现在收集几组不同的数据，因为每一组数据的不同，我们学习到模型的最小损失值也会有所不同，它们与“真实模型”的最小损失也是不一样的。</p></blockquote><p>Bias和Variance分别从两个方面来描述我们学习到的模型与真实模型之间的差距。</p><ul><li><p><strong>Bias</strong>（偏差）是用<strong>所有可能的训练数据集</strong>训练出的<strong>所有模型</strong>的输出的<strong>平均值</strong>与<strong>真实模型</strong>的输出值之间的差异，度量了学习算法的期望预测与真实结果的偏离程度。刻画了<strong>学习算法本身的拟合能力</strong>。</p></li><li><p><strong>Variance</strong>（方差）是<strong>不同的训练数据集</strong>训练出的模型输出值之间的差异（预测值离散程度），度量了<strong>同样大小</strong>的训练集的变动导致的学习性能的变化。刻画了<strong>数据扰动所带来的影响</strong>。</p></li><li><p><strong>Noise</strong>（噪声）的存在是学习算法所无法解决的问题，数据的质量决定了学习的上限。假设在数据已经给定的情况下，此时上限已定，我们要做的就是尽可能的接近这个上限。也即在当前任务下<strong>任何学习算法</strong>所能达到的期望泛化误差的下界。刻画了<strong>学习问题本身的难度</strong>。</p></li></ul><p>可以理解为：偏差度量的是单个模型的学习能力，而方差度量的是同一个模型在不同数据集上的稳定性，噪声则是数据的label 本身就是不准确的，因此模型无论如何学习都不可能消除。</p><p><img src="/imgs/posts/2024/10/12/datamining5.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>从前面的公式推导中可以得到泛化误差、偏差、方差以及噪声之间的关系<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="周志华. 机器学习[M]. 北京：清华大学出版社，2016: 44.">[4]</span></a></sup>，也就是说，泛化误差可以表示为偏差、方差和噪声之和（证明过程参考<ahref="#anchor1">西瓜书</a>）： <span class="math display">\[\text{泛化误差} = \text{错误率（error）} = E(f;D) = bias^2(x) + var(x) +\varepsilon^2\]</span>“偏差-方差分解”说明，泛化性能是由学习算法的能力、数据的充分性以及学习任务本身的难度所共同决定的。给定学习任务，为了取得好的泛化性能，则需使偏差较小，即能够充分拟合数据，并且使方差较小，即使得数据扰动产生的影响小。</p><h4 id="偏差方差窘境">偏差、方差窘境</h4><p>一般来说，偏差与方差是有冲突的，这称为偏差-方差窘境（bias-variancedilemma）。给定学习任务，假定我们能控制学习算法的训练程度，则在训练不足时，学习器的拟合能力不够强，训练数据的扰动不足以使学习器产生显著变化，此时偏差主导了泛化错误率；随着训练程度的加深，学习器的拟合能力逐渐增强，训练数据发生的扰动渐渐能被学习器学到，方差逐渐主导了泛化错误率；在训练程度充足后，学习器的拟合能力已经非常强，训练数据发生的轻微扰动都会导致学习器发生显著变化，若训练数据自身的、非全局的特性被学习器学到了，则将发生过拟合。</p><figure><img src="/imgs/posts/2024/10/12/datamining6.png" srcset="/imgs/banner/loading.jpg" lazyloadalt="bias-variance dilemma" /><figcaption aria-hidden="true">bias-variance dilemma</figcaption></figure><p>换句话说，<strong>随着模型复杂度，模型迭代次数的增加，方差和偏差可能会出现此消彼长的现象</strong>，训练不足，或者模型过于简单时会出现<strong>Under-fitting(欠拟合)</strong>，此时的模型误差主要来自于偏差，表现为模型在训练集和验证集上面的准确率都不高，说明出现了欠拟合。而训练太多，或者模型过于复杂时会出现<strong>Over-fitting(过拟合)</strong>，此时的模型误差主要来自于方差，表现为模型在训练集上的准确率非常高，但在验证集上面的准确率不高，说明出现了过拟合。</p>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-f9ee5ff3" role="button" aria-expanded="false" aria-controls="collapse-f9ee5ff3">        <div class="fold-arrow">▶</div>训练集、验证集和测试集的区别和关系      </div>      <div class="fold-collapse collapse" id="collapse-f9ee5ff3">        <div class="fold-content">          <p>训练集、验证集和测试集这三个名词在机器学习领域极其常见，但很多人并不是特别清楚，尤其是后两个经常被人混用<sup id="fnref:5" class="footnote-ref"><a href="#fn:5" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[训练集，验证集，测试集分别是什么_训练集 验证集 测试集-CSDN博客](https://blog.csdn.net/qq_24884193/article/details/104071664)">[5]</span></a></sup>。</p><p>在有监督(supervised)的机器学习中，数据集常被分成2~3个，即：训练集(trainset)，验证集(validation set)，测试集(test set)。</p><figure><img src="/imgs/posts/2024/10/12/datamining9.png" srcset="/imgs/banner/loading.jpg" lazyloadalt="bias-variance dilemma" /><figcaption aria-hidden="true">bias-variance dilemma</figcaption></figure><p>如果给定的样本数据充足，我们通常使用均匀随机抽样的方式将数据集划分成3个部分——训练集、验证集和测试集，这三个集合不能有交集，常见的比例是8:1:1。需要注意的是，通常都会给定训练集和测试集，而不会给验证集。这时候验证集该从哪里得到呢？一般的做法是，从训练集中均匀随机抽样一部分样本作为验证集。</p><p><strong>训练集</strong>：训练集用来训练模型，即确定模型的权重和偏置这些参数，通常我们称这些参数为学习参数。</p><p><strong>验证集</strong>：而验证集用于模型的选择，更具体地来说，验证集并不参与学习参数的确定，也就是验证集并没有参与梯度下降的过程。验证集只是为了选择超参数，比如网络层数、网络节点数、迭代次数、学习率这些都叫超参数。比如在KNN算法中，K值就是一个超参数。所以可以使用验证集来求出误差率最小的K。</p><blockquote><p><strong>参数</strong>是模型中可被学习和调整的参数，通过训练数据进行学习和优化；而<strong>超参数</strong>则是手动设置的参数。</p></blockquote><p><strong>测试集</strong>：测试集只使用一次，即在训练完成后评价最终的模型时使用。它既不参与学习参数过程，也不参数超参数选择过程，而仅仅使用于模型的评价。值得注意的是，千万不能在训练过程中使用测试集，而后再用相同的测试集去测试模型。这样做其实是一个cheat，使得模型测试时准确率很高，或者说这时模型已经过拟合了。</p><p>为什么需要划分成三个部分呢？简而言之，这样做是为了防止过拟合。如果我们把所有数据都用来训练模型的话，建立的模型自然是最契合这些数据的，测试表现也好。但换了其它数据集测试这个模型效果可能就没那么好了。还是前面<ahref="#anchor2">树叶那个例子</a>，你把所有热带雨林的树叶都拿去训练了，这个模型识别热带雨林的树叶的效果很好，但是用寒带的树叶来测试这个模型，可能识别树叶的效果就没有识别热带雨林的树叶效果那么好。总而言之，训练集和测试集相同的话，模型评估结果可能比实际要好。</p><p>如果训练集比较小怎么办呢？这个时候<strong>交叉验证</strong>就登场了。因为训练集比较小，无法直接像前面那样直接分出训练集，验证集，测试集就可以了（简单交叉验证）。</p><p>需要说明的是，在实际情况下，人们不是很喜欢用交叉验证，主要是因为它会耗费较多的计算资源。一般直接把训练集按照50%-90%的比例分成训练集和验证集。但这也是根据具体情况来定的：如果超参数数量多，你可能就想用更大的验证集，而如果验证集的数量不够，那么最好还是用交叉验证吧。至于分成几份比较好，一般都是分成3、5和10份。</p><figure><img src="/imgs/posts/2024/10/12/datamining10.png" srcset="/imgs/banner/loading.jpg" lazyloadalt="bias-variance dilemma" /><figcaption aria-hidden="true">bias-variance dilemma</figcaption></figure><p>图最上面的部分表示我们拥有的数据，而后我们对数据进行了再次分割，主要是对训练集，假设将训练集分成5份（该数目被称为<strong>折数</strong>，5-fold交叉验证），每次都用其中4份来训练模型，黄色的那份用来验证4份训练出来的模型的准确率，记下准确率。然后再次在这5份中取另外4份做训练集，1份做验证集，再次得到一个模型的准确率，一共做五次（每个fold都做一次验证集）。直到所有5份都做过1次验证集，也即验证集名额循环了一圈，交叉验证的过程就结束。算得这5次准确率的均值，留下准确率最高的模型，即确定该模型的超参数，也即确定了最终模型的超参数。</p>        </div>      </div>    </div><h4id="偏差方差和过拟合欠拟合的关系">偏差、方差和过拟合、欠拟合的关系</h4><p>一般来说，简单的模型会有一个较大的偏差和较小的方差，复杂的模型偏差较小方差较大。</p><p>欠拟合：模型不能适配训练样本，有一个很大的偏差，但方差比较小。比如，我们有一个本质上是多项式的连续非线性数据，但模型只能表示线性关系。在此情况下，我们向模型提供多少数据不重要，因为模型根本无法表示数据的基本关系，模型不能适配训练样本，有一个很大的偏差，因此我们需要更复杂的模型。那么，是不是模型越复杂拟合程度越高越好呢？也不是，因为还有方差。</p><p><img src="/imgs/posts/2024/10/12/datamining7.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>过拟合：模型很好的适配训练样本，但在测试集上表现很糟，有一个很大的方差，但偏差较小。方差大就是指模型过于拟合训练数据，以至于没办法把模型的结果泛化。而泛化正是机器学习要解决的问题，如果一个模型只能对一组特定的数据有效，换了数据就无效，我们就说这个模型过拟合。这就是模型很好的适配训练样本，但在测试集上表现很糟，有一个很大的方差。</p><h4 id="偏差方差与模型复杂度的关系">偏差、方差与模型复杂度的关系</h4><p>由前面偏差和方差的介绍，我们来总结一下偏差和方差的来源：我们训练的机器学习模型，必不可少地对数据依赖。但是，如果你不清楚数据服从一个什么样的分布，或是没办法拿到所有可能的数据（大部分情况下拿不到所有数据），那么我们训练出来的模型和真实模型之间存在不一致性。这种不一致性表现在两个方面：偏差和方差。</p><p>那么，既然偏差和方差是这么来的，而且还是无法避免的，那么我们有什么办法尽量减少它对模型的影响呢？</p><p>一个好的办法就是<strong>正确选择模型的复杂度</strong>。复杂度高的模型通常对训练数据有很好的拟合能力，但是对测试数据就不一定了。而复杂度太低的模型又不能很好的拟合训练数据，更不能很好的拟合测试数据。因此，选择合适的模型复杂度显得尤为重要。</p><p><img src="/imgs/posts/2024/10/12/datamining8.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><h4id="偏差方差与baggingboosting的关系">偏差、方差与bagging、boosting的关系</h4><p>Bagging算法是对训练样本进行采样，产生出若干不同的子集，再从每个数据子集中训练出一个分类器，取这些分类器的平均，所以是降低模型的方差（variance）。Bagging算法和RandomForest这种并行算法都有这个效果。</p><p>Boosting则是迭代算法，每一次迭代都根据上一次迭代的预测结果对样本进行权重调整，所以随着迭代不断进行，误差会越来越小，所以模型的偏差（bias）会不断降低。</p><h4 id="偏差方差和k折交叉验证的关系">偏差、方差和K折交叉验证的关系</h4><p>K-fold Cross Validation的思想：将原始数据分成 <code>K</code>组(一般是均分)，将每个子集数据分别做一次验证集，其余的 <code>K-1</code>组子集数据作为训练集，这样会得到 <code>K</code> 个模型，用这<code>K</code> 个模型最终的验证集的分类准确率的平均数作为此 K-CV下分类器的性能指标。</p><p>对于一系列模型 <span class="math inline">\(F(\hat{f},\theta)\)</span>， 我们使用CrossValidation的目的是获得预测误差的无偏估计量CV，从而可以用来选择一个最优的Theta*，使得CV最小。假设K-foldscrossvalidation，CV统计量定义为每个子集中误差的平均值，而K的大小和CV平均值的bias和variance是有关的：<span class="math display">\[CV = \frac{1}{K}\sum^K_{k=1}\frac{1}{m}\sum^m_{i=1}(\hat{f}^k-y_i)^2\]</span> 其中，<span class="math inline">\(m = \frac{N}{K}\)</span>代表每个子集的大小， <code>N</code> 是总的训练样本量，<code>K</code>是子集的数目。</p><p>当 <code>K</code> 较大时，<code>m</code> 较小，模型建立在较大的<code>N-m</code>上，经过更多次数的平均可以学习得到更符合真实数据分布的模型，Bias就小了，但是这样一来模型就更加拟合训练数据集，再去测试集上预测的时候预测误差的期望值就变大了，从而Variance就大了；<code>K</code>较小的时候，模型不会过度拟合训练数据，从而Bias较大，但是正因为没有过度拟合训练数据，Variance也较小。</p><h4 id="如何降低泛化误差">如何降低泛化误差</h4><p>在这里我们不讨论如何降低噪声，在我们获得数据集时，数据集本身可能就会存在噪声，因此很难进行降低。我们主要讨论如何通过降低偏差和方差来降低泛化误差。同时，由于偏差和方差是无法完全避免的，因此我们只能尽量减少其影响。</p><p>整体思路：</p><ol type="1"><li>在避免偏差时，<strong>需尽量选择正确的模型</strong>，一个非线性问题而我们一直用线性模型去解决，那无论如何，高偏差是无法避免的。</li><li>有了正确的模型，<strong>我们还要慎重选择数据集的大小</strong>，通常数据集越大越好，但大到数据集已经对整体所有数据有了一定的代表性后，再多的数据已经不能提升模型了，反而会带来计算量的增加。而训练数据太小一定是不好的，这会带来过拟合，模型复杂度太高，方差很大，不同数据集训练出来的模型变化非常大。</li><li>最后，<strong>要选择合适的模型复杂度</strong>，复杂度高的模型通常对训练数据有很好的拟合能力，但是也容易造成过拟合。</li></ol><p>如何降低偏差：</p><ol type="1"><li><strong>增加算法复杂度</strong>，但是要注意单纯的增加算法复杂度可能会导致方差的增加，可以结合正则项进行惩罚。</li><li><strong>进行合理的特征工程</strong>，检查是否遗漏重要特征，寻找更具有代表性的特征，使用更多的特征（增加模型复杂度）。</li><li><strong>优化网络结构</strong>，因为偏差大意味着网络的拟合效果不好，因此可以更换网络层。</li></ol><p>如何降低方差：</p><ol type="1"><li><strong>增加训练样本</strong>，使用更多的数据，减少数据扰动所造成的影响。样本代表性不足是方差大的首要原因，增加样本也是降低方差最简单的方法。</li><li><strong>引入正则项</strong>（L1正则，L2正则，Dropout等）。</li><li><strong>特征提取</strong>，对输入的特征进行提取，特征变少方差也会减小。</li><li><strong>降低模型复杂度</strong>，或者采用早停，减少迭代周期。</li><li><strong>交叉验证法</strong>。</li></ol><h3 id="评估方法">评估方法</h3><p>通常我们把分类错误的样本数占样本总数的比例称为“错误率”（errorrate），即如果在 <code>m</code> 个样本中有 <code>a</code>个样本分类错误，则错误率 <span class="math inline">\(E =\frac{a}{m}\)</span> ；相应地， <span class="math inline">\(1 -\frac{a}{m}\)</span> 称为“精度”（accuracy），即“精度 = 1 -错误率”。更一般地，我们把学习器的实际预测输出与样本的真实输出之间的差异称为“误差”（error），学习器在训练集上的误差称为“训练误差”）trainingerror）或“经验误差”（empiricalerror），在新样本上的误差称为“泛化误差”（generalizationerror）。显然，我们希望得到泛化误差小的学习器。然而，我们事先并不知道新样本是什么样，实际能做的是努力使经验误差最小化。在很多情况下，我们可以学得一个经验误差很小、在训练集上表现很好的学习器，例如甚至对所有训练样本都分类正确，即分类错误率为零，分类精度为100%。但这是不是我们想要的学习器呢？遗憾的是，这样的学习器在多数情况下都不好。</p><blockquote><p>这里所说的“误差”均指误差期望。</p></blockquote><h4 id="留出法hold-out">留出法（hold-out）</h4><h4id="交叉验证法cross-validationk折交叉验证k-fold-cross-validation">交叉验证法（crossvalidation）——k折交叉验证（k-fold cross validation）</h4><h4 id="自助法bootstrapping">自助法（bootstrapping）</h4><h4 id="调参与最终模型">调参与最终模型</h4><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://zhuanlan.zhihu.com/p/72038532">欠拟合、过拟合及如何防止过拟合- 知乎 (zhihu.com)</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2"class="footnote-text"><span><a href="https://zhuanlan.zhihu.com/p/397672531">机器学习-偏差与方差 - 知乎 (zhihu.com)</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://ustccoder.github.io/2020/05/19/deep%20learning%20variance%20bias/">误差，偏差，方差，噪声的关系| GitHub (ustccoder.github.io)</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:4" class="footnote-text"><span>周志华. 机器学习[M].北京：清华大学出版社，2016: 44.<a href="#fnref:4" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:5" class="footnote-text"><span><ahref="https://blog.csdn.net/qq_24884193/article/details/104071664">训练集，验证集，测试集分别是什么_训练集验证集 测试集-CSDN博客</a><a href="#fnref:5" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
     
     
     <categories>
@@ -244,9 +244,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Machine Learning</tag>
+      
+      <tag>Math</tag>
       
       <tag>Data Mining</tag>
       
@@ -418,9 +418,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -453,11 +453,11 @@
       
       <tag>Array</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Sorting</tag>
       
       <tag>Binary Search</tag>
       
-      <tag>Sorting</tag>
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -484,9 +484,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Array</tag>
       
@@ -639,9 +639,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Greedy</tag>
       
@@ -701,9 +701,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Linked List</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -761,9 +761,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -792,9 +792,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -858,9 +858,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Linked List</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -943,13 +943,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
+      <tag>Counting</tag>
       
       <tag>String</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -982,9 +982,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1013,9 +1013,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -1077,9 +1077,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Prefix Sum</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Prefix Sum</tag>
       
     </tags>
     
@@ -1108,9 +1108,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1137,9 +1137,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
     </tags>
     
@@ -1168,9 +1168,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1201,9 +1201,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1230,9 +1230,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Simulation</tag>
       
@@ -1267,9 +1267,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1327,9 +1327,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1358,9 +1358,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Matrix</tag>
       
@@ -1480,9 +1480,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1509,9 +1509,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Prefix Sum</tag>
       
@@ -1569,9 +1569,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
     </tags>
     
@@ -1600,15 +1600,15 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1635,13 +1635,13 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
       
-      <tag>Array</tag>
+      <tag>Algorithm</tag>
       
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1670,9 +1670,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -1798,9 +1798,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -1891,9 +1891,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Simulation</tag>
       
@@ -1957,11 +1957,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -2019,9 +2019,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Array</tag>
       
@@ -2056,9 +2056,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2089,9 +2089,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2118,9 +2118,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Array</tag>
       
@@ -2151,9 +2151,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Simulation</tag>
       
@@ -2186,9 +2186,9 @@
       
       <tag>Array</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -2221,9 +2221,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2252,9 +2252,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2314,9 +2314,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Linked List</tag>
       
@@ -2345,13 +2345,13 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
       
-      <tag>Array</tag>
+      <tag>Algorithm</tag>
       
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2409,9 +2409,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Number Theory</tag>
       
@@ -2471,9 +2471,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Memoization</tag>
       
@@ -2506,9 +2506,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Simulation</tag>
       
@@ -2537,9 +2537,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Array</tag>
       
@@ -2599,9 +2599,9 @@
     
     <tags>
       
-      <tag>Algorithm</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Algorithm</tag>
       
       <tag>Memoization</tag>
       
@@ -2669,9 +2669,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2702,9 +2702,9 @@
       
       <tag>Array</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -2733,9 +2733,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2826,9 +2826,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2857,9 +2857,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2888,9 +2888,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -2921,9 +2921,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -2956,9 +2956,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -2987,9 +2987,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -3098,11 +3098,11 @@
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<h1 id="about">About</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="about-me">About me</h2><p>目前是一名普通的大四学生，正在自学计算机科学知识。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code> 极大地提高了写作效率；而<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去进行备份；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。当然有更高排版需求的时候还是会使用<code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容和技术文章。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2024-10-07T15:03:00">October 7, 2024 at 15:03PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -3113,7 +3113,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
   
@@ -3131,11 +3131,11 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    <content type="html"><![CDATA[<h1 id="about">About</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="about-me">About me</h2><p>目前是一名普通的大四学生，正在自学计算机科学知识。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code> 极大地提高了写作效率；而<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去进行备份；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。当然有更高排版需求的时候还是会使用<code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容和技术文章。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2024-10-07T15:03:00">October 7, 2024 at 15:03PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
     
   </entry>
   
