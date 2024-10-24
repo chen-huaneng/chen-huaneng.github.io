@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>LaTeX - 制作自己的模板</title>
+    <link href="/2024/10/24/2024-10-24-2024-10-24-latex/"/>
+    <url>/2024/10/24/2024-10-24-2024-10-24-latex/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Tools</category>
+      
+      <category>LaTeX</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Math</tag>
+      
+      <tag>Tool</tag>
+      
+      <tag>LaTeX</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Windows - 疑难问题解答记录</title>
     <link href="/2024/10/18/2024-10-18-2024-10-18-windows/"/>
     <url>/2024/10/18/2024-10-18-2024-10-18-windows/</url>
@@ -455,9 +486,9 @@
       
       <tag>Sorting</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -943,13 +974,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
       
       <tag>Greedy</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -982,9 +1013,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1201,9 +1232,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1480,9 +1511,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2089,9 +2120,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
