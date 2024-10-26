@@ -8,7 +8,7 @@
     <link href="/2024/10/25/2024-10-25-2024-10-25-neovim/"/>
     <url>/2024/10/25/2024-10-25-2024-10-25-neovim/</url>
     
-    <content type="html"><![CDATA[<h2 id="什么是-neovim">什么是 Neovim</h2><p>如果你听过编辑器之神 Vim 和神之编辑器 Emacs 的话，那么就很好理解Neovim 了，它就是 Vim 的一个社区版，如果你对它的历史感兴趣，可以到 <ahref="https://neovim.io/doc/user/vim_diff.html#vim-differences">Neovim的官网</a> 查看。</p><blockquote><p>关于 Vim 和 Neovim 的历史还可以查看：<ahref="https://jdhao.github.io/2020/01/12/vim_nvim_history_development/">Vim和 Neovim 的前世今生 · jdhao's digital space</a></p></blockquote><h2 id="一些可能有用的链接">一些可能有用的链接</h2><h3 id="快速入门">快速入门</h3><ul><li><a href="https://github.com/neovim/neovim">neovim/neovim: Vim-forkfocused on extensibility and usability (github.com)</a> - Neovim 的GitHub 仓库</li><li><a href="https://learnxinyminutes.com/docs/lua/">Learn Lua in YMinutes (learnxinyminutes.com)</a> - 快速入门 Lua 语言（主要是为了Neovim 的配置）<ul><li><ahref="https://neovim.io/doc/user/lua-guide.html#lua-guide">Lua-guide -Neovim docs</a> - Neovim 提供的 Lua 手册</li></ul></li><li><a href="https://neovim.io/">Home - Neovim</a> - Neovim的官网（可以用来查看 API 和入门文档<ul><li><a href="https://neovim.io/doc/user/">Help - Neovim docs</a> -帮助文档</li><li><ahref="https://neovim.io/doc/user/usr_toc.html#user-manual">Usr_toc -Neovim docs</a> - 文档的目录（快速定位需要阅读的部分）</li></ul></li></ul><h3 id="快捷键速查表">快捷键速查表</h3><ul><li><a href="https://neovim.io/doc/user/vimindex.html#index">Index -Neovim docs</a></li><li><a href="https://neovim.io/doc/user/quickref.html#quickref">Quickref- Neovim docs</a></li><li>或者在 Neovim 中输入 <code>:help index</code></li></ul><h3 id="在哪里找插件">在哪里找插件</h3><ul><li><a href="https://dotfyle.com/neovim/plugins/trending">TrendingNeovim Plugins in 2024 (dotfyle.com)</a></li><li><ahref="https://github.com/rockerBOO/awesome-neovim">rockerBOO/awesome-neovim:Collections of awesome neovim plugins. (github.com)</a></li><li><a href="https://luarocks.org/labels/neovim">Modules labeled'neovim' - LuaRocks</a></li><li><a href="https://nvim-awesome.vercel.app/">nvimawesome(nvim-awesome.vercel.app)</a></li><li><a href="https://neovimcraft.com/">neovimcraft</a></li></ul><h3 id="学习-vim-neovim">学习 Vim &amp; Neovim</h3><ul><li><a href="https://csdiy.wiki/必学工具/Vim/">Vim - CS自学指南(csdiy.wiki)</a> - 可以在里面找到一些学习的参考资料</li><li><a href="https://imageslr.com/2021/vim.html">💻【Linux】Vim 入门笔记(imageslr.com)</a> - 主要介绍如何使用 Vim 的一些技巧</li><li><ahref="https://github.com/yangyangwithgnu/use_vim_as_ide">yangyangwithgnu/use_vim_as_ide:use vim as IDE (github.com)</a> -比较完善的文档，略长，但是太长时间没有更新，仅供参考</li><li><ahref="https://github.com/wsdjeg/vim-galore-zh_cn">wsdjeg/vim-galore-zh_cn:Vim 从入门到精通 (github.com)</a> - 主要介绍 Vim 的一些基础概念</li><li><ahref="https://github.com/wsdjeg/Learn-Vim_zh_cn">wsdjeg/Learn-Vim_zh_cn:聪明地学习Vim (github.com)</a> - 中文学习 Vim 的参考资料</li><li><a href="https://learnvimscriptthehardway.stevelosh.com/">LearnVimscript the Hard Way (stevelosh.com)</a> - 英文学习 Vim的参考资料</li><li><ahref="https://learnku.com/docs/practical-vim-2nd-edition">《PracticalVim 2nd Edition》 | 开发者工具论坛 (learnku.com)</a> - 系统学习 Vim的参考书</li></ul><h3 id="配置-neovim">配置 Neovim</h3><ul><li><ahref="https://neovim.io/doc/user/lua-guide.html#lua-guide">Lua-guide -Neovim docs</a> - 官方关于如何配置的文档</li><li><a href="https://yianwillis.github.io/vimcdoc/doc/help.html">VIM中文帮助: 总览及快速参考 (yianwillis.github.io)</a> -中文帮助，适合对阅读官方英文有困难的同学，主要针对 Vim</li></ul><p>第三方博客的介绍：</p><p><strong>中文博客</strong></p><ul><li><a href="https://zhuanlan.zhihu.com/p/596879980">你需要知道的使用lua 配置 neovim 的一切 - 知乎 (zhihu.com)</a> - 主要看关于<code>o</code> ,<code>wo</code>,<code>bo</code>,<code>g</code>,<code>env</code>,<code>opt</code>之间关系的说明</li><li><a href="https://zhuanlan.zhihu.com/p/467939053">Neovim: 把 init.vim迁移到 init.lua - 知乎 (zhihu.com)</a> - 适合之前使用 Vim 要迁移到Neovim 的同学</li><li><ahref="https://martinlwx.github.io/zh-cn/config-neovim-from-scratch/">从零开始配置Neovim(Nvim) - MartinLwx's Blog</a> - 轻量化配置Neovim，适合新手同学逐步跟着配置，针对 MacOS</li><li><ahref="https://youngxhui.top/2023/07/nvim-guideline-1basic-config/">neovim入门指南(一)：基础配置- ISLAND (youngxhui.top)</a> -系列文章，比较适合想要逐层递进学习的同学，涵盖了 Neovim的基本使用、一些插件的介绍、LSP如何配置等内容</li><li><ahref="https://zhuanlan.zhihu.com/p/480049712">从零开始的现代化Vim配置指南——前言- 知乎 (zhihu.com)</a> - 系列文章，似乎很久没有更新了，不是很推荐</li><li><a href="https://zhuanlan.zhihu.com/p/464902429">我用 neovim 代替了MS Office, IDEA, Visual Studio... - 知乎 (zhihu.com)</a> -过时的文章，可以不参考</li><li><a href="https://zhuanlan.zhihu.com/p/388397656">neovim 配置记录 -知乎 (zhihu.com)</a> -比较简略地介绍了一些插件，可以参考一下插件的功能</li><li><a href="https://zhuanlan.zhihu.com/p/467428462">我的现代化 NeoVim配置介绍/教程 - 知乎 (zhihu.com)</a> - 可以参考其中的插件介绍</li><li><ahref="https://zhuanlan.zhihu.com/p/382092667">我的现代化Neovim配置 -知乎 (zhihu.com)</a> - 介绍不是很详细，更像是个人记录，不推荐参考</li><li><ahref="https://zhuanlan.zhihu.com/p/301008305">Neovim/Vim基础教程（面向萌新&amp;推荐&amp;感想）- 知乎 (zhihu.com)</a> - 给的大多是链接，质量不高，不推荐</li><li><a href="https://lazypool-blog.netlify.app/2023/12/07/nvim/">用 Nvim打造超强的个性化 IDE - LazyPool's Blog (lazypool-blog.netlify.app)</a> -相对比较容易懂，配置文档也比较详细，介绍了一些有用的插件</li></ul><p><strong>英文博客</strong></p><ul><li><ahref="https://ejmastnak.com/tutorials/vim-latex/intro/">SuperchargedLaTeX using Vim/Neovim, VimTeX, and snippets | ejmastnak</a> -主要跟数学公式的支持有关</li><li><ahref="https://github.com/bryant-video/neovim-tutorial?tab=readme-ov-file">bryant-video/neovim-tutorial(github.com)</a> - 比较简单的配置，基本上涵盖了必要的内容</li></ul><h3 id="为什么是-neovim-而不是-vim">为什么是 Neovim 而不是 Vim</h3><ul><li><ahref="https://juejin.cn/post/7090094882588459045">Vim还是Neovim？为什么你应该使用后者？新维姆 在Vim和/或Neovim之间感到困惑？下面是我说服你今天使用N - 掘金(juejin.cn)</a> - 对于 Vim 和 Neovim 的比较</li><li><ahref="https://geoff.greer.fm/2015/01/15/why-neovim-is-better-than-vim/">GeoffGreer's site: Why Neovim is Better than Vim</a> - 为什么选择 Neovim而不是 Vim 的理由</li></ul><h3 id="遇到问题请看我">遇到问题请看我</h3><ul><li><a href="https://neovim.io/doc/user/helphelp.html#helphelp">Helphelp- Neovim docs</a></li><li><ahref="https://neovim.io/doc/user/message.html#message.txt">Message -Neovim docs</a></li><li>在 Neovim 中输入 <code>:help faq</code></li></ul><h3 id="一些建议">一些建议</h3><ul><li><a href="https://neovim.io/doc/user/tips.html#tips">Tips - Neovimdocs</a></li></ul><h2 id="安装-neovim">安装 Neovim</h2><p>由于我使用 Windows 10 的 scoop软件来管理安装其他软件，所以只需要一行命令就能安装：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop install main/neovim<br></code></pre></td></tr></table></figure><p>如果是其他的安装方法可以参考<ahref="https://github.com/neovim/neovim/blob/master/INSTALL.md">官方文档</a>。</p><p>如果你还不熟悉 Vim 的操作，可以打开Neovim，然后进入命令模式，输入下面的代码就可以进入一个大概30分钟的交互式教程：</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">:Tutor<br></code></pre></td></tr></table></figure><h2 id="配置-neovim-1">配置 Neovim</h2><p>无论是开箱即用还是自己配置，最终目的都是为了方便自己，切莫本末倒置。也不必追求一次性就将自己的配置做到最优，可以在使用中发现缺少什么再去补全，这样会使得整个过程更加容易一些，当然如果想要体验一下完全体还是建议先下载几个开箱即用的配置试试看。</p><h3 id="开箱即用">开箱即用</h3><p>如果不想自己配置 Neovim 也有很多开箱即用的配置可以参考：</p><ul><li><ahref="https://github.com/nvim-lua/kickstart.nvim">nvim-lua/kickstart.nvim:A launch point for your personal nvim configuration(github.com)</a></li><li><a href="https://github.com/SpaceVim/SpaceVim">SpaceVim/SpaceVim: Amodular Vim/Neovim configuration (github.com)</a></li><li><a href="https://github.com/NvChad/NvChad">NvChad/NvChad: Blazingfast Neovim config providing solid defaults and a beautiful UI,enhancing your neovim experience. (github.com)</a> -推荐阅读英文原版，中文文档更新比较慢<ul><li><a href="https://nvchad.iwiki.rs/">NvChad中文站 | NvChad中文站(iwiki.rs)</a> - 中文翻译</li></ul></li><li><a href="https://github.com/LunarVim/LunarVim">LunarVim/LunarVim: 🌙LunarVim is an IDE layer for Neovim. Completely free and communitydriven. (github.com)</a></li><li><a href="https://github.com/LazyVim/LazyVim">LazyVim/LazyVim: Neovimconfig for the lazy (github.com)</a></li></ul><h3 id="打造属于自己的-neovim">打造属于自己的 Neovim</h3><p>Windows 10 中 Neovim 的配置文件一般在<code>~/AppData/Local/nvim/init.vim   (Windows)</code> 这个路径下，<code>~</code> 表示当前用户的目录，比如用户名为 <code>Beta</code>的用户的路径一般为<code>C:/Users/Abel/AppData/Local/nvim/init.vim</code> 。Neovim启动时会加载 <code>init.vim</code>文件，所以只需要在这个文件中进行配置就可以。</p><p>我的配置文件会加上大部分的注释，基本上是自解释的，如果还有不懂的部分，比如<code>o</code> 和 <code>g</code> 分别是什么，可以参考官方给出的<ahref="https://neovim.io/doc/user/lua-guide.html#lua-guide">文档</a>，下面给出我的配置文件的结构，以下默认当前文件夹是在前面提到的<code>./nvim</code> 下：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs markdown">~/AppData/Local/nvim<br>│   init.lua -- 自动加载<br>│   lazy-lock.json<br>│   <br>│   <br>└───lua<br><span class="hljs-code">    ├───config --存放配置文件</span><br><span class="hljs-code">    │       keymaps.lua -- 按键映射设置</span><br><span class="hljs-code">    │       lazy.lua -- lazy.nvim 懒加载插件用于管理插件</span><br><span class="hljs-code">    │       options.lua -- 原生 Neovim 支持的设置</span><br><span class="hljs-code">    │       </span><br><span class="hljs-code">    └───plugins</span><br><span class="hljs-code"></span><br></code></pre></td></tr></table></figure><blockquote><p>如何生成文件树：利用 Windows 10 的 <code>tree</code> 命令：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">tree /f &gt;tree.txt<br></code></pre></td></tr></table></figure><p>会将当前目录下的文件树的结果导出到 tree.txt文件中，如果没有这个文件则会创建文件并写入结果。</p></blockquote><h4 id="配置文件">配置文件</h4><p><code>init.lua</code> 文件是 Neovim启动时会加载的配置文件，可以按照文件树结构来安排各种设置，便于分类和查找：</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs lua"><span class="hljs-comment">-- ---------- 本地配置 ---------- --</span><br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;config.options&quot;</span>) <span class="hljs-comment">-- 选项</span><br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;config.keymaps&quot;</span>) <span class="hljs-comment">-- 按键设置</span><br><br><span class="hljs-comment">-- ---------- 插件管理 ---------- --</span><br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;config.lazy&quot;</span>) <span class="hljs-comment">-- Lazy.nvim 进行插件管理</span><br></code></pre></td></tr></table></figure><p><code>options.lua</code> 文件主要放了 Neovim原本就支持的一些设置，包括行号、高亮、编码等等，所以会显得比较杂乱：</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><code class="hljs lua"><span class="hljs-keyword">local</span> g = vim.g<br><span class="hljs-keyword">local</span> opt = vim.opt<br><br><span class="hljs-comment">-- 编码</span><br>g.encoding = <span class="hljs-string">&quot;UTF-8&quot;</span> <span class="hljs-comment">-- 当处理文本的时候使用 UTF-8 编码</span><br>opt.fileencoding = <span class="hljs-string">&quot;UTF-8&quot;</span> <span class="hljs-comment">-- 保存文件的时候使用 UTF-8 编码</span><br><br><span class="hljs-comment">-- 缩进和对齐</span><br>opt.tabstop = <span class="hljs-number">4</span> <span class="hljs-comment">-- Tab 键相当于 4 个空格</span><br>opt.smarttab = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 开启智能 Tab</span><br>opt.softtabstop = <span class="hljs-number">4</span> <span class="hljs-comment">-- 编辑时 Tab 键为 4 个空格</span><br>opt.shiftround = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 使用 &gt;&gt; 和 &lt;&lt; 移动时对齐到 shiftwidth 的倍数</span><br>opt.expandtab = <span class="hljs-literal">true</span> <span class="hljs-comment">-- Tab 替换为空格</span><br>opt.shiftwidth = <span class="hljs-number">4</span> <span class="hljs-comment">-- 自动缩进时移动 4 个空格</span><br>opt.cindent = <span class="hljs-literal">true</span> <span class="hljs-comment">-- C 文件自动缩进</span><br>opt.autoindent = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 新行缩进对齐到当前行</span><br>opt.smartindent = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 开启智能缩进</span><br><br><span class="hljs-comment">-- 光标和行号</span><br>opt.scrolloff = <span class="hljs-number">999</span> <span class="hljs-comment">-- 光标上下保持 999 行距离，实现类似 Typora 的打字机的效果</span><br>opt.sidescrolloff = <span class="hljs-number">8</span> <span class="hljs-comment">-- 光标左右保持 8 列距离</span><br>opt.number = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 显示行号</span><br>opt.relativenumber = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 使用相对行号</span><br>opt.cursorline = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 高亮当前行</span><br>opt.whichwrap = <span class="hljs-string">&quot;&lt;,&gt;,[,]&quot;</span> <span class="hljs-comment">-- 光标移到行首或行尾时，可跨行移动</span><br><br><span class="hljs-comment">-- 左侧和右侧列</span><br>opt.signcolumn = <span class="hljs-string">&quot;yes&quot;</span> <span class="hljs-comment">-- 左侧始终显示符号列</span><br>opt.colorcolumn = <span class="hljs-string">&quot;160&quot;</span> <span class="hljs-comment">-- 右侧第 160 列显示颜色参考线</span><br><br><span class="hljs-comment">-- 搜索</span><br>opt.ignorecase = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 搜索时不区分大小写</span><br>opt.smartcase = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 搜索包含大写字母时，自动区分大小写</span><br>opt.hlsearch = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 搜索高亮</span><br>opt.incsearch = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 输入搜索模式时，每输入一个字符，就自动跳到第一个匹配的结果</span><br>opt.showmatch = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 高亮匹配的括号</span><br><br><span class="hljs-comment">-- 命令行高度</span><br>opt.cmdheight = <span class="hljs-number">1</span> <span class="hljs-comment">-- 命令行高度为 1 行</span><br><br><span class="hljs-comment">-- 自动加载外部修改</span><br>opt.autoread = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 外部文件修改自动加载</span><br><br><span class="hljs-comment">-- 禁止折行</span><br>opt.<span class="hljs-built_in">wrap</span> = <span class="hljs-literal">false</span> <span class="hljs-comment">-- 禁止文本折行</span><br><br><span class="hljs-comment">-- 允许隐藏被修改过的buffer</span><br>opt.hidden = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 允许隐藏被修改过的 buffer</span><br><br><span class="hljs-comment">-- 鼠标支持</span><br>opt.mouse = <span class="hljs-string">&quot;a&quot;</span> <span class="hljs-comment">-- 开启鼠标支持</span><br><br><span class="hljs-comment">-- 文件</span><br>opt.backup = <span class="hljs-literal">false</span> <span class="hljs-comment">-- 禁止创建备份文件</span><br>opt.writebackup = <span class="hljs-literal">false</span> <span class="hljs-comment">-- 禁止写入备份文件</span><br>opt.swapfile = <span class="hljs-literal">false</span> <span class="hljs-comment">-- 禁止创建 swap 文件</span><br>opt.confirm = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 没有保存或文件只读时弹出确认</span><br><br><span class="hljs-comment">-- 更新和超时</span><br>opt.updatetime = <span class="hljs-number">300</span> <span class="hljs-comment">-- 更新检查间隔时间</span><br>opt.timeoutlen = <span class="hljs-number">500</span> <span class="hljs-comment">-- 键盘快捷键等待时间</span><br><br><span class="hljs-comment">-- 分屏方向</span><br>opt.splitbelow = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 水平分屏默认在下方</span><br>opt.splitright = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 垂直分屏默认在右侧</span><br><br><span class="hljs-comment">-- 补全</span><br>g.completeopt = <span class="hljs-string">&quot;menu, menuone, noselect, noinsert&quot;</span> <span class="hljs-comment">-- 补全选项设置</span><br>opt.wildmenu = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 显示补全菜单</span><br>opt.pumheight = <span class="hljs-number">10</span> <span class="hljs-comment">-- 补全菜单高度为 10 行</span><br><br><span class="hljs-comment">-- 主题样式</span><br>opt.background = <span class="hljs-string">&quot;dark&quot;</span> <span class="hljs-comment">-- 设置背景为暗色</span><br>opt.termguicolors = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 开启终端真彩色支持</span><br>opt.termguicolors = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 终端真彩色</span><br><br><span class="hljs-comment">-- 不可见字符显示</span><br>opt.list = <span class="hljs-literal">false</span> <span class="hljs-comment">-- 不显示不可见字符</span><br>opt.listchars = <span class="hljs-string">&quot;space:·,tab:&gt;-&quot;</span> <span class="hljs-comment">-- 空格和 Tab 的显示方式</span><br><br><span class="hljs-comment">-- 剪切板</span><br>opt.clipboard = <span class="hljs-string">&quot;unnamedplus&quot;</span> <span class="hljs-comment">-- 使用系统剪贴板</span><br><br><span class="hljs-comment">-- leader 按键设置</span><br>g.mapleader = <span class="hljs-string">&quot; &quot;</span><br>g.maplocalleader = <span class="hljs-string">&quot;\\&quot;</span><br><br><span class="hljs-comment">-- 其他</span><br>opt.shortmess:append <span class="hljs-string">&quot;atI&quot;</span> <span class="hljs-comment">-- 隐去启动的提示信息</span><br></code></pre></td></tr></table></figure><p>在 Neovim/Vim 中直接输入 <code>/</code> 就可以查找，比如<code>/include</code> 就是查找文件中包含 <code>include</code>的词，同样有大小写敏感，要关闭大小写敏感，可以使用命令<code>vim.o.ignorecase = true</code>。</p><p>查看查找的历史记录可以输入 <code>/</code>之后用方向键来查找之前查找的记录。当然这需要在查找之后按下回车进行实际的查找才会进行记录，否则如果只是在命令中查找而不按下回车键是不会进行记录的。</p><p>如果记得之前查找历史中的某个开头的字母，比如之前运用过<code>/search</code> 命令查找了 <code>search</code>这个单词，然后之后又进行了多次查询，并且在查询之后都按下了回车键，这会把查找历史记录下来，那么想要快速找到之前的某个查找记录，那么就可以先输入<code>/sea</code> 然后按下方向键就可以在以 <code>sea</code>开头的查找记录中跳转。</p><p>当然 <code>:</code> 的命令模式也有类似以上的功能，但是 <code>:</code>命令的历史记录和 <code>/</code> 命令的历史记录是分开的。</p><p>搜索当前光标指示的单词，当然可以使用 <code>/</code>命令手动输入当前光标所指示的单词，但是也可以用 <code>*</code>来直接搜索当前光标所指示的单词在文本中出现的下一个位置，这样不容易在<code>/</code> 输入中拼写错误，而 <code>#</code>命令向相反的方向做同样的事情。不过这两个命令会自动进行全字匹配，如果想要部分匹配的话可以用命令<code>g#</code> 和 <code>g*</code> 。</p><p><code>keymaps.lua</code>主要存放一些经常用的快捷键（可以自己设置）：</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs lua">```<br><br>`lazy.lua` 文件是一个管理 Neovim 插件的[插件](https://github.com/folke/lazy.nvim)，具体的设置可以参考[官方文档](https://lazy.folke.<span class="hljs-built_in">io</span>/)：<br><br>```lua<br><span class="hljs-comment">-- 安装 lazy.nvim 插件</span><br><span class="hljs-keyword">local</span> lazypath = vim.fn.stdpath(<span class="hljs-string">&quot;data&quot;</span>) .. <span class="hljs-string">&quot;/lazy/lazy.nvim&quot;</span><br><span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> (vim.uv <span class="hljs-keyword">or</span> vim.loop).fs_stat(lazypath) <span class="hljs-keyword">then</span><br>  <span class="hljs-keyword">local</span> lazyrepo = <span class="hljs-string">&quot;https://github.com/folke/lazy.nvim.git&quot;</span><br>  <span class="hljs-keyword">local</span> out = vim.fn.system(&#123;<br>  <span class="hljs-string">&quot;git&quot;</span>, <br>  <span class="hljs-string">&quot;clone&quot;</span>, <br>  <span class="hljs-string">&quot;--filter=blob:none&quot;</span>, <br>  <span class="hljs-string">&quot;--branch=stable&quot;</span>, <br>  lazyrepo, <br>  lazypath &#125;)<br>  <span class="hljs-keyword">if</span> vim.v.shell_error ~= <span class="hljs-number">0</span> <span class="hljs-keyword">then</span><br>    vim.api.nvim_echo(&#123;<br>      &#123; <span class="hljs-string">&quot;Failed to clone lazy.nvim:\n&quot;</span>, <span class="hljs-string">&quot;ErrorMsg&quot;</span> &#125;,<br>      &#123; out, <span class="hljs-string">&quot;WarningMsg&quot;</span> &#125;,<br>      &#123; <span class="hljs-string">&quot;\nPress any key to exit...&quot;</span> &#125;,<br>    &#125;, <span class="hljs-literal">true</span>, &#123;&#125;)<br>    vim.fn.getchar()<br>    <span class="hljs-built_in">os</span>.<span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>)<br>  <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br>vim.opt.rtp:prepend(lazypath)<br><br><span class="hljs-comment">-- 设置 lazy.nvim 插件</span><br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;lazy&quot;</span>).setup(&#123;<br>  spec = &#123;<br>    <span class="hljs-comment">-- 安装插件</span><br>    <span class="hljs-comment">-- VimTeX 主要用于支持 LaTeX 的功能</span><br>    &#123;<br>      <span class="hljs-string">&quot;lervag/vimtex&quot;</span>,<br>      lazy = <span class="hljs-literal">false</span>,     <span class="hljs-comment">-- VimTeX 不需要懒加载</span><br>      <span class="hljs-comment">-- tag = &quot;v2.15&quot;, -- 取消注释以固定在某个版本</span><br>      init = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span><br>        <span class="hljs-comment">-- 下面是有关 VimTeX 的设置</span><br>        <span class="hljs-comment">-- VimTeX 在 Windows 中如果能找到 SumatraPDF 就会自动设置用它打开</span><br>        <span class="hljs-comment">-- vim.g.vimtex_view_method = &quot;SumatraPDF&quot;</span><br>      <span class="hljs-keyword">end</span><br>    &#125;,<br>  &#125;,  <br>  checker = &#123; enabled = <span class="hljs-literal">true</span> &#125;, <span class="hljs-comment">-- 自动检查插件更新</span><br>  <span class="hljs-comment">-- 不想使用 Nerd Font，用Unicode的图标替代</span><br>  ui = &#123;<br>    icons = &#123; <span class="hljs-comment">-- 各种元素的图标配置</span><br>      cmd = <span class="hljs-string">&quot;⌘&quot;</span>,<br>      <span class="hljs-built_in">config</span> = <span class="hljs-string">&quot;🛠&quot;</span>,<br>      event = <span class="hljs-string">&quot;📅&quot;</span>,<br>      ft = <span class="hljs-string">&quot;📂&quot;</span>,<br>      init = <span class="hljs-string">&quot;⚙&quot;</span>,<br>      keys = <span class="hljs-string">&quot;🗝&quot;</span>,<br>      plugin = <span class="hljs-string">&quot;🔌&quot;</span>,<br>      runtime = <span class="hljs-string">&quot;💻&quot;</span>,<br>      <span class="hljs-built_in">require</span> = <span class="hljs-string">&quot;🌙&quot;</span>,<br>      source = <span class="hljs-string">&quot;📄&quot;</span>,<br>      start = <span class="hljs-string">&quot;🚀&quot;</span>,<br>      task = <span class="hljs-string">&quot;📌&quot;</span>,<br>      lazy = <span class="hljs-string">&quot;💤 &quot;</span>,<br>    &#125;,<br>  &#125;,<br></code></pre></td></tr></table></figure><p>这里有个坑，安装 <code>lazy.nvim</code> 是要先安装 <code>git</code>的，而且安装之后在 Neovim 中执行 <code>:checkhealth lazy</code>时可能会遇到和 <code>luarocks</code> 有关的报错，我的解决方案是通过<code>Scoop</code> 安装 <code>luarocks</code> 和 <code>lua</code>：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop install main/luarocks<br>scoop install main/lua<br></code></pre></td></tr></table></figure><h4 id="插件">插件</h4><p><strong>lazy.nvim</strong>：用于插件管理的一个插件，可以进行快速地安装、卸载、更新插件。</p><ul><li>Git 仓库：<ahref="https://github.com/folke/lazy.nvim">folke/lazy.nvim: 💤 A modernplugin manager for Neovim (github.com)</a></li><li>文档：<a href="https://lazy.folke.io/">🚀 Getting Started |lazy.nvim (folke.io)</a></li></ul><p><strong>vimtex</strong>：Vimtex 是一个专门为 Vim 和 Neovim 设计的LaTeX插件，它提供了包括语法高亮、自动补全、编译支持、预览和错误检查等功能。</p><ul><li>Git 仓库：<a href="https://github.com/lervag/vimtex">lervag/vimtex:VimTeX: A modern Vim and neovim filetype plugin for LaTeX files.(github.com)</a></li></ul><h2 id="进阶版-neovim">进阶版 Neovim</h2><h3 id="结合-neovim-和-latex">结合 Neovim 和 <spanclass="math inline">\(\LaTeX\)</span></h3><ul><li><a href="https://zhuanlan.zhihu.com/p/338505581">使用 Neovim 和vimtex 高效撰写 LaTeX 学术论文 - 知乎 (zhihu.com)</a> - 不是用<code>lua</code> 编写的，更适合使用 Vim的同学参考，介绍原理的部分值得一看</li><li><a href="https://mathjiajia.github.io/neovim-latex/">A Quick Guideon Writing LaTeX in Neovim - Jia Jia Math(mathjiajia.github.io)</a></li><li><a href="https://blog.epheme.re/software/nvim-latex.html">Neovim asa LaTex Development Environment (epheme.re)</a></li><li><a href="https://castel.dev/post/lecture-notes-1/">How I'm able totake notes in mathematics lectures using LaTeX and Vim | GillesCastel</a> - 很有名的一篇文章，主要针对使用 Vim 的同学</li><li><a href="https://zhuanlan.zhihu.com/p/93342783">LaTeX 入门小记：Vim+ Vimtex + LaTeX 初体验 - 知乎 (zhihu.com)</a> -内容有点过时，总体还是适合的</li><li><ahref="https://zhuanlan.zhihu.com/p/644984708">使用Neovim优雅地编写LaTeX- 知乎 (zhihu.com)</a> - 主要介绍了 LuaSnip 的配置</li><li><a href="https://zhuanlan.zhihu.com/p/576159156">在 Windows 中使用wsl + neovim + latex + ultisnips - 知乎 (zhihu.com)</a> - 配置主要针对<code>wsl</code></li><li><ahref="https://destinyenvoy.github.io/2020/09/07/how-to-use-vimtex/">Vim+VimTeX:带给你飞一般的LaTeX编辑体验| Hexo (destinyenvoy.github.io)</a> - 提供了一些有关 VimTeX的技巧说明可以参考</li><li></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="什么是-neovim">什么是 Neovim</h2><p>如果你听过编辑器之神 Vim 和神之编辑器 Emacs 的话，那么就很好理解Neovim 了，它就是 Vim 的一个社区版，如果你对它的历史感兴趣，可以到 <ahref="https://neovim.io/doc/user/vim_diff.html#vim-differences">Neovim的官网</a> 查看。</p><blockquote><p>关于 Vim 和 Neovim 的历史还可以查看：<ahref="https://jdhao.github.io/2020/01/12/vim_nvim_history_development/">Vim和 Neovim 的前世今生 · jdhao's digital space</a></p></blockquote><h2 id="一些可能有用的链接">一些可能有用的链接</h2><h3 id="快速入门">快速入门</h3><ul><li><a href="https://github.com/neovim/neovim">neovim/neovim: Vim-forkfocused on extensibility and usability (github.com)</a> - Neovim 的GitHub 仓库</li><li><a href="https://learnxinyminutes.com/docs/lua/">Learn Lua in YMinutes (learnxinyminutes.com)</a> - 快速入门 Lua 语言（主要是为了Neovim 的配置）<ul><li><ahref="https://neovim.io/doc/user/lua-guide.html#lua-guide">Lua-guide -Neovim docs</a> - Neovim 提供的 Lua 手册</li></ul></li><li><a href="https://neovim.io/">Home - Neovim</a> - Neovim的官网（可以用来查看 API 和入门文档<ul><li><a href="https://neovim.io/doc/user/">Help - Neovim docs</a> -帮助文档</li><li><ahref="https://neovim.io/doc/user/usr_toc.html#user-manual">Usr_toc -Neovim docs</a> - 文档的目录（快速定位需要阅读的部分）</li></ul></li></ul><h3 id="快捷键速查表">快捷键速查表</h3><ul><li><a href="https://neovim.io/doc/user/vimindex.html#index">Index -Neovim docs</a></li><li><a href="https://neovim.io/doc/user/quickref.html#quickref">Quickref- Neovim docs</a></li><li>或者在 Neovim 中输入 <code>:help index</code></li></ul><h3 id="在哪里找插件">在哪里找插件</h3><ul><li><a href="https://dotfyle.com/neovim/plugins/trending">TrendingNeovim Plugins in 2024 (dotfyle.com)</a></li><li><ahref="https://github.com/rockerBOO/awesome-neovim">rockerBOO/awesome-neovim:Collections of awesome neovim plugins. (github.com)</a></li><li><a href="https://luarocks.org/labels/neovim">Modules labeled'neovim' - LuaRocks</a></li><li><a href="https://nvim-awesome.vercel.app/">nvimawesome(nvim-awesome.vercel.app)</a></li><li><a href="https://neovimcraft.com/">neovimcraft</a></li></ul><h3 id="学习-vim-neovim">学习 Vim &amp; Neovim</h3><ul><li><a href="https://csdiy.wiki/必学工具/Vim/">Vim - CS自学指南(csdiy.wiki)</a> - 可以在里面找到一些学习的参考资料</li><li><a href="https://imageslr.com/2021/vim.html">💻【Linux】Vim 入门笔记(imageslr.com)</a> - 主要介绍如何使用 Vim 的一些技巧</li><li><ahref="https://github.com/yangyangwithgnu/use_vim_as_ide">yangyangwithgnu/use_vim_as_ide:use vim as IDE (github.com)</a> -比较完善的文档，略长，但是太长时间没有更新，仅供参考</li><li><ahref="https://github.com/wsdjeg/vim-galore-zh_cn">wsdjeg/vim-galore-zh_cn:Vim 从入门到精通 (github.com)</a> - 主要介绍 Vim 的一些基础概念</li><li><ahref="https://github.com/wsdjeg/Learn-Vim_zh_cn">wsdjeg/Learn-Vim_zh_cn:聪明地学习Vim (github.com)</a> - 中文学习 Vim 的参考资料</li><li><a href="https://learnvimscriptthehardway.stevelosh.com/">LearnVimscript the Hard Way (stevelosh.com)</a> - 英文学习 Vim的参考资料</li><li><ahref="https://learnku.com/docs/practical-vim-2nd-edition">《PracticalVim 2nd Edition》 | 开发者工具论坛 (learnku.com)</a> - 系统学习 Vim的参考书</li></ul><h3 id="配置-neovim">配置 Neovim</h3><ul><li><ahref="https://neovim.io/doc/user/lua-guide.html#lua-guide">Lua-guide -Neovim docs</a> - 官方关于如何配置的文档</li><li><a href="https://yianwillis.github.io/vimcdoc/doc/help.html">VIM中文帮助: 总览及快速参考 (yianwillis.github.io)</a> -中文帮助，适合对阅读官方英文有困难的同学，主要针对 Vim</li></ul><p>第三方博客的介绍：</p><p><strong>中文博客</strong></p><ul><li><a href="https://zhuanlan.zhihu.com/p/596879980">你需要知道的使用lua 配置 neovim 的一切 - 知乎 (zhihu.com)</a> - 主要看关于<code>o</code> ,<code>wo</code>,<code>bo</code>,<code>g</code>,<code>env</code>,<code>opt</code>之间关系的说明</li><li><a href="https://zhuanlan.zhihu.com/p/467939053">Neovim: 把 init.vim迁移到 init.lua - 知乎 (zhihu.com)</a> - 适合之前使用 Vim 要迁移到Neovim 的同学</li><li><ahref="https://martinlwx.github.io/zh-cn/config-neovim-from-scratch/">从零开始配置Neovim(Nvim) - MartinLwx's Blog</a> - 轻量化配置Neovim，适合新手同学逐步跟着配置，针对 MacOS</li><li><ahref="https://youngxhui.top/2023/07/nvim-guideline-1basic-config/">neovim入门指南(一)：基础配置- ISLAND (youngxhui.top)</a> -系列文章，比较适合想要逐层递进学习的同学，涵盖了 Neovim的基本使用、一些插件的介绍、LSP如何配置等内容</li><li><ahref="https://zhuanlan.zhihu.com/p/480049712">从零开始的现代化Vim配置指南——前言- 知乎 (zhihu.com)</a> - 系列文章，似乎很久没有更新了，不是很推荐</li><li><a href="https://zhuanlan.zhihu.com/p/464902429">我用 neovim 代替了MS Office, IDEA, Visual Studio... - 知乎 (zhihu.com)</a> -过时的文章，可以不参考</li><li><a href="https://zhuanlan.zhihu.com/p/388397656">neovim 配置记录 -知乎 (zhihu.com)</a> -比较简略地介绍了一些插件，可以参考一下插件的功能</li><li><a href="https://zhuanlan.zhihu.com/p/467428462">我的现代化 NeoVim配置介绍/教程 - 知乎 (zhihu.com)</a> - 可以参考其中的插件介绍</li><li><ahref="https://zhuanlan.zhihu.com/p/382092667">我的现代化Neovim配置 -知乎 (zhihu.com)</a> - 介绍不是很详细，更像是个人记录，不推荐参考</li><li><ahref="https://zhuanlan.zhihu.com/p/301008305">Neovim/Vim基础教程（面向萌新&amp;推荐&amp;感想）- 知乎 (zhihu.com)</a> - 给的大多是链接，质量不高，不推荐</li><li><a href="https://lazypool-blog.netlify.app/2023/12/07/nvim/">用 Nvim打造超强的个性化 IDE - LazyPool's Blog (lazypool-blog.netlify.app)</a> -相对比较容易懂，配置文档也比较详细，介绍了一些有用的插件</li></ul><p><strong>英文博客</strong></p><ul><li><ahref="https://ejmastnak.com/tutorials/vim-latex/intro/">SuperchargedLaTeX using Vim/Neovim, VimTeX, and snippets | ejmastnak</a> -主要跟数学公式的支持有关</li><li><ahref="https://github.com/bryant-video/neovim-tutorial?tab=readme-ov-file">bryant-video/neovim-tutorial(github.com)</a> - 比较简单的配置，基本上涵盖了必要的内容</li></ul><h3 id="为什么是-neovim-而不是-vim">为什么是 Neovim 而不是 Vim</h3><ul><li><ahref="https://juejin.cn/post/7090094882588459045">Vim还是Neovim？为什么你应该使用后者？新维姆 在Vim和/或Neovim之间感到困惑？下面是我说服你今天使用N - 掘金(juejin.cn)</a> - 对于 Vim 和 Neovim 的比较</li><li><ahref="https://geoff.greer.fm/2015/01/15/why-neovim-is-better-than-vim/">GeoffGreer's site: Why Neovim is Better than Vim</a> - 为什么选择 Neovim而不是 Vim 的理由</li></ul><h3 id="遇到问题请看我">遇到问题请看我</h3><ul><li><a href="https://neovim.io/doc/user/helphelp.html#helphelp">Helphelp- Neovim docs</a></li><li><ahref="https://neovim.io/doc/user/message.html#message.txt">Message -Neovim docs</a></li><li>在 Neovim 中输入 <code>:help faq</code></li></ul><h3 id="一些建议">一些建议</h3><ul><li><a href="https://neovim.io/doc/user/tips.html#tips">Tips - Neovimdocs</a></li></ul><h2 id="安装-neovim">安装 Neovim</h2><p>由于我使用 Windows 10 的 scoop软件来管理安装其他软件，所以只需要一行命令就能安装：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop install main/neovim<br></code></pre></td></tr></table></figure><p>如果是其他的安装方法可以参考<ahref="https://github.com/neovim/neovim/blob/master/INSTALL.md">官方文档</a>。</p><p>如果你还不熟悉 Vim 的操作，可以打开Neovim，然后进入命令模式，输入下面的代码就可以进入一个大概30分钟的交互式教程：</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">:Tutor<br></code></pre></td></tr></table></figure><h2 id="配置-neovim-1">配置 Neovim</h2><p>无论是开箱即用还是自己配置，最终目的都是为了方便自己，切莫本末倒置。也不必追求一次性就将自己的配置做到最优，可以在使用中发现缺少什么再去补全，这样会使得整个过程更加容易一些，当然如果想要体验一下完全体还是建议先下载几个开箱即用的配置试试看。</p><h3 id="开箱即用">开箱即用</h3><p>如果不想自己配置 Neovim 也有很多开箱即用的配置可以参考：</p><ul><li><ahref="https://github.com/nvim-lua/kickstart.nvim">nvim-lua/kickstart.nvim:A launch point for your personal nvim configuration(github.com)</a></li><li><a href="https://github.com/SpaceVim/SpaceVim">SpaceVim/SpaceVim: Amodular Vim/Neovim configuration (github.com)</a></li><li><a href="https://github.com/NvChad/NvChad">NvChad/NvChad: Blazingfast Neovim config providing solid defaults and a beautiful UI,enhancing your neovim experience. (github.com)</a> -推荐阅读英文原版，中文文档更新比较慢<ul><li><a href="https://nvchad.iwiki.rs/">NvChad中文站 | NvChad中文站(iwiki.rs)</a> - 中文翻译</li></ul></li><li><a href="https://github.com/LunarVim/LunarVim">LunarVim/LunarVim: 🌙LunarVim is an IDE layer for Neovim. Completely free and communitydriven. (github.com)</a></li><li><a href="https://github.com/LazyVim/LazyVim">LazyVim/LazyVim: Neovimconfig for the lazy (github.com)</a></li></ul><h3 id="打造属于自己的-neovim">打造属于自己的 Neovim</h3><p>Windows 10 中 Neovim 的配置文件一般在<code>~/AppData/Local/nvim/init.vim   (Windows)</code> 这个路径下，<code>~</code> 表示当前用户的目录，比如用户名为 <code>Beta</code>的用户的路径一般为<code>C:/Users/Abel/AppData/Local/nvim/init.vim</code> 。Neovim启动时会加载 <code>init.vim</code>文件，所以只需要在这个文件中进行配置就可以。</p><p>我的配置文件会加上大部分的注释，基本上是自解释的，如果还有不懂的部分，比如<code>o</code> 和 <code>g</code> 分别是什么，可以参考官方给出的<ahref="https://neovim.io/doc/user/lua-guide.html#lua-guide">文档</a>，下面给出我的配置文件的结构，以下默认当前文件夹是在前面提到的<code>./nvim</code> 下：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs markdown">~/AppData/Local/nvim<br>│   init.lua -- 自动加载<br>│   lazy-lock.json<br>│   <br>│   <br>└───lua<br><span class="hljs-code">    ├───config --存放配置文件</span><br><span class="hljs-code">    │       keymaps.lua -- 按键映射设置</span><br><span class="hljs-code">    │       lazy.lua -- lazy.nvim 懒加载插件用于管理插件</span><br><span class="hljs-code">    │       options.lua -- 原生 Neovim 支持的设置</span><br><span class="hljs-code">    │       </span><br><span class="hljs-code">    └───plugins</span><br><span class="hljs-code"></span><br></code></pre></td></tr></table></figure><blockquote><p>如何生成文件树：利用 Windows 10 的 <code>tree</code> 命令：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">tree /f &gt;tree.txt<br></code></pre></td></tr></table></figure><p>会将当前目录下的文件树的结果导出到 tree.txt文件中，如果没有这个文件则会创建文件并写入结果。</p></blockquote><h4 id="配置文件">配置文件</h4><p><code>init.lua</code> 文件是 Neovim启动时会加载的配置文件，可以按照文件树结构来安排各种设置，便于分类和查找：</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs lua"><span class="hljs-comment">-- ---------- 本地配置 ---------- --</span><br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;config.options&quot;</span>) <span class="hljs-comment">-- 选项</span><br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;config.keymaps&quot;</span>) <span class="hljs-comment">-- 按键设置</span><br><br><span class="hljs-comment">-- ---------- 插件管理 ---------- --</span><br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;config.lazy&quot;</span>) <span class="hljs-comment">-- Lazy.nvim 进行插件管理</span><br></code></pre></td></tr></table></figure><p><code>options.lua</code> 文件主要放了 Neovim原本就支持的一些设置，包括行号、高亮、编码等等，所以会显得比较杂乱：</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><code class="hljs lua"><span class="hljs-keyword">local</span> g = vim.g<br><span class="hljs-keyword">local</span> opt = vim.opt<br><br><span class="hljs-comment">-- 编码</span><br>g.encoding = <span class="hljs-string">&quot;UTF-8&quot;</span> <span class="hljs-comment">-- 当处理文本的时候使用 UTF-8 编码</span><br>opt.fileencoding = <span class="hljs-string">&quot;UTF-8&quot;</span> <span class="hljs-comment">-- 保存文件的时候使用 UTF-8 编码</span><br><br><span class="hljs-comment">-- 缩进和对齐</span><br>opt.tabstop = <span class="hljs-number">4</span> <span class="hljs-comment">-- Tab 键相当于 4 个空格</span><br>opt.smarttab = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 开启智能 Tab</span><br>opt.softtabstop = <span class="hljs-number">4</span> <span class="hljs-comment">-- 编辑时 Tab 键为 4 个空格</span><br>opt.shiftround = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 使用 &gt;&gt; 和 &lt;&lt; 移动时对齐到 shiftwidth 的倍数</span><br>opt.expandtab = <span class="hljs-literal">true</span> <span class="hljs-comment">-- Tab 替换为空格</span><br>opt.shiftwidth = <span class="hljs-number">4</span> <span class="hljs-comment">-- 自动缩进时移动 4 个空格</span><br>opt.cindent = <span class="hljs-literal">true</span> <span class="hljs-comment">-- C 文件自动缩进</span><br>opt.autoindent = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 新行缩进对齐到当前行</span><br>opt.smartindent = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 开启智能缩进</span><br><br><span class="hljs-comment">-- 光标和行号</span><br>opt.scrolloff = <span class="hljs-number">999</span> <span class="hljs-comment">-- 光标上下保持 999 行距离，实现类似 Typora 的打字机的效果</span><br>opt.sidescrolloff = <span class="hljs-number">8</span> <span class="hljs-comment">-- 光标左右保持 8 列距离</span><br>opt.number = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 显示行号</span><br>opt.relativenumber = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 使用相对行号</span><br>opt.cursorline = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 高亮当前行</span><br>opt.whichwrap = <span class="hljs-string">&quot;&lt;,&gt;,[,]&quot;</span> <span class="hljs-comment">-- 光标移到行首或行尾时，可跨行移动</span><br><br><span class="hljs-comment">-- 左侧和右侧列</span><br>opt.signcolumn = <span class="hljs-string">&quot;yes&quot;</span> <span class="hljs-comment">-- 左侧始终显示符号列</span><br>opt.colorcolumn = <span class="hljs-string">&quot;160&quot;</span> <span class="hljs-comment">-- 右侧第 160 列显示颜色参考线</span><br><br><span class="hljs-comment">-- 搜索</span><br>opt.ignorecase = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 搜索时不区分大小写</span><br>opt.smartcase = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 搜索包含大写字母时，自动区分大小写</span><br>opt.hlsearch = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 搜索高亮</span><br>opt.incsearch = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 输入搜索模式时，每输入一个字符，就自动跳到第一个匹配的结果</span><br>opt.showmatch = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 高亮匹配的括号</span><br><br><span class="hljs-comment">-- 命令行高度</span><br>opt.cmdheight = <span class="hljs-number">1</span> <span class="hljs-comment">-- 命令行高度为 1 行</span><br><br><span class="hljs-comment">-- 自动加载外部修改</span><br>opt.autoread = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 外部文件修改自动加载</span><br><br><span class="hljs-comment">-- 禁止折行</span><br>opt.<span class="hljs-built_in">wrap</span> = <span class="hljs-literal">false</span> <span class="hljs-comment">-- 禁止文本折行</span><br><br><span class="hljs-comment">-- 允许隐藏被修改过的buffer</span><br>opt.hidden = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 允许隐藏被修改过的 buffer</span><br><br><span class="hljs-comment">-- 鼠标支持</span><br>opt.mouse = <span class="hljs-string">&quot;a&quot;</span> <span class="hljs-comment">-- 开启鼠标支持</span><br><br><span class="hljs-comment">-- 文件</span><br>opt.backup = <span class="hljs-literal">false</span> <span class="hljs-comment">-- 禁止创建备份文件</span><br>opt.writebackup = <span class="hljs-literal">false</span> <span class="hljs-comment">-- 禁止写入备份文件</span><br>opt.swapfile = <span class="hljs-literal">false</span> <span class="hljs-comment">-- 禁止创建 swap 文件</span><br>opt.confirm = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 没有保存或文件只读时弹出确认</span><br><br><span class="hljs-comment">-- 更新和超时</span><br>opt.updatetime = <span class="hljs-number">300</span> <span class="hljs-comment">-- 更新检查间隔时间</span><br>opt.timeoutlen = <span class="hljs-number">500</span> <span class="hljs-comment">-- 键盘快捷键等待时间</span><br><br><span class="hljs-comment">-- 分屏方向</span><br>opt.splitbelow = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 水平分屏默认在下方</span><br>opt.splitright = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 垂直分屏默认在右侧</span><br><br><span class="hljs-comment">-- 补全</span><br>g.completeopt = <span class="hljs-string">&quot;menu, menuone, noselect, noinsert&quot;</span> <span class="hljs-comment">-- 补全选项设置</span><br>opt.wildmenu = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 显示补全菜单</span><br>opt.pumheight = <span class="hljs-number">10</span> <span class="hljs-comment">-- 补全菜单高度为 10 行</span><br><br><span class="hljs-comment">-- 主题样式</span><br>opt.background = <span class="hljs-string">&quot;dark&quot;</span> <span class="hljs-comment">-- 设置背景为暗色</span><br>opt.termguicolors = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 开启终端真彩色支持</span><br>opt.termguicolors = <span class="hljs-literal">true</span> <span class="hljs-comment">-- 终端真彩色</span><br><br><span class="hljs-comment">-- 不可见字符显示</span><br>opt.list = <span class="hljs-literal">false</span> <span class="hljs-comment">-- 不显示不可见字符</span><br>opt.listchars = <span class="hljs-string">&quot;space:·,tab:&gt;-&quot;</span> <span class="hljs-comment">-- 空格和 Tab 的显示方式</span><br><br><span class="hljs-comment">-- 剪切板</span><br>opt.clipboard = <span class="hljs-string">&quot;unnamedplus&quot;</span> <span class="hljs-comment">-- 使用系统剪贴板</span><br><br><span class="hljs-comment">-- leader 按键设置</span><br>g.mapleader = <span class="hljs-string">&quot; &quot;</span><br>g.maplocalleader = <span class="hljs-string">&quot;\\&quot;</span><br><br><span class="hljs-comment">-- 其他</span><br>opt.shortmess:append <span class="hljs-string">&quot;atI&quot;</span> <span class="hljs-comment">-- 隐去启动的提示信息</span><br></code></pre></td></tr></table></figure><p>在 Neovim/Vim 中直接输入 <code>/</code> 就可以查找，比如<code>/include</code> 就是查找文件中包含 <code>include</code>的词，同样有大小写敏感，要关闭大小写敏感，可以使用命令<code>vim.o.ignorecase = true</code>。</p><p>查看查找的历史记录可以输入 <code>/</code>之后用方向键来查找之前查找的记录。当然这需要在查找之后按下回车进行实际的查找才会进行记录，否则如果只是在命令中查找而不按下回车键是不会进行记录的。</p><p>如果记得之前查找历史中的某个开头的字母，比如之前运用过<code>/search</code> 命令查找了 <code>search</code>这个单词，然后之后又进行了多次查询，并且在查询之后都按下了回车键，这会把查找历史记录下来，那么想要快速找到之前的某个查找记录，那么就可以先输入<code>/sea</code> 然后按下方向键就可以在以 <code>sea</code>开头的查找记录中跳转。</p><p>当然 <code>:</code> 的命令模式也有类似以上的功能，但是 <code>:</code>命令的历史记录和 <code>/</code> 命令的历史记录是分开的。</p><p>搜索当前光标指示的单词，当然可以使用 <code>/</code>命令手动输入当前光标所指示的单词，但是也可以用 <code>*</code>来直接搜索当前光标所指示的单词在文本中出现的下一个位置，这样不容易在<code>/</code> 输入中拼写错误，而 <code>#</code>命令向相反的方向做同样的事情。不过这两个命令会自动进行全字匹配，如果想要部分匹配的话可以用命令<code>g#</code> 和 <code>g*</code> 。</p><p><code>keymaps.lua</code>主要存放一些经常用的快捷键（可以自己设置）：</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs lua">```<br><br>`lazy.lua` 文件是一个管理 Neovim 插件的[插件](https://github.com/folke/lazy.nvim)，具体的设置可以参考[官方文档](https://lazy.folke.<span class="hljs-built_in">io</span>/)：<br><br>```lua<br><span class="hljs-comment">-- 安装 lazy.nvim 插件</span><br><span class="hljs-keyword">local</span> lazypath = vim.fn.stdpath(<span class="hljs-string">&quot;data&quot;</span>) .. <span class="hljs-string">&quot;/lazy/lazy.nvim&quot;</span><br><span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> (vim.uv <span class="hljs-keyword">or</span> vim.loop).fs_stat(lazypath) <span class="hljs-keyword">then</span><br>  <span class="hljs-keyword">local</span> lazyrepo = <span class="hljs-string">&quot;https://github.com/folke/lazy.nvim.git&quot;</span><br>  <span class="hljs-keyword">local</span> out = vim.fn.system(&#123;<br>  <span class="hljs-string">&quot;git&quot;</span>, <br>  <span class="hljs-string">&quot;clone&quot;</span>, <br>  <span class="hljs-string">&quot;--filter=blob:none&quot;</span>, <br>  <span class="hljs-string">&quot;--branch=stable&quot;</span>, <br>  lazyrepo, <br>  lazypath &#125;)<br>  <span class="hljs-keyword">if</span> vim.v.shell_error ~= <span class="hljs-number">0</span> <span class="hljs-keyword">then</span><br>    vim.api.nvim_echo(&#123;<br>      &#123; <span class="hljs-string">&quot;Failed to clone lazy.nvim:\n&quot;</span>, <span class="hljs-string">&quot;ErrorMsg&quot;</span> &#125;,<br>      &#123; out, <span class="hljs-string">&quot;WarningMsg&quot;</span> &#125;,<br>      &#123; <span class="hljs-string">&quot;\nPress any key to exit...&quot;</span> &#125;,<br>    &#125;, <span class="hljs-literal">true</span>, &#123;&#125;)<br>    vim.fn.getchar()<br>    <span class="hljs-built_in">os</span>.<span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>)<br>  <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br>vim.opt.rtp:prepend(lazypath)<br><br><span class="hljs-comment">-- 设置 lazy.nvim 插件</span><br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;lazy&quot;</span>).setup(&#123;<br>  spec = &#123;<br>    <span class="hljs-comment">-- 安装插件</span><br>    <span class="hljs-comment">-- VimTeX 主要用于支持 LaTeX 的功能</span><br>    &#123;<br>      <span class="hljs-string">&quot;lervag/vimtex&quot;</span>,<br>      lazy = <span class="hljs-literal">false</span>,     <span class="hljs-comment">-- VimTeX 不需要懒加载</span><br>      <span class="hljs-comment">-- tag = &quot;v2.15&quot;, -- 取消注释以固定在某个版本</span><br>      init = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span><br>        <span class="hljs-comment">-- 下面是有关 VimTeX 的设置</span><br>        <span class="hljs-comment">-- VimTeX 在 Windows 中如果能找到 SumatraPDF 就会自动设置用它打开</span><br>        <span class="hljs-comment">-- vim.g.vimtex_view_method = &quot;SumatraPDF&quot;</span><br>      <span class="hljs-keyword">end</span><br>    &#125;,<br>  &#125;,  <br>  checker = &#123; enabled = <span class="hljs-literal">true</span> &#125;, <span class="hljs-comment">-- 自动检查插件更新</span><br>  <span class="hljs-comment">-- 不想使用 Nerd Font，用Unicode的图标替代</span><br>  ui = &#123;<br>    icons = &#123; <span class="hljs-comment">-- 各种元素的图标配置</span><br>      cmd = <span class="hljs-string">&quot;⌘&quot;</span>,<br>      <span class="hljs-built_in">config</span> = <span class="hljs-string">&quot;🛠&quot;</span>,<br>      event = <span class="hljs-string">&quot;📅&quot;</span>,<br>      ft = <span class="hljs-string">&quot;📂&quot;</span>,<br>      init = <span class="hljs-string">&quot;⚙&quot;</span>,<br>      keys = <span class="hljs-string">&quot;🗝&quot;</span>,<br>      plugin = <span class="hljs-string">&quot;🔌&quot;</span>,<br>      runtime = <span class="hljs-string">&quot;💻&quot;</span>,<br>      <span class="hljs-built_in">require</span> = <span class="hljs-string">&quot;🌙&quot;</span>,<br>      source = <span class="hljs-string">&quot;📄&quot;</span>,<br>      start = <span class="hljs-string">&quot;🚀&quot;</span>,<br>      task = <span class="hljs-string">&quot;📌&quot;</span>,<br>      lazy = <span class="hljs-string">&quot;💤 &quot;</span>,<br>    &#125;,<br>  &#125;,<br></code></pre></td></tr></table></figure><p>这里有个坑，安装 <code>lazy.nvim</code> 是要先安装 <code>git</code>的，而且安装之后在 Neovim 中执行 <code>:checkhealth lazy</code>时可能会遇到和 <code>luarocks</code> 有关的报错，我的解决方案是通过<code>Scoop</code> 安装 <code>luarocks</code> 和 <code>lua</code>：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop install main/luarocks<br>scoop install main/lua<br></code></pre></td></tr></table></figure><h4 id="插件">插件</h4><p><strong>lazy.nvim</strong>：用于插件管理的一个插件，可以进行快速地安装、卸载、更新插件。</p><ul><li>Git 仓库：<ahref="https://github.com/folke/lazy.nvim">folke/lazy.nvim: 💤 A modernplugin manager for Neovim (github.com)</a></li><li>文档：<a href="https://lazy.folke.io/">🚀 Getting Started |lazy.nvim (folke.io)</a></li></ul><p><strong>vimtex</strong>：Vimtex 是一个专门为 Vim 和 Neovim 设计的LaTeX插件，它提供了包括语法高亮、自动补全、编译支持、预览和错误检查等功能。</p><ul><li>Git 仓库：<a href="https://github.com/lervag/vimtex">lervag/vimtex:VimTeX: A modern Vim and neovim filetype plugin for LaTeX files.(github.com)</a></li></ul><h2 id="进阶版-neovim">进阶版 Neovim</h2><h3 id="结合-neovim-和-latex">结合 Neovim 和 <spanclass="math inline">\(\LaTeX\)</span></h3><ul><li><a href="https://zhuanlan.zhihu.com/p/338505581">使用 Neovim 和vimtex 高效撰写 LaTeX 学术论文 - 知乎 (zhihu.com)</a> - 不是用<code>lua</code> 编写的，更适合使用 Vim的同学参考，介绍原理的部分值得一看</li><li><a href="https://mathjiajia.github.io/neovim-latex/">A Quick Guideon Writing LaTeX in Neovim - Jia Jia Math(mathjiajia.github.io)</a></li><li><a href="https://blog.epheme.re/software/nvim-latex.html">Neovim asa LaTex Development Environment (epheme.re)</a></li><li><a href="https://castel.dev/post/lecture-notes-1/">How I'm able totake notes in mathematics lectures using LaTeX and Vim | GillesCastel</a> - 很有名的一篇文章，主要针对使用 Vim 的同学</li><li><a href="https://zhuanlan.zhihu.com/p/93342783">LaTeX 入门小记：Vim+ Vimtex + LaTeX 初体验 - 知乎 (zhihu.com)</a> -内容有点过时，总体还是适合的</li><li><ahref="https://zhuanlan.zhihu.com/p/644984708">使用Neovim优雅地编写LaTeX- 知乎 (zhihu.com)</a> - 主要介绍了 LuaSnip 的配置</li><li><a href="https://zhuanlan.zhihu.com/p/576159156">在 Windows 中使用wsl + neovim + latex + ultisnips - 知乎 (zhihu.com)</a> - 配置主要针对<code>wsl</code></li><li><ahref="https://destinyenvoy.github.io/2020/09/07/how-to-use-vimtex/">Vim+VimTeX:带给你飞一般的LaTeX编辑体验| Hexo (destinyenvoy.github.io)</a> - 提供了一些有关 VimTeX的技巧说明可以参考</li><li><ahref="https://zhuanlan.zhihu.com/p/658523024">Windows+neovim+SumatraPDF+windowsterminal+vimtex进行latex写作和反向搜索 - 知乎 (zhihu.com)</a> -比较详细地介绍了在 Windows 下如何配置</li></ul>]]></content>
     
     
     <categories>
@@ -254,9 +254,9 @@
       
       <tag>Math</tag>
       
-      <tag>CS Course</tag>
-      
       <tag>Machine Learning</tag>
+      
+      <tag>CS Course</tag>
       
     </tags>
     
@@ -509,9 +509,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -544,11 +544,11 @@
       
       <tag>Array</tag>
       
+      <tag>Two Pointers</tag>
+      
       <tag>Sorting</tag>
       
       <tag>Binary Search</tag>
-      
-      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -792,9 +792,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Linked List</tag>
       
     </tags>
     
@@ -852,9 +852,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -883,11 +883,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -949,9 +949,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Linked List</tag>
       
     </tags>
     
@@ -1034,13 +1034,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
       
       <tag>Greedy</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1073,9 +1073,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1199,9 +1199,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1259,9 +1259,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1292,9 +1292,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1358,9 +1358,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1418,9 +1418,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1449,9 +1449,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Matrix</tag>
       
@@ -1571,9 +1571,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1691,15 +1691,15 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
+      <tag>Simulation</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1730,9 +1730,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1761,9 +1761,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -1889,9 +1889,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -1986,9 +1986,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Bit Manipulation</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2147,9 +2147,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2180,9 +2180,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2343,9 +2343,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2440,9 +2440,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2760,9 +2760,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2793,9 +2793,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2824,9 +2824,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2917,9 +2917,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2948,9 +2948,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2979,9 +2979,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -3012,11 +3012,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Sorting</tag>
       
@@ -3078,11 +3078,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3204,17 +3204,6 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
     <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
@@ -3227,6 +3216,17 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
   
