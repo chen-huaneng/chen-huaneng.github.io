@@ -21,16 +21,16 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="记录一些使用 LaTeX 的技巧。">
+    <meta name="description" content="记录我制作自己的LaTeX模板的过程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LaTeX - 使用技巧">
+<meta property="og:title" content="LaTeX - （四）制作自己的模板">
 <meta property="og:url" content="https://chen-huaneng.github.io/2024/10/28/2024-10-28-2024-10-28-latex/index.html">
 <meta property="og:site_name" content="Abel&#39;s Blog">
-<meta property="og:description" content="记录一些使用 LaTeX 的技巧。">
+<meta property="og:description" content="记录我制作自己的LaTeX模板的过程。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/28/banner.webp">
 <meta property="article:published_time" content="2024-10-28T08:26:21.000Z">
-<meta property="article:modified_time" content="2024-10-28T08:35:53.815Z">
+<meta property="article:modified_time" content="2024-10-28T11:31:22.190Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Tool">
 <meta property="article:tag" content="Math">
@@ -40,7 +40,7 @@
   
   
   
-  <title>LaTeX - 使用技巧 - Abel&#39;s Blog</title>
+  <title>LaTeX - （四）制作自己的模板 - Abel&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -236,7 +236,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LaTeX - 使用技巧"></span>
+            <span id="subtitle" data-typed-text="LaTeX - （四）制作自己的模板"></span>
           
         </div>
 
@@ -260,7 +260,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 21 
+          文章字数: 127 
         
       </span>
     
@@ -272,7 +272,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 1 分钟
+          阅读全文大概需要 2 分钟
         
       </span>
     
@@ -318,12 +318,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LaTeX - 使用技巧</h1>
+            <h1 id="seo-header">LaTeX - （四）制作自己的模板</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-10-28T16:35:53+08:00
+                    本文最后更新于：2024-10-28T19:31:22+08:00
                   
                   
 
@@ -333,11 +333,9 @@
             
               <div class="markdown-body">
                 
-                <h2 id="有强迫症的浮动体">有“强迫症”的浮动体</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://liam.page/2017/03/11/floats-in-LaTeX-basic/">LaTeX
-中的浮动体：基础篇 | 始终 (liam.page)</a></li>
-</ul>
+                <h2 id="编译环境">编译环境</h2>
+<p>我在本地编译的环境：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs powershell">(base) <span class="hljs-built_in">PS</span> C:\&gt; tex <span class="hljs-literal">-version</span><br>TeX <span class="hljs-number">3.141592653</span> (TeX Live <span class="hljs-number">2024</span>)<br>kpathsea version <span class="hljs-number">6.4</span>.<span class="hljs-number">0</span><br>Copyright <span class="hljs-number">2024</span> D.E. Knuth.<br>There is NO warranty.  Redistribution of this software is<br>covered by the terms of both the TeX copyright and<br>the Lesser GNU General Public License.<br><span class="hljs-keyword">For</span> more information about these matters, see the file<br>named COPYING and the TeX source.<br>Primary author of TeX: D.E. Knuth.<br><br>(base) <span class="hljs-built_in">PS</span> C:\&gt; latex <span class="hljs-literal">-version</span><br>pdfTeX <span class="hljs-number">3.141592653</span><span class="hljs-literal">-2</span>.<span class="hljs-number">6</span><span class="hljs-literal">-1</span>.<span class="hljs-number">40.26</span> (TeX Live <span class="hljs-number">2024</span>)<br>kpathsea version <span class="hljs-number">6.4</span>.<span class="hljs-number">0</span><br>Copyright <span class="hljs-number">2024</span> Han The Thanh (pdfTeX) et al.<br>There is NO warranty.  Redistribution of this software is<br>covered by the terms of both the pdfTeX copyright and<br>the Lesser GNU General Public License.<br><span class="hljs-keyword">For</span> more information about these matters, see the file<br>named COPYING and the pdfTeX source.<br>Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.<br>Compiled with libpng <span class="hljs-number">1.6</span>.<span class="hljs-number">43</span>; <span class="hljs-keyword">using</span> libpng 1.6.43<br>Compiled with zlib <span class="hljs-number">1.3</span>.<span class="hljs-number">1</span>; <span class="hljs-keyword">using</span> zlib 1.3.1<br>Compiled with xpdf version <span class="hljs-number">4.04</span><br><br>(base) <span class="hljs-built_in">PS</span> C:\&gt; xelatex <span class="hljs-literal">-version</span><br>XeTeX <span class="hljs-number">3.141592653</span><span class="hljs-literal">-2</span>.<span class="hljs-number">6</span><span class="hljs-literal">-0</span>.<span class="hljs-number">999996</span> (TeX Live <span class="hljs-number">2024</span>)<br>kpathsea version <span class="hljs-number">6.4</span>.<span class="hljs-number">0</span><br>Copyright <span class="hljs-number">2024</span> SIL International, Jonathan Kew and Khaled Hosny.<br>There is NO warranty.  Redistribution of this software is<br>covered by the terms of both the XeTeX copyright and<br>the Lesser GNU General Public License.<br><span class="hljs-keyword">For</span> more information about these matters, see the file<br>named COPYING and the XeTeX source.<br>Primary author of XeTeX: Jonathan Kew.<br>Compiled with ICU version <span class="hljs-number">74.2</span>; <span class="hljs-keyword">using</span> 74.2<br>Compiled with zlib version <span class="hljs-number">1.3</span>.<span class="hljs-number">1</span>; <span class="hljs-keyword">using</span> 1.3.1<br>Compiled with FreeType2 version <span class="hljs-number">2.13</span>.<span class="hljs-number">2</span>; <span class="hljs-keyword">using</span> 2.13.2<br>Compiled with Graphite2 version <span class="hljs-number">1.3</span>.<span class="hljs-number">14</span>; <span class="hljs-keyword">using</span> 1.3.14<br>Compiled with HarfBuzz version <span class="hljs-number">8.3</span>.<span class="hljs-number">0</span>; <span class="hljs-keyword">using</span> 8.3.0<br>Compiled with libpng version <span class="hljs-number">1.6</span>.<span class="hljs-number">43</span>; <span class="hljs-keyword">using</span> 1.6.43<br>Compiled with pplib version v2.<span class="hljs-number">2</span><br>Compiled with fontconfig version <span class="hljs-number">2.15</span>.<span class="hljs-number">0</span>; <span class="hljs-keyword">using</span> 2.15.0<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -394,7 +392,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LaTeX - 使用技巧</div>
+      <div>LaTeX - （四）制作自己的模板</div>
       <div>https://chen-huaneng.github.io/2024/10/28/2024-10-28-2024-10-28-latex/</div>
     </div>
     <div class="license-meta">
