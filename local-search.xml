@@ -22,9 +22,9 @@
     
     <tags>
       
-      <tag>Machine Learning</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Machine Learning</tag>
       
       <tag>Data Mining</tag>
       
@@ -53,9 +53,9 @@
     
     <tags>
       
-      <tag>Tool</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Tool</tag>
       
       <tag>LaTeX</tag>
       
@@ -115,9 +115,9 @@
     
     <tags>
       
-      <tag>Tool</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Tool</tag>
       
       <tag>LaTeX</tag>
       
@@ -229,9 +229,9 @@
     
     <tags>
       
-      <tag>Tool</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Tool</tag>
       
       <tag>LaTeX</tag>
       
@@ -314,11 +314,11 @@
     
     <tags>
       
-      <tag>CS Course</tag>
+      <tag>Math</tag>
       
       <tag>Machine Learning</tag>
       
-      <tag>Math</tag>
+      <tag>CS Course</tag>
       
     </tags>
     
@@ -522,7 +522,7 @@
     <link href="/2024/03/29/2024-3-29-2024-03-29-Python-tkinter/"/>
     <url>/2024/03/29/2024-3-29-2024-03-29-Python-tkinter/</url>
     
-    <content type="html"><![CDATA[<h2 id="tkinter是什么">Tkinter是什么</h2><p><code>tkinter</code> 是 <code>Python</code>标准的GUI库，可以使用这个库快速地创建GUI应用。</p><h2 id="如何将-python-文件编译成-.exe-文件">如何将 <code>Python</code>文件编译成 <code>.exe</code> 文件</h2><ol type="1"><li><p>安装编译工具 <code>pyinstaller</code></p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br></code></pre></td></tr></table></figure></li><li><p>在文件路径下执行编译命令，其中 <code>-w</code> 参数是为了使得<code>dos</code> 窗口不会随着 <code>tkinter</code> 窗口出现</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w demo.py #demo.py是待编译的代码文件名<br></code></pre></td></tr></table></figure></li><li><p>编译完成后一般会在当前文件夹中生成一个 <code>dist</code>的文件夹，一个 <code>build</code> 文件夹和 一个 <code>demo.spec</code>文件，编译后的 <code>.exe</code> 文件就在 <code>dist</code>文件夹中。</p></li></ol><h3 id="编译后-.exe-文件太大的问题">编译后 <code>.exe</code>文件太大的问题</h3><p>原因是在编译时会把 <code>Python</code> 环境及库一起打包到<code>.exe</code> 文件中，如果当前的 <code>Python</code>环境中安装了很多的包，那么就会把所有的库带上，导致编译后的<code>.exe</code> 文件过大。</p><p>因此解决方案就是为该文件单独创建相应的 <code>Python</code>虚拟环境，只安装要编译 <code>Python</code>文件所依赖的库。具体步骤如下：</p><ol type="1"><li><p>安装 <code>virtualenv</code> 用于创建虚拟环境</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install virtualenv<br></code></pre></td></tr></table></figure></li><li><p>创建一个虚拟环境，建议将这个虚拟环境放在需要打包的<code>Python</code> 文件夹中，便于后面的处理</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">virtualenv py3exe_env #自定义命名虚拟环境的名称，这里是py3exe_env<br></code></pre></td></tr></table></figure></li><li><p>创建完成之后进入到该目录</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">cd</span> py3exe_env/Script<br></code></pre></td></tr></table></figure></li><li><p>在该目录下找到 <code>activate.ps1</code> 并执行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">activate.ps1<br></code></pre></td></tr></table></figure></li><li><p>然后在该虚拟环境下安装要编译的文件需要依赖的 <code>Python</code>库，当然也要重新安装 <code>pyinstaller</code>。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br>pip install conda #比如这里安装conda<br></code></pre></td></tr></table></figure></li><li><p>然后在该虚拟环境中回到要编译的文件目录下输入编译命令：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w test.py #运行时不出现dos命令窗口<br></code></pre></td></tr></table></figure></li></ol><h2 id="参考文档">参考文档</h2><ul><li><ahref="https://blog.csdn.net/weixin_47920722/article/details/128546996">【python】tkinter程序打包成exe可执行文件全流程记录（windows系统）_tkinter打包exe-CSDN博客</a></li><li><ahref="https://docs.python.org/zh-cn/3/library/tk.html">Tk图形用户界面(GUI)— Python 3.12.2 文档</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="环境准备">环境准备</h2><p>建议在开始尝试 Tkinter 的时候先创建一个虚拟环境进行测试，首先先用Conda 创建一个虚拟环境：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda create <span class="hljs-literal">--name</span> &lt;name of your environment&gt; python=<span class="hljs-number">3.8</span><br></code></pre></td></tr></table></figure><p>其中 <code>python=3.8</code> 是可选项，也可以指定下载其他的 Python版本。</p><p>然后激活环境：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda activate &lt;name of your environment&gt;<br></code></pre></td></tr></table></figure><p>安装 Pip ，因为有些包不能通过 Conda 安装，而这个时候就需要使用Pip，这里要注意一个点，要首先激活 Conda的环境，然后在激活的虚拟环境中再通过 Conda 重新下载一个Pip<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[conda虚拟环境使用pip下载包到当前环境的两种方法 - Python技术站 (pythonjishu.com)](https://pythonjishu.com/sqsvggluonzijtk/)">[1]</span></a></sup>，否则这时的虚拟环境中是不存在Pip 的，所以如果直接执行 Pip 的命令会对原本的环境生效。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda install pip<br></code></pre></td></tr></table></figure><p>这个时候通过查看 Conda 和 Pip 的环境可以查看是不是在虚拟环境中：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda list<br>pip list<br></code></pre></td></tr></table></figure><p>如果结果和原本环境中的输出是不一样的，那么就是成功创建虚拟环境并且激活虚拟环境了。</p><h2 id="tkinter-是什么2">Tkinter是什么<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[【python】tkinter程序打包成exe可执行文件 全流程记录（windows系统）_tkinter打包exe-CSDN博客](https://blog.csdn.net/weixin_47920722/article/details/128546996)">[2]</span></a></sup></h2><p><code>tkinter</code> 是 <code>Python</code>标准的GUI库，可以使用这个库快速地创建GUI应用。</p><h2 id="如何将-python-文件编译成-.exe-文件3">如何将 <code>Python</code>文件编译成 <code>.exe</code>文件<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[Tk图形用户界面(GUI) — Python 3.12.2 文档](https://docs.python.org/zh-cn/3/library/tk.html)">[3]</span></a></sup></h2><ol type="1"><li><p>安装编译工具 <code>pyinstaller</code></p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br></code></pre></td></tr></table></figure></li><li><p>在文件路径下执行编译命令，其中 <code>-w</code> 参数是为了使得<code>dos</code> 窗口不会随着 <code>tkinter</code> 窗口出现</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w demo.py #demo.py是待编译的代码文件名<br></code></pre></td></tr></table></figure></li><li><p>编译完成后一般会在当前文件夹中生成一个 <code>dist</code>的文件夹，一个 <code>build</code> 文件夹和 一个 <code>demo.spec</code>文件，编译后的 <code>.exe</code> 文件就在 <code>dist</code>文件夹中。</p></li></ol><h3 id="编译后-.exe-文件太大的问题">编译后 <code>.exe</code>文件太大的问题</h3><p>原因是在编译时会把 <code>Python</code> 环境及库一起打包到<code>.exe</code> 文件中，如果当前的 <code>Python</code>环境中安装了很多的包，那么就会把所有的库带上，导致编译后的<code>.exe</code> 文件过大。</p><p>因此解决方案就是为该文件单独创建相应的 <code>Python</code>虚拟环境，只安装要编译 <code>Python</code>文件所依赖的库。具体步骤如下：</p><ol type="1"><li><p>安装 <code>virtualenv</code> 用于创建虚拟环境</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install virtualenv<br></code></pre></td></tr></table></figure></li><li><p>创建一个虚拟环境，建议将这个虚拟环境放在需要打包的<code>Python</code> 文件夹中，便于后面的处理</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">virtualenv py3exe_env #自定义命名虚拟环境的名称，这里是py3exe_env<br></code></pre></td></tr></table></figure></li><li><p>创建完成之后进入到该目录</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">cd</span> py3exe_env/Script<br></code></pre></td></tr></table></figure></li><li><p>在该目录下找到 <code>activate.ps1</code> 并执行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">activate.ps1<br></code></pre></td></tr></table></figure></li><li><p>然后在该虚拟环境下安装要编译的文件需要依赖的 <code>Python</code>库，当然也要重新安装 <code>pyinstaller</code>。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br>pip install conda #比如这里安装conda<br></code></pre></td></tr></table></figure></li><li><p>然后在该虚拟环境中回到要编译的文件目录下输入编译命令：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w test.py #运行时不出现dos命令窗口<br></code></pre></td></tr></table></figure></li></ol><h2 id="tkinter-实战">Tkinter 实战</h2><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://pythonjishu.com/sqsvggluonzijtk/">conda虚拟环境使用pip下载包到当前环境的两种方法- Python技术站 (pythonjishu.com)</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><ahref="https://blog.csdn.net/weixin_47920722/article/details/128546996">【python】tkinter程序打包成exe可执行文件全流程记录（windows系统）_tkinter打包exe-CSDN博客</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://docs.python.org/zh-cn/3/library/tk.html">Tk图形用户界面(GUI)— Python 3.12.2 文档</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
     
     
     <categories>
@@ -569,11 +569,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -604,11 +604,11 @@
       
       <tag>Array</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Sorting</tag>
       
       <tag>Binary Search</tag>
       
-      <tag>Sorting</tag>
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -635,9 +635,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Array</tag>
       
@@ -790,9 +790,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Greedy</tag>
       
@@ -912,9 +912,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -943,13 +943,13 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -1094,13 +1094,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
       
-      <tag>Greedy</tag>
+      <tag>String</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -1133,9 +1133,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1228,9 +1228,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Prefix Sum</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Prefix Sum</tag>
       
     </tags>
     
@@ -1259,9 +1259,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1288,9 +1288,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1319,9 +1319,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1352,9 +1352,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1381,9 +1381,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Simulation</tag>
       
@@ -1418,9 +1418,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1478,9 +1478,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1509,9 +1509,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Matrix</tag>
       
@@ -1629,11 +1629,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
+      <tag>Simulation</tag>
       
       <tag>Counting</tag>
       
-      <tag>Simulation</tag>
+      <tag>String</tag>
       
     </tags>
     
@@ -1660,9 +1660,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Prefix Sum</tag>
       
@@ -1720,9 +1720,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1751,15 +1751,15 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Simulation</tag>
+      <tag>Sorting</tag>
       
       <tag>Two Pointers</tag>
-      
-      <tag>Sorting</tag>
       
     </tags>
     
@@ -1786,13 +1786,13 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
+      <tag>Math</tag>
       
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1821,11 +1821,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -1854,9 +1854,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1885,9 +1885,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1949,11 +1949,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -1982,9 +1982,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2013,9 +2013,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2042,9 +2042,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Simulation</tag>
       
@@ -2077,9 +2077,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2110,9 +2110,9 @@
       
       <tag>String</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -2170,9 +2170,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Array</tag>
       
@@ -2207,9 +2207,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2240,9 +2240,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2269,9 +2269,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Array</tag>
       
@@ -2302,9 +2302,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Simulation</tag>
       
@@ -2337,9 +2337,9 @@
       
       <tag>Array</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -2372,9 +2372,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2403,9 +2403,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2465,9 +2465,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Linked List</tag>
       
@@ -2496,13 +2496,13 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
+      <tag>Math</tag>
       
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2560,9 +2560,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Number Theory</tag>
       
@@ -2622,11 +2622,11 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
       
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2657,9 +2657,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Simulation</tag>
       
@@ -2688,9 +2688,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Math</tag>
       
       <tag>Array</tag>
       
@@ -2750,11 +2750,11 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Algorithm</tag>
       
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2820,9 +2820,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2853,9 +2853,9 @@
       
       <tag>Array</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -2884,9 +2884,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2915,9 +2915,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2977,9 +2977,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3008,9 +3008,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -3039,11 +3039,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>String</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -3072,11 +3072,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
-      
-      <tag>Simulation</tag>
       
       <tag>Sorting</tag>
       
@@ -3138,11 +3138,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Simulation</tag>
+      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
-      
-      <tag>Simulation</tag>
       
     </tags>
     
@@ -3198,13 +3198,13 @@
     
     <tags>
       
-      <tag>Tool</tag>
-      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
       
       <tag>Website</tag>
+      
+      <tag>Tool</tag>
       
     </tags>
     
@@ -3264,6 +3264,17 @@
     <link href="/"/>
     <url>/</url>
     
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
     <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
@@ -3276,17 +3287,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
   

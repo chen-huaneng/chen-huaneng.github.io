@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/3/29/banner.jpg">
 <meta property="article:published_time" content="2024-03-29T09:31:24.000Z">
-<meta property="article:modified_time" content="2024-10-13T03:52:59.383Z">
+<meta property="article:modified_time" content="2024-10-28T12:37:57.669Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="tkinter">
@@ -260,7 +260,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 464 
+          文章字数: 740 
         
       </span>
     
@@ -272,7 +272,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 4 分钟
+          阅读全文大概需要 7 分钟
         
       </span>
     
@@ -323,7 +323,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-10-13T11:52:59+08:00
+                    本文最后更新于：2024-10-28T20:37:57+08:00
                   
                   
 
@@ -333,11 +333,36 @@
             
               <div class="markdown-body">
                 
-                <h2 id="tkinter是什么">Tkinter是什么</h2>
+                <h2 id="环境准备">环境准备</h2>
+<p>建议在开始尝试 Tkinter 的时候先创建一个虚拟环境进行测试，首先先用
+Conda 创建一个虚拟环境：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda create <span class="hljs-literal">--name</span> &lt;name of your environment&gt; python=<span class="hljs-number">3.8</span><br></code></pre></td></tr></table></figure>
+<p>其中 <code>python=3.8</code> 是可选项，也可以指定下载其他的 Python
+版本。</p>
+<p>然后激活环境：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda activate &lt;name of your environment&gt;<br></code></pre></td></tr></table></figure>
+<p>安装 Pip ，因为有些包不能通过 Conda 安装，而这个时候就需要使用
+Pip，这里要注意一个点，要首先激活 Conda
+的环境，然后在激活的虚拟环境中再通过 Conda 重新下载一个
+Pip<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[conda虚拟环境使用pip下载包到当前环境的两种方法 - Python技术站 (pythonjishu.com)](https://pythonjishu.com/sqsvggluonzijtk/)">[1]</span></a></sup>，否则这时的虚拟环境中是不存在
+Pip 的，所以如果直接执行 Pip 的命令会对原本的环境生效。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda install pip<br></code></pre></td></tr></table></figure>
+<p>这个时候通过查看 Conda 和 Pip 的环境可以查看是不是在虚拟环境中：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda list<br>pip list<br></code></pre></td></tr></table></figure>
+<p>如果结果和原本环境中的输出是不一样的，那么就是成功创建虚拟环境并且激活虚拟环境了。</p>
+<h2 id="tkinter-是什么2">Tkinter
+是什么<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[【python】tkinter程序打包成exe可执行文件 全流程记录（windows系统）_tkinter打包exe-CSDN博客](https://blog.csdn.net/weixin_47920722/article/details/128546996)">[2]</span></a></sup></h2>
 <p><code>tkinter</code> 是 <code>Python</code>
 标准的GUI库，可以使用这个库快速地创建GUI应用。</p>
-<h2 id="如何将-python-文件编译成-.exe-文件">如何将 <code>Python</code>
-文件编译成 <code>.exe</code> 文件</h2>
+<h2 id="如何将-python-文件编译成-.exe-文件3">如何将 <code>Python</code>
+文件编译成 <code>.exe</code>
+文件<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[Tk图形用户界面(GUI) — Python 3.12.2 文档](https://docs.python.org/zh-cn/3/library/tk.html)">[3]</span></a></sup></h2>
 <ol type="1">
 <li><p>安装编译工具 <code>pyinstaller</code></p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br></code></pre></td></tr></table></figure></li>
@@ -374,15 +399,37 @@
 <li><p>然后在该虚拟环境中回到要编译的文件目录下输入编译命令：</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w test.py #运行时不出现dos命令窗口<br></code></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="参考文档">参考文档</h2>
-<ul>
-<li><a
+<h2 id="tkinter-实战">Tkinter 实战</h2>
+<section class="footnotes">
+<h2>
+References
+</h2>
+<div class="footnote-list">
+<ol>
+<li>
+<span id="fn:1" class="footnote-text"><span><a
+target="_blank" rel="noopener" href="https://pythonjishu.com/sqsvggluonzijtk/">conda虚拟环境使用pip下载包到当前环境的两种方法
+- Python技术站 (pythonjishu.com)</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:2" class="footnote-text"><span><a
 target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_47920722/article/details/128546996">【python】tkinter程序打包成exe可执行文件
-全流程记录（windows系统）_tkinter打包exe-CSDN博客</a></li>
-<li><a
+全流程记录（windows系统）_tkinter打包exe-CSDN博客</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:3" class="footnote-text"><span><a
 target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/tk.html">Tk图形用户界面(GUI)
-— Python 3.12.2 文档</a></li>
-</ul>
+— Python 3.12.2 文档</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+</ol>
+</div>
+</section>
 
                 
               </div>
@@ -458,7 +505,7 @@ target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/tk.
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年10月13日</div>
+          <div>2024年10月28日</div>
         </div>
       
       
