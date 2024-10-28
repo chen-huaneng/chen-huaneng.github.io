@@ -209,7 +209,7 @@
     <link href="/2024/10/14/2024-10-14-2024-10-14-git/"/>
     <url>/2024/10/14/2024-10-14-2024-10-14-git/</url>
     
-    <content type="html"><![CDATA[<h2 id="git-如何推送当前目录到远程仓库"><code>Git</code>如何推送当前目录到远程仓库</h2><ol type="1"><li><p>初始化本地仓库为<code>Git</code> 仓库：在项目根目录下运行命令<code>git init</code> ，这会创建一个 <code>.git</code>目录，把当前目录变成一个 <code>Git</code> 仓库。</p></li><li><p>添加文件到暂存区：可以用 <code>git add .</code>命令将项目中的所有文件添加到 <code>Git</code>的暂存区，也可以指定特定的文件<code>git add &lt;文件名&gt;</code>。</p></li><li><p>提交更改：使用命令 <code>git commit -m "提交内容的描述"</code>提交暂存区中的更改到本地仓库，<code>-m</code>后面的内容是提交的说明，描述此次提交的变更。</p></li><li><p>连接远程仓库：获取远程仓库的 URL 地址，比如 GitHub 上仓库的 HTTPS或 SSH 地址（当然需要提前先在远程建立一个仓库），然后使用命令<code>git remote add origin &lt;远程仓库URL&gt;</code>将本地仓库与远程仓库（如 <code>GitHub</code> 、<code>GitLab</code>等）进行连接。<code>origin</code>是远程仓库的默认名称，也可以指定为其他名称。</p></li><li><p>拉取远程更新（当远程仓库和本地仓库的内容不一致的时候需要先拉取远程仓库的内容）：使用命令<code>git pull origin main --rebase</code>同步远程仓库（<code>origin</code>）的主分支 <code>main</code>中的代码到本地。一般远程仓库的主分支叫 <code>main</code> 或者<code>master</code> （<code>Github</code> 默认是 <code>main</code>）。</p><blockquote><p>关于 <code>merge</code> 和 <code>rebase</code> 的区别可以参考：<ahref="https://zhuanlan.zhihu.com/p/686538265">Git：图解 merge 和 rebase的区别 - 知乎 (zhihu.com)</a></p></blockquote></li><li><p>推送本地代码到远程仓库：使用命令<code>git push -u origin main</code>将本地的代码推送到远程仓库的指定分支（通常是 <code>main</code> 或者<code>master</code>）。</p><blockquote><p>当使用 <code>git push -u origin &lt;branch&gt;</code> 之后，本地的<code>&lt;branch&gt;</code> 分支会与远程的 <code>&lt;branch&gt;</code>分支建立跟踪关系。此后，Git记住你推送的远程仓库和分支，因此以后只需要运行<code>git push</code>，而无需再次指定远程仓库和分支。同样，拉取时也可以使用简化后的命令<code>git pull</code>。所以只有第一次推送时需要添加<code>-u origin main</code> 参数。</p></blockquote></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="git-如何推送当前目录到远程仓库">Git如何推送当前目录到远程仓库</h2><ol type="1"><li><p>初始化本地仓库为<code>Git</code> 仓库：在项目根目录下运行命令<code>git init</code> ，这会创建一个 <code>.git</code>目录，把当前目录变成一个 <code>Git</code> 仓库。</p></li><li><p>添加文件到暂存区：可以用 <code>git add .</code>命令将项目中的所有文件添加到 <code>Git</code>的暂存区，也可以指定特定的文件<code>git add &lt;文件名&gt;</code>。</p></li><li><p>提交更改：使用命令 <code>git commit -m "提交内容的描述"</code>提交暂存区中的更改到本地仓库，<code>-m</code>后面的内容是提交的说明，描述此次提交的变更。</p></li><li><p>连接远程仓库：获取远程仓库的 URL 地址，比如 GitHub 上仓库的 HTTPS或 SSH 地址（当然需要提前先在远程建立一个仓库），然后使用命令<code>git remote add origin &lt;远程仓库URL&gt;</code>将本地仓库与远程仓库（如 <code>GitHub</code> 、<code>GitLab</code>等）进行连接。<code>origin</code>是远程仓库的默认名称，也可以指定为其他名称。</p></li><li><p>拉取远程更新（当远程仓库和本地仓库的内容不一致的时候需要先拉取远程仓库的内容）：使用命令<code>git pull origin main --rebase</code>同步远程仓库（<code>origin</code>）的主分支 <code>main</code>中的代码到本地。一般远程仓库的主分支叫 <code>main</code> 或者<code>master</code> （<code>Github</code> 默认是 <code>main</code>）。</p><blockquote><p>关于 <code>merge</code> 和 <code>rebase</code> 的区别可以参考：<ahref="https://zhuanlan.zhihu.com/p/686538265">Git：图解 merge 和 rebase的区别 - 知乎 (zhihu.com)</a></p></blockquote></li><li><p>推送本地代码到远程仓库：使用命令<code>git push -u origin main</code>将本地的代码推送到远程仓库的指定分支（通常是 <code>main</code> 或者<code>master</code>）。</p><blockquote><p>当使用 <code>git push -u origin &lt;branch&gt;</code> 之后，本地的<code>&lt;branch&gt;</code> 分支会与远程的 <code>&lt;branch&gt;</code>分支建立跟踪关系。此后，Git记住你推送的远程仓库和分支，因此以后只需要运行<code>git push</code>，而无需再次指定远程仓库和分支。同样，拉取时也可以使用简化后的命令<code>git pull</code>。所以只有第一次推送时需要添加<code>-u origin main</code> 参数。</p></blockquote></li></ol><h2 id="lazygit">Lazygit</h2><p>当然，如果觉得 Git 要一直输入命令好麻烦，还有一个适合命令行的 <ahref="https://github.com/jesseduffield/lazygit?tab=readme-ov-file">Lazygit</a>非常推荐，适合像我一样不喜欢自己输入这种重复命令的同学使用。</p><p>安装了 Lazygit 之后在命令行中输入 <code>lazygit</code>就可以启动了。</p><p>在启动 Lazygit 并提示“未在 Git仓库中”时，它允许你直接在当前目录下创建一个新的 Git仓库。可以按照以下步骤完成初始化：</p><ol type="1"><li><p>创建新 Git 仓库：当 Lazygit 提示是否要创建一个新的 Git仓库时，输入 <code>y</code> 并按回车键。</p></li><li><p>设置分支名称：Lazygit 会询问你要设置的分支名称。可以选择：</p><ul><li>留空：直接按回车，将使用 Git 的默认分支名称（一般是<code>main</code> 或 <code>master</code>，取决于 Git 配置）。</li><li>自定义名称：输入自定义分支名称并按回车。</li></ul></li></ol><p>完成这两步后，Lazygit 会创建一个新的 Git仓库，并切换到你指定的分支名称，接着你就可以正常使用 Lazygit进行文件暂存、提交、推送等操作了。</p><p>Lazygit 提供了快捷键操作，常见的有以下几个：</p><ul><li><strong><code>↑ / ↓</code></strong>：上下移动光标，选择不同文件或提交记录。</li><li><strong><code>Enter</code></strong>：查看详细内容（如文件变更或提交详情）。</li><li><strong><code>Space</code></strong>：暂存/取消暂存文件。</li><li><strong><code>a</code></strong>：暂存所有修改。</li><li><strong><code>c</code></strong>：打开提交消息输入界面，完成后保存提交。</li><li><strong><code>P</code></strong>：推送代码到远程仓库。</li><li><strong><code>f</code></strong>、<strong><code>p</code></strong>：从远程仓库拉取代码。</li><li><strong><code>b</code></strong>：切换或新建分支。</li><li><strong><code>q</code></strong>：退出 Lazygit。</li><li><strong><code>R</code></strong>：添加远程仓库。</li><li><strong><code>?</code></strong>：查看所有快捷键说明。</li></ul>]]></content>
     
     
     <categories>
@@ -254,9 +254,9 @@
       
       <tag>Math</tag>
       
-      <tag>CS Course</tag>
-      
       <tag>Machine Learning</tag>
+      
+      <tag>CS Course</tag>
       
     </tags>
     
@@ -509,9 +509,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -852,9 +852,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -883,11 +883,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -1199,9 +1199,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1259,9 +1259,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1325,9 +1325,9 @@
       
       <tag>Math</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Linked List</tag>
       
       <tag>Number Theory</tag>
       
@@ -1358,9 +1358,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1418,9 +1418,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1449,9 +1449,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Matrix</tag>
       
@@ -1569,9 +1569,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -1691,13 +1691,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1730,9 +1730,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1761,9 +1761,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -1889,9 +1889,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -2147,9 +2147,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2312,9 +2312,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2343,9 +2343,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2440,9 +2440,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2760,9 +2760,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2824,9 +2824,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2917,9 +2917,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2979,9 +2979,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -3012,13 +3012,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3078,11 +3078,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
