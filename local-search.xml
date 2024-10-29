@@ -271,7 +271,7 @@
     <link href="/2024/10/14/2024-10-14-2024-10-14-git/"/>
     <url>/2024/10/14/2024-10-14-2024-10-14-git/</url>
     
-    <content type="html"><![CDATA[<h2 id="git-如何推送当前目录到远程仓库">Git如何推送当前目录到远程仓库</h2><ol type="1"><li><p>初始化本地仓库为<code>Git</code> 仓库：在项目根目录下运行命令<code>git init</code> ，这会创建一个 <code>.git</code>目录，把当前目录变成一个 <code>Git</code> 仓库。</p></li><li><p>添加文件到暂存区：可以用 <code>git add .</code>命令将项目中的所有文件添加到 <code>Git</code>的暂存区，也可以指定特定的文件<code>git add &lt;文件名&gt;</code>。</p></li><li><p>提交更改：使用命令 <code>git commit -m "提交内容的描述"</code>提交暂存区中的更改到本地仓库，<code>-m</code>后面的内容是提交的说明，描述此次提交的变更。</p></li><li><p>连接远程仓库：获取远程仓库的 URL 地址，比如 GitHub 上仓库的 HTTPS或 SSH 地址（当然需要提前先在远程建立一个仓库），然后使用命令<code>git remote add origin &lt;远程仓库URL&gt;</code>将本地仓库与远程仓库（如 <code>GitHub</code> 、<code>GitLab</code>等）进行连接。<code>origin</code>是远程仓库的默认名称，也可以指定为其他名称。</p></li><li><p>拉取远程更新（当远程仓库和本地仓库的内容不一致的时候需要先拉取远程仓库的内容）：使用命令<code>git pull origin main --rebase</code>同步远程仓库（<code>origin</code>）的主分支 <code>main</code>中的代码到本地。一般远程仓库的主分支叫 <code>main</code> 或者<code>master</code> （<code>Github</code> 默认是 <code>main</code>）。</p><blockquote><p>关于 <code>merge</code> 和 <code>rebase</code> 的区别可以参考：<ahref="https://zhuanlan.zhihu.com/p/686538265">Git：图解 merge 和 rebase的区别 - 知乎 (zhihu.com)</a></p></blockquote></li><li><p>推送本地代码到远程仓库：使用命令<code>git push -u origin main</code>将本地的代码推送到远程仓库的指定分支（通常是 <code>main</code> 或者<code>master</code>）。</p><blockquote><p>当使用 <code>git push -u origin &lt;branch&gt;</code> 之后，本地的<code>&lt;branch&gt;</code> 分支会与远程的 <code>&lt;branch&gt;</code>分支建立跟踪关系。此后，Git记住你推送的远程仓库和分支，因此以后只需要运行<code>git push</code>，而无需再次指定远程仓库和分支。同样，拉取时也可以使用简化后的命令<code>git pull</code>。所以只有第一次推送时需要添加<code>-u origin main</code> 参数。</p></blockquote></li></ol><h2 id="lazygit">Lazygit</h2><p>当然，如果觉得 Git 要一直输入命令好麻烦，还有一个适合命令行的 <ahref="https://github.com/jesseduffield/lazygit?tab=readme-ov-file">Lazygit</a>非常推荐，适合像我一样不喜欢自己输入这种重复命令的同学使用。</p><p>安装了 Lazygit 之后在命令行中输入 <code>lazygit</code>就可以启动了。</p><p>在启动 Lazygit 并提示“未在 Git仓库中”时，它允许你直接在当前目录下创建一个新的 Git仓库。可以按照以下步骤完成初始化：</p><ol type="1"><li><p>创建新 Git 仓库：当 Lazygit 提示是否要创建一个新的 Git仓库时，输入 <code>y</code> 并按回车键。</p></li><li><p>设置分支名称：Lazygit 会询问你要设置的分支名称。可以选择：</p><ul><li>留空：直接按回车，将使用 Git 的默认分支名称（一般是<code>main</code> 或 <code>master</code>，取决于 Git 配置）。</li><li>自定义名称：输入自定义分支名称并按回车。</li></ul></li></ol><p>完成这两步后，Lazygit 会创建一个新的 Git仓库，并切换到你指定的分支名称，接着你就可以正常使用 Lazygit进行文件暂存、提交、推送等操作了。</p><p>Lazygit 提供了快捷键操作，常见的有以下几个：</p><ul><li><strong><code>↑ / ↓</code></strong>：上下移动光标，选择不同文件或提交记录。</li><li><strong><code>Enter</code></strong>：查看详细内容（如文件变更或提交详情）。</li><li><strong><code>Space</code></strong>：暂存/取消暂存文件。</li><li><strong><code>a</code></strong>：暂存所有修改。</li><li><strong><code>c</code></strong>：打开提交消息输入界面，完成后保存提交。</li><li><strong><code>P</code></strong>：推送代码到远程仓库。</li><li><strong><code>f</code></strong>、<strong><code>p</code></strong>：从远程仓库拉取代码。</li><li><strong><code>b</code></strong>：切换或新建分支。</li><li><strong><code>q</code></strong>：退出 Lazygit。</li><li><strong><code>?</code></strong>：查看所有快捷键说明。</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="git-使用指南">Git 使用指南</h2><h3 id="git-如何推送当前目录到远程仓库">Git如何推送当前目录到远程仓库</h3><ol type="1"><li><p>初始化本地仓库为<code>Git</code> 仓库：在项目根目录下运行命令<code>git init</code> ，这会创建一个 <code>.git</code>目录，把当前目录变成一个 <code>Git</code> 仓库。</p></li><li><p>添加文件到暂存区：可以用 <code>git add .</code>命令将项目中的所有文件添加到 <code>Git</code>的暂存区，也可以指定特定的文件<code>git add &lt;文件名&gt;</code>。</p></li><li><p>提交更改：使用命令 <code>git commit -m "提交内容的描述"</code>提交暂存区中的更改到本地仓库，<code>-m</code>后面的内容是提交的说明，描述此次提交的变更。</p></li><li><p>连接远程仓库：获取远程仓库的 URL 地址，比如 GitHub 上仓库的 HTTPS或 SSH 地址（当然需要提前先在远程建立一个仓库），然后使用命令<code>git remote add origin &lt;远程仓库URL&gt;</code>将本地仓库与远程仓库（如 <code>GitHub</code> 、<code>GitLab</code>等）进行连接。<code>origin</code>是远程仓库的默认名称，也可以指定为其他名称。</p></li><li><p>拉取远程更新（当远程仓库和本地仓库的内容不一致的时候需要先拉取远程仓库的内容）：使用命令<code>git pull origin main --rebase</code>同步远程仓库（<code>origin</code>）的主分支 <code>main</code>中的代码到本地。一般远程仓库的主分支叫 <code>main</code> 或者<code>master</code> （<code>Github</code> 默认是 <code>main</code>）。</p><blockquote><p>关于 <code>merge</code> 和 <code>rebase</code> 的区别可以参考：<ahref="https://zhuanlan.zhihu.com/p/686538265">Git：图解 merge 和 rebase的区别 - 知乎 (zhihu.com)</a></p></blockquote></li><li><p>推送本地代码到远程仓库：使用命令<code>git push -u origin main</code>将本地的代码推送到远程仓库的指定分支（通常是 <code>main</code> 或者<code>master</code>）。</p><blockquote><p>当使用 <code>git push -u origin &lt;branch&gt;</code> 之后，本地的<code>&lt;branch&gt;</code> 分支会与远程的 <code>&lt;branch&gt;</code>分支建立跟踪关系。此后，Git记住你推送的远程仓库和分支，因此以后只需要运行<code>git push</code>，而无需再次指定远程仓库和分支。同样，拉取时也可以使用简化后的命令<code>git pull</code>。所以只有第一次推送时需要添加<code>-u origin main</code> 参数。</p></blockquote></li></ol><h3 id="gitignore-如何添加已经-commit-过的文件到不追踪规则中">.gitignore如何添加已经 commit 过的文件到不追踪规则中</h3><p>首先删除 track 的文件（已经 commit 的文件）：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm -r --cached &lt;file name&gt;<br></code></pre></td></tr></table></figure><p><code>&lt;file name&gt;</code> 代表要取消 commit的文件，接受多个参数，比如要取消追踪 <code>test.py</code> 文件和<code>hello</code> 文件夹可以这样：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm -r --cached test.py hello<br></code></pre></td></tr></table></figure><p>然后在 .gitignore 文件中添加 ignore 条目，比如：<code>test.py</code>和 <code>hello</code>，然后提交 .gitignore 文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git commit -a -m &quot;delete some unused file.&quot;<br></code></pre></td></tr></table></figure><h2 id="lazygit">Lazygit</h2><p>当然，如果觉得 Git 要一直输入命令好麻烦，还有一个适合命令行的 <ahref="https://github.com/jesseduffield/lazygit?tab=readme-ov-file">Lazygit</a>非常推荐，适合像我一样不喜欢自己输入这种重复命令的同学使用。</p><p>安装了 Lazygit 之后在命令行中输入 <code>lazygit</code>就可以启动了。</p><p>在启动 Lazygit 并提示“未在 Git仓库中”时，它允许你直接在当前目录下创建一个新的 Git仓库。可以按照以下步骤完成初始化：</p><ol type="1"><li><p>创建新 Git 仓库：当 Lazygit 提示是否要创建一个新的 Git仓库时，输入 <code>y</code> 并按回车键。</p></li><li><p>设置分支名称：Lazygit 会询问你要设置的分支名称。可以选择：</p><ul><li>留空：直接按回车，将使用 Git 的默认分支名称（一般是<code>main</code> 或 <code>master</code>，取决于 Git 配置）。</li><li>自定义名称：输入自定义分支名称并按回车。</li></ul></li></ol><p>完成这两步后，Lazygit 会创建一个新的 Git仓库，并切换到你指定的分支名称，接着你就可以正常使用 Lazygit进行文件暂存、提交、推送等操作了。</p><p>Lazygit 提供了快捷键操作，常见的有以下几个：</p><ul><li><strong><code>↑ / ↓</code></strong>：上下移动光标，选择不同文件或提交记录。</li><li><strong><code>Enter</code></strong>：查看详细内容（如文件变更或提交详情）。</li><li><strong><code>Space</code></strong>：暂存/取消暂存文件。</li><li><strong><code>a</code></strong>：暂存所有修改。</li><li><strong><code>c</code></strong>：打开提交消息输入界面，完成后保存提交。</li><li><strong><code>P</code></strong>：推送代码到远程仓库。</li><li><strong><code>f</code></strong>、<strong><code>p</code></strong>：从远程仓库拉取代码。</li><li><strong><code>b</code></strong>：切换或新建分支。</li><li><strong><code>q</code></strong>：退出 Lazygit。</li><li><strong><code>?</code></strong>：查看所有快捷键说明。</li></ul>]]></content>
     
     
     <categories>
@@ -522,7 +522,7 @@
     <link href="/2024/03/29/2024-3-29-2024-03-29-Python-tkinter/"/>
     <url>/2024/03/29/2024-3-29-2024-03-29-Python-tkinter/</url>
     
-    <content type="html"><![CDATA[<h2 id="环境准备">环境准备</h2><p>建议在开始尝试 Tkinter 的时候先创建一个虚拟环境进行测试，首先先用Conda 创建一个虚拟环境：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda create <span class="hljs-literal">--name</span> &lt;name of your environment&gt; python=<span class="hljs-number">3.8</span><br></code></pre></td></tr></table></figure><p>其中 <code>python=3.8</code> 是可选项，也可以指定下载其他的 Python版本。</p><p>然后激活环境：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda activate &lt;name of your environment&gt;<br></code></pre></td></tr></table></figure><p>安装 Pip ，因为有些包不能通过 Conda 安装，而这个时候就需要使用Pip，这里要注意一个点，要首先激活 Conda的环境，然后在激活的虚拟环境中再通过 Conda 重新下载一个Pip<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[conda虚拟环境使用pip下载包到当前环境的两种方法 - Python技术站 (pythonjishu.com)](https://pythonjishu.com/sqsvggluonzijtk/)">[1]</span></a></sup>，否则这时的虚拟环境中是不存在Pip 的，所以如果直接执行 Pip 的命令会对原本的环境生效。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda install pip<br></code></pre></td></tr></table></figure><p>这个时候通过查看 Conda 和 Pip 的环境可以查看是不是在虚拟环境中：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda list<br>pip list<br></code></pre></td></tr></table></figure><p>如果结果和原本环境中的输出是不一样的，那么就是成功创建虚拟环境并且激活虚拟环境了。</p><h2 id="tkinter-是什么2">Tkinter是什么<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[【python】tkinter程序打包成exe可执行文件 全流程记录（windows系统）_tkinter打包exe-CSDN博客](https://blog.csdn.net/weixin_47920722/article/details/128546996)">[2]</span></a></sup></h2><p><code>tkinter</code> 是 <code>Python</code>标准的GUI库，可以使用这个库快速地创建GUI应用。</p><h2 id="如何将-python-文件编译成-.exe-文件3">如何将 <code>Python</code>文件编译成 <code>.exe</code>文件<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[Tk图形用户界面(GUI) — Python 3.12.2 文档](https://docs.python.org/zh-cn/3/library/tk.html)">[3]</span></a></sup></h2><ol type="1"><li><p>安装编译工具 <code>pyinstaller</code></p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br></code></pre></td></tr></table></figure></li><li><p>在文件路径下执行编译命令，其中 <code>-w</code> 参数是为了使得<code>dos</code> 窗口不会随着 <code>tkinter</code> 窗口出现</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w demo.py #demo.py是待编译的代码文件名<br></code></pre></td></tr></table></figure></li><li><p>编译完成后一般会在当前文件夹中生成一个 <code>dist</code>的文件夹，一个 <code>build</code> 文件夹和 一个 <code>demo.spec</code>文件，编译后的 <code>.exe</code> 文件就在 <code>dist</code>文件夹中。</p></li></ol><h3 id="编译后-.exe-文件太大的问题">编译后 <code>.exe</code>文件太大的问题</h3><p>原因是在编译时会把 <code>Python</code> 环境及库一起打包到<code>.exe</code> 文件中，如果当前的 <code>Python</code>环境中安装了很多的包，那么就会把所有的库带上，导致编译后的<code>.exe</code> 文件过大。</p><p>因此解决方案就是为该文件单独创建相应的 <code>Python</code>虚拟环境，只安装要编译 <code>Python</code>文件所依赖的库。具体步骤如下：</p><ol type="1"><li><p>安装 <code>virtualenv</code> 用于创建虚拟环境</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install virtualenv<br></code></pre></td></tr></table></figure></li><li><p>创建一个虚拟环境，建议将这个虚拟环境放在需要打包的<code>Python</code> 文件夹中，便于后面的处理</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">virtualenv py3exe_env #自定义命名虚拟环境的名称，这里是py3exe_env<br></code></pre></td></tr></table></figure></li><li><p>创建完成之后进入到该目录</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">cd</span> py3exe_env/Script<br></code></pre></td></tr></table></figure></li><li><p>在该目录下找到 <code>activate.ps1</code> 并执行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">activate.ps1<br></code></pre></td></tr></table></figure></li><li><p>然后在该虚拟环境下安装要编译的文件需要依赖的 <code>Python</code>库，当然也要重新安装 <code>pyinstaller</code>。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br>pip install conda #比如这里安装conda<br></code></pre></td></tr></table></figure></li><li><p>然后在该虚拟环境中回到要编译的文件目录下输入编译命令：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w test.py #运行时不出现dos命令窗口<br></code></pre></td></tr></table></figure></li></ol><h2 id="tkinter-实战">Tkinter 实战</h2><p>用 Tkinter实现了一个博客管理器，主要用于管理我自己的博客文章，源代码和程序仓库<ahref="https://github.com/chen-huaneng/BlogManager">请点我</a>。</p><img src="./banner.png" srcset="/imgs/banner/loading.jpg" lazyload /><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://pythonjishu.com/sqsvggluonzijtk/">conda虚拟环境使用pip下载包到当前环境的两种方法- Python技术站 (pythonjishu.com)</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><ahref="https://blog.csdn.net/weixin_47920722/article/details/128546996">【python】tkinter程序打包成exe可执行文件全流程记录（windows系统）_tkinter打包exe-CSDN博客</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://docs.python.org/zh-cn/3/library/tk.html">Tk图形用户界面(GUI)— Python 3.12.2 文档</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
+    <content type="html"><![CDATA[<h2 id="环境准备">环境准备</h2><p>建议在开始尝试 Tkinter 的时候先创建一个虚拟环境进行测试，首先先用Conda 创建一个虚拟环境：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda create <span class="hljs-literal">--name</span> &lt;name of your environment&gt; python=<span class="hljs-number">3.8</span><br></code></pre></td></tr></table></figure><p>其中 <code>python=3.8</code> 是可选项，也可以指定下载其他的 Python版本。</p><p>然后激活环境：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda activate &lt;name of your environment&gt;<br></code></pre></td></tr></table></figure><p>安装 Pip ，因为有些包不能通过 Conda 安装，而这个时候就需要使用Pip，这里要注意一个点，要首先激活 Conda的环境，然后在激活的虚拟环境中再通过 Conda 重新下载一个Pip<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[conda虚拟环境使用pip下载包到当前环境的两种方法 - Python技术站 (pythonjishu.com)](https://pythonjishu.com/sqsvggluonzijtk/)">[1]</span></a></sup>，否则这时的虚拟环境中是不存在Pip 的，所以如果直接执行 Pip 的命令会对原本的环境生效。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda install pip<br></code></pre></td></tr></table></figure><p>这个时候通过查看 Conda 和 Pip 的环境可以查看是不是在虚拟环境中：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda list<br>pip list<br></code></pre></td></tr></table></figure><p>如果结果和原本环境中的输出是不一样的，那么就是成功创建虚拟环境并且激活虚拟环境了。</p><h2 id="tkinter-是什么2">Tkinter是什么<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[【python】tkinter程序打包成exe可执行文件 全流程记录（windows系统）_tkinter打包exe-CSDN博客](https://blog.csdn.net/weixin_47920722/article/details/128546996)">[2]</span></a></sup></h2><p><code>tkinter</code> 是 <code>Python</code>标准的GUI库，可以使用这个库快速地创建GUI应用。</p><h2 id="如何将-python-文件编译成-.exe-文件3">如何将 <code>Python</code>文件编译成 <code>.exe</code>文件<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[Tk图形用户界面(GUI) — Python 3.12.2 文档](https://docs.python.org/zh-cn/3/library/tk.html)">[3]</span></a></sup></h2><ol type="1"><li><p>安装编译工具 <code>pyinstaller</code></p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br></code></pre></td></tr></table></figure></li><li><p>在文件路径下执行编译命令，其中 <code>-w</code> 参数是为了使得<code>dos</code> 窗口不会随着 <code>tkinter</code> 窗口出现</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w demo.py #demo.py是待编译的代码文件名<br></code></pre></td></tr></table></figure></li><li><p>编译完成后一般会在当前文件夹中生成一个 <code>dist</code>的文件夹，一个 <code>build</code> 文件夹和 一个 <code>demo.spec</code>文件，编译后的 <code>.exe</code> 文件就在 <code>dist</code>文件夹中。</p></li></ol><h3 id="编译后-.exe-文件太大的问题">编译后 <code>.exe</code>文件太大的问题</h3><p>原因是在编译时会把 <code>Python</code> 环境及库一起打包到<code>.exe</code> 文件中，如果当前的 <code>Python</code>环境中安装了很多的包，那么就会把所有的库带上，导致编译后的<code>.exe</code> 文件过大。</p><p>因此解决方案就是为该文件单独创建相应的 <code>Python</code>虚拟环境，只安装要编译 <code>Python</code>文件所依赖的库。具体步骤如下：</p><ol type="1"><li><p>安装 <code>virtualenv</code> 用于创建虚拟环境</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install virtualenv<br></code></pre></td></tr></table></figure></li><li><p>创建一个虚拟环境，建议将这个虚拟环境放在需要打包的<code>Python</code> 文件夹中，便于后面的处理</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">virtualenv py3exe_env #自定义命名虚拟环境的名称，这里是py3exe_env<br></code></pre></td></tr></table></figure></li><li><p>创建完成之后进入到该目录</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">cd</span> py3exe_env/Script<br></code></pre></td></tr></table></figure></li><li><p>在该目录下找到 <code>activate.ps1</code> 并执行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">activate.ps1<br></code></pre></td></tr></table></figure></li><li><p>然后在该虚拟环境下安装要编译的文件需要依赖的 <code>Python</code>库，当然也要重新安装 <code>pyinstaller</code>。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pip install pyinstaller<br>pip install conda #比如这里安装conda<br></code></pre></td></tr></table></figure></li><li><p>然后在该虚拟环境中回到要编译的文件目录下输入编译命令：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w test.py #运行时不出现dos命令窗口<br></code></pre></td></tr></table></figure></li></ol><h2 id="tkinter-快速入门">Tkinter 快速入门</h2><ul><li><a href="https://zhuanlan.zhihu.com/p/75872830">Tkinter简明教程 -知乎 (zhihu.com)</a></li><li><ahref="https://tkcalendar.readthedocs.io/en/stable/Calendar.html#">Calendar— tkcalendar 1.5.0 documentation</a> - 和显示日历相关的包</li></ul><h2 id="tkinter-实战">Tkinter 实战</h2><p>用 Tkinter实现了一个博客管理器，主要用于管理我自己的博客文章，源代码和程序仓库<ahref="https://github.com/chen-huaneng/BlogManager">请点我</a>。</p><img src="./banner.png" srcset="/imgs/banner/loading.jpg" lazyload /><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://pythonjishu.com/sqsvggluonzijtk/">conda虚拟环境使用pip下载包到当前环境的两种方法- Python技术站 (pythonjishu.com)</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><ahref="https://blog.csdn.net/weixin_47920722/article/details/128546996">【python】tkinter程序打包成exe可执行文件全流程记录（windows系统）_tkinter打包exe-CSDN博客</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://docs.python.org/zh-cn/3/library/tk.html">Tk图形用户界面(GUI)— Python 3.12.2 文档</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
     
     
     <categories>
@@ -569,9 +569,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -912,9 +912,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -943,11 +943,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -1259,9 +1259,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1319,9 +1319,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1418,9 +1418,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1478,9 +1478,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1509,9 +1509,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Matrix</tag>
       
@@ -1629,9 +1629,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -1751,13 +1751,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Two Pointers</tag>
       
@@ -1790,9 +1790,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1821,9 +1821,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -1949,9 +1949,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -2207,9 +2207,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2372,9 +2372,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2403,9 +2403,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2500,9 +2500,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2820,9 +2820,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2884,9 +2884,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2977,9 +2977,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3039,9 +3039,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -3072,13 +3072,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3138,11 +3138,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
