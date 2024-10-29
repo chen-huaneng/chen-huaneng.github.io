@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/3/29/banner.jpg">
 <meta property="article:published_time" content="2024-03-29T09:31:24.000Z">
-<meta property="article:modified_time" content="2024-10-29T04:10:51.542Z">
+<meta property="article:modified_time" content="2024-10-29T09:01:29.925Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="tkinter">
@@ -260,7 +260,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 803 
+          文章字数: 1.3k 
         
       </span>
     
@@ -272,7 +272,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 7 分钟
+          阅读全文大概需要 11 分钟
         
       </span>
     
@@ -323,7 +323,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-10-29T12:10:51+08:00
+                    本文最后更新于：2024-10-29T17:01:29+08:00
                   
                   
 
@@ -399,6 +399,33 @@ aria-label="[Tk图形用户界面(GUI) — Python 3.12.2 文档](https://docs.py
 <li><p>然后在该虚拟环境中回到要编译的文件目录下输入编译命令：</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">pyinstaller -F -w test.py #运行时不出现dos命令窗口<br></code></pre></td></tr></table></figure></li>
 </ol>
+<h3 id="如何给-tkinter-添加自定义图标">如何给 Tkinter
+添加自定义图标</h3>
+<p>首先将要设置为图标的图片转换成 <code>.ico</code>
+的格式，很多在线网站都能实现<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[文件转换器 - FreeConvert.com](https://www.freeconvert.com/zh)">[4]</span></a></sup>。然后在运行
+pyinstaller
+之前给它加上一个参数<sup id="fnref:5" class="footnote-ref"><a href="#fn:5" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[如何给python生成的exe程序换图标 | PingCode智库](https://docs.pingcode.com/baike/1258257)">[5]</span></a></sup>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pyinstaller -F -w --icon=&lt;file name&gt;.ico test.py #运行时不出现dos命令窗口<br></code></pre></td></tr></table></figure>
+<p>比如你的 <code>.ico</code> 文件是 <code>icon.ico</code>
+那么完整命令应该是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pyinstaller -F -w --icon=icon.ico test.py #运行时不出现dos命令窗口<br></code></pre></td></tr></table></figure>
+<p>还有一种方法是利用 Tkinter
+的方法<sup id="fnref:6" class="footnote-ref"><a href="#fn:6" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[Tkinter 修改应用程序和任务栏图标 – Python/Tkinter|极客笔记 (deepinout.com)](https://deepinout.com/tkinter/tkinter-questions/306_tkinter_changing_the_application_and_taskbar_icon_pythontkinter.html)">[6]</span></a></sup>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> tkinter <span class="hljs-keyword">as</span> tk<br><br><span class="hljs-comment"># 创建主窗口</span><br>window = tk.Tk()<br>window.title(<span class="hljs-string">&quot;我的应用程序&quot;</span>)<br><br><span class="hljs-comment"># 设置图标</span><br>window.iconbitmap(<span class="hljs-string">&quot;icon.ico&quot;</span>) <span class="hljs-comment"># 把 icon.ico 文件名改成你的文件名</span><br><br><span class="hljs-comment"># 修改任务栏图标</span><br>window.wm_iconbitmap(<span class="hljs-string">&quot;icon.ico&quot;</span>) <span class="hljs-comment"># 这里也要改</span><br><br>window.mainloop()<br></code></pre></td></tr></table></figure>
+<p>还有一种方法是将图标硬编码进代码中<sup id="fnref:7" class="footnote-ref"><a href="#fn:7" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[硬编码tkinter的图标而不依赖于外部文件（不生成临时图标文件！）_python tinker logo可以不依赖外部文件吗-CSDN博客](https://blog.csdn.net/Pragmatism_3568/article/details/105625881)">[7]</span></a></sup>，首先获取图标的二进制数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> base64<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;icon.ico&#x27;</span>, <span class="hljs-string">&#x27;rb&#x27;</span>) <span class="hljs-keyword">as</span> open_icon:<br>    b64str = base64.b64encode(open_icon.read())<br>    <span class="hljs-built_in">print</span>(b64str)<br></code></pre></td></tr></table></figure>
+<p>输出的字符串即为图标文件的二进制数据。假设输出为<code>b'abcdefg'</code>。然后利用获取的二进制数据，可以写出代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> tkinter <span class="hljs-keyword">as</span> tk<br><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> ImageTk		<span class="hljs-comment"># pip install --upgrade Pillow</span><br><span class="hljs-keyword">from</span> base64 <span class="hljs-keyword">import</span> b64decode<br><br>window = tk.Tk()<br>window.title(<span class="hljs-string">&#x27;My Window&#x27;</span>)<br>window.geometry(<span class="hljs-string">&#x27;500x300&#x27;</span>)<br><span class="hljs-comment"># window.iconbitmap(&#x27;icon.ico&#x27;)</span><br>icon_img = <span class="hljs-string">b&#x27;abcdefg&#x27;</span>   <span class="hljs-comment"># 这里替换成你自己图标文件的二进制数据</span><br>icon_img = b64decode(icon_img)<br>icon_img = ImageTk.PhotoImage(data=icon_img)<br>window.tk.call(<span class="hljs-string">&#x27;wm&#x27;</span>, <span class="hljs-string">&#x27;iconphoto&#x27;</span>, window._w, icon_img)<br><br>window.mainloop()<br></code></pre></td></tr></table></figure>
+<p>这里注意一个点，PIL 已经不再维护了，所以需要
+<code>pip install Pillow</code>，接口的代码是一样的。</p>
 <h2 id="tkinter-快速入门">Tkinter 快速入门</h2>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75872830">Tkinter简明教程 -
@@ -437,6 +464,34 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_47920722/artic
 target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/tk.html">Tk图形用户界面(GUI)
 — Python 3.12.2 文档</a>
 <a href="#fnref:3" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:4"
+class="footnote-text"><span><a target="_blank" rel="noopener" href="https://www.freeconvert.com/zh">文件转换器
+- FreeConvert.com</a>
+<a href="#fnref:4" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:5" class="footnote-text"><span><a
+target="_blank" rel="noopener" href="https://docs.pingcode.com/baike/1258257">如何给python生成的exe程序换图标
+| PingCode智库</a>
+<a href="#fnref:5" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:6" class="footnote-text"><span><a
+target="_blank" rel="noopener" href="https://deepinout.com/tkinter/tkinter-questions/306_tkinter_changing_the_application_and_taskbar_icon_pythontkinter.html">Tkinter
+修改应用程序和任务栏图标 – Python/Tkinter|极客笔记 (deepinout.com)</a>
+<a href="#fnref:6" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:7" class="footnote-text"><span><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/Pragmatism_3568/article/details/105625881">硬编码tkinter的图标而不依赖于外部文件（不生成临时图标文件！）_python
+tinker logo可以不依赖外部文件吗-CSDN博客</a>
+<a href="#fnref:7" rev="footnote" class="footnote-backref">
 ↩︎</a></span></span>
 </li>
 </ol>
