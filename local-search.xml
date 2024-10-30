@@ -4,11 +4,36 @@
   
   
   <entry>
+    <title>Academic - 初入学术殿堂</title>
+    <link href="/2024/10/30/2024-10-30-2024-10-30-research/"/>
+    <url>/2024/10/30/2024-10-30-2024-10-30-research/</url>
+    
+    <content type="html"><![CDATA[<h2 id="文献相关">文献相关</h2><h3 id="检索引擎">检索引擎</h3><p><strong>主要的搜索引擎</strong>：</p><ul><li><a href="https://www.cnki.net/">中国知网 (cnki.net)</a> -著名垄断机构，不多介绍</li><li><ahref="https://www.webofscience.com/wos/alldb/basic-search">DocumentSearch - All Databases (webofscience.com)</a> - 主要用来查英文文献</li></ul>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-73d275c4" role="button" aria-expanded="false" aria-controls="collapse-73d275c4">        <div class="fold-arrow">▶</div>web of science      </div>      <div class="fold-collapse collapse" id="collapse-73d275c4">        <div class="fold-content">          <ul><li><a href="https://zhuanlan.zhihu.com/p/384906270">硕博士应该知道的Webof Science文献检索与分析技巧 - 知乎 (zhihu.com)</a></li></ul><p><strong>Web of Science的基本检索技巧</strong></p><p>A. <strong>不区分大小写：</strong>Gold catalysis 与 gold CATALYSIS检索结果一致。</p><p>B.<strong>检索运算符（布尔运算符）：</strong>AND（与），OR（或），NOT（非）,NEAR，SAME。其中最常用的是前三种。使用 AND可查找包含被该运算符分开的所有检索词的记录；使用 OR可查找包含被该运算符分开的任何检索词的记录；使用 NOT可将包含特定检索词的记录从检索结果中排除；使用 NEAR/x可查找由该运算符连接的检索词之间相隔指定数量的单词的记录；在“地址”检索中，使用SAME 将检索限制为出现在“全记录”同一地址中的检索词。</p><p>C. **通配符（*？<span class="math inline">\(）**：星号 (\*)表示任何字符组，包括空字符(如Fan J*可以指Fan Jie，Fan Jun, Fan Jian, FanJia等)；问号 (?)表示任意一个字符，对于检索最后一个字符不确定的作者姓氏非常有用。例如，Barthold?可查找 Bartholdi 和 Bartholdy，但不会查找 Barthod；美元符号 (\$)表示零或一个字符，对于查找同一单词的英国拼写和美国拼写非常有用。例如，flavo\)</span>r可查找 flavor 和 flavour。</p><p>D.<strong>括号</strong>：括号用于将合成布尔运算符进行分组。例如：</p><ul><li>(Antibiotic OR Antiviral) AND (Alga* OR Seaweed)</li><li>(Pagets OR Paget's) AND (cell* AND tumor*)</li></ul>        </div>      </div>    </div><ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed (nih.gov)</a> -文献相关度高，主要用于关键词精确查找相关文献</li><li><a href="https://scholar.google.com/">Google Scholar</a> -搜索的文献量大，相关性会低一些</li><li><ahref="https://www.mendeley.com/?interaction_required=true">Mendeley -Reference Management Software</a></li><li>Sci-Hub 不用多介绍，将知识带给每个人</li></ul>    <div class="fold">      <div class="fold-title fold-warning collapsed" data-toggle="collapse" href="#collapse-482713c1" role="button" aria-expanded="false" aria-controls="collapse-482713c1">        <div class="fold-arrow">▶</div>Magic      </div>      <div class="fold-collapse collapse" id="collapse-482713c1">        <div class="fold-content">          <p>Sci-Hub 主要用于精确搜索，要先获取需要文献的 DOI (Digital ObjectUnique Identifier)，然后再根据 DOI 去找对应的 PDF。</p><p>DOI是指数字对象唯一标识符，可以理解为数字资源唯一的“身份证号码”，可以用DOI来标识文献、视频、报告或书籍等数字资源。目前，大部分学术文献（主要为2000年之后的文献）都有专属的DOI，只要知道了一篇文献的DOI，就能够查询到该文献的作者、标题、期刊、官方链接等信息。</p><p>每个 DOI 都由前缀和后缀两部分组成，之间用 <code>/</code>分开，并且前缀以 <code>.</code>再分为两部分。前缀由国际数字对象识别号基金会（International DOIFoundation）确定，后缀部分由资源发布者自行指定，用于区分一个单独的数字资料，具有唯一性。</p><p>一般来说，年份久远（2000年之前）的文献没有DOI。至于中文文献，因为目前国内 DOI的使用还处于初级阶段，所以现在还不能通过 DOI 来下载国内文献。</p><p>所有 DOI 均以“10”开头，如：</p><p>10.1016/j.foodres.2017.07.078</p><p>10.1080/09205063.2018.1465664</p><p><strong>镜像网址</strong>：</p><ul><li><a href="https://sci-hub.se/">Sci-Hub: 将知识带给每个人</a></li><li><a href="https://sci-hub.st/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://sci-hub.ru/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://www.sci-hub.ru/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://www.sci-hub.st/">Sci-Hub: 将知识带给每个人</a></li><li><a href="https://www.sci-hub.se/">Sci-Hub: 将知识带给每个人</a></li><li><a href="https://www.sci-hub.wf/">Sci-Hub journal:latest sci-hubmirror links</a></li><li><a href="https://www.sci-hub.ee/">sci-hub proxy searchlinks</a></li><li><a href="https://www.sci-hub.ren/">Sci-Hub: removing barriers in theway of science</a></li><li><a href="https://www.sci-hub.yt/">Sci-Hub official website</a></li><li><a href="https://www.sci-hub.ru/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://www.wellesu.com/">sci-hub brasil(wellesu.com)</a></li><li><a href="https://www.tesble.com/">Science Hub (tesble.com)</a></li><li><a href="https://sci-hub.kvnp.top/">sci-hub:scihub最新可用地址(kvnp.top)</a></li><li><a href="https://sci-hub.shop/">Sci-Hub journal:latest sci-hubmirror links</a></li></ul><p><strong>论坛</strong>：</p><ul><li><ahref="https://discuss.sci-hub.org.cn/d/279">Sci-Hub最新可用官方网站网址（2024年10月19日更新）- Sci-Hub中文社区</a></li><li><a href="https://sci-hub.org.cn/">Sci-Hub文献检索 |科学是照亮世界的火把</a></li><li><ahref="https://tool.yovisun.com/scihub/">SCI-Hub论文下载可用网址链接（实时更新）- YoviSun工具集</a></li><li><a href="https://lovescihub.wordpress.com/">Love Science,LoveSci-Hub! – The latest Sci-Hub working domain (wordpress.com)</a></li></ul>        </div>      </div>    </div><p>其他：</p><ul><li><a href="https://www.researchgate.net/">Home Feed |ResearchGate</a></li><li><a href="https://pubsonline.informs.org/">PubsOnLine(informs.org)</a></li><li><a href="https://www.ablesci.com/">文献互助平台 -科研通(AbleSci.com)</a></li><li><a href="https://pubscholar.cn/">PubScholar公益学术平台</a></li><li><a href="https://www.xueshufan.com/user/home">学术范 - 高效做科研(xueshufan.com)</a></li><li><a href="https://xueshu.baidu.com/">百度学术 - 保持学习的态度(baidu.com)</a></li><li><a href="https://cn.bing.com/academic">搜索 学术 (bing.com)</a></li><li><a href="https://bbs.yuyingufen.com/">谷粉学术论坛-文献互助(yuyingufen.com)</a></li><li><a href="https://search.crossref.org/">Crossref MetadataSearch</a></li><li><ahref="https://www.scihub.net.cn/">Sci-Hub:SciHub科研学术网址导航</a></li></ul><h3 id="读文献的方法论">读文献的方法论</h3><ul><li><ahref="https://www.zhihu.com/question/31189581/answer/1540665172">你认为在精读英文文献时有哪些好习惯？- 知乎 (zhihu.com)</a></li><li><ahref="https://www.zhihu.com/question/345516318/answer/1138235280">研究生们刚开始看英文文献是怎么看的？- 知乎 (zhihu.com)</a></li><li><ahref="https://www.zhihu.com/question/304334959/answer/553782865">研究生新生要怎么看论文？- 知乎 (zhihu.com)</a></li><li><ahref="https://www.zhihu.com/question/304334959/answer/1312667716">研究生新生要怎么看论文？- 知乎 (zhihu.com)</a></li><li><ahref="https://www.zhihu.com/question/23924014/answer/26470331">如何有针对地高效地阅读一篇学术论文？- 知乎 (zhihu.com)</a></li></ul><h3 id="论文降重">论文降重</h3><ul><li><ahref="https://www.paperpass.com/">PaperPass官网-论文查重-论文降重-论文检测-免费论文查重检测系统-智齿数汇</a></li><li><a href="https://app.scribbr.com/plagiarism-checker">ScribbrPlagiarism Checker step 1 – Upload document - Scribbr</a></li><li><a href="https://cx.cnki.net/#/login">知网查重-知网个人查重服务(cnki.net)</a></li></ul><h3 id="文献翻译">文献翻译</h3><ul><li><a href="https://copytranslator.github.io/">CopyTranslator</a></li><li><a href="https://www.zhiyunwenxian.cn/">知云文献翻译客户端软件(zhiyunwenxian.cn)</a></li><li><a href="https://fanyi.caiyunapp.com/">彩云小译官网 -高效准确的翻译工具 | 文字翻译 | 文档翻译 | 网页翻译 | 浏览器插件 |双语对照 | 术语库 (caiyunapp.com)</a></li><li><a href="https://fanyi.atman360.com/index">Atman Cloud Translation(atman360.com)</a> - 主要针对医学领域</li></ul><h3 id="其他">其他</h3><ul><li><a href="https://csrankings.org/#/index?all&amp;us">CSRankings:Computer Science Rankings</a> -根据文献对学校/机构进行排名，针对计算机</li></ul><h2 id="faq">FAQ</h2><h3id="知网中期刊的综合影响因子和复合影响因子分别是什么意思">知网中期刊的“综合影响因子”和“复合影响因子”分别是什么意思？</h3><p>最通俗的解释就是，被引用次数和发表论文总数的占比。分值越高证明该期刊含金量以及大家认同度越高。当然这个分值也不是绝对的，很多期刊收录的论文不管引用还是下载量很高，没有任何影响因子。所以很少有单位评判一本期刊好坏以此为依据。目前大家评判标准还是以：</p><ul><li><strong>国内：南核—北核—科核—知网专刊——知网收录——其它数据库（万方、维普、龙源）</strong></li><li><strong>国际：SSCI——SCI——EI——CPCI</strong></li></ul><blockquote><p><ahref="https://zhuanlan.zhihu.com/p/84200607">什么是北大核心、南大核心、SCI、SSCI、CSSCI？- 知乎 (zhihu.com)</a></p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Academic</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Academic</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Zotero - 学术文献管理神器</title>
     <link href="/2024/10/29/2024-10-29-2024-10-29-zotero/"/>
     <url>/2024/10/29/2024-10-29-2024-10-29-zotero/</url>
     
-    <content type="html"><![CDATA[<h2 id="zotero-是什么">Zotero 是什么</h2><p>简单来说，Zotero 就是一款免费、可拓展的 PDF（主要是学术文献）管理工具。更多的介绍在网上有很多，可以看看<ahref="https://www.zotero.org/">官网的介绍</a>。</p><blockquote><p>注意甄别网上的教程，因为 Zotero 更新到 Zotero 7之后增加了很多功能和特性，有很多插件已经不再维护，很多教程也已经过期了。</p></blockquote><h2 id="如何安装">如何安装</h2><p>使用 Scoop 安装只需要一行代码： <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scoop install extras/zotero<br></code></pre></td></tr></table></figure></p><p>如果你不知道什么是 Scoop <ahref="https://chen-huaneng.github.io/2024/01/04/2024-1-4-2024-01-04-Scoop/">请点我</a>。</p><p>其他安装方法请自行搜索。</p><h2 id="如何使用">如何使用</h2><ul><li><ahref="https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&amp;mid=2650476690&amp;idx=2&amp;sn=a6fabd4a5f6a985fb07627a76024c697&amp;chksm=83d00d54b4a784426a54bfe2bfe3935d22ee2822b46b68573540024fdfac19f69ac5f81c1f36&amp;scene=178&amp;cur_album_id=1319074508795641857#rd">Webof Science 手动导出文献到 Zotero，简单又高效！ (qq.com)</a> -自动导出出问题的时候参考</li><li><ahref="https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&amp;mid=2650476977&amp;idx=1&amp;sn=9e9991fa02c8fc532e69d65b264136b6&amp;chksm=83d00c77b4a785614277926dc82e419d44bc443a50846725d13225fbd647e86161934af41a2e&amp;scene=178&amp;cur_album_id=1319074508795641857#rd">Zotero7 重命名，如何将 “等” 改为 “et al.”？ (qq.com)</a> - 如题</li></ul><h2 id="插件介绍">插件介绍</h2><blockquote><p>提醒：切勿本末倒置，这一切都是为了更好地阅读文献而不是强行将一个软件加入你的工作流中，建议先从尝试使用Zotero 开始，等遇到需求之后再去安装插件，而不是一开始就捣鼓插件。</p></blockquote><p><strong>比较推荐的社区</strong>：</p><ul><li><a href="https://www.zotero.org/support/plugins">plugins | ZoteroDocumentation</a> - 官方的插件列表</li><li><a href="https://zotero-chinese.com/plugins/">Zotero 插件商店 |Zotero 中文社区 (zotero-chinese.com)</a> - 中文社区，但是非官方</li></ul><p><strong>第三方博客</strong>：</p><ul><li><ahref="https://zhuanlan.zhihu.com/p/630691757">Zotero！还有多少惊喜我不知道！- 知乎 (zhihu.com)</a> - 可以参考插件推荐列表，注意是否支持最新版的Zotero</li><li><a href="https://zhuanlan.zhihu.com/p/681536174">Zotero 7使用入门教程：安装与配置 - 知乎 (zhihu.com)</a> -整体还是比较清晰的，可以看看插件推荐</li><li><ahref="https://www.zhihu.com/question/402589277/answer/3196530555">有哪些好用的zotero插件?- 知乎 (zhihu.com)</a> - 根据插件列表查看是否需要即可，文章比较水</li><li><ahref="https://zhuanlan.zhihu.com/p/647756683">Zotero安装教程+插件安装（获取SCI-Hub和知网数据）+坚果云同步配置- 知乎 (zhihu.com)</a> - 同样是插件列表参考一下即可</li><li><a href="https://zhuanlan.zhihu.com/p/707668416">适配 Zotero7，最新40个兼容插件合集（2024年7月8日更新） - 知乎 (zhihu.com)</a> -快速浏览插件，按需自取部分即可</li></ul><h3 id="我使用的插件介绍">我使用的插件介绍</h3><ul><li><a href="https://www.zotero.org/download/">Zotero | Your personalresearch assistant</a> - Edge浏览器插件，官方开发，用来一键导入文献</li><li><ahref="https://github.com/windingwind/zotero-pdf-translate">windingwind/zotero-pdf-translate:Translate PDF, EPub, webpage, metadata, annotations, notes to the targetlanguage. Support 20+ translate services. (github.com)</a> -翻译插件</li><li><a href="https://github.com/syt2/zotero-scipdf">syt2/zotero-scipdf:Download PDF from Sci-Hub automatically For Zotero7 (github.com)</a> -用来下载 PDF，向 Sci-hub 学术女神致敬</li><li><a href="https://github.com/l0o0/jasminum">l0o0/jasminum: A Zoteroadd-on to retrive CNKI meta data. 一个简单的Zotero插件，用于识别中文元数据 (github.com)</a> -知名的茉莉花插件，用于支持中文文献元数据</li><li><ahref="https://github.com/ChenglongMa/zoplicate?tab=readme-ov-file#readme">ChenglongMa/zoplicate:A plugin that does one thing only: Detect and manage duplicate items inZotero. (github.com)</a> -管理（批量合并、删除、手动标记非重复）重复的条目</li><li><ahref="https://github.com/volatile-static/Chartero">volatile-static/Chartero:Chart in Zotero (github.com)</a> -统计阅读时长、查看文献中的所有图片快速导航</li><li><ahref="https://github.com/MuiseDestiny/zotero-figure?tab=readme-ov-file#readme">MuiseDestiny/zotero-figure:一个基于 PDFFigure2 的 PDF 图表解析插件 (github.com)</a> -更好的图片体验（单击复制、双击独立窗口预览……）</li><li><ahref="https://github.com/windingwind/zotero-better-notes#readme">windingwind/zotero-better-notes:Everything about note management. All in Zotero. (github.com)</a> -更好的笔记、笔记管理</li><li><ahref="https://github.com/MuiseDestiny/zotero-gpt?tab=readme-ov-file">MuiseDestiny/zotero-gpt:GPT Meet Zotero. (github.com)</a> - 结合GPT<ul><li><ahref="https://github.com/chatanywhere/GPT_API_free?tab=readme-ov-file#免费使用">chatanywhere/GPT_API_free:Free ChatGPT API Key，免费ChatGPT API，支持GPT4API（免费），ChatGPT国内可用免费转发API，直连无需代理。可以搭配ChatBox等软件/插件使用，极大降低接口使用成本。国内即可无限制畅快聊天。(github.com)</a> - 免费 ChatGPT API</li><li><ahref="https://www.bilibili.com/video/BV17N4y1o7vx/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">ZoteroGPT - 使用教程，配置免费密钥！！！_哔哩哔哩_bilibili</a> - 视频教程</li><li><ahref="https://www.bilibili.com/video/BV1zBpUeDEzM/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">【Zotero7插件】AwesomeGPT_哔哩哔哩_bilibili</a> - 视频教程</li></ul></li><li><ahref="https://github.com/MuiseDestiny/zotero-reference#readme">MuiseDestiny/zotero-reference:PDF references add-on for Zotero. (github.com)</a> -增强参考文献的查找</li><li><ahref="https://github.com/windingwind/zotero-actions-tags?tab=readme-ov-file">windingwind/zotero-actions-tags:Customize your Zotero workflow. (github.com)</a> - 标签管理</li><li><ahref="https://github.com/MuiseDestiny/zotero-style#readme">MuiseDestiny/zotero-style:Ethereal Style for Zotero (github.com)</a> -显示文献的影响因子、分区、文献阅读时间、快速标签设置等等内容，上手难度稍大<ul><li><ahref="https://zotero-chinese.github.io/user-guide/plugins/style.html">EtherealStyle for Zotero | Zotero 中文社区 (zotero-chinese.github.io)</a> -比较好的参考文档</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="zotero-是什么">Zotero 是什么</h2><p>简单来说，Zotero 就是一款免费、可拓展的 PDF（主要是学术文献）管理工具。更多的介绍在网上有很多，可以看看<ahref="https://www.zotero.org/">官网的介绍</a>。</p><blockquote><p>注意甄别网上的教程，因为 Zotero 更新到 Zotero 7之后增加了很多功能和特性，有很多插件已经不再维护，很多教程也已经过期了。</p></blockquote><h2 id="如何安装">如何安装</h2><p>使用 Scoop 安装只需要一行代码： <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scoop install extras/zotero<br></code></pre></td></tr></table></figure></p><p>如果你不知道什么是 Scoop <ahref="https://chen-huaneng.github.io/2024/01/04/2024-1-4-2024-01-04-Scoop/">请点我</a>。</p><p>其他安装方法请自行搜索。</p><h2 id="如何使用">如何使用</h2><ul><li><ahref="https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&amp;mid=2650476690&amp;idx=2&amp;sn=a6fabd4a5f6a985fb07627a76024c697&amp;chksm=83d00d54b4a784426a54bfe2bfe3935d22ee2822b46b68573540024fdfac19f69ac5f81c1f36&amp;scene=178&amp;cur_album_id=1319074508795641857#rd">Webof Science 手动导出文献到 Zotero，简单又高效！ (qq.com)</a> -自动导出出问题的时候参考</li><li><ahref="https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&amp;mid=2650476977&amp;idx=1&amp;sn=9e9991fa02c8fc532e69d65b264136b6&amp;chksm=83d00c77b4a785614277926dc82e419d44bc443a50846725d13225fbd647e86161934af41a2e&amp;scene=178&amp;cur_album_id=1319074508795641857#rd">Zotero7 重命名，如何将 “等” 改为 “et al.”？ (qq.com)</a> - 如题</li></ul><h2 id="插件介绍">插件介绍</h2><blockquote><p>提醒：切勿本末倒置，这一切都是为了更好地阅读文献而不是强行将一个软件加入你的工作流中，建议先从尝试使用Zotero 开始，等遇到需求之后再去安装插件，而不是一开始就捣鼓插件。</p></blockquote><p><strong>比较推荐的社区</strong>：</p><ul><li><a href="https://www.zotero.org/support/plugins">plugins | ZoteroDocumentation</a> - 官方的插件列表</li><li><a href="https://zotero-chinese.com/plugins/">Zotero 插件商店 |Zotero 中文社区 (zotero-chinese.com)</a> - 中文社区，但是非官方</li></ul><p><strong>第三方博客</strong>：</p><ul><li><ahref="https://zhuanlan.zhihu.com/p/630691757">Zotero！还有多少惊喜我不知道！- 知乎 (zhihu.com)</a> - 可以参考插件推荐列表，注意是否支持最新版的Zotero</li><li><a href="https://zhuanlan.zhihu.com/p/681536174">Zotero 7使用入门教程：安装与配置 - 知乎 (zhihu.com)</a> -整体还是比较清晰的，可以看看插件推荐</li><li><ahref="https://www.zhihu.com/question/402589277/answer/3196530555">有哪些好用的zotero插件?- 知乎 (zhihu.com)</a> - 根据插件列表查看是否需要即可，文章比较水</li><li><ahref="https://zhuanlan.zhihu.com/p/647756683">Zotero安装教程+插件安装（获取SCI-Hub和知网数据）+坚果云同步配置- 知乎 (zhihu.com)</a> - 同样是插件列表参考一下即可</li><li><a href="https://zhuanlan.zhihu.com/p/707668416">适配 Zotero7，最新40个兼容插件合集（2024年7月8日更新） - 知乎 (zhihu.com)</a> -快速浏览插件，按需自取部分即可</li><li><ahref="https://www.zhihu.com/question/26857521/answer/2662236762">如何高效管理文献？- 知乎 (zhihu.com)</a> - 毕导写的回答，很有趣，虽然可能有点过时了</li></ul><h3 id="我使用的插件介绍">我使用的插件介绍</h3><ul><li><a href="https://www.zotero.org/download/">Zotero | Your personalresearch assistant</a> - Edge浏览器插件，官方开发，用来一键导入文献</li><li><ahref="https://github.com/windingwind/zotero-pdf-translate">windingwind/zotero-pdf-translate:Translate PDF, EPub, webpage, metadata, annotations, notes to the targetlanguage. Support 20+ translate services. (github.com)</a> -翻译插件</li><li><a href="https://github.com/syt2/zotero-scipdf">syt2/zotero-scipdf:Download PDF from Sci-Hub automatically For Zotero7 (github.com)</a> -用来下载 PDF，向 Sci-hub 学术女神致敬</li><li><a href="https://github.com/l0o0/jasminum">l0o0/jasminum: A Zoteroadd-on to retrive CNKI meta data. 一个简单的Zotero插件，用于识别中文元数据 (github.com)</a> -知名的茉莉花插件，用于支持中文文献元数据</li><li><ahref="https://github.com/ChenglongMa/zoplicate?tab=readme-ov-file#readme">ChenglongMa/zoplicate:A plugin that does one thing only: Detect and manage duplicate items inZotero. (github.com)</a> -管理（批量合并、删除、手动标记非重复）重复的条目</li><li><ahref="https://github.com/volatile-static/Chartero">volatile-static/Chartero:Chart in Zotero (github.com)</a> -统计阅读时长、查看文献中的所有图片快速导航</li><li><ahref="https://github.com/MuiseDestiny/zotero-figure?tab=readme-ov-file#readme">MuiseDestiny/zotero-figure:一个基于 PDFFigure2 的 PDF 图表解析插件 (github.com)</a> -更好的图片体验（单击复制、双击独立窗口预览……）</li><li><ahref="https://github.com/windingwind/zotero-better-notes#readme">windingwind/zotero-better-notes:Everything about note management. All in Zotero. (github.com)</a> -更好的笔记、笔记管理</li><li><ahref="https://github.com/MuiseDestiny/zotero-gpt?tab=readme-ov-file">MuiseDestiny/zotero-gpt:GPT Meet Zotero. (github.com)</a> - 结合GPT<ul><li><ahref="https://github.com/chatanywhere/GPT_API_free?tab=readme-ov-file#免费使用">chatanywhere/GPT_API_free:Free ChatGPT API Key，免费ChatGPT API，支持GPT4API（免费），ChatGPT国内可用免费转发API，直连无需代理。可以搭配ChatBox等软件/插件使用，极大降低接口使用成本。国内即可无限制畅快聊天。(github.com)</a> - 免费 ChatGPT API</li><li><ahref="https://www.bilibili.com/video/BV17N4y1o7vx/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">ZoteroGPT - 使用教程，配置免费密钥！！！_哔哩哔哩_bilibili</a> - 视频教程</li><li><ahref="https://www.bilibili.com/video/BV1zBpUeDEzM/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">【Zotero7插件】AwesomeGPT_哔哩哔哩_bilibili</a> - 视频教程</li></ul></li><li><ahref="https://github.com/MuiseDestiny/zotero-reference#readme">MuiseDestiny/zotero-reference:PDF references add-on for Zotero. (github.com)</a> -增强参考文献的查找</li><li><ahref="https://github.com/windingwind/zotero-actions-tags?tab=readme-ov-file">windingwind/zotero-actions-tags:Customize your Zotero workflow. (github.com)</a> - 标签管理</li><li><ahref="https://github.com/MuiseDestiny/zotero-style#readme">MuiseDestiny/zotero-style:Ethereal Style for Zotero (github.com)</a> -显示文献的影响因子、分区、文献阅读时间、快速标签设置等等内容，上手难度稍大<ul><li><ahref="https://zotero-chinese.github.io/user-guide/plugins/style.html">EtherealStyle for Zotero | Zotero 中文社区 (zotero-chinese.github.io)</a> -比较好的参考文档</li></ul></li></ul>]]></content>
     
     
     <categories>
@@ -637,9 +662,9 @@
       
       <tag>Sorting</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -1125,11 +1150,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Counting</tag>
       
       <tag>Greedy</tag>
       
@@ -1164,9 +1189,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1383,9 +1408,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1416,9 +1441,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Linked List</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Number Theory</tag>
       
@@ -1662,9 +1687,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1786,9 +1811,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>Sorting</tag>
       
       <tag>Two Pointers</tag>
       
@@ -2271,9 +2296,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2401,9 +2426,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>Sorting</tag>
       
       <tag>Counting</tag>
       
@@ -2467,9 +2492,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -3107,9 +3132,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -3284,29 +3309,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
     <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
@@ -3318,6 +3321,28 @@
     <url>/</url>
     
     <content type="html"><![CDATA[<h1 id="about">About</h1><figure><img src="/imgs/about/Mai_Sakurajima.jpeg"alt="Mai Sakurajima - さくらじま まい" /><figcaption aria-hidden="true">Mai Sakurajima - さくらじままい</figcaption></figure><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『桜島麻衣のために生きる！』</span></p><h2 id="about-me">About me</h2><p>目前是一名普通的大四学生，正在自学计算机科学知识。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系（知乎和Discord不经常上，邮件每天都会看，当然如果有更进一步交流的需要可以加微信）。</p><h2 id="things-i-like">Things I like</h2><h3 id="about-software">About Software</h3><p>我很喜欢<code>Vim/Neovim</code>、<code>Git</code>、<code>Typora</code>的设计，因为 <code>Vim/Neovim</code> 极大地提高了写作效率；而<code>Git</code>的版本管理让我很放心地更改文件而不需要把文件复制来复制去进行备份；<code>Typora</code>简直是写作利器，用 <code>Typora</code> + <code>Markdown</code>来写作，就两个字——<strong>优雅</strong>。当然有更高排版需求的时候还是会使用<code>LaTeX</code> 来排版。</p><h3 id="about-music">About Music</h3><p>我个人喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（<strong>뉴진스</strong>），喜欢的曲风就比较杂，基本什么类型都听。</p><p><img src="/imgs/about/gloria.jpg" /></p><h3 id="about-reading">About Reading</h3><p>喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》……</p><h2 id="about-coding">About Coding</h2><p>最近有在刷算法和做一些项目，欢迎关注我的 <ahref="https://github.com/chen-huaneng">Github</a> 动态和 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a>的进度。近期也在写一些关于 <code>LeetCode</code>刷题的解法记录，不定时更新一些其他的有趣内容和技术文章。</p><h2 id="about-my-blog">About my blog</h2><p><strong>关于我的博客是怎么搭建的：</strong>可以看看我写的这篇简短的介绍——<ahref="https://chen-huaneng.github.io/2023/12/02/how-to-write-blog/">如何使用Hexo发布一篇Blog- Abel's Blog</a>。</p><h2 id="to-be-continue">To be continue…</h2><p><img src="/imgs/about/continue.jpg" /></p><p align="center">Updated on <time datetime="2024-10-07T15:03:00">October 7, 2024 at 15:03PM</time></p><hr /><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会持续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
