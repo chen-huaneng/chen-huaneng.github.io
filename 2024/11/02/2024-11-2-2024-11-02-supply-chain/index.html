@@ -21,28 +21,24 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="The solution of LeetCode problem No.2182.">
+    <meta name="description" content="记录供应链管理课程笔记。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC 2182.Construct String With Repeat Limit">
-<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/13/2024-1-13-2024-01-13-lc-2182/index.html">
+<meta property="og:title" content="SCM - 供应链管理">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/11/02/2024-11-2-2024-11-02-supply-chain/index.html">
 <meta property="og:site_name" content="AbelのBlog">
-<meta property="og:description" content="The solution of LeetCode problem No.2182.">
+<meta property="og:description" content="记录供应链管理课程笔记。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/13/banner.png">
-<meta property="article:published_time" content="2024-01-13T06:42:51.000Z">
-<meta property="article:modified_time" content="2024-01-13T07:59:25.027Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/11/2/banner.png">
+<meta property="article:published_time" content="2024-11-02T09:32:38.000Z">
+<meta property="article:modified_time" content="2024-11-02T14:31:39.643Z">
 <meta property="article:author" content="Abel">
-<meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Counting">
-<meta property="article:tag" content="String">
-<meta property="article:tag" content="Two Pointers">
-<meta property="article:tag" content="Greedy">
+<meta property="article:tag" content="Supply chain management">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/13/banner.png">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/11/2/banner.png">
   
   
   
-  <title>LC 2182.Construct String With Repeat Limit - AbelのBlog</title>
+  <title>SCM - 供应链管理 - AbelのBlog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -232,13 +228,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2024/1/13/banner.png') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/11/2/banner.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC 2182.Construct String With Repeat Limit"></span>
+            <span id="subtitle" data-typed-text="SCM - 供应链管理"></span>
           
         </div>
 
@@ -249,8 +245,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-13 14:42" pubdate>
-          2024年1月13日 下午
+        <time datetime="2024-11-02 17:32" pubdate>
+          2024年11月2日 下午
         </time>
       </span>
     
@@ -262,7 +258,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 807 
+          文章字数: 2.4k 
         
       </span>
     
@@ -274,7 +270,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 7 分钟
+          阅读全文大概需要 21 分钟
         
       </span>
     
@@ -320,12 +316,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LC 2182.Construct String With Repeat Limit</h1>
+            <h1 id="seo-header">SCM - 供应链管理</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-01-13T15:59:25+08:00
+                    本文最后更新于：2024-11-02T22:31:39+08:00
                   
                   
 
@@ -335,50 +331,85 @@
             
               <div class="markdown-body">
                 
-                <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-string-with-repeat-limit/description/">2182.
-构造限制重复的字符串</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个字符串 <code>s</code> 和一个整数 <code>repeatLimit</code>
-，用 <code>s</code> 中的字符构造一个新字符串
-<code>repeatLimitedString</code> ，使任何字母 <strong>连续</strong>
-出现的次数都不超过 <code>repeatLimit</code> 次。你不必使用
-<code>s</code> 中的全部字符。</p>
-<p>返回 <strong>字典序最大的</strong> <code>repeatLimitedString</code>
-。</p>
-<p>如果在字符串 <code>a</code> 和 <code>b</code>
-不同的第一个位置，字符串 <code>a</code>
-中的字母在字母表中出现时间比字符串 <code>b</code>
-对应的字母晚，则认为字符串 <code>a</code> 比字符串 <code>b</code>
-<strong>字典序更大</strong> 。如果字符串中前
-<code>min(a.length, b.length)</code>
-个字符都相同，那么较长的字符串字典序更大。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;cczazcc&quot;, repeatLimit = 3<br>输出：&quot;zzcccac&quot;<br>解释：使用 s 中的所有字符来构造 repeatLimitedString &quot;zzcccac&quot;。<br>字母 &#x27;a&#x27; 连续出现至多 1 次。<br>字母 &#x27;c&#x27; 连续出现至多 3 次。<br>字母 &#x27;z&#x27; 连续出现至多 2 次。<br>因此，没有字母连续出现超过 repeatLimit 次，字符串是一个有效的 repeatLimitedString 。<br>该字符串是字典序最大的 repeatLimitedString ，所以返回 &quot;zzcccac&quot; 。<br>注意，尽管 &quot;zzcccca&quot; 字典序更大，但字母 &#x27;c&#x27; 连续出现超过 3 次，所以它不是一个有效的 repeatLimitedString 。<br></code></pre></td></tr></table></figure>
-<p><strong>示例 2：</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;aababab&quot;, repeatLimit = 2<br>输出：&quot;bbabaa&quot;<br>解释：<br>使用 s 中的一些字符来构造 repeatLimitedString &quot;bbabaa&quot;。 <br>字母 &#x27;a&#x27; 连续出现至多 2 次。 <br>字母 &#x27;b&#x27; 连续出现至多 2 次。 <br>因此，没有字母连续出现超过 repeatLimit 次，字符串是一个有效的 repeatLimitedString 。 <br>该字符串是字典序最大的 repeatLimitedString ，所以返回 &quot;bbabaa&quot; 。 <br>注意，尽管 &quot;bbabaaa&quot; 字典序更大，但字母 &#x27;a&#x27; 连续出现超过 2 次，所以它不是一个有效的 repeatLimitedString 。<br></code></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
+                <h2 id="构建正确的供应链">构建正确的供应链</h2>
+<p>当下供应链存在问题的根源：缺乏供应链顶层设计，供应链战略和产品战略不匹配。</p>
+<p>供应链需求的不确定性来自于两个方面：顾客需求的不确定性和供给需求的不确定性。</p>
+<h3 id="产品类型">产品类型</h3>
+<p>产品类型可以分为功能型产品和创新型产品：</p>
 <ul>
-<li><code>1 &lt;= repeatLimit &lt;= s.length &lt;= 10^5</code></li>
-<li><code>s</code> 由小写英文字母组成</li>
+<li>功能型产品(functional product)满
+足基本需求，需求不随时间推移发生太大的变化(有稳定的可预见需求和很长的生命周期)。但稳定性导致了竞争，这大幅降低利润(边际利润较低)。例如，消费品中，食品饮料等多数属于功能型，服装手机等多数属于创新型；原材料、零部件等多数属于功能型，设备、定制化产品等多数属于创新型。</li>
+<li>创新型产品(innovative product ) ：
+创新使得公司获得很高的利润空间(边际利润较高)，但是新奇的创新使其产品需求变得不可预测
+。生命周期短(经常只有几个月)，
+并且创新产品享受的竞争优势不断被模仿者侵蚀
+，这被迫使公司需要源源不断的创新
+。生命周期短和产品种类繁多，导致其更高的不可预测性。</li>
 </ul>
-<h2 id="解答">解答</h2>
-<h3 id="方法一贪心-双指针">方法一：贪心 + 双指针</h3>
-<p>先统计字符串 <code>s</code>
-中各个字符的数量，用双指针模拟填入的过程，从字符集的末尾开始遍历，如果填入的字符没有超过限制
-<code>repeatLimit</code>
-则继续填入，如果超过则填入接下来的一个字符，然后如果之前的还有剩下字符，则继续填入，否则继续填入下一个字符。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-variable">N</span> <span class="hljs-operator">=</span> <span class="hljs-number">26</span>;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">repeatLimitedString</span><span class="hljs-params">(String s, <span class="hljs-type">int</span> repeatLimit)</span> &#123;<br>        <span class="hljs-type">int</span>[] ch = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[N];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; s.length(); ++i) &#123;<br>            ++ch[s.charAt(i) - <span class="hljs-string">&#x27;a&#x27;</span>];<br>        &#125;<br>        <span class="hljs-type">StringBuffer</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuffer</span>();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> N - <span class="hljs-number">1</span>, j = N - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &gt;= <span class="hljs-number">0</span>;) &#123;<br>             <span class="hljs-keyword">if</span> (ch[i] == <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 当前字符用完，填入后面的字符，更新cnt</span><br>                 cnt = <span class="hljs-number">0</span>;<br>                 --i;<br>             &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cnt &lt; repeatLimit) &#123; <span class="hljs-comment">// 当前字符未超过限制</span><br>                 sb.append((<span class="hljs-type">char</span>) (i + <span class="hljs-string">&#x27;a&#x27;</span>));<br>                 ++cnt;<br>                 --ch[i];<br>             &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j &gt;= i || ch[j] == <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 当前字符已经超过限制，查找下一个字符</span><br>                 --j;<br>             &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 当前字符超过限制，填入下一个字符，更新cnt</span><br>                 cnt = <span class="hljs-number">0</span>;<br>                 sb.append((<span class="hljs-type">char</span>) (j + <span class="hljs-string">&#x27;a&#x27;</span>));<br>                 --ch[j];<br>             &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sb.toString();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="评估最优的客户服务水平">评估最优的客户服务水平</h3>
+<p><img src="./scm.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p><span class="math inline">\(C_u\)</span>
+表示售出产品得到的利润，<span class="math inline">\(C_o\)</span>
+表示卖不出去剩下产品的损失(购入的价格减去产品的残值一般是负数)。接下来推导最优的订货量：</p>
+<p><img src="./scm2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p>其中 <code>q</code> 表示订货的数量，<code>x</code>
+表示需求量。根据最后需求的概率分布函数和 <span
+class="math inline">\(C_u, C_o\)</span> 的关系可以得到：</p>
+<p><img src="./scm3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<h3 id="供应链类型">供应链类型</h3>
+<p>供应链的两类功能：</p>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N +
-M)\)</span>，其中 <code>N</code> 为 <code>s</code> 的长度，
-<code>M = 26</code> 为字符集的大小。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(M)\)</span>，<code>M</code>
-为字符集的大小。</p></li>
+<li>物理功能——盈利能力：以最低的成本将原材料加工成零部件、半成品、产品并将它们从供应链的一个节点运到另一个节点。</li>
+<li>市场调节功能(供需不匹配成本)——反应能力：当供需不平衡时，与“市场调节功能”相关的成本产生；如果供给大于需求，在供应链中出现库存成本(资金挤压成本、贬值甚至报废)；如果供给小于需求，损失销售机会和市场份额(缺货成本，紧急发货成本、罚款、订单取消甚至终止协议)。对市场需求做出迅速反应，确保以合适的产品在合适的地点和合适的时间来满足合适的顾客需求。</li>
 </ul>
-<h2 id="每题一图">每题一图</h2>
-<p><img src="/imgs/posts/2024/1/13/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<h3 id="设计理想的供应链战略">设计理想的供应链战略</h3>
+<p>四种供应链策略和产品类型的组合：</p>
+<p><img src="./scm4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<p>左上角和右下角的策略分别是，具有成本优势的高效供应链匹配功能性产品，也就是库存水平可能会比较高，但是由于功能性产品的需求比较稳定，所以可以通过薄利多销来获取较多的利润，但是不适合快速相应的供应链策略，因为缺货成本会比较高；右下角的策略是，具有快速响应的供应链策略匹配创新型产品，也就是类似于及时生产(JIT)，通过快速响应而不是积压库存来满足需求，因为需求是不确定的，这时的缺货成本会小于构建快速响应供应链的成本。</p>
+<p>右上角单元格(创新型产品-高效供应链)：生产和销售创新性产品的公司从<strong>投资改善供应链快速反应</strong>中得到的收益比<strong>关注供应链效率</strong>(供需不匹配导致库存过剩被迫降价)得到的收益要高很多。向左移动的明确信号是产品线具有频繁生产新的产品，种类繁多，利润很低的特点。</p>
+<p>对于创新型产品没有快速反应的供应链，正确的解决办法：</p>
+<ul>
+<li>让产品成为功能型产品(若边际利润较低，误将功能性产品认为创新性产品)。</li>
+<li>为创新型产品建立快速响应型供应链(若边际利润确实较高，该产品就是创新性产品)。</li>
+</ul>
+<p>总结：至于朝哪个方向迁移，要平衡迁移产生的额外利润和供应链成本。</p>
+<p>要走出左下角的单元格就应该构建高效的供应链，而不是快速响应的供应链。</p>
+<p>电商大多销售功能型产品，却追求响应型供应链的原因是为了扩大市场份额，即使多年亏损，电商仍能获得投资者的持续投资。</p>
+<p>功能性产品的有效计划(连续补货计划)：通过和销售商进行信息共享，获取销售商和自身的库存信息，从而减少货物的交付时间。</p>
+<p>过度价格促销的弊端。利用价格促销满足每季度收入。但是，拉动需求只能用一次。下个季度，
+公司不得不再次拉动前向需求来弥补第一次促销的减少。弊端就是原本可预测需求变成了一系列的尖峰，这样只能增加成本。</p>
+<p>重要原则：“天天平价”策略。功能型产品供应商可以预测顾客需求以换取最好的产品和合理的价格。</p>
+<p>创新型产品的响应供应：接受不确定性是创新性产品的固有特性。对于创新型产品，不确定性必须被接纳。如果产品的需求可以预测，该产品就没有足够的创新以获得高利润。</p>
+<p>管理不确定性：</p>
+<ul>
+<li>降低需求不确定性(reduce
+uncertainty)。例如，通过寻找新的数据源；组件通用性(不同产品共享相同组件)以便对组件需求变得更加可预测。</li>
+<li>避免交货时间不确定性(avoid
+uncertainty)。增加供应链灵活性以定制产品，及时准确的生产预测。</li>
+<li>用缓冲库存规避不确定性和生产过剩的冲击(hedge uncertainty)。</li>
+</ul>
+<p>很多企业意识到供应链存在问题却不知道该如何解决的根本原因在于：供应链和产品策略失调；难以重新调整供应链。</p>
+<p>结论：</p>
+<ul>
+<li>功能型产品具有可预见性需求，寿命周期较长，边际收益率低，产品种类少，按时完成生产的预测的平均偏差率低，平均脱销率低，按单生产产品所需的提前期较长。</li>
+<li>创新型产品具有不可预见性需求，寿命周期较短，边际收益率高，产品种类多，按时完成生产的预测的平均偏差率高，平均脱销率高，按单生产产品所需的提前期较短。</li>
+</ul>
+<p>供应链也分为成本有效型与快速响应型供应链：</p>
+<ul>
+<li>成本有效型供应链的主要目标：以尽可能低的成本有效地供应可预见性需求，其生产重心是维持较高的平均利用率，库存策略是提高周转率，通过供应链最大程度地减少库存；只要不增加成本便尽量缩短生产提前期；<strong>根据成本和质量选择选择供应商</strong>。其产品设计方案应放在使产品性能最大化，使成本最小化。</li>
+<li>快速响应型供应链的主要目标：为了最大程度地减少脱销量、被迫降价产品和过期库存，对不可预见性需求做出快速反应。生产重心放在生产额外缓冲产品；其库存策略在于安排成品(或部件)的重要缓冲库存；为了缩短生产提前期而积极主动地投资改进方法；<strong>根据速度、灵活性和质量选择供应商</strong>；运用组件设计，尽量延长产品出现实质性差异的时间。</li>
+</ul>
+<p><img src="./scm5.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<h3 id="影响供应链战略匹配的其它因素">影响供应链战略匹配的其它因素</h3>
+<ol type="1">
+<li><p>在产品和顾客群多种多样的情况下，如何创建一条在赢利水平与反应能力之间平衡的供应链。单独建立每种产品(每个顾客群)的供应链，还是将供应链建成适合所有产品和顾客群？同一产品配送不同顾客群体？不同产品配送到相同顾客群体？集中库存还是分散库存？</p></li>
+<li><p>产品生命周期：随着产品走过其生命周期，产品需求特点和顾客群的要求也会发生变化。公司要维持战略匹配，就必须在不同生命阶段，调整其供应链。</p></li>
+</ol>
+<p><img src="./scm6.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
+<ol start="3" type="1">
+<li>竞争性随着时间变动：竞争焦点在于以合理的价格生产出品种丰富的产品。由于竞争格局发生变化，公司不得不调整其竞争战略(大规模定制导致更多竞争者进入)。由于竞争战略随时间发生变化，企业必须改变其供应链战略，以维持战略匹配。</li>
+</ol>
+<p>牛鞭效应：供应链上的一种需求变异<strong>放大</strong>现象，使信息流从最终客户端向原始供应商端传递时，无法有效地实现信息共享，使得信息扭曲而逐级放大，导致了需求信息出现越来越大的波动，此信息扭曲的放大作用在图形上很像一个甩起的牛鞭，因此被形象地称为牛鞭效应。</p>
 
                 
               </div>
@@ -397,12 +428,12 @@ class="math inline">\(O(M)\)</span>，<code>M</code>
     
       <span class="category-chain">
         
-  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
+  <a href="/categories/Course/" class="category-chain-item">Course</a>
   
   
     <span>></span>
     
-  <a href="/categories/LeetCode/Easy/" class="category-chain-item">Easy</a>
+  <a href="/categories/Course/Supply-chain-management/" class="category-chain-item">Supply chain management</a>
   
   
 
@@ -419,15 +450,7 @@ class="math inline">\(O(M)\)</span>，<code>M</code>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
-      
-        <a href="/tags/Counting/" class="print-no-link">#Counting</a>
-      
-        <a href="/tags/String/" class="print-no-link">#String</a>
-      
-        <a href="/tags/Two-Pointers/" class="print-no-link">#Two Pointers</a>
-      
-        <a href="/tags/Greedy/" class="print-no-link">#Greedy</a>
+        <a href="/tags/Supply-chain-management/" class="print-no-link">#Supply chain management</a>
       
     </div>
   
@@ -439,8 +462,8 @@ class="math inline">\(O(M)\)</span>，<code>M</code>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC 2182.Construct String With Repeat Limit</div>
-      <div>https://chen-huaneng.github.io/2024/01/13/2024-1-13-2024-01-13-lc-2182/</div>
+      <div>SCM - 供应链管理</div>
+      <div>https://chen-huaneng.github.io/2024/11/02/2024-11-2-2024-11-02-supply-chain/</div>
     </div>
     <div class="license-meta">
       
@@ -452,13 +475,13 @@ class="math inline">\(O(M)\)</span>，<code>M</code>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年1月13日</div>
+          <div>2024年11月2日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年1月13日</div>
+          <div>2024年11月2日</div>
         </div>
       
       
@@ -495,18 +518,12 @@ class="math inline">\(O(M)\)</span>，<code>M</code>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/13/2024-1-13-2024-01-13-Books-I-Readed/" title="Books - 记录我读过的一些书">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Books - 记录我读过的一些书</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/01/12/2024-1-12-2024-01-12-lc-2085/" title="LC 2085.Count Common Words With One Occurrence">
-                        <span class="hidden-mobile">LC 2085.Count Common Words With One Occurrence</span>
+                      <a href="/2024/10/30/2024-10-30-2024-10-30-research/" title="Academic - 初入学术殿堂">
+                        <span class="hidden-mobile">Academic - 初入学术殿堂</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
