@@ -428,9 +428,9 @@
       
       <tag>Math</tag>
       
-      <tag>CS Course</tag>
-      
       <tag>Machine Learning</tag>
+      
+      <tag>CS Course</tag>
       
     </tags>
     
@@ -681,9 +681,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -716,11 +716,11 @@
       
       <tag>Array</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Sorting</tag>
       
       <tag>Binary Search</tag>
       
-      <tag>Sorting</tag>
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1024,9 +1024,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1055,9 +1055,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -1206,13 +1206,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
       
-      <tag>Greedy</tag>
+      <tag>String</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -1245,9 +1245,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1340,9 +1340,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Prefix Sum</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Prefix Sum</tag>
       
     </tags>
     
@@ -1371,9 +1371,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1431,9 +1431,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1464,9 +1464,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1530,9 +1530,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1590,9 +1590,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1621,9 +1621,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Matrix</tag>
       
@@ -1743,9 +1743,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1863,15 +1863,15 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1902,9 +1902,9 @@
       
       <tag>Math</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1933,9 +1933,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -2061,9 +2061,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -2222,9 +2222,9 @@
       
       <tag>String</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -2319,9 +2319,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2352,9 +2352,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>String</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -2449,9 +2449,9 @@
       
       <tag>Array</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -2484,9 +2484,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2515,9 +2515,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2612,9 +2612,9 @@
       
       <tag>Math</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2736,9 +2736,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2864,9 +2864,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2901,9 +2901,9 @@
       
       <tag>Array</tag>
       
-      <tag>Matrix</tag>
-      
       <tag>Binary Search</tag>
+      
+      <tag>Matrix</tag>
       
     </tags>
     
@@ -2932,9 +2932,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2965,9 +2965,9 @@
       
       <tag>Array</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -2996,9 +2996,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3089,9 +3089,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3120,9 +3120,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -3151,9 +3151,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -3184,9 +3184,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -3250,9 +3250,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -3310,13 +3310,13 @@
     
     <tags>
       
-      <tag>Tool</tag>
-      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
       
       <tag>Website</tag>
+      
+      <tag>Tool</tag>
       
     </tags>
     
@@ -3361,17 +3361,6 @@
   
   
   <entry>
-    <title>about</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<p><img src="/imgs/about/banner.jpg" /></p><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『梦想是像自由的鸟一样去旅行！』</span></p><h2 id="关于我">关于我</h2><p>目前南方某高校大四在读，对计算机科学、算法和运筹优化等方向感兴趣。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系，建议通过邮件与我取得联系。</p><p>喜欢设计简洁、优雅、轻便小巧的东西（比如：Logitech MX Anywhere 3 和Vim/Neovim）。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（뉴진스）、Adele、孙燕姿的歌，喜欢的曲风就比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……</p><p><img src="/imgs/about/gloria.jpg" /></p><h2 id="正在做计划做的事">正在做/计划做的事</h2><ul><li>刷算法题，请看 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a> 进度</li><li>参与开源项目，详情见 <ahref="https://github.com/chen-huaneng">GitHub</a> 仓库</li><li>持续更新<a href="https://chen-huaneng.github.io/">博客</a>和<ahref="https://www.zhihu.com/people/yun-tun-5-10">知乎</a></li><li>读文献</li><li>学习机器学习和 C++</li><li>准备毕业论文</li><li>旅游</li><li>……</li></ul><h2 id="时光胶囊">时光胶囊</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/4.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/5.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/7.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/8.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/9.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/10.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/11.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/12.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/13.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/14.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/15.jpg" /></div></div></div><h2 id="未完待续">未完待续……</h2><p>如果你对如何搭建这个博客感兴趣，可以看看我写的这篇<ahref="https://chen-huaneng.github.io/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/">简短的介绍</a>。</p><p><img src="/imgs/about/continue.jpg" /></p><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会继续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p><hr /><p align="center">Updated on <time datetime="2024-10-30T22:03:00">October 30, 2024 at22:03 PM</time></p>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title></title>
     <link href="/"/>
     <url>/</url>
@@ -3399,6 +3388,17 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>about</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/imgs/about/banner.jpg" /></p><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『梦想是像自由的鸟一样去旅行！』</span></p><h2 id="关于我">关于我</h2><p>目前南方某高校大四在读，对计算机科学、算法和运筹优化等方向感兴趣。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系，建议通过邮件与我取得联系。</p><p>喜欢设计简洁、优雅、轻便小巧的东西（比如：Logitech MX Anywhere 3 和Vim/Neovim）。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（뉴진스）、Adele、孙燕姿的歌，喜欢的曲风就比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……</p><p><img src="/imgs/about/gloria.jpg" /></p><h2 id="正在做计划做的事">正在做/计划做的事</h2><ul><li>刷算法题，请看 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a> 进度</li><li>参与开源项目，详情见 <ahref="https://github.com/chen-huaneng">GitHub</a> 仓库</li><li>持续更新<a href="https://chen-huaneng.github.io/">博客</a>和<ahref="https://www.zhihu.com/people/yun-tun-5-10">知乎</a></li><li>读文献</li><li>学习机器学习和 C++</li><li>准备毕业论文</li><li>旅游</li><li>……</li></ul><h2 id="时光胶囊">时光胶囊</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/4.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/5.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/7.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/8.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/9.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/10.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/11.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/12.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/13.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/14.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/15.jpg" /></div></div></div><h2 id="未完待续">未完待续……</h2><p>如果你对如何搭建这个博客感兴趣，可以看看我写的这篇<ahref="https://chen-huaneng.github.io/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/">简短的介绍</a>。</p><p><img src="/imgs/about/continue.jpg" /></p><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会继续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p><hr /><p align="center">Updated on <time datetime="2024-10-30T22:03:00">October 30, 2024 at22:03 PM</time></p>]]></content>
     
   </entry>
   
