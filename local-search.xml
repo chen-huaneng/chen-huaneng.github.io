@@ -273,7 +273,7 @@
     <link href="/2024/10/18/2024-10-18-2024-10-18-windows/"/>
     <url>/2024/10/18/2024-10-18-2024-10-18-windows/</url>
     
-    <content type="html"><![CDATA[<h3 id="windows-users用户目录下看不到自己当前用户文件夹1">WindowsUsers用户目录下看不到自己当前用户文件夹<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[解决windows Users用户目录下看不到自己的问题_用户不在目录中-CSDN博客](https://blog.csdn.net/weixin_43031092/article/details/109115922)">[1]</span></a></sup></h3><p>一般来说，在 <code>C:\Users</code>这个路径下应该有一个当前用户的文件夹，比如在下面的图中应该有一个<code>Abel</code>的文件夹，并且查看选项中已经勾选了显示隐藏文件这一个选项：</p><p><img src="./windows.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>在查看菜单最右边有一个选项，单击打开“文件夹选项”，选中“查看”一栏，在高级设置里取消勾选“隐藏受操作系统保护的文件”，应用后就能看到自己的用户文件夹，最后选择确定。</p><p><img src="./windows2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="./windows3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="./windows4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><blockquote><p>提示：找到你想要的文件做好修改之后最后还是把这些文件隐藏显示会安全一点。</p></blockquote><h3id="重定向桌面路径和下载路径时不小心将下载路径和桌面路径合并了23">重定向桌面路径和下载路径时不小心将下载路径和桌面路径合并了<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[windows桌面和下载成一个文件夹了，怎么分开? - 知乎 (zhihu.com)](https://www.zhihu.com/question/457965061)">[2]</span></a></sup><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[不小心把桌面路径改成下载路径了现在下载文件夹变桌面文件夹了 - Microsoft Community](https://answers.microsoft.com/zh-hans/windows/forum/all/不小心把桌/f8a784af-a6d5-47c3-9f4a-0b40f1bdba41)">[3]</span></a></sup></h3><p>在系统C盘存储不够时，我们常常会把系统自带的文件路径移动到除C盘以外的其他盘去，但是一不小心就将文件移动到其他盘的根路径去了，这时候再通过简单的更换路径是更换不了的，系统这些自带的桌面、下载、图片、文档、音乐、视频本身就是一个文件夹，只是windows系统将他们单独拿出来方便大家使用。</p><p>这里是将下载的路径移动到C盘根路径去了，再次通过<code>右键-&gt;属性-&gt;位置</code>移动到其他路径各种报错。</p><p><img src="./windows5.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>我们本身已经将下载位置移动到C盘根路径了，再次右键打开的属性已经是C盘磁盘分区的属性了，修改磁盘分区的路径本身就是一种错误的操作，解决思路是通过修改注册表直接修改下载的文件存储位置。</p><ol type="1"><li>按 <code>Win + R</code> 调出命令行运行窗口，输入<code>regedit</code> 并按回车。</li><li>在弹出的注册表窗口里，打开下面路径<code>计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</code>，直接将路径复制上去打开也可以。</li><li>找到下载对应的ID串需要修改的项，修改对应值为你要设置的路径位置。</li></ol><p>具体ID对应的名称如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs mysql">&#123;F42EE2D3-909F-4907-8871-4C22FC0BF756&#125;  Document文档<br>&#123;A0C69A99-21C8-4671-8703-7934162FCF1D&#125;  Music音乐<br>&#123;7d83ee9b-2244-4e70-b1f5-5393042af1e4&#125;  Downloads下载<br>&#123;374DE290-123F-4565-9164-39C4925E467B&#125;  Downloads下载<br>&#123;754AC886-DF64-4CBA-86B5-F7FBF4FBCEF5&#125;  Desktop桌面<br>&#123;35286A68-3C57-41A1-BBB1-0EAE73D76C95&#125;  Videos视频<br>&#123;0DDD015D-B06C-45D5-8C4C-F59713854639&#125;  Pictures图片<br></code></pre></td></tr></table></figure><p><img src="./windows6.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>最后重启电脑即可。</p><h3 id="c-盘太慢了怎么办4">C盘太慢了怎么办<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[没有在C盘装东西，桌面也没文件，为什么C盘莫名其妙就满了？ - 知乎 (zhihu.com)](https://www.zhihu.com/question/456677257/answer/1899626991)">[4]</span></a></sup></h3><p><strong>转移各种应用数据，2~40G</strong></p><p>Windows 从 Vista 开始引入 UAC后，默认情况下应用程序运行时不允许修改默认程序安装目录下(“C:Files”和“C:Files(x86)”)的文件。因此应用程序运行时如果需要保存部分数据到硬盘中，通常放在“C:”（不区分用户，一般来说很小）或者“C:&lt;用户登录名&gt;”下。</p><p>根据安装的具体应用以及应用使用情况，应用安装运行一段时间后，“C:&lt;用户登录名&gt;”这个文件的大小通常在2G以上，上限可能会很大。例如AndroidStudio，默认会把SDK和AVD放在这个目录下，使用多个模拟器的话可能会占用数十G空间。</p><p>某些软件可以自行设定数据文件的保存位置，一劳永逸的办法是把AppData放到其它分区，并且创建目录链接到原位置。具体操作：</p><ul><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li>然后顺序输入以下命令，尖括号中的内容根据实际情况替换：</li></ul><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">mkdir</span> &lt;d:\登录名&gt;<br>robocopy C:\Users\&lt;登录名&gt;\AppData &lt;d:\登录名&gt;\AppData /e /copyall /<span class="hljs-built_in">move</span> /sl /r:<span class="hljs-number">1</span> /w:<span class="hljs-number">1</span><br><span class="hljs-built_in">rmdir</span> C:\Users\&lt;登录名&gt;\AppData<br>mklink /j C:\Users\&lt;登录名&gt;\AppData &lt;d:\登录名&gt;\AppData<br></code></pre></td></tr></table></figure><p>关闭命令行窗口，正常重启进入Windows。</p><p><strong>转移各种软件的安装包，1~10G</strong></p><p>很多使用MSI安装包的软件，安装时Windows会把整个MSI缓存一份到“C:”目录下，以便将来修复重装软件、增删可选软件模块、卸载软件时使用。有些软件的MSI包非常大，一个就几百兆甚至数GB，尤其是微软自家软件的补丁安装包，累积下来整个目录占用了十几G不少见。</p><p>这个文件夹直接删除里面的msi/msp文件不会影响系统和软件运行，但修复重装软件、增删可选软件模块、卸载软件的时候会出错。所以建议移动到其它分区，如果电脑同时安装有固态硬盘和大容量的机械硬盘，可以移动到机械键盘上的分区以免占用宝贵的固态硬盘空间，毕竟这些文件访问频率很低。具体操作：</p><ul><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li>然后顺序输入以下命令，尖括号中的内容根据实际情况替换：</li></ul><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">mkdir</span> &lt;e:\Backup&gt;<br>robocopy C:\Windows\Installer &lt;e:\Backup&gt;\Installer /e /copyall /<span class="hljs-built_in">move</span> /sl /r:<span class="hljs-number">1</span> /w:<span class="hljs-number">1</span><br><span class="hljs-built_in">rmdir</span> C:\Windows\Installer<br>mklink /j C:\Windows\Installer &lt;e:\Backup&gt;\Installer<br></code></pre></td></tr></table></figure><p>关闭命令行窗口，正常重启进入Windows。</p><p><strong>更改默认的数据存放路径：文档、桌面、图片、音乐、视频、下载</strong></p>这几个文件夹，也会经常被一些软件作为默认的数据存储位置。例如微信、QQ，默认把聊天记录、接收到的文件存放在文档里面，使用时间长了，又经常在一些群里面还有那么几个人天天发表情包、福利图、转发视频的话，也会占用大量空间。不过这几个文件夹的转移很方便，右键点击，属性，位置，移动就可以了。如果是全新的电脑，并且系统是Win10的话，直接在设置、系统、存储、更改新内容的保存位置，在这里操作会更方便一点。<section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://blog.csdn.net/weixin_43031092/article/details/109115922">解决windowsUsers用户目录下看不到自己的问题_用户不在目录中-CSDN博客</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><ahref="https://www.zhihu.com/question/457965061">windows桌面和下载成一个文件夹了，怎么分开?- 知乎 (zhihu.com)</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://answers.microsoft.com/zh-hans/windows/forum/all/不小心把桌/f8a784af-a6d5-47c3-9f4a-0b40f1bdba41">不小心把桌面路径改成下载路径了现在下载文件夹变桌面文件夹了- Microsoft Community</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:4" class="footnote-text"><span><ahref="https://www.zhihu.com/question/456677257/answer/1899626991">没有在C盘装东西，桌面也没文件，为什么C盘莫名其妙就满了？- 知乎 (zhihu.com)</a><a href="#fnref:4" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
+    <content type="html"><![CDATA[<h3 id="windows-users用户目录下看不到自己当前用户文件夹1">WindowsUsers用户目录下看不到自己当前用户文件夹<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[解决windows Users用户目录下看不到自己的问题_用户不在目录中-CSDN博客](https://blog.csdn.net/weixin_43031092/article/details/109115922)">[1]</span></a></sup></h3><p>一般来说，在 <code>C:\Users</code>这个路径下应该有一个当前用户的文件夹，比如在下面的图中应该有一个<code>Abel</code>的文件夹，并且查看选项中已经勾选了显示隐藏文件这一个选项：</p><p><img src="./windows.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>在查看菜单最右边有一个选项，单击打开“文件夹选项”，选中“查看”一栏，在高级设置里取消勾选“隐藏受操作系统保护的文件”，应用后就能看到自己的用户文件夹，最后选择确定。</p><p><img src="./windows2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="./windows3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p><img src="./windows4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><blockquote><p>提示：找到你想要的文件做好修改之后最后还是把这些文件隐藏显示会安全一点。</p></blockquote><h3id="重定向桌面路径和下载路径时不小心将下载路径和桌面路径合并了23">重定向桌面路径和下载路径时不小心将下载路径和桌面路径合并了<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[windows桌面和下载成一个文件夹了，怎么分开? - 知乎 (zhihu.com)](https://www.zhihu.com/question/457965061)">[2]</span></a></sup><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[不小心把桌面路径改成下载路径了现在下载文件夹变桌面文件夹了 - Microsoft Community](https://answers.microsoft.com/zh-hans/windows/forum/all/不小心把桌/f8a784af-a6d5-47c3-9f4a-0b40f1bdba41)">[3]</span></a></sup></h3><p>在系统C盘存储不够时，我们常常会把系统自带的文件路径移动到除C盘以外的其他盘去，但是一不小心就将文件移动到其他盘的根路径去了，这时候再通过简单的更换路径是更换不了的，系统这些自带的桌面、下载、图片、文档、音乐、视频本身就是一个文件夹，只是windows系统将他们单独拿出来方便大家使用。</p><p>这里是将下载的路径移动到C盘根路径去了，再次通过<code>右键-&gt;属性-&gt;位置</code>移动到其他路径各种报错。</p><p><img src="./windows5.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>我们本身已经将下载位置移动到C盘根路径了，再次右键打开的属性已经是C盘磁盘分区的属性了，修改磁盘分区的路径本身就是一种错误的操作，解决思路是通过修改注册表直接修改下载的文件存储位置。</p><ol type="1"><li>按 <code>Win + R</code> 调出命令行运行窗口，输入<code>regedit</code> 并按回车。</li><li>在弹出的注册表窗口里，打开下面路径<code>计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders</code>，直接将路径复制上去打开也可以。</li><li>找到下载对应的ID串需要修改的项，修改对应值为你要设置的路径位置。</li></ol><p>具体ID对应的名称如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs mysql">&#123;F42EE2D3-909F-4907-8871-4C22FC0BF756&#125;  Document文档<br>&#123;A0C69A99-21C8-4671-8703-7934162FCF1D&#125;  Music音乐<br>&#123;7d83ee9b-2244-4e70-b1f5-5393042af1e4&#125;  Downloads下载<br>&#123;374DE290-123F-4565-9164-39C4925E467B&#125;  Downloads下载<br>&#123;754AC886-DF64-4CBA-86B5-F7FBF4FBCEF5&#125;  Desktop桌面<br>&#123;35286A68-3C57-41A1-BBB1-0EAE73D76C95&#125;  Videos视频<br>&#123;0DDD015D-B06C-45D5-8C4C-F59713854639&#125;  Pictures图片<br></code></pre></td></tr></table></figure><p><img src="./windows6.webp" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>最后重启电脑即可。</p><h3 id="c-盘太慢了怎么办4">C盘太慢了怎么办<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><spanclass="hint--top hint--rounded"aria-label="[没有在C盘装东西，桌面也没文件，为什么C盘莫名其妙就满了？ - 知乎 (zhihu.com)](https://www.zhihu.com/question/456677257/answer/1899626991)">[4]</span></a></sup></h3><p><strong>转移各种应用数据，2~40G</strong></p><p>Windows 从 Vista 开始引入 UAC后，默认情况下应用程序运行时不允许修改默认程序安装目录下(“C:Files”和“C:Files(x86)”)的文件。因此应用程序运行时如果需要保存部分数据到硬盘中，通常放在“C:”（不区分用户，一般来说很小）或者“C:&lt;用户登录名&gt;”下。</p><p>根据安装的具体应用以及应用使用情况，应用安装运行一段时间后，“C:&lt;用户登录名&gt;”这个文件的大小通常在2G以上，上限可能会很大。例如AndroidStudio，默认会把SDK和AVD放在这个目录下，使用多个模拟器的话可能会占用数十G空间。</p><p>某些软件可以自行设定数据文件的保存位置，一劳永逸的办法是把AppData放到其它分区，并且创建目录链接到原位置。具体操作：</p><ul><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li>然后顺序输入以下命令，尖括号中的内容根据实际情况替换：</li></ul><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">mkdir</span> &lt;d:\登录名&gt;<br>robocopy C:\Users\&lt;登录名&gt;\AppData &lt;d:\登录名&gt;\AppData /e /copyall /<span class="hljs-built_in">move</span> /sl /r:<span class="hljs-number">1</span> /w:<span class="hljs-number">1</span><br><span class="hljs-built_in">rmdir</span> C:\Users\&lt;登录名&gt;\AppData<br>mklink /j C:\Users\&lt;登录名&gt;\AppData &lt;d:\登录名&gt;\AppData<br></code></pre></td></tr></table></figure><p>关闭命令行窗口，正常重启进入Windows。</p><p><strong>转移各种软件的安装包，1~10G</strong></p><p>很多使用MSI安装包的软件，安装时Windows会把整个MSI缓存一份到“C:”目录下，以便将来修复重装软件、增删可选软件模块、卸载软件时使用。有些软件的MSI包非常大，一个就几百兆甚至数GB，尤其是微软自家软件的补丁安装包，累积下来整个目录占用了十几G不少见。</p><p>这个文件夹直接删除里面的msi/msp文件不会影响系统和软件运行，但修复重装软件、增删可选软件模块、卸载软件的时候会出错。所以建议移动到其它分区，如果电脑同时安装有固态硬盘和大容量的机械硬盘，可以移动到机械键盘上的分区以免占用宝贵的固态硬盘空间，毕竟这些文件访问频率很低。具体操作：</p><ul><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li><strong>按住Shift键重启系统，进入高级选项。然后选择“疑难解答”、“高级选项”、“命令提示符”，进入命令行模式。</strong></li><li>然后顺序输入以下命令，尖括号中的内容根据实际情况替换：</li></ul><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">mkdir</span> &lt;e:\Backup&gt;<br>robocopy C:\Windows\Installer &lt;e:\Backup&gt;\Installer /e /copyall /<span class="hljs-built_in">move</span> /sl /r:<span class="hljs-number">1</span> /w:<span class="hljs-number">1</span><br><span class="hljs-built_in">rmdir</span> C:\Windows\Installer<br>mklink /j C:\Windows\Installer &lt;e:\Backup&gt;\Installer<br></code></pre></td></tr></table></figure><p>关闭命令行窗口，正常重启进入Windows。</p><p><strong>更改默认的数据存放路径：文档、桌面、图片、音乐、视频、下载</strong></p><p>这几个文件夹，也会经常被一些软件作为默认的数据存储位置。例如微信、QQ，默认把聊天记录、接收到的文件存放在文档里面，使用时间长了，又经常在一些群里面还有那么几个人天天发表情包、福利图、转发视频的话，也会占用大量空间。不过这几个文件夹的转移很方便，右键点击，属性，位置，移动就可以了。如果是全新的电脑，并且系统是Win10的话，直接在设置、系统、存储、更改新内容的保存位置，在这里操作会更方便一点。</p><h3id="microsoft-edge-浏览器更新一直显示正在进行更新请等待几分钟的解决方法">MicrosoftEdge 浏览器更新一直显示“正在进行更新，请等待几分钟”的解决方法</h3><p>按下 Win 徽标键，直接键入 <code>services</code> 或者<code>服务</code> 打开第一个：</p><p><img src="./edge.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><p>找到跟 Microsoft Edge更新有关的两个选项，右键选择属性，将启动类型改为自动，重新更新 Edge即可：</p><p><img src="./edge2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p><img src="./edge3.png" srcset="/imgs/banner/loading.jpg" lazyload /><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><ahref="https://blog.csdn.net/weixin_43031092/article/details/109115922">解决windowsUsers用户目录下看不到自己的问题_用户不在目录中-CSDN博客</a><a href="#fnref:1" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><ahref="https://www.zhihu.com/question/457965061">windows桌面和下载成一个文件夹了，怎么分开?- 知乎 (zhihu.com)</a><a href="#fnref:2" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><ahref="https://answers.microsoft.com/zh-hans/windows/forum/all/不小心把桌/f8a784af-a6d5-47c3-9f4a-0b40f1bdba41">不小心把桌面路径改成下载路径了现在下载文件夹变桌面文件夹了- Microsoft Community</a><a href="#fnref:3" rev="footnote" class="footnote-backref">↩︎</a></span></span></li><li><span id="fn:4" class="footnote-text"><span><ahref="https://www.zhihu.com/question/456677257/answer/1899626991">没有在C盘装东西，桌面也没文件，为什么C盘莫名其妙就满了？- 知乎 (zhihu.com)</a><a href="#fnref:4" rev="footnote" class="footnote-backref">↩︎</a></span></span></li></ol></div></section>]]></content>
     
     
     <categories>
@@ -428,9 +428,9 @@
       
       <tag>Math</tag>
       
-      <tag>CS Course</tag>
-      
       <tag>Machine Learning</tag>
+      
+      <tag>CS Course</tag>
       
     </tags>
     
@@ -681,11 +681,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -716,11 +716,11 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
+      <tag>Two Pointers</tag>
       
       <tag>Binary Search</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1024,9 +1024,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1055,13 +1055,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1206,13 +1206,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
+      <tag>Greedy</tag>
       
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Counting</tag>
       
-      <tag>Greedy</tag>
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1245,9 +1245,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1276,9 +1276,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Greedy</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1340,9 +1340,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Prefix Sum</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1371,9 +1371,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1431,9 +1431,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1464,9 +1464,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1530,9 +1530,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1590,9 +1590,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1621,9 +1621,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Matrix</tag>
       
@@ -1741,11 +1741,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
+      <tag>String</tag>
       
       <tag>Counting</tag>
       
-      <tag>String</tag>
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1863,15 +1863,15 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
+      <tag>Simulation</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -1902,9 +1902,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1933,11 +1933,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1966,9 +1966,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1997,9 +1997,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Two Pointers</tag>
       
@@ -2061,11 +2061,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2094,9 +2094,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2125,9 +2125,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2189,9 +2189,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2220,11 +2220,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Greedy</tag>
+      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
-      
-      <tag>Greedy</tag>
       
     </tags>
     
@@ -2319,9 +2319,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2352,9 +2352,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2449,9 +2449,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Binary Search</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2484,9 +2484,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2515,9 +2515,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2612,9 +2612,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2932,9 +2932,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2965,9 +2965,9 @@
       
       <tag>Array</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -2996,9 +2996,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3027,9 +3027,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3089,9 +3089,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3120,9 +3120,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Sorting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Sorting</tag>
       
     </tags>
     
@@ -3151,11 +3151,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3184,11 +3184,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Sorting</tag>
       
@@ -3219,9 +3219,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Greedy</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3250,11 +3250,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3310,13 +3310,13 @@
     
     <tags>
       
+      <tag>Tool</tag>
+      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
       
       <tag>Website</tag>
-      
-      <tag>Tool</tag>
       
     </tags>
     
@@ -3376,7 +3376,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
   
@@ -3387,7 +3387,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
