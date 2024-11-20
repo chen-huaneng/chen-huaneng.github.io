@@ -21,26 +21,27 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="如何判断一条线段是否穿过一个封闭的多边形。">
+    <meta name="description" content="介绍一款通过简单的设置就能美化你的桌面的软件：Rainmeter。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Math - 二维图形相交问题">
-<meta property="og:url" content="https://chen-huaneng.github.io/2024/11/19/2024-11-19-2024-11-19-intersection/index.html">
+<meta property="og:title" content="Rainmeter - 美化你的桌面">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/11/20/2024-11-20-2024-11-20-rainmeter/index.html">
 <meta property="og:site_name" content="AbelのBlog">
-<meta property="og:description" content="如何判断一条线段是否穿过一个封闭的多边形。">
+<meta property="og:description" content="介绍一款通过简单的设置就能美化你的桌面的软件：Rainmeter。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/11/19/banner.jpg">
-<meta property="article:published_time" content="2024-11-19T08:20:38.000Z">
-<meta property="article:modified_time" content="2024-11-20T12:20:42.857Z">
+<meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/11/20/banner.png">
+<meta property="article:published_time" content="2024-11-20T13:27:20.000Z">
+<meta property="article:modified_time" content="2024-11-20T14:48:47.756Z">
 <meta property="article:author" content="Abel">
-<meta property="article:tag" content="Math">
-<meta property="article:tag" content="Geometry">
-<meta property="article:tag" content="Polygon">
+<meta property="article:tag" content="Tool">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="GUI">
+<meta property="article:tag" content="Rainmeter">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/11/19/banner.jpg">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/11/20/banner.png">
   
   
   
-  <title>Math - 二维图形相交问题 - AbelのBlog</title>
+  <title>Rainmeter - 美化你的桌面 - AbelのBlog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,13 +231,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2024/11/19/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/posts/2024/11/20/banner.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Math - 二维图形相交问题"></span>
+            <span id="subtitle" data-typed-text="Rainmeter - 美化你的桌面"></span>
           
         </div>
 
@@ -247,8 +248,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-19 16:20" pubdate>
-          2024年11月19日 下午
+        <time datetime="2024-11-20 21:27" pubdate>
+          2024年11月20日 晚上
         </time>
       </span>
     
@@ -260,7 +261,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 1.2k 
+          文章字数: 945 
         
       </span>
     
@@ -272,7 +273,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 4 分钟
+          阅读全文大概需要 3 分钟
         
       </span>
     
@@ -318,12 +319,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Math - 二维图形相交问题</h1>
+            <h1 id="seo-header">Rainmeter - 美化你的桌面</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-11-20T20:20:42+08:00
+                    本文最后更新于：2024-11-20T22:48:47+08:00
                   
                   
 
@@ -333,93 +334,119 @@
             
               <div class="markdown-body">
                 
-                <p>在我读一篇关于<a
-target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cor.2021.105524">基于机器学习的无人机路线规划</a>问题的论文时，文章中提出了一个检测无人机行驶的路线中如果遇到受限制的区域（比如禁飞区、军事基地等）应该如何绕行的问题，其中就需要先检测飞行的路线是否经过受限制的区域的问题，在这里我们可以将这个问题简化成：</p>
-<blockquote>
-<p>给定一条线段的两个端点和一个多边形的所有顶点的坐标值（横坐标和纵坐标），如何判断这条线段是否穿过多边形。</p>
+                <blockquote>
+<p>前排提醒：该软件只适用于 Windows 系统，如果你是 Mac OS 或者 Linux
+用户，可以参考其他的软件。</p>
 </blockquote>
-<p>论文中提出了一种方法，大致的思路是：</p>
+<h2 id="rainmeter-是什么">Rainmeter 是什么</h2>
+<p>简单来说，<a target="_blank" rel="noopener" href="https://www.rainmeter.net/">Rainmeter</a>
+就是给想要对 Windows
+桌面进行美化的用户一个方便的修改软件。效果图可以参考我修改前后的界面对比（当然壁纸也换了，可以忽略）：</p>
+<figure>
+<img src="./origin.png" srcset="/imgs/banner/loading.jpg" lazyload alt="修改前的电脑桌面" />
+<figcaption aria-hidden="true">修改前的电脑桌面</figcaption>
+</figure>
+<figure>
+<img src="./before.png" srcset="/imgs/banner/loading.jpg" lazyload alt="原壁纸" />
+<figcaption aria-hidden="true">原壁纸</figcaption>
+</figure>
+<figure>
+<img src="./after.png" srcset="/imgs/banner/loading.jpg" lazyload alt="修改后的电脑桌面" />
+<figcaption aria-hidden="true">修改后的电脑桌面</figcaption>
+</figure>
+<p>你可能会觉得奇怪，第一张怎么只有壁纸，因为我一般把软件放在 Windows 10
+的磁贴上，所以桌面一般不放图标，再加上把任务栏隐藏后，看起来就只有壁纸了。从增加
+Rainmeter 前后的桌面对比还是能比较明显看出来增加了不少功能：</p>
 <ol type="1">
-<li>将线段用多个点划分，将每个点和多边形的两个相邻顶点相连形成三角形</li>
-<li>遍历多边形的顶点得到一组三角形，计算所有三角形的面积和</li>
-<li>比较三角形的面积和与多边形的面积，如果相等则线段穿过多边形</li>
-<li>对所有的划分点重复上面的步骤，如果有一次相等则说明线段穿过这个多边形</li>
+<li>流浪地球样式的倒计时（可以改成其他的倒计时，比如高考前多少天这种）<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[流浪地球 桌面倒计时插件 - 城子的小屋](https://xcz.me/archives/67/)">[1]</span></a></sup></li>
+<li>一个学位帽的图标（我主要用来放毕业论文文件夹的快捷方式，问我论文写了多少？就是新建了一个文件夹的程度）<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[Boxwello - 软件皮肤 - 致美化](https://zhutix.com/skins/boxwello/)">[2]</span></a></sup></li>
+<li>一个声音可视化的栏（电脑发出的声音都可以，如果没有声音则默认隐藏）</li>
+<li>日期（艺术字表示月份，下面的七个字母代表了周一到周日的英文首字母，到哪一天方框就会切换到哪一个格子，方框下的数字代表日）和时间（可以修改成24小时制的），上面的时间就是2024年11月20日（周三）下午五点<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[Laro - 软件皮肤 - 致美化](https://zhutix.com/skins/laro/)">[3]</span></a></sup></li>
+<li>显示硬盘容量（点击相应的硬盘可以打开相对应的文件夹），系统的状态（CPU、RAM、SWAP使用情况），网络情况（上传、下载的速度，IP地址）</li>
+<li>一个风铃（鼠标移动到风铃的附近会发出类似风铃被风吹动的声音）<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="[四月的风铃 - 软件皮肤 - 致美化](https://zhutix.com/skins/fengzhiling/)">[4]</span></a></sup></li>
 </ol>
-<p>比如下图的(a)和(b)就分别表示了线段穿过多边形内部和多边形的顶点的情况，图(c)则表示图(a)的情况，无人机应该如何绕行的情况。</p>
-<figure>
-<img src="./intersection.png" srcset="/imgs/banner/loading.jpg" lazyload
-alt="论文的Fig. D.6. Avoiding restricted areas." />
-<figcaption aria-hidden="true">论文的Fig. D.6. Avoiding restricted
-areas.</figcaption>
-</figure>
-<p>乍一看会觉得这个算法很巧妙，因为文章中用来计算三角形面积和多边形的面积公式只需要用到顶点和端点的坐标值即可。对这个公式感兴趣的可以参考<a
-target="_blank" rel="noopener" href="https://www.wikiwand.com/en/articles/Shoelace_formula">Shoelace
-formula - Wikiwand</a>和<a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/110025234">【国际数学竞赛】任意多边形面积计算公式
-- 知乎</a>。</p>
-
-    <div class="fold">
-      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-5cf07df4" role="button" aria-expanded="false" aria-controls="collapse-5cf07df4">
-        <div class="fold-arrow">▶</div>Shoelace formula
-      </div>
-      <div class="fold-collapse collapse" id="collapse-5cf07df4">
-        <div class="fold-content">
-          <p>计算任意多边形的面积公式（<atarget="_blank" rel="noopener" href="https://www.wikiwand.com/en/articles/Shoelace_formula">Shoelaceformula - Wikiwand</a>）： <span class="math display">\[S_{\text{n vertex polygon area}} =\frac{1}{2}|\sum^n_{i=1}(x_iy_{i+1}-x_{i+1}y_i)|\]</span> 其中<span class="math inline">\(x_{n+1} = x_1, y_{n+1} =y_1\)</span>。</p>
-        </div>
-      </div>
-    </div>
-<p>但是这个方法存在几个问题：</p>
-<ol type="1">
-<li>如果多边形的边数很多，那么相应的三角形数量也会增加，计算的时间复杂度会随着多边形的边数变化而变化，比如对于正多边形和取点在中心点的情况，三角形的数量就是
-<span class="math inline">\(n\)</span>，<span
-class="math inline">\(n\)</span> 是多边形的边数（<span
-class="math inline">\(n &gt;3\)</span>）</li>
-<li>如果取的点不好，存在误判的可能，当然可以通过取更多的点来防止这种情况的发生，但是相对于效率而言不是很好的解决方法</li>
-<li>如果多边形的边数为 <span
-class="math inline">\(n\)</span>，取点的数量为 <span
-class="math inline">\(k\)</span>，那么这个算法的时间复杂度为 <span
-class="math inline">\(O(kn)\)</span></li>
+<h2 id="安装-rainmeter">安装 Rainmeter</h2>
+<p>可以选择在 <a target="_blank" rel="noopener" href="https://www.rainmeter.net/">Rainmeter
+官网</a>下载，也可以选择使用 <a
+href="https://chen-huaneng.github.io/2024/01/04/2024-1-4-2024-01-04-Scoop/">Scoop</a>
+下载：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">scoop install extras/rainmeter<br></code></pre></td></tr></table></figure>
+<p>下载完了就可以愉快地开始找适合自己的皮肤了。如果你懂一点编程和
+AI，那么就可以愉快地根据别人做好的皮肤进行稍微的调整，变成你自己的皮肤啦。</p>
+<h2 id="一些可能用得到的链接">一些可能用得到的链接</h2>
+<p>如何入门 Rainmeter：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.rainmeter.net/">Rainmeter Documentation</a> -
+官方的文档当然最重要</li>
+<li><a target="_blank" rel="noopener" href="https://bbs.rainmeter.cn/forum.php">雨滴美化社区|Rainmeter
+- 中国最具影响力的美化论坛 - Powered by Discuz!</a> -
+中文社区也不错</li>
+<li><a
+target="_blank" rel="noopener" href="https://tieba.baidu.com/f?kw=rainmeter">rainmeter吧-百度贴吧--Rainmeter技术与资源共享平台--欢迎加入rainmeter吧大家庭。立志摆脱一成不变乏味单调的电脑桌面，美观、实用是我们的追求，同时欢迎讨论各类与Rainmete</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://pkmer.cn/Pkmer-Docs/13-其他工具/rainmeter/rainmeter入门教程-安装和基本使用/">PKMer_Rainmeter
+入门教程（一）：介绍、安装和基本使用</a></li>
+</ul>
+<p>找皮肤的地方：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhutix.com/tag/rainmeter/">Rainmeter皮肤 - 雨滴皮肤
+- 致美化 - 漫锋网</a></li>
+<li><a target="_blank" rel="noopener" href="https://bbs.rainmeter.cn/forum.php">雨滴美化社区|Rainmeter
+- 中国最具影响力的美化论坛 - Powered by Discuz!</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://tieba.baidu.com/f?kw=rainmeter">rainmeter吧-百度贴吧--Rainmeter技术与资源共享平台--欢迎加入rainmeter吧大家庭。立志摆脱一成不变乏味单调的电脑桌面，美观、实用是我们的追求，同时欢迎讨论各类与Rainmete</a></li>
+</ul>
+<p>我的皮肤可以在<a
+target="_blank" rel="noopener" href="https://github.com/chen-huaneng/Rainmeter">我的 GitHub
+仓库</a>找到，把下载的Layouts, Plugins, Skins三个文件夹替换 Rainmeter
+原本的这三个文件夹就可以了（如果之前有皮肤记得先备份这三个文件夹）。</p>
+为什么我不打包成 <code>.rmskin</code>
+文件？因为我的皮肤是用别人多个皮肤组装起来的，所以再重新组织代码会比较麻烦（就是有点懒）。
+<section class="footnotes">
+<h2>
+References
+</h2>
+<div class="footnote-list">
+<ol>
+<li>
+<span id="fn:1"
+class="footnote-text"><span><a target="_blank" rel="noopener" href="https://xcz.me/archives/67/">流浪地球
+桌面倒计时插件 - 城子的小屋</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:2"
+class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhutix.com/skins/boxwello/">Boxwello
+- 软件皮肤 - 致美化</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:3"
+class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhutix.com/skins/laro/">Laro
+- 软件皮肤 - 致美化</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:4"
+class="footnote-text"><span><a target="_blank" rel="noopener" href="https://zhutix.com/skins/fengzhiling/">四月的风铃
+- 软件皮肤 - 致美化</a>
+<a href="#fnref:4" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
 </ol>
-<figure>
-<img src="./intersection2.png" srcset="/imgs/banner/loading.jpg" lazyload alt="多边形划分三角形的情况举例" />
-<figcaption aria-hidden="true">多边形划分三角形的情况举例</figcaption>
-</figure>
-<p>比如，如果取的点是红色的点，因为所有的点根据上面的算法得到的三角形面积和的值不等于多边形的面积值，所以会判断这个线段没有穿过多边形。</p>
-<figure>
-<img src="./intersection3.png" srcset="/imgs/banner/loading.jpg" lazyload alt="一个误判的例子" />
-<figcaption aria-hidden="true">一个误判的例子</figcaption>
-</figure>
-<p>因为论文提出的算法可能存在的效率底下和误判情况，我就思考能不能用更好的方法来替换上面所说的方法，参考<a
-target="_blank" rel="noopener" href="https://stackoverflow.com/questions/6050392/determine-if-a-line-segment-intersects-a-polygon">python
-- Determine if a line segment intersects a polygon - Stack
-Overflow</a>这个问题，我发现了一个很简单的思路：</p>
-<blockquote>
-<p>线段穿过一个多边形的情况有两种：</p>
-<ol type="1">
-<li>第一种是线段穿过了多边形的某个顶点，这种情况只需要遍历多边形的顶点，分别判断顶点是否在线段所在直线上（加上两个端点的坐标大小限制）就可以判断</li>
-<li>第二种是线段穿过了多边形的某条边，这种情况可以简化成分别判断多边形的边是否跟线段相交，也就是判断两条线段是否相交的问题，这个问题可以参考<a
-target="_blank" rel="noopener" href="https://www.wikiwand.com/en/articles/Line-line_intersection">Line–line
-intersection -
-Wikiwand</a>，简单来说就是判断某条线段的两个端点是否在另一条线段的两侧，如果分布在两侧则相交，否则不相交。</li>
-</ol>
-</blockquote>
-<p>这个算法的好处在于，时间复杂度是 <span
-class="math inline">\(O(n)\)</span>，其中 <span
-class="math inline">\(n\)</span>
-是多边形的边数，而且不会出现误判的情况。</p>
-<figure>
-<img src="./intersection4.png" srcset="/imgs/banner/loading.jpg" lazyload alt="参考Stackoverflow的回答" />
-<figcaption aria-hidden="true">参考Stackoverflow的回答</figcaption>
-</figure>
-<p>这里只讨论了针对多边形的情况，对于不是多边形，比如说针对任意的封闭曲面的情况，我的一个简单思路是，用多边形去模拟封闭曲面（类似于微积分的思想，以直代曲），当然具体实现可能不是用这种方法，只是提供一种可能的思路。另外，这里讨论的问题也只针对二维的情况，对于三维的情况，这里的方法就不适用了。</p>
-<p>类似的问题还有：</p>
-<blockquote>
-<p>已知一个点和一个多边形的坐标值，如何判断这个点是否在多边形的内部。</p>
-</blockquote>
-<p>关于这个问题可以参考<a
-target="_blank" rel="noopener" href="https://stackoverflow.com/questions/217578/how-can-i-determine-whether-a-2d-point-is-within-a-polygon">performance
-- How can I determine whether a 2D Point is within a Polygon? - Stack
-Overflow</a>。</p>
+</div>
+</section>
 
                 
               </div>
@@ -438,12 +465,12 @@ Overflow</a>。</p>
     
       <span class="category-chain">
         
-  <a href="/categories/Math/" class="category-chain-item">Math</a>
+  <a href="/categories/Tools/" class="category-chain-item">Tools</a>
   
   
     <span>></span>
     
-  <a href="/categories/Math/Geometry/" class="category-chain-item">Geometry</a>
+  <a href="/categories/Tools/Rainmeter/" class="category-chain-item">Rainmeter</a>
   
   
 
@@ -460,11 +487,13 @@ Overflow</a>。</p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Math/" class="print-no-link">#Math</a>
+        <a href="/tags/Tool/" class="print-no-link">#Tool</a>
       
-        <a href="/tags/Geometry/" class="print-no-link">#Geometry</a>
+        <a href="/tags/Windows/" class="print-no-link">#Windows</a>
       
-        <a href="/tags/Polygon/" class="print-no-link">#Polygon</a>
+        <a href="/tags/GUI/" class="print-no-link">#GUI</a>
+      
+        <a href="/tags/Rainmeter/" class="print-no-link">#Rainmeter</a>
       
     </div>
   
@@ -476,8 +505,8 @@ Overflow</a>。</p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Math - 二维图形相交问题</div>
-      <div>https://chen-huaneng.github.io/2024/11/19/2024-11-19-2024-11-19-intersection/</div>
+      <div>Rainmeter - 美化你的桌面</div>
+      <div>https://chen-huaneng.github.io/2024/11/20/2024-11-20-2024-11-20-rainmeter/</div>
     </div>
     <div class="license-meta">
       
@@ -489,7 +518,7 @@ Overflow</a>。</p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年11月19日</div>
+          <div>2024年11月20日</div>
         </div>
       
       
@@ -532,18 +561,12 @@ Overflow</a>。</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/20/2024-11-20-2024-11-20-rainmeter/" title="Rainmeter - 美化你的桌面">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Rainmeter - 美化你的桌面</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/14/2024-11-14-2024-11-14-website/" title="Website - 有趣的网站合集">
-                        <span class="hidden-mobile">Website - 有趣的网站合集</span>
+                      <a href="/2024/11/19/2024-11-19-2024-11-19-intersection/" title="Math - 二维图形相交问题">
+                        <span class="hidden-mobile">Math - 二维图形相交问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -631,12 +654,6 @@ Overflow</a>。</p>
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -884,49 +901,6 @@ Overflow</a>。</p>
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
