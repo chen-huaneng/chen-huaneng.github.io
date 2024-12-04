@@ -26,9 +26,9 @@
       
       <tag>Windows</tag>
       
-      <tag>Rainmeter</tag>
-      
       <tag>GUI</tag>
+      
+      <tag>Rainmeter</tag>
       
     </tags>
     
@@ -196,9 +196,9 @@
       
       <tag>Tool</tag>
       
-      <tag>Academic</tag>
-      
       <tag>Zotero</tag>
+      
+      <tag>Academic</tag>
       
     </tags>
     
@@ -242,7 +242,7 @@
     <link href="/2024/10/28/2024-10-28-2024-10-28-latex/"/>
     <url>/2024/10/28/2024-10-28-2024-10-28-latex/</url>
     
-    <content type="html"><![CDATA[<h2 id="编译环境">编译环境</h2><p>我在本地编译的环境：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs powershell">(base) <span class="hljs-built_in">PS</span> C:\&gt; tex <span class="hljs-literal">-version</span><br>TeX <span class="hljs-number">3.141592653</span> (TeX Live <span class="hljs-number">2024</span>)<br>kpathsea version <span class="hljs-number">6.4</span>.<span class="hljs-number">0</span><br>Copyright <span class="hljs-number">2024</span> D.E. Knuth.<br>There is NO warranty.  Redistribution of this software is<br>covered by the terms of both the TeX copyright and<br>the Lesser GNU General Public License.<br><span class="hljs-keyword">For</span> more information about these matters, see the file<br>named COPYING and the TeX source.<br>Primary author of TeX: D.E. Knuth.<br><br>(base) <span class="hljs-built_in">PS</span> C:\&gt; latex <span class="hljs-literal">-version</span><br>pdfTeX <span class="hljs-number">3.141592653</span><span class="hljs-literal">-2</span>.<span class="hljs-number">6</span><span class="hljs-literal">-1</span>.<span class="hljs-number">40.26</span> (TeX Live <span class="hljs-number">2024</span>)<br>kpathsea version <span class="hljs-number">6.4</span>.<span class="hljs-number">0</span><br>Copyright <span class="hljs-number">2024</span> Han The Thanh (pdfTeX) et al.<br>There is NO warranty.  Redistribution of this software is<br>covered by the terms of both the pdfTeX copyright and<br>the Lesser GNU General Public License.<br><span class="hljs-keyword">For</span> more information about these matters, see the file<br>named COPYING and the pdfTeX source.<br>Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.<br>Compiled with libpng <span class="hljs-number">1.6</span>.<span class="hljs-number">43</span>; <span class="hljs-keyword">using</span> libpng 1.6.43<br>Compiled with zlib <span class="hljs-number">1.3</span>.<span class="hljs-number">1</span>; <span class="hljs-keyword">using</span> zlib 1.3.1<br>Compiled with xpdf version <span class="hljs-number">4.04</span><br><br>(base) <span class="hljs-built_in">PS</span> C:\&gt; xelatex <span class="hljs-literal">-version</span><br>XeTeX <span class="hljs-number">3.141592653</span><span class="hljs-literal">-2</span>.<span class="hljs-number">6</span><span class="hljs-literal">-0</span>.<span class="hljs-number">999996</span> (TeX Live <span class="hljs-number">2024</span>)<br>kpathsea version <span class="hljs-number">6.4</span>.<span class="hljs-number">0</span><br>Copyright <span class="hljs-number">2024</span> SIL International, Jonathan Kew and Khaled Hosny.<br>There is NO warranty.  Redistribution of this software is<br>covered by the terms of both the XeTeX copyright and<br>the Lesser GNU General Public License.<br><span class="hljs-keyword">For</span> more information about these matters, see the file<br>named COPYING and the XeTeX source.<br>Primary author of XeTeX: Jonathan Kew.<br>Compiled with ICU version <span class="hljs-number">74.2</span>; <span class="hljs-keyword">using</span> 74.2<br>Compiled with zlib version <span class="hljs-number">1.3</span>.<span class="hljs-number">1</span>; <span class="hljs-keyword">using</span> 1.3.1<br>Compiled with FreeType2 version <span class="hljs-number">2.13</span>.<span class="hljs-number">2</span>; <span class="hljs-keyword">using</span> 2.13.2<br>Compiled with Graphite2 version <span class="hljs-number">1.3</span>.<span class="hljs-number">14</span>; <span class="hljs-keyword">using</span> 1.3.14<br>Compiled with HarfBuzz version <span class="hljs-number">8.3</span>.<span class="hljs-number">0</span>; <span class="hljs-keyword">using</span> 8.3.0<br>Compiled with libpng version <span class="hljs-number">1.6</span>.<span class="hljs-number">43</span>; <span class="hljs-keyword">using</span> 1.6.43<br>Compiled with pplib version v2.<span class="hljs-number">2</span><br>Compiled with fontconfig version <span class="hljs-number">2.15</span>.<span class="hljs-number">0</span>; <span class="hljs-keyword">using</span> 2.15.0<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="编译环境">编译环境</h2><p>我在本地编译的环境：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs powershell">(base) <span class="hljs-built_in">PS</span> C:\&gt; tex <span class="hljs-literal">-version</span><br>TeX <span class="hljs-number">3.141592653</span> (TeX Live <span class="hljs-number">2024</span>)<br>kpathsea version <span class="hljs-number">6.4</span>.<span class="hljs-number">0</span><br>Copyright <span class="hljs-number">2024</span> D.E. Knuth.<br>There is NO warranty.  Redistribution of this software is<br>covered by the terms of both the TeX copyright and<br>the Lesser GNU General Public License.<br><span class="hljs-keyword">For</span> more information about these matters, see the file<br>named COPYING and the TeX source.<br>Primary author of TeX: D.E. Knuth.<br><br>(base) <span class="hljs-built_in">PS</span> C:\&gt; latex <span class="hljs-literal">-version</span><br>pdfTeX <span class="hljs-number">3.141592653</span><span class="hljs-literal">-2</span>.<span class="hljs-number">6</span><span class="hljs-literal">-1</span>.<span class="hljs-number">40.26</span> (TeX Live <span class="hljs-number">2024</span>)<br>kpathsea version <span class="hljs-number">6.4</span>.<span class="hljs-number">0</span><br>Copyright <span class="hljs-number">2024</span> Han The Thanh (pdfTeX) et al.<br>There is NO warranty.  Redistribution of this software is<br>covered by the terms of both the pdfTeX copyright and<br>the Lesser GNU General Public License.<br><span class="hljs-keyword">For</span> more information about these matters, see the file<br>named COPYING and the pdfTeX source.<br>Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.<br>Compiled with libpng <span class="hljs-number">1.6</span>.<span class="hljs-number">43</span>; <span class="hljs-keyword">using</span> libpng 1.6.43<br>Compiled with zlib <span class="hljs-number">1.3</span>.<span class="hljs-number">1</span>; <span class="hljs-keyword">using</span> zlib 1.3.1<br>Compiled with xpdf version <span class="hljs-number">4.04</span><br><br>(base) <span class="hljs-built_in">PS</span> C:\&gt; xelatex <span class="hljs-literal">-version</span><br>XeTeX <span class="hljs-number">3.141592653</span><span class="hljs-literal">-2</span>.<span class="hljs-number">6</span><span class="hljs-literal">-0</span>.<span class="hljs-number">999996</span> (TeX Live <span class="hljs-number">2024</span>)<br>kpathsea version <span class="hljs-number">6.4</span>.<span class="hljs-number">0</span><br>Copyright <span class="hljs-number">2024</span> SIL International, Jonathan Kew and Khaled Hosny.<br>There is NO warranty.  Redistribution of this software is<br>covered by the terms of both the XeTeX copyright and<br>the Lesser GNU General Public License.<br><span class="hljs-keyword">For</span> more information about these matters, see the file<br>named COPYING and the XeTeX source.<br>Primary author of XeTeX: Jonathan Kew.<br>Compiled with ICU version <span class="hljs-number">74.2</span>; <span class="hljs-keyword">using</span> 74.2<br>Compiled with zlib version <span class="hljs-number">1.3</span>.<span class="hljs-number">1</span>; <span class="hljs-keyword">using</span> 1.3.1<br>Compiled with FreeType2 version <span class="hljs-number">2.13</span>.<span class="hljs-number">2</span>; <span class="hljs-keyword">using</span> 2.13.2<br>Compiled with Graphite2 version <span class="hljs-number">1.3</span>.<span class="hljs-number">14</span>; <span class="hljs-keyword">using</span> 1.3.14<br>Compiled with HarfBuzz version <span class="hljs-number">8.3</span>.<span class="hljs-number">0</span>; <span class="hljs-keyword">using</span> 8.3.0<br>Compiled with libpng version <span class="hljs-number">1.6</span>.<span class="hljs-number">43</span>; <span class="hljs-keyword">using</span> 1.6.43<br>Compiled with pplib version v2.<span class="hljs-number">2</span><br>Compiled with fontconfig version <span class="hljs-number">2.15</span>.<span class="hljs-number">0</span>; <span class="hljs-keyword">using</span> 2.15.0<br></code></pre></td></tr></table></figure><h2 id="参考文档">参考文档</h2><p>对于特定的包，可以通过命令行查看相应的包说明，比如<code>amsthm</code> 包可以通过下面的命令在本地的 PDF 阅读器打开：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">texdoc amsthm<br></code></pre></td></tr></table></figure></p><p>以下是我在编写模板时参考的一些文档或者链接：</p><ul><li>官方网站，提供了一些文档的链接：<ahref="https://www.latex-project.org/help/documentation/">LaTeXDocumentation</a></li><li>最基本的 Package, Class 包文档（<code>texdoc clsguide</code>）：<ahref="https://www.latex-project.org/help/documentation/clsguide.pdf">LaTeXfor package and class authors current version</a></li><li>文档编写的一些相关包的介绍：<ahref="https://zhuanlan.zhihu.com/p/19705200">如何写一个package或者class- 知乎</a></li></ul>]]></content>
     
     
     <categories>
@@ -739,11 +739,11 @@
     
     <tags>
       
-      <tag>GUI</tag>
-      
       <tag>Python</tag>
       
       <tag>Tkinter</tag>
+      
+      <tag>GUI</tag>
       
     </tags>
     
@@ -809,9 +809,9 @@
       
       <tag>Sorting</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -1297,11 +1297,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Counting</tag>
       
       <tag>Greedy</tag>
       
@@ -1336,9 +1336,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1555,9 +1555,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1588,9 +1588,9 @@
       
       <tag>Math</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Linked List</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Number Theory</tag>
       
@@ -1834,9 +1834,9 @@
       
       <tag>Simulation</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2443,9 +2443,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>String</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -3452,22 +3452,22 @@
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<p><img src="/imgs/about/banner.jpg" /></p><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『梦想是像自由的鸟一样去旅行！』</span></p><h2 id="关于我">关于我</h2><p>目前南方某高校大四在读，对计算机科学、算法和运筹优化等方向感兴趣。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系，建议通过邮件与我取得联系。</p><p>喜欢设计简洁、优雅、轻便小巧的东西（比如：Logitech MX Anywhere 3 和Vim/Neovim）。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（뉴진스）、Adele、孙燕姿的歌，喜欢的曲风就比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……</p><p><img src="/imgs/about/gloria.jpg" /></p><h2 id="正在做计划做的事">正在做/计划做的事</h2><ul><li>刷算法题，请看 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a> 进度</li><li>参与开源项目，详情见 <ahref="https://github.com/chen-huaneng">GitHub</a> 仓库</li><li>持续更新<a href="https://chen-huaneng.github.io/">博客</a>和<ahref="https://www.zhihu.com/people/yun-tun-5-10">知乎</a></li><li>读文献</li><li>学习机器学习和 C++</li><li>准备毕业论文</li><li>旅游</li><li>……</li></ul><h2 id="时光胶囊">时光胶囊</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/4.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/5.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/7.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/8.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/9.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/10.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/11.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/12.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/13.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/14.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/15.jpg" /></div></div></div><h2 id="未完待续">未完待续……</h2><p>如果你对如何搭建这个博客感兴趣，可以看看我写的这篇<ahref="https://chen-huaneng.github.io/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/">简短的介绍</a>。</p><p><img src="/imgs/about/continue.jpg" /></p><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会继续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p><hr /><p align="center">Updated on <time datetime="2024-10-30T22:03:00">October 30, 2024 at22:03 PM</time></p>]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[<p><img src="/imgs/about/banner.jpg" /></p><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『梦想是像自由的鸟一样去旅行！』</span></p><h2 id="关于我">关于我</h2><p>目前南方某高校大四在读，对计算机科学、算法和运筹优化等方向感兴趣。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系，建议通过邮件与我取得联系。</p><p>喜欢设计简洁、优雅、轻便小巧的东西（比如：Logitech MX Anywhere 3 和Vim/Neovim）。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田りら／いくた りら ）、NewJeans（뉴진스）、Adele、孙燕姿的歌，喜欢的曲风就比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……</p><p><img src="/imgs/about/gloria.jpg" /></p><h2 id="正在做计划做的事">正在做/计划做的事</h2><ul><li>刷算法题，请看 <ahref="https://leetcode.cn/u/abel_chen/">LeetCode</a> 进度</li><li>参与开源项目，详情见 <ahref="https://github.com/chen-huaneng">GitHub</a> 仓库</li><li>持续更新<a href="https://chen-huaneng.github.io/">博客</a>和<ahref="https://www.zhihu.com/people/yun-tun-5-10">知乎</a></li><li>读文献</li><li>学习机器学习和 C++</li><li>准备毕业论文</li><li>旅游</li><li>……</li></ul><h2 id="时光胶囊">时光胶囊</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/4.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/5.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/7.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/8.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/9.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/10.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/11.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/about/12.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/13.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/14.jpg" /></div><div class="group-image-wrap"><img src="/imgs/about/15.jpg" /></div></div></div><h2 id="未完待续">未完待续……</h2><p>如果你对如何搭建这个博客感兴趣，可以看看我写的这篇<ahref="https://chen-huaneng.github.io/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/">简短的介绍</a>。</p><p><img src="/imgs/about/continue.jpg" /></p><p align="center"><spanstyle="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『💓对感兴趣的东西会继续探索的！😉<bf>所以要持续关注我的博客鸭！</bf>』</span></p><hr /><p align="center">Updated on <time datetime="2024-10-30T22:03:00">October 30, 2024 at22:03 PM</time></p>]]></content>
     
   </entry>
   
