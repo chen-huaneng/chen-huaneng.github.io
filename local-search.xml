@@ -115,9 +115,9 @@
     
     <tags>
       
-      <tag>Tool</tag>
-      
       <tag>Website</tag>
+      
+      <tag>Tool</tag>
       
     </tags>
     
@@ -211,7 +211,7 @@
     <link href="/2024/10/29/2024-10-29-2024-10-29-zotero/"/>
     <url>/2024/10/29/2024-10-29-2024-10-29-zotero/</url>
     
-    <content type="html"><![CDATA[<h2 id="zotero-是什么">Zotero 是什么</h2><p>简单来说，Zotero 就是一款免费、可拓展的 PDF（主要是学术文献）管理工具。更多的介绍在网上有很多，可以看看<ahref="https://www.zotero.org/">官网的介绍</a>。</p><blockquote><p>注意甄别网上的教程，因为 Zotero 更新到 Zotero 7之后增加了很多功能和特性，有很多插件已经不再维护，很多教程也已经过期了。</p></blockquote><h2 id="如何安装">如何安装</h2><p>使用 Scoop 安装只需要一行代码： <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scoop install extras/zotero<br></code></pre></td></tr></table></figure></p><p>如果你不知道什么是 Scoop <ahref="https://chen-huaneng.github.io/2024/01/04/2024-1-4-2024-01-04-Scoop/">请点我</a>。</p><p>其他安装方法请自行搜索。</p><h2 id="如何使用">如何使用</h2><ul><li><ahref="https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&amp;mid=2650476690&amp;idx=2&amp;sn=a6fabd4a5f6a985fb07627a76024c697&amp;chksm=83d00d54b4a784426a54bfe2bfe3935d22ee2822b46b68573540024fdfac19f69ac5f81c1f36&amp;scene=178&amp;cur_album_id=1319074508795641857#rd">Webof Science 手动导出文献到 Zotero，简单又高效！ (qq.com)</a> -自动导出出问题的时候参考</li><li><ahref="https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&amp;mid=2650476977&amp;idx=1&amp;sn=9e9991fa02c8fc532e69d65b264136b6&amp;chksm=83d00c77b4a785614277926dc82e419d44bc443a50846725d13225fbd647e86161934af41a2e&amp;scene=178&amp;cur_album_id=1319074508795641857#rd">Zotero7 重命名，如何将 “等” 改为 “et al.”？ (qq.com)</a> - 如题</li></ul><h2 id="插件介绍">插件介绍</h2><blockquote><p>提醒：切勿本末倒置，这一切都是为了更好地阅读文献而不是强行将一个软件加入你的工作流中，建议先从尝试使用Zotero 开始，等遇到需求之后再去安装插件，而不是一开始就捣鼓插件。</p></blockquote><p><strong>比较推荐的社区</strong>：</p><ul><li><a href="https://www.zotero.org/support/plugins">plugins | ZoteroDocumentation</a> - 官方的插件列表</li><li><a href="https://zotero-chinese.com/plugins/">Zotero 插件商店 |Zotero 中文社区 (zotero-chinese.com)</a> - 中文社区，但是非官方</li></ul><p><strong>第三方博客</strong>：</p><ul><li><ahref="https://zhuanlan.zhihu.com/p/630691757">Zotero！还有多少惊喜我不知道！- 知乎 (zhihu.com)</a> - 可以参考插件推荐列表，注意是否支持最新版的Zotero</li><li><a href="https://zhuanlan.zhihu.com/p/681536174">Zotero 7使用入门教程：安装与配置 - 知乎 (zhihu.com)</a> -整体还是比较清晰的，可以看看插件推荐</li><li><ahref="https://www.zhihu.com/question/402589277/answer/3196530555">有哪些好用的zotero插件?- 知乎 (zhihu.com)</a> - 根据插件列表查看是否需要即可，文章比较水</li><li><ahref="https://zhuanlan.zhihu.com/p/647756683">Zotero安装教程+插件安装（获取SCI-Hub和知网数据）+坚果云同步配置- 知乎 (zhihu.com)</a> - 同样是插件列表参考一下即可</li><li><a href="https://zhuanlan.zhihu.com/p/707668416">适配 Zotero7，最新40个兼容插件合集（2024年7月8日更新） - 知乎 (zhihu.com)</a> -快速浏览插件，按需自取部分即可</li><li><ahref="https://www.zhihu.com/question/26857521/answer/2662236762">如何高效管理文献？- 知乎 (zhihu.com)</a> - 毕导写的回答，很有趣，虽然可能有点过时了</li></ul><h3 id="我使用的插件介绍">我使用的插件介绍</h3><ul><li><a href="https://www.zotero.org/download/">Zotero | Your personalresearch assistant</a> - Edge浏览器插件，官方开发，用来一键导入文献</li><li><ahref="https://github.com/windingwind/zotero-pdf-translate">windingwind/zotero-pdf-translate:Translate PDF, EPub, webpage, metadata, annotations, notes to the targetlanguage. Support 20+ translate services. (github.com)</a> -翻译插件</li><li><a href="https://github.com/syt2/zotero-scipdf">syt2/zotero-scipdf:Download PDF from Sci-Hub automatically For Zotero7 (github.com)</a> -用来下载 PDF，向 Sci-hub 学术女神致敬</li><li><a href="https://github.com/l0o0/jasminum">l0o0/jasminum: A Zoteroadd-on to retrive CNKI meta data. 一个简单的Zotero插件，用于识别中文元数据 (github.com)</a> -知名的茉莉花插件，用于支持中文文献元数据</li><li><ahref="https://github.com/ChenglongMa/zoplicate?tab=readme-ov-file#readme">ChenglongMa/zoplicate:A plugin that does one thing only: Detect and manage duplicate items inZotero. (github.com)</a> -管理（批量合并、删除、手动标记非重复）重复的条目</li><li><ahref="https://github.com/volatile-static/Chartero">volatile-static/Chartero:Chart in Zotero (github.com)</a> -统计阅读时长、查看文献中的所有图片快速导航</li><li><ahref="https://github.com/MuiseDestiny/zotero-figure?tab=readme-ov-file#readme">MuiseDestiny/zotero-figure:一个基于 PDFFigure2 的 PDF 图表解析插件 (github.com)</a> -更好的图片体验（单击复制、双击独立窗口预览……）</li><li><ahref="https://github.com/windingwind/zotero-better-notes#readme">windingwind/zotero-better-notes:Everything about note management. All in Zotero. (github.com)</a> -更好的笔记、笔记管理</li><li><ahref="https://github.com/MuiseDestiny/zotero-gpt?tab=readme-ov-file">MuiseDestiny/zotero-gpt:GPT Meet Zotero. (github.com)</a> - 结合GPT<ul><li><ahref="https://github.com/chatanywhere/GPT_API_free?tab=readme-ov-file#免费使用">chatanywhere/GPT_API_free:Free ChatGPT API Key，免费ChatGPT API，支持GPT4API（免费），ChatGPT国内可用免费转发API，直连无需代理。可以搭配ChatBox等软件/插件使用，极大降低接口使用成本。国内即可无限制畅快聊天。(github.com)</a> - 免费 ChatGPT API</li><li><ahref="https://www.bilibili.com/video/BV17N4y1o7vx/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">ZoteroGPT - 使用教程，配置免费密钥！！！_哔哩哔哩_bilibili</a> - 视频教程</li><li><ahref="https://www.bilibili.com/video/BV1zBpUeDEzM/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">【Zotero7插件】AwesomeGPT_哔哩哔哩_bilibili</a> - 视频教程</li></ul></li><li><ahref="https://github.com/MuiseDestiny/zotero-reference#readme">MuiseDestiny/zotero-reference:PDF references add-on for Zotero. (github.com)</a> -增强参考文献的查找</li><li><ahref="https://github.com/windingwind/zotero-actions-tags?tab=readme-ov-file">windingwind/zotero-actions-tags:Customize your Zotero workflow. (github.com)</a> - 标签管理</li><li><ahref="https://github.com/MuiseDestiny/zotero-style#readme">MuiseDestiny/zotero-style:Ethereal Style for Zotero (github.com)</a> -显示文献的影响因子、分区、文献阅读时间、快速标签设置等等内容，上手难度稍大<ul><li><ahref="https://zotero-chinese.github.io/user-guide/plugins/style.html">EtherealStyle for Zotero | Zotero 中文社区 (zotero-chinese.github.io)</a> -比较好的参考文档</li></ul></li><li><ahref="https://github.com/retorquere/zotero-better-bibtex?tab=readme-ov-file">retorquere/zotero-better-bibtex:Make Zotero effective for us LaTeX holdouts</a> - 更好地导出参考文献用于<span class="math inline">\(\LaTeX\)</span></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="zotero-是什么">Zotero 是什么</h2><p>简单来说，Zotero 就是一款免费、可拓展的 PDF（主要是学术文献）管理工具。更多的介绍在网上有很多，可以看看<ahref="https://www.zotero.org/">官网的介绍</a>。</p><blockquote><p>注意甄别网上的教程，因为 Zotero 更新到 Zotero 7之后增加了很多功能和特性，有很多插件已经不再维护，很多教程也已经过期了。</p></blockquote><h2 id="如何安装">如何安装</h2><p>使用 Scoop 安装只需要一行代码： <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scoop install extras/zotero<br></code></pre></td></tr></table></figure></p><p>如果你不知道什么是 Scoop <ahref="https://chen-huaneng.github.io/2024/01/04/2024-1-4-2024-01-04-Scoop/">请点我</a>。</p><p>其他安装方法请自行搜索。</p><h2 id="如何使用">如何使用</h2><ul><li><ahref="https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&amp;mid=2650476690&amp;idx=2&amp;sn=a6fabd4a5f6a985fb07627a76024c697&amp;chksm=83d00d54b4a784426a54bfe2bfe3935d22ee2822b46b68573540024fdfac19f69ac5f81c1f36&amp;scene=178&amp;cur_album_id=1319074508795641857#rd">Webof Science 手动导出文献到 Zotero，简单又高效！ (qq.com)</a> -自动导出出问题的时候参考</li><li><ahref="https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&amp;mid=2650476977&amp;idx=1&amp;sn=9e9991fa02c8fc532e69d65b264136b6&amp;chksm=83d00c77b4a785614277926dc82e419d44bc443a50846725d13225fbd647e86161934af41a2e&amp;scene=178&amp;cur_album_id=1319074508795641857#rd">Zotero7 重命名，如何将 “等” 改为 “et al.”？ (qq.com)</a> - 如题</li></ul><h3id="如何移动文献而不是复制文献到另一个分类">如何移动文献而不是复制文献到另一个分类</h3><p>把要移动的文献在按住 <code>Shift</code>的情况下拖拽到相应的分类中。</p><h2 id="插件介绍">插件介绍</h2><blockquote><p>提醒：切勿本末倒置，这一切都是为了更好地阅读文献而不是强行将一个软件加入你的工作流中，建议先从尝试使用Zotero 开始，等遇到需求之后再去安装插件，而不是一开始就捣鼓插件。</p></blockquote><p><strong>比较推荐的社区</strong>：</p><ul><li><a href="https://www.zotero.org/support/plugins">plugins | ZoteroDocumentation</a> - 官方的插件列表</li><li><a href="https://zotero-chinese.com/plugins/">Zotero 插件商店 |Zotero 中文社区 (zotero-chinese.com)</a> - 中文社区，但是非官方</li></ul><p><strong>第三方博客</strong>：</p><ul><li><ahref="https://zhuanlan.zhihu.com/p/630691757">Zotero！还有多少惊喜我不知道！- 知乎 (zhihu.com)</a> - 可以参考插件推荐列表，注意是否支持最新版的Zotero</li><li><a href="https://zhuanlan.zhihu.com/p/681536174">Zotero 7使用入门教程：安装与配置 - 知乎 (zhihu.com)</a> -整体还是比较清晰的，可以看看插件推荐</li><li><ahref="https://www.zhihu.com/question/402589277/answer/3196530555">有哪些好用的zotero插件?- 知乎 (zhihu.com)</a> - 根据插件列表查看是否需要即可，文章比较水</li><li><ahref="https://zhuanlan.zhihu.com/p/647756683">Zotero安装教程+插件安装（获取SCI-Hub和知网数据）+坚果云同步配置- 知乎 (zhihu.com)</a> - 同样是插件列表参考一下即可</li><li><a href="https://zhuanlan.zhihu.com/p/707668416">适配 Zotero7，最新40个兼容插件合集（2024年7月8日更新） - 知乎 (zhihu.com)</a> -快速浏览插件，按需自取部分即可</li><li><ahref="https://www.zhihu.com/question/26857521/answer/2662236762">如何高效管理文献？- 知乎 (zhihu.com)</a> - 毕导写的回答，很有趣，虽然可能有点过时了</li></ul><h3 id="我使用的插件介绍">我使用的插件介绍</h3><ul><li><a href="https://www.zotero.org/download/">Zotero | Your personalresearch assistant</a> - Edge浏览器插件，官方开发，用来一键导入文献</li><li><ahref="https://github.com/windingwind/zotero-pdf-translate">windingwind/zotero-pdf-translate:Translate PDF, EPub, webpage, metadata, annotations, notes to the targetlanguage. Support 20+ translate services. (github.com)</a> -翻译插件</li><li><a href="https://github.com/syt2/zotero-scipdf">syt2/zotero-scipdf:Download PDF from Sci-Hub automatically For Zotero7 (github.com)</a> -用来下载 PDF，向 Sci-hub 学术女神致敬</li><li><a href="https://github.com/l0o0/jasminum">l0o0/jasminum: A Zoteroadd-on to retrive CNKI meta data. 一个简单的Zotero插件，用于识别中文元数据 (github.com)</a> -知名的茉莉花插件，用于支持中文文献元数据</li><li><ahref="https://github.com/ChenglongMa/zoplicate?tab=readme-ov-file#readme">ChenglongMa/zoplicate:A plugin that does one thing only: Detect and manage duplicate items inZotero. (github.com)</a> -管理（批量合并、删除、手动标记非重复）重复的条目</li><li><ahref="https://github.com/volatile-static/Chartero">volatile-static/Chartero:Chart in Zotero (github.com)</a> -统计阅读时长、查看文献中的所有图片快速导航</li><li><ahref="https://github.com/MuiseDestiny/zotero-figure?tab=readme-ov-file#readme">MuiseDestiny/zotero-figure:一个基于 PDFFigure2 的 PDF 图表解析插件 (github.com)</a> -更好的图片体验（单击复制、双击独立窗口预览……）</li><li><ahref="https://github.com/windingwind/zotero-better-notes#readme">windingwind/zotero-better-notes:Everything about note management. All in Zotero. (github.com)</a> -更好的笔记、笔记管理</li><li><ahref="https://github.com/MuiseDestiny/zotero-gpt?tab=readme-ov-file">MuiseDestiny/zotero-gpt:GPT Meet Zotero. (github.com)</a> - 结合GPT<ul><li><ahref="https://github.com/chatanywhere/GPT_API_free?tab=readme-ov-file#免费使用">chatanywhere/GPT_API_free:Free ChatGPT API Key，免费ChatGPT API，支持GPT4API（免费），ChatGPT国内可用免费转发API，直连无需代理。可以搭配ChatBox等软件/插件使用，极大降低接口使用成本。国内即可无限制畅快聊天。(github.com)</a> - 免费 ChatGPT API</li><li><ahref="https://www.bilibili.com/video/BV17N4y1o7vx/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">ZoteroGPT - 使用教程，配置免费密钥！！！_哔哩哔哩_bilibili</a> - 视频教程</li><li><ahref="https://www.bilibili.com/video/BV1zBpUeDEzM/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">【Zotero7插件】AwesomeGPT_哔哩哔哩_bilibili</a> - 视频教程</li></ul></li><li><ahref="https://github.com/MuiseDestiny/zotero-reference#readme">MuiseDestiny/zotero-reference:PDF references add-on for Zotero. (github.com)</a> -增强参考文献的查找</li><li><ahref="https://github.com/windingwind/zotero-actions-tags?tab=readme-ov-file">windingwind/zotero-actions-tags:Customize your Zotero workflow. (github.com)</a> - 标签管理</li><li><ahref="https://github.com/MuiseDestiny/zotero-style#readme">MuiseDestiny/zotero-style:Ethereal Style for Zotero (github.com)</a> -显示文献的影响因子、分区、文献阅读时间、快速标签设置等等内容，上手难度稍大<ul><li><ahref="https://zotero-chinese.github.io/user-guide/plugins/style.html">EtherealStyle for Zotero | Zotero 中文社区 (zotero-chinese.github.io)</a> -比较好的参考文档</li></ul></li><li><ahref="https://github.com/retorquere/zotero-better-bibtex?tab=readme-ov-file">retorquere/zotero-better-bibtex:Make Zotero effective for us LaTeX holdouts</a> - 更好地导出参考文献用于<span class="math inline">\(\LaTeX\)</span></li></ul>]]></content>
     
     
     <categories>
@@ -550,9 +550,9 @@
       
       <tag>Math</tag>
       
-      <tag>CS Course</tag>
-      
       <tag>Machine Learning</tag>
+      
+      <tag>CS Course</tag>
       
     </tags>
     
@@ -803,9 +803,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -838,11 +838,11 @@
       
       <tag>Array</tag>
       
+      <tag>Sorting</tag>
+      
       <tag>Two Pointers</tag>
       
       <tag>Binary Search</tag>
-      
-      <tag>Sorting</tag>
       
     </tags>
     
@@ -871,9 +871,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1026,9 +1026,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -1146,9 +1146,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1177,9 +1177,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -1328,13 +1328,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>String</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1493,9 +1493,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1553,9 +1553,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1617,11 +1617,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Math</tag>
+      
       <tag>Simulation</tag>
       
       <tag>Linked List</tag>
-      
-      <tag>Math</tag>
       
       <tag>Number Theory</tag>
       
@@ -1652,9 +1652,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1712,9 +1712,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1743,9 +1743,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Matrix</tag>
       
@@ -1896,9 +1896,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Prefix Sum</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Prefix Sum</tag>
       
     </tags>
     
@@ -1985,15 +1985,15 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -2022,11 +2022,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
+      <tag>Math</tag>
       
       <tag>Simulation</tag>
       
-      <tag>Math</tag>
+      <tag>Array</tag>
       
     </tags>
     
@@ -2055,9 +2055,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -2183,9 +2183,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -2278,9 +2278,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Bit Manipulation</tag>
       
@@ -2342,11 +2342,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>String</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -2406,9 +2406,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -2441,9 +2441,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2505,9 +2505,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Array</tag>
       
       <tag>Sorting</tag>
       
@@ -2538,9 +2538,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2571,9 +2571,9 @@
       
       <tag>Array</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -2606,9 +2606,9 @@
       
       <tag>Hash Table</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2637,9 +2637,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2701,9 +2701,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Linked List</tag>
       
     </tags>
     
@@ -2732,11 +2732,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
+      <tag>Math</tag>
       
       <tag>Simulation</tag>
       
-      <tag>Math</tag>
+      <tag>Array</tag>
       
     </tags>
     
@@ -2858,9 +2858,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2893,9 +2893,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2924,9 +2924,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -2953,11 +2953,11 @@
     
     <tags>
       
-      <tag>Website</tag>
-      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
+      
+      <tag>Website</tag>
       
     </tags>
     
@@ -2986,9 +2986,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -3054,9 +3054,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3087,9 +3087,9 @@
       
       <tag>Array</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -3118,9 +3118,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3211,9 +3211,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3242,9 +3242,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -3273,9 +3273,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -3306,9 +3306,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -3372,9 +3372,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Array</tag>
       
       <tag>Hash Table</tag>
       
@@ -3432,13 +3432,13 @@
     
     <tags>
       
-      <tag>Tool</tag>
-      
-      <tag>Website</tag>
-      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
+      
+      <tag>Website</tag>
+      
+      <tag>Tool</tag>
       
     </tags>
     
@@ -3498,18 +3498,18 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>Images</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="markdown-body"><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/2.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/3.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/4.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/5.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/6.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/7.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/8.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/9.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/10.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/11.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/12.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/13.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/14.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/15.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/16.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/17.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/18.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/19.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/21.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/22.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/23.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/24.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/25.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/26.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/27.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/28.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/29.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/30.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/31.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/32.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/33.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/34.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/35.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/36.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/37.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/38.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/39.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/40.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/41.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/42.jpg" /></div></div></div></div>]]></content>
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
   
@@ -3527,11 +3527,11 @@
   
   
   <entry>
-    <title></title>
+    <title>Images</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="markdown-body"><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/2.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/3.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/4.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/5.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/6.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/7.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/8.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/9.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/10.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/11.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/12.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/13.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/14.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/15.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/16.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/17.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/18.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/19.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/21.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/22.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/23.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/24.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/25.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/26.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/27.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/28.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/29.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/30.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/31.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/32.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/33.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/34.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/35.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/36.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/37.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/38.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/39.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/40.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/41.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/42.jpg" /></div></div></div></div>]]></content>
     
   </entry>
   
