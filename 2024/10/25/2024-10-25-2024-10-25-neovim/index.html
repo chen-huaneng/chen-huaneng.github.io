@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/25/banner.png">
 <meta property="article:published_time" content="2024-10-25T07:47:46.000Z">
-<meta property="article:modified_time" content="2024-12-09T11:28:59.031Z">
+<meta property="article:modified_time" content="2025-02-27T07:34:53.995Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Tool">
 <meta property="article:tag" content="Vim">
@@ -272,7 +272,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 7.5k 
+          文章字数: 7.7k 
         
       </span>
     
@@ -284,7 +284,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 19 分钟
+          阅读全文大概需要 20 分钟
         
       </span>
     
@@ -335,7 +335,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-12-09T19:28:59+08:00
+                    本文最后更新于：2025-02-27T15:34:53+08:00
                   
                   
 
@@ -719,10 +719,27 @@ target="_blank" rel="noopener" href="https://github.com/benbrastmckie/.config">�
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs lua"><span class="hljs-comment">-- BOOTSTRAP LAZY</span><br><span class="hljs-keyword">local</span> lazypath = vim.fn.stdpath(<span class="hljs-string">&quot;data&quot;</span>) .. <span class="hljs-string">&quot;/lazy/lazy.nvim&quot;</span><br><span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> vim.loop.fs_stat(lazypath) <span class="hljs-keyword">then</span><br>  vim.fn.system(&#123;<br>    <span class="hljs-string">&quot;git&quot;</span>,<br>    <span class="hljs-string">&quot;clone&quot;</span>,<br>    <span class="hljs-string">&quot;--filter=blob:none&quot;</span>,<br>    <span class="hljs-string">&quot;https://github.com/folke/lazy.nvim.git&quot;</span>,<br>    <span class="hljs-string">&quot;--branch=stable&quot;</span>, <span class="hljs-comment">-- latest stable release</span><br>    lazypath,<br>  &#125;)<br><span class="hljs-keyword">end</span><br>vim.opt.rtp:prepend(lazypath)<br><br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;lazy&quot;</span>).setup(&#123;<br>  &#123; import = <span class="hljs-string">&quot;neotex.plugins&quot;</span> &#125;,    <span class="hljs-comment">-- main plugins directory</span><br>  &#123; import = <span class="hljs-string">&quot;neotex.plugins.lsp&quot;</span> &#125; <span class="hljs-comment">-- lsp plugins directory</span><br>&#125;, &#123;<br>  install = &#123;<br>    colorscheme = &#123; <span class="hljs-string">&quot;gruvbox&quot;</span> &#125;,<br>  &#125;,<br>  checker = &#123;<br>    enabled = <span class="hljs-literal">true</span>,<br>    notify = <span class="hljs-literal">false</span>,<br>  &#125;,<br>  change_detection = &#123;<br>    notify = <span class="hljs-literal">false</span>, <br>  &#125;,<br>  ui = &#123;<br>    icons = &#123;<br>      cmd = <span class="hljs-string">&quot;⌘&quot;</span>,<br>      <span class="hljs-built_in">config</span> = <span class="hljs-string">&quot;🛠&quot;</span>,<br>      event = <span class="hljs-string">&quot;📅&quot;</span>,<br>      ft = <span class="hljs-string">&quot;📂&quot;</span>,<br>      init = <span class="hljs-string">&quot;⚙&quot;</span>,<br>      keys = <span class="hljs-string">&quot;🗝&quot;</span>,<br>      plugin = <span class="hljs-string">&quot;🔌&quot;</span>,<br>      runtime = <span class="hljs-string">&quot;💻&quot;</span>,<br>      <span class="hljs-built_in">require</span> = <span class="hljs-string">&quot;🌙&quot;</span>,<br>      source = <span class="hljs-string">&quot;📄&quot;</span>,<br>      start = <span class="hljs-string">&quot;🚀&quot;</span>,<br>      task = <span class="hljs-string">&quot;📌&quot;</span>,<br>      lazy = <span class="hljs-string">&quot;💤 &quot;</span>,<br>    &#125;,<br>  &#125;,<br>&#125;)<br></code></pre></td></tr></table></figure>
 <p>遇到的一些问题及其解答：</p>
 <ul>
-<li>快捷键如何映射正斜杠：使用 <code>_</code> 代替
+<li><p>快捷键如何映射正斜杠：使用 <code>_</code> 代替
 <code>/</code><sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span
 class="hint--top hint--rounded"
-aria-label="[key bindings - Is it possible to map control forward-slash with vim - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/26611/is-it-possible-to-map-control-forward-slash-with-vim)">[1]</span></a></sup>。</li>
+aria-label="[key bindings - Is it possible to map control forward-slash with vim - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/26611/is-it-possible-to-map-control-forward-slash-with-vim)">[1]</span></a></sup>。</p></li>
+<li><p>如何实现实时预览和正反向搜索：在 <code>Neovim</code> 中输入
+<code>:help vimtex</code> 找到和 <code>sumatraPDF</code>
+相关的章节，里面介绍了如何进行正反向搜索的设置，这里主要介绍如何解决在
+<code>xelatex</code> 编译下，实时预览时，<code>SumatraPDF</code>
+不会自动刷新PDF的问题，具体的操作和更加详细的细节可以参考<a
+target="_blank" rel="noopener" href="https://github.com/lervag/vimtex/issues/1410#issuecomment-506143020">XeLaTeX
+ans SumatraPDF live update · Issue #1410 · lervag/vimtex</a>。</p>
+<ul>
+<li><p>创建一个 <code>.latexmkrc</code> 文件，并将其放置在
+<code>C:\Users\My_Username\</code> 目录下。文件内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs .latexmkrc">$xelatex = &quot;xelatex -file-line-error -synctex=1 -interaction=nonstopmode -recorder %S&quot;<br></code></pre></td></tr></table></figure></li>
+<li><p>需要注意的是，虽然支持了 <code>xelatex</code>
+的正向实时预览的功能，但是可能会使得 <code>xelatex</code>
+编译的性能有所下降，如果不需要这个功能了就将
+<code>C:\Users\My_Username\</code> 目录下的 <code>.latexmkrc</code>
+文件删除。</p></li>
+</ul></li>
 </ul>
 <h4 id="相关插件介绍">相关插件介绍</h4>
 <ul>
@@ -967,7 +984,7 @@ Vim Stack Exchange</a>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年12月9日</div>
+          <div>2025年2月27日</div>
         </div>
       
       
