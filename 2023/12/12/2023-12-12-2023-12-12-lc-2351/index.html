@@ -34,8 +34,8 @@
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Hash Table">
-<meta property="article:tag" content="String">
 <meta property="article:tag" content="Counting">
+<meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/12/banner6.jpg">
   
@@ -273,7 +273,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 727 
+          文章字数: 751 
         
       </span>
     
@@ -347,16 +347,11 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/first-letter-to-appear-twice/description/">2351.
-第一个出现两次的字母</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个由小写英文字母组成的字符串 <code>s</code>
-，请你找出并返回第一个出现 <strong>两次</strong> 的字母。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/first-letter-to-appear-twice/description/">2351. 第一个出现两次的字母</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个由小写英文字母组成的字符串 <code>s</code> ，请你找出并返回第一个出现 <strong>两次</strong> 的字母。</p>
 <p><strong>注意：</strong></p>
 <ul>
-<li>如果 <code>a</code> 的 <strong>第二次</strong> 出现比 <code>b</code>
-的 <strong>第二次</strong> 出现在字符串中的位置更靠前，则认为字母
-<code>a</code> 在字母 <code>b</code> 之前出现两次。</li>
+<li>如果 <code>a</code> 的 <strong>第二次</strong> 出现比 <code>b</code> 的 <strong>第二次</strong> 出现在字符串中的位置更靠前，则认为字母 <code>a</code> 在字母 <code>b</code> 之前出现两次。</li>
 <li><code>s</code> 包含至少一个出现两次的字母。</li>
 </ul>
 <p><strong>示例 1：</strong></p>
@@ -374,38 +369,17 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/first-letter-t
 <p>最容易想到的方法就是用哈希表存储小写字母是否出现，如果出现第二次就返回该字母。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">char</span> <span class="hljs-title function_">repeatedCharacter</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">char</span>[] arr = s.toCharArray();<br>        <span class="hljs-type">boolean</span>[] cnt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[<span class="hljs-number">26</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> ch : arr) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> ch - <span class="hljs-number">97</span>; <span class="hljs-comment">// &#x27;a&#x27; 的ASCII码值为97</span><br>            <span class="hljs-keyword">if</span> (cnt[tmp]) &#123;<br>                <span class="hljs-keyword">return</span> ch;<br>            &#125;<br>            cnt[tmp] = <span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27; &#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为字符串
-<code>s</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，只使用了固定长度的 <code>cnt</code>
-来表示小写字母是否出现，使用 <code>arr</code>
-来存储转换之后的字符数组（也可以不转换，如果不转换空间复杂度为 <span
-class="math inline">\(O(1)\)</span>），其中 <code>N</code> 为字符串
-<code>s</code> 的长度。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为字符串 <code>s</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，只使用了固定长度的 <code>cnt</code> 来表示小写字母是否出现，使用 <code>arr</code> 来存储转换之后的字符数组（也可以不转换，如果不转换空间复杂度为 <span class="math inline">\(O(1)\)</span>），其中 <code>N</code> 为字符串 <code>s</code> 的长度。</p></li>
 </ul>
 <h3 id="方法二状态压缩">方法二：状态压缩</h3>
-<p><a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/first-letter-to-appear-twice/solutions/2039023/di-yi-ge-chu-xian-liang-ci-de-zi-mu-by-l-oqu1/"><span
-class="citation"
-data-cites="Source:题解来源">@Source:题解来源</span></a></p>
-<p>类似哈希表的思路，注意到字符集的大小为
-<code>26</code>，因此我们可以使用一个 <code>32</code> 位的二进制数
-<code>seen</code> 完美地存储哈希表。如果 <code>seen</code> 的第 <span
-class="math inline">\(i(0 \leq i &lt; 26)\)</span> 位是
-<code>1</code>，说明第 <code>i</code> 个小写字母已经出现过。</p>
-<p>具体地，我们对字符串 <code>s</code> 进行一次遍历。当遍历到字母
-<code>ch</code> 时，记它是第 <code>i</code> 个字母，<code>seen</code>
-的第 <span class="math inline">\(i(0 \leq i &lt; 26)\)</span> 位是
-<code>1</code>，我们返回 <code>ch</code> 作为答案即可；否则，我们将
-<code>seen</code> 的第 <code>i</code> 位置为 <code>1</code> 。</p>
+<p><span class="citation" data-cites="Source:题解来源">[@Source:题解来源]</span>(https://leetcode.cn/problems/first-letter-to-appear-twice/solutions/2039023/di-yi-ge-chu-xian-liang-ci-de-zi-mu-by-l-oqu1/)</p>
+<p>类似哈希表的思路，注意到字符集的大小为 <code>26</code>，因此我们可以使用一个 <code>32</code> 位的二进制数 <code>seen</code> 完美地存储哈希表。如果 <code>seen</code> 的第 <span class="math inline">\(i(0 \leq i &lt; 26)\)</span> 位是 <code>1</code>，说明第 <code>i</code> 个小写字母已经出现过。</p>
+<p>具体地，我们对字符串 <code>s</code> 进行一次遍历。当遍历到字母 <code>ch</code> 时，记它是第 <code>i</code> 个字母，<code>seen</code> 的第 <span class="math inline">\(i(0 \leq i &lt; 26)\)</span> 位是 <code>1</code>，我们返回 <code>ch</code> 作为答案即可；否则，我们将 <code>seen</code> 的第 <code>i</code> 位置为 <code>1</code> 。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">char</span> <span class="hljs-title function_">repeatedCharacter</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">seen</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 用一个整数的二进制位来模拟哈希表</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; s.length(); ++i) &#123;<br>            <span class="hljs-type">char</span> <span class="hljs-variable">ch</span> <span class="hljs-operator">=</span> s.charAt(i); <br>            <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> ch - <span class="hljs-string">&#x27;a&#x27;</span>;<br>            <span class="hljs-keyword">if</span> ((seen &amp; (<span class="hljs-number">1</span> &lt;&lt; x)) != <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 判断第 i 位是否为 1，为 1 说明已经出现过一次</span><br>                <span class="hljs-keyword">return</span> ch;<br>            &#125;<br>            seen |= (<span class="hljs-number">1</span> &lt;&lt; x); <span class="hljs-comment">// 将第 i 位置为 1</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27; &#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为字符串
-<code>s</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为字符串 <code>s</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/12/banner6.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -453,9 +427,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
       
-        <a href="/tags/String/" class="print-no-link">#String</a>
-      
         <a href="/tags/Counting/" class="print-no-link">#Counting</a>
+      
+        <a href="/tags/String/" class="print-no-link">#String</a>
       
     </div>
   

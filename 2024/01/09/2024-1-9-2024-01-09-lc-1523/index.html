@@ -345,11 +345,8 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-odd-numbers-in-an-interval-range/description/">1523.
-在区间范围内统计奇数数目</a> ，难度为<strong>简单</strong>。</p>
-<p>给你两个非负整数 <code>low</code> 和 <code>high</code> 。请你返回
-<code>low</code> 和 <code>high</code> 之间（包括二者）奇数的数目。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-odd-numbers-in-an-interval-range/description/">1523. 在区间范围内统计奇数数目</a> ，难度为<strong>简单</strong>。</p>
+<p>给你两个非负整数 <code>low</code> 和 <code>high</code> 。请你返回 <code>low</code> 和 <code>high</code> 之间（包括二者）奇数的数目。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：low = 3, high = 7<br>输出：3<br>解释：3 到 7 之间奇数数字为 [3,5,7] 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -360,43 +357,21 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-odd-numb
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一数学">方法一：数学</h3>
-<p>显然这是个数学问题，对 <code>low</code> 之后的奇数个数设为
-<code>x</code> ，接下来我们分奇偶进行讨论：</p>
+<p>显然这是个数学问题，对 <code>low</code> 之后的奇数个数设为 <code>x</code> ，接下来我们分奇偶进行讨论：</p>
 <ol type="1">
-<li>当 <code>low</code> 为奇数， <code>high</code> 为奇数时：<span
-class="math inline">\(low + 2x = high\)</span>，自然就有 <span
-class="math inline">\(x = \frac{high - low}{2}\)</span>，加上
-<code>low</code> ，奇数个数为 <span class="math inline">\(x +
-1\)</span>。</li>
-<li>当 <code>low</code> 为奇数， <code>high</code> 为偶数时：<span
-class="math inline">\(low + 2x = high - 1\)</span>，自然就有 <span
-class="math inline">\(x = \frac{high - low - 1}{2}\)</span>，加上
-<code>low</code> ，奇数个数为 <span class="math inline">\(x +
-1\)</span>。</li>
-<li>当 <code>low</code> 为偶数， <code>high</code> 为奇数时：<span
-class="math inline">\(low + 1 + 2x = high\)</span>，自然就有 <span
-class="math inline">\(x = \frac{high - low - 1}{2}\)</span>，加上
-<code>low + 1</code> ，奇数个数为 <span class="math inline">\(x +
-1\)</span>。</li>
-<li>当 <code>low</code> 为偶数， <code>high</code> 为偶数时： <span
-class="math inline">\(low + 1 + 2x = high - 1\)</span>，自然就有 <span
-class="math inline">\(x = \frac{high - low - 2}{2}\)</span>，加上
-<code>low + 1</code> 奇数个数为 <span class="math inline">\(x +
-1\)</span>。</li>
+<li>当 <code>low</code> 为奇数， <code>high</code> 为奇数时：<span class="math inline">\(low + 2x = high\)</span>，自然就有 <span class="math inline">\(x = \frac{high - low}{2}\)</span>，加上 <code>low</code> ，奇数个数为 <span class="math inline">\(x + 1\)</span>。</li>
+<li>当 <code>low</code> 为奇数， <code>high</code> 为偶数时：<span class="math inline">\(low + 2x = high - 1\)</span>，自然就有 <span class="math inline">\(x = \frac{high - low - 1}{2}\)</span>，加上 <code>low</code> ，奇数个数为 <span class="math inline">\(x + 1\)</span>。</li>
+<li>当 <code>low</code> 为偶数， <code>high</code> 为奇数时：<span class="math inline">\(low + 1 + 2x = high\)</span>，自然就有 <span class="math inline">\(x = \frac{high - low - 1}{2}\)</span>，加上 <code>low + 1</code> ，奇数个数为 <span class="math inline">\(x + 1\)</span>。</li>
+<li>当 <code>low</code> 为偶数， <code>high</code> 为偶数时： <span class="math inline">\(low + 1 + 2x = high - 1\)</span>，自然就有 <span class="math inline">\(x = \frac{high - low - 2}{2}\)</span>，加上 <code>low + 1</code> 奇数个数为 <span class="math inline">\(x + 1\)</span>。</li>
 </ol>
-<p>归纳上面的结果可以得到奇数的个数为 <span
-class="math inline">\(\frac{high - low - a}{2} + a\)</span>，其中
-<code>a</code> 为 <code>low</code> 和 <code>high</code>
-两个数中奇数的个数。</p>
+<p>归纳上面的结果可以得到奇数的个数为 <span class="math inline">\(\frac{high - low - a}{2} + a\)</span>，其中 <code>a</code> 为 <code>low</code> 和 <code>high</code> 两个数中奇数的个数。</p>
 <blockquote>
 <p>由于上面的除法保证了分母一定为偶数，所以不需要担心除法是否整除的问题。</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">countOdds</span><span class="hljs-params">(<span class="hljs-type">int</span> low, <span class="hljs-type">int</span> high)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> (low &amp; <span class="hljs-number">1</span>) + (high &amp; <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">return</span> ((high - low - res) &gt;&gt; <span class="hljs-number">1</span>) + res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/9/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

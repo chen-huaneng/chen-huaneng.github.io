@@ -346,19 +346,12 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/add-to-array-form-of-integer/description/">989.
-数组形式的整数加法 - 力扣（LeetCode）</a>
-，难度为<strong>简单</strong>。</p>
-<p>整数的 <strong>数组形式</strong> <code>num</code>
-是按照从左到右的顺序表示其数字的数组。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/add-to-array-form-of-integer/description/">989. 数组形式的整数加法 - 力扣（LeetCode）</a> ，难度为<strong>简单</strong>。</p>
+<p>整数的 <strong>数组形式</strong> <code>num</code> 是按照从左到右的顺序表示其数字的数组。</p>
 <ul>
-<li>例如，对于 <code>num = 1321</code> ，数组形式是
-<code>[1,3,2,1]</code> 。</li>
+<li>例如，对于 <code>num = 1321</code> ，数组形式是 <code>[1,3,2,1]</code> 。</li>
 </ul>
-<p>给定 <code>num</code> ，整数的 <strong>数组形式</strong> ，和整数
-<code>k</code> ，返回 <em>整数 <code>num + k</code> 的
-<strong>数组形式</strong></em> 。</p>
+<p>给定 <code>num</code> ，整数的 <strong>数组形式</strong> ，和整数 <code>k</code> ，返回 <em>整数 <code>num + k</code> 的 <strong>数组形式</strong></em> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：num = [<span class="hljs-number">1,2,0,0</span>], k = <span class="hljs-number">34</span><br>输出：[<span class="hljs-number">1,2,3,4</span>]<br>解释：<span class="hljs-number">1200</span> + <span class="hljs-number">34</span> = <span class="hljs-number">1234</span><br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -374,27 +367,18 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/add-to-array-f
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一逐位相加">方法一：逐位相加</h3>
-<p>根据要求进行逐位相加，如果结果大于 <code>10</code> 则进位，注意要考虑
-<code>k</code> 比 <code>num</code> 大的情况。</p>
+<p>根据要求进行逐位相加，如果结果大于 <code>10</code> 则进位，注意要考虑 <code>k</code> 比 <code>num</code> 大的情况。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title function_">addToArrayForm</span><span class="hljs-params">(<span class="hljs-type">int</span>[] num, <span class="hljs-type">int</span> k)</span> &#123;<br>        List&lt;Integer&gt; ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> num.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> num[i] + k % <span class="hljs-number">10</span>;<br>            k /= <span class="hljs-number">10</span>;<br>            <span class="hljs-keyword">if</span> (sum &gt; <span class="hljs-number">9</span>) &#123;<br>                ++k;<br>                sum -= <span class="hljs-number">10</span>;<br>            &#125;<br>            ans.addFirst(sum);<br>        &#125;<br>        <span class="hljs-keyword">while</span> (k &gt; <span class="hljs-number">0</span>) &#123;<br>            ans.addFirst(k % <span class="hljs-number">10</span>);<br>            k /= <span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(\max(n, \log k))\)</span>，其中 <code>n</code>
-为数组 <code>num</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(\max(n, \log k))\)</span>，其中 <code>n</code> 为数组 <code>num</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
-<h3 id="方法二将-k-表示为数的最低位">方法二：将 <code>k</code>
-表示为数的最低位</h3>
-<p>将 <code>k</code>
-作为最低位和数组的最后一位相加，然后将除以十的余数留下，除以十进位，最后将各位添加到返回的链表中。</p>
+<h3 id="方法二将-k-表示为数的最低位">方法二：将 <code>k</code> 表示为数的最低位</h3>
+<p>将 <code>k</code> 作为最低位和数组的最后一位相加，然后将除以十的余数留下，除以十进位，最后将各位添加到返回的链表中。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title function_">addToArrayForm</span><span class="hljs-params">(<span class="hljs-type">int</span>[] num, <span class="hljs-type">int</span> k)</span> &#123;<br>        List&lt;Integer&gt; ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> num.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span> || k &gt; <span class="hljs-number">0</span>; --i, k /= <span class="hljs-number">10</span>) &#123;<br>            <span class="hljs-keyword">if</span> (i &gt;= <span class="hljs-number">0</span>) &#123;<br>                k += num[i];<br>            &#125;<br>            ans.addFirst(k % <span class="hljs-number">10</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(\max(n, \log k))\)</span>，其中 <code>n</code>
-为数组 <code>num</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(\max(n, \log k))\)</span>，其中 <code>n</code> 为数组 <code>num</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/27/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

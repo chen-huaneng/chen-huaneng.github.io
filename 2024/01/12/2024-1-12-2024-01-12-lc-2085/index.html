@@ -35,8 +35,8 @@
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Array">
 <meta property="article:tag" content="Hash Table">
-<meta property="article:tag" content="String">
 <meta property="article:tag" content="Counting">
+<meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/12/banner.png">
   
@@ -348,12 +348,8 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-common-words-with-one-occurrence/description/">2085.
-统计出现过一次的公共字符串</a> ，难度为<strong>简单</strong>。</p>
-<p>给你两个字符串数组 <code>words1</code> 和 <code>words2</code>
-，请你返回在两个字符串数组中 <strong>都恰好出现一次</strong>
-的字符串的数目。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-common-words-with-one-occurrence/description/">2085. 统计出现过一次的公共字符串</a> ，难度为<strong>简单</strong>。</p>
+<p>给你两个字符串数组 <code>words1</code> 和 <code>words2</code> ，请你返回在两个字符串数组中 <strong>都恰好出现一次</strong> 的字符串的数目。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words1 = [&quot;leetcode&quot;,&quot;is&quot;,&quot;amazing&quot;,&quot;as&quot;,&quot;is&quot;], words2 = [&quot;amazing&quot;,&quot;leetcode&quot;,&quot;is&quot;]<br>输出：2<br>解释：<br><span class="hljs-bullet">-</span> &quot;leetcode&quot; 在两个数组中都恰好出现一次，计入答案。<br><span class="hljs-bullet">-</span> &quot;amazing&quot; 在两个数组中都恰好出现一次，计入答案。<br><span class="hljs-bullet">-</span> &quot;is&quot; 在两个数组中都出现过，但在 words1 中出现了 2 次，不计入答案。<br><span class="hljs-bullet">-</span> &quot;as&quot; 在 words1 中出现了一次，但是在 words2 中没有出现过，不计入答案。<br>所以，有 2 个字符串在两个数组中都恰好出现了一次。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -364,25 +360,15 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-common-w
 <ul>
 <li><code>1 &lt;= words1.length, words2.length &lt;= 1000</code></li>
 <li><code>1 &lt;= words1[i].length, words2[j].length &lt;= 30</code></li>
-<li><code>words1[i]</code> 和 <code>words2[j]</code>
-都只包含小写英文字母。</li>
+<li><code>words1[i]</code> 和 <code>words2[j]</code> 都只包含小写英文字母。</li>
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一哈希表">方法一：哈希表</h3>
-<p>第一次遍历用哈希表存储 <code>word1</code>
-中的字符串，第二次遍历，根据第一次遍历的结果来确定是否只出现了一次，如果只出现了一次就增加
-<code>res</code> ，并且把对应的值改成 <code>0</code> ，如果第二次遇到
-<code>0</code>，则说明这个字符串在 <code>word2</code>
-中至少出现了两次，前面多统计了一次，所以要减一并且把值改成
-<code>-1</code>，防止接下来再次遇到。</p>
+<p>第一次遍历用哈希表存储 <code>word1</code> 中的字符串，第二次遍历，根据第一次遍历的结果来确定是否只出现了一次，如果只出现了一次就增加 <code>res</code> ，并且把对应的值改成 <code>0</code> ，如果第二次遇到 <code>0</code>，则说明这个字符串在 <code>word2</code> 中至少出现了两次，前面多统计了一次，所以要减一并且把值改成 <code>-1</code>，防止接下来再次遇到。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">countWords</span><span class="hljs-params">(String[] words1, String[] words2)</span> &#123;<br>        Map&lt;String, Integer&gt; hash = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (String w : words1) &#123;<br>            hash.put(w, hash.getOrDefault(w, <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (String w : words2) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> hash.getOrDefault(w, -<span class="hljs-number">1</span>);<br>            <span class="hljs-keyword">if</span> (key == <span class="hljs-number">1</span>) &#123;<br>                ++res;<br>                hash.put(w, <span class="hljs-number">0</span>);<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key == <span class="hljs-number">0</span>) &#123;<br>                --res;<br>                hash.put(w, -<span class="hljs-number">1</span>);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(M +
-N)\)</span>，其中 <code>N</code> 为 <code>word1</code> 的长度，
-<code>M</code> 为 <code>word2</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>word1</code> 的长度。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(M + N)\)</span>，其中 <code>N</code> 为 <code>word1</code> 的长度， <code>M</code> 为 <code>word2</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为 <code>word1</code> 的长度。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/12/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -432,9 +418,9 @@ class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
       
         <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
       
-        <a href="/tags/String/" class="print-no-link">#String</a>
-      
         <a href="/tags/Counting/" class="print-no-link">#Counting</a>
+      
+        <a href="/tags/String/" class="print-no-link">#String</a>
       
     </div>
   

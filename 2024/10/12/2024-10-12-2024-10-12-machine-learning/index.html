@@ -346,46 +346,29 @@
                 
                 <h2 id="环境配置">环境配置</h2>
 <h3 id="创建虚拟环境">创建虚拟环境</h3>
-<p>由于较新的版本可能出现部分库不兼容的问题，因此本文采用
-<code>Python 3.8</code>，推荐使用 <code>Conda</code> 来隔离不同的
-<code>Python</code> 环境，方便后面出现问题进行调试。</p>
-<p>首先在 <code>Conda</code> 中创建一个名为 <code>ml</code>
-的新环境，激活环境并安装一些机器学习常用的库。</p>
+<p>由于较新的版本可能出现部分库不兼容的问题，因此本文采用 <code>Python 3.8</code>，推荐使用 <code>Conda</code> 来隔离不同的 <code>Python</code> 环境，方便后面出现问题进行调试。</p>
+<p>首先在 <code>Conda</code> 中创建一个名为 <code>ml</code> 的新环境，激活环境并安装一些机器学习常用的库。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda create --name ml python=3.8<br>conda activate ml<br>conda install numpy pandas scikit-learn scikit-plot jupyterlab<br></code></pre></td></tr></table></figure>
-<p>这里可以安装 <code>Jupyter Notebook</code> 也可以安装
-<code>JupyterLab</code>（<code>Jupyter notebook</code>
-的更加现代化的版本）。</p>
-<h3
-id="jupyter-notebook-可视化切换虚拟环境"><code>Jupyter Notebook</code>
-可视化切换虚拟环境</h3>
-<p>鉴于每次启用虚拟环境都需要进行繁琐的命令行操作，下面介绍一个可以实现打开
-<code>Jupyter notebook</code> 之后切换虚拟环境的办法。</p>
-<p>首先按照前面说明的方法创建虚拟环境 <code>ml</code> 并启动虚拟环境
-<code>conda activate ml</code>，接下来的操作都需要在这个虚拟环境中执行：</p>
+<p>这里可以安装 <code>Jupyter Notebook</code> 也可以安装 <code>JupyterLab</code>（<code>Jupyter notebook</code> 的更加现代化的版本）。</p>
+<h3 id="jupyter-notebook-可视化切换虚拟环境"><code>Jupyter Notebook</code> 可视化切换虚拟环境</h3>
+<p>鉴于每次启用虚拟环境都需要进行繁琐的命令行操作，下面介绍一个可以实现打开 <code>Jupyter notebook</code> 之后切换虚拟环境的办法。</p>
+<p>首先按照前面说明的方法创建虚拟环境 <code>ml</code> 并启动虚拟环境 <code>conda activate ml</code>，接下来的操作都需要在这个虚拟环境中执行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda install ipykernel<br>python -m ipykernel install --name &lt;虚拟环境的名字，如ml&gt; --display-name &lt;你想显示的名称，比如&quot;machine learning&quot;&gt;<br></code></pre></td></tr></table></figure>
-<p>接下来就可以直接打开 <code>Jupyter notebook</code>
-直接切换虚拟环境了。</p>
+<p>接下来就可以直接打开 <code>Jupyter notebook</code> 直接切换虚拟环境了。</p>
 <p><img src="/imgs/posts/2024/10/12/jupyter.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <p>同样，在 <code>Jupyter Lab</code> 中也可以直接切换虚拟环境：</p>
-<p>新建一个在 <code>ml</code> 虚拟环境下的新 <code>.ipynb</code>
-文件，默认在当前目录下新建。</p>
+<p>新建一个在 <code>ml</code> 虚拟环境下的新 <code>.ipynb</code> 文件，默认在当前目录下新建。</p>
 <p><img src="/imgs/posts/2024/10/12/jupyterlab.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <p>在已有的 <code>.ipynb</code> 文件下切换内核。</p>
 <p><img src="/imgs/posts/2024/10/12/jupyterlab2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <p><img src="/imgs/posts/2024/10/12/jupyterlab3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
-<h3 id="如何将多个-.ipynb-文件合成一个-.ipynb-文件">如何将多个
-<code>.ipynb</code> 文件合成一个 <code>.ipynb</code> 文件</h3>
+<h3 id="如何将多个-.ipynb-文件合成一个-.ipynb-文件">如何将多个 <code>.ipynb</code> 文件合成一个 <code>.ipynb</code> 文件</h3>
 <p>首先安装 <code>nbmerge</code> 包： <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda install nbmerge<br></code></pre></td></tr></table></figure></p>
 <p>然后执行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">nbmerge a.ipynb b.ipynb c.ipynb &gt; merge.ipynb<br></code></pre></td></tr></table></figure>
-<p>在这里演示合并
-<code>a.ipynb</code>，<code>b.ipynb</code>，<code>c.ipynb</code>
-文件成为 <code>merge.ipynb</code>
-文件，合并的个数不限，但是至少需要两个。</p>
+<p>在这里演示合并 <code>a.ipynb</code>，<code>b.ipynb</code>，<code>c.ipynb</code> 文件成为 <code>merge.ipynb</code> 文件，合并的个数不限，但是至少需要两个。</p>
 <h3 id="conda-的基本使用"><code>Conda</code> 的基本使用</h3>
-<p><code>Conda</code> 是一个开源的包管理系统和环境管理器，常用于管理
-<code>Python</code> 和 <code>R</code>
-语言的依赖包和虚拟环境（展开下面的折叠块查看常用的命令）。</p>
+<p><code>Conda</code> 是一个开源的包管理系统和环境管理器，常用于管理 <code>Python</code> 和 <code>R</code> 语言的依赖包和虚拟环境（展开下面的折叠块查看常用的命令）。</p>
 
     <div class="fold">
       <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-f1d92201" role="button" aria-expanded="false" aria-controls="collapse-f1d92201">
@@ -393,48 +376,30 @@ id="jupyter-notebook-可视化切换虚拟环境"><code>Jupyter Notebook</code>
       </div>
       <div class="fold-collapse collapse" id="collapse-f1d92201">
         <div class="fold-content">
-          <p>检查 <code>Conda</code> 版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>获取帮助：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure><p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python版本：</p><blockquote><p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure><p>在创建环境后，可以通过以下命令激活环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure><p>要退出当前激活的环境，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure><p>如果想删除某个环境，可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure><p>查看系统上所有的 <code>Conda</code> 环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure><p>要在当前激活的环境中安装一个包（如<code>numpy</code>），使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure><p>还可以指定安装包的版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure><p>使用以下命令查看当前环境中已安装的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure><p>可以使用 <code>conda update</code> 命令升级指定的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure><p>也可以升级当前环境下所有的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure><p>如果需要删除某个包，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure><p>可以使用以下命令查找特定包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure><p>可以将环境的配置导出为 <code>YAML</code>文件，方便在其他设备上重现相同环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure><p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure><p>可以克隆已有的环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure><p>要更新 <code>conda</code> 本身，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure><p><code>Conda</code>会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure>
+          <p>检查 <code>Conda</code> 版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>获取帮助：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure><p>可以通过 <code>conda create</code> 命令创建虚拟环境，并指定 Python 版本：</p><blockquote><p>注意：可以不在当前目录下激活之前创建的环境，在当前目录下创建环境只是意味着这个环境的配置存储在当前目录下。</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name myenv python=3.8<br></code></pre></td></tr></table></figure><p>在创建环境后，可以通过以下命令激活环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda activate myenv<br></code></pre></td></tr></table></figure><p>要退出当前激活的环境，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate<br></code></pre></td></tr></table></figure><p>如果想删除某个环境，可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove --name myenv --all<br></code></pre></td></tr></table></figure><p>查看系统上所有的 <code>Conda</code> 环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> list<br></code></pre></td></tr></table></figure><p>要在当前激活的环境中安装一个包（如 <code>numpy</code>），使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy<br></code></pre></td></tr></table></figure><p>还可以指定安装包的版本：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda install numpy=1.21<br></code></pre></td></tr></table></figure><p>使用以下命令查看当前环境中已安装的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda list<br></code></pre></td></tr></table></figure><p>可以使用 <code>conda update</code> 命令升级指定的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update numpy<br></code></pre></td></tr></table></figure><p>也可以升级当前环境下所有的包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update --all<br></code></pre></td></tr></table></figure><p>如果需要删除某个包，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda remove numpy<br></code></pre></td></tr></table></figure><p>可以使用以下命令查找特定包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda search package_name<br></code></pre></td></tr></table></figure><p>可以将环境的配置导出为 <code>YAML</code> 文件，方便在其他设备上重现相同环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> <span class="hljs-built_in">export</span> &gt; environment.yml<br></code></pre></td></tr></table></figure><p>在新设备上，可以使用 <code>YAML</code> 文件重新创建环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda <span class="hljs-built_in">env</span> create -f environment.yml<br></code></pre></td></tr></table></figure><p>可以克隆已有的环境：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda create --name newenv --<span class="hljs-built_in">clone</span> oldenv<br></code></pre></td></tr></table></figure><p>要更新 <code>conda</code> 本身，使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda update conda<br></code></pre></td></tr></table></figure><p><code>Conda</code> 会在安装和更新时缓存一些文件，使用以下命令可以清理它们：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda clean --all<br></code></pre></td></tr></table></figure>
         </div>
       </div>
     </div>
 <h3 id="利用-cuda-进行gpu加速">利用 <code>CUDA</code> 进行GPU加速</h3>
-<p>用 CPU 进行机器学习速度比较慢，可以考虑利用 GPU
-进行加速，以下是可以参考的安装教程：</p>
+<p>用 CPU 进行机器学习速度比较慢，可以考虑利用 GPU 进行加速，以下是可以参考的安装教程：</p>
 <ul>
-<li><p><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/YYDS_WV/article/details/137825313">CUDA与CUDNN在Windows下的安装与配置（超级详细版）_cudnn安装windows-CSDN博客</a></p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/qlkaicx/article/details/134577555">全网最详细的安装pytorch
-GPU方法，一次安装成功！！包括安装失败后的处理方法！-CSDN博客</a></p></li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/YYDS_WV/article/details/137825313">CUDA与CUDNN在Windows下的安装与配置（超级详细版）_cudnn安装windows-CSDN博客</a></p></li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qlkaicx/article/details/134577555">全网最详细的安装pytorch GPU方法，一次安装成功！！包括安装失败后的处理方法！-CSDN博客</a></p></li>
 </ul>
 <blockquote>
-<p>注意：如果下载 <code>Pytorch</code> 要记得下载对应于
-<code>CUDA</code> 的版本，一般是向下兼容的。</p>
+<p>注意：如果下载 <code>Pytorch</code> 要记得下载对应于 <code>CUDA</code> 的版本，一般是向下兼容的。</p>
 </blockquote>
-<h3
-id="双击-.ipynb-文件直接进入jupyter编辑界面无需调整文件目录的方法">双击
-<code>.ipynb</code>
-文件直接进入Jupyter编辑界面，无需调整文件目录的方法</h3>
-<p>右键点击任意的 <code>.ipynb</code>
-文件的属性页面，更改默认的打开方式。</p>
+<h3 id="双击-.ipynb-文件直接进入jupyter编辑界面无需调整文件目录的方法">双击 <code>.ipynb</code> 文件直接进入Jupyter编辑界面，无需调整文件目录的方法</h3>
+<p>右键点击任意的 <code>.ipynb</code> 文件的属性页面，更改默认的打开方式。</p>
 <p><img src="/imgs/posts/2024/10/12/jupyter2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <p>搜索找到 Anaconda 的安装文件夹，我个人安装的路径是：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">D:\Scoop\apps\anaconda3\current\App\Scripts\jupyter-notebook.exe<br></code></pre></td></tr></table></figure>
-<p>在Scripts文件夹中有一个
-<code>jupyter-notebook.exe</code>，选择其作为默认打开方式。之后打开任何
-<code>.ipynb</code>
-文件只需直接双击该文件就会进入浏览器的文件工作界面。</p>
-<h3 id="将-jupyter-notebook-文件转换为各种格式的文件">将 Jupyter
-Notebook 文件转换为各种格式的文件</h3>
+<p>在Scripts文件夹中有一个 <code>jupyter-notebook.exe</code>，选择其作为默认打开方式。之后打开任何 <code>.ipynb</code> 文件只需直接双击该文件就会进入浏览器的文件工作界面。</p>
+<h3 id="将-jupyter-notebook-文件转换为各种格式的文件">将 Jupyter Notebook 文件转换为各种格式的文件</h3>
 <p>在命令行中输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">jupyter nbconvert --to script filename.ipynb<br></code></pre></td></tr></table></figure>
-<p>就可以把 Jupyter Notebook 文件转换为 <code>.py</code> 文件，其中
-<code>filename.ipynb</code> 是要转换的 Jupyter Notebook
-文件名。执行后就会在当前目录下生成和 Jupyter Notebook 同名的
-<code>.py</code> 文件，该文件包含了 Jupyter Notebook 中所有的代码。</p>
-<p>如果要将 Jupyter Notebook 文件转换为其他格式，可以将
-<code>--to</code> 参数替换为相应的格式，比如转换为 <code>.pdf</code>
-的命令：</p>
+<p>就可以把 Jupyter Notebook 文件转换为 <code>.py</code> 文件，其中 <code>filename.ipynb</code> 是要转换的 Jupyter Notebook 文件名。执行后就会在当前目录下生成和 Jupyter Notebook 同名的 <code>.py</code> 文件，该文件包含了 Jupyter Notebook 中所有的代码。</p>
+<p>如果要将 Jupyter Notebook 文件转换为其他格式，可以将 <code>--to</code> 参数替换为相应的格式，比如转换为 <code>.pdf</code> 的命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">jupyter nbconvert --to pdf filename.ipynb<br></code></pre></td></tr></table></figure>
 <p>更多的命令可以用下面的命令查看：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">jupyter nbconvert --<span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure>

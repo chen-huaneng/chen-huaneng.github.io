@@ -345,61 +345,34 @@
               <div class="markdown-body">
                 
                 <h2 id="github-使用技巧"><code>GitHub</code> 使用技巧</h2>
-<h3 id="如何根据-github-用户的名称找到邮箱1">如何根据
-<code>GitHub</code>
-用户的名称找到邮箱<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span
-class="hint--top hint--rounded"
-aria-label="[一日一技：如何找到Github用户的邮箱？ | 谢乾坤 | Kingname](https://kingname.info/2024/06/02/find-email-of-github/)">[1]</span></a></sup></h3>
-<p>有时候会遇到这样的情况，当你找到一个很不错的项目的时候，想和开发者交流一些相关的问题。于是你找到该用户的主页，一般情况下，开发者会在
-<code>GitHub</code> 主页留下自己的联系邮箱，如下图所示，这是我的
-<code>GitHub</code> 个人主页：</p>
+<h3 id="如何根据-github-用户的名称找到邮箱1">如何根据 <code>GitHub</code> 用户的名称找到邮箱<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[一日一技：如何找到Github用户的邮箱？ | 谢乾坤 | Kingname](https://kingname.info/2024/06/02/find-email-of-github/)">[1]</span></a></sup></h3>
+<p>有时候会遇到这样的情况，当你找到一个很不错的项目的时候，想和开发者交流一些相关的问题。于是你找到该用户的主页，一般情况下，开发者会在 <code>GitHub</code> 主页留下自己的联系邮箱，如下图所示，这是我的 <code>GitHub</code> 个人主页：</p>
 <p><img src="./github.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <p>但是有的开发者不会留邮箱，比如：</p>
 <p><img src="./github2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
-<p>这种情况下你可以发
-Issus，但是这样别人也会看到，但是还有一个更隐蔽的方法，可以拿到这个开发者的邮箱。</p>
+<p>这种情况下你可以发 Issus，但是这样别人也会看到，但是还有一个更隐蔽的方法，可以拿到这个开发者的邮箱。</p>
 <p>首先，找到这个开发者的一个Repo，随便找一条Commit记录：</p>
 <p><img src="./github3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
-<p>这个Commit对应的链接是
-<code>https://github.com/helloworld/benchmark-fastapi-template/commit/7745a07900d2f0e5487f4125a21348f23c1148ba</code>
-，现在只需要在这个链接的末尾加上 <code>.patch</code> ，变成
-<code>https://github.com/helloworld/benchmark-fastapi-template/commit/7745a07900d2f0e5487f4125a21348f23c1148ba.patch</code>
-就可以看到纯文本形式的Commit记录。而开发者的邮箱就在上面。</p>
+<p>这个Commit对应的链接是 <code>https://github.com/helloworld/benchmark-fastapi-template/commit/7745a07900d2f0e5487f4125a21348f23c1148ba</code> ，现在只需要在这个链接的末尾加上 <code>.patch</code> ，变成 <code>https://github.com/helloworld/benchmark-fastapi-template/commit/7745a07900d2f0e5487f4125a21348f23c1148ba.patch</code> 就可以看到纯文本形式的Commit记录。而开发者的邮箱就在上面。</p>
 <p><img src="./github4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <p>如果开发者设置了邮箱不可见的选项，就可能看不到邮箱，但是可以通过找Repo里面最早的提交记录来获取，也许有机会在开发者刚开始Commit的时候还没有设置邮箱不可见，如果还是不能成功，还是发Issue或者通过其他渠道获取吧。</p>
 <p><img src="./github5.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <blockquote>
-<p>注意：如果自己设置了邮箱不可见，记得在本地的 <code>Git</code> 中设置
-<code>git config --global user.email "username@users.noreply.github.com"</code>，如果在设置之前提交了还要记得重置上次提交的作者信息
-<code>git commit --amend --reset-authorc</code>，否则远程仓库会拒绝提交<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span
-class="hint--top hint--rounded"
-aria-label="[github启用了隐私邮箱后如何git push-腾讯云开发者社区-腾讯云 (tencent.com)](https://cloud.tencent.com/developer/article/1835148)">[2]</span></a></sup>。</p>
+<p>注意：如果自己设置了邮箱不可见，记得在本地的 <code>Git</code> 中设置 <code>git config --global user.email "username@users.noreply.github.com"</code>，如果在设置之前提交了还要记得重置上次提交的作者信息 <code>git commit --amend --reset-authorc</code>，否则远程仓库会拒绝提交<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="[github启用了隐私邮箱后如何git push-腾讯云开发者社区-腾讯云 (tencent.com)](https://cloud.tencent.com/developer/article/1835148)">[2]</span></a></sup>。</p>
 </blockquote>
-<h3 id="如何查看-github-用户的注册时间34">如何查看 <code>GitHub</code>
-用户的注册时间<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span
-class="hint--top hint--rounded"
-aria-label="[Getting started with the REST API - GitHub Docs](https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api?apiVersion=2022-11-28#rate-limiting)">[3]</span></a></sup><sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span
-class="hint--top hint--rounded"
-aria-label="[Setting your commit email address - GitHub Docs](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address)">[4]</span></a></sup></h3>
+<h3 id="如何查看-github-用户的注册时间34">如何查看 <code>GitHub</code> 用户的注册时间<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Getting started with the REST API - GitHub Docs](https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api?apiVersion=2022-11-28#rate-limiting)">[3]</span></a></sup><sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Setting your commit email address - GitHub Docs](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address)">[4]</span></a></sup></h3>
 <ol type="1">
-<li>打开一个新的浏览器标签页，输入以下链接：<code>https://api.github.com/users/&#123;your-username&#125;</code>，将
-<code>&#123;your-username&#125;</code> 替换成 <code>GitHub</code> 用户名。</li>
+<li>打开一个新的浏览器标签页，输入以下链接：<code>https://api.github.com/users/&#123;your-username&#125;</code>，将 <code>&#123;your-username&#125;</code> 替换成 <code>GitHub</code> 用户名。</li>
 <li>按下回车键后，会得到一个JSON格式的返回结果。</li>
-<li>在返回结果中，可以找到一个 <code>created_at</code>
-字段，值就是用户注册时间。</li>
+<li>在返回结果中，可以找到一个 <code>created_at</code> 字段，值就是用户注册时间。</li>
 </ol>
 <p><img src="./github6.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
-<h3 id="如何美化-github-个人主页">如何美化 <code>GitHub</code>
-个人主页</h3>
+<h3 id="如何美化-github-个人主页">如何美化 <code>GitHub</code> 个人主页</h3>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/PeterJXL/p/18437094">超详细的
-GitHub 个人主页美化教程 - peterjxl - 博客园 (cnblogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/PeterJXL/p/18437094">超详细的 GitHub 个人主页美化教程 - peterjxl - 博客园 (cnblogs.com)</a></li>
 </ul>
-<h3
-id="管理版本和维护changelog的最佳实践">管理版本和维护Changelog的最佳实践</h3>
-如何给版本命名可以参考<a target="_blank" rel="noopener" href="https://semver.org/">Semantic Versioning
-2.0.0 | Semantic Versioning</a>，如何维护良好的Changelog可以参考<a
-target="_blank" rel="noopener" href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>。
+<h3 id="管理版本和维护changelog的最佳实践">管理版本和维护Changelog的最佳实践</h3>
+如何给版本命名可以参考<a target="_blank" rel="noopener" href="https://semver.org/">Semantic Versioning 2.0.0 | Semantic Versioning</a>，如何维护良好的Changelog可以参考<a target="_blank" rel="noopener" href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>。
 <section class="footnotes">
 <h2>
 References
@@ -407,32 +380,16 @@ References
 <div class="footnote-list">
 <ol>
 <li>
-<span id="fn:1" class="footnote-text"><span><a
-target="_blank" rel="noopener" href="https://kingname.info/2024/06/02/find-email-of-github/">一日一技：如何找到Github用户的邮箱？
-| 谢乾坤 | Kingname</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref">
-↩︎</a></span></span>
+<span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://kingname.info/2024/06/02/find-email-of-github/">一日一技：如何找到Github用户的邮箱？ | 谢乾坤 | Kingname</a> <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩︎</a></span></span>
 </li>
 <li>
-<span id="fn:2" class="footnote-text"><span><a
-target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1835148">github启用了隐私邮箱后如何git
-push-腾讯云开发者社区-腾讯云 (tencent.com)</a>
-<a href="#fnref:2" rev="footnote" class="footnote-backref">
-↩︎</a></span></span>
+<span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1835148">github启用了隐私邮箱后如何git push-腾讯云开发者社区-腾讯云 (tencent.com)</a> <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩︎</a></span></span>
 </li>
 <li>
-<span id="fn:3" class="footnote-text"><span><a
-target="_blank" rel="noopener" href="https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api?apiVersion=2022-11-28#rate-limiting">Getting
-started with the REST API - GitHub Docs</a>
-<a href="#fnref:3" rev="footnote" class="footnote-backref">
-↩︎</a></span></span>
+<span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api?apiVersion=2022-11-28#rate-limiting">Getting started with the REST API - GitHub Docs</a> <a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩︎</a></span></span>
 </li>
 <li>
-<span id="fn:4" class="footnote-text"><span><a
-target="_blank" rel="noopener" href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address">Setting
-your commit email address - GitHub Docs</a>
-<a href="#fnref:4" rev="footnote" class="footnote-backref">
-↩︎</a></span></span>
+<span id="fn:4" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address">Setting your commit email address - GitHub Docs</a> <a href="#fnref:4" rev="footnote" class="footnote-backref"> ↩︎</a></span></span>
 </li>
 </ol>
 </div>

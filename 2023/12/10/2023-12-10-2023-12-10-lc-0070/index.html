@@ -33,8 +33,8 @@
 <meta property="article:modified_time" content="2023-12-11T03:54:58.132Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Math">
 <meta property="article:tag" content="Memoization">
+<meta property="article:tag" content="Math">
 <meta property="article:tag" content="Dynamic Programming">
 <meta property="article:tag" content="Fast Power">
 <meta name="twitter:card" content="summary_large_image">
@@ -286,7 +286,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 4 分钟
+          阅读全文大概需要 5 分钟
         
       </span>
     
@@ -348,12 +348,9 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/description/">70.
-爬楼梯</a> ，难度为<strong>简单</strong>。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/description/">70. 爬楼梯</a> ，难度为<strong>简单</strong>。</p>
 <p>假设你正在爬楼梯。需要 <code>n</code> 阶你才能到达楼顶。</p>
-<p>每次你可以爬 <code>1</code> 或 <code>2</code>
-个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
+<p>每次你可以爬 <code>1</code> 或 <code>2</code> 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 2<br>输出：2<br>解释：有两种方法可以爬到楼顶。<br><span class="hljs-bullet">1.</span> 1 阶 + 1 阶<br><span class="hljs-bullet">2.</span> 2 阶<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -364,40 +361,18 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stair
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一动态规划">方法一：动态规划</h3>
-<p>最简单方法是遍历所有的可能，即每次上台阶都有两种可能，上一级台阶或者上两级台阶，那么对于台阶总数为
-<code>n</code> 的问题来说，时间复杂度为 <span
-class="math inline">\(O(2^n)\)</span> ，当 <code>n</code>
-足够大的时候，显然是不可接受的，下面介绍一种动态规划求解的方案。</p>
-<p>不了解动态规划的，可以先看看<a
-target="_blank" rel="noopener" href="https://www.hello-algo.com/chapter_dynamic_programming/">第 14 章
-动态规划</a>这个熟悉一下。我们用 <span
-class="math inline">\(f(x)\)</span> 表示爬到第 <code>x</code>
-级台阶的方案数量，于是到第 <code>x</code>
-级台阶有两种可能，一种是从前一级台阶向上走一级台阶，还有一种是从前两级台阶一次走两个台阶，于是到第
-<code>x</code>
-级台阶的方案数就等于前一级台阶到当前台阶的方案数加上前两级台阶到当前台阶的方案数，即
-<span class="math inline">\(f(x) = f(x - 1) + f(x - 2)\)</span>。</p>
+<p>最简单方法是遍历所有的可能，即每次上台阶都有两种可能，上一级台阶或者上两级台阶，那么对于台阶总数为 <code>n</code> 的问题来说，时间复杂度为 <span class="math inline">\(O(2^n)\)</span> ，当 <code>n</code> 足够大的时候，显然是不可接受的，下面介绍一种动态规划求解的方案。</p>
+<p>不了解动态规划的，可以先看看<a target="_blank" rel="noopener" href="https://www.hello-algo.com/chapter_dynamic_programming/">第 14 章 动态规划</a>这个熟悉一下。我们用 <span class="math inline">\(f(x)\)</span> 表示爬到第 <code>x</code> 级台阶的方案数量，于是到第 <code>x</code> 级台阶有两种可能，一种是从前一级台阶向上走一级台阶，还有一种是从前两级台阶一次走两个台阶，于是到第 <code>x</code> 级台阶的方案数就等于前一级台阶到当前台阶的方案数加上前两级台阶到当前台阶的方案数，即 <span class="math inline">\(f(x) = f(x - 1) + f(x - 2)\)</span>。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">climbStairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>, b = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">3</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> a + b;<br>            a = b;<br>            b = tmp;<br>        &#125;<br>        <span class="hljs-keyword">return</span> a + b;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>为了不处理特殊的边界条件，我们引入第 <code>0</code> 级台阶，从第
-<code>0</code> 级台阶到第 <code>0</code>
-级台阶可以看作是只有一种方法，可以证明这样处理边界条件和之前的方案求出的结果是一样的。</p>
+<p>为了不处理特殊的边界条件，我们引入第 <code>0</code> 级台阶，从第 <code>0</code> 级台阶到第 <code>0</code> 级台阶可以看作是只有一种方法，可以证明这样处理边界条件和之前的方案求出的结果是一样的。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">climbStairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, q = <span class="hljs-number">0</span>, r = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>            p = q; <br>            q = r; <br>            r = p + q;<br>        &#125;<br>        <span class="hljs-keyword">return</span> r;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，循环执行 <code>n</code> 次，其中
-<code>n</code> 为台阶的数量。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>，使用常数个变量作为辅助空间。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n)\)</span>，循环执行 <code>n</code> 次，其中 <code>n</code> 为台阶的数量。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>，使用常数个变量作为辅助空间。</p></li>
 </ul>
 <h3 id="方法二矩阵快速幂">方法二：矩阵快速幂</h3>
-<p><a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/solutions/286022/pa-lou-ti-by-leetcode-solution/"><span
-class="citation"
-data-cites="Source:解法来源">@Source:解法来源</span></a></p>
-<p>当 <code>n</code> 进一步增大的时候，<span
-class="math inline">\(O(n)\)</span>
-时间复杂度的算法也有些捉襟见肘。所以可以使用<strong>矩阵快速幂</strong>的方法来优化这个过程。首先可以构建这样一个递推公式：
-<span class="math display">\[
+<p><span class="citation" data-cites="Source:解法来源">[@Source:解法来源]</span>(https://leetcode.cn/problems/climbing-stairs/solutions/286022/pa-lou-ti-by-leetcode-solution/)</p>
+<p>当 <code>n</code> 进一步增大的时候，<span class="math inline">\(O(n)\)</span> 时间复杂度的算法也有些捉襟见肘。所以可以使用<strong>矩阵快速幂</strong>的方法来优化这个过程。首先可以构建这样一个递推公式： <span class="math display">\[
 \begin{bmatrix}
 1 &amp; 1 \\
 1 &amp; 0 \\
@@ -431,30 +406,16 @@ f(1) \\
 f(0)
 \end{bmatrix}
 \]</span> 令： <span class="math display">\[
-M =
+M = 
 \begin{bmatrix}
 1 &amp; 1 \\
 1 &amp; 0
 \end{bmatrix}
-\]</span> 因此只要能快速计算矩阵 <span class="math inline">\(M\)</span>
-的 <span class="math inline">\(n\)</span> 次幂，就可以得到 <span
-class="math inline">\(f(n)\)</span>
-的值。这里采用定义矩阵乘法，然后用快速幂算法来加速 <span
-class="math inline">\(M^n\)</span> 的求取。</p>
+\]</span> 因此只要能快速计算矩阵 <span class="math inline">\(M\)</span> 的 <span class="math inline">\(n\)</span> 次幂，就可以得到 <span class="math inline">\(f(n)\)</span> 的值。这里采用定义矩阵乘法，然后用快速幂算法来加速 <span class="math inline">\(M^n\)</span> 的求取。</p>
 <p>如何想到使用矩阵快速幂？</p>
 <ul>
-<li>如果一个问题能够转化为求解一个矩阵的 <span
-class="math inline">\(n\)</span>
-次方的形式，那么可以用快速幂来加速运算。</li>
-<li>如果一个递推形式如 <span class="math inline">\(f(n) = \sum_{i =
-1}^ma_if(n - i)\)</span>
-，即齐次线性递推式，就可以把数列的递推关系转化为矩阵的递推关系，即构造出一个矩阵
-<span class="math inline">\(n\)</span>
-次方乘以一个列向量得到一个列向量，这个列向量中包含我们要求的 <span
-class="math inline">\(f(n)\)</span> 。一般情况下，形如 <span
-class="math inline">\(f(n) = \sum_{i = 1}^ma_if(n -
-i)\)</span>可以构造出这样的 <span class="math inline">\(m \times
-m\)</span> 的矩阵：</li>
+<li>如果一个问题能够转化为求解一个矩阵的 <span class="math inline">\(n\)</span> 次方的形式，那么可以用快速幂来加速运算。</li>
+<li>如果一个递推形式如 <span class="math inline">\(f(n) = \sum_{i = 1}^ma_if(n - i)\)</span> ，即齐次线性递推式，就可以把数列的递推关系转化为矩阵的递推关系，即构造出一个矩阵 <span class="math inline">\(n\)</span> 次方乘以一个列向量得到一个列向量，这个列向量中包含我们要求的 <span class="math inline">\(f(n)\)</span> 。一般情况下，形如 <span class="math inline">\(f(n) = \sum_{i = 1}^ma_if(n - i)\)</span>可以构造出这样的 <span class="math inline">\(m \times m\)</span> 的矩阵：</li>
 </ul>
 <p><span class="math display">\[
 \begin{bmatrix}
@@ -473,51 +434,24 @@ a_1 &amp; a_2 &amp; a_3 &amp; \cdots &amp; a_m \\
 f(x) = (2x - 6)c + f(x - 1) + f(x - 2) + f(x - 3)
 \]</span></p>
 <p>可以变换为： <span class="math display">\[
-f(x) + xc = [f(x - 1) + (x - 1)c] + [f(x - 2) + (x - 2)c] + [f(x - 3)
-+(x - 3)c]
-\]</span> 令 <span class="math inline">\(g(x) = f(x) +
-xc\)</span>，那么就又得到了一个齐次线性递推： <span
-class="math display">\[
+f(x) + xc = [f(x - 1) + (x - 1)c] + [f(x - 2) + (x - 2)c] + [f(x - 3) +(x - 3)c] 
+\]</span> 令 <span class="math inline">\(g(x) = f(x) + xc\)</span>，那么就又得到了一个齐次线性递推： <span class="math display">\[
 g(x) = g(x - 1) + g(x - 2) + g(x - 3)
-\]</span>
-于是就可以继续使用矩阵快速幂求解，<strong>当然不是所有的非齐次线性都可以转化为齐次线性</strong>，还是需要具体问题具体分析。</p>
+\]</span> 于是就可以继续使用矩阵快速幂求解，<strong>当然不是所有的非齐次线性都可以转化为齐次线性</strong>，还是需要具体问题具体分析。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">climbStairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">int</span>[][] q = &#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">1</span>&#125;, &#123;<span class="hljs-number">1</span>, <span class="hljs-number">0</span>&#125;&#125;;<br>        <span class="hljs-type">int</span>[][] res = pow(q, n);<br>        <span class="hljs-keyword">return</span> res[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>];<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] pow(<span class="hljs-type">int</span>[][] a, <span class="hljs-type">int</span> n) &#123;<br>        <span class="hljs-type">int</span>[][] ret = &#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">0</span>&#125;, &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>&#125;&#125;;<br>        <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">if</span> ((n &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">1</span>) &#123; <span class="hljs-comment">// 判断奇偶性，每次取余之后都要判断</span><br>                ret = multiply(ret, a); <span class="hljs-comment">// 乘以当前的矩阵</span><br>            &#125;<br>            n &gt;&gt;= <span class="hljs-number">1</span>; <span class="hljs-comment">// 对2取余的操作</span><br>            a = multiply(a, a);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] multiply(<span class="hljs-type">int</span>[][] a, <span class="hljs-type">int</span>[][] b) &#123; <span class="hljs-comment">// 二维矩阵乘法</span><br>        <span class="hljs-type">int</span>[][] c = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">2</span>; j++) &#123;<br>                c[i][j] = a[i][<span class="hljs-number">0</span>] * b[<span class="hljs-number">0</span>][j] + a[i][<span class="hljs-number">1</span>] * b[<span class="hljs-number">1</span>][j];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> c;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(\log
-n)\)</span>，和快速幂的时间复杂度一样。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>，只使用了常数个变量。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(\log n)\)</span>，和快速幂的时间复杂度一样。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>，只使用了常数个变量。</p></li>
 </ul>
 <h3 id="方法三通项公式">方法三：通项公式</h3>
-<p><a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/solutions/286022/pa-lou-ti-by-leetcode-solution/"><span
-class="citation"
-data-cites="Source:解法来源">@Source:解法来源</span></a></p>
-<p>根据齐次线性递推公式的特点，根据递推方程 <span
-class="math inline">\(f(n) = f(n - 1) + f(n - 2)\)</span>
-，可以写出特征根方程 <span class="math inline">\(x^2 = x + 1\)</span>
-求得 <span class="math inline">\(x_1 = \frac{1 +
-\sqrt{5}}{2}\)</span>，<span class="math inline">\(x_2 = \frac{1 -
-\sqrt{5}}{2}\)</span>，设通解为 <span class="math inline">\(f(n) =
-c_1x_1^n + c_2x_2^n\)</span>，代入初始条件 <span
-class="math inline">\(f(1) = 1\)</span>，<span
-class="math inline">\(F(2) = 1\)</span>，得到 <span
-class="math inline">\(c_1 = \frac{1}{\sqrt{5}}\)</span>， <span
-class="math inline">\(c_2 =
--\frac{1}{\sqrt{5}}\)</span>，于是就有这个递推数列的通项公式： <span
-class="math display">\[
-f(n) = \frac{1}{\sqrt{5}}[(\frac{1 + \sqrt{5}}{2})^n - \frac{1 -
-\sqrt{5}}{2})^n]
-\]</span> 接着就可以直接通过通项公式直接求第 <span
-class="math inline">\(n\)</span> 项。</p>
+<p><span class="citation" data-cites="Source:解法来源">[@Source:解法来源]</span>(https://leetcode.cn/problems/climbing-stairs/solutions/286022/pa-lou-ti-by-leetcode-solution/)</p>
+<p>根据齐次线性递推公式的特点，根据递推方程 <span class="math inline">\(f(n) = f(n - 1) + f(n - 2)\)</span> ，可以写出特征根方程 <span class="math inline">\(x^2 = x + 1\)</span> 求得 <span class="math inline">\(x_1 = \frac{1 + \sqrt{5}}{2}\)</span>，<span class="math inline">\(x_2 = \frac{1 - \sqrt{5}}{2}\)</span>，设通解为 <span class="math inline">\(f(n) = c_1x_1^n + c_2x_2^n\)</span>，代入初始条件 <span class="math inline">\(f(1) = 1\)</span>，<span class="math inline">\(F(2) = 1\)</span>，得到 <span class="math inline">\(c_1 = \frac{1}{\sqrt{5}}\)</span>， <span class="math inline">\(c_2 = -\frac{1}{\sqrt{5}}\)</span>，于是就有这个递推数列的通项公式： <span class="math display">\[
+f(n) = \frac{1}{\sqrt{5}}[(\frac{1 + \sqrt{5}}{2})^n - \frac{1 - \sqrt{5}}{2})^n]
+\]</span> 接着就可以直接通过通项公式直接求第 <span class="math inline">\(n\)</span> 项。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">climbStairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">double</span> <span class="hljs-variable">sqrt5</span> <span class="hljs-operator">=</span> Math.sqrt(<span class="hljs-number">5</span>);<br>        <span class="hljs-type">double</span> <span class="hljs-variable">fibn</span> <span class="hljs-operator">=</span> Math.pow((<span class="hljs-number">1</span> + sqrt5) / <span class="hljs-number">2</span>, n + <span class="hljs-number">1</span>) - Math.pow((<span class="hljs-number">1</span> - sqrt5) / <span class="hljs-number">2</span>, n + <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">return</span> (<span class="hljs-type">int</span>) Math.round(fibn / sqrt5);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><strong>时间复杂度</strong>：<span
-class="math inline">\(O()\)</span>，取决于内部函数 <code>pow</code>
-的时间复杂度。</li>
-<li><strong>空间复杂度</strong>：<span
-class="math inline">\(O()\)</span>，取决于内部函数 <code>pow</code>
-的空间复杂度。</li>
+<li><strong>时间复杂度</strong>：<span class="math inline">\(O()\)</span>，取决于内部函数 <code>pow</code> 的时间复杂度。</li>
+<li><strong>空间复杂度</strong>：<span class="math inline">\(O()\)</span>，取决于内部函数 <code>pow</code> 的空间复杂度。</li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/10/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -563,9 +497,9 @@ class="math inline">\(O()\)</span>，取决于内部函数 <code>pow</code>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Math/" class="print-no-link">#Math</a>
-      
         <a href="/tags/Memoization/" class="print-no-link">#Memoization</a>
+      
+        <a href="/tags/Math/" class="print-no-link">#Math</a>
       
         <a href="/tags/Dynamic-Programming/" class="print-no-link">#Dynamic Programming</a>
       

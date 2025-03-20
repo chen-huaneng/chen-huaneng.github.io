@@ -346,11 +346,8 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-numbers-with-even-number-of-digits/description/">1295.
-统计位数为偶数的数字</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个整数数组 <code>nums</code>，请你返回其中位数为
-<strong>偶数</strong> 的数字的个数。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-numbers-with-even-number-of-digits/description/">1295. 统计位数为偶数的数字</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个整数数组 <code>nums</code>，请你返回其中位数为 <strong>偶数</strong> 的数字的个数。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [12,345,2,6,7896]<br>输出：2<br>解释：<br>12 是 2 位数字（位数为偶数） <br>345 是 3 位数字（位数为奇数）  <br>2 是 1 位数字（位数为奇数） <br>6 是 1 位数字 位数为奇数） <br>7896 是 4 位数字（位数为偶数）  <br>因此只有 12 和 7896 是位数为偶数的数字<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -362,35 +359,19 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-numbers-w
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一枚举-字符串">方法一：枚举 + 字符串</h3>
-<p>遍历 <code>nums</code> 中的每一个数字 <code>num</code>
-，然后转化为字符串，判断字符串的长度就可以确定奇偶性。</p>
+<p>遍历 <code>nums</code> 中的每一个数字 <code>num</code> ，然后转化为字符串，判断字符串的长度就可以确定奇偶性。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findNumbers</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> num : nums) &#123;<br>            <span class="hljs-keyword">if</span> ((Integer.toString(num).length() &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">0</span>) &#123;<br>                ++res;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为
-<code>nums</code> 数组的长度，这里假设 <code>Integer.toString()</code>
-的时间复杂度为 <span class="math inline">\(O(1)\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>，使用了常数个变量。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为 <code>nums</code> 数组的长度，这里假设 <code>Integer.toString()</code> 的时间复杂度为 <span class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>，使用了常数个变量。</p></li>
 </ul>
 <h3 id="方法二枚举-数学">方法二：枚举 + 数学</h3>
 <p>也可以用内置函数 <code>Math.log10()</code> 来得到数字的位数。</p>
-<p>一个包含 <code>k</code> 个数字的整数 <code>x</code> 满足不等式 <span
-class="math inline">\(10^{k - 1} \leq x &lt;
-10^{k}\)</span>。将不等式取对数，得到 <span class="math inline">\(k - 1
-\leq \log_{10}(x) &lt; k\)</span> ，因此可以用 <span
-class="math inline">\(k = \lfloor \log_{10}(x) + 1 \rfloor\)</span> 得到
-<code>x</code> 包含的数字个数 <code>k</code> ，其中 <span
-class="math inline">\(\lfloor a \rfloor\)</span> 表示将 <code>a</code>
-向下取整，比如 <span class="math inline">\(\lfloor 5.2 \rfloor =
-5\)</span> 。</p>
+<p>一个包含 <code>k</code> 个数字的整数 <code>x</code> 满足不等式 <span class="math inline">\(10^{k - 1} \leq x &lt; 10^{k}\)</span>。将不等式取对数，得到 <span class="math inline">\(k - 1 \leq \log_{10}(x) &lt; k\)</span> ，因此可以用 <span class="math inline">\(k = \lfloor \log_{10}(x) + 1 \rfloor\)</span> 得到 <code>x</code> 包含的数字个数 <code>k</code> ，其中 <span class="math inline">\(\lfloor a \rfloor\)</span> 表示将 <code>a</code> 向下取整，比如 <span class="math inline">\(\lfloor 5.2 \rfloor = 5\)</span> 。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findNumbers</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> num : nums) &#123;<br>            <span class="hljs-keyword">if</span> (((<span class="hljs-type">int</span>) (Math.log10(num) + <span class="hljs-number">1</span>) &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">0</span>) &#123;<br>                ++res;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><strong>时间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为
-<code>nums</code> 数组的长度。</li>
-<li><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</li>
+<li><strong>时间复杂度</strong>：<span class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为 <code>nums</code> 数组的长度。</li>
+<li><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/11/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>

@@ -345,19 +345,10 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/complement-of-base-10-integer/description/">1009.
-十进制整数的反码 - 力扣（LeetCode）</a>
-，难度为<strong>简单</strong>。</p>
-<p>每个非负整数 <code>N</code> 都有其二进制表示。例如， <code>5</code>
-可以被表示为二进制 <code>"101"</code>，<code>11</code> 可以用二进制
-<code>"1011"</code> 表示，依此类推。注意，除 <code>N = 0</code>
-外，任何二进制表示中都不含前导零。</p>
-<p>二进制的反码表示是将每个 <code>1</code> 改为 <code>0</code> 且每个
-<code>0</code> 变为 <code>1</code>。例如，二进制数 <code>"101"</code>
-的二进制反码为 <code>"010"</code>。</p>
-<p>给你一个十进制数
-<code>N</code>，请你返回其二进制表示的反码所对应的十进制整数。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/complement-of-base-10-integer/description/">1009. 十进制整数的反码 - 力扣（LeetCode）</a> ，难度为<strong>简单</strong>。</p>
+<p>每个非负整数 <code>N</code> 都有其二进制表示。例如， <code>5</code> 可以被表示为二进制 <code>"101"</code>，<code>11</code> 可以用二进制 <code>"1011"</code> 表示，依此类推。注意，除 <code>N = 0</code> 外，任何二进制表示中都不含前导零。</p>
+<p>二进制的反码表示是将每个 <code>1</code> 改为 <code>0</code> 且每个 <code>0</code> 变为 <code>1</code>。例如，二进制数 <code>"101"</code> 的二进制反码为 <code>"010"</code>。</p>
+<p>给你一个十进制数 <code>N</code>，请你返回其二进制表示的反码所对应的十进制整数。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs 1c">输入：<span class="hljs-number">5</span><br>输出：<span class="hljs-number">2</span><br>解释：<span class="hljs-number">5</span> 的二进制表示为 <span class="hljs-string">&quot;101&quot;</span>，其二进制反码为 <span class="hljs-string">&quot;010&quot;</span>，也就是十进制中的 <span class="hljs-number">2</span> 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -367,30 +358,22 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/complement-of-
 <p><strong>提示：</strong></p>
 <ol type="1">
 <li><code>0 &lt;= N &lt; 10^9</code></li>
-<li>本题与 476：https://leetcode-cn.com/problems/number-complement/
-相同</li>
+<li>本题与 476：https://leetcode-cn.com/problems/number-complement/ 相同</li>
 </ol>
 <h2 id="解答">解答</h2>
 <h3 id="方法一使用库函数">方法一：使用库函数</h3>
-<p>使用 <code>Integer.toBinaryString()</code>
-将十进制转化为二进制，然后逐位修改二进制位得到最终的结果。</p>
+<p>使用 <code>Integer.toBinaryString()</code> 将十进制转化为二进制，然后逐位修改二进制位得到最终的结果。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">bitwiseComplement</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">char</span>[] arr = Integer.toBinaryString(n).toCharArray();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr.length; ++i) &#123;<br>            arr[i] = (arr[i] == <span class="hljs-string">&#x27;0&#x27;</span>) ? <span class="hljs-string">&#x27;1&#x27;</span> : <span class="hljs-string">&#x27;0&#x27;</span>;<br>        &#125;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(arr);<br>        <span class="hljs-keyword">return</span> Integer.parseInt(ans, <span class="hljs-number">2</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数字
-<code>n</code> 的二进制表示的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>， <code>N</code>
-的含义同上。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数字 <code>n</code> 的二进制表示的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>， <code>N</code> 的含义同上。</p></li>
 </ul>
 <h3 id="方法二模拟">方法二：模拟</h3>
 <p>只需要构造一个和 <code>n</code> 的二进制位数相同的掩码即可。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">bitwiseComplement</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">mask</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (mask &lt; n) &#123;<br>            mask = (mask &lt;&lt; <span class="hljs-number">1</span>) + <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> n ^ mask;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><strong>时间复杂度</strong>：<span class="math inline">\(O(\log
-n)\)</span>，其中 <code>n</code> 为题目所给的 <code>n</code> 。</li>
-<li><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</li>
+<li><strong>时间复杂度</strong>：<span class="math inline">\(O(\log n)\)</span>，其中 <code>n</code> 为题目所给的 <code>n</code> 。</li>
+<li><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/26/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

@@ -273,7 +273,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 951 
+          文章字数: 970 
         
       </span>
     
@@ -347,18 +347,10 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/description/">1475.
-商品折扣后的最终价格</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个数组 <code>prices</code> ，其中 <code>prices[i]</code>
-是商店里第 <code>i</code> 件商品的价格。</p>
-<p>商店里正在进行促销活动，如果你要买第 <code>i</code>
-件商品，那么你可以得到与 <code>prices[j]</code> 相等的折扣，其中
-<code>j</code> 是满足 <code>j &gt; i</code> 且
-<code>prices[j] &lt;= prices[i]</code> 的 <strong>最小下标</strong>
-，如果没有满足条件的 <code>j</code> ，你将没有任何折扣。</p>
-<p>请你返回一个数组，数组中第 <code>i</code> 个元素是折扣后你购买商品
-<code>i</code> 最终需要支付的价格。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/description/">1475. 商品折扣后的最终价格</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个数组 <code>prices</code> ，其中 <code>prices[i]</code> 是商店里第 <code>i</code> 件商品的价格。</p>
+<p>商店里正在进行促销活动，如果你要买第 <code>i</code> 件商品，那么你可以得到与 <code>prices[j]</code> 相等的折扣，其中 <code>j</code> 是满足 <code>j &gt; i</code> 且 <code>prices[j] &lt;= prices[i]</code> 的 <strong>最小下标</strong> ，如果没有满足条件的 <code>j</code> ，你将没有任何折扣。</p>
+<p>请你返回一个数组，数组中第 <code>i</code> 个元素是折扣后你购买商品 <code>i</code> 最终需要支付的价格。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：prices = [8,4,6,2,3]<br>输出：[4,2,4,2,3]<br>解释：<br>商品 0 的价格为 price[0]=8 ，你将得到 prices[1]=4 的折扣，所以最终价格为 8 - 4 = 4 。<br>商品 1 的价格为 price[1]=4 ，你将得到 prices[3]=2 的折扣，所以最终价格为 4 - 2 = 2 。<br>商品 2 的价格为 price[2]=6 ，你将得到 prices[3]=2 的折扣，所以最终价格为 6 - 2 = 4 。<br>商品 3 和 4 都没有折扣。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -375,16 +367,11 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/final-prices-w
 <p>最简单方法是根据题目要求进行模拟，每次都判断当前元素之后的第一个最小元素。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] finalPrices(<span class="hljs-type">int</span>[] prices) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; prices.length; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i + <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">while</span> (j &lt; prices.length &amp;&amp; prices[j] &gt; prices[i]) &#123;<br>                ++j;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (j &lt; prices.length) &#123;<br>                prices[i] -= prices[j];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> prices;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N^2)\)</span>，其中 <code>N</code> 为
-<code>prices</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N^2)\)</span>，其中 <code>N</code> 为 <code>prices</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h3 id="方法二逆向遍历-单调栈">方法二：逆向遍历 + 单调栈</h3>
-<p><a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/solutions/1790574/by-muse-77-nh2d/"><span
-class="citation" data-cites="Source">@Source</span>: 题解来源</a></p>
+<p><span class="citation" data-cites="Source">[@Source: 题解来源]</span>(https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/solutions/1790574/by-muse-77-nh2d/)</p>
 <p>题目其实就是要求当前元素后面比其小的第一个元素，反过来想也就是从后面开始遍历时，在其前面比当前元素大的第一个元素，要记录比当前元素小的元素（因为前面的元素可能比当前记录的元素小，所以要记录在这之前比当前记录元素小的元素）可以使用单调栈（也就是满足单调性质的栈，这里使用的是栈顶元素到栈底元素单调递减的栈）。</p>
 <p>具体的步骤就是，从数组末尾开始遍历并更新当前元素，如果当前遍历的元素比单调栈中的栈顶元素大，则入栈并更新当前元素并放入要返回的数组中，如果当前遍历的元素比单调栈中的栈顶元素小，<strong>说明对接下来要遍历的元素来说，在其前面的第一个比其小的元素不可能是当前的栈顶元素</strong>（因为当前遍历的元素比栈顶元素小，所以应该是先当前遍历的元素）。所以将栈顶元素一个一个弹出单调栈，直到栈顶元素比当前遍历的元素小或者为空栈（维护了单调栈的性质）。</p>
 <blockquote>
@@ -392,13 +379,8 @@ class="citation" data-cites="Source">@Source</span>: 题解来源</a></p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] finalPrices(<span class="hljs-type">int</span>[] prices) &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> prices.length;<br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>        Deque&lt;Integer&gt; deque = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayDeque</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) &#123;<br>            <span class="hljs-keyword">while</span> (!deque.isEmpty() &amp;&amp; deque.peekLast() &gt; prices[i]) &#123;<br>                deque.removeLast();<br>            &#125;<br>            res[i] = deque.isEmpty() ? prices[i] : prices[i] - deque.peekLast();<br>            deque.addLast(prices[i]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组
-<code>prices</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，存储单调栈的空间复杂度为 <span
-class="math inline">\(O(N)\)</span>，<code>N</code> 为
-<code>prices</code> 的长度，返回值不计入空间复杂度。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组 <code>prices</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，存储单调栈的空间复杂度为 <span class="math inline">\(O(N)\)</span>，<code>N</code> 为 <code>prices</code> 的长度，返回值不计入空间复杂度。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/10/banner2.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

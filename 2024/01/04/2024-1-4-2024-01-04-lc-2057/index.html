@@ -33,8 +33,8 @@
 <meta property="article:modified_time" content="2024-01-04T13:42:30.107Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Array">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner2.jpg">
   
@@ -346,14 +346,9 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-index-with-equal-value/description/">2057.
-值相等的最小索引</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个下标从 0 开始的整数数组 <code>nums</code> ，返回
-<code>nums</code> 中满足 <code>i mod 10 == nums[i]</code> 的最小下标
-<code>i</code> ；如果不存在这样的下标，返回 <code>-1</code> 。</p>
-<p><code>x mod y</code> 表示 <code>x</code> 除以 <code>y</code> 的
-<strong>余数</strong> 。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-index-with-equal-value/description/">2057. 值相等的最小索引</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个下标从 0 开始的整数数组 <code>nums</code> ，返回 <code>nums</code> 中满足 <code>i mod 10 == nums[i]</code> 的最小下标 <code>i</code> ；如果不存在这样的下标，返回 <code>-1</code> 。</p>
+<p><code>x mod y</code> 表示 <code>x</code> 除以 <code>y</code> 的 <strong>余数</strong> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [0,1,2]<br>输出：0<br>解释：<br>i=0: 0 mod 10 = 0 == nums[0].<br>i=1: 1 mod 10 = 1 == nums[1].<br>i=2: 2 mod 10 = 2 == nums[2].<br>所有下标都满足 i mod 10 == nums[i] ，所以返回最小下标 0<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -372,11 +367,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-index
 <p>根据题目要求进行模拟即可。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">smallestEqual</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (i % <span class="hljs-number">10</span> == nums[i]) &#123;<br>                ans = i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组
-<code>nums</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组 <code>nums</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/4/banner2.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -422,9 +414,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
-      
         <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+      
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
     </div>
   

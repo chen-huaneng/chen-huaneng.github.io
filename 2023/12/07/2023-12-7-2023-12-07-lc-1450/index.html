@@ -33,8 +33,8 @@
 <meta property="article:modified_time" content="2023-12-07T00:28:35.795Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Array">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/07/banner.jpg">
   
@@ -346,17 +346,10 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-students-doing-homework-at-a-given-time/description/">1450.
-在既定时间做作业的学生人数</a> ，难度为<strong>简单</strong>。</p>
-<p>给你两个整数数组 <code>startTime</code>（开始时间）和
-<code>endTime</code>（结束时间），并指定一个整数 <code>queryTime</code>
-作为查询时间。</p>
-<p>已知，第 <code>i</code> 名学生在 <code>startTime[i]</code>
-时开始写作业并于 <code>endTime[i]</code> 时完成作业。</p>
-<p>请返回在查询时间 <code>queryTime</code>
-时正在做作业的学生人数。形式上，返回能够使 <code>queryTime</code>
-处于区间 <code>[startTime[i], endTime[i]]</code>（含）的学生人数。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-students-doing-homework-at-a-given-time/description/">1450. 在既定时间做作业的学生人数</a> ，难度为<strong>简单</strong>。</p>
+<p>给你两个整数数组 <code>startTime</code>（开始时间）和 <code>endTime</code>（结束时间），并指定一个整数 <code>queryTime</code> 作为查询时间。</p>
+<p>已知，第 <code>i</code> 名学生在 <code>startTime[i]</code> 时开始写作业并于 <code>endTime[i]</code> 时完成作业。</p>
+<p>请返回在查询时间 <code>queryTime</code> 时正在做作业的学生人数。形式上，返回能够使 <code>queryTime</code> 处于区间 <code>[startTime[i], endTime[i]]</code>（含）的学生人数。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：startTime = [1,2,3], endTime = [3,2,7], queryTime = 4<br>输出：1<br>解释：一共有 3 名学生。<br>第一名学生在时间 1 开始写作业，并于时间 3 完成作业，在时间 4 没有处于做作业的状态。<br>第二名学生在时间 2 开始写作业，并于时间 2 完成作业，在时间 4 没有处于做作业的状态。<br>第三名学生在时间 3 开始写作业，预计于时间 7 完成作业，这是是唯一一名在时间 4 时正在做作业的学生。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -379,13 +372,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-stud
 <p>根据题目，本题只需要查询在时间段内的学生人数，而且开始时间和结束时间的数组长度是相同的，所以可以通过遍历一次开始时间的数组进行判断并统计。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">busyStudent</span><span class="hljs-params">(<span class="hljs-type">int</span>[] startTime, <span class="hljs-type">int</span>[] endTime, <span class="hljs-type">int</span> queryTime)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; startTime.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (startTime[i] &lt;= queryTime &amp;&amp; endTime[i] &gt;= queryTime) &#123;<br>                ++count;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为
-<code>startTime</code> 的数组的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>，因为只使用了 <code>count</code>
-来统计在时间段内学生的人数，使用空间复杂度为 <span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为 <code>startTime</code> 的数组的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>，因为只使用了 <code>count</code> 来统计在时间段内学生的人数，使用空间复杂度为 <span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/07/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -431,9 +419,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
-      
         <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+      
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
     </div>
   

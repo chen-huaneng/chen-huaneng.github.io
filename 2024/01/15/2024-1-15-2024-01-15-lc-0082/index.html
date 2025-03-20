@@ -33,8 +33,8 @@
 <meta property="article:modified_time" content="2024-01-15T15:05:20.099Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Two Pointers">
 <meta property="article:tag" content="Linked List">
+<meta property="article:tag" content="Two Pointers">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/15/banner.jpg">
   
@@ -346,12 +346,8 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/">82.
-删除排序链表中的重复元素 II</a> ，难度为<strong>中等</strong>。</p>
-<p>给定一个已排序的链表的头 <code>head</code> ，
-<em>删除原始链表中所有重复数字的节点，只留下不同的数字</em> 。返回
-<em>已排序的链表</em> 。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/description/">82. 删除排序链表中的重复元素 II</a> ，难度为<strong>中等</strong>。</p>
+<p>给定一个已排序的链表的头 <code>head</code> ， <em>删除原始链表中所有重复数字的节点，只留下不同的数字</em> 。返回 <em>已排序的链表</em> 。</p>
 <p><strong>示例 1：</strong></p>
 <p><img src="/imgs/posts/2024/1/15/linkedlist1.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：head = [1,2,3,3,4,4,5]<br>输出：[1,2,5]<br></code></pre></td></tr></table></figure>
@@ -369,11 +365,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplica
 <p>由于头指针可能也是重复的结点，所以要构造一个头指针的前结点，接下来判断结点的值是否存在重复的（可以用一个暂时变量来存储当前的值用于判断），如果存在重复的就不接入要返回的链表中，否则继续遍历链表。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode() &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">deleteDuplicates</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ListNode</span>(<span class="hljs-number">0</span>, head), cur = res;<br>        <span class="hljs-keyword">while</span> (cur.next != <span class="hljs-literal">null</span> &amp;&amp; cur.next.next != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">if</span> (cur.next.next.val == cur.next.val) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> cur.next.val;<br>                <span class="hljs-keyword">while</span> (cur.next != <span class="hljs-literal">null</span> &amp;&amp; cur.next.val == x) &#123;<br>                    cur.next = cur.next.next;<br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                cur = cur.next;<br>            &#125;<br><br>        &#125;<br>        <span class="hljs-keyword">return</span> res.next;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code>
-为链表的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为链表的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/15/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -419,9 +412,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Two-Pointers/" class="print-no-link">#Two Pointers</a>
-      
         <a href="/tags/Linked-List/" class="print-no-link">#Linked List</a>
+      
+        <a href="/tags/Two-Pointers/" class="print-no-link">#Two Pointers</a>
       
     </div>
   

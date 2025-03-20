@@ -33,11 +33,11 @@
 <meta property="article:modified_time" content="2023-12-29T15:26:52.748Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Array">
+<meta property="article:tag" content="Sorting">
 <meta property="article:tag" content="Hash Table">
 <meta property="article:tag" content="Two Pointers">
-<meta property="article:tag" content="Sorting">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/29/banner1.png">
   
@@ -349,13 +349,9 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/largest-positive-integer-that-exists-with-its-negative/description/">2441.
-与对应负数同时存在的最大正整数</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个 <strong>不包含</strong> 任何零的整数数组 <code>nums</code>
-，找出自身与对应的负数都在数组中存在的最大正整数 <code>k</code> 。</p>
-<p>返回正整数 <code>k</code> ，如果不存在这样的整数，返回
-<code>-1</code> 。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/largest-positive-integer-that-exists-with-its-negative/description/">2441. 与对应负数同时存在的最大正整数</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个 <strong>不包含</strong> 任何零的整数数组 <code>nums</code> ，找出自身与对应的负数都在数组中存在的最大正整数 <code>k</code> 。</p>
+<p>返回正整数 <code>k</code> ，如果不存在这样的整数，返回 <code>-1</code> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [-1,2,-3,3]<br>输出：3<br>解释：3 是数组中唯一一个满足题目要求的 k 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -373,12 +369,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/largest-positi
 <p>根据题意，将不同的数存入哈希表中，查找哈希表中是否包含其相反数，如果包含判断是否为更大的值，如果是则更新最大的返回值。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findMaxK</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;Integer&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> x : nums) &#123;<br>            <span class="hljs-keyword">if</span> (hash.contains(-x)) &#123;<br>                res = Math.max(res, Math.abs(x));<br>            &#125;<br>            hash.add(x);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为 <code>nums</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为 <code>nums</code> 的长度。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/29/banner1.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -424,15 +416,15 @@ class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
+        <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+      
         <a href="/tags/Array/" class="print-no-link">#Array</a>
       
-        <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+        <a href="/tags/Sorting/" class="print-no-link">#Sorting</a>
       
         <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
       
         <a href="/tags/Two-Pointers/" class="print-no-link">#Two Pointers</a>
-      
-        <a href="/tags/Sorting/" class="print-no-link">#Sorting</a>
       
     </div>
   

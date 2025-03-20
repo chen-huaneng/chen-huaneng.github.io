@@ -33,8 +33,8 @@
 <meta property="article:modified_time" content="2023-12-05T10:04:07.074Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Hash Table">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/05/banner.jpg">
@@ -347,14 +347,11 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-lucky-integer-in-an-array/description/">1394.
-找出数组中的幸运数</a> ，难度为<strong>简单</strong>。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-lucky-integer-in-an-array/description/">1394. 找出数组中的幸运数</a> ，难度为<strong>简单</strong>。</p>
 <p>在整数数组中，如果一个整数的出现频次和它的数值大小相等，我们就称这个整数为「幸运数」。</p>
 <p>给你一个整数数组 <code>arr</code>，请你从中找出并返回一个幸运数。</p>
 <ul>
-<li>如果数组中存在多个幸运数，只需返回 <strong>最大</strong>
-的那个。</li>
+<li>如果数组中存在多个幸运数，只需返回 <strong>最大</strong> 的那个。</li>
 <li>如果数组中不含幸运数，则返回 <strong>-1</strong> 。</li>
 </ul>
 <p><strong>示例 1：</strong></p>
@@ -377,27 +374,15 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-lucky-int
 <p>最容易想到的方法就是用一个哈希表来存储出现的数字和次数，然后再用一个循环判断是否相等，返回其中最大的”幸运数“。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findLucky</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">hashMap</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;Integer, Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; arr.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (hashMap.containsKey(arr[i])) &#123;<br>                hashMap.put(arr[i], hashMap.get(arr[i]) + <span class="hljs-number">1</span>);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                hashMap.put(arr[i], <span class="hljs-number">1</span>);<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> -<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> entry : hashMap.entrySet()) &#123;<br>            <span class="hljs-keyword">if</span> (entry.getKey() == entry.getValue() &amp;&amp; entry.getKey() &gt; res) &#123;<br>                res = entry.getKey();<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><strong>时间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，遍历数组的时间代价是<span
-class="math inline">\(O(n)\)</span>，遍历哈希表的代价也是<span
-class="math inline">\(O(n)\)</span>，故渐进时间复杂度为<span
-class="math inline">\(O(n)\)</span>。</li>
-<li><strong>空间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，哈希表中最多有<span
-class="math inline">\(n\)</span>个键值对，故渐进空间复杂度为<span
-class="math inline">\(O(n)\)</span>。</li>
+<li><strong>时间复杂度</strong>：<span class="math inline">\(O(n)\)</span>，遍历数组的时间代价是<span class="math inline">\(O(n)\)</span>，遍历哈希表的代价也是<span class="math inline">\(O(n)\)</span>，故渐进时间复杂度为<span class="math inline">\(O(n)\)</span>。</li>
+<li><strong>空间复杂度</strong>：<span class="math inline">\(O(n)\)</span>，哈希表中最多有<span class="math inline">\(n\)</span>个键值对，故渐进空间复杂度为<span class="math inline">\(O(n)\)</span>。</li>
 </ul>
 <h3 id="方法二用数组模拟哈希表">方法二：用数组模拟哈希表</h3>
 <p>由提示中的数据可以看出可以用数组模拟哈希表来实现哈希表的功能，具体原理和方法一一样。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">findLucky</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        <span class="hljs-type">int</span>[] tmp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">500</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i : arr) &#123;<br>            ++tmp[i - <span class="hljs-number">1</span>];<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">499</span>; i &gt;= <span class="hljs-number">0</span>; --i) &#123;<br>            <span class="hljs-keyword">if</span> (i + <span class="hljs-number">1</span> == tmp[i]) &#123;<br>                <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，遍历数组的时间代价是<span
-class="math inline">\(O(n)\)</span>，临时数组的大小为常数，所以时间复杂度为<span
-class="math inline">\(O(n)\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>，临时数组的大小为常数，所以空间复杂度为<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n)\)</span>，遍历数组的时间代价是<span class="math inline">\(O(n)\)</span>，临时数组的大小为常数，所以时间复杂度为<span class="math inline">\(O(n)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>，临时数组的大小为常数，所以空间复杂度为<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/05/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -443,9 +428,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
-      
         <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+      
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
         <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
       

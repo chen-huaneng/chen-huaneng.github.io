@@ -347,81 +347,42 @@
                 
                 <h2 id="课程资源">课程资源</h2>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://csdiy.wiki/机器学习/ML/">Coursera: Machine Learning
-- CS自学指南 (csdiy.wiki)</a> - 课程相关的资源</li>
-<li><a
-target="_blank" rel="noopener" href="https://www.coursera.org/specializations/machine-learning-introduction#courses">Machine
-Learning | Coursera</a> - 课程官网（可以申请助学金）</li>
-<li><a
-target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Bq421A74G/?share_source=copy_web&amp;vd_source=343bef2897116ac8457328069e8fc81a">(超爽中英!)
-2024公认最好的【吴恩达机器学习】教程！附课件代码 Machine Learning
-Specialization_哔哩哔哩_bilibili</a> -
-不能科学上网和对英文有困难的同学可以参考翻译版</li>
+<li><a target="_blank" rel="noopener" href="https://csdiy.wiki/机器学习/ML/">Coursera: Machine Learning - CS自学指南 (csdiy.wiki)</a> - 课程相关的资源</li>
+<li><a target="_blank" rel="noopener" href="https://www.coursera.org/specializations/machine-learning-introduction#courses">Machine Learning | Coursera</a> - 课程官网（可以申请助学金）</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Bq421A74G/?share_source=copy_web&amp;vd_source=343bef2897116ac8457328069e8fc81a">(超爽中英!) 2024公认最好的【吴恩达机器学习】教程！附课件代码 Machine Learning Specialization_哔哩哔哩_bilibili</a> - 不能科学上网和对英文有困难的同学可以参考翻译版</li>
 </ul>
 <h2 id="课程学习">课程学习</h2>
 <h3 id="week-1---什么是机器学习">Week 1 - 什么是机器学习？</h3>
 <p>四种机器学习的算法</p>
 <ul>
-<li>Supervised learning 监督式机器学习：给定 <code>x</code> 和
-<code>y</code>的标签，根据已有的 <code>x</code> 和 <code>y</code>
-之间的关系，预测给出 <code>x</code> 的 <code>y</code> 的可能值。Learns
-from being given “right answers”
+<li>Supervised learning 监督式机器学习：给定 <code>x</code> 和 <code>y</code>的标签，根据已有的 <code>x</code> 和 <code>y</code> 之间的关系，预测给出 <code>x</code> 的 <code>y</code> 的可能值。Learns from being given “right answers”
 <ul>
-<li>Regression 回归：从无数多种可能的值中预测 predict a number
-infinitely many possible outputs</li>
-<li>Classification 分类：从有限种可能的值中预测 predict categories small
-number of possible outputs</li>
+<li>Regression 回归：从无数多种可能的值中预测 predict a number infinitely many possible outputs</li>
+<li>Classification 分类：从有限种可能的值中预测 predict categories small number of possible outputs</li>
 </ul></li>
-<li>Unsupervised learning 非监督式机器学习：Find something interesting
-in unlabelled data
+<li>Unsupervised learning 非监督式机器学习：Find something interesting in unlabelled data
 <ul>
-<li>Clustering algorithm 聚类：不给定标签让机器进行分类 Group similar
-data points together</li>
+<li>Clustering algorithm 聚类：不给定标签让机器进行分类 Group similar data points together</li>
 <li>Anomaly detection 异常检测：Find unusual data points</li>
-<li>Dimensionality reduction 降维：compress data using fewer
-numbers</li>
+<li>Dimensionality reduction 降维：compress data using fewer numbers</li>
 </ul></li>
 <li>Recommander systems 推荐系统</li>
 <li>Reinforcement learning 强化学习</li>
 </ul>
 <h4 id="linear-regression">Linear regression</h4>
-<p>训练集一般用 <code>x</code> (feature) 表示，预测的结果用 <span
-class="math inline">\(\hat{y}\)</span> (prediction/estimated
-<code>y</code> ) 表示，注意 <code>y</code>(target)
-是真实值，而不是预测值。Parameters also called coefficients or
-weights.</p>
+<p>训练集一般用 <code>x</code> (feature) 表示，预测的结果用 <span class="math inline">\(\hat{y}\)</span> (prediction/estimated <code>y</code> ) 表示，注意 <code>y</code>(target) 是真实值，而不是预测值。Parameters also called coefficients or weights.</p>
 <p><img src="./linear%20regression.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
-<p>其中， w 和 b 是模型的参数，其中除以 2 是为了后续计算的简洁，不除以 2
-也是可以的。Linear regression 的目的就是为了最小化 <span
-class="math inline">\(J(w,b)\)</span>。而寻找这样一个最小化结果的算法叫做梯度下降法（gradient
-descent）。直观上来理解梯度下降法就是，假设你在一个山坡上，这时候你原地转了一圈，找到一个下山最快的方向然后跨出一步，然后接着转圈，找到第二个下山最快的方向继续前面的步骤，直到找到一个山谷（局部最优）。所以事实上，梯度下降法找到的解不一定是最优解，而有可能是一个局部的最优解。就像下山最终到达的可能不是最低的山谷，但是对于其周边来说应该是最低点。</p>
+<p>其中， w 和 b 是模型的参数，其中除以 2 是为了后续计算的简洁，不除以 2 也是可以的。Linear regression 的目的就是为了最小化 <span class="math inline">\(J(w,b)\)</span>。而寻找这样一个最小化结果的算法叫做梯度下降法（gradient descent）。直观上来理解梯度下降法就是，假设你在一个山坡上，这时候你原地转了一圈，找到一个下山最快的方向然后跨出一步，然后接着转圈，找到第二个下山最快的方向继续前面的步骤，直到找到一个山谷（局部最优）。所以事实上，梯度下降法找到的解不一定是最优解，而有可能是一个局部的最优解。就像下山最终到达的可能不是最低的山谷，但是对于其周边来说应该是最低点。</p>
 <p><img src="./graident%20descent.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
-<p>从算法的角度来看，就是不断地更新参数（比如 w 和
-b）直到达到了指定的精度停止（比如前面所说的 Cost function
-小于某个指定的值时），其中 <span class="math inline">\(\alpha\)</span>
-称作学习率（Learning
-rate）通俗来理解就是决定了下山的每一步所要跨出的步子的大小，学习率的取值在
-[0,1]，而 <code>J</code>
-的偏导数则决定了下山的方向。另外，需要注意的点在于要同时更新所有的参数（比如要同时更新
-w 和 b，而不能先更新了 w 然后再更新 b）。</p>
+<p>从算法的角度来看，就是不断地更新参数（比如 w 和 b）直到达到了指定的精度停止（比如前面所说的 Cost function 小于某个指定的值时），其中 <span class="math inline">\(\alpha\)</span> 称作学习率（Learning rate）通俗来理解就是决定了下山的每一步所要跨出的步子的大小，学习率的取值在 [0,1]，而 <code>J</code> 的偏导数则决定了下山的方向。另外，需要注意的点在于要同时更新所有的参数（比如要同时更新 w 和 b，而不能先更新了 w 然后再更新 b）。</p>
 <p><img src="./gradient%20descent2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 <p>对于学习率的取值，并没有固定的标准说一定是越大越好或者越小越好。当学习率很小时，梯度下降法要达到局部最小值的速度可能很慢，这时就要花费很多时间，而当学习率很大时，梯度下降法就有可能错过了最小值而偏离最小值过远，因此选择合适的学习率对于兼顾收敛速度和精度来说尤为重要。</p>
 <p><img src="./gradient%20descent3.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
-<p>从直观上来理解梯度下降法的正确性，可以从前面的例子来看，比如 <span
-class="math inline">\(J(w)\)</span> 和 w
-的关系是二次函数，那么当偏导数为正的时候，因为学习率一定为正，所以 w
-会被更新为更小的值，从图上来看就是 w
-向左移动；相反，当偏导数为负的时候，w 则会被更新为更大的值，所以 w
-会向右移动。</p>
+<p>从直观上来理解梯度下降法的正确性，可以从前面的例子来看，比如 <span class="math inline">\(J(w)\)</span> 和 w 的关系是二次函数，那么当偏导数为正的时候，因为学习率一定为正，所以 w 会被更新为更小的值，从图上来看就是 w 向左移动；相反，当偏导数为负的时候，w 则会被更新为更大的值，所以 w 会向右移动。</p>
 <p><img src="./gradient%20descent5.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
-<p>从直观上来说，当学习率固定时，梯度下降法能达到局部最小值的原理可以这样来理解，假设
-w 现在大于最优值，此时 w 会被更新为更小的 w，当 w 更新之后，<span
-class="math inline">\(J\)</span>
-的偏导数（直观上，从图上来看就是切线的斜率变小）变小，这时 w
-更新的幅度就变小了，所以学习率固定的情况下，梯度下降法能够达到局部最小值。</p>
+<p>从直观上来说，当学习率固定时，梯度下降法能达到局部最小值的原理可以这样来理解，假设 w 现在大于最优值，此时 w 会被更新为更小的 w，当 w 更新之后，<span class="math inline">\(J\)</span> 的偏导数（直观上，从图上来看就是切线的斜率变小）变小，这时 w 更新的幅度就变小了，所以学习率固定的情况下，梯度下降法能够达到局部最小值。</p>
 <p><img src="./gradient%20descent4.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
-<p>对于线性回归来说一般每次迭代会将所有的数据都参与参数的改变过程，也叫
-“Batch” gradient descent，对于其他的模型当然还有其他的梯度下降法。</p>
+<p>对于线性回归来说一般每次迭代会将所有的数据都参与参数的改变过程，也叫 “Batch” gradient descent，对于其他的模型当然还有其他的梯度下降法。</p>
 <p><img src="./gradient%20descent6.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
 
                 

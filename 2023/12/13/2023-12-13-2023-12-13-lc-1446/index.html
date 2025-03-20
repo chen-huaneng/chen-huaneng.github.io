@@ -346,11 +346,8 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/consecutive-characters/description/">1446.
-连续字符</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个字符串 <code>s</code>
-，字符串的<strong>「能量」</strong>定义为：只包含一种字符的最长非空子字符串的长度。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/consecutive-characters/description/">1446. 连续字符</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个字符串 <code>s</code> ，字符串的<strong>「能量」</strong>定义为：只包含一种字符的最长非空子字符串的长度。</p>
 <p>请你返回字符串 <code>s</code> 的 <strong>能量</strong>。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;leetcode&quot;<br>输出：2<br>解释：子字符串 &quot;ee&quot; 长度为 2 ，只包含字符 &#x27;e&#x27; 。<br></code></pre></td></tr></table></figure>
@@ -366,11 +363,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/consecutive-ch
 <p>根据题意，对前一个字符是否和当前的字符相同进行判断，如果是就计数，最后求出最大的计数量。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxPower</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>, t = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; s.length(); ++i) &#123;<br>            <span class="hljs-keyword">if</span> (s.charAt(i) == s.charAt(i - <span class="hljs-number">1</span>)) &#123;<br>                ++t;<br>                cnt = Math.max(cnt, t);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                t = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>s</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为 <code>s</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/13/banner10.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

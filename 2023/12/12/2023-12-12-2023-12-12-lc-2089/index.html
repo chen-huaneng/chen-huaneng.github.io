@@ -34,8 +34,8 @@
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Array">
-<meta property="article:tag" content="Binary Search">
 <meta property="article:tag" content="Sorting">
+<meta property="article:tag" content="Binary Search">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/12/banner3.jpg">
   
@@ -273,7 +273,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 881 
+          文章字数: 905 
         
       </span>
     
@@ -347,17 +347,10 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-target-indices-after-sorting-array/description/">2089.
-找出数组排序后的目标下标</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code>
-以及一个目标元素 <code>target</code> 。</p>
-<p><strong>目标下标</strong> 是一个满足 <code>nums[i] == target</code>
-的下标 <code>i</code> 。</p>
-<p>将 <code>nums</code> 按 <strong>非递减</strong> 顺序排序后，返回由
-<code>nums</code> 中目标下标组成的列表。如果不存在目标下标，返回一个
-<strong>空</strong> 列表。返回的列表必须按 <strong>递增</strong>
-顺序排列。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-target-indices-after-sorting-array/description/">2089. 找出数组排序后的目标下标</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> 以及一个目标元素 <code>target</code> 。</p>
+<p><strong>目标下标</strong> 是一个满足 <code>nums[i] == target</code> 的下标 <code>i</code> 。</p>
+<p>将 <code>nums</code> 按 <strong>非递减</strong> 顺序排序后，返回由 <code>nums</code> 中目标下标组成的列表。如果不存在目标下标，返回一个 <strong>空</strong> 列表。返回的列表必须按 <strong>递增</strong> 顺序排列。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,2,5,2,3], target = 2<br>输出：[1,2]<br>解释：排序后，nums 变为 [1,2,2,3,5] 。<br>满足 nums[i] == 2 的下标是 1 和 2 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -373,48 +366,22 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-target-in
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一排序-二分查找">方法一：排序 + 二分查找</h3>
-<p>最简单的方法就是先排序，之后找到 <code>target - 1</code>
-的位置，然后从 <code>target - 1</code> 的位置开始遍历排序后的数组，加入
-<code>target</code> 位置的下标。</p>
+<p>最简单的方法就是先排序，之后找到 <code>target - 1</code> 的位置，然后从 <code>target - 1</code> 的位置开始遍历排序后的数组，加入 <code>target</code> 位置的下标。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title function_">targetIndices</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> target)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Integer&gt;();<br>        Arrays.sort(nums);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, n = nums.length, r = n - <span class="hljs-number">1</span>, pos = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(l &lt;= r) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> l + ((r - l) &gt;&gt; <span class="hljs-number">1</span>);<br>            pos = mid; <span class="hljs-comment">// 记录位置</span><br>            <span class="hljs-keyword">if</span> (nums[mid] &lt; target - <span class="hljs-number">1</span>) &#123;<br>                l = mid + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target - <span class="hljs-number">1</span>) &#123;<br>                r = mid - <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> pos; i &lt; n; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (target == nums[i]) &#123;<br>                res.add(i);<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (target &lt; nums[i]) &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N \log
-N)\)</span>，其中 <code>N</code> 为 <code>nums</code>
-的长度，排序的时间复杂度为 <span class="math inline">\(O(N \log
-N)\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度，排序的空间复杂度为 <span
-class="math inline">\(O(N)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N \log N)\)</span>，其中 <code>N</code> 为 <code>nums</code> 的长度，排序的时间复杂度为 <span class="math inline">\(O(N \log N)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为 <code>nums</code> 的长度，排序的空间复杂度为 <span class="math inline">\(O(N)\)</span>。</p></li>
 </ul>
 <h3 id="方法二直接统计数量">方法二：直接统计数量</h3>
-<p><a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-target-indices-after-sorting-array/solutions/1127136/zhao-chu-shu-zu-pai-xu-hou-de-mu-biao-xi-2o22/"><span
-class="citation"
-data-cites="Source:题解来源">@Source:题解来源</span></a></p>
+<p><span class="citation" data-cites="Source:题解来源">[@Source:题解来源]</span>(https://leetcode.cn/problems/find-target-indices-after-sorting-array/solutions/1127136/zhao-chu-shu-zu-pai-xu-hou-de-mu-biao-xi-2o22/)</p>
 <p>我们也可以不对数组排序来构造目标下标。</p>
-<p>在排序后数组中，这些数值等于 <code>target</code>
-的元素的下标（如果存在）一定是<strong>连续</strong>的。因此，我们可以通过寻找目标下标的<strong>左边界</strong>（即最小值，如果存在，下同）和目标下标的<strong>数量</strong>来构造目标下标数组。</p>
-<p>由于数组是升序排序的，数值等于 <code>target</code>
-的元素一定在数值小于 <code>target</code>
-的元素的右侧，因此目标下标的左边界即为数组中数值<strong>小于</strong>
-<code>target</code>
-的元素数量。而目标下标的数量即为数组中数值<strong>等于</strong>
-<code>target</code> 的元素数量。</p>
-<p>我们遍历未排序的数组，计算数值小于 <code>target</code> 的元素数量
-<span class="math inline">\(cnt_1\)</span> 与数值等于
-<code>target</code> 的元素数量 <span
-class="math inline">\(cnt_2\)</span> ，则此时目标下标即为 <span
-class="math inline">\([cnt_1,cnt_1+cnt_2)\)</span>
-左闭右开区间内的所有整数。我们按照递增的顺序构造对应的下标数组（可能为空）并返回即可。</p>
+<p>在排序后数组中，这些数值等于 <code>target</code> 的元素的下标（如果存在）一定是<strong>连续</strong>的。因此，我们可以通过寻找目标下标的<strong>左边界</strong>（即最小值，如果存在，下同）和目标下标的<strong>数量</strong>来构造目标下标数组。</p>
+<p>由于数组是升序排序的，数值等于 <code>target</code> 的元素一定在数值小于 <code>target</code> 的元素的右侧，因此目标下标的左边界即为数组中数值<strong>小于</strong> <code>target</code> 的元素数量。而目标下标的数量即为数组中数值<strong>等于</strong> <code>target</code> 的元素数量。</p>
+<p>我们遍历未排序的数组，计算数值小于 <code>target</code> 的元素数量 <span class="math inline">\(cnt_1\)</span> 与数值等于 <code>target</code> 的元素数量 <span class="math inline">\(cnt_2\)</span> ，则此时目标下标即为 <span class="math inline">\([cnt_1,cnt_1+cnt_2)\)</span> 左闭右开区间内的所有整数。我们按照递增的顺序构造对应的下标数组（可能为空）并返回即可。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title function_">targetIndices</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> target)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length, cnt1 = <span class="hljs-number">0</span>, cnt2 = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] &lt; target) &#123;<br>                ++cnt1;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[i] == target) &#123;<br>                ++cnt2;<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">ret</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> cnt1; i &lt; cnt1 + cnt2; ++i) &#123;<br>            ret.add(i);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度，遍历数组和构造数组的时间复杂度为 <span
-class="math inline">\(O(N)\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>，输出数组不计入空间复杂度。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为 <code>nums</code> 的长度，遍历数组和构造数组的时间复杂度为 <span class="math inline">\(O(N)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>，输出数组不计入空间复杂度。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/12/banner3.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -462,9 +429,9 @@ class="math inline">\(O(1)\)</span>，输出数组不计入空间复杂度。</p
       
         <a href="/tags/Array/" class="print-no-link">#Array</a>
       
-        <a href="/tags/Binary-Search/" class="print-no-link">#Binary Search</a>
-      
         <a href="/tags/Sorting/" class="print-no-link">#Sorting</a>
+      
+        <a href="/tags/Binary-Search/" class="print-no-link">#Binary Search</a>
       
     </div>
   

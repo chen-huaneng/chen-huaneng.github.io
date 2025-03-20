@@ -34,8 +34,8 @@
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="Math">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Array">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/11/banner7.jpg">
   
@@ -347,14 +347,9 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/average-value-of-even-numbers-that-are-divisible-by-three/description/">2455.
-可被三整除的偶数的平均值</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个由正整数组成的整数数组 <code>nums</code> ，返回其中可被
-<code>3</code> 整除的所有偶数的平均值。</p>
-<p>注意：<code>n</code> 个元素的平均值等于 <code>n</code> 个元素
-<strong>求和</strong> 再除以 <code>n</code> ，结果
-<strong>向下取整</strong> 到最接近的整数。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/average-value-of-even-numbers-that-are-divisible-by-three/description/">2455. 可被三整除的偶数的平均值</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个由正整数组成的整数数组 <code>nums</code> ，返回其中可被 <code>3</code> 整除的所有偶数的平均值。</p>
+<p>注意：<code>n</code> 个元素的平均值等于 <code>n</code> 个元素 <strong>求和</strong> 再除以 <code>n</code> ，结果 <strong>向下取整</strong> 到最接近的整数。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：nums = [1,3,6,10,12,15]<br>输出：9<br>解释：6 和 12 是可以被 3 整除的偶数。(6 + 12) / 2 = 9 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -369,11 +364,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/average-value-
 <p>根据题意，要求的就是能够 <code>6</code> 整除的数的和的平均值。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">averageValue</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, count = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : nums) &#123;<br>            <span class="hljs-keyword">if</span> (num % <span class="hljs-number">6</span> == <span class="hljs-number">0</span>) &#123;<br>                sum += num;<br>                ++count;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> (count == <span class="hljs-number">0</span>) ? <span class="hljs-number">0</span> : sum / count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为数组
-<code>nums</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为数组 <code>nums</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/11/banner7.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -421,9 +413,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Math/" class="print-no-link">#Math</a>
       
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
-      
         <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+      
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
     </div>
   

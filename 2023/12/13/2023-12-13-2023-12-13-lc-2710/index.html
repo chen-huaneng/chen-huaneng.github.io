@@ -346,11 +346,8 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-trailing-zeros-from-a-string/description/">2710.
-移除字符串中的尾随零</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个用字符串表示的正整数 <code>num</code>
-，请你以字符串形式返回不含尾随零的整数 <code>num</code> 。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-trailing-zeros-from-a-string/description/">2710. 移除字符串中的尾随零</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个用字符串表示的正整数 <code>num</code> ，请你以字符串形式返回不含尾随零的整数 <code>num</code> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：num = &quot;51230100&quot;<br>输出：&quot;512301&quot;<br>解释：整数 &quot;51230100&quot; 有 2 个尾随零，移除并返回整数 &quot;512301&quot; 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -366,11 +363,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-trailin
 <p>按照要求找到不是尾随零的位置，返回子串即可。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">removeTrailingZeros</span><span class="hljs-params">(String num)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">pos</span> <span class="hljs-operator">=</span> num.length() - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (num.charAt(pos) == <span class="hljs-string">&#x27;0&#x27;</span>) &#123;<br>            --pos;<br>        &#125;<br>        <span class="hljs-keyword">return</span> num.substring(<span class="hljs-number">0</span>, pos + <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code>
-为字符串的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为字符串的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/13/banner6.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>

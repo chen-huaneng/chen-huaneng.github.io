@@ -346,21 +346,10 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/">1455.
-检查单词是否为句中其他单词的前缀</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个字符串 <code>sentence</code> 作为句子并指定检索词为
-<code>searchWord</code> ，其中句子由若干用 <strong>单个空格</strong>
-分隔的单词组成。请你检查检索词 <code>searchWord</code> 是否为句子
-<code>sentence</code> 中任意单词的前缀。</p>
-<p>如果 <code>searchWord</code> 是某一个单词的前缀，则返回句子
-<code>sentence</code> 中该单词所对应的下标（<strong>下标从 1
-开始</strong>）。如果 <code>searchWord</code>
-是多个单词的前缀，则返回匹配的第一个单词的下标（<strong>最小下标</strong>）。如果
-<code>searchWord</code> 不是任何单词的前缀，则返回 <code>-1</code>
-。</p>
-<p>字符串 <code>s</code> 的 <strong>前缀</strong> 是 <code>s</code>
-的任何前导连续子字符串。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/">1455. 检查单词是否为句中其他单词的前缀</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个字符串 <code>sentence</code> 作为句子并指定检索词为 <code>searchWord</code> ，其中句子由若干用 <strong>单个空格</strong> 分隔的单词组成。请你检查检索词 <code>searchWord</code> 是否为句子 <code>sentence</code> 中任意单词的前缀。</p>
+<p>如果 <code>searchWord</code> 是某一个单词的前缀，则返回句子 <code>sentence</code> 中该单词所对应的下标（<strong>下标从 1 开始</strong>）。如果 <code>searchWord</code> 是多个单词的前缀，则返回匹配的第一个单词的下标（<strong>最小下标</strong>）。如果 <code>searchWord</code> 不是任何单词的前缀，则返回 <code>-1</code> 。</p>
+<p>字符串 <code>s</code> 的 <strong>前缀</strong> 是 <code>s</code> 的任何前导连续子字符串。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：sentence = &quot;i love eating burger&quot;, searchWord = &quot;burg&quot;<br>输出：4<br>解释：&quot;burg&quot; 是 &quot;burger&quot; 的前缀，而 &quot;burger&quot; 是句子中第 4 个单词。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -379,19 +368,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/check-if-a-wor
 <p>根据题目模拟，先将句子分割成单词，然后判断单词的长度是否比搜索字符的长度要长，最后根据匹配的要求返回值就行。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">isPrefixOfWord</span><span class="hljs-params">(String sentence, String searchWord)</span> &#123;<br>        String[] words = sentence.split(<span class="hljs-string">&quot; &quot;</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; words.length; ++j) &#123;<br>            <span class="hljs-keyword">if</span> (words[j].length() &gt;= searchWord.length()) &#123;<br>                <span class="hljs-type">boolean</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; searchWord.length(); ++i) &#123;<br>                    <span class="hljs-keyword">if</span> (searchWord.charAt(i) != words[j].charAt(i)) &#123;<br>                        flag = <span class="hljs-literal">false</span>;<br>                        <span class="hljs-keyword">break</span>;<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (flag) &#123;<br>                  <span class="hljs-keyword">return</span> j + <span class="hljs-number">1</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n
-\times m)\)</span>， 其中 <code>n</code> 是 <code>sentence</code>
-的长度，而 <code>m</code> 是最长的单词的长度， <code>Java</code> 的
-<code>split</code> 方法的时间复杂度为 <span
-class="math inline">\(O(n)\)</span>，而遍历每个单词并做匹配的时间复杂度为
-<span class="math inline">\(O(n \times m)\)</span>
-，所以总的时间复杂度为 <span class="math inline">\(O(n \times
-m)\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，分割 <code>sentence</code> 的
-<code>split</code> 方法的空间复杂度为 <span
-class="math inline">\(O(n)\)</span>，其中 <code>n</code> 是
-<code>sentence</code> 的长度。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n \times m)\)</span>， 其中 <code>n</code> 是 <code>sentence</code> 的长度，而 <code>m</code> 是最长的单词的长度， <code>Java</code> 的 <code>split</code> 方法的时间复杂度为 <span class="math inline">\(O(n)\)</span>，而遍历每个单词并做匹配的时间复杂度为 <span class="math inline">\(O(n \times m)\)</span> ，所以总的时间复杂度为 <span class="math inline">\(O(n \times m)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(n)\)</span>，分割 <code>sentence</code> 的 <code>split</code> 方法的空间复杂度为 <span class="math inline">\(O(n)\)</span>，其中 <code>n</code> 是 <code>sentence</code> 的长度。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/06/banner6.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

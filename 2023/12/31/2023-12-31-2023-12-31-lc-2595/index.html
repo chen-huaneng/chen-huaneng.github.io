@@ -271,7 +271,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 481 
+          文章字数: 502 
         
       </span>
     
@@ -345,16 +345,11 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-even-and-odd-bits/description/">2595.
-奇偶位数</a> ，难度为<strong>简单</strong>。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-even-and-odd-bits/description/">2595. 奇偶位数</a> ，难度为<strong>简单</strong>。</p>
 <p>给你一个 <strong>正</strong> 整数 <code>n</code> 。</p>
-<p>用 <code>even</code> 表示在 <code>n</code> 的二进制形式（下标从
-<strong>0</strong> 开始）中值为 <code>1</code> 的偶数下标的个数。</p>
-<p>用 <code>odd</code> 表示在 <code>n</code> 的二进制形式（下标从
-<strong>0</strong> 开始）中值为 <code>1</code> 的奇数下标的个数。</p>
-<p>返回整数数组 <code>answer</code> ，其中
-<code>answer = [even, odd]</code> 。</p>
+<p>用 <code>even</code> 表示在 <code>n</code> 的二进制形式（下标从 <strong>0</strong> 开始）中值为 <code>1</code> 的偶数下标的个数。</p>
+<p>用 <code>odd</code> 表示在 <code>n</code> 的二进制形式（下标从 <strong>0</strong> 开始）中值为 <code>1</code> 的奇数下标的个数。</p>
+<p>返回整数数组 <code>answer</code> ，其中 <code>answer = [even, odd]</code> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 17<br>输出：[2,0]<br>解释：17 的二进制形式是 10001 。 <br>下标 0 和 下标 4 对应的值为 1 。 <br>共有 2 个偶数下标，0 个奇数下标。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -368,36 +363,24 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-even
 <p>根据题意按位判断，最后统计奇偶的个数。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] evenOddBit(<span class="hljs-type">int</span> n) &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>, odd = <span class="hljs-number">0</span>, even = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (i != <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">if</span> ((n &amp; i) != <span class="hljs-number">0</span>) &#123;<br>                ++even;<br>            &#125;<br>            i &lt;&lt;= <span class="hljs-number">2</span>;<br>        &#125;<br>        i = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">while</span> (i != <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">if</span> ((n &amp; i) != <span class="hljs-number">0</span>) &#123;<br>                ++odd;<br>            &#125;<br>            i &lt;&lt;= <span class="hljs-number">2</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;even, odd&#125;;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>n</code> 的位数。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为 <code>n</code> 的位数。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h3 id="方法二模拟改进">方法二：模拟改进</h3>
 <p>可以改进模拟的写法，使其更加简洁。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] evenOddBit(<span class="hljs-type">int</span> n) &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; n &gt; <span class="hljs-number">0</span>; i ^= <span class="hljs-number">1</span>, n &gt;&gt;= <span class="hljs-number">1</span>)<br>        &#123;<br>            ans[i] += n &amp; <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(\log
-N)\)</span>，其中 <code>N</code> 为 <code>n</code> 的位数。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(\log N)\)</span>，其中 <code>N</code> 为 <code>n</code> 的位数。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h3 id="方法三位掩码-库函数">方法三：位掩码 + 库函数</h3>
-<p><a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-even-and-odd-bits/solutions/2177848/er-jin-zhi-ji-ben-cao-zuo-pythonjavacgo-o82o2/"><span
-class="citation"
-data-cites="Source:题解来源">@Source:题解来源</span></a></p>
-<p>利用位掩码 0x55555555（二进制的
-010101⋯），取出偶数下标比特和奇数下标比特，分别用库函数统计 1
-的个数。</p>
+<p><span class="citation" data-cites="Source:题解来源">[@Source:题解来源]</span>(https://leetcode.cn/problems/number-of-even-and-odd-bits/solutions/2177848/er-jin-zhi-ji-ben-cao-zuo-pythonjavacgo-o82o2/)</p>
+<p>利用位掩码 0x55555555（二进制的 010101⋯），取出偶数下标比特和奇数下标比特，分别用库函数统计 1 的个数。</p>
 <p>本题由于 n 范围比较小，取 0x5555 作为位掩码。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] evenOddBit(<span class="hljs-type">int</span> n) &#123;<br>        <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">MASK</span> <span class="hljs-operator">=</span> <span class="hljs-number">0x5555</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[]&#123;Integer.bitCount(n &amp; MASK), Integer.bitCount(n &amp; (MASK &gt;&gt; <span class="hljs-number">1</span>))&#125;;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/31/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

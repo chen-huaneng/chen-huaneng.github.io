@@ -347,14 +347,10 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/can-make-arithmetic-progression-from-sequence/description/">1502.
-判断能否形成等差数列</a> ，难度为<strong>简单</strong>。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/can-make-arithmetic-progression-from-sequence/description/">1502. 判断能否形成等差数列</a> ，难度为<strong>简单</strong>。</p>
 <p>给你一个数字数组 <code>arr</code> 。</p>
-<p>如果一个数列中，任意相邻两项的差总等于同一个常数，那么这个数列就称为
-<strong>等差数列</strong> 。</p>
-<p>如果可以重新排列数组形成等差数列，请返回 <code>true</code>
-；否则，返回 <code>false</code> 。</p>
+<p>如果一个数列中，任意相邻两项的差总等于同一个常数，那么这个数列就称为 <strong>等差数列</strong> 。</p>
+<p>如果可以重新排列数组形成等差数列，请返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：arr = [3,5,1]<br>输出：true<br>解释：对数组重新排序得到 [1,3,5] 或者 [5,3,1] ，任意相邻两项的差分别为 2 或 -2 ，可以形成等差数列。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -366,33 +362,18 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/can-make-arith
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一排序-遍历">方法一：排序 + 遍历</h3>
-<p>先给 <code>arr</code> 排序之后，遍历 <code>arr</code>
-判断前后两项的差值是否相等，如果不相等就不能组成等差数列。</p>
+<p>先给 <code>arr</code> 排序之后，遍历 <code>arr</code> 判断前后两项的差值是否相等，如果不相等就不能组成等差数列。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">canMakeArithmeticProgression</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        Arrays.sort(arr);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> arr[<span class="hljs-number">1</span>] - arr[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt; arr.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (arr[i] - arr[i - <span class="hljs-number">1</span>] != tmp) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N \log
-N)\)</span>，排序的时间复杂度为 <span class="math inline">\(O(N \log
-N)\)</span>，遍历的时间复杂度为 <span
-class="math inline">\(O(N)\)</span>，故渐进时间复杂度为 <span
-class="math inline">\(O(N \log N)\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，排序的空间复杂度为 <span
-class="math inline">\(O(N)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N \log N)\)</span>，排序的时间复杂度为 <span class="math inline">\(O(N \log N)\)</span>，遍历的时间复杂度为 <span class="math inline">\(O(N)\)</span>，故渐进时间复杂度为 <span class="math inline">\(O(N \log N)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，排序的空间复杂度为 <span class="math inline">\(O(N)\)</span>。</p></li>
 </ul>
 <h3 id="方法二等差数列性质">方法二：等差数列性质</h3>
-<p>另一种方法就是利用等差数列的性质，先遍历 <code>arr</code> 找出最大值
-<code>max</code> 和最小值 <code>min</code> ，利用等差数列的性质求出公差
-<span class="math inline">\(d = \frac{max - min}{arr.length -
-1}\)</span> ，最后遍历判断每个数与最小值 <code>min</code>
-的差值是否为公差的倍数。</p>
+<p>另一种方法就是利用等差数列的性质，先遍历 <code>arr</code> 找出最大值 <code>max</code> 和最小值 <code>min</code> ，利用等差数列的性质求出公差 <span class="math inline">\(d = \frac{max - min}{arr.length - 1}\)</span> ，最后遍历判断每个数与最小值 <code>min</code> 的差值是否为公差的倍数。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">canMakeArithmeticProgression</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> Integer.MIN_VALUE, min = Integer.MAX_VALUE, n = arr.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i) &#123; <span class="hljs-comment">// 找出最值</span><br>            <span class="hljs-keyword">if</span> (max &lt; arr[i]) &#123;<br>                max = arr[i];<br>            &#125;<br>            <span class="hljs-keyword">if</span> (min &gt; arr[i]) &#123;<br>                min = arr[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> ((max - min) % (n - <span class="hljs-number">1</span>) != <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 等差数列的最值的差一定为整数倍的公差</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">diff</span> <span class="hljs-operator">=</span> (max - min) / (n - <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">if</span> (diff == <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 如果公差为0，则每个数都相等，那么一定为等差数列</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-type">boolean</span>[] exist = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[n]; <span class="hljs-comment">// 用于判断是否存在重复的数</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : arr) &#123;<br>            <span class="hljs-keyword">if</span> ((num - min) % diff == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> (num - min) / diff; <span class="hljs-comment">// 用于记录是否存在重复数的下标</span><br>                <span class="hljs-keyword">if</span> (exist[tmp] == <span class="hljs-literal">true</span>) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    exist[tmp] = <span class="hljs-literal">true</span>;<br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 差值不为公差的整数倍</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，遍历两次 <code>arr</code> ，其中
-<code>N</code> 为 <code>arr</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>arr</code> 的长度。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，遍历两次 <code>arr</code> ，其中 <code>N</code> 为 <code>arr</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为 <code>arr</code> 的长度。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/12/banner5.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

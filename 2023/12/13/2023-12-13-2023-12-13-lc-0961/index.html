@@ -272,7 +272,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 595 
+          文章字数: 619 
         
       </span>
     
@@ -346,15 +346,11 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-repeated-element-in-size-2n-array/description/">961.
-在长度 2N 的数组中找出重复 N 次的元素</a>
-，难度为<strong>简单</strong>。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-repeated-element-in-size-2n-array/description/">961. 在长度 2N 的数组中找出重复 N 次的元素</a> ，难度为<strong>简单</strong>。</p>
 <p>给你一个整数数组 <code>nums</code> ，该数组具有以下属性：</p>
 <ul>
 <li><code>nums.length == 2 * n</code>.</li>
-<li><code>nums</code> 包含 <code>n + 1</code> 个 <strong>不同的</strong>
-元素</li>
+<li><code>nums</code> 包含 <code>n + 1</code> 个 <strong>不同的</strong> 元素</li>
 <li><code>nums</code> 中恰有一个元素重复 <code>n</code> 次</li>
 </ul>
 <p>找出并返回重复了 <code>n</code> 次的那个元素。</p>
@@ -369,49 +365,29 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-repeated-ele
 <li><code>2 &lt;= n &lt;= 5000</code></li>
 <li><code>nums.length == 2 * n</code></li>
 <li><code>0 &lt;= nums[i] &lt;= 104</code></li>
-<li><code>nums</code> 由 <code>n + 1</code> 个 <strong>不同的</strong>
-元素组成，且其中一个元素恰好重复 <code>n</code> 次</li>
+<li><code>nums</code> 由 <code>n + 1</code> 个 <strong>不同的</strong> 元素组成，且其中一个元素恰好重复 <code>n</code> 次</li>
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一哈希表">方法一：哈希表</h3>
 <p>最简单的方法就是建立一个哈希表，每次遇到没有加入的计数，如果遇到重复的就返回该字母。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">repeatedNTimes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">hash</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;Integer, Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length / <span class="hljs-number">2</span> + <span class="hljs-number">2</span>; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (hash.containsKey(nums[i])) &#123;<br>                <span class="hljs-keyword">return</span> nums[i];<br>            &#125;<br>            hash.put(nums[i], <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度，最坏情况下要遍历 <code>N + 2</code>
-个元素才能找到。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为
-<code>nums</code> 的长度，最坏情况下要建立的哈希键值对为
-<code>N + 1</code>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为 <code>nums</code> 的长度，最坏情况下要遍历 <code>N + 2</code> 个元素才能找到。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为 <code>nums</code> 的长度，最坏情况下要建立的哈希键值对为 <code>N + 1</code>。</p></li>
 </ul>
 <h3 id="方法二数学">方法二：数学</h3>
-<p><a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-repeated-element-in-size-2n-array/solutions/1506096/zai-chang-du-2n-de-shu-zu-zhong-zhao-chu-w88a/"><span
-class="citation"
-data-cites="Source:题解来源">@Source:题解来源</span></a></p>
-<p>我们可以考虑重复的元素 <code>x</code> 在数组 <code>nums</code>
-中出现的位置。</p>
-<p>如果相邻的 <code>x</code> 之间至少都隔了 <code>2</code>
-个位置，那么数组的总长度至少为： <span class="math display">\[
+<p><span class="citation" data-cites="Source:题解来源">[@Source:题解来源]</span>(https://leetcode.cn/problems/n-repeated-element-in-size-2n-array/solutions/1506096/zai-chang-du-2n-de-shu-zu-zhong-zhao-chu-w88a/)</p>
+<p>我们可以考虑重复的元素 <code>x</code> 在数组 <code>nums</code> 中出现的位置。</p>
+<p>如果相邻的 <code>x</code> 之间至少都隔了 <code>2</code> 个位置，那么数组的总长度至少为： <span class="math display">\[
 n + 2 (n - 1) = 3n - 2
 \]</span></p>
-<p>当 <code>n &gt; 2</code>
-时，<code>3n − 2 &gt; 2n</code>，不存在满足要求的数组。因此一定存在两个相邻的
-<code>x</code>，它们的位置是连续的，或者只隔了 <code>1</code>
-个位置。</p>
-<p>当 <code>n = 2</code> 时，数组的长度最多为
-<code>2n = 4</code>，因此最多只能隔 <code>2</code> 个位置。</p>
-<p>这样一来，我们只需要遍历所有间隔 <code>2</code>
-个位置及以内的下标对，判断对应的元素是否相等即可。</p>
+<p>当 <code>n &gt; 2</code> 时，<code>3n − 2 &gt; 2n</code>，不存在满足要求的数组。因此一定存在两个相邻的 <code>x</code>，它们的位置是连续的，或者只隔了 <code>1</code> 个位置。</p>
+<p>当 <code>n = 2</code> 时，数组的长度最多为 <code>2n = 4</code>，因此最多只能隔 <code>2</code> 个位置。</p>
+<p>这样一来，我们只需要遍历所有间隔 <code>2</code> 个位置及以内的下标对，判断对应的元素是否相等即可。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">repeatedNTimes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> nums[i];<br>            <span class="hljs-keyword">if</span> ((i &gt;= <span class="hljs-number">1</span> &amp;&amp; nums[i - <span class="hljs-number">1</span>] == t) ||<br>            (i &gt;= <span class="hljs-number">2</span> &amp;&amp; nums[i - <span class="hljs-number">2</span>] == t) || <br>            (i &gt;= <span class="hljs-number">3</span> &amp;&amp; nums[i - <span class="hljs-number">3</span>] == t)) &#123;<br>                <span class="hljs-keyword">return</span> t;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，最多对数组进行三次遍历（除了
-<code>n = 2</code>之外，最多遍历两次）。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，最多对数组进行三次遍历（除了 <code>n = 2</code>之外，最多遍历两次）。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/13/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>

@@ -33,8 +33,8 @@
 <meta property="article:modified_time" content="2024-01-17T10:00:58.810Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Hash Table">
 <meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary_large_image">
@@ -348,20 +348,14 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-maximum-number-of-string-pairs/description/">2744.
-最大字符串配对数目</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个下标从 <strong>0</strong> 开始的数组 <code>words</code>
-，数组中包含 <strong>互不相同</strong> 的字符串。</p>
-<p>如果字符串 <code>words[i]</code> 与字符串 <code>words[j]</code>
-满足以下条件，我们称它们可以匹配：</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-maximum-number-of-string-pairs/description/">2744. 最大字符串配对数目</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个下标从 <strong>0</strong> 开始的数组 <code>words</code> ，数组中包含 <strong>互不相同</strong> 的字符串。</p>
+<p>如果字符串 <code>words[i]</code> 与字符串 <code>words[j]</code> 满足以下条件，我们称它们可以匹配：</p>
 <ul>
-<li>字符串 <code>words[i]</code> 等于 <code>words[j]</code>
-的反转字符串。</li>
+<li>字符串 <code>words[i]</code> 等于 <code>words[j]</code> 的反转字符串。</li>
 <li><code>0 &lt;= i &lt; j &lt; words.length</code></li>
 </ul>
-<p>请你返回数组 <code>words</code> 中的 <strong>最大</strong>
-匹配数目。</p>
+<p>请你返回数组 <code>words</code> 中的 <strong>最大</strong> 匹配数目。</p>
 <p>注意，每个字符串最多匹配一次。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：words = [&quot;cd&quot;,&quot;ac&quot;,&quot;dc&quot;,&quot;ca&quot;,&quot;zz&quot;]<br>输出：2<br>解释：在此示例中，我们可以通过以下方式匹配 2 对字符串：<br><span class="hljs-bullet">-</span> 我们将第 0 个字符串与第 2 个字符串匹配，因为 word[0] 的反转字符串是 &quot;dc&quot; 并且等于 words[2]。<br><span class="hljs-bullet">-</span> 我们将第 1 个字符串与第 3 个字符串匹配，因为 word[1] 的反转字符串是 &quot;ca&quot; 并且等于 words[3]。<br>可以证明最多匹配数目是 2 。<br></code></pre></td></tr></table></figure>
@@ -378,16 +372,11 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-maximum-n
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一哈希表">方法一：哈希表</h3>
-<p>根据题目的提示，字符串只有两个字符，所以可以使用 <code>200</code>
-以内的整数来代表字符串的哈希值，通过哈希值来判断字符串的反转是否在哈希表中，如果存在则增加匹配的次数。</p>
+<p>根据题目的提示，字符串只有两个字符，所以可以使用 <code>200</code> 以内的整数来代表字符串的哈希值，通过哈希值来判断字符串的反转是否在哈希表中，如果存在则增加匹配的次数。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maximumNumberOfStringPairs</span><span class="hljs-params">(String[] words)</span> &#123;<br>        Set&lt;Integer&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (String s : words) &#123;<br>            <span class="hljs-keyword">if</span> (set.contains(s.charAt(<span class="hljs-number">1</span>) * <span class="hljs-number">100</span> + s.charAt(<span class="hljs-number">0</span>))) &#123;<br>                ++cnt;<br>            &#125;<br>            set.add(s.charAt(<span class="hljs-number">0</span>) * <span class="hljs-number">100</span> + s.charAt(<span class="hljs-number">1</span>));<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code>
-为字符串数组的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code>
-为哈希表需要的空间。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为字符串数组的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为哈希表需要的空间。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/17/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -433,9 +422,9 @@ class="math inline">\(O(N)\)</span>，其中 <code>N</code>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
-      
         <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+      
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
         <a href="/tags/Hash-Table/" class="print-no-link">#Hash Table</a>
       

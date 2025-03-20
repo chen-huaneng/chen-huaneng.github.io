@@ -33,10 +33,10 @@
 <meta property="article:modified_time" content="2024-01-13T07:59:25.027Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="String">
 <meta property="article:tag" content="Counting">
-<meta property="article:tag" content="Greedy">
+<meta property="article:tag" content="String">
 <meta property="article:tag" content="Two Pointers">
+<meta property="article:tag" content="Greedy">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/13/banner.png">
   
@@ -348,23 +348,10 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-string-with-repeat-limit/description/">2182.
-构造限制重复的字符串</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个字符串 <code>s</code> 和一个整数 <code>repeatLimit</code>
-，用 <code>s</code> 中的字符构造一个新字符串
-<code>repeatLimitedString</code> ，使任何字母 <strong>连续</strong>
-出现的次数都不超过 <code>repeatLimit</code> 次。你不必使用
-<code>s</code> 中的全部字符。</p>
-<p>返回 <strong>字典序最大的</strong> <code>repeatLimitedString</code>
-。</p>
-<p>如果在字符串 <code>a</code> 和 <code>b</code>
-不同的第一个位置，字符串 <code>a</code>
-中的字母在字母表中出现时间比字符串 <code>b</code>
-对应的字母晚，则认为字符串 <code>a</code> 比字符串 <code>b</code>
-<strong>字典序更大</strong> 。如果字符串中前
-<code>min(a.length, b.length)</code>
-个字符都相同，那么较长的字符串字典序更大。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-string-with-repeat-limit/description/">2182. 构造限制重复的字符串</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个字符串 <code>s</code> 和一个整数 <code>repeatLimit</code> ，用 <code>s</code> 中的字符构造一个新字符串 <code>repeatLimitedString</code> ，使任何字母 <strong>连续</strong> 出现的次数都不超过 <code>repeatLimit</code> 次。你不必使用 <code>s</code> 中的全部字符。</p>
+<p>返回 <strong>字典序最大的</strong> <code>repeatLimitedString</code> 。</p>
+<p>如果在字符串 <code>a</code> 和 <code>b</code> 不同的第一个位置，字符串 <code>a</code> 中的字母在字母表中出现时间比字符串 <code>b</code> 对应的字母晚，则认为字符串 <code>a</code> 比字符串 <code>b</code> <strong>字典序更大</strong> 。如果字符串中前 <code>min(a.length, b.length)</code> 个字符都相同，那么较长的字符串字典序更大。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;cczazcc&quot;, repeatLimit = 3<br>输出：&quot;zzcccac&quot;<br>解释：使用 s 中的所有字符来构造 repeatLimitedString &quot;zzcccac&quot;。<br>字母 &#x27;a&#x27; 连续出现至多 1 次。<br>字母 &#x27;c&#x27; 连续出现至多 3 次。<br>字母 &#x27;z&#x27; 连续出现至多 2 次。<br>因此，没有字母连续出现超过 repeatLimit 次，字符串是一个有效的 repeatLimitedString 。<br>该字符串是字典序最大的 repeatLimitedString ，所以返回 &quot;zzcccac&quot; 。<br>注意，尽管 &quot;zzcccca&quot; 字典序更大，但字母 &#x27;c&#x27; 连续出现超过 3 次，所以它不是一个有效的 repeatLimitedString 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -376,18 +363,11 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-stri
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一贪心-双指针">方法一：贪心 + 双指针</h3>
-<p>先统计字符串 <code>s</code>
-中各个字符的数量，用双指针模拟填入的过程，从字符集的末尾开始遍历，如果填入的字符没有超过限制
-<code>repeatLimit</code>
-则继续填入，如果超过则填入接下来的一个字符，然后如果之前的还有剩下字符，则继续填入，否则继续填入下一个字符。</p>
+<p>先统计字符串 <code>s</code> 中各个字符的数量，用双指针模拟填入的过程，从字符集的末尾开始遍历，如果填入的字符没有超过限制 <code>repeatLimit</code> 则继续填入，如果超过则填入接下来的一个字符，然后如果之前的还有剩下字符，则继续填入，否则继续填入下一个字符。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-variable">N</span> <span class="hljs-operator">=</span> <span class="hljs-number">26</span>;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">repeatLimitedString</span><span class="hljs-params">(String s, <span class="hljs-type">int</span> repeatLimit)</span> &#123;<br>        <span class="hljs-type">int</span>[] ch = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[N];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; s.length(); ++i) &#123;<br>            ++ch[s.charAt(i) - <span class="hljs-string">&#x27;a&#x27;</span>];<br>        &#125;<br>        <span class="hljs-type">StringBuffer</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuffer</span>();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> N - <span class="hljs-number">1</span>, j = N - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &gt;= <span class="hljs-number">0</span>;) &#123;<br>             <span class="hljs-keyword">if</span> (ch[i] == <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 当前字符用完，填入后面的字符，更新cnt</span><br>                 cnt = <span class="hljs-number">0</span>;<br>                 --i;<br>             &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cnt &lt; repeatLimit) &#123; <span class="hljs-comment">// 当前字符未超过限制</span><br>                 sb.append((<span class="hljs-type">char</span>) (i + <span class="hljs-string">&#x27;a&#x27;</span>));<br>                 ++cnt;<br>                 --ch[i];<br>             &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j &gt;= i || ch[j] == <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 当前字符已经超过限制，查找下一个字符</span><br>                 --j;<br>             &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 当前字符超过限制，填入下一个字符，更新cnt</span><br>                 cnt = <span class="hljs-number">0</span>;<br>                 sb.append((<span class="hljs-type">char</span>) (j + <span class="hljs-string">&#x27;a&#x27;</span>));<br>                 --ch[j];<br>             &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sb.toString();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N +
-M)\)</span>，其中 <code>N</code> 为 <code>s</code> 的长度，
-<code>M = 26</code> 为字符集的大小。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(M)\)</span>，<code>M</code>
-为字符集的大小。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N + M)\)</span>，其中 <code>N</code> 为 <code>s</code> 的长度， <code>M = 26</code> 为字符集的大小。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(M)\)</span>，<code>M</code> 为字符集的大小。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/13/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -433,13 +413,13 @@ class="math inline">\(O(M)\)</span>，<code>M</code>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/String/" class="print-no-link">#String</a>
-      
         <a href="/tags/Counting/" class="print-no-link">#Counting</a>
       
-        <a href="/tags/Greedy/" class="print-no-link">#Greedy</a>
+        <a href="/tags/String/" class="print-no-link">#String</a>
       
         <a href="/tags/Two-Pointers/" class="print-no-link">#Two Pointers</a>
+      
+        <a href="/tags/Greedy/" class="print-no-link">#Greedy</a>
       
     </div>
   

@@ -33,8 +33,8 @@
 <meta property="article:modified_time" content="2024-01-04T08:17:43.821Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Matrix">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/4/banner1.jpg">
@@ -347,12 +347,8 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/lucky-numbers-in-a-matrix/description/">1380.
-矩阵中的幸运数</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个 <code>m * n</code> 的矩阵，矩阵中的数字
-<strong>各不相同</strong> 。请你按 <strong>任意</strong>
-顺序返回矩阵中的所有幸运数。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lucky-numbers-in-a-matrix/description/">1380. 矩阵中的幸运数</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个 <code>m * n</code> 的矩阵，矩阵中的数字 <strong>各不相同</strong> 。请你按 <strong>任意</strong> 顺序返回矩阵中的所有幸运数。</p>
 <p><strong>幸运数</strong> 是指矩阵中满足同时下列两个条件的元素：</p>
 <ul>
 <li>在同一行的所有元素中最小</li>
@@ -377,11 +373,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/lucky-numbers-
 <p>由于矩阵中的数都是不同的，所以我们遍历矩阵的每一行，先找出行的最小值，然后判断该最小值是否为同一列的最大值，如果是则添加到返回的数组中，如果不是则跳过。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title function_">luckyNumbers</span> <span class="hljs-params">(<span class="hljs-type">int</span>[][] matrix)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; matrix.length; ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">row</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; matrix[<span class="hljs-number">0</span>].length; ++j) &#123;<br>                <span class="hljs-keyword">if</span> (matrix[i][row] &gt; matrix[i][j]) &#123;<br>                    row = j;<br>                &#125;<br>            &#125;<br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">isMax</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; matrix.length; ++j) &#123;<br>                <span class="hljs-keyword">if</span> (matrix[i][row] &lt; matrix[j][row]) &#123;<br>                    isMax = <span class="hljs-literal">false</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (isMax) &#123;<br>                res.add(matrix[i][row]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(M(M +
-N))\)</span>，其中 <code>M</code> 为矩阵的行数， <code>N</code>
-为矩阵的列数。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(M(M + N))\)</span>，其中 <code>M</code> 为矩阵的行数， <code>N</code> 为矩阵的列数。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/4/banner1.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -427,9 +420,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
-      
         <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+      
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
         <a href="/tags/Matrix/" class="print-no-link">#Matrix</a>
       

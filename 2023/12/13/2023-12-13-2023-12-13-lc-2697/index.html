@@ -34,8 +34,8 @@
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="String">
-<meta property="article:tag" content="Greedy">
 <meta property="article:tag" content="Two Pointers">
+<meta property="article:tag" content="Greedy">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2023/12/13/banner2.png">
   
@@ -347,21 +347,10 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/lexicographically-smallest-palindrome/description/">2697.
-字典序最小回文串</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个由 <strong>小写英文字母</strong> 组成的字符串 <code>s</code>
-，你可以对其执行一些操作。在一步操作中，你可以用其他小写英文字母
-<strong>替换</strong> <code>s</code> 中的一个字符。</p>
-<p>请你执行 <strong>尽可能少的操作</strong> ，使 <code>s</code> 变成一个
-<strong>回文串</strong> 。如果执行 <strong>最少</strong>
-操作次数的方案不止一种，则只需选取 <strong>字典序最小</strong>
-的方案。</p>
-<p>对于两个长度相同的字符串 <code>a</code> 和 <code>b</code> ，在
-<code>a</code> 和 <code>b</code> 出现不同的第一个位置，如果该位置上
-<code>a</code> 中对应字母比 <code>b</code>
-中对应字母在字母表中出现顺序更早，则认为 <code>a</code> 的字典序比
-<code>b</code> 的字典序要小。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lexicographically-smallest-palindrome/description/">2697. 字典序最小回文串</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个由 <strong>小写英文字母</strong> 组成的字符串 <code>s</code> ，你可以对其执行一些操作。在一步操作中，你可以用其他小写英文字母 <strong>替换</strong> <code>s</code> 中的一个字符。</p>
+<p>请你执行 <strong>尽可能少的操作</strong> ，使 <code>s</code> 变成一个 <strong>回文串</strong> 。如果执行 <strong>最少</strong> 操作次数的方案不止一种，则只需选取 <strong>字典序最小</strong> 的方案。</p>
+<p>对于两个长度相同的字符串 <code>a</code> 和 <code>b</code> ，在 <code>a</code> 和 <code>b</code> 出现不同的第一个位置，如果该位置上 <code>a</code> 中对应字母比 <code>b</code> 中对应字母在字母表中出现顺序更早，则认为 <code>a</code> 的字典序比 <code>b</code> 的字典序要小。</p>
 <p>返回最终的回文字符串。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：s = &quot;egcfe&quot;<br>输出：&quot;efcfe&quot;<br>解释：将 &quot;egcfe&quot; 变成回文字符串的最小操作次数为 1 ，修改 1 次得到的字典序最小回文字符串是 &quot;efcfe&quot;，只需将 &#x27;g&#x27; 改为 &#x27;f&#x27; 。<br></code></pre></td></tr></table></figure>
@@ -376,16 +365,11 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/lexicographica
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一双指针">方法一：双指针</h3>
-<p>分别设定两个指针指向字符串的头和尾，然后遍历字符串，如果遇到不同的就替换成
-<code>ASCII</code> 码值更小的字符。</p>
+<p>分别设定两个指针指向字符串的头和尾，然后遍历字符串，如果遇到不同的就替换成 <code>ASCII</code> 码值更小的字符。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">makeSmallestPalindrome</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">char</span>[] arr = s.toCharArray();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, j = arr.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt;= j) &#123;<br>            <span class="hljs-keyword">if</span> (arr[i] != arr[j]) &#123;<br>                arr[i] = arr[j] = (<span class="hljs-type">char</span>) Math.min(arr[i], arr[j]);<br>            &#125;<br>            ++i;<br>            --j;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(arr);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code>
-是字符串的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，由于 <code>Java</code>
-不能直接对字符串进行修改，需要创建临时字符数组来存储。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 是字符串的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，由于 <code>Java</code> 不能直接对字符串进行修改，需要创建临时字符数组来存储。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/13/banner2.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -433,9 +417,9 @@ class="math inline">\(O(N)\)</span>，由于 <code>Java</code>
       
         <a href="/tags/String/" class="print-no-link">#String</a>
       
-        <a href="/tags/Greedy/" class="print-no-link">#Greedy</a>
-      
         <a href="/tags/Two-Pointers/" class="print-no-link">#Two Pointers</a>
+      
+        <a href="/tags/Greedy/" class="print-no-link">#Greedy</a>
       
     </div>
   

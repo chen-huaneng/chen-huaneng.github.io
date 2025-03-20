@@ -346,12 +346,8 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/generate-a-string-with-characters-that-have-odd-counts/description/">1374.
-生成每种字符都是奇数个的字符串</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个整数 <code>n</code>，请你返回一个含 <em><code>n</code></em>
-个字符的字符串，其中每种字符在该字符串中都恰好出现
-<strong>奇数次</strong> <strong><em>。</em></strong></p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/generate-a-string-with-characters-that-have-odd-counts/description/">1374. 生成每种字符都是奇数个的字符串</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个整数 <code>n</code>，请你返回一个含 <em><code>n</code></em> 个字符的字符串，其中每种字符在该字符串中都恰好出现 <strong>奇数次</strong> <strong><em>。</em></strong></p>
 <p>返回的字符串必须只含小写英文字母。如果存在多个满足题目要求的字符串，则返回其中任意一个即可。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：n = 4<br>输出：&quot;pppz&quot;<br>解释：&quot;pppz&quot; 是一个满足题目要求的字符串，因为 &#x27;p&#x27; 出现 3 次，且 &#x27;z&#x27; 出现 1 次。当然，还有很多其他字符串也满足题目要求，比如：&quot;ohhh&quot; 和 &quot;love&quot;。<br></code></pre></td></tr></table></figure>
@@ -365,15 +361,11 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/generate-a-str
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一模拟">方法一：模拟</h3>
-<p>题目没有规定说单个字符最大出现的次数，所以直接根据 <code>n</code>
-的奇偶性来构造相应的字符串即可。</p>
+<p>题目没有规定说单个字符最大出现的次数，所以直接根据 <code>n</code> 的奇偶性来构造相应的字符串即可。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">generateTheString</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>        sb.append(((n &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">1</span>) ? <span class="hljs-string">&#x27;a&#x27;</span> : <span class="hljs-string">&#x27;b&#x27;</span>);<br>        <span class="hljs-keyword">while</span>(--n &gt; <span class="hljs-number">0</span>) &#123;<br>            sb.append(<span class="hljs-string">&#x27;a&#x27;</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> sb.toString();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code>
-为要返回的字符串的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为要返回的字符串的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2023/12/13/banner5.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>

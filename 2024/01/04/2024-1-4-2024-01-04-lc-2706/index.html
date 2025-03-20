@@ -346,16 +346,10 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/buy-two-chocolates/description/">2706.
-购买两块巧克力</a> ，难度为<strong>简单</strong>。</p>
-<p>给你一个整数数组 <code>prices</code>
-，它表示一个商店里若干巧克力的价格。同时给你一个整数 <code>money</code>
-，表示你一开始拥有的钱数。</p>
-<p>你必须购买 <strong>恰好</strong> 两块巧克力，而且剩余的钱数必须是
-<strong>非负数</strong> 。同时你想最小化购买两块巧克力的总花费。</p>
-<p>请你返回在购买两块巧克力后，最多能剩下多少钱。如果购买任意两块巧克力都超过了你拥有的钱，请你返回
-<code>money</code> 。注意剩余钱数必须是非负数。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/buy-two-chocolates/description/">2706. 购买两块巧克力</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个整数数组 <code>prices</code> ，它表示一个商店里若干巧克力的价格。同时给你一个整数 <code>money</code> ，表示你一开始拥有的钱数。</p>
+<p>你必须购买 <strong>恰好</strong> 两块巧克力，而且剩余的钱数必须是 <strong>非负数</strong> 。同时你想最小化购买两块巧克力的总花费。</p>
+<p>请你返回在购买两块巧克力后，最多能剩下多少钱。如果购买任意两块巧克力都超过了你拥有的钱，请你返回 <code>money</code> 。注意剩余钱数必须是非负数。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">输入：prices = [1,2,2], money = 3<br>输出：0<br>解释：分别购买价格为 1 和 2 的巧克力。你剩下 3 - 3 = 0 块钱。所以我们返回 0 。<br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -371,11 +365,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/buy-two-chocol
 <p>根据题目的意思，只需要找出最小值和次小值即可，故只需一次遍历。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">buyChoco</span><span class="hljs-params">(<span class="hljs-type">int</span>[] prices, <span class="hljs-type">int</span> money)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">min</span> <span class="hljs-operator">=</span> <span class="hljs-number">101</span>, pre = min;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; prices.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (prices[i] &lt; min) &#123;<br>                pre = min;<br>                min = prices[i];<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (prices[i] &lt; pre) &#123;<br>                pre = prices[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> money - pre - min &gt;= <span class="hljs-number">0</span> ? money - pre - min : money;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组
-<code>prices</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为数组 <code>prices</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/4/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

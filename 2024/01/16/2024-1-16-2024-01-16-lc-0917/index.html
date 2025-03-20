@@ -346,9 +346,7 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-only-letters/description/">917.
-仅仅反转字母</a> ，难度为<strong>简单</strong>。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-only-letters/description/">917. 仅仅反转字母</a> ，难度为<strong>简单</strong>。</p>
 <p>给你一个字符串 <code>s</code> ，根据下述规则反转字符串：</p>
 <ul>
 <li>所有非英文字母保留在原有位置。</li>
@@ -364,8 +362,7 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-only-l
 <p><strong>提示</strong></p>
 <ul>
 <li><code>1 &lt;= s.length &lt;= 100</code></li>
-<li><code>s</code> 仅由 ASCII 值在范围 <code>[33, 122]</code>
-的字符组成</li>
+<li><code>s</code> 仅由 ASCII 值在范围 <code>[33, 122]</code> 的字符组成</li>
 <li><code>s</code> 不含 <code>'\"'</code> 或 <code>'\\'</code></li>
 </ul>
 <h2 id="解答">解答</h2>
@@ -373,12 +370,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-only-l
 <p>根据题目，分别从字符串的两端开始遍历，遇到字母就交换两个字母，否则继续遍历直到两个指针相遇。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">reverseOnlyLetters</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">char</span>[] ch = s.toCharArray();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> ch.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, j = n - <span class="hljs-number">1</span>; i &lt; j;) &#123;<br>            <span class="hljs-keyword">while</span> (i &lt; j &amp;&amp; !Character.isLetter(ch[i])) &#123;<br>                ++i;<br>            &#125;<br>            <span class="hljs-keyword">while</span> (i &lt; j &amp;&amp; !Character.isLetter(ch[j])) &#123;<br>                --j;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (i &lt; j) &#123;<br>                <span class="hljs-type">char</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> ch[i];<br>                ch[i++] = ch[j];<br>                ch[j--] = t;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> String.valueOf(ch);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，其中 <code>N</code>
-为字符串的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(N)\)</span>，调用 <code>toCharArray</code>
-和构造新字符串均需要与字符串长度等同的空间。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，其中 <code>N</code> 为字符串的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(N)\)</span>，调用 <code>toCharArray</code> 和构造新字符串均需要与字符串长度等同的空间。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/16/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

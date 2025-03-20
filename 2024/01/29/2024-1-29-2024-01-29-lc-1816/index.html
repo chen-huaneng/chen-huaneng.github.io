@@ -33,8 +33,8 @@
 <meta property="article:modified_time" content="2024-01-29T06:27:20.930Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="Array">
 <meta property="article:tag" content="Simulation">
+<meta property="article:tag" content="Array">
 <meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2024/1/29/banner.jpg">
@@ -347,19 +347,12 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/truncate-sentence/description/">1816.
-截断句子 - 力扣（LeetCode）</a> ，难度为<strong>简单</strong>。</p>
-<p><strong>句子</strong>
-是一个单词列表，列表中的单词之间用单个空格隔开，且不存在前导或尾随空格。每个单词仅由大小写英文字母组成（不含标点符号）。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/truncate-sentence/description/">1816. 截断句子 - 力扣（LeetCode）</a> ，难度为<strong>简单</strong>。</p>
+<p><strong>句子</strong> 是一个单词列表，列表中的单词之间用单个空格隔开，且不存在前导或尾随空格。每个单词仅由大小写英文字母组成（不含标点符号）。</p>
 <ul>
-<li>例如，<code>"Hello World"</code>、<code>"HELLO"</code> 和
-<code>"hello world hello world"</code> 都是句子。</li>
+<li>例如，<code>"Hello World"</code>、<code>"HELLO"</code> 和 <code>"hello world hello world"</code> 都是句子。</li>
 </ul>
-<p>给你一个句子 <code>s</code> 和一个整数 <code>k</code> ，请你将
-<code>s</code> <strong>截断</strong> ，使截断后的句子仅含
-<strong>前</strong> <code>k</code> 个单词。返回 <strong>截断</strong>
-<code>s</code>** 后得到的句子<em>。</em></p>
+<p>给你一个句子 <code>s</code> 和一个整数 <code>k</code> ，请你将 <code>s</code> <strong>截断</strong> ，使截断后的句子仅含 <strong>前</strong> <code>k</code> 个单词。返回 <strong>截断</strong> <code>s</code>** 后得到的句子<em>。</em></p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：s = <span class="hljs-string">&quot;Hello how are you Contestant&quot;</span>, k = <span class="hljs-number">4</span><br>输出：<span class="hljs-string">&quot;Hello how are you&quot;</span><br>解释：<br>s 中的单词为 [<span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;how&quot;</span> <span class="hljs-string">&quot;are&quot;</span>, <span class="hljs-string">&quot;you&quot;</span>, <span class="hljs-string">&quot;Contestant&quot;</span>]<br>前 <span class="hljs-number">4</span> 个单词为 [<span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;how&quot;</span>, <span class="hljs-string">&quot;are&quot;</span>, <span class="hljs-string">&quot;you&quot;</span>]<br>因此，应当返回 <span class="hljs-string">&quot;Hello how are you&quot;</span><br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -379,11 +372,8 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/truncate-sente
 <p>由于题目说单个空格隔开单词，因此只需要计算空格的数目即可知道遍历了几个单词。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">truncateSentence</span><span class="hljs-params">(String s, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-type">int</span> i;<br>        <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; s.length() &amp;&amp; k &gt; <span class="hljs-number">0</span>; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (s.charAt(i) == <span class="hljs-string">&#x27; &#x27;</span>) &#123;<br>                --k;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> i == s.length() ? s : s.substring(<span class="hljs-number">0</span>, i - <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为字符串
-<code>s</code> 的长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n)\)</span>，其中 <code>n</code> 为字符串 <code>s</code> 的长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/29/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>
@@ -429,9 +419,9 @@ class="math inline">\(O(1)\)</span>。</p></li>
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Array/" class="print-no-link">#Array</a>
-      
         <a href="/tags/Simulation/" class="print-no-link">#Simulation</a>
+      
+        <a href="/tags/Array/" class="print-no-link">#Array</a>
       
         <a href="/tags/String/" class="print-no-link">#String</a>
       

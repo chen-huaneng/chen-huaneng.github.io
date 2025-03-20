@@ -346,18 +346,11 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-of-values-at-indices-with-k-set-bits/description/">2859.
-计算 K 置位下标对应元素的和 - 力扣（LeetCode）</a>
-，难度为<strong>简单</strong>。</p>
-<p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code>
-和一个整数 <code>k</code> 。</p>
-<p>请你用整数形式返回 <code>nums</code> 中的特定元素之
-<strong>和</strong> ，这些特定元素满足：其对应下标的二进制表示中恰存在
-<code>k</code> 个置位。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-of-values-at-indices-with-k-set-bits/description/">2859. 计算 K 置位下标对应元素的和 - 力扣（LeetCode）</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> 和一个整数 <code>k</code> 。</p>
+<p>请你用整数形式返回 <code>nums</code> 中的特定元素之 <strong>和</strong> ，这些特定元素满足：其对应下标的二进制表示中恰存在 <code>k</code> 个置位。</p>
 <p>整数的二进制表示中的 1 就是这个整数的 <strong>置位</strong> 。</p>
-<p>例如，<code>21</code> 的二进制表示为 <code>10101</code> ，其中有
-<code>3</code> 个置位。</p>
+<p>例如，<code>21</code> 的二进制表示为 <code>10101</code> ，其中有 <code>3</code> 个置位。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">输入：nums</span> <span class="hljs-string">=</span> [<span class="hljs-number">5</span>,<span class="hljs-number">10</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>]<span class="hljs-string">,</span> <span class="hljs-string">k</span> <span class="hljs-string">=</span> <span class="hljs-number">1</span><br><span class="hljs-string">输出：13</span><br><span class="hljs-string">解释：下标的二进制表示是：</span> <br><span class="hljs-number">0</span> <span class="hljs-string">=</span> <span class="hljs-number">0002</span><br><span class="hljs-number">1</span> <span class="hljs-string">=</span> <span class="hljs-number">0012</span><br><span class="hljs-number">2</span> <span class="hljs-string">=</span> <span class="hljs-number">0102</span><br><span class="hljs-number">3</span> <span class="hljs-string">=</span> <span class="hljs-number">0112</span><br><span class="hljs-number">4</span> <span class="hljs-string">=</span> <span class="hljs-number">1002</span> <br><span class="hljs-string">下标</span> <span class="hljs-number">1</span><span class="hljs-string">、2</span> <span class="hljs-string">和</span> <span class="hljs-number">4</span> <span class="hljs-string">在其二进制表示中都存在</span> <span class="hljs-string">k</span> <span class="hljs-string">=</span> <span class="hljs-number">1</span> <span class="hljs-string">个置位。</span><br><span class="hljs-string">因此，答案为</span> <span class="hljs-string">nums[1]</span> <span class="hljs-string">+</span> <span class="hljs-string">nums[2]</span> <span class="hljs-string">+</span> <span class="hljs-string">nums[4]</span> <span class="hljs-string">=</span> <span class="hljs-number">13</span> <span class="hljs-string">。</span><br></code></pre></td></tr></table></figure>
 <p><strong>示例 2：</strong></p>
@@ -373,40 +366,24 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-of-values-
 <p>最简单的就是根据题目的要求进行模拟。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sumIndicesWithKSetBits</span><span class="hljs-params">(List&lt;Integer&gt; nums, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.size(); ++i) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, cpm = <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">while</span> (cpm != <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-keyword">if</span> ((cpm &amp; i) != <span class="hljs-number">0</span>) &#123;<br>                    ++cnt;<br>                &#125;<br>                cpm &lt;&lt;= <span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (cnt == k) &#123;<br>                sum += nums.get(i);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span
-class="math inline">\(O(nm)\)</span>，其中 <code>n</code> 是
-<code>nums</code> 的长度，<code>m</code> 是每个下标的位数长度。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(nm)\)</span>，其中 <code>n</code> 是 <code>nums</code> 的长度，<code>m</code> 是每个下标的位数长度。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h3 id="方法二population-count-算法">方法二：Population Count 算法</h3>
 <p>使用内置函数 <code>Integer.bitCount()</code> 算法进行加速运算。</p>
 <blockquote>
-<p>对 <code>Integer.bitCount()</code>
-内部实现感兴趣的可以参考下面的博客链接</p>
+<p>对 <code>Integer.bitCount()</code> 内部实现感兴趣的可以参考下面的博客链接</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://gaomf.cn/2016/02/24/Population_Count/">Population
-Count算法 | 高明飞的博客 (gaomf.cn)</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://github.tiankonguse.com/blog/2014/11/16/bit-count-more.html">详解二进制数中1的个数
-(tiankonguse.com)</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://www.cnblogs.com/graphics/archive/2010/06/21/1752421.html">算法-求二进制数中1的个数
-- 翰墨小生 - 博客园 (cnblogs.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/341488123">popcount 算法分析 -
-知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://gaomf.cn/2016/02/24/Population_Count/">Population Count算法 | 高明飞的博客 (gaomf.cn)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.tiankonguse.com/blog/2014/11/16/bit-count-more.html">详解二进制数中1的个数 (tiankonguse.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/graphics/archive/2010/06/21/1752421.html">算法-求二进制数中1的个数 - 翰墨小生 - 博客园 (cnblogs.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/341488123">popcount 算法分析 - 知乎 (zhihu.com)</a></li>
 </ul>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sumIndicesWithKSetBits</span><span class="hljs-params">(List&lt;Integer&gt; nums, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.size(); ++i) &#123;<br>            <span class="hljs-keyword">if</span> (Integer.bitCount(i) == k) &#123;<br>                sum += nums.get(i);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n \log
-\log C)\)</span>，其中 <code>n</code> 为 <code>nums</code> 的长度，
-<code>C</code> 是数组 <code>nums</code> 的最大长度。内置函数
-<code>Integer.bitCount()</code> 内部使用了分治算法，而 <code>C</code> 有
-<span class="math inline">\(O(\log C)\)</span> 个二进制位，所以分治需要
-<span class="math inline">\(O(\log \log C)\)</span> 次。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n \log \log C)\)</span>，其中 <code>n</code> 为 <code>nums</code> 的长度， <code>C</code> 是数组 <code>nums</code> 的最大长度。内置函数 <code>Integer.bitCount()</code> 内部使用了分治算法，而 <code>C</code> 有 <span class="math inline">\(O(\log C)\)</span> 个二进制位，所以分治需要 <span class="math inline">\(O(\log \log C)\)</span> 次。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/25/banner.jpg" srcset="/imgs/banner/loading.jpg" lazyload /></p>

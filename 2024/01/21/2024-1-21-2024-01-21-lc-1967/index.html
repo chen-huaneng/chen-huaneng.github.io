@@ -345,13 +345,8 @@
               <div class="markdown-body">
                 
                 <h2 id="题目描述">题目描述</h2>
-<p>这是 <code>LeetCode</code> 上的 <a
-target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-strings-that-appear-as-substrings-in-word/description/">1967.
-作为子字符串出现在单词中的字符串数目 - 力扣（LeetCode）</a>
-，难度为<strong>简单</strong>。</p>
-<p>给你一个字符串数组 <code>patterns</code> 和一个字符串
-<code>word</code> ，统计 <code>patterns</code> 中有多少个字符串是
-<code>word</code> 的子字符串。返回字符串数目。</p>
+<p>这是 <code>LeetCode</code> 上的 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-strings-that-appear-as-substrings-in-word/description/">1967. 作为子字符串出现在单词中的字符串数目 - 力扣（LeetCode）</a> ，难度为<strong>简单</strong>。</p>
+<p>给你一个字符串数组 <code>patterns</code> 和一个字符串 <code>word</code> ，统计 <code>patterns</code> 中有多少个字符串是 <code>word</code> 的子字符串。返回字符串数目。</p>
 <p><strong>子字符串</strong> 是字符串中的一个连续字符序列。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs applescript">输入：patterns = [<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-string">&quot;abc&quot;</span>,<span class="hljs-string">&quot;bc&quot;</span>,<span class="hljs-string">&quot;d&quot;</span>], <span class="hljs-built_in">word</span> = <span class="hljs-string">&quot;abc&quot;</span><br>输出：<span class="hljs-number">3</span><br>解释：<br>- <span class="hljs-string">&quot;a&quot;</span> 是 <span class="hljs-string">&quot;abc&quot;</span> 的子字符串。<br>- <span class="hljs-string">&quot;abc&quot;</span> 是 <span class="hljs-string">&quot;abc&quot;</span> 的子字符串。<br>- <span class="hljs-string">&quot;bc&quot;</span> 是 <span class="hljs-string">&quot;abc&quot;</span> 的子字符串。<br>- <span class="hljs-string">&quot;d&quot;</span> 不是 <span class="hljs-string">&quot;abc&quot;</span> 的子字符串。<br>patterns 中有 <span class="hljs-number">3</span> 个字符串作为子字符串出现在 <span class="hljs-built_in">word</span> 中。<br></code></pre></td></tr></table></figure>
@@ -364,23 +359,15 @@ target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-stri
 <li><code>1 &lt;= patterns.length &lt;= 100</code></li>
 <li><code>1 &lt;= patterns[i].length &lt;= 100</code></li>
 <li><code>1 &lt;= word.length &lt;= 100</code></li>
-<li><code>patterns[i]</code> 和 <code>word</code>
-由小写英文字母组成</li>
+<li><code>patterns[i]</code> 和 <code>word</code> 由小写英文字母组成</li>
 </ul>
 <h2 id="解答">解答</h2>
 <h3 id="方法一暴力解法">方法一：暴力解法</h3>
 <p>根据题目要求进行模拟即可。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">numOfStrings</span><span class="hljs-params">(String[] patterns, String word)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (String s : patterns) &#123;<br>            <span class="hljs-keyword">if</span> (isSubString(s, word)) &#123;<br>                ++cnt;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isSubString</span><span class="hljs-params">(String sub, String word)</span> &#123;<br>        <span class="hljs-keyword">if</span> (sub.length() &gt; word.length()) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i + sub.length() &lt;= word.length(); ++i) &#123;<br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">f</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; sub.length(); ++j) &#123;<br>                <span class="hljs-keyword">if</span> (sub.charAt(j) != word.charAt(j + i)) &#123;<br>                    f = <span class="hljs-literal">false</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (f) &#123;<br>                <span class="hljs-keyword">return</span> f;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n
-\times \sum_im_i)\)</span>，其中 <code>n</code> 为字符串
-<code>word</code> 的长度， <span class="math inline">\(m_i\)</span>
-为字符串 <code>patterns[i]</code> 的长度。对于 <code>patterns</code>
-中的每个字符串 <code>patterns[i]</code> ，暴力匹配判断是否为
-<code>word</code> 子串的时间复杂度为 <span class="math inline">\(O(n
-\times m_i)\)</span>。</p></li>
-<li><p><strong>空间复杂度</strong>：<span
-class="math inline">\(O(1)\)</span>。</p></li>
+<li><p><strong>时间复杂度</strong>：<span class="math inline">\(O(n \times \sum_im_i)\)</span>，其中 <code>n</code> 为字符串 <code>word</code> 的长度， <span class="math inline">\(m_i\)</span> 为字符串 <code>patterns[i]</code> 的长度。对于 <code>patterns</code> 中的每个字符串 <code>patterns[i]</code> ，暴力匹配判断是否为 <code>word</code> 子串的时间复杂度为 <span class="math inline">\(O(n \times m_i)\)</span>。</p></li>
+<li><p><strong>空间复杂度</strong>：<span class="math inline">\(O(1)\)</span>。</p></li>
 </ul>
 <h2 id="每题一图">每题一图</h2>
 <p><img src="/imgs/posts/2024/1/21/banner.png" srcset="/imgs/banner/loading.jpg" lazyload /></p>
