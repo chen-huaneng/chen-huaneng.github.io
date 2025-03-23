@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/12/4/banner.png">
 <meta property="article:published_time" content="2024-12-04T03:54:58.000Z">
-<meta property="article:modified_time" content="2024-12-04T04:01:18.630Z">
+<meta property="article:modified_time" content="2025-03-23T12:42:18.259Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Tool">
 <meta property="article:tag" content="Vim">
@@ -272,7 +272,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 42 
+          文章字数: 128 
         
       </span>
     
@@ -335,7 +335,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-12-04T12:01:18+08:00
+                    本文最后更新于：2025-03-23T20:42:18+08:00
                   
                   
 
@@ -345,9 +345,18 @@
             
               <div class="markdown-body">
                 
-                <h3 id="在-neovim-中执行命令行命令">在 Neovim 中执行命令行命令</h3>
+                <h3 id="在-neovim-中执行命令行命令">在 <code>Neovim</code> 中执行命令行命令</h3>
 <p>在普通模式（normal mode）下，输入 <code>:!</code> 后面跟上想要执行的 shell 命令，比如打开 <span class="math inline">\(\LaTeX\)</span> 的 <code>geometry</code> 文档：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">:! texdoc geometry<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs neovim">:! texdoc geometry<br></code></pre></td></tr></table></figure>
+<h3 id="在-neovim-中创建新文件">在 <code>Neovim</code> 中创建新文件</h3>
+<p>在普通模式（normal mode）下，输入以下命令创建一个 <code>example.txt</code> 文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs neovim">:e example.txt<br></code></pre></td></tr></table></figure>
+<p>或者使用如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs neovim">:new example.txt<br></code></pre></td></tr></table></figure>
+<p>如果需要在当前目录的子目录下创建，则使用命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs neovim">:e .\sub_folder\example.txt<br></code></pre></td></tr></table></figure>
+<p>如果子目录不存在，应该先创建子目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs neovim">:!mkdir sub_folder<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -423,7 +432,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年12月4日</div>
+          <div>2025年3月23日</div>
         </div>
       
       

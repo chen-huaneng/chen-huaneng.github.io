@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2025/03/23/banner.png">
 <meta property="article:published_time" content="2025-03-23T03:21:02.000Z">
-<meta property="article:modified_time" content="2025-03-23T06:19:31.528Z">
+<meta property="article:modified_time" content="2025-03-23T13:00:37.458Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Gurobi">
@@ -271,7 +271,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 70 
+          文章字数: 381 
         
       </span>
     
@@ -334,7 +334,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2025-03-23T14:19:31+08:00
+                    本文最后更新于：2025-03-23T21:00:37+08:00
                   
                   
 
@@ -348,9 +348,27 @@
 <p>申请 <code>Gurobi</code> 学术许可和安装可以参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24819586963">Gurobi最新安装与学术许可申请教程（2025） - 知乎</a></p>
 <h2 id="配置-python-环境">配置 <code>Python</code> 环境</h2>
 <p>首先打开命令行终端，用 <code>Conda</code> 单独创建一个环境：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">conda create --name name_env<br></code></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda create <span class="hljs-literal">--name</span> name_env<br></code></pre></td></tr></table></figure>
 <p>激活环境：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">conda activate name_env<br></code></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda activate name_env<br></code></pre></td></tr></table></figure>
+<p>用 <code>Conda</code> 包管理安装 <code>Gurobi</code> 到 <code>Python</code> 库中<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[How do I install Gurobi for Python? – Gurobi Help Center](https://support.gurobi.com/hc/en-us/articles/360044290292-How-do-I-install-Gurobi-for-Python)">[1]</span></a></sup>：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">conda install <span class="hljs-literal">-c</span> gurobi gurobi<br></code></pre></td></tr></table></figure>
+<p>安装完之后，可以用下面的例子测试 <code>Gurobi</code> 是否能够正常使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> gurobipy <span class="hljs-keyword">as</span> gp<br><span class="hljs-keyword">from</span> gurobipy <span class="hljs-keyword">import</span> GRB<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">test_gurobi</span>():<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-comment"># 创建一个新的模型</span><br>        model = gp.Model(<span class="hljs-string">&quot;test_model&quot;</span>)<br><br>        <span class="hljs-comment"># 添加变量</span><br>        x = model.addVar(name=<span class="hljs-string">&quot;x&quot;</span>, vtype=GRB.CONTINUOUS, lb=<span class="hljs-number">0</span>)<br>        y = model.addVar(name=<span class="hljs-string">&quot;y&quot;</span>, vtype=GRB.CONTINUOUS, lb=<span class="hljs-number">0</span>)<br><br>        <span class="hljs-comment"># 更新模型以整合新变量</span><br>        model.update()<br><br>        <span class="hljs-comment"># 设置目标函数：最大化 3x + 2y</span><br>        model.setObjective(<span class="hljs-number">3</span> * x + <span class="hljs-number">2</span> * y, GRB.MAXIMIZE)<br><br>        <span class="hljs-comment"># 添加约束条件</span><br>        <span class="hljs-comment"># x + y &lt;= 4</span><br>        model.addConstr(x + y &lt;= <span class="hljs-number">4</span>, <span class="hljs-string">&quot;c0&quot;</span>)<br><br>        <span class="hljs-comment"># x &lt;= 2</span><br>        model.addConstr(x &lt;= <span class="hljs-number">2</span>, <span class="hljs-string">&quot;c1&quot;</span>)<br><br>        <span class="hljs-comment"># y &lt;= 3</span><br>        model.addConstr(y &lt;= <span class="hljs-number">3</span>, <span class="hljs-string">&quot;c2&quot;</span>)<br><br>        <span class="hljs-comment"># 优化模型</span><br>        model.optimize()<br><br>        <span class="hljs-comment"># 检查优化状态</span><br>        <span class="hljs-keyword">if</span> model.status == GRB.OPTIMAL:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;最优目标值: <span class="hljs-subst">&#123;model.ObjVal&#125;</span>&quot;</span>)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;x = <span class="hljs-subst">&#123;x.x&#125;</span>&quot;</span>)<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;y = <span class="hljs-subst">&#123;y.x&#125;</span>&quot;</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;没有找到最优解。&quot;</span>)<br>    <br>    <span class="hljs-keyword">except</span> gp.GurobiError <span class="hljs-keyword">as</span> e:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Gurobi错误: <span class="hljs-subst">&#123;e&#125;</span>&quot;</span>)<br>    <br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;其他错误: <span class="hljs-subst">&#123;e&#125;</span>&quot;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    test_gurobi()<br></code></pre></td></tr></table></figure>
+<p>如果能够正常使用会输出以下结果：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs txt">Optimize a model with 3 rows, 2 columns and 4 nonzeros<br>Model fingerprint: 0x5c2931af<br>Coefficient statistics:<br>  Matrix range     [1e+00, 1e+00]<br>  Objective range  [2e+00, 3e+00]<br>  Bounds range     [0e+00, 0e+00]<br>  RHS range        [2e+00, 4e+00]<br>Presolve removed 2 rows and 0 columns<br>Presolve time: 0.00s<br>Presolved: 1 rows, 2 columns, 2 nonzeros<br><br>Iteration    Objective       Primal Inf.    Dual Inf.      Time<br>       0    1.2000000e+01   2.000000e+00   0.000000e+00      0s<br>       1    1.0000000e+01   0.000000e+00   0.000000e+00      0s<br><br>Solved in 1 iterations and 0.00 seconds (0.00 work units)<br>Optimal objective  1.000000000e+01<br>最优目标值: 10.0<br>x = 2.0<br>y = 2.0<br></code></pre></td></tr></table></figure>
+<section class="footnotes">
+<h2>
+References
+</h2>
+<div class="footnote-list">
+<ol>
+<li>
+<span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://support.gurobi.com/hc/en-us/articles/360044290292-How-do-I-install-Gurobi-for-Python">How do I install Gurobi for Python? – Gurobi Help Center</a> <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩︎</a></span></span>
+</li>
+</ol>
+</div>
+</section>
 
                 
               </div>
