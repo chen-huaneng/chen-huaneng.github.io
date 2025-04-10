@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2024/10/24/banner.webp">
 <meta property="article:published_time" content="2024-10-24T01:11:37.000Z">
-<meta property="article:modified_time" content="2025-03-31T16:14:32.676Z">
+<meta property="article:modified_time" content="2025-04-10T08:25:11.994Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Tool">
 <meta property="article:tag" content="LaTeX">
@@ -334,7 +334,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2025-04-01T00:14:32+08:00
+                    本文最后更新于：2025-04-10T16:25:11+08:00
                   
                   
 
@@ -371,7 +371,7 @@
 </blockquote>
 <p>然后就静静等待卸载结束了。结束以上步骤后，手动删除用户文件夹<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="用户文件夹一般是指当前计算机系统为多用户环境专设的不同用户所各自私有的文件夹，比如我的用户名叫 `Beta`，那么用户文件夹一般是 `C:\Users\Beta`。">[1]</span></a></sup>中的 .texlive2024。</p>
 <p>卸载后，用户需要清理注册表，按下 <code>Win徽标键+R</code> 输入 <code>regedit</code>，清除以下内容（这里以卸载 <span class="math inline">\(\TeX \, Live\, 2024\)</span> 为例：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs powershell">HKEY_CURRENT_USER\Software\Classes\TL.bitmap2eps.convert.<span class="hljs-number">2024</span><br>HKEY_CURRENT_USER\Software\Classes\TL.DVIOUT.view.<span class="hljs-number">2024</span><br>HKEY_CURRENT_USER\Software\Classes\TL.TeXworks.edit.<span class="hljs-number">2024</span><br>HKEY_CURRENT_USER\Software\Classes\TL.PSViewer.view.<span class="hljs-number">2024</span><br>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts\TL.bitmap2eps.convert.<span class="hljs-number">2024</span>_.jpg HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts\TL.bitmap2eps.convert.<span class="hljs-number">2024</span>_.png<br>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts\TL.TeXworks.edit.<span class="hljs-number">2024</span>_.sty<br>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts\TL.TeXworks.edit.<span class="hljs-number">2024</span>_.tex<br></code></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs powershell">HKEY_CURRENT_USER\Software\Classes\TL.bitmap2eps.convert.<span class="hljs-number">2024</span><br>HKEY_CURRENT_USER\Software\Classes\TL.DVIOUT.view.<span class="hljs-number">2024</span><br>HKEY_CURRENT_USER\Software\Classes\TL.TeXworks.edit.<span class="hljs-number">2024</span><br>HKEY_CURRENT_USER\Software\Classes\TL.PSViewer.view.<span class="hljs-number">2024</span><br>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts\TL.bitmap2eps.convert.<span class="hljs-number">2024</span>_.jpg<br>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts\TL.bitmap2eps.convert.<span class="hljs-number">2024</span>_.png<br>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts\TL.TeXworks.edit.<span class="hljs-number">2024</span>_.sty<br>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts\TL.TeXworks.edit.<span class="hljs-number">2024</span>_.tex<br></code></pre></td></tr></table></figure>
 <p>如果在安装时使用管理员权限”为所有人安装“，则注册表位置变为：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs powershell">HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TL.bitmap2eps.convert.<span class="hljs-number">2024</span><br>HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TL.DVIOUT.view.<span class="hljs-number">2024</span><br>HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TL.TeXworks.edit.<span class="hljs-number">2024</span><br>HKEY_LOCAL_MACHINE\SOFTWARE\Classes\TL.PSViewer.view.<span class="hljs-number">2024</span><br></code></pre></td></tr></table></figure>
 <h4 id="手动卸载">手动卸载</h4>
@@ -539,7 +539,7 @@ References
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年4月1日</div>
+          <div>2025年4月10日</div>
         </div>
       
       
