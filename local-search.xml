@@ -256,9 +256,9 @@
       
       <tag>Tool</tag>
       
-      <tag>Academic</tag>
-      
       <tag>Zotero</tag>
+      
+      <tag>Academic</tag>
       
     </tags>
     
@@ -579,9 +579,9 @@
       
       <tag>Math</tag>
       
-      <tag>CS Course</tag>
-      
       <tag>Machine Learning</tag>
+      
+      <tag>CS Course</tag>
       
     </tags>
     
@@ -2982,11 +2982,11 @@
     
     <tags>
       
+      <tag>Website</tag>
+      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
-      
-      <tag>Website</tag>
       
     </tags>
     
@@ -3463,11 +3463,11 @@
       
       <tag>Tool</tag>
       
+      <tag>Website</tag>
+      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
-      
-      <tag>Website</tag>
       
     </tags>
     
@@ -3512,11 +3512,11 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[<p><img src="/imgs/about/banner.jpg" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『梦想是去世界各地旅行！』</span></p><h2 id="关于我">关于我</h2><p>目前南方某高校硕士研究生在读，对计算机科学、算法和运筹优化等方向感兴趣。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系，建议通过邮件与我取得联系。</p><p>喜欢设计简洁、优雅、轻便小巧的东西（比如：Logitech MX Anywhere 3 和 Vim/Neovim）。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、孙燕姿的歌，喜欢的曲风就比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……</p><p><img src="/imgs/about/gloria.jpg" /></p><h2 id="正在做计划做的事">正在做/计划做的事</h2><ul><li>刷算法题，请看 <a href="https://leetcode.cn/u/abel_chen/">LeetCode</a> 进度</li><li>参与开源项目，详情见 <a href="https://github.com/chen-huaneng">GitHub</a> 仓库</li><li>持续更新<a href="https://chen-huaneng.github.io/">博客</a>和<a href="https://www.zhihu.com/people/yun-tun-5-10">知乎</a></li><li>读文献，完成毕业论文</li><li>学习C++、机器学习和运筹学</li><li>旅游，请看<a href="https://chen-huaneng.github.io/image/">旅游足迹</a></li><li>实习</li><li>……</li></ul><h2 id="未完待续">未完待续……</h2><p>如果你对如何搭建这个博客感兴趣，可以看看我写的这篇<a href="https://chen-huaneng.github.io/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/">简短的介绍</a>。</p><p><img src="/imgs/about/continue.jpg" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;"> 『💓对感兴趣的东西会继续探索的！😉<bf>所以要持续关注我的博客鸭🦆！</bf>』 </span></p><hr /><p align="center">Updated on June 26, 2025 at 10:21</p>]]></content>
     
   </entry>
   
@@ -3534,22 +3534,11 @@
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<p><img src="/imgs/about/banner.jpg" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『梦想是去世界各地旅行！』</span></p><h2 id="关于我">关于我</h2><p>目前南方某高校大四在读，对计算机科学、算法和运筹优化等方向感兴趣。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系，建议通过邮件与我取得联系。</p><p>喜欢设计简洁、优雅、轻便小巧的东西（比如：Logitech MX Anywhere 3 和 Vim/Neovim）。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、Lilas Ikuta（幾田 りら／いくた りら ）、NewJeans（뉴진스 ）、Adele、孙燕姿的歌，喜欢的曲风就比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……</p><p><img src="/imgs/about/gloria.jpg" /></p><h2 id="正在做计划做的事">正在做/计划做的事</h2><ul><li>刷算法题，请看 <a href="https://leetcode.cn/u/abel_chen/">LeetCode</a> 进度</li><li>参与开源项目，详情见 <a href="https://github.com/chen-huaneng">GitHub</a> 仓库</li><li>持续更新<a href="https://chen-huaneng.github.io/">博客</a>和<a href="https://www.zhihu.com/people/yun-tun-5-10">知乎</a></li><li>读文献</li><li>学习机器学习和 C++</li><li>准备毕业论文</li><li>旅游</li><li>……</li></ul><h2 id="未完待续">未完待续……</h2><p>如果你对如何搭建这个博客感兴趣，可以看看我写的这篇<a href="https://chen-huaneng.github.io/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/">简短的介绍</a>。</p><p><img src="/imgs/about/continue.jpg" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;"> 『💓对感兴趣的东西会继续探索的！😉<bf>所以要持续关注我的博客鸭🦆！</bf>』 </span></p><hr /><p align="center">Updated on December 4, 2024 at 15:10</p>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Images</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<div class="markdown-body"><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/01.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/02.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/03.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/04.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/05.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/06.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/07.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/08.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/09.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/010.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/011.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/012.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/013.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/014.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/015.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/016.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/017.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/018.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/019.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/2.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/3.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/4.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/5.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/6.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/7.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/8.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/9.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/10.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/11.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/12.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/13.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/14.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/15.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/16.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/17.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/18.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/19.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/21.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/22.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/23.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/24.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/25.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/26.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/27.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/28.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/29.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/30.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/31.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/32.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/33.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/34.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/35.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/36.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/37.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/38.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/39.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/40.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/41.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/42.jpg" /></div></div></div></div>]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -3561,6 +3550,17 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Images</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<div class="markdown-body"><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/01.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/02.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/03.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/04.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/05.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/06.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/07.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/08.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/09.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/010.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/011.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/012.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/013.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/014.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/015.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/016.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/017.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/018.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/019.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/2.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/3.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/4.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/5.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/6.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/7.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/8.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/9.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/10.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/11.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/12.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/13.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/14.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/15.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/16.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/17.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/18.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/19.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/21.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/22.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/23.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/24.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/25.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/26.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/27.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/28.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/29.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/30.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/31.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/32.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/33.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/34.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/35.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/36.jpg" /></div></div></div><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/37.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/38.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/39.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/40.jpg" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/41.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/42.jpg" /></div></div></div></div>]]></content>
     
   </entry>
   
