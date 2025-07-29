@@ -4,6 +4,45 @@
   
   
   <entry>
+    <title>Academic - 搭建学术主页</title>
+    <link href="/2025/07/29/2025-07-29-2025-07-29-academic/"/>
+    <url>/2025/07/29/2025-07-29-2025-07-29-academic/</url>
+    
+    <content type="html"><![CDATA[<h2 id="需求来源">需求来源</h2><p>这个需求来源于我想要在当前博客的页面中添加一个用于展示学术成果的页面，但是当前博客使用的框架是Hexo，主题是Fluid，而想用的学术页面的框架是基于Jekyll的<a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a>，因此需要在我的Github Page部署两个不同的框架，即Hexo和Jekyll。目前的想法是将用于学术成果展示的页面部署在博客的一个子页面下。</p><h2 id="本地部署">本地部署</h2><p>Fork <a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a> 这个项目到自己的仓库中，按照 <a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a> 中本地部署的要求：</p><ol type="1"><li><p>查看<a href="https://jekyllrb.com/docs/installation/">Jekyll的Requirement</a>，安装相应版本的Ruby、GCC、MSYS2以及Make（这里推荐使用<a href="https://chen-huaneng.github.io/2024/01/04/2024-01-04-2024-01-04-Scoop/">Scoop</a>进行Windows环境下的安装）</p></li><li><p>安装Jekyll和bundler <a href="https://jekyllrb.com/docs/ruby-101/#gems">gems</a>：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">gem install jekyll bundler<br></code></pre></td></tr></table></figure></li><li><p>Clone forked 的仓库到本地，以我的仓库为例：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git clone https://github.com/chen<span class="hljs-literal">-huaneng</span>/academic<span class="hljs-literal">-homepage</span>.git<br></code></pre></td></tr></table></figure></li><li><p>进入相应的文件夹：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">cd</span> academic<span class="hljs-literal">-homepage</span><br></code></pre></td></tr></table></figure></li><li><p>修改 academic-homepage 文件夹中的 <code>_config.yml</code> 文件：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">baseurl:</span> <span class="hljs-string">&quot;/academic&quot;</span>  <span class="hljs-comment"># 确保资源路径正确</span><br></code></pre></td></tr></table></figure><p>如果不进行设置会导致 CSS/JS 文件加载失败</p></li><li><p>构建 Jekyll 站点：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">bundle install  <span class="hljs-comment"># 安装依赖</span><br>bundle exec jekyll build  <span class="hljs-comment"># 生成静态文件到 _site 目录</span><br></code></pre></td></tr></table></figure></li><li><p>复制文件到 Hexo 博客的文件夹下：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">robocopy <span class="hljs-string">&quot;_site&quot;</span> <span class="hljs-string">&quot;path\to\hexo\folder\source\academic&quot;</span> /E /NFL /NDL /NP /XO<br></code></pre></td></tr></table></figure></li><li><p>在 Hexo 的 <code>_config.yml</code> 中添加：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">skip_render:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">&#x27;academic/**&#x27;</span>  <span class="hljs-comment"># 禁止 Hexo 处理 academic 目录下的文件</span><br></code></pre></td></tr></table></figure></li><li><p>部署 Hexo 站点：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo clean &amp;&amp; hexo deploy<br></code></pre></td></tr></table></figure></li></ol><h2 id="本地预览">本地预览</h2><p>如果想要在本地预览修改效果可以在完成<a href="#本地部署">本地部署</a>部分的第6步之后在命令行中输入：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">bundle exec jekyll serve<br></code></pre></td></tr></table></figure><p>然后在浏览器中打开命令行中输出的相应网址即可。</p><p>在子目录 <code>_data</code> 、 <code>_news</code> 、<code>_publications</code> 和 <code>_showcase</code> 中修改相应的文件就可以修改相应的网站内容。</p><p>如果要自定义子页面的 Favicon，在 <code>_layout</code> 文件夹下 <code>default.html</code> 的 <code>&lt;head&gt;</code> 中添加：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Favicon --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image/jpg&quot;</span> <span class="hljs-attr">sizes</span>=<span class="hljs-string">&quot;32x32&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;&#123; &#x27;/assets/images/icon/icon.jpg&#x27; | relative_url &#125;&#125;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><p>然后在相应的 <code>assets</code> 文件夹下添加相应的图片即可。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Blog</category>
+      
+      <category>Hexo</category>
+      
+      <category>Academic</category>
+      
+      <category>Jekyll</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Tool</tag>
+      
+      <tag>Hexo</tag>
+      
+      <tag>Fluid</tag>
+      
+      <tag>Academic</tag>
+      
+      <tag>Jekyll</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>KMP（Knuth-Morris-Pratt）算法详解</title>
     <link href="/2025/07/26/2025-07-26-2025-07-26-kmp/"/>
     <url>/2025/07/26/2025-07-26-2025-07-26-kmp/</url>
@@ -867,9 +906,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -1210,9 +1249,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1241,11 +1280,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Array</tag>
+      
       <tag>Hash Table</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Array</tag>
       
       <tag>String</tag>
       
@@ -1427,9 +1466,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>String</tag>
       
@@ -1462,9 +1501,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Greedy</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1557,9 +1596,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1617,9 +1656,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1716,9 +1755,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1776,9 +1815,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -1807,9 +1846,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Matrix</tag>
       
@@ -1871,9 +1910,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -2049,11 +2088,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Array</tag>
+      
       <tag>Hash Table</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Array</tag>
       
       <tag>Sorting</tag>
       
@@ -2086,9 +2125,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Math</tag>
       
@@ -2119,9 +2158,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -2247,9 +2286,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -2439,9 +2478,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -2470,9 +2509,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Math</tag>
       
@@ -2505,9 +2544,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2666,9 +2705,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
       
@@ -2701,9 +2740,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2732,9 +2771,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
       
@@ -2796,9 +2835,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Math</tag>
       
@@ -3118,9 +3157,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3182,9 +3221,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3275,9 +3314,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3337,9 +3376,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>String</tag>
       
@@ -3370,11 +3409,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Array</tag>
+      
       <tag>Hash Table</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Array</tag>
       
       <tag>Sorting</tag>
       
@@ -3405,9 +3444,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Greedy</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3436,11 +3475,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Array</tag>
+      
       <tag>Hash Table</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Array</tag>
       
     </tags>
     
@@ -3584,7 +3623,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
   
@@ -3595,7 +3634,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   

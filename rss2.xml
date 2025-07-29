@@ -9,8 +9,45 @@
     <atom:link href="https://chen-huaneng.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>AbelのBlog，专注于算法题解、技术文章和生活感悟。探索编程世界，记录技术成长，分享个人见解。在这里，发现编程之美，体验技术的乐趣，共同成长的点滴。 Abel&#39;s Blog focuses on algorithm problem-solving, technical articles, and reflections on life. Explore the beauty of programming, document technical growth, and share personal insights.</description>
-    <pubDate>Sat, 26 Jul 2025 12:24:38 GMT</pubDate>
+    <pubDate>Tue, 29 Jul 2025 14:38:11 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Academic - 搭建学术主页</title>
+      <link>https://chen-huaneng.github.io/2025/07/29/2025-07-29-2025-07-29-academic/</link>
+      <guid>https://chen-huaneng.github.io/2025/07/29/2025-07-29-2025-07-29-academic/</guid>
+      <pubDate>Tue, 29 Jul 2025 03:17:28 GMT</pubDate>
+      
+      <description>详细说明了如何在Hexo框架的Fluid主题中搭建基于Jekyll框架的Academic homepage。</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="需求来源">需求来源</h2><p>这个需求来源于我想要在当前博客的页面中添加一个用于展示学术成果的页面，但是当前博客使用的框架是Hexo，主题是Fluid，而想用的学术页面的框架是基于Jekyll的<a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a>，因此需要在我的Github Page部署两个不同的框架，即Hexo和Jekyll。目前的想法是将用于学术成果展示的页面部署在博客的一个子页面下。</p><h2 id="本地部署">本地部署</h2><p>Fork <a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a> 这个项目到自己的仓库中，按照 <a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a> 中本地部署的要求：</p><ol type="1"><li><p>查看<a href="https://jekyllrb.com/docs/installation/">Jekyll的Requirement</a>，安装相应版本的Ruby、GCC、MSYS2以及Make（这里推荐使用<a href="https://chen-huaneng.github.io/2024/01/04/2024-01-04-2024-01-04-Scoop/">Scoop</a>进行Windows环境下的安装）</p></li><li><p>安装Jekyll和bundler <a href="https://jekyllrb.com/docs/ruby-101/#gems">gems</a>：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">gem install jekyll bundler<br></code></pre></td></tr></table></figure></li><li><p>Clone forked 的仓库到本地，以我的仓库为例：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git clone https://github.com/chen<span class="hljs-literal">-huaneng</span>/academic<span class="hljs-literal">-homepage</span>.git<br></code></pre></td></tr></table></figure></li><li><p>进入相应的文件夹：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">cd</span> academic<span class="hljs-literal">-homepage</span><br></code></pre></td></tr></table></figure></li><li><p>修改 academic-homepage 文件夹中的 <code>_config.yml</code> 文件：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">baseurl:</span> <span class="hljs-string">&quot;/academic&quot;</span>  <span class="hljs-comment"># 确保资源路径正确</span><br></code></pre></td></tr></table></figure><p>如果不进行设置会导致 CSS/JS 文件加载失败</p></li><li><p>构建 Jekyll 站点：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">bundle install  <span class="hljs-comment"># 安装依赖</span><br>bundle exec jekyll build  <span class="hljs-comment"># 生成静态文件到 _site 目录</span><br></code></pre></td></tr></table></figure></li><li><p>复制文件到 Hexo 博客的文件夹下：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">robocopy <span class="hljs-string">&quot;_site&quot;</span> <span class="hljs-string">&quot;path\to\hexo\folder\source\academic&quot;</span> /E /NFL /NDL /NP /XO<br></code></pre></td></tr></table></figure></li><li><p>在 Hexo 的 <code>_config.yml</code> 中添加：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">skip_render:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">&#x27;academic/**&#x27;</span>  <span class="hljs-comment"># 禁止 Hexo 处理 academic 目录下的文件</span><br></code></pre></td></tr></table></figure></li><li><p>部署 Hexo 站点：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo clean &amp;&amp; hexo deploy<br></code></pre></td></tr></table></figure></li></ol><h2 id="本地预览">本地预览</h2><p>如果想要在本地预览修改效果可以在完成<a href="#本地部署">本地部署</a>部分的第6步之后在命令行中输入：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">bundle exec jekyll serve<br></code></pre></td></tr></table></figure><p>然后在浏览器中打开命令行中输出的相应网址即可。</p><p>在子目录 <code>_data</code> 、 <code>_news</code> 、<code>_publications</code> 和 <code>_showcase</code> 中修改相应的文件就可以修改相应的网站内容。</p><p>如果要自定义子页面的 Favicon，在 <code>_layout</code> 文件夹下 <code>default.html</code> 的 <code>&lt;head&gt;</code> 中添加：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Favicon --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image/jpg&quot;</span> <span class="hljs-attr">sizes</span>=<span class="hljs-string">&quot;32x32&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;&#123; &#x27;/assets/images/icon/icon.jpg&#x27; | relative_url &#125;&#125;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><p>然后在相应的 <code>assets</code> 文件夹下添加相应的图片即可。</p>]]></content:encoded>
+      
+      
+      <category domain="https://chen-huaneng.github.io/categories/Blog/">Blog</category>
+      
+      <category domain="https://chen-huaneng.github.io/categories/Blog/Hexo/">Hexo</category>
+      
+      <category domain="https://chen-huaneng.github.io/categories/Academic/">Academic</category>
+      
+      <category domain="https://chen-huaneng.github.io/categories/Blog/Jekyll/">Jekyll</category>
+      
+      
+      <category domain="https://chen-huaneng.github.io/tags/Tool/">Tool</category>
+      
+      <category domain="https://chen-huaneng.github.io/tags/Hexo/">Hexo</category>
+      
+      <category domain="https://chen-huaneng.github.io/tags/Fluid/">Fluid</category>
+      
+      <category domain="https://chen-huaneng.github.io/tags/Academic/">Academic</category>
+      
+      <category domain="https://chen-huaneng.github.io/tags/Jekyll/">Jekyll</category>
+      
+      
+      <comments>https://chen-huaneng.github.io/2025/07/29/2025-07-29-2025-07-29-academic/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>KMP（Knuth-Morris-Pratt）算法详解</title>
@@ -532,33 +569,6 @@
       
       
       <comments>https://chen-huaneng.github.io/2024/10/16/2024-10-16-2024-10-16-license/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Git - 简单入门</title>
-      <link>https://chen-huaneng.github.io/2024/10/14/2024-10-14-2024-10-14-git/</link>
-      <guid>https://chen-huaneng.github.io/2024/10/14/2024-10-14-2024-10-14-git/</guid>
-      <pubDate>Mon, 14 Oct 2024 03:26:53 GMT</pubDate>
-      
-      <description>简单介绍Git工具的使用。</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="git-使用指南">Git 使用指南</h2><h3 id="git-如何推送当前目录到远程仓库">Git 如何推送当前目录到远程仓库</h3><ol type="1"><li><p>初始化本地仓库为<code>Git</code> 仓库：在项目根目录下运行命令 <code>git init</code> ，这会创建一个 <code>.git</code> 目录，把当前目录变成一个 <code>Git</code> 仓库。</p></li><li><p>添加文件到暂存区：可以用 <code>git add .</code> 命令将项目中的所有文件添加到 <code>Git</code> 的暂存区，也可以指定特定的文件 <code>git add &lt;文件名&gt;</code>。</p></li><li><p>提交更改：使用命令 <code>git commit -m "提交内容的描述"</code> 提交暂存区中的更改到本地仓库，<code>-m</code> 后面的内容是提交的说明，描述此次提交的变更。</p></li><li><p>连接远程仓库：获取远程仓库的 URL 地址，比如 GitHub 上仓库的 HTTPS 或 SSH 地址（当然需要提前先在远程建立一个仓库），然后使用命令 <code>git remote add origin &lt;远程仓库URL&gt;</code> 将本地仓库与远程仓库（如 <code>GitHub</code> 、<code>GitLab</code> 等）进行连接。<code>origin</code> 是远程仓库的默认名称，也可以指定为其他名称。</p></li><li><p>拉取远程更新（当远程仓库和本地仓库的内容不一致的时候需要先拉取远程仓库的内容）：使用命令 <code>git pull origin main --rebase</code> 同步远程仓库（<code>origin</code>）的主分支 <code>main</code> 中的代码到本地。一般远程仓库的主分支叫 <code>main</code> 或者 <code>master</code> （<code>Github</code> 默认是 <code>main</code> ）。</p><blockquote><p>关于 <code>merge</code> 和 <code>rebase</code> 的区别可以参考：<a href="https://zhuanlan.zhihu.com/p/686538265">Git：图解 merge 和 rebase 的区别 - 知乎 (zhihu.com)</a></p></blockquote></li><li><p>推送本地代码到远程仓库：使用命令 <code>git push -u origin main</code> 将本地的代码推送到远程仓库的指定分支（通常是 <code>main</code> 或者 <code>master</code>）。</p><blockquote><p>当使用 <code>git push -u origin &lt;branch&gt;</code> 之后，本地的 <code>&lt;branch&gt;</code> 分支会与远程的 <code>&lt;branch&gt;</code> 分支建立跟踪关系。此后，Git 记住你推送的远程仓库和分支，因此以后只需要运行 <code>git push</code>，而无需再次指定远程仓库和分支。同样，拉取时也可以使用简化后的命令 <code>git pull</code>。所以只有第一次推送时需要添加 <code>-u origin main</code> 参数。</p></blockquote></li></ol><h3 id="gitignore-如何添加已经-commit-过的文件到不追踪规则中">.gitignore 如何添加已经 commit 过的文件到不追踪规则中</h3><p>首先删除 track 的文件（已经 commit 的文件）：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm -r --cached &lt;file name&gt;<br></code></pre></td></tr></table></figure><p><code>&lt;file name&gt;</code> 代表要取消 commit 的文件，接受多个参数，比如要取消追踪 <code>test.py</code> 文件和 <code>hello</code> 文件夹可以这样：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm -r --cached test.py hello<br></code></pre></td></tr></table></figure><p>然后在 .gitignore 文件中添加 ignore 条目，比如：<code>test.py</code> 和 <code>hello</code>，然后提交 .gitignore 文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git commit -a -m &quot;delete some unused file.&quot;<br></code></pre></td></tr></table></figure><h3 id="git-嵌套-git12">Git 嵌套 Git<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Git嵌套Git仓库|极客教程](https://geek-docs.com/git/git-questions/1152_git_nested_git_repositories.html)">[1]</span></a></sup><sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="[[toolschain\] 怎么运用git 嵌套git 管理（子文件夹中也有个git） 并且如何简单设置使用repo的笔记 本文是求助GPT的记录 实践有用-CSDN博客](https://blog.csdn.net/weixin_46479223/article/details/134838519)">[2]</span></a></sup></h3><p><strong>添加子模块</strong>：需要将子模块添加到主项目中。可以通过<code>git submodule add &lt;仓库URL&gt; &lt;子模块路径&gt;</code>命令完成。例如，假设我们的子模块是一个名为<code>common</code>的库，并且需要放在主项目的<code>libs</code>目录下，那么可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git submodule add https://github.com/example/common.git libs/common<br></code></pre></td></tr></table></figure><p>或者添加和 <code>common</code> 平级目录下的 <code>example</code> 库：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git submodule add https://github.com/example/common.git example<br></code></pre></td></tr></table></figure><p><strong>初始化和更新子模块</strong>：添加子模块后，我们需要初始化和更新子模块。可以通过以下两个命令完成：</p><ul><li><code>git submodule init</code>：用于初始化子模块，只需要运行一次。</li><li><code>git submodule update</code>：用于更新子模块，可以在每次子模块发生变化时运行。</li></ul><p><strong>提交和同步变更</strong>：当子模块有变更时，我们需要在主项目中提交和同步这些变更。可以通过以下命令完成：</p><ul><li><code>git add &lt;子模块路径&gt;</code>：用于将子模块的变更添加到主项目中。</li><li><code>git commit -m "Update submodule"</code>：用于提交变更。</li><li><code>git submodule update --remote</code>：用于同步子模块的最新变更。</li></ul><h2 id="lazygit">Lazygit</h2><p>当然，如果觉得 Git 要一直输入命令好麻烦，还有一个适合命令行的 <a href="https://github.com/jesseduffield/lazygit?tab=readme-ov-file">Lazygit</a> 非常推荐，适合像我一样不喜欢自己输入这种重复命令的同学使用。</p><p>安装了 Lazygit 之后在命令行中输入 <code>lazygit</code> 就可以启动了。</p><p>在启动 Lazygit 并提示“未在 Git 仓库中”时，它允许你直接在当前目录下创建一个新的 Git 仓库。可以按照以下步骤完成初始化：</p><ol type="1"><li><p>创建新 Git 仓库：当 Lazygit 提示是否要创建一个新的 Git 仓库时，输入 <code>y</code> 并按回车键。</p></li><li><p>设置分支名称：Lazygit 会询问你要设置的分支名称。可以选择：</p><ul><li>留空：直接按回车，将使用 Git 的默认分支名称（一般是 <code>main</code> 或 <code>master</code>，取决于 Git 配置）。</li><li>自定义名称：输入自定义分支名称并按回车。</li></ul></li></ol><p>完成这两步后，Lazygit 会创建一个新的 Git 仓库，并切换到你指定的分支名称，接着你就可以正常使用 Lazygit 进行文件暂存、提交、推送等操作了。</p><p>Lazygit 提供了快捷键操作，常见的有以下几个：</p><ul><li><strong><code>↑ / ↓</code></strong>：上下移动光标，选择不同文件或提交记录。</li><li><strong><code>Enter</code></strong>：查看详细内容（如文件变更或提交详情）。</li><li><strong><code>Space</code></strong>：暂存/取消暂存文件。</li><li><strong><code>a</code></strong>：暂存所有修改。</li><li><strong><code>c</code></strong>：打开提交消息输入界面，完成后保存提交。</li><li><strong><code>P</code></strong>：推送代码到远程仓库。</li><li><strong><code>f</code></strong>、<strong><code>p</code></strong>：从远程仓库拉取代码。</li><li><strong><code>b</code></strong>：切换或新建分支。</li><li><strong><code>q</code></strong>：退出 Lazygit。</li><li><strong><code>?</code></strong>：查看所有快捷键说明。</li></ul><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://geek-docs.com/git/git-questions/1152_git_nested_git_repositories.html">Git嵌套Git仓库|极客教程</a> <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>[<a href="https://blog.csdn.net/weixin_46479223/article/details/134838519">toolschain] 怎么运用git 嵌套git 管理（子文件夹中也有个git） 并且如何简单设置使用repo的笔记 本文是求助GPT的记录 实践有用-CSDN博客</a> <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩︎</a></span></span></li></ol></div></section>]]></content:encoded>
-      
-      
-      <category domain="https://chen-huaneng.github.io/categories/Tools/">Tools</category>
-      
-      <category domain="https://chen-huaneng.github.io/categories/Tools/Git/">Git</category>
-      
-      
-      <category domain="https://chen-huaneng.github.io/tags/Tool/">Tool</category>
-      
-      <category domain="https://chen-huaneng.github.io/tags/Git/">Git</category>
-      
-      
-      <comments>https://chen-huaneng.github.io/2024/10/14/2024-10-14-2024-10-14-git/#disqus_thread</comments>
       
     </item>
     
