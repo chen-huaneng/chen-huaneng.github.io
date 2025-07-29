@@ -351,9 +351,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Tool</tag>
+      
+      <tag>Math</tag>
       
       <tag>LaTeX</tag>
       
@@ -413,9 +413,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Tool</tag>
+      
+      <tag>Math</tag>
       
       <tag>LaTeX</tag>
       
@@ -527,9 +527,9 @@
     
     <tags>
       
-      <tag>Math</tag>
-      
       <tag>Tool</tag>
+      
+      <tag>Math</tag>
       
       <tag>LaTeX</tag>
       
@@ -935,9 +935,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1090,9 +1090,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Greedy</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -1150,9 +1150,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Linked List</tag>
       
     </tags>
     
@@ -1307,9 +1307,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Linked List</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>Linked List</tag>
       
     </tags>
     
@@ -1394,11 +1394,11 @@
       
       <tag>String</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Greedy</tag>
       
       <tag>Two Pointers</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1429,11 +1429,11 @@
       
       <tag>String</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1526,9 +1526,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Prefix Sum</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Prefix Sum</tag>
       
     </tags>
     
@@ -1650,9 +1650,9 @@
       
       <tag>String</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -1681,9 +1681,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Math</tag>
       
       <tag>Linked List</tag>
       
@@ -1929,9 +1929,9 @@
       
       <tag>String</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2053,9 +2053,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Two Pointers</tag>
       
@@ -2086,11 +2086,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Simulation</tag>
       
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -2342,9 +2342,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Math</tag>
       
       <tag>Bit Manipulation</tag>
       
@@ -2470,13 +2470,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
-      <tag>Counting</tag>
-      
       <tag>Array</tag>
       
       <tag>Hash Table</tag>
+      
+      <tag>Math</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2538,9 +2538,9 @@
       
       <tag>String</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Hash Table</tag>
+      
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2569,11 +2569,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
       
       <tag>Sorting</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -2602,9 +2602,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -2666,13 +2666,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Counting</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Sorting</tag>
       
       <tag>Hash Table</tag>
       
-      <tag>Sorting</tag>
+      <tag>Counting</tag>
       
     </tags>
     
@@ -2734,9 +2734,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -2796,11 +2796,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Simulation</tag>
       
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -2922,9 +2922,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2957,9 +2957,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -2988,9 +2988,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -3050,9 +3050,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Memoization</tag>
+      
+      <tag>Math</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -3087,9 +3087,9 @@
       
       <tag>Array</tag>
       
-      <tag>Matrix</tag>
-      
       <tag>Binary Search</tag>
+      
+      <tag>Matrix</tag>
       
     </tags>
     
@@ -3374,9 +3374,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Sorting</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -3551,7 +3551,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
+    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
     
   </entry>
   
@@ -3562,7 +3562,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/* 默认字体颜色 */:root {    --post-link-color: #0366d6;    --post-link-color-dark: #1589e9;    --link-hover-color: #30a9de;    --link-hover-color-dark: #30a9de;    --link-hover-bg-color: #f8f9fa;    --link-hover-bg-color-dark: #364151;}/* 文章超链接字体色 */a.emailLink {    color: var(--post-link-color);    text-decoration: underline; /* 一直显示下划线 */    transition: color 0.3s ease-in-out;}a.emailLink:hover {    color: var(--link-hover-color);    background-color: var(--link-hover-bg-color);}/* 黑暗模式下的样式 */@media (prefers-color-scheme: dark) {    a.emailLink {        color: var(--post-link-color-dark);    }    a.emailLink:hover {        color: var(--link-hover-color-dark);        background-color: var(--link-hover-bg-color-dark);    }}/* 打字机效果渐变 -bynote.cn*//** @Source: https://emoryhuang.cn/blog/1729600336.html*/#subtitle {    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);    background-size: 400% 400%;    -webkit-animation: Gradient 10s ease infinite;    -moz-animation: Gradient 10s ease infinite;    animation: Gradient 10s ease infinite;    -o-user-select: none;    -ms-user-select: none;    -webkit-user-select: none;    -moz-user-select: none;    user-select: none;    -webkit-background-clip: text;    -webkit-text-fill-color: transparent;    border-top-left-radius: 10px;    border-top-right-radius: 10px;}#subtitle:before {    background-color: rgba(0, 0, 0, 0);}]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -3573,7 +3573,7 @@
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<p><img src="/imgs/about/banner.jpg" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『梦想是去世界各地旅行！』</span></p><h2 id="关于我">关于我</h2><p>目前南方某高校硕士研究生在读，对计算机科学、算法、机器学习和运筹优化等方向感兴趣。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系，建议通过邮件与我取得联系。</p><p>喜欢设计简洁、优雅、轻便小巧的东西（比如：Logitech MX Anywhere 3 和 Vim/Neovim）。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、孙燕姿、蔡宥绮、Adele的歌，喜欢的曲风就比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……</p><p><img src="/imgs/about/gloria.jpg" /></p><h2 id="已经做的事">已经做的事</h2><ul><li>看过的动漫：<a href="https://chen-huaneng.github.io/2024/01/02/2024-01-02-2024-01-02-Anime-I-Watched/">Anime - 记录我看过的一些动漫</a></li><li>读过的书：<a href="https://chen-huaneng.github.io/2024/01/13/2024-01-13-2024-01-13-Books-I-Readed/">Books - 记录我读过的一些书</a></li><li>其他看过的电影及书：<a href="https://www.douban.com/people/204214644/">豆瓣 - 大豆</a></li></ul><h2 id="正在做计划做的事">正在做/计划做的事</h2><ul><li>刷算法题，请看 <a href="https://leetcode.cn/u/abel_chen/">LeetCode</a> 进度</li><li>参与开源项目，详情见 <a href="https://github.com/chen-huaneng">GitHub</a> 仓库</li><li>持续更新<a href="https://chen-huaneng.github.io/">博客</a>和<a href="https://www.zhihu.com/people/yun-tun-5-10">知乎</a></li><li>读文献，完成毕业论文</li><li>学习C++、机器学习和运筹学</li><li>旅游，请看<a href="https://chen-huaneng.github.io/image/">时光胶囊</a></li><li>实习</li><li>……</li></ul><h2 id="未完待续">未完待续……</h2><p>如果你对如何搭建这个博客感兴趣，可以看看我写的这篇<a href="https://chen-huaneng.github.io/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/">简短的介绍</a>。</p><p><img src="/imgs/about/continue.jpg" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;"> 『💓对感兴趣的东西会继续探索的！😉<bf>所以要持续关注我的博客鸭🦆！</bf>』 </span></p><hr /><p align="center">Updated on July 28, 2025 at 15:40</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/imgs/about/banner.jpg" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『梦想是去世界各地旅行！』</span></p><h2 id="关于我">关于我</h2><p>目前南方某高校硕士研究生在读，对机器学习（Machine Learning）和运筹优化（Operations Research）等方向感兴趣。由于个人能力有限，所以写的内容难免有错误，如果你发现了错误，可以通过上面的联系方式与我取得联系，建议通过邮件与我取得联系。</p><p>喜欢设计简洁、优雅、轻便小巧的东西（比如：Logitech MX Anywhere 3 和 Vim/Neovim）。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、孙燕姿、蔡宥绮、Adele的歌，喜欢的曲风就比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……</p><p><img src="/imgs/about/gloria.jpg" /></p><h2 id="已经做的事">已经做的事</h2><ul><li>看过的动漫：<a href="https://chen-huaneng.github.io/2024/01/02/2024-01-02-2024-01-02-Anime-I-Watched/">Anime - 记录我看过的一些动漫</a></li><li>读过的书：<a href="https://chen-huaneng.github.io/2024/01/13/2024-01-13-2024-01-13-Books-I-Readed/">Books - 记录我读过的一些书</a></li><li>其他看过的电影及书：<a href="https://www.douban.com/people/204214644/">豆瓣 - 大豆</a></li></ul><h2 id="正在做计划做的事">正在做/计划做的事</h2><ul><li>刷算法题，请看 <a href="https://leetcode.cn/u/abel_chen/">LeetCode</a> 进度</li><li>参与开源项目，详情见 <a href="https://github.com/chen-huaneng">GitHub</a> 仓库</li><li>持续更新<a href="https://chen-huaneng.github.io/">博客</a>和<a href="https://www.zhihu.com/people/yun-tun-5-10">知乎</a></li><li>读文献，完成毕业论文</li><li>学习C++、机器学习和运筹学</li><li>旅游，请看<a href="https://chen-huaneng.github.io/image/">时光胶囊</a></li><li>完成一次马拉松</li><li>实习</li><li>……</li></ul><h2 id="未完待续">未完待续……</h2><p>如果你对如何搭建这个博客感兴趣，可以看看我写的这篇<a href="https://chen-huaneng.github.io/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/">简短的介绍</a>。</p><p><img src="/imgs/about/continue.jpg" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;"> 『💓对感兴趣的东西会继续探索的！😉<bf>所以要持续关注我的博客鸭🦆！</bf>』 </span></p><hr /><p align="center">Updated on July 29, 2025 at 11:02</p>]]></content>
     
   </entry>
   
