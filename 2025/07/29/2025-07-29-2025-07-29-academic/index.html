@@ -30,12 +30,12 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2025/07/29/banner.png">
 <meta property="article:published_time" content="2025-07-29T03:17:28.000Z">
-<meta property="article:modified_time" content="2025-07-29T14:38:11.982Z">
+<meta property="article:modified_time" content="2025-07-29T15:57:56.519Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Tool">
-<meta property="article:tag" content="Academic">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="Academic">
 <meta property="article:tag" content="Jekyll">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://chen-huaneng.github.io/imgs/posts/2025/07/29/banner.png">
@@ -299,7 +299,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 510 
+          文章字数: 666 
         
       </span>
     
@@ -362,7 +362,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2025-07-29T22:38:11+08:00
+                    本文最后更新于：2025-07-29T23:57:56+08:00
                   
                   
 
@@ -401,9 +401,15 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">bundle exec jekyll serve<br></code></pre></td></tr></table></figure>
 <p>然后在浏览器中打开命令行中输出的相应网址即可。</p>
 <p>在子目录 <code>_data</code> 、 <code>_news</code> 、<code>_publications</code> 和 <code>_showcase</code> 中修改相应的文件就可以修改相应的网站内容。</p>
+<h2 id="自定义页面">自定义页面</h2>
 <p>如果要自定义子页面的 Favicon，在 <code>_layout</code> 文件夹下 <code>default.html</code> 的 <code>&lt;head&gt;</code> 中添加：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Favicon --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image/jpg&quot;</span> <span class="hljs-attr">sizes</span>=<span class="hljs-string">&quot;32x32&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;&#123; &#x27;/assets/images/icon/icon.jpg&#x27; | relative_url &#125;&#125;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>然后在相应的 <code>assets</code> 文件夹下添加相应的图片即可。</p>
+<p>如果要添加自定义的联系方式，这里以添加个人博客为例说明。首先在 <code>_data</code> 文件夹下的 <code>profile.yml</code> 中添加字段：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">blog:</span> <span class="hljs-string">&quot;https://chen-huaneng.github.io&quot;</span><br></code></pre></td></tr></table></figure>
+<p>然后在 <code>_includes\widgets</code> 文件夹下的 <code>profile_card.html</code> 中添加相应的代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html">&#123;% if site.data.profile.blog %&#125;<br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pr-3 no-break&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;&#123; site.data.profile.blog | relative_url &#125;&#125;&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa-solid fa-pen-to-square&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span> Blog<br><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>&#123;% endif %&#125;<br></code></pre></td></tr></table></figure>
+<p>相应的图标可以在 <a target="_blank" rel="noopener" href="https://fontawesome.com/">Font Awesome</a> 中找到，比如上面 <code>Blog</code> 的图标是 <code>&lt;i class="fa-solid fa-pen-to-square"&gt;&lt;/i&gt;</code>。</p>
 
                 
               </div>
@@ -456,11 +462,11 @@
       
         <a href="/tags/Tool/" class="print-no-link">#Tool</a>
       
-        <a href="/tags/Academic/" class="print-no-link">#Academic</a>
-      
         <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
       
         <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+      
+        <a href="/tags/Academic/" class="print-no-link">#Academic</a>
       
         <a href="/tags/Jekyll/" class="print-no-link">#Jekyll</a>
       

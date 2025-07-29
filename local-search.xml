@@ -8,18 +8,18 @@
     <link href="/2025/07/29/2025-07-29-2025-07-29-academic/"/>
     <url>/2025/07/29/2025-07-29-2025-07-29-academic/</url>
     
-    <content type="html"><![CDATA[<h2 id="需求来源">需求来源</h2><p>这个需求来源于我想要在当前博客的页面中添加一个用于展示学术成果的页面，但是当前博客使用的框架是Hexo，主题是Fluid，而想用的学术页面的框架是基于Jekyll的<a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a>，因此需要在我的Github Page部署两个不同的框架，即Hexo和Jekyll。目前的想法是将用于学术成果展示的页面部署在博客的一个子页面下。</p><h2 id="本地部署">本地部署</h2><p>Fork <a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a> 这个项目到自己的仓库中，按照 <a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a> 中本地部署的要求：</p><ol type="1"><li><p>查看<a href="https://jekyllrb.com/docs/installation/">Jekyll的Requirement</a>，安装相应版本的Ruby、GCC、MSYS2以及Make（这里推荐使用<a href="https://chen-huaneng.github.io/2024/01/04/2024-01-04-2024-01-04-Scoop/">Scoop</a>进行Windows环境下的安装）</p></li><li><p>安装Jekyll和bundler <a href="https://jekyllrb.com/docs/ruby-101/#gems">gems</a>：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">gem install jekyll bundler<br></code></pre></td></tr></table></figure></li><li><p>Clone forked 的仓库到本地，以我的仓库为例：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git clone https://github.com/chen<span class="hljs-literal">-huaneng</span>/academic<span class="hljs-literal">-homepage</span>.git<br></code></pre></td></tr></table></figure></li><li><p>进入相应的文件夹：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">cd</span> academic<span class="hljs-literal">-homepage</span><br></code></pre></td></tr></table></figure></li><li><p>修改 academic-homepage 文件夹中的 <code>_config.yml</code> 文件：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">baseurl:</span> <span class="hljs-string">&quot;/academic&quot;</span>  <span class="hljs-comment"># 确保资源路径正确</span><br></code></pre></td></tr></table></figure><p>如果不进行设置会导致 CSS/JS 文件加载失败</p></li><li><p>构建 Jekyll 站点：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">bundle install  <span class="hljs-comment"># 安装依赖</span><br>bundle exec jekyll build  <span class="hljs-comment"># 生成静态文件到 _site 目录</span><br></code></pre></td></tr></table></figure></li><li><p>复制文件到 Hexo 博客的文件夹下：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">robocopy <span class="hljs-string">&quot;_site&quot;</span> <span class="hljs-string">&quot;path\to\hexo\folder\source\academic&quot;</span> /E /NFL /NDL /NP /XO<br></code></pre></td></tr></table></figure></li><li><p>在 Hexo 的 <code>_config.yml</code> 中添加：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">skip_render:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">&#x27;academic/**&#x27;</span>  <span class="hljs-comment"># 禁止 Hexo 处理 academic 目录下的文件</span><br></code></pre></td></tr></table></figure></li><li><p>部署 Hexo 站点：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo clean &amp;&amp; hexo deploy<br></code></pre></td></tr></table></figure></li></ol><h2 id="本地预览">本地预览</h2><p>如果想要在本地预览修改效果可以在完成<a href="#本地部署">本地部署</a>部分的第6步之后在命令行中输入：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">bundle exec jekyll serve<br></code></pre></td></tr></table></figure><p>然后在浏览器中打开命令行中输出的相应网址即可。</p><p>在子目录 <code>_data</code> 、 <code>_news</code> 、<code>_publications</code> 和 <code>_showcase</code> 中修改相应的文件就可以修改相应的网站内容。</p><p>如果要自定义子页面的 Favicon，在 <code>_layout</code> 文件夹下 <code>default.html</code> 的 <code>&lt;head&gt;</code> 中添加：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Favicon --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image/jpg&quot;</span> <span class="hljs-attr">sizes</span>=<span class="hljs-string">&quot;32x32&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;&#123; &#x27;/assets/images/icon/icon.jpg&#x27; | relative_url &#125;&#125;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><p>然后在相应的 <code>assets</code> 文件夹下添加相应的图片即可。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="需求来源">需求来源</h2><p>这个需求来源于我想要在当前博客的页面中添加一个用于展示学术成果的页面，但是当前博客使用的框架是Hexo，主题是Fluid，而想用的学术页面的框架是基于Jekyll的<a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a>，因此需要在我的Github Page部署两个不同的框架，即Hexo和Jekyll。目前的想法是将用于学术成果展示的页面部署在博客的一个子页面下。</p><h2 id="本地部署">本地部署</h2><p>Fork <a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a> 这个项目到自己的仓库中，按照 <a href="https://github.com/luost26/academic-homepage">luost26/academic-homepage</a> 中本地部署的要求：</p><ol type="1"><li><p>查看<a href="https://jekyllrb.com/docs/installation/">Jekyll的Requirement</a>，安装相应版本的Ruby、GCC、MSYS2以及Make（这里推荐使用<a href="https://chen-huaneng.github.io/2024/01/04/2024-01-04-2024-01-04-Scoop/">Scoop</a>进行Windows环境下的安装）</p></li><li><p>安装Jekyll和bundler <a href="https://jekyllrb.com/docs/ruby-101/#gems">gems</a>：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">gem install jekyll bundler<br></code></pre></td></tr></table></figure></li><li><p>Clone forked 的仓库到本地，以我的仓库为例：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">git clone https://github.com/chen<span class="hljs-literal">-huaneng</span>/academic<span class="hljs-literal">-homepage</span>.git<br></code></pre></td></tr></table></figure></li><li><p>进入相应的文件夹：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">cd</span> academic<span class="hljs-literal">-homepage</span><br></code></pre></td></tr></table></figure></li><li><p>修改 academic-homepage 文件夹中的 <code>_config.yml</code> 文件：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">baseurl:</span> <span class="hljs-string">&quot;/academic&quot;</span>  <span class="hljs-comment"># 确保资源路径正确</span><br></code></pre></td></tr></table></figure><p>如果不进行设置会导致 CSS/JS 文件加载失败</p></li><li><p>构建 Jekyll 站点：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">bundle install  <span class="hljs-comment"># 安装依赖</span><br>bundle exec jekyll build  <span class="hljs-comment"># 生成静态文件到 _site 目录</span><br></code></pre></td></tr></table></figure></li><li><p>复制文件到 Hexo 博客的文件夹下：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">robocopy <span class="hljs-string">&quot;_site&quot;</span> <span class="hljs-string">&quot;path\to\hexo\folder\source\academic&quot;</span> /E /NFL /NDL /NP /XO<br></code></pre></td></tr></table></figure></li><li><p>在 Hexo 的 <code>_config.yml</code> 中添加：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">skip_render:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">&#x27;academic/**&#x27;</span>  <span class="hljs-comment"># 禁止 Hexo 处理 academic 目录下的文件</span><br></code></pre></td></tr></table></figure></li><li><p>部署 Hexo 站点：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">hexo clean &amp;&amp; hexo deploy<br></code></pre></td></tr></table></figure></li></ol><h2 id="本地预览">本地预览</h2><p>如果想要在本地预览修改效果可以在完成<a href="#本地部署">本地部署</a>部分的第6步之后在命令行中输入：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">bundle exec jekyll serve<br></code></pre></td></tr></table></figure><p>然后在浏览器中打开命令行中输出的相应网址即可。</p><p>在子目录 <code>_data</code> 、 <code>_news</code> 、<code>_publications</code> 和 <code>_showcase</code> 中修改相应的文件就可以修改相应的网站内容。</p><h2 id="自定义页面">自定义页面</h2><p>如果要自定义子页面的 Favicon，在 <code>_layout</code> 文件夹下 <code>default.html</code> 的 <code>&lt;head&gt;</code> 中添加：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Favicon --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image/jpg&quot;</span> <span class="hljs-attr">sizes</span>=<span class="hljs-string">&quot;32x32&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;&#123; &#x27;/assets/images/icon/icon.jpg&#x27; | relative_url &#125;&#125;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><p>然后在相应的 <code>assets</code> 文件夹下添加相应的图片即可。</p><p>如果要添加自定义的联系方式，这里以添加个人博客为例说明。首先在 <code>_data</code> 文件夹下的 <code>profile.yml</code> 中添加字段：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">blog:</span> <span class="hljs-string">&quot;https://chen-huaneng.github.io&quot;</span><br></code></pre></td></tr></table></figure><p>然后在 <code>_includes\widgets</code> 文件夹下的 <code>profile_card.html</code> 中添加相应的代码：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html">&#123;% if site.data.profile.blog %&#125;<br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pr-3 no-break&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;&#123; site.data.profile.blog | relative_url &#125;&#125;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa-solid fa-pen-to-square&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span> Blog<br><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>&#123;% endif %&#125;<br></code></pre></td></tr></table></figure><p>相应的图标可以在 <a href="https://fontawesome.com/">Font Awesome</a> 中找到，比如上面 <code>Blog</code> 的图标是 <code>&lt;i class="fa-solid fa-pen-to-square"&gt;&lt;/i&gt;</code>。</p>]]></content>
     
     
     <categories>
       
       <category>Blog</category>
       
-      <category>Academic</category>
-      
       <category>Hexo</category>
       
       <category>Jekyll</category>
+      
+      <category>Academic</category>
       
     </categories>
     
@@ -28,11 +28,11 @@
       
       <tag>Tool</tag>
       
-      <tag>Academic</tag>
-      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
+      
+      <tag>Academic</tag>
       
       <tag>Jekyll</tag>
       
@@ -330,9 +330,9 @@
       
       <tag>Tool</tag>
       
-      <tag>Zotero</tag>
-      
       <tag>Academic</tag>
+      
+      <tag>Zotero</tag>
       
     </tags>
     
@@ -537,9 +537,9 @@
     
     <tags>
       
-      <tag>Git</tag>
-      
       <tag>Github</tag>
+      
+      <tag>Git</tag>
       
     </tags>
     
@@ -3056,11 +3056,11 @@
     
     <tags>
       
-      <tag>Website</tag>
-      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
+      
+      <tag>Website</tag>
       
     </tags>
     
@@ -3537,11 +3537,11 @@
       
       <tag>Tool</tag>
       
-      <tag>Website</tag>
-      
       <tag>Hexo</tag>
       
       <tag>Fluid</tag>
+      
+      <tag>Website</tag>
       
     </tags>
     
@@ -3586,6 +3586,17 @@
   
   
   <entry>
+    <title>Images</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<div class="markdown-body"><h2 id="下一站去哪">下一站去哪</h2><div class="note note-success">            <ul><li>新疆</li><li>西藏</li><li>四川 九寨沟 黄龙 都江堰 三星堆 四姑娘山 峨眉山</li><li>张家界</li><li>桂林</li><li>甘肃 敦煌莫高窟 月牙泉 鸣沙山 张掖七彩丹霞</li><li>北京 故宫 长城 天坛 国博 圆明园</li><li>南京 南京博物院 同胞纪念馆</li><li>山东 大明湖 趵突泉 泰山</li><li>陕西 华山 秦始皇陵</li><li>青海湖</li></ul>          </div><h2 id="上海">2025-06-03 上海</h2><p><img src="/imgs/images/20250603.jpg" /></p><h2 id="浙江杭州西湖">2025-06-01 浙江杭州西湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250601-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250601-2.jpg" /></div></div></div><h2 id="浙江杭州千岛湖">2025-05-31 浙江杭州千岛湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250531-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250531-2.jpg" /></div></div></div><h2 id="安徽黄山歙县深渡镇">2025-05-30 安徽黄山歙县深渡镇</h2><p><img src="/imgs/images/20250530.jpg" /></p><h2 id="安徽黄山">2025-05-29 安徽黄山</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250529-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250529-2.jpg" /></div></div></div><h2 id="湖北省博物馆">2025-05-27 湖北省博物馆</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250527-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250527-2.jpg" /></div></div></div><h2 id="湖北武汉">2025-05-26 湖北武汉</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250526-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250526-2.jpg" /></div></div></div><h2 id="厦门椰风寨">2025-05-23 厦门椰风寨</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250523-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250523-2.jpg" /></div></div></div><h2 id="厦门上李水库">2025-05-21 厦门上李水库</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250521-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250521-2.jpg" /></div></div></div><h2 id="厦门仙岳公园">2025-03-08 厦门仙岳公园</h2><p><img src="/imgs/images/20250308.jpg" /></p><h2 id="广东珠海">2025-01-13 广东珠海</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250113-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250113-2.jpg" /></div></div></div><h2 id="澳门">2025-01-12 澳门</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250112-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250112-2.jpg" /></div></div></div><h2 id="香港">2025-01-11 香港</h2><p><img src="/imgs/images/20250111.jpg" /></p><h2 id="邓紫棋演唱会">2024-12-22 邓紫棋演唱会</h2><p><img src="/imgs/images/20241222.jpg" /></p><h2 id="天津">2024-09-25 天津</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240925-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240925-2.jpg" /></div></div></div><h2 id="清华大学">2024-09-24 清华大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240924-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240924-2.jpg" /></div></div></div><h2 id="陕西西安">2024-09-21 陕西西安</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240921-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240921-2.jpg" /></div></div></div><h2 id="广东深圳">2024-09-11 广东深圳</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240911-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240911-2.jpg" /></div></div></div><h2 id="厦门园林博览园">2024-07-20 厦门园林博览园</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240720-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240720-2.jpg" /></div></div></div><h2 id="厦门海湾公园">2024-06-21 厦门海湾公园</h2><p><img src="/imgs/images/20240621.jpg" /></p><h2 id="福建泉州">2024-02-22 福建泉州</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240222-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240222-2.jpg" /></div></div></div><h2 id="三明大田">2023-10-03 三明大田</h2><p><img src="/imgs/images/20231003.jpg" /></p><h2 id="厦门鼓浪屿">2023-04-01 厦门鼓浪屿</h2><p><img src="/imgs/images/20230401.jpg" /></p><h2 id="厦门大学">2023-03-31 厦门大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20230331-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20230331-2.jpg" /></div></div></div></div>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>about</title>
     <link href="/"/>
     <url>/</url>
@@ -3608,11 +3619,11 @@
   
   
   <entry>
-    <title>Images</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="markdown-body"><h2 id="下一站去哪">下一站去哪</h2><div class="note note-success">            <ul><li>新疆</li><li>西藏</li><li>四川 九寨沟 黄龙 都江堰 三星堆 四姑娘山 峨眉山</li><li>张家界</li><li>桂林</li><li>甘肃 敦煌莫高窟 月牙泉 鸣沙山 张掖七彩丹霞</li><li>北京 故宫 长城 天坛 国博 圆明园</li><li>南京 南京博物院 同胞纪念馆</li><li>山东 大明湖 趵突泉 泰山</li><li>陕西 华山 秦始皇陵</li><li>青海湖</li></ul>          </div><h2 id="上海">2025-06-03 上海</h2><p><img src="/imgs/images/20250603.jpg" /></p><h2 id="浙江杭州西湖">2025-06-01 浙江杭州西湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250601-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250601-2.jpg" /></div></div></div><h2 id="浙江杭州千岛湖">2025-05-31 浙江杭州千岛湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250531-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250531-2.jpg" /></div></div></div><h2 id="安徽黄山歙县深渡镇">2025-05-30 安徽黄山歙县深渡镇</h2><p><img src="/imgs/images/20250530.jpg" /></p><h2 id="安徽黄山">2025-05-29 安徽黄山</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250529-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250529-2.jpg" /></div></div></div><h2 id="湖北省博物馆">2025-05-27 湖北省博物馆</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250527-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250527-2.jpg" /></div></div></div><h2 id="湖北武汉">2025-05-26 湖北武汉</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250526-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250526-2.jpg" /></div></div></div><h2 id="厦门椰风寨">2025-05-23 厦门椰风寨</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250523-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250523-2.jpg" /></div></div></div><h2 id="厦门上李水库">2025-05-21 厦门上李水库</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250521-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250521-2.jpg" /></div></div></div><h2 id="厦门仙岳公园">2025-03-08 厦门仙岳公园</h2><p><img src="/imgs/images/20250308.jpg" /></p><h2 id="广东珠海">2025-01-13 广东珠海</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250113-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250113-2.jpg" /></div></div></div><h2 id="澳门">2025-01-12 澳门</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250112-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250112-2.jpg" /></div></div></div><h2 id="香港">2025-01-11 香港</h2><p><img src="/imgs/images/20250111.jpg" /></p><h2 id="邓紫棋演唱会">2024-12-22 邓紫棋演唱会</h2><p><img src="/imgs/images/20241222.jpg" /></p><h2 id="天津">2024-09-25 天津</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240925-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240925-2.jpg" /></div></div></div><h2 id="清华大学">2024-09-24 清华大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240924-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240924-2.jpg" /></div></div></div><h2 id="陕西西安">2024-09-21 陕西西安</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240921-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240921-2.jpg" /></div></div></div><h2 id="广东深圳">2024-09-11 广东深圳</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240911-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240911-2.jpg" /></div></div></div><h2 id="厦门园林博览园">2024-07-20 厦门园林博览园</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240720-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240720-2.jpg" /></div></div></div><h2 id="厦门海湾公园">2024-06-21 厦门海湾公园</h2><p><img src="/imgs/images/20240621.jpg" /></p><h2 id="福建泉州">2024-02-22 福建泉州</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240222-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240222-2.jpg" /></div></div></div><h2 id="三明大田">2023-10-03 三明大田</h2><p><img src="/imgs/images/20231003.jpg" /></p><h2 id="厦门鼓浪屿">2023-04-01 厦门鼓浪屿</h2><p><img src="/imgs/images/20230401.jpg" /></p><h2 id="厦门大学">2023-03-31 厦门大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20230331-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20230331-2.jpg" /></div></div></div></div>]]></content>
+    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
@@ -3624,17 +3635,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[/** 滚动条bynote.cn * @Source:https://emoryhuang.cn/blog/1729600336.html */ /* Scrollbar Styles */::-webkit-scrollbar {    width: 10px;    height: 10px;}::-webkit-scrollbar-thumb {    background-color: #225465; /* Updated color */    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);    border-radius: 2em;}::-webkit-scrollbar-corner {    background-color: transparent;}/* Firefox scrollbar styles */::-moz-selection {    color: #fff;    background-color: #225465; /* Updated color */}]]></content>
     
   </entry>
   
