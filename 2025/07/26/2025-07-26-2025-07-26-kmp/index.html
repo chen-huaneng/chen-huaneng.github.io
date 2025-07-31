@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar_round.jpg">
-  <link rel="icon" href="/imgs/banner/avatar_round.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar.jpg">
+  <link rel="icon" href="/imgs/banner/avatar.jpg">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -23,14 +23,14 @@
   
     <meta name="description" content="通俗易懂地讲解了Knuth-Morris-Pratt算法的原理和next数组的求解方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KMP（Knuth-Morris-Pratt）算法详解">
+<meta property="og:title" content="KMP - Knuth-Morris-Pratt算法详解">
 <meta property="og:url" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/index.html">
-<meta property="og:site_name" content="AbelのBlog">
+<meta property="og:site_name" content="Abel">
 <meta property="og:description" content="通俗易懂地讲解了Knuth-Morris-Pratt算法的原理和next数组的求解方法。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2025/07/26/banner.jpg">
 <meta property="article:published_time" content="2025-07-26T10:10:11.000Z">
-<meta property="article:modified_time" content="2025-07-26T12:24:38.875Z">
+<meta property="article:modified_time" content="2025-07-31T07:39:00.599Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="String">
@@ -41,7 +41,7 @@
   
   
   
-  <title>KMP（Knuth-Morris-Pratt）算法详解 - AbelのBlog</title>
+  <title>KMP - Knuth-Morris-Pratt算法详解 ~ Abel</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -62,7 +62,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -76,15 +76,14 @@
 
 
   
-<link rel="stylesheet" href="/css/custom.css">
-<link rel="stylesheet" href="/css/scrollbar.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/lxgwwenkaiscreen/result.css">
 
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.jpg","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":40,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -110,7 +109,7 @@
 
 
   
-<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/rss2.xml" title="AbelのBlog" type="application/rss+xml">
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/rss2.xml" title="Abel" type="application/rss+xml">
 </head>
 
 
@@ -120,11 +119,11 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>AbelのBlog</strong>
+      <strong>Abel</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -240,7 +239,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/rss2.xml" target="_self">
                 <i class="iconfont icon-rss"></i>
-                <span></span>
+                <span>RSS</span>
               </a>
             </li>
           
@@ -274,7 +273,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="KMP（Knuth-Morris-Pratt）算法详解"></span>
+            <span id="subtitle">KMP - Knuth-Morris-Pratt算法详解</span>
           
         </div>
 
@@ -349,6 +348,19 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
 
@@ -356,12 +368,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">KMP（Knuth-Morris-Pratt）算法详解</h1>
+            <h1 id="seo-header">KMP - Knuth-Morris-Pratt算法详解</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2025-07-26T20:24:38+08:00
+                    本文最后更新于：2025-07-31T15:39:00+08:00
                   
                   
 
@@ -389,12 +401,12 @@
 <p>先由暴力解法讲起，在暴力匹配中，每次遇到不匹配的情况都需要将模式串从头开始遍历，即将主串上的指针向前移动一位后，将模式串的指针回退到模式串的起始位置开始和主串对比。</p>
 <p>下面约定，主串为<span class="math inline">\(S\)</span>，主串中第<span class="math inline">\(i\)</span>个字符记为<span class="math inline">\(S_i\)</span>，模式串为<span class="math inline">\(P\)</span>，模式串中第<span class="math inline">\(j\)</span>个字符记为<span class="math inline">\(P_j\)</span>。</p>
 <figure>
-<img src="./KMP-1.png" srcset="/imgs/banner/loading.jpg" lazyload alt="暴力匹配的过程" /><figcaption aria-hidden="true">暴力匹配的过程</figcaption>
+<img src="./KMP-1.png" srcset="/imgs/banner/loading.gif" lazyload alt="暴力匹配的过程" /><figcaption aria-hidden="true">暴力匹配的过程</figcaption>
 </figure>
 <p>通过观察可以知道，在第3轮比较的过程中，通过比较已经得知主串中的<span class="math inline">\([S_3 \dots S_6]\)</span>的字符信息，因而可以知道<span class="math inline">\(S_4,S_5\)</span>和<span class="math inline">\(P_1\)</span>是不匹配的，因而第4，5轮的匹配是可以通过之前的已知信息来避免的，<strong>而KMP算法的思想也正是通过之前匹配获得的主串和模式串的部分匹配信息来减少匹配次数进而提高算法效率</strong>。接下来将分析如何运用该信息来减少匹配次数。</p>
 <p>现在从更一般的情况来进一步分析，有主串<span class="math inline">\(S\)</span>和模式串<span class="math inline">\(P\)</span>（模式串的长度<span class="math inline">\(\geq m + 1\)</span>，主串的长度<span class="math inline">\(\geq\)</span>模式串的长度），现在有模式串的前<span class="math inline">\(m\)</span>个字符和主串的某个子串相匹配，而第<span class="math inline">\(m + 1\)</span>个字符不匹配，即<span class="math inline">\(P_{m + 1} \neq S_{k + m}\)</span>。</p>
 <figure>
-<img src="./KMP-2.png" srcset="/imgs/banner/loading.jpg" lazyload alt="更一般的匹配过程" /><figcaption aria-hidden="true">更一般的匹配过程</figcaption>
+<img src="./KMP-2.png" srcset="/imgs/banner/loading.gif" lazyload alt="更一般的匹配过程" /><figcaption aria-hidden="true">更一般的匹配过程</figcaption>
 </figure>
 <p>现已知主串的某一子串<span class="math inline">\([S_k, S_{k + 1}, \dots, S_{k + m - 1}]\)</span>和模式串的由<span class="math inline">\(m\)</span>个字符组成的前缀<span class="math inline">\([P_1, P_2, \dots, P_m]\)</span>相匹配，那么为了减少匹配的次数，我们思考能否在主串的匹配子串<span class="math inline">\([S_k, S_{k + 1}, \dots, S_{k + m - 1}]\)</span>中找到这样一个子串（即主串的匹配子串的后缀），满足条件： <span class="math display">\[
 [S_{k + n}, S_{k + n + 1}, \dots, S_{k + m - 1}] = [P_1, P_2, \dots, P_{m - n}]
@@ -458,7 +470,7 @@
 <p>写成伪代码则是<code>j = next[j]</code>，即指向模式串当前字符（当前指针位置<span class="math inline">\(m + 1\)</span>）的指针<span class="math inline">\(j\)</span>将直接跳过模式串的匹配前缀的长度<span class="math inline">\(next[j]\)</span>个字符继续进行比较。</p>
 <p>接下来将介绍如何快速计算给定模式串的<span class="math inline">\(next\)</span>数组，计算模式串的<span class="math inline">\(next\)</span>数组是一个递推的过程：</p>
 <figure>
-<img src="./KMP-3.png" srcset="/imgs/banner/loading.jpg" lazyload alt="计算next[j+1]的过程" /><figcaption aria-hidden="true">计算<span class="math inline">\(next[j+1]\)</span>的过程</figcaption>
+<img src="./KMP-3.png" srcset="/imgs/banner/loading.gif" lazyload alt="计算next[j+1]的过程" /><figcaption aria-hidden="true">计算<span class="math inline">\(next[j+1]\)</span>的过程</figcaption>
 </figure>
 <ol type="1">
 <li><p>当<span class="math inline">\(j = 1\)</span>时，即取模式串的第一个字符时，此时显然没有前后缀存在，故<span class="math inline">\(next[1] = 0\)</span>。</p></li>
@@ -469,7 +481,7 @@
 </ul></li>
 </ol>
 <figure>
-<img src="./KMP-4.png" srcset="/imgs/banner/loading.jpg" lazyload alt="当P_{k + 1} \neq P_{j + 1}时，寻找满足条件的h的过程" /><figcaption aria-hidden="true">当<span class="math inline">\(P_{k + 1} \neq P_{j + 1}\)</span>时，寻找满足条件的<span class="math inline">\(h\)</span>的过程</figcaption>
+<img src="./KMP-4.png" srcset="/imgs/banner/loading.gif" lazyload alt="当P_{k + 1} \neq P_{j + 1}时，寻找满足条件的h的过程" /><figcaption aria-hidden="true">当<span class="math inline">\(P_{k + 1} \neq P_{j + 1}\)</span>时，寻找满足条件的<span class="math inline">\(h\)</span>的过程</figcaption>
 </figure>
 <p>由上述的递推过程中可以看出，KMP算法的时间复杂度为<span class="math inline">\(O(m + n)\)</span>，空间复杂度为<span class="math inline">\(O(m)\)</span>，其中匹配的时间复杂度为<span class="math inline">\(O(n)\)</span>，因为主串的指针不回退，而计算模式串的部分匹配值的时间复杂度为<span class="math inline">\(O(m)\)</span>，这是因为在计算模式串的部分匹配值时，并没有使用暴力匹配，而是利用先前已经得到的部分匹配值的信息来减少匹配次数，其中<span class="math inline">\(m\)</span>为模式串的长度，<span class="math inline">\(n\)</span>为主串的长度。虽然暴力匹配的时间复杂度为<span class="math inline">\(O(mn)\)</span>，但在实际应用中，暴力匹配的实际复杂度接近<span class="math inline">\(O(m + n)\)</span>，这是因为在大部分文本和模式串中（比如在一本小说中搜索goodbye单词），模式串的第一个字符就和主串不匹配，只有在某些情况下（比如在二进制文本中寻找0101001），KMP算法才比暴力匹配快得多（出现了很多部分匹配的情况）。</p>
 <p>现在来考虑当模式串中出现了重复字符时，如何改进<span class="math inline">\(next\)</span>数组为<span class="math inline">\(nextval\)</span>数组提高效率。以下列例子说明：</p>
@@ -573,23 +585,6 @@ References
     
       <span class="category-chain">
         
-  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/LeetCode/Easy/" class="category-chain-item">Easy</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-    
-      <span class="category-chain">
-        
   <a href="/categories/Algorithm/" class="category-chain-item">Algorithm</a>
   
   
@@ -623,7 +618,7 @@ References
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>KMP（Knuth-Morris-Pratt）算法详解</div>
+      <div>KMP - Knuth-Morris-Pratt算法详解</div>
       <div>https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/</div>
     </div>
     <div class="license-meta">
@@ -642,7 +637,7 @@ References
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年7月26日</div>
+          <div>2025年7月31日</div>
         </div>
       
       
@@ -652,15 +647,21 @@ References
             
               
               
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-cc-by"></i>
                   </span>
                 </a>
               
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
                     <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
                   </span>
                 </a>
               
@@ -703,22 +704,23 @@ References
             
   
   
-    <article id="comments">
+    <article id="comments" lazyload>
       
-  <div id="valine"></div>
+  <div id="waline"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css')
+      Fluid.utils.createScript('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js', function() {
         var options = Object.assign(
-          {"appId":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","appKey":"E986Wb0NvdKXW5IypTNvcH0T","path":"window.location.pathname","placeholder":"发一条友善的评论吧(为了方便交流,记得填上方的昵称和邮箱再留言哦~🍭)","avatar":"retro","meta":["nick","mail"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},"enableQQ":true},
+          {"serverURL":"https://waline-iqo2f4g2q-abels-projects-774a1e48.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"placeholder":"发一条友善的评论吧(为了方便交流,记得填上方的昵称和邮箱再留言哦~🍭)","avatar":"retro","avatarcdn":"","avatarforce":false,"recordIP":true,"highlight":true,"search":false,"reaction":false},
           {
-            el: "#valine",
+            el: '#waline',
             path: window.location.pathname
           }
         )
-        new Valine(options);
-        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
           Fluid.plugins.fancyBox(imgSelector);
         })
@@ -739,19 +741,6 @@ References
 
     <div class="side-col d-none d-lg-block col-lg-2">
       
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
 
     </div>
   </div>
@@ -885,58 +874,14 @@ References
 <script  src="/js/plugins.js" ></script>
 
 
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
 
 
 
   
-    
-      <script  src="/js/img-lazyload.js" ></script>
-    
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
-
-
-  
-<script>
-  var relativeDate = function() {
-    var updatedTime = document.getElementById('updated-time');
-    if (updatedTime) {
-      var text = updatedTime.textContent;
-      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
-      var matchs = text.match(reg);
-      if (matchs) {
-        var relativeTime = moment(matchs[0]).fromNow();
-        updatedTime.textContent = text.replace(reg, relativeTime);
-      }
-      updatedTime.style.display = '';
-    }
-  };
-  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
-    if (!'zh-cn'.startsWith('en')) {
-      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
-        relativeDate();
-      });
-    } else {
-      relativeDate();
-    }
-  });
-</script>
 
 
   
@@ -979,6 +924,33 @@ References
 </script>
 
 
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
   <script>Fluid.plugins.codeWidget();</script>
@@ -986,7 +958,7 @@ References
 
   
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
     window.anchors.options = {
       placement: CONFIG.anchorjs.placement,
       visible  : CONFIG.anchorjs.visible

@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar_round.jpg">
-  <link rel="icon" href="/imgs/banner/avatar_round.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar.jpg">
+  <link rel="icon" href="/imgs/banner/avatar.jpg">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -25,12 +25,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java - Dynamic and Static">
 <meta property="og:url" content="https://chen-huaneng.github.io/2023/11/07/2023-11-07-2023-11-07-java-dynamic-and-static/index.html">
-<meta property="og:site_name" content="AbelのBlog">
+<meta property="og:site_name" content="Abel">
 <meta property="og:description" content="This article will explain in detail about dynamic and static in polymorphism.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://chen-huaneng.github.io/imgs/posts/2023/11/07/banner.jpg">
 <meta property="article:published_time" content="2023-11-07T10:12:22.000Z">
-<meta property="article:modified_time" content="2024-10-13T03:50:39.501Z">
+<meta property="article:modified_time" content="2025-07-31T03:53:00.239Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Static">
@@ -41,7 +41,7 @@
   
   
   
-  <title>Java - Dynamic and Static - AbelのBlog</title>
+  <title>Java - Dynamic and Static ~ Abel</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -62,7 +62,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -76,15 +76,14 @@
 
 
   
-<link rel="stylesheet" href="/css/custom.css">
-<link rel="stylesheet" href="/css/scrollbar.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/lxgwwenkaiscreen/result.css">
 
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.jpg","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":40,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -110,7 +109,7 @@
 
 
   
-<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/rss2.xml" title="AbelのBlog" type="application/rss+xml">
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/rss2.xml" title="Abel" type="application/rss+xml">
 </head>
 
 
@@ -120,11 +119,11 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>AbelのBlog</strong>
+      <strong>Abel</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -240,7 +239,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/rss2.xml" target="_self">
                 <i class="iconfont icon-rss"></i>
-                <span></span>
+                <span>RSS</span>
               </a>
             </li>
           
@@ -274,7 +273,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java - Dynamic and Static"></span>
+            <span id="subtitle">Java - Dynamic and Static</span>
           
         </div>
 
@@ -349,6 +348,19 @@
   <div class="row nomargin-x">
     <div class="side-col d-none d-lg-block col-lg-2">
       
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
 
@@ -361,7 +373,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2024-10-13T11:50:39+08:00
+                    本文最后更新于：2025-07-31T11:53:00+08:00
                   
                   
 
@@ -830,9 +842,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-comment">// No casting</span><br>	<span class="hljs-type">Cat</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(); <span class="hljs-comment">//Compile Error </span><br>    <span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>(); <span class="hljs-comment">//No Error </span><br>    <span class="hljs-type">Dog</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>(); <span class="hljs-comment">//Compile Error </span><br>    <span class="hljs-type">Tree</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(); <span class="hljs-comment">//Compile Error </span><br>    <br>    <span class="hljs-comment">// Have casting</span><br>    <span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> (Cat) <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>(); <span class="hljs-comment">//No Error </span><br>    <span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> (Animal) <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>(); <span class="hljs-comment">//No Error </span><br>    <span class="hljs-type">Dog</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> (Dog) <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(); <span class="hljs-comment">//Runtime Error </span><br>    <span class="hljs-type">Cat</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> (Cat) <span class="hljs-keyword">new</span> <span class="hljs-title class_">Dog</span>(); <span class="hljs-comment">//Compile Error </span><br>    <span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> (Animal) <span class="hljs-keyword">new</span> <span class="hljs-title class_">Tree</span>(); <span class="hljs-comment">//Compile Error </span><br>&#125;<br></code></pre></td></tr></table></figure>
 </blockquote>
 <h2 id="conclusion">Conclusion</h2>
-<figure>
-<img src="/imgs/posts/2023/11/07/mindmap.png" srcset="/imgs/banner/loading.jpg" lazyload alt="MethodCallFlow" /><figcaption aria-hidden="true">MethodCallFlow</figcaption>
-</figure>
+<p><img src="./mindmap.png" srcset="/imgs/banner/loading.gif" lazyload /></p>
 <section class="footnotes">
 <h2>
 References
@@ -863,15 +873,8 @@ References
     
       <span class="category-chain">
         
-  <a href="/categories/Language/" class="category-chain-item">Language</a>
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/Language/Java/" class="category-chain-item">Java</a>
-  
-  
-
   
 
       </span>
@@ -922,7 +925,7 @@ References
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年10月13日</div>
+          <div>2025年7月31日</div>
         </div>
       
       
@@ -932,15 +935,21 @@ References
             
               
               
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-cc-by"></i>
                   </span>
                 </a>
               
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
                     <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
                   </span>
                 </a>
               
@@ -977,22 +986,23 @@ References
             
   
   
-    <article id="comments">
+    <article id="comments" lazyload>
       
-  <div id="valine"></div>
+  <div id="waline"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css')
+      Fluid.utils.createScript('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js', function() {
         var options = Object.assign(
-          {"appId":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","appKey":"E986Wb0NvdKXW5IypTNvcH0T","path":"window.location.pathname","placeholder":"发一条友善的评论吧(为了方便交流,记得填上方的昵称和邮箱再留言哦~🍭)","avatar":"retro","meta":["nick","mail"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},"enableQQ":true},
+          {"serverURL":"https://waline-iqo2f4g2q-abels-projects-774a1e48.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"placeholder":"发一条友善的评论吧(为了方便交流,记得填上方的昵称和邮箱再留言哦~🍭)","avatar":"retro","avatarcdn":"","avatarforce":false,"recordIP":true,"highlight":true,"search":false,"reaction":false},
           {
-            el: "#valine",
+            el: '#waline',
             path: window.location.pathname
           }
         )
-        new Valine(options);
-        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
           Fluid.plugins.fancyBox(imgSelector);
         })
@@ -1013,19 +1023,6 @@ References
 
     <div class="side-col d-none d-lg-block col-lg-2">
       
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
 
     </div>
   </div>
@@ -1153,58 +1150,14 @@ References
 <script  src="/js/plugins.js" ></script>
 
 
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
 
 
 
   
-    
-      <script  src="/js/img-lazyload.js" ></script>
-    
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
-
-
-  
-<script>
-  var relativeDate = function() {
-    var updatedTime = document.getElementById('updated-time');
-    if (updatedTime) {
-      var text = updatedTime.textContent;
-      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
-      var matchs = text.match(reg);
-      if (matchs) {
-        var relativeTime = moment(matchs[0]).fromNow();
-        updatedTime.textContent = text.replace(reg, relativeTime);
-      }
-      updatedTime.style.display = '';
-    }
-  };
-  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
-    if (!'zh-cn'.startsWith('en')) {
-      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
-        relativeDate();
-      });
-    } else {
-      relativeDate();
-    }
-  });
-</script>
 
 
   
@@ -1247,6 +1200,33 @@ References
 </script>
 
 
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
   <script>Fluid.plugins.codeWidget();</script>
@@ -1254,7 +1234,7 @@ References
 
   
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
     window.anchors.options = {
       placement: CONFIG.anchorjs.placement,
       visible  : CONFIG.anchorjs.visible
