@@ -22,13 +22,13 @@
       
       <tag>Hexo</tag>
       
-      <tag>Fluid</tag>
-      
-      <tag>Website</tag>
-      
       <tag>Academic</tag>
       
+      <tag>Fluid</tag>
+      
       <tag>Jekyll</tag>
+      
+      <tag>Website</tag>
       
     </tags>
     
@@ -55,9 +55,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>String</tag>
       
       <tag>KMP</tag>
       
@@ -140,9 +140,9 @@
       
       <tag>Windows</tag>
       
-      <tag>Rainmeter</tag>
-      
       <tag>GUI</tag>
+      
+      <tag>Rainmeter</tag>
       
     </tags>
     
@@ -712,9 +712,9 @@
       
       <tag>Python</tag>
       
-      <tag>GUI</tag>
-      
       <tag>Tkinter</tag>
+      
+      <tag>GUI</tag>
       
     </tags>
     
@@ -743,11 +743,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>String</tag>
+      
       <tag>Simulation</tag>
       
       <tag>Array</tag>
-      
-      <tag>String</tag>
       
     </tags>
     
@@ -776,11 +776,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Two Pointers</tag>
+      
       <tag>Array</tag>
       
       <tag>Sorting</tag>
-      
-      <tag>Two Pointers</tag>
       
       <tag>Binary Search</tag>
       
@@ -902,11 +902,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
+      <tag>Two Pointers</tag>
       
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Array</tag>
       
     </tags>
     
@@ -1117,13 +1117,13 @@
       
       <tag>Algorithm</tag>
       
+      <tag>String</tag>
+      
       <tag>Hash Table</tag>
       
       <tag>Simulation</tag>
       
       <tag>Array</tag>
-      
-      <tag>String</tag>
       
     </tags>
     
@@ -1152,9 +1152,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>String</tag>
-      
       <tag>Two Pointers</tag>
+      
+      <tag>String</tag>
       
     </tags>
     
@@ -1268,11 +1268,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
+      <tag>Two Pointers</tag>
       
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Greedy</tag>
       
       <tag>Counting</tag>
       
@@ -1303,11 +1303,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>String</tag>
+      
       <tag>Hash Table</tag>
       
       <tag>Array</tag>
-      
-      <tag>String</tag>
       
       <tag>Counting</tag>
       
@@ -1524,9 +1524,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Counting</tag>
       
@@ -1801,9 +1801,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Counting</tag>
       
@@ -1923,6 +1923,8 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Two Pointers</tag>
+      
       <tag>Hash Table</tag>
       
       <tag>Simulation</tag>
@@ -1930,8 +1932,6 @@
       <tag>Array</tag>
       
       <tag>Sorting</tag>
-      
-      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1993,11 +1993,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>String</tag>
+      
       <tag>Simulation</tag>
       
       <tag>Array</tag>
-      
-      <tag>String</tag>
       
     </tags>
     
@@ -2026,9 +2026,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2057,11 +2057,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
+      <tag>Two Pointers</tag>
       
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2090,9 +2090,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -2121,11 +2121,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>String</tag>
+      
       <tag>Simulation</tag>
       
       <tag>Array</tag>
-      
-      <tag>String</tag>
       
     </tags>
     
@@ -2154,9 +2154,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2185,9 +2185,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2249,9 +2249,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2280,11 +2280,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
+      <tag>Two Pointers</tag>
       
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -2410,9 +2410,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Counting</tag>
       
@@ -3025,11 +3025,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Two Pointers</tag>
+      
       <tag>Array</tag>
       
       <tag>Sorting</tag>
-      
-      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -3089,9 +3089,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>String</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -3213,11 +3213,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>String</tag>
+      
       <tag>Simulation</tag>
       
       <tag>Array</tag>
-      
-      <tag>String</tag>
       
     </tags>
     
