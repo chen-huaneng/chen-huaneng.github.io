@@ -28,12 +28,14 @@
 <meta property="og:site_name" content="Abel">
 <meta property="og:description" content="给出了几种Cauchy-Schwarz不等式的证明方法。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chen-huaneng.github.io/2025/08/03/2025-08-03-2025-08-03-inequality/vector.png">
 <meta property="article:published_time" content="2025-08-03T00:45:26.000Z">
-<meta property="article:modified_time" content="2025-08-03T14:05:50.642Z">
+<meta property="article:modified_time" content="2025-08-04T03:18:19.178Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Math">
 <meta property="article:tag" content="Inequality">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/2025/08/03/2025-08-03-2025-08-03-inequality/vector.png">
   
   
   
@@ -293,7 +295,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 2.3k 
+          文章字数: 3.2k 
         
       </span>
     
@@ -305,7 +307,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 6 分钟
+          阅读全文大概需要 9 分钟
         
       </span>
     
@@ -369,7 +371,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2025-08-03T22:05:50+08:00
+                    本文最后更新于：2025-08-04T11:18:19+08:00
                   
                   
 
@@ -403,14 +405,14 @@
 \sqrt{\mathbf{x}^{\mathsf{T}}\mathbf{x}} = \Vert\mathbf{x}\Vert = \sqrt{\sum_{i= 1}^nx_i^2}
 \]</span> 则 Cauchy 不等式可以表示为： <span class="math display">\[
 \vert \mathbf{a}^{\mathsf{T}} \cdot \mathbf{b} \vert \leq \Vert\mathbf{a}\Vert \cdot \Vert \mathbf{b} \Vert
-\]</span> <span class="math inline">\(\mathbf{a}^{\mathsf{T}} \cdot \mathbf{b} = \mathbf{b}^{\mathsf{T}} \cdot \mathbf{a} = \sum_{i = 1}^n x_iy_i\)</span> 为向量点积（inner product）。</p>
+\]</span> <span class="math inline">\(\mathbf{a}^{\mathsf{T}} \cdot \mathbf{b} = \mathbf{b}^{\mathsf{T}} \cdot \mathbf{a} = \sum_{i = 1}^n a_ib_i\)</span> 为向量点积（inner product）。</p>
 <p class="note note-info">
 向量 <span class="math inline">\(\mathbf{x}\)</span> 的长度也叫做向量的模长 <span class="math inline">\(\Vert \mathbf{x} \Vert\)</span>，也叫做向量 <span class="math inline">\(\mathbf{x}\)</span> 的欧几里得范数（Euclidean norm）。
 </p>
 <h3 id="积分形式">积分形式</h3>
 <p>已知 <span class="math inline">\(f,g\)</span> 是区间 <span class="math inline">\([a, b]\)</span> 上的连续函数，则： <span class="math display">\[
 \left(\int_a^bf(x)g(x)\mathrm{d}x\right)^2 \leq \int_a^bf^2(x)\mathrm{d}x \cdot \int_a^bg^2(x)\mathrm{d}x
-\]</span> 当且仅当存在常数 <span class="math inline">\(\lambda\)</span> 和 <span class="math inline">\(\mu\)</span>（不全为零），使得 <span class="math inline">\(\lambda f(x) = \mu g(x)\)</span> 在区间 <span class="math inline">\([a, b]\)</span> 上<strong>几乎处处</strong>成立，即 <span class="math inline">\(f\)</span> 和 <span class="math inline">\(g\)</span> 线性相关。</p>
+\]</span> 当且仅当存在常数 <span class="math inline">\(\lambda\)</span> 和 <span class="math inline">\(\mu\)</span>（不全为零），使得 <span class="math inline">\(\lambda f(x) = \mu g(x)\)</span> 在区间 <span class="math inline">\([a, b]\)</span> 上<strong>几乎处处</strong>成立，即 <span class="math inline">\(f\)</span> 和 <span class="math inline">\(g\)</span> 线性相关时取等。</p>
 <p>积分形式是对实数域基本不等式形式的一种推广，因为实数域基本不等式形式是在离散的数中成立，而积分形式是在连续的区间中成立，因此也是Cauchy-Schwarz不等式的连续版本。</p>
 <h2 id="cauchy-schwarz不等式的证明方法">Cauchy-Schwarz不等式的证明方法</h2>
 <h3 id="判别式法">判别式法</h3>
@@ -447,7 +449,7 @@ h(t) &amp;= \int_a^b\left[f(x)t+g(x)\right]^2\mathrm{d}x \\
 &amp;= \left(2\int_a^bf(x)g(x)\mathrm{d}x\right)^2 - 4\int_a^b[f(x)]^2\mathrm{d}x\int_a^b[g(x)]^2\mathrm{d}x \leq 0\\
 &amp;\Rightarrow \left(\int_a^bf(x)g(x)\mathrm{d}x\right)^2 \leq \int_a^bf^2(x)\mathrm{d}x \cdot \int_a^bg^2(x)\mathrm{d}x
 \end{align*}
-\]</span> 当 <span class="math inline">\(\Delta = 0\)</span> 时，存在某个 <span class="math inline">\(t_0\)</span> 使得 <span class="math inline">\(h(t_0) = 0\)</span>。由于积分非负，这意味着被积函数 <span class="math inline">\(\left[f(x)t_0+g(x)\right]^2\)</span> 在区间 <span class="math inline">\([a,b]\)</span> 上<strong>几乎处处</strong>成立，即 <span class="math inline">\(f(x)t_0 + g(x) = 0\)</span> 几乎处处成立。取 <span class="math inline">\(\lambda = t_0, \mu = 1\)</span> 即满足 <span class="math inline">\(\lambda f(x) = \mu g(x)\)</span> <strong>几乎处处</strong>成立（或者其中一个函数恒为零）。</p>
+\]</span> 当 <span class="math inline">\(\Delta = 0\)</span> 时，存在某个 <span class="math inline">\(t_0\)</span> 使得 <span class="math inline">\(h(t_0) = 0\)</span>。由于积分非负，这意味着被积函数 <span class="math inline">\(\left[f(x)t_0+g(x)\right]^2 = 0\)</span> 在区间 <span class="math inline">\([a,b]\)</span> 上<strong>几乎处处</strong>成立，即 <span class="math inline">\(f(x)t_0 + g(x) = 0\)</span> <strong>几乎处处</strong>成立。取 <span class="math inline">\(\lambda = -t_0, \mu = 1\)</span> 即满足 <span class="math inline">\(\lambda f(x) = \mu g(x)\)</span> <strong>几乎处处</strong>成立（或者其中一个函数恒为零）。</p>
 <p>另外，由积分形式的Cauchy-Schwarz不等式可以很容易地得到Minkowski不等式的一个退化形式： <span class="math display">\[
 \left(\int_a^b[f(x)+g(x)]^2\mathrm{d}x\right)^{\frac{1}{2}} \leq \left(\int_a^bf^2(x)\mathrm{d}x\right)^{\frac{1}{2}} + \left(\int_a^bg^2(x)\mathrm{d}x\right)^{\frac{1}{2}}
 \]</span> 其中 <span class="math inline">\(f,g\)</span> 是区间 <span class="math inline">\([a, b]\)</span> 上的连续函数，证明如下： <span class="math display">\[
@@ -466,15 +468,16 @@ h(t) &amp;= \int_a^b\left[f(x)t+g(x)\right]^2\mathrm{d}x \\
 \begin{aligned}
 \Vert\mathbf{c}\Vert^2 &amp;= \mathbf{c}^{\mathsf{T}} \cdot \mathbf{c} \\
 &amp;= (\mathbf{b} - \lambda \mathbf{a})^{\mathsf{T}}(\mathbf{b} - \lambda \mathbf{a}) \\
-&amp;= \lambda^2 \Vert\mathbf{a}\Vert^2 - \lambda\cdot 2\vert\mathbf{a}^{\mathsf{T}} \cdot \mathbf{b}\vert^2 + \Vert\mathbf{b}\Vert^2
+&amp;= \lambda^2 \underbrace{\Vert\mathbf{a}\Vert^2}_A - \lambda\cdot \underbrace{2\mathbf{a}^{\mathsf{T}} \cdot \mathbf{b}}_B + \underbrace{\Vert\mathbf{b}\Vert^2}_C
 \end{aligned}\label{eq:vector}
 \end{equation}
 \]</span> 公式 <span class="math inline">\(\eqref{eq:vector}\)</span> 可以看作是关于 <span class="math inline">\(\lambda\)</span> 的二次方程，由于 <span class="math inline">\(\Vert\mathbf{c}\Vert^2 \geq 0\)</span>，并且 <span class="math inline">\(\Vert\mathbf{a}\Vert^2 \geq 0\)</span>，所以公式 <span class="math inline">\(\eqref{eq:vector}\)</span> 代表的是开口向上并且在 <span class="math inline">\(\lambda\)</span> 轴上方的抛物线，由于与 <span class="math inline">\(\lambda\)</span> 轴不相交，所以没有实根，因此判别式小于零： <span class="math display">\[
 \begin{align*}
-\Delta &amp;= (2 \mathbf{a}^{\mathsf{T}} \cdot \mathbf{b})^2 - 4\vert\mathbf{a}\vert^2\vert\mathbf{b}\vert^2 &lt; 0 \\
+\Delta &amp;= B^2 - 4AC \\
+&amp;= (2 \mathbf{a}^{\mathsf{T}} \cdot \mathbf{b})^2 - 4\Vert\mathbf{a}\Vert^2\Vert\mathbf{b}\Vert^2 &lt; 0 \\
 &amp;\Rightarrow \vert \mathbf{a}^{\mathsf{T}} \cdot \mathbf{b} \vert &lt; \Vert\mathbf{a}\Vert \cdot \Vert \mathbf{b} \Vert
 \end{align*}
-\]</span> 加上向量 <span class="math inline">\(\mathbf{a}\)</span> 和 <span class="math inline">\(\mathbf{b}\)</span> 线性相关，即它们相互平行的情况，即可得到取等的情况，</p>
+\]</span> 加上向量 <span class="math inline">\(\mathbf{a}\)</span> 和 <span class="math inline">\(\mathbf{b}\)</span> 线性相关，即它们相互平行的情况，即可得到取等的情况。</p>
 <h3 id="转换为二重积分配方法">转换为二重积分（配方法）</h3>
 <p>关于积分形式，还有另外一个历史上很有名的证明方法，直接考虑积分差： <span class="math display">\[
 I = \int_a^bf^2(x)\mathrm{d}x \cdot \int_a^bg^2(x)\mathrm{d}x - \left(\int_a^bf(x)g(x)\mathrm{d}x\right)^2
@@ -489,6 +492,62 @@ I &amp;= \iint \limits_{\Omega} f^2(x)g^2(y)\mathrm{d}x\mathrm{d}y - \iint \limi
 \end{align*}
 \]</span> 因为 <span class="math inline">\(\left[f(x)g(y) - f(y)g(x)\right]^2 \geq 0\)</span> 对所有 <span class="math inline">\(x, y\)</span> 成立，所以其二重积分 <span class="math inline">\(I \geq 0\)</span></p>
 <p>当且仅当 <span class="math inline">\(I = 0\)</span>，即 <span class="math inline">\(\frac{1}{2} \iint \limits_{\Omega} \left[f(x)g(y) - f(y)g(x)\right]^2\mathrm{d}x\mathrm{d}y = 0\)</span>。由于被积函数非负，这要求 <span class="math inline">\(\left[f(x)g(y) - f(y)g(x)\right]^2 = 0\)</span> 在 <span class="math inline">\(\Omega\)</span> 上<strong>几乎处处</strong>成立，即 <span class="math inline">\(f(x)g(y) = f(y)g(x)\)</span> <strong>几乎处处</strong>成立，这等价于 <span class="math inline">\(f\)</span> 和 <span class="math inline">\(g\)</span> 线性相关（<strong>几乎处处</strong>成比例）。例如，若在某点 <span class="math inline">\(y_0\)</span> 有 <span class="math inline">\(g(y_0) \neq 0\)</span>，则 <span class="math inline">\(f(x) = \frac{f(y_0)}{g(y_0)}g(x)\)</span> <strong>几乎处处</strong>成立。</p>
+<h3 id="投影最短距离">投影——最短距离</h3>
+<p>对于向量形式，还可以取： <span class="math display">\[
+\begin{align*}
+\lambda &amp;= \frac{\mathbf{a}^{\mathsf{T}}\cdot\mathbf{b}}{\Vert\mathbf{a}\Vert^2} \\
+\mathbf{c} &amp;= \mathbf{b} - \lambda \mathbf{a} \\
+&amp;= \mathbf{b} - \frac{\mathbf{a}^{\mathsf{T}}\cdot\mathbf{b}}{\Vert\mathbf{a}\Vert^2} \mathbf{a}
+\end{align*}
+\]</span> 带回公式 <span class="math inline">\(\eqref{eq:vector}\)</span> 得到： <span class="math display">\[
+\begin{equation}
+0 \leq \Vert\mathbf{c}\Vert^2 = \left(\frac{\mathbf{a}^{\mathsf{T}}\cdot\mathbf{b}}{\Vert\mathbf{a}\Vert^2}\right)^2 \Vert\mathbf{a}\Vert^2 - \left(\frac{\mathbf{a}^{\mathsf{T}}\cdot\mathbf{b}}{\Vert\mathbf{a}\Vert^2}\right)\cdot 2\mathbf{a}^{\mathsf{T}} \cdot \mathbf{b} + \Vert\mathbf{b}\Vert^2\label{eq:vector2}
+\end{equation}
+\]</span> 整理得： <span class="math display">\[
+\begin{align*}
+\left(\mathbf{a}^\mathsf{T} \cdot \mathbf{b}\right)^2 \leq \Vert\mathbf{a}\Vert^2\Vert\mathbf{b}\Vert^2 \\
+\Rightarrow \vert\mathbf{a}^\mathsf{T} \cdot \mathbf{b}\vert \leq \Vert\mathbf{a}\Vert\Vert\mathbf{b}\Vert
+\end{align*}
+\]</span> 至于 <span class="math inline">\(\lambda\)</span> 为什么如此取值，首先看向量 <span class="math inline">\(\mathbf{a}\)</span> 和 <span class="math inline">\(\mathbf{c}\)</span> 之间的关系： <span class="math display">\[
+\mathbf{a}^\mathsf{T} \cdot \mathbf{c} = \mathbf{a}^\mathsf{T} \cdot (\mathbf{b} - \lambda \mathbf{a}) = \mathbf{a}^\mathsf{T} \cdot \mathbf{b} - \lambda\Vert\mathbf{a}\Vert^2
+\]</span> 因此有： <span class="math display">\[
+\mathbf{a}^\mathsf{T} \cdot \mathbf{c}  = 0 \Leftrightarrow \mathbf{a} \perp \mathbf{c} \Leftrightarrow \lambda = \frac{\mathbf{a}^{\mathsf{T}}\cdot\mathbf{b}}{\Vert\mathbf{a}\Vert^2}
+\]</span> 换句话说，<span class="math inline">\(\lambda\)</span> 取 <span class="math inline">\(\frac{\mathbf{a}^{\mathsf{T}}\cdot\mathbf{b}}{\Vert\mathbf{a}\Vert^2}\)</span> 是有几何意义的，并非无中生有靠灵感而得来。此时 <span class="math inline">\(\lambda \mathbf{a}\)</span> 正是向量 <span class="math inline">\(\mathbf{b}\)</span> 在 <span class="math inline">\(\mathbf{a}\)</span> 上的投影，而 <span class="math inline">\(\Vert\mathbf{c}\Vert\)</span> 则是 <span class="math inline">\(\mathbf{b}\)</span> 到 <span class="math inline">\(\mathbf{a}\)</span> 的最短距离。<span class="math inline">\(\lambda\)</span> 还有一个很出名的解释就是 Lagrange 乘子（Lagrange multiplier）：为求 <span class="math inline">\(\mathbf{b}\)</span> 到 <span class="math inline">\(\mathbf{a}\)</span> 的最短距离我们必须调整 <span class="math inline">\(\lambda\)</span> 使得 <span class="math inline">\(\mathbf{a} \perp (\mathbf{b} - \lambda \mathbf{a})\)</span>，如果是函数则该条件换为微分或梯度（gradient）等于零。</p>
+<p><img src="./vector.png" srcset="/imgs/banner/loading.gif" lazyload /></p>
+<p>回到公式 <span class="math inline">\(\eqref{eq:vector2}\)</span>，我们可以化简为： <span class="math display">\[
+\begin{equation}
+\Vert\mathbf{a}\Vert^2\Vert\mathbf{b}\Vert^2 - \left(\mathbf{a}^{\mathsf{T}}\cdot\mathbf{b}\right)^2 = \Vert\mathbf{a}\Vert^2\Vert\mathbf{c}\Vert^2\label{eq:vector3}
+\end{equation}
+\]</span> 右边 <span class="math inline">\(\Vert\mathbf{a}\Vert^2\Vert\mathbf{c}\Vert^2\)</span> 就是Cauchy-Schwarz不等式的误差项，显然 <span class="math inline">\(\Vert\mathbf{a}\Vert \ne 0\)</span>，所以Cauchy-Schwarz不等式要成为等式当且仅当 <span class="math inline">\(\Vert\mathbf{c}\Vert = 0, \mathbf{b} = \lambda \mathbf{a}\)</span> 成立，也就是说 <span class="math inline">\(\mathbf{a}, \mathbf{b}\)</span> 是两平行的向量。</p>
+<p>其实公式 <span class="math inline">\(\eqref{eq:vector3}\)</span> 就是 Lagrange 恒等式（Lagrange identity），设 <span class="math inline">\(n \in \mathbb{N}_+, a_1, a_2,\dots,a_n \in \mathbb{R}, b_1, b_2,\dots,b_n \in \mathbb{R}\)</span>，向量 <span class="math inline">\(\mathbf{a}^{\mathsf{T}} = (a_1,a_2,\cdots,a_n), \mathbf{b}^{\mathsf{T}} = (b_1,b_2,\cdots,b_n)\)</span>，则： <span class="math display">\[
+\left(\sum_{i = 1}^na_i^2\right)\left(\sum_{i = 1}^nb_i^2\right) - \left(\sum_{i = 1}^na_ib_i\right)^2 = \sum_{1 \leq i &lt; j \leq n}(a_ib_j - a_jb_i)^2
+\]</span> 或者表示为行列式： <span class="math display">\[
+\Gamma(\mathbf{a}, \mathbf{b})
+= \begin{vmatrix}
+\sum \limits_{i = 1}^na_i^2 &amp; \sum \limits_{i = 1}^na_ib_i \\
+\sum \limits_{i = 1}^na_ib_i &amp; \sum \limits_{i = 1}^n b_i^2
+\end{vmatrix}
+= \sum_{1 \leq i &lt; j \leq n} \begin{vmatrix}
+a_i &amp; a_j \\
+b_i &amp; b_j
+\end{vmatrix}^2
+\]</span> 该恒等式可以利用归纳法加上行列式的性质进行证明。</p>
+<h3 id="算术几何平均不等式">算术—几何平均不等式</h3>
+<p>谈Cauchy-Schwarz不等式不得不提算术—几何平均不等式（AM-GM均值不等式），因为这是当初Cauchy的目的之一。 <span class="math display">\[
+\begin{equation}
+\sqrt{ab} \leq \frac{a + b}{2} \Leftrightarrow ab \leq \frac{1}{2}(a^2 + b^2)\label{eq:am-gm}
+\end{equation}
+\]</span> 利用这个不等式也可以证明Cauchy-Schwarz不等式，令： <span class="math display">\[
+\tilde{a_i} = \frac{a_i}{\sqrt{\sum_{i = 1}^n}a_i^2}, \tilde{b_i} = \frac{b_i}{\sqrt{\sum_{i = 1}^n}b_i^2}
+\]</span> 带回公式 <span class="math inline">\(\eqref{eq:am-gm}\)</span> 得到： <span class="math display">\[
+\tilde{a}\tilde{b} \leq \frac{\tilde{a}_i^2 + \tilde{b}_i^2}{2}
+\]</span> 或者： <span class="math display">\[
+\frac{a_ib_i}{\sqrt{\sum_{i = 1}^na_i^2}\sqrt{\sum_{i = 1}^nb_i^2}} \leq \frac{1}{2}\left(\frac{a_i^2}{\sum_{i = 1}^na_i^2} + \frac{b_i^2}{\sum_{i = 1}^nb_i^2}\right)
+\]</span> 取有限项求和得到： <span class="math display">\[
+\frac{\sum_{i = 1}^na_ib_i}{\sqrt{\sum_{i = 1}^na_i^2}\sqrt{\sum_{i = 1}^nb_i^2}} \leq \frac{1}{2}\left(\frac{\sum_{i = 1}^na_i^2}{\sum_{i = 1}^na_i^2} + \frac{\sum_{i = 1}^nb_i^2}{\sum_{i = 1}^nb_i^2}\right) = 1
+\]</span> 因此有： <span class="math display">\[
+\sum_{i = 1}^na_ib_i \leq \sqrt{\sum_{i = 1}^na_i^2}\sqrt{\sum_{i = 1}^nb_i^2}
+\]</span></p>
 <h3 id="数学归纳法">数学归纳法</h3>
 <p>略</p>
 
@@ -557,7 +616,7 @@ I &amp;= \iint \limits_{\Omega} f^2(x)g^2(y)\mathrm{d}x\mathrm{d}y - \iint \limi
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月3日</div>
+          <div>2025年8月4日</div>
         </div>
       
       
