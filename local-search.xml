@@ -604,7 +604,7 @@
     <link href="/2024/10/14/2024-10-14-2024-10-14-git/"/>
     <url>/2024/10/14/2024-10-14-2024-10-14-git/</url>
     
-    <content type="html"><![CDATA[<h2 id="git-使用指南">Git 使用指南</h2><p><img src="./demo.png" /></p><h3 id="git-如何推送当前目录到远程仓库">Git 如何推送当前目录到远程仓库</h3><ol type="1"><li><p>初始化本地仓库为<code>Git</code> 仓库：在项目根目录下运行命令 <code>git init</code> ，这会创建一个 <code>.git</code> 目录，把当前目录变成一个 <code>Git</code> 仓库。</p></li><li><p>添加文件到暂存区：可以用 <code>git add .</code> 命令将项目中的所有文件添加到 <code>Git</code> 的暂存区，也可以指定特定的文件 <code>git add &lt;文件名&gt;</code>。</p></li><li><p>提交更改：使用命令 <code>git commit -m "提交内容的描述"</code> 提交暂存区中的更改到本地仓库，<code>-m</code> 后面的内容是提交的说明，描述此次提交的变更。</p></li><li><p>连接远程仓库：获取远程仓库的 URL 地址，比如 GitHub 上仓库的 HTTPS 或 SSH 地址（当然需要提前先在远程建立一个仓库），然后使用命令 <code>git remote add origin &lt;远程仓库URL&gt;</code> 将本地仓库与远程仓库（如 <code>GitHub</code> 、<code>GitLab</code> 等）进行连接。<code>origin</code> 是远程仓库的默认名称，也可以指定为其他名称。</p></li><li><p>拉取远程更新（当远程仓库和本地仓库的内容不一致的时候需要先拉取远程仓库的内容）：使用命令 <code>git pull origin main --rebase</code> 同步远程仓库（<code>origin</code>）的主分支 <code>main</code> 中的代码到本地。一般远程仓库的主分支叫 <code>main</code> 或者 <code>master</code> （<code>Github</code> 默认是 <code>main</code> ）。</p><blockquote><p>关于 <code>merge</code> 和 <code>rebase</code> 的区别可以参考：<a href="https://zhuanlan.zhihu.com/p/686538265">Git：图解 merge 和 rebase 的区别 - 知乎 (zhihu.com)</a></p></blockquote></li><li><p>推送本地代码到远程仓库：使用命令 <code>git push -u origin main</code> 将本地的代码推送到远程仓库的指定分支（通常是 <code>main</code> 或者 <code>master</code>）。</p><blockquote><p>当使用 <code>git push -u origin &lt;branch&gt;</code> 之后，本地的 <code>&lt;branch&gt;</code> 分支会与远程的 <code>&lt;branch&gt;</code> 分支建立跟踪关系。此后，Git 记住你推送的远程仓库和分支，因此以后只需要运行 <code>git push</code>，而无需再次指定远程仓库和分支。同样，拉取时也可以使用简化后的命令 <code>git pull</code>。所以只有第一次推送时需要添加 <code>-u origin main</code> 参数。</p></blockquote></li></ol><h3 id="gitignore-如何添加已经-commit-过的文件到不追踪规则中">.gitignore 如何添加已经 commit 过的文件到不追踪规则中</h3><p>首先删除 track 的文件（已经 commit 的文件）：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm -r --cached &lt;file name&gt;<br></code></pre></td></tr></table></figure><p><code>&lt;file name&gt;</code> 代表要取消 commit 的文件，接受多个参数，比如要取消追踪 <code>test.py</code> 文件和 <code>hello</code> 文件夹可以这样：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm -r --cached test.py hello<br></code></pre></td></tr></table></figure><p>然后在 .gitignore 文件中添加 ignore 条目，比如：<code>test.py</code> 和 <code>hello</code>，然后提交 .gitignore 文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git commit -a -m &quot;delete some unused file.&quot;<br></code></pre></td></tr></table></figure><h3 id="git-嵌套-git12">Git 嵌套 Git<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Git嵌套Git仓库|极客教程](https://geek-docs.com/git/git-questions/1152_git_nested_git_repositories.html)">[1]</span></a></sup><sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="[[toolschain\] 怎么运用git 嵌套git 管理（子文件夹中也有个git） 并且如何简单设置使用repo的笔记 本文是求助GPT的记录 实践有用-CSDN博客](https://blog.csdn.net/weixin_46479223/article/details/134838519)">[2]</span></a></sup></h3><p><strong>添加子模块</strong>：需要将子模块添加到主项目中。可以通过<code>git submodule add &lt;仓库URL&gt; &lt;子模块路径&gt;</code>命令完成。例如，假设我们的子模块是一个名为<code>common</code>的库，并且需要放在主项目的<code>libs</code>目录下，那么可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git submodule add https://github.com/example/common.git libs/common<br></code></pre></td></tr></table></figure><p>或者添加和 <code>common</code> 平级目录下的 <code>example</code> 库：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git submodule add https://github.com/example/common.git example<br></code></pre></td></tr></table></figure><p><strong>初始化和更新子模块</strong>：添加子模块后，我们需要初始化和更新子模块。可以通过以下两个命令完成：</p><ul><li><code>git submodule init</code>：用于初始化子模块，只需要运行一次。</li><li><code>git submodule update</code>：用于更新子模块，可以在每次子模块发生变化时运行。</li></ul><p><strong>提交和同步变更</strong>：当子模块有变更时，我们需要在主项目中提交和同步这些变更。可以通过以下命令完成：</p><ul><li><code>git add &lt;子模块路径&gt;</code>：用于将子模块的变更添加到主项目中。</li><li><code>git commit -m "Update submodule"</code>：用于提交变更。</li><li><code>git submodule update --remote</code>：用于同步子模块的最新变更。</li></ul><h2 id="lazygit">Lazygit</h2><p>当然，如果觉得 Git 要一直输入命令好麻烦，还有一个适合命令行的 <a href="https://github.com/jesseduffield/lazygit?tab=readme-ov-file">Lazygit</a> 非常推荐，适合像我一样不喜欢自己输入这种重复命令的同学使用。</p><p>安装了 Lazygit 之后在命令行中输入 <code>lazygit</code> 就可以启动了。</p><p>在启动 Lazygit 并提示“未在 Git 仓库中”时，它允许你直接在当前目录下创建一个新的 Git 仓库。可以按照以下步骤完成初始化：</p><ol type="1"><li><p>创建新 Git 仓库：当 Lazygit 提示是否要创建一个新的 Git 仓库时，输入 <code>y</code> 并按回车键。</p></li><li><p>设置分支名称：Lazygit 会询问你要设置的分支名称。可以选择：</p><ul><li>留空：直接按回车，将使用 Git 的默认分支名称（一般是 <code>main</code> 或 <code>master</code>，取决于 Git 配置）。</li><li>自定义名称：输入自定义分支名称并按回车。</li></ul></li></ol><p>完成这两步后，Lazygit 会创建一个新的 Git 仓库，并切换到你指定的分支名称，接着你就可以正常使用 Lazygit 进行文件暂存、提交、推送等操作了。</p><p>Lazygit 提供了快捷键操作，常见的有以下几个：</p><ul><li><strong><code>↑ / ↓</code></strong>：上下移动光标，选择不同文件或提交记录。</li><li><strong><code>Enter</code></strong>：查看详细内容（如文件变更或提交详情）。</li><li><strong><code>Space</code></strong>：暂存/取消暂存文件。</li><li><strong><code>a</code></strong>：暂存所有修改。</li><li><strong><code>c</code></strong>：打开提交消息输入界面，完成后保存提交。</li><li><strong><code>P</code></strong>：推送代码到远程仓库。</li><li><strong><code>f</code></strong>、<strong><code>p</code></strong>：从远程仓库拉取代码。</li><li><strong><code>b</code></strong>：切换或新建分支。</li><li><strong><code>q</code></strong>：退出 Lazygit。</li><li><strong><code>?</code></strong>：查看所有快捷键说明。</li></ul><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://geek-docs.com/git/git-questions/1152_git_nested_git_repositories.html">Git嵌套Git仓库|极客教程</a> <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>[<a href="https://blog.csdn.net/weixin_46479223/article/details/134838519">toolschain] 怎么运用git 嵌套git 管理（子文件夹中也有个git） 并且如何简单设置使用repo的笔记 本文是求助GPT的记录 实践有用-CSDN博客</a> <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩︎</a></span></span></li></ol></div></section>]]></content>
+    <content type="html"><![CDATA[<h2 id="学习-git">学习 Git</h2><p>视频教程：</p><ul><li><a href="https://www.bilibili.com/video/BV1wm4y1z7Dg/?spm_id_from=0.0.favlist.content.click&amp;vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">尚硅谷新版Git快速入门(3h迅速掌握git)_哔哩哔哩_bilibili</a> 适合新手快速入门</li><li><a href="https://missing.csail.mit.edu/2020/version-control/">Version Control (Git) · Missing Semester</a> 适合有一定计算机基础之后再看，国内观看：[<a href="https://www.bilibili.com/video/BV1uc411N7eK/?spm_id_from=0.0.favlist.content.click&amp;vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">自制双语字幕] 计算机教育缺失的一课(2020) - 第1讲 - 课程概览与 shell_哔哩哔哩_bilibili</a> 或者 <a href="https://www.bilibili.com/video/BV1Eo4y1d7KZ/?spm_id_from=0.0.favlist.content.click&amp;vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">【中字】The Missing Semester 第1讲 - 课程概览与 Shell - MIT 公开课(2020)_哔哩哔哩_bilibili</a></li></ul><p>推荐的书籍和图文：</p><ul><li><a href="https://git-scm.com/book/en/v2">Git</a> 权威指南</li><li><a href="https://liaoxuefeng.com/books/git/introduction/index.html">简介 - Git教程 - 廖雪峰的官方网站</a></li><li><a href="https://nulab.com/zh-cn/learn/software-development/git-tutorial/">Simple Git tutorial for beginners | Nulab</a></li></ul><h2 id="git-使用指南">Git 使用指南</h2><p><img src="./demo.png" /></p><h3 id="git-如何推送当前目录到远程仓库">Git 如何推送当前目录到远程仓库</h3><ol type="1"><li><p>初始化本地仓库为<code>Git</code> 仓库：在项目根目录下运行命令 <code>git init</code> ，这会创建一个 <code>.git</code> 目录，把当前目录变成一个 <code>Git</code> 仓库。</p></li><li><p>添加文件到暂存区：可以用 <code>git add .</code> 命令将项目中的所有文件添加到 <code>Git</code> 的暂存区，也可以指定特定的文件 <code>git add &lt;文件名&gt;</code>。</p></li><li><p>提交更改：使用命令 <code>git commit -m "提交内容的描述"</code> 提交暂存区中的更改到本地仓库，<code>-m</code> 后面的内容是提交的说明，描述此次提交的变更。</p></li><li><p>连接远程仓库：获取远程仓库的 URL 地址，比如 GitHub 上仓库的 HTTPS 或 SSH 地址（当然需要提前先在远程建立一个仓库），然后使用命令 <code>git remote add origin &lt;远程仓库URL&gt;</code> 将本地仓库与远程仓库（如 <code>GitHub</code> 、<code>GitLab</code> 等）进行连接。<code>origin</code> 是远程仓库的默认名称，也可以指定为其他名称。</p></li><li><p>拉取远程更新（当远程仓库和本地仓库的内容不一致的时候需要先拉取远程仓库的内容）：使用命令 <code>git pull origin main --rebase</code> 同步远程仓库（<code>origin</code>）的主分支 <code>main</code> 中的代码到本地。一般远程仓库的主分支叫 <code>main</code> 或者 <code>master</code> （<code>Github</code> 默认是 <code>main</code> ）。</p><blockquote><p>关于 <code>merge</code> 和 <code>rebase</code> 的区别可以参考：<a href="https://zhuanlan.zhihu.com/p/686538265">Git：图解 merge 和 rebase 的区别 - 知乎 (zhihu.com)</a></p></blockquote></li><li><p>推送本地代码到远程仓库：使用命令 <code>git push -u origin main</code> 将本地的代码推送到远程仓库的指定分支（通常是 <code>main</code> 或者 <code>master</code>）。</p><blockquote><p>当使用 <code>git push -u origin &lt;branch&gt;</code> 之后，本地的 <code>&lt;branch&gt;</code> 分支会与远程的 <code>&lt;branch&gt;</code> 分支建立跟踪关系。此后，Git 记住你推送的远程仓库和分支，因此以后只需要运行 <code>git push</code>，而无需再次指定远程仓库和分支。同样，拉取时也可以使用简化后的命令 <code>git pull</code>。所以只有第一次推送时需要添加 <code>-u origin main</code> 参数。</p></blockquote></li></ol><h3 id="gitignore-如何添加已经-commit-过的文件到不追踪规则中">.gitignore 如何添加已经 commit 过的文件到不追踪规则中</h3><p>首先删除 track 的文件（已经 commit 的文件）：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm -r --cached &lt;file name&gt;<br></code></pre></td></tr></table></figure><p><code>&lt;file name&gt;</code> 代表要取消 commit 的文件，接受多个参数，比如要取消追踪 <code>test.py</code> 文件和 <code>hello</code> 文件夹可以这样：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm -r --cached test.py hello<br></code></pre></td></tr></table></figure><p>然后在 .gitignore 文件中添加 ignore 条目，比如：<code>test.py</code> 和 <code>hello</code>，然后提交 .gitignore 文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git commit -a -m &quot;delete some unused file.&quot;<br></code></pre></td></tr></table></figure><h3 id="git-嵌套-git12">Git 嵌套 Git<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Git嵌套Git仓库|极客教程](https://geek-docs.com/git/git-questions/1152_git_nested_git_repositories.html)">[1]</span></a></sup><sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="[[toolschain\] 怎么运用git 嵌套git 管理（子文件夹中也有个git） 并且如何简单设置使用repo的笔记 本文是求助GPT的记录 实践有用-CSDN博客](https://blog.csdn.net/weixin_46479223/article/details/134838519)">[2]</span></a></sup></h3><p><strong>添加子模块</strong>：需要将子模块添加到主项目中。可以通过<code>git submodule add &lt;仓库URL&gt; &lt;子模块路径&gt;</code>命令完成。例如，假设我们的子模块是一个名为<code>common</code>的库，并且需要放在主项目的<code>libs</code>目录下，那么可以使用以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git submodule add https://github.com/example/common.git libs/common<br></code></pre></td></tr></table></figure><p>或者添加和 <code>common</code> 平级目录下的 <code>example</code> 库：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git submodule add https://github.com/example/common.git example<br></code></pre></td></tr></table></figure><p><strong>初始化和更新子模块</strong>：添加子模块后，我们需要初始化和更新子模块。可以通过以下两个命令完成：</p><ul><li><code>git submodule init</code>：用于初始化子模块，只需要运行一次。</li><li><code>git submodule update</code>：用于更新子模块，可以在每次子模块发生变化时运行。</li></ul><p><strong>提交和同步变更</strong>：当子模块有变更时，我们需要在主项目中提交和同步这些变更。可以通过以下命令完成：</p><ul><li><code>git add &lt;子模块路径&gt;</code>：用于将子模块的变更添加到主项目中。</li><li><code>git commit -m "Update submodule"</code>：用于提交变更。</li><li><code>git submodule update --remote</code>：用于同步子模块的最新变更。</li></ul><h2 id="lazygit">Lazygit</h2><p>当然，如果觉得 Git 要一直输入命令好麻烦，还有一个适合命令行的 <a href="https://github.com/jesseduffield/lazygit?tab=readme-ov-file">Lazygit</a> 非常推荐，适合像我一样不喜欢自己输入这种重复命令的同学使用。</p><p>安装了 Lazygit 之后在命令行中输入 <code>lazygit</code> 就可以启动了。</p><p>在启动 Lazygit 并提示“未在 Git 仓库中”时，它允许你直接在当前目录下创建一个新的 Git 仓库。可以按照以下步骤完成初始化：</p><ol type="1"><li><p>创建新 Git 仓库：当 Lazygit 提示是否要创建一个新的 Git 仓库时，输入 <code>y</code> 并按回车键。</p></li><li><p>设置分支名称：Lazygit 会询问你要设置的分支名称。可以选择：</p><ul><li>留空：直接按回车，将使用 Git 的默认分支名称（一般是 <code>main</code> 或 <code>master</code>，取决于 Git 配置）。</li><li>自定义名称：输入自定义分支名称并按回车。</li></ul></li></ol><p>完成这两步后，Lazygit 会创建一个新的 Git 仓库，并切换到你指定的分支名称，接着你就可以正常使用 Lazygit 进行文件暂存、提交、推送等操作了。</p><p>Lazygit 提供了快捷键操作，常见的有以下几个：</p><ul><li><strong><code>↑ / ↓</code></strong>：上下移动光标，选择不同文件或提交记录。</li><li><strong><code>Enter</code></strong>：查看详细内容（如文件变更或提交详情）。</li><li><strong><code>Space</code></strong>：暂存/取消暂存文件。</li><li><strong><code>a</code></strong>：暂存所有修改。</li><li><strong><code>c</code></strong>：打开提交消息输入界面，完成后保存提交。</li><li><strong><code>P</code></strong>：推送代码到远程仓库。</li><li><strong><code>f</code></strong>、<strong><code>p</code></strong>：从远程仓库拉取代码。</li><li><strong><code>b</code></strong>：切换或新建分支。</li><li><strong><code>q</code></strong>：退出 Lazygit。</li><li><strong><code>?</code></strong>：查看所有快捷键说明。</li></ul><section class="footnotes"><h2>References</h2><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://geek-docs.com/git/git-questions/1152_git_nested_git_repositories.html">Git嵌套Git仓库|极客教程</a> <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩︎</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>[<a href="https://blog.csdn.net/weixin_46479223/article/details/134838519">toolschain] 怎么运用git 嵌套git 管理（子文件夹中也有个git） 并且如何简单设置使用repo的笔记 本文是求助GPT的记录 实践有用-CSDN博客</a> <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩︎</a></span></span></li></ol></div></section>]]></content>
     
     
     <categories>
@@ -896,9 +896,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1051,9 +1051,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -1111,9 +1111,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Linked List</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1204,11 +1204,11 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Simulation</tag>
       
       <tag>String</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -1268,9 +1268,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Linked List</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1353,13 +1353,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>String</tag>
       
-      <tag>Two Pointers</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Greedy</tag>
+      
+      <tag>Two Pointers</tag>
       
     </tags>
     
@@ -1390,11 +1390,11 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
       
       <tag>Counting</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -1423,9 +1423,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -1487,9 +1487,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Prefix Sum</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -1609,11 +1609,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
       
       <tag>Counting</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -1642,9 +1642,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Linked List</tag>
       
@@ -2010,9 +2010,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
       
@@ -2045,11 +2045,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Math</tag>
+      
       <tag>Array</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Math</tag>
       
     </tags>
     
@@ -2175,9 +2175,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -2301,9 +2301,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Simulation</tag>
       
       <tag>Bit Manipulation</tag>
       
@@ -2365,9 +2365,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>String</tag>
+      
+      <tag>Greedy</tag>
       
       <tag>Two Pointers</tag>
       
@@ -2429,13 +2429,13 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
-      <tag>Hash Table</tag>
-      
       <tag>Math</tag>
       
+      <tag>Array</tag>
+      
       <tag>Counting</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -2495,11 +2495,11 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>String</tag>
       
       <tag>Counting</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -2528,11 +2528,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Math</tag>
+      
       <tag>Array</tag>
       
       <tag>Sorting</tag>
-      
-      <tag>Math</tag>
       
     </tags>
     
@@ -2561,9 +2561,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2627,11 +2627,11 @@
       
       <tag>Array</tag>
       
+      <tag>Counting</tag>
+      
       <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
-      
-      <tag>Counting</tag>
       
     </tags>
     
@@ -2755,11 +2755,11 @@
       
       <tag>Algorithm</tag>
       
+      <tag>Math</tag>
+      
       <tag>Array</tag>
       
       <tag>Simulation</tag>
-      
-      <tag>Math</tag>
       
     </tags>
     
@@ -2881,9 +2881,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memoization</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Memoization</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -2916,9 +2916,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Simulation</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Simulation</tag>
       
     </tags>
     
@@ -2947,9 +2947,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Array</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Array</tag>
       
     </tags>
     
@@ -3011,9 +3011,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Memoization</tag>
-      
       <tag>Math</tag>
+      
+      <tag>Memoization</tag>
       
       <tag>Dynamic Programming</tag>
       
@@ -3048,9 +3048,9 @@
       
       <tag>Array</tag>
       
-      <tag>Binary Search</tag>
-      
       <tag>Matrix</tag>
+      
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -3333,9 +3333,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Hash Table</tag>
       
       <tag>Sorting</tag>
       
@@ -3366,9 +3366,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Greedy</tag>
-      
       <tag>Array</tag>
+      
+      <tag>Greedy</tag>
       
     </tags>
     
@@ -3399,9 +3399,9 @@
       
       <tag>Array</tag>
       
-      <tag>Hash Table</tag>
-      
       <tag>Simulation</tag>
+      
+      <tag>Hash Table</tag>
       
     </tags>
     
@@ -3513,22 +3513,22 @@
   
   
   <entry>
-    <title>Images</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="markdown-body"><h2 id="下一站去哪">下一站去哪</h2><div class="note note-success">            <ul><li>新疆</li><li>西藏</li><li>四川 九寨沟 黄龙 都江堰 三星堆 四姑娘山 峨眉山</li><li>张家界</li><li>桂林</li><li>甘肃 敦煌莫高窟 月牙泉 鸣沙山 张掖七彩丹霞</li><li>北京 故宫 长城 天坛 国博 圆明园</li><li>南京 南京博物院 同胞纪念馆</li><li>山东 大明湖 趵突泉 泰山</li><li>陕西 华山 秦始皇陵</li><li>青海湖</li></ul>          </div><h2 id="上海">2025-06-03 上海</h2><p><img src="/imgs/images/20250603.jpg" /></p><h2 id="浙江杭州西湖">2025-06-01 浙江杭州西湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250601-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250601-2.jpg" /></div></div></div><h2 id="浙江杭州千岛湖">2025-05-31 浙江杭州千岛湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250531-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250531-2.jpg" /></div></div></div><h2 id="安徽黄山歙县深渡镇">2025-05-30 安徽黄山歙县深渡镇</h2><p><img src="/imgs/images/20250530.jpg" /></p><h2 id="安徽黄山">2025-05-29 安徽黄山</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250529-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250529-2.jpg" /></div></div></div><h2 id="湖北省博物馆">2025-05-27 湖北省博物馆</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250527-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250527-2.jpg" /></div></div></div><h2 id="湖北武汉">2025-05-26 湖北武汉</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250526-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250526-2.jpg" /></div></div></div><h2 id="厦门椰风寨">2025-05-23 厦门椰风寨</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250523-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250523-2.jpg" /></div></div></div><h2 id="厦门上李水库">2025-05-21 厦门上李水库</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250521-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250521-2.jpg" /></div></div></div><h2 id="厦门仙岳公园">2025-03-08 厦门仙岳公园</h2><p><img src="/imgs/images/20250308.jpg" /></p><h2 id="广东珠海">2025-01-13 广东珠海</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250113-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250113-2.jpg" /></div></div></div><h2 id="澳门">2025-01-12 澳门</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250112-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250112-2.jpg" /></div></div></div><h2 id="香港">2025-01-11 香港</h2><p><img src="/imgs/images/20250111.jpg" /></p><h2 id="邓紫棋演唱会">2024-12-22 邓紫棋演唱会</h2><p><img src="/imgs/images/20241222.jpg" /></p><h2 id="天津">2024-09-25 天津</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240925-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240925-2.jpg" /></div></div></div><h2 id="清华大学">2024-09-24 清华大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240924-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240924-2.jpg" /></div></div></div><h2 id="陕西西安">2024-09-21 陕西西安</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240921-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240921-2.jpg" /></div></div></div><h2 id="广东深圳">2024-09-11 广东深圳</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240911-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240911-2.jpg" /></div></div></div><h2 id="厦门园林博览园">2024-07-20 厦门园林博览园</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240720-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240720-2.jpg" /></div></div></div><h2 id="厦门海湾公园">2024-06-21 厦门海湾公园</h2><p><img src="/imgs/images/20240621.jpg" /></p><h2 id="福建泉州">2024-02-22 福建泉州</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240222-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240222-2.jpg" /></div></div></div><h2 id="三明大田">2023-10-03 三明大田</h2><p><img src="/imgs/images/20231003.jpg" /></p><h2 id="厦门鼓浪屿">2023-04-01 厦门鼓浪屿</h2><p><img src="/imgs/images/20230401.jpg" /></p><h2 id="厦门大学">2023-03-31 厦门大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20230331-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20230331-2.jpg" /></div></div></div></div>]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title></title>
+    <title>Images</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="markdown-body"><h2 id="下一站去哪">下一站去哪</h2><div class="note note-success">            <ul><li>新疆</li><li>西藏</li><li>四川 九寨沟 黄龙 都江堰 三星堆 四姑娘山 峨眉山</li><li>张家界</li><li>桂林</li><li>甘肃 敦煌莫高窟 月牙泉 鸣沙山 张掖七彩丹霞</li><li>北京 故宫 长城 天坛 国博 圆明园</li><li>南京 南京博物院 同胞纪念馆</li><li>山东 大明湖 趵突泉 泰山</li><li>陕西 华山 秦始皇陵</li><li>青海湖</li></ul>          </div><h2 id="上海">2025-06-03 上海</h2><p><img src="/imgs/images/20250603.jpg" /></p><h2 id="浙江杭州西湖">2025-06-01 浙江杭州西湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250601-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250601-2.jpg" /></div></div></div><h2 id="浙江杭州千岛湖">2025-05-31 浙江杭州千岛湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250531-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250531-2.jpg" /></div></div></div><h2 id="安徽黄山歙县深渡镇">2025-05-30 安徽黄山歙县深渡镇</h2><p><img src="/imgs/images/20250530.jpg" /></p><h2 id="安徽黄山">2025-05-29 安徽黄山</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250529-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250529-2.jpg" /></div></div></div><h2 id="湖北省博物馆">2025-05-27 湖北省博物馆</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250527-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250527-2.jpg" /></div></div></div><h2 id="湖北武汉">2025-05-26 湖北武汉</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250526-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250526-2.jpg" /></div></div></div><h2 id="厦门椰风寨">2025-05-23 厦门椰风寨</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250523-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250523-2.jpg" /></div></div></div><h2 id="厦门上李水库">2025-05-21 厦门上李水库</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250521-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250521-2.jpg" /></div></div></div><h2 id="厦门仙岳公园">2025-03-08 厦门仙岳公园</h2><p><img src="/imgs/images/20250308.jpg" /></p><h2 id="广东珠海">2025-01-13 广东珠海</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250113-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250113-2.jpg" /></div></div></div><h2 id="澳门">2025-01-12 澳门</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250112-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20250112-2.jpg" /></div></div></div><h2 id="香港">2025-01-11 香港</h2><p><img src="/imgs/images/20250111.jpg" /></p><h2 id="邓紫棋演唱会">2024-12-22 邓紫棋演唱会</h2><p><img src="/imgs/images/20241222.jpg" /></p><h2 id="天津">2024-09-25 天津</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240925-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240925-2.jpg" /></div></div></div><h2 id="清华大学">2024-09-24 清华大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240924-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240924-2.jpg" /></div></div></div><h2 id="陕西西安">2024-09-21 陕西西安</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240921-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240921-2.jpg" /></div></div></div><h2 id="广东深圳">2024-09-11 广东深圳</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240911-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240911-2.jpg" /></div></div></div><h2 id="厦门园林博览园">2024-07-20 厦门园林博览园</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240720-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240720-2.jpg" /></div></div></div><h2 id="厦门海湾公园">2024-06-21 厦门海湾公园</h2><p><img src="/imgs/images/20240621.jpg" /></p><h2 id="福建泉州">2024-02-22 福建泉州</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240222-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20240222-2.jpg" /></div></div></div><h2 id="三明大田">2023-10-03 三明大田</h2><p><img src="/imgs/images/20231003.jpg" /></p><h2 id="厦门鼓浪屿">2023-04-01 厦门鼓浪屿</h2><p><img src="/imgs/images/20230401.jpg" /></p><h2 id="厦门大学">2023-03-31 厦门大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20230331-1.jpg" /></div><div class="group-image-wrap"><img src="/imgs/images/20230331-2.jpg" /></div></div></div></div>]]></content>
     
   </entry>
   
