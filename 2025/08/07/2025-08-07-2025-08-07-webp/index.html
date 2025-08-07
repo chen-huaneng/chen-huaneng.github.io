@@ -1,0 +1,873 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar.webp">
+  <link rel="icon" href="/imgs/banner/avatar.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Abel">
+  <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
+  
+    <meta name="description" content="介绍了如何使用自动化脚本在Hexo中将其他格式的图片修改为.webp格式的图片，优化博客网页的加载速度。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo - 使用WebP格式的图片加速Hexo网页访问速度">
+<meta property="og:url" content="https://chen-huaneng.github.io/2025/08/07/2025-08-07-2025-08-07-webp/index.html">
+<meta property="og:site_name" content="Abel">
+<meta property="og:description" content="介绍了如何使用自动化脚本在Hexo中将其他格式的图片修改为.webp格式的图片，优化博客网页的加载速度。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-07T14:06:48.000Z">
+<meta property="article:modified_time" content="2025-08-07T15:14:07.039Z">
+<meta property="article:author" content="Abel">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Website">
+<meta property="article:tag" content="Picture">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Hexo - 使用WebP格式的图片加速Hexo网页访问速度 ~ Abel</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web/lxgwwenkaiscreen/result.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":40,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.webp","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"><link rel="alternate" href="/rss2.xml" title="Abel" type="application/rss+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 40vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Abel</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/image/" target="_self">
+                <i class="iconfont icon-images"></i>
+                <span>时光胶囊</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/academic/" target="_self">
+                <i class="iconfont icon-exp-fill"></i>
+                <span>学术</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/rss2.xml" target="_self">
+                <i class="iconfont icon-rss"></i>
+                <span>RSS</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/imgs/banner/default.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">Hexo - 使用WebP格式的图片加速Hexo网页访问速度</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-08-07 22:06" pubdate>
+          2025年8月7日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          文章字数: 1.9k 
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          阅读全文大概需要 5 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          阅读次数: <span id="leancloud-page-views"></span> 
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Hexo - 使用WebP格式的图片加速Hexo网页访问速度</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于：2025-08-07T23:14:07+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="需求来源">需求来源</h2>
+<p>我在写博客的时候经常需要引用很多种格式的图片，比如 <code>jpg</code>、<code>jpeg</code>、<code>png</code>、<code>gif</code>，这时候就出现一个问题，各种图片不仅格式不统一，而且很多图片非常大（因为有些图片是自己拍的，传输的时候是原图），但是放在博客上的图片这么大是没有意义的。网络在上传和分发图片的时候并不会按照原图来呈现，而且这样的清晰度对于网页浏览同样也资源过剩，反而造成了流量的浪费和用户的等待时间过长（除了一些摄影网站之类的可能需要原图）。</p>
+<p>因此我必须解决图片格式不统一和图片过大的问题，这时候我就想能不能先在本地将图片压缩（最好是无损的），然后上传的时候直接上传压缩过后的图片就可以了，这样就能解决图片过大的问题。然后接下来的问题就是解决选择压缩到什么格式，经过一番探索，我选择压缩成<a target="_blank" rel="noopener" href="https://developers.google.cn/speed/webp?hl=zh-cn">WebP格式</a>：</p>
+<blockquote>
+<p>WebP 是一种新型图片格式，可为网络上的图片提供品质卓越的无损和有损压缩。使用 WebP，网站站长和网络开发者可以创建体积更小但细节更丰富的图片，从而提高网络访问速度。</p>
+<p>WebP 无损图片比 PNG 图片小 <a target="_blank" rel="noopener" href="https://developers.google.cn/speed/webp/docs/webp_lossless_alpha_study?hl=zh-cn#results">26%</a>。WebP 有损图片比采用等效 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Structural_similarity">SSIM</a> 质量指标的同等 JPEG 图片<a target="_blank" rel="noopener" href="https://developers.google.cn/speed/webp/docs/webp_study?hl=zh-cn">缩小 25-34%</a>。</p>
+<p>无损 WebP 支持透明度（也称为 Alpha 通道），只需<a target="_blank" rel="noopener" href="https://developers.google.cn/speed/webp/docs/webp_lossless_alpha_study?hl=zh-cn#results">增加 22% 的字节</a>。对于可以接受有损 RGB 压缩的情况，有损 WebP 也支持透明度，生成的文件大小通常比 PNG 小 3 倍。</p>
+<p>动画 WebP 图片支持有损、无损和透明，与 GIF 和 APNG 相比，可以缩减文件大小。</p>
+</blockquote>
+<p>选择WebP格式的原因除了支持很多格式图片的转换外，还因为它支持很多浏览器（IE浏览器用户就不管了，没有办法适配所有用户）：</p>
+<blockquote>
+<p>Google Chrome、Safari、Firefox、Edge、Opera 浏览器以及<a target="_blank" rel="noopener" href="https://developers.google.com/speed/webp/faq?hl=zh-cn#which_web_browsers_natively_support_webp">许多其他</a>工具和软件库都原生支持 WebP。开发者还添加了对各种图片编辑工具的支持。</p>
+<p>WebP 包括轻量级编码和解码库 <a target="_blank" rel="noopener" href="https://developers.google.com/speed/webp/docs/api?hl=zh-cn"><code>libwebp</code></a>，以及用于将图片转换为 WebP 格式和从 WebP 格式转换为其他格式的命令行工具 <a target="_blank" rel="noopener" href="https://developers.google.com/speed/webp/docs/cwebp?hl=zh-cn"><code>cwebp</code></a> 和 <a target="_blank" rel="noopener" href="https://developers.google.com/speed/webp/docs/dwebp?hl=zh-cn"><code>dwebp</code></a>，以及用于查看、混合和为 WebP 图片添加动画效果的工具。完整的源代码可在<a target="_blank" rel="noopener" href="https://developers.google.com/speed/webp/download?hl=zh-cn">下载</a>页面上找到。</p>
+</blockquote>
+<p>因此最终我打算将Hexo博客上的图片都转换为WebP格式。接下来将需求拆解：</p>
+<ul>
+<li>在本地安装WebP转换所需要的库 <code>libwebp</code></li>
+<li>编写 <code>PowerShell</code> 脚本（我所使用的系统是 Windows 10）自动将其他格式的图片转换成 <code>.webp</code> 格式的图片</li>
+<li>编写新的 <code>PowerShell</code> 脚本修改 <code>.md</code> 的 Markdown 文件中引用图片的地方，将各种格式的图片后缀改成 <code>.webp</code>（因为我使用 Typora 来直接拖拽引入原图，所以需要在写完保存 <code>.md</code> 文件后再批量修改 <code>.md</code> 文件中引用图片的地方）</li>
+<li>将前面两个脚本整合到本地预览和远程部署的脚本当中</li>
+</ul>
+<h2 id="需求实现">需求实现</h2>
+<h3 id="安装webp库">安装WebP库</h3>
+<p>安装WebP转换相应的库，我采用 <a href="https://chen-huaneng.github.io/2024/01/04/2024-01-04-2024-01-04-Scoop/">Scoop</a> 进行安装：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop install main/libwebp<br></code></pre></td></tr></table></figure>
+<p>安装完成之后通过下面的命令来验证是否安装成功：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">cwebp <span class="hljs-literal">-version</span><br></code></pre></td></tr></table></figure>
+<h3 id="编写自动化脚本">编写自动化脚本</h3>
+<p>在Hexo博客目录下创建四个脚本分别用于执行不同的任务：</p>
+<ul>
+<li><code>local.ps1</code> 用于在本地预览最终的修改效果</li>
+<li><code>deploy.ps1</code> 用于部署到远程托管仓库</li>
+<li><code>convert-to-webp.ps1</code> 用于将本地的其他图片格式转换为 <code>.webp</code> 图片格式</li>
+<li><code>update-markdown-images.ps1</code> 用于更新 <code>.md</code> 文件中引用图片的地方</li>
+</ul>
+<p>下面脚本的内容可以根据个人存放位置和需求的不同进行更改。</p>
+<p><code>local.ps1</code>：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">cd</span> E:\ChenHuaneng\Article\Academic\academic<span class="hljs-literal">-homepage</span><br>bundle exec jekyll build<br>robocopy <span class="hljs-string">&quot;_site&quot;</span> <span class="hljs-string">&quot;E:\ChenHuaneng\Article\Blogs\source\academic&quot;</span> /E /NFL /NDL /NP /XO<br><span class="hljs-built_in">cd</span> E:\ChenHuaneng\Article\Blogs<br><span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;运行WebP转换...&quot;</span><br>&amp; .\<span class="hljs-built_in">convert-to</span><span class="hljs-literal">-webp</span>.ps1<br><span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;更新Markdown图片引用...&quot;</span><br>&amp; .\<span class="hljs-built_in">update-markdown</span><span class="hljs-literal">-images</span>.ps1<br>npx hexo clean<br>npx hexo g<br>npx hexo s <span class="hljs-literal">-p</span> <span class="hljs-number">8080</span><br></code></pre></td></tr></table></figure>
+<p><code>deploy.ps1</code>：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 修改学术主页</span><br><span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;修改学术主页...&quot;</span><br><span class="hljs-built_in">cd</span> E:\ChenHuaneng\Article\Academic\academic<span class="hljs-literal">-homepage</span><br>bundle exec jekyll build<br>robocopy <span class="hljs-string">&quot;_site&quot;</span> <span class="hljs-string">&quot;E:\ChenHuaneng\Article\Blogs\source\academic&quot;</span> /E /NFL /NDL /NP /XO<br><span class="hljs-built_in">cd</span> E:\ChenHuaneng\Article\Blogs<br><span class="hljs-comment"># 查看当前修改的文件</span><br><span class="hljs-variable">$gitStatus</span> = git status <span class="hljs-literal">--porcelain</span><br><span class="hljs-variable">$gitAhead</span> = git status <span class="hljs-literal">-b</span> <span class="hljs-literal">--porcelain</span> | <span class="hljs-built_in">Select-String</span> <span class="hljs-string">&quot;ahead&quot;</span><br><br><span class="hljs-comment"># 判断是否有修改或者未推送的提交</span><br><span class="hljs-keyword">if</span> (<span class="hljs-variable">$gitStatus</span> <span class="hljs-operator">-or</span> <span class="hljs-variable">$gitAhead</span>) &#123;<br>    <span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;检测到修改或未推送的提交，开始处理...&quot;</span><br>    <br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$gitStatus</span>) &#123;<br>        <span class="hljs-comment"># 添加所有修改的文件</span><br>        git add .<br><br>        <span class="hljs-comment"># 提交修改，自动生成提交信息</span><br>        <span class="hljs-variable">$currentTime</span> = <span class="hljs-built_in">Get-Date</span> <span class="hljs-literal">-Format</span> <span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><br>        <span class="hljs-variable">$commitMessage</span> = <span class="hljs-string">&quot;Auto commit at <span class="hljs-variable">$currentTime</span>&quot;</span><br>        git commit <span class="hljs-literal">-m</span> <span class="hljs-variable">$commitMessage</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;没有检测到新的修改，但有未推送的提交。&quot;</span><br>    &#125;<br><br>    <span class="hljs-comment"># 推送到远程仓库</span><br>    git push <span class="hljs-literal">-u</span> origin main<br>&#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;没有检测到修改或未推送的提交，跳过 Git 操作。&quot;</span><br>&#125;<br><br><span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;开始图片WebP转换...&quot;</span><br><span class="hljs-built_in">Set-Location</span> <span class="hljs-string">&quot;E:\ChenHuaneng\Article\Blogs&quot;</span><br>&amp; .\<span class="hljs-built_in">convert-to</span><span class="hljs-literal">-webp</span>.ps1<br><span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;WebP转换完成！&quot;</span><br><br><span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;更新Markdown中的图片引用...&quot;</span><br>&amp; .\<span class="hljs-built_in">update-markdown</span><span class="hljs-literal">-images</span>.ps1<br><span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;图片引用更新完成！&quot;</span><br><br><span class="hljs-comment"># 重新生成静态网页</span><br>npx hexo clean<br>npx hexo g<br><br><span class="hljs-comment"># 部署更新后的网页文件</span><br>hexo deploy<br></code></pre></td></tr></table></figure>
+<p><code>convert-to-webp.ps1</code>：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-keyword">param</span>(<br>    [<span class="hljs-built_in">string</span>]<span class="hljs-variable">$basePath</span> = <span class="hljs-string">&quot;E:\ChenHuaneng\Article\Blogs\source&quot;</span><br>)<br><br><span class="hljs-comment"># 支持的图片扩展名</span><br><span class="hljs-variable">$imageExtensions</span> = <span class="hljs-selector-tag">@</span>(<span class="hljs-string">&#x27;.png&#x27;</span>,<span class="hljs-string">&#x27;.jpg&#x27;</span>,<span class="hljs-string">&#x27;.jpeg&#x27;</span>,<span class="hljs-string">&#x27;.gif&#x27;</span>,<span class="hljs-string">&#x27;.avif&#x27;</span>)<br><br><span class="hljs-comment"># 需要处理的目录</span><br><span class="hljs-variable">$directories</span> = <span class="hljs-selector-tag">@</span>(<span class="hljs-string">&#x27;imgs&#x27;</span>, <span class="hljs-string">&#x27;_posts&#x27;</span>, <span class="hljs-string">&#x27;academic&#x27;</span>)<br><br><span class="hljs-comment"># 获取cwebp完整路径 (避免环境变量问题)</span><br><span class="hljs-variable">$cwebpPath</span> = (<span class="hljs-built_in">Get-Command</span> cwebp).Source<br><br><span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$dir</span> <span class="hljs-keyword">in</span> <span class="hljs-variable">$directories</span>) &#123;<br>    <span class="hljs-variable">$fullPath</span> = <span class="hljs-built_in">Join-Path</span> <span class="hljs-variable">$basePath</span> <span class="hljs-variable">$dir</span><br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Test-Path</span> <span class="hljs-variable">$fullPath</span>) &#123;<br>        <span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;Processing directory: <span class="hljs-variable">$fullPath</span>&quot;</span><br>        <span class="hljs-comment"># 递归处理子目录中的图片</span><br>        <span class="hljs-variable">$files</span> = <span class="hljs-built_in">Get-ChildItem</span> <span class="hljs-literal">-Path</span> <span class="hljs-variable">$fullPath</span> <span class="hljs-literal">-Recurse</span> <span class="hljs-operator">-File</span> | <span class="hljs-built_in">Where-Object</span> &#123; <span class="hljs-variable">$imageExtensions</span> <span class="hljs-operator">-contains</span> <span class="hljs-variable">$_</span>.Extension.ToLower() &#125;<br>        <br>        <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$file</span> <span class="hljs-keyword">in</span> <span class="hljs-variable">$files</span>) &#123;<br>            <span class="hljs-variable">$webpPath</span> = [<span class="hljs-type">System.IO.Path</span>]::ChangeExtension(<span class="hljs-variable">$file</span>.FullName, <span class="hljs-string">&#x27;webp&#x27;</span>)<br>            <br>            <span class="hljs-comment"># 仅当WebP文件不存在或比原图新时转换</span><br>            <span class="hljs-keyword">if</span> (<span class="hljs-operator">-not</span> (<span class="hljs-built_in">Test-Path</span> <span class="hljs-variable">$webpPath</span>) <span class="hljs-operator">-or</span> <span class="hljs-variable">$file</span>.LastWriteTime <span class="hljs-operator">-gt</span> (<span class="hljs-built_in">Get-Item</span> <span class="hljs-variable">$webpPath</span>).LastWriteTime) &#123;<br>                <span class="hljs-keyword">try</span> &#123;<br>                    <span class="hljs-comment"># 修复参数传递问题</span><br>                    <span class="hljs-variable">$qualityArg</span> = <span class="hljs-string">&quot;-q&quot;</span>, <span class="hljs-string">&quot;75&quot;</span><br>                    <br>                    <span class="hljs-comment"># 处理GIF的特殊情况</span><br>                    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$file</span>.Extension <span class="hljs-operator">-eq</span> <span class="hljs-string">&#x27;.gif&#x27;</span>) &#123;<br>                        <span class="hljs-comment"># GIF使用gif2webp工具处理</span><br>                        <span class="hljs-variable">$gif2webpPath</span> = (<span class="hljs-built_in">Get-Command</span> gif2webp).Source<br>                        &amp; <span class="hljs-variable">$gif2webpPath</span> <span class="hljs-string">&quot;-q&quot;</span> <span class="hljs-string">&quot;75&quot;</span> <span class="hljs-string">&quot;-mixed&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$</span>(<span class="hljs-variable">$file</span>.FullName)&quot;</span> <span class="hljs-string">&quot;-o&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$webpPath</span>&quot;</span><br>                    &#125;<br>                    <span class="hljs-keyword">else</span> &#123;<br>                        <span class="hljs-comment"># 其他图片使用cwebp</span><br>                        &amp; <span class="hljs-variable">$cwebpPath</span> <span class="hljs-string">&quot;-q&quot;</span> <span class="hljs-string">&quot;75&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$</span>(<span class="hljs-variable">$file</span>.FullName)&quot;</span> <span class="hljs-string">&quot;-o&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$webpPath</span>&quot;</span><br>                    &#125;<br>                    <br>                    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$LASTEXITCODE</span> <span class="hljs-operator">-eq</span> <span class="hljs-number">0</span>) &#123;<br>                        <span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;✅ Converted: <span class="hljs-variable">$</span>(<span class="hljs-variable">$file</span>.Name) → <span class="hljs-variable">$</span>([System.IO.Path]::GetFileName(<span class="hljs-variable">$webpPath</span>))&quot;</span><br>                    &#125; <span class="hljs-keyword">else</span> &#123;<br>                        <span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;⚠️ Failed to convert: <span class="hljs-variable">$</span>(<span class="hljs-variable">$file</span>.FullName) (Exit code: <span class="hljs-variable">$LASTEXITCODE</span>)&quot;</span><br>                    &#125;<br>                &#125; <span class="hljs-keyword">catch</span> &#123;<br>                    <span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;🛑 Error processing <span class="hljs-variable">$</span>(<span class="hljs-variable">$file</span>.FullName): <span class="hljs-variable">$_</span>&quot;</span><br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;⏩ Skipped (up-to-date): <span class="hljs-variable">$</span>(<span class="hljs-variable">$file</span>.Name)&quot;</span><br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;🎉 WebP conversion complete!&quot;</span><br></code></pre></td></tr></table></figure>
+<p><code>update-markdown-images.ps1</code>：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 参数定义：基础目录路径（可运行时指定）</span><br><span class="hljs-keyword">param</span>([<span class="hljs-built_in">string</span>]<span class="hljs-variable">$basePath</span> = <span class="hljs-string">&quot;E:\ChenHuaneng\Article\Blogs\source&quot;</span>)<br><br><span class="hljs-comment"># 定义目标子目录和支持的图片扩展名</span><br><span class="hljs-variable">$directories</span> = <span class="hljs-selector-tag">@</span>(<span class="hljs-string">&#x27;_posts&#x27;</span>, <span class="hljs-string">&#x27;image&#x27;</span>, <span class="hljs-string">&#x27;about&#x27;</span>)<br><span class="hljs-variable">$imageExtensions</span> = <span class="hljs-selector-tag">@</span>(<span class="hljs-string">&#x27;.png&#x27;</span>,<span class="hljs-string">&#x27;.jpg&#x27;</span>,<span class="hljs-string">&#x27;.jpeg&#x27;</span>,<span class="hljs-string">&#x27;.gif&#x27;</span>,<span class="hljs-string">&#x27;.avif&#x27;</span>)<br><br><span class="hljs-comment"># 获取待处理的 Markdown 文件（3天内修改）</span><br><span class="hljs-variable">$markdownFiles</span> = <span class="hljs-built_in">Get-ChildItem</span> <span class="hljs-literal">-Path</span> <span class="hljs-variable">$basePath</span> <span class="hljs-literal">-Recurse</span> <span class="hljs-literal">-Include</span> <span class="hljs-string">&quot;*.md&quot;</span> | <br>    <span class="hljs-built_in">Where-Object</span> &#123; <br>        <span class="hljs-variable">$_</span>.DirectoryName <span class="hljs-operator">-match</span> <span class="hljs-string">&quot;(<span class="hljs-variable">$</span>(<span class="hljs-variable">$directories</span> -join &#x27;|&#x27;))&quot;</span> <span class="hljs-operator">-and</span><br>        <span class="hljs-variable">$_</span>.LastWriteTime <span class="hljs-operator">-gt</span> (<span class="hljs-built_in">Get-Date</span>).AddDays(<span class="hljs-literal">-3</span>) <br>    &#125;<br><br><span class="hljs-comment"># 遍历每个文件进行替换</span><br><span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$file</span> <span class="hljs-keyword">in</span> <span class="hljs-variable">$markdownFiles</span>) &#123;<br>    <span class="hljs-variable">$content</span> = <span class="hljs-built_in">Get-Content</span> <span class="hljs-literal">-Path</span> <span class="hljs-variable">$file</span>.FullName <span class="hljs-literal">-Raw</span><br>    <br>    <span class="hljs-comment"># 正则表达式：匹配 Markdown 图片语法</span><br>    <span class="hljs-variable">$typoraPattern</span> = <span class="hljs-string">&#x27;\!\[(.*?)\]\((.*?)(&#x27;</span> + <br>        (<span class="hljs-variable">$imageExtensions</span> + <span class="hljs-variable">$imageExtensions</span>.ToUpper() | <span class="hljs-built_in">Join-String</span> <span class="hljs-literal">-Separator</span> <span class="hljs-string">&quot;|&quot;</span>) + <br>        <span class="hljs-string">&#x27;)\)&#x27;</span><br>    <br>    <span class="hljs-comment"># 执行替换（保留描述和路径，仅修改扩展名为 .webp）</span><br>    <span class="hljs-variable">$newContent</span> = <span class="hljs-variable">$content</span> <span class="hljs-operator">-replace</span> <span class="hljs-variable">$typoraPattern</span>, <span class="hljs-string">&#x27;![$1]($2.webp)&#x27;</span><br>    <br>    <span class="hljs-comment"># 保存修改后的文件</span><br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$newContent</span> <span class="hljs-operator">-ne</span> <span class="hljs-variable">$content</span>) &#123;<br>        <span class="hljs-built_in">Set-Content</span> <span class="hljs-literal">-Path</span> <span class="hljs-variable">$file</span>.FullName <span class="hljs-literal">-Value</span> <span class="hljs-variable">$newContent</span> <span class="hljs-literal">-NoNewline</span><br>        <span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;✅ Updated <span class="hljs-variable">$</span>(<span class="hljs-variable">$file</span>.Name)&quot;</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;⏩ No images to update in <span class="hljs-variable">$</span>(<span class="hljs-variable">$file</span>.Name)&quot;</span><br>    &#125;<br>&#125;<br><span class="hljs-built_in">Write-Host</span> <span class="hljs-string">&quot;🎉 All Markdown files updated to reference WebP images&quot;</span><br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/Website/" class="print-no-link">#Website</a>
+      
+        <a href="/tags/Picture/" class="print-no-link">#Picture</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Hexo - 使用WebP格式的图片加速Hexo网页访问速度</div>
+      <div>https://chen-huaneng.github.io/2025/08/07/2025-08-07-2025-08-07-webp/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Abel</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年8月7日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025年8月7日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/08/04/2025-08-04-2025-08-04-neovim/" title="Neovim - 重构编辑器配置">
+                        <span class="hidden-mobile">Neovim - 重构编辑器配置</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css')
+      Fluid.utils.createScript('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline-iqo2f4g2q-abels-projects-774a1e48.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"placeholder":"发一条友善的评论吧(为了方便交流,记得填上方的昵称和邮箱再留言哦~🍭)","avatar":"retro","avatarcdn":"","avatarforce":false,"recordIP":true,"highlight":true,"search":false,"reaction":false},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size: 0.85rem"> Power by  <a href="https://hexo.io" target="_blank" rel="nofollow noopener"> <span> <strong>Hexo</strong> </span> </a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <span> <strong>Fluid</strong> </span> </a> </div> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        <i class="iconfont icon-friends"></i>总访问量 
+        <span id="leancloud-site-pv"></span>
+         次 | 
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        <i class="iconfont icon-users"></i>总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/duration.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

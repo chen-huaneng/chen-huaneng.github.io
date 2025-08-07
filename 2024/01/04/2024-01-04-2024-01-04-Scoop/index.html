@@ -21,24 +21,23 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="简单介绍Git工具的使用。">
+    <meta name="description" content="如何用 Scoop 优雅地下载、卸载、安装、管理Windows系统的软件，快速配置开发环境。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git - 简单入门">
-<meta property="og:url" content="https://chen-huaneng.github.io/2024/10/14/2024-10-14-2024-10-14-git/index.html">
+<meta property="og:title" content="Scoop - A command-line installer for Windows">
+<meta property="og:url" content="https://chen-huaneng.github.io/2024/01/04/2024-01-04-2024-01-04-Scoop/index.html">
 <meta property="og:site_name" content="Abel">
-<meta property="og:description" content="简单介绍Git工具的使用。">
+<meta property="og:description" content="如何用 Scoop 优雅地下载、卸载、安装、管理Windows系统的软件，快速配置开发环境。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/2024/10/14/2024-10-14-2024-10-14-git/demo.webp">
-<meta property="article:published_time" content="2024-10-14T03:26:53.000Z">
-<meta property="article:modified_time" content="2025-08-07T14:41:59.867Z">
+<meta property="article:published_time" content="2024-01-04T14:35:00.000Z">
+<meta property="article:modified_time" content="2025-08-07T15:01:50.456Z">
 <meta property="article:author" content="Abel">
-<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Scoop">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/2024/10/14/2024-10-14-2024-10-14-git/demo.webp">
   
   
   
-  <title>Git - 简单入门 ~ Abel</title>
+  <title>Scoop - A command-line installer for Windows ~ Abel</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -270,7 +269,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Git - 简单入门</span>
+            <span id="subtitle">Scoop - A command-line installer for Windows</span>
           
         </div>
 
@@ -281,8 +280,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-14 11:26" pubdate>
-          2024年10月14日 上午
+        <time datetime="2024-01-04 22:35" pubdate>
+          2024年1月4日 晚上
         </time>
       </span>
     
@@ -294,7 +293,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          文章字数: 1.8k 
+          文章字数: 726 
         
       </span>
     
@@ -306,7 +305,7 @@
         
         
           <!-- compatible with older versions-->
-          阅读全文大概需要 5 分钟
+          阅读全文大概需要 2 分钟
         
       </span>
     
@@ -365,12 +364,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Git - 简单入门</h1>
+            <h1 id="seo-header">Scoop - A command-line installer for Windows</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2025-08-07T22:41:59+08:00
+                    本文最后更新于：2025-08-07T23:01:50+08:00
                   
                   
 
@@ -380,111 +379,37 @@
             
               <div class="markdown-body">
                 
-                <h2 id="学习-git">学习 Git</h2>
-<p>视频教程：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wm4y1z7Dg/?spm_id_from=0.0.favlist.content.click&amp;vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">尚硅谷新版Git快速入门(3h迅速掌握git)_哔哩哔哩_bilibili</a> 适合新手快速入门</li>
-<li><a target="_blank" rel="noopener" href="https://missing.csail.mit.edu/2020/version-control/">Version Control (Git) · Missing Semester</a> 适合有一定计算机基础之后再看，国内观看：[<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1uc411N7eK/?spm_id_from=0.0.favlist.content.click&amp;vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">自制双语字幕] 计算机教育缺失的一课(2020) - 第1讲 - 课程概览与 shell_哔哩哔哩_bilibili</a> 或者 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eo4y1d7KZ/?spm_id_from=0.0.favlist.content.click&amp;vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">【中字】The Missing Semester 第1讲 - 课程概览与 Shell - MIT 公开课(2020)_哔哩哔哩_bilibili</a></li>
-</ul>
-<p>推荐的书籍和图文：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2">Git</a> 权威指南，中文版：<a target="_blank" rel="noopener" href="https://github.com/progit/progit2-zh">progit/progit2-zh</a></li>
-<li><a target="_blank" rel="noopener" href="https://liaoxuefeng.com/books/git/introduction/index.html">简介 - Git教程 - 廖雪峰的官方网站</a></li>
-<li><a target="_blank" rel="noopener" href="https://nulab.com/zh-cn/learn/software-development/git-tutorial/">Simple Git tutorial for beginners | Nulab</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/pcottle/learnGitBranching">pcottle/learnGitBranching: An interactive git visualization and tutorial. Aspiring students of git can use this app to educate and challenge themselves towards mastery of git!</a> 玩游戏的方式学 Git</li>
-</ul>
-<h2 id="git-使用指南">Git 使用指南</h2>
-<p><img src="./demo.webp" srcset="/imgs/banner/loading.webp" lazyload /></p>
-<h3 id="git-如何推送当前目录到远程仓库">Git 如何推送当前目录到远程仓库</h3>
-<ol type="1">
-<li><p>初始化本地仓库为<code>Git</code> 仓库：在项目根目录下运行命令 <code>git init</code> ，这会创建一个 <code>.git</code> 目录，把当前目录变成一个 <code>Git</code> 仓库。</p></li>
-<li><p>添加文件到暂存区：可以用 <code>git add .</code> 命令将项目中的所有文件添加到 <code>Git</code> 的暂存区，也可以指定特定的文件 <code>git add &lt;文件名&gt;</code>。</p></li>
-<li><p>提交更改：使用命令 <code>git commit -m "提交内容的描述"</code> 提交暂存区中的更改到本地仓库，<code>-m</code> 后面的内容是提交的说明，描述此次提交的变更。</p></li>
-<li><p>连接远程仓库：获取远程仓库的 URL 地址，比如 GitHub 上仓库的 HTTPS 或 SSH 地址（当然需要提前先在远程建立一个仓库），然后使用命令 <code>git remote add origin &lt;远程仓库URL&gt;</code> 将本地仓库与远程仓库（如 <code>GitHub</code> 、<code>GitLab</code> 等）进行连接。<code>origin</code> 是远程仓库的默认名称，也可以指定为其他名称。</p></li>
-<li><p>拉取远程更新（当远程仓库和本地仓库的内容不一致的时候需要先拉取远程仓库的内容）：使用命令 <code>git pull origin main --rebase</code> 同步远程仓库（<code>origin</code>）的主分支 <code>main</code> 中的代码到本地。一般远程仓库的主分支叫 <code>main</code> 或者 <code>master</code> （<code>Github</code> 默认是 <code>main</code> ）。</p>
+                <blockquote>
+<p>本文部分内容摘抄自 <a target="_blank" rel="noopener" href="https://csdiy.wiki/必学工具/Scoop/#python2">Scoop - CS自学指南</a> ，如有侵权请联系我进行删除。</p>
+</blockquote>
+<h2 id="为什么使用scoop">为什么使用Scoop</h2>
+<p>在 Windows 下，搭建开发环境一直是一个复杂且困难的问题。由于没有一个统一的标准，导致各种开发环境的安装方式差异巨大，需要付出很多不必要的时间成本。而 <code>Scoop</code> 可以帮助你统一安装并管理常见的开发软件，省去了手动下载安装，配置环境变量等繁琐步骤。</p>
+<p>例如安装 <code>python</code> 和 <code>nodejs</code> 以及 <code>VS Code</code> 只需要执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop install python<br>scoop install nodejs<br>scoop install vscode<br></code></pre></td></tr></table></figure>
+<p>剩下的就完全交给 <code>Scoop</code> 去管理，安装依赖、检验哈希值、创建快捷方式……你甚至不需要按照平时安装软件时，用鼠标不断点击下一步的多余操作。因此学习使用 <code>Scoop</code> 会给你的生活和软件管理带来极大的便利。</p>
+<h2 id="安装-scoop">安装 Scoop</h2>
+<p><code>Scoop</code> 需要 <a target="_blank" rel="noopener" href="https://aka.ms/wmf5download">Windows PowerShell 5.1</a> 或者 <a target="_blank" rel="noopener" href="https://aka.ms/powershell">PowerShell</a> 作为运行环境，如果你使用的是 Windows 10 及以上版本，Windows PowerShell 是内置在系统中的。而 Windows 7 内置的 Windows PowerShell 版本过于陈旧，你需要手动安装新版本的 PowerShell。</p>
 <blockquote>
-<p>关于 <code>merge</code> 和 <code>rebase</code> 的区别可以参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/686538265">Git：图解 merge 和 rebase 的区别 - 知乎 (zhihu.com)</a></p>
-</blockquote></li>
-<li><p>推送本地代码到远程仓库：使用命令 <code>git push -u origin main</code> 将本地的代码推送到远程仓库的指定分支（通常是 <code>main</code> 或者 <code>master</code>）。</p>
-<blockquote>
-<p>当使用 <code>git push -u origin &lt;branch&gt;</code> 之后，本地的 <code>&lt;branch&gt;</code> 分支会与远程的 <code>&lt;branch&gt;</code> 分支建立跟踪关系。此后，Git 记住你推送的远程仓库和分支，因此以后只需要运行 <code>git push</code>，而无需再次指定远程仓库和分支。同样，拉取时也可以使用简化后的命令 <code>git pull</code>。所以只有第一次推送时需要添加 <code>-u origin main</code> 参数。</p>
-</blockquote></li>
-</ol>
-<h3 id="gitignore-如何添加已经-commit-过的文件到不追踪规则中">.gitignore 如何添加已经 commit 过的文件到不追踪规则中</h3>
-<p>首先删除 track 的文件（已经 commit 的文件）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm -r --cached &lt;file name&gt;<br></code></pre></td></tr></table></figure>
-<p><code>&lt;file name&gt;</code> 代表要取消 commit 的文件，接受多个参数，比如要取消追踪 <code>test.py</code> 文件和 <code>hello</code> 文件夹可以这样：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rm -r --cached test.py hello<br></code></pre></td></tr></table></figure>
-<p>然后在 .gitignore 文件中添加 ignore 条目，比如：<code>test.py</code> 和 <code>hello</code>，然后提交 .gitignore 文件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git commit -a -m &quot;delete some unused file.&quot;<br></code></pre></td></tr></table></figure>
-<h3 id="如何丢弃现有的更改退回到最近一次提交">如何丢弃现有的更改退回到最近一次提交</h3>
-<p>要丢弃所有未暂存的修改，将工作目录恢复到最近一次提交的状态，按照以下步骤操作：</p>
-<p>丢弃工作目录所有修改（保留未跟踪文件）</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git restore .   <span class="hljs-comment"># Git 2.23+ 推荐方式（最安全）</span><br></code></pre></td></tr></table></figure> 这会丢弃所有已跟踪文件（tracked files）的修改，恢复到最近一次 <code>git commit</code> 的状态。未跟踪的文件（Untracked files）不会被删除（如新创建的文件）。</p>
-<p>如果还需删除未跟踪的文件/目录（如新增的无用文件）</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git clean -<span class="hljs-built_in">df</span>   <span class="hljs-comment"># 删除未跟踪文件/目录（强制删除）</span><br></code></pre></td></tr></table></figure> 注意事项：</p>
+<p>由于发现很多同学在设置 Windows 用户时使用了中文用户名，导致了用户目录也变成了中文名。如果按照 Scoop 的默认方式将软件安装到用户目录下，可能会造成部分软件执行错误。所以这里推荐安装到自定义目录，如果需要其他安装方式请参考： <a target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Install">ScoopInstaller/Install</a></p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># 设置 PowerShell 执行策略</span><br><span class="hljs-built_in">Set-ExecutionPolicy</span> <span class="hljs-literal">-ExecutionPolicy</span> RemoteSigned <span class="hljs-literal">-Scope</span> CurrentUser<br><span class="hljs-comment"># 下载安装脚本</span><br><span class="hljs-built_in">irm</span> get.scoop.sh <span class="hljs-literal">-outfile</span> <span class="hljs-string">&#x27;install.ps1&#x27;</span><br><span class="hljs-comment"># 执行安装, --ScoopDir 参数指定 Scoop 安装路径</span><br>.\install.ps1 <span class="hljs-literal">-ScoopDir</span> <span class="hljs-string">&#x27;C:\Scoop&#x27;</span><br></code></pre></td></tr></table></figure>
+<h2 id="使用-scoop">使用 Scoop</h2>
+<p>Scoop 的官方文档对于新手非常友好，相对于在此处赘述更推荐阅读 <a target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Scoop">官方文档</a> 或 <a target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Scoop/wiki/Quick-Start">快速入门</a> 。</p>
+<h2 id="一些可能有帮助的文章">一些可能有帮助的文章</h2>
 <ul>
-<li>不可恢复：这些操作会永久丢弃本地修改，确认不需要这些更改后再执行。</li>
-<li>检查状态：操作前建议先用 <code>git status</code> 查看修改内容，确认无误再执行。</li>
-<li>暂存区的修改：如果文件已 <code>git add</code>（在暂存区），先用 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset -- .   <span class="hljs-comment"># 将暂存区文件移出（但保留工作目录修改）</span><br></code></pre></td></tr></table></figure> 然后再执行 <code>git restore .</code></li>
+<li><a target="_blank" rel="noopener" href="https://sspai.com/post/52710#!">给 Scoop 加上这些软件仓库，让它变成强大的 Windows 软件管理器 - 少数派 (sspai.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/135278662">你需要掌握的Scoop技巧和知识 - 知乎 (zhihu.com)</a></li>
 </ul>
-<h3 id="git-嵌套-git12">Git 嵌套 Git<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Git嵌套Git仓库|极客教程](https://geek-docs.com/git/git-questions/1152_git_nested_git_repositories.html)">[1]</span></a></sup><sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="[[toolschain\] 怎么运用git 嵌套git 管理（子文件夹中也有个git） 并且如何简单设置使用repo的笔记 本文是求助GPT的记录 实践有用-CSDN博客](https://blog.csdn.net/weixin_46479223/article/details/134838519)">[2]</span></a></sup></h3>
-<p><strong>添加子模块</strong>：需要将子模块添加到主项目中。可以通过<code>git submodule add &lt;仓库URL&gt; &lt;子模块路径&gt;</code>命令完成。例如，假设我们的子模块是一个名为<code>common</code>的库，并且需要放在主项目的<code>libs</code>目录下，那么可以使用以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git submodule add https://github.com/example/common.git libs/common<br></code></pre></td></tr></table></figure>
-<p>或者添加和 <code>common</code> 平级目录下的 <code>example</code> 库：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git submodule add https://github.com/example/common.git example<br></code></pre></td></tr></table></figure>
-<p><strong>初始化和更新子模块</strong>：添加子模块后，我们需要初始化和更新子模块。可以通过以下两个命令完成：</p>
-<ul>
-<li><code>git submodule init</code>：用于初始化子模块，只需要运行一次。</li>
-<li><code>git submodule update</code>：用于更新子模块，可以在每次子模块发生变化时运行。</li>
-</ul>
-<p><strong>提交和同步变更</strong>：当子模块有变更时，我们需要在主项目中提交和同步这些变更。可以通过以下命令完成：</p>
-<ul>
-<li><code>git add &lt;子模块路径&gt;</code>：用于将子模块的变更添加到主项目中。</li>
-<li><code>git commit -m "Update submodule"</code>：用于提交变更。</li>
-<li><code>git submodule update --remote</code>：用于同步子模块的最新变更。</li>
-</ul>
-<h2 id="lazygit">Lazygit</h2>
-<p>当然，如果觉得 Git 要一直输入命令好麻烦，还有一个适合命令行的 <a target="_blank" rel="noopener" href="https://github.com/jesseduffield/lazygit?tab=readme-ov-file">Lazygit</a> 非常推荐，适合像我一样不喜欢自己输入这种重复命令的同学使用。</p>
-<p>安装了 Lazygit 之后在命令行中输入 <code>lazygit</code> 就可以启动了。</p>
-<p>在启动 Lazygit 并提示“未在 Git 仓库中”时，它允许你直接在当前目录下创建一个新的 Git 仓库。可以按照以下步骤完成初始化：</p>
-<ol type="1">
-<li><p>创建新 Git 仓库：当 Lazygit 提示是否要创建一个新的 Git 仓库时，输入 <code>y</code> 并按回车键。</p></li>
-<li><p>设置分支名称：Lazygit 会询问你要设置的分支名称。可以选择：</p>
-<ul>
-<li>留空：直接按回车，将使用 Git 的默认分支名称（一般是 <code>main</code> 或 <code>master</code>，取决于 Git 配置）。</li>
-<li>自定义名称：输入自定义分支名称并按回车。</li>
-</ul></li>
-</ol>
-<p>完成这两步后，Lazygit 会创建一个新的 Git 仓库，并切换到你指定的分支名称，接着你就可以正常使用 Lazygit 进行文件暂存、提交、推送等操作了。</p>
-<p>Lazygit 提供了快捷键操作，常见的有以下几个：</p>
-<ul>
-<li><strong><code>↑ / ↓</code></strong>：上下移动光标，选择不同文件或提交记录。</li>
-<li><strong><code>Enter</code></strong>：查看详细内容（如文件变更或提交详情）。</li>
-<li><strong><code>Space</code></strong>：暂存/取消暂存文件。</li>
-<li><strong><code>a</code></strong>：暂存所有修改。</li>
-<li><strong><code>c</code></strong>：打开提交消息输入界面，完成后保存提交。</li>
-<li><strong><code>P</code></strong>：推送代码到远程仓库。</li>
-<li><strong><code>f</code></strong>、<strong><code>p</code></strong>：从远程仓库拉取代码。</li>
-<li><strong><code>b</code></strong>：切换或新建分支。</li>
-<li><strong><code>q</code></strong>：退出 Lazygit。</li>
-<li><strong><code>?</code></strong>：查看所有快捷键说明。</li>
-</ul>
-<section class="footnotes">
-<h2>
-References
-</h2>
-<div class="footnote-list">
-<ol>
-<li>
-<span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://geek-docs.com/git/git-questions/1152_git_nested_git_repositories.html">Git嵌套Git仓库|极客教程</a> <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩︎</a></span></span>
-</li>
-<li>
-<span id="fn:2" class="footnote-text"><span>[<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46479223/article/details/134838519">toolschain] 怎么运用git 嵌套git 管理（子文件夹中也有个git） 并且如何简单设置使用repo的笔记 本文是求助GPT的记录 实践有用-CSDN博客</a> <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩︎</a></span></span>
-</li>
-</ol>
-</div>
-</section>
+<h2 id="qa">Q&amp;A</h2>
+<h3 id="scoop-能配置镜像源吗">Scoop 能配置镜像源吗？</h3>
+<p>Scoop 社区仅维护安装配置，所有的软件都是从该软件官方提供的下载链接进行下载，所以无法提供镜像源。如果因为你的网络环境导致多次下载失败，那么你需要一点点 <a target="_blank" rel="noopener" href="https://csdiy.wiki/必学工具/翻墙/">魔法</a>。</p>
+<h3 id="为什么找不到-java8">为什么找不到 Java8？</h3>
+<p>原因同上，官方已不再提供 Java8 的下载链接，推荐使用 <a target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Java/blob/master/bucket/ojdkbuild8.json">ojdkbuild8</a> 替代。</p>
+<h3 id="我需要安装-python2-该如何操作">我需要安装 python2 该如何操作？</h3>
+<p>对于已经过时弃用的软件，Scoop 社区会将其从 <a target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Main">ScoopInstaller/Main</a> 中移除并将其添加到 <a target="_blank" rel="noopener" href="https://github.com/ScoopInstaller/Versions">ScoopInstaller/Versions</a> 中。如果你需要这些软件的话需要手动添加 bucket：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop bucket add versions<br>scoop install python27<br></code></pre></td></tr></table></figure>
+<h3 id="我忘记了-scoop-的命令怎么办">我忘记了 Scoop 的命令怎么办</h3>
+<p>在命令行中输入 <code>scoop help</code> 来查看内置的帮助文档。</p>
 
                 
               </div>
@@ -503,7 +428,7 @@ References
     
       <span class="category-chain">
         
-  <a href="/categories/Git/" class="category-chain-item">Git</a>
+  <a href="/categories/Scoop/" class="category-chain-item">Scoop</a>
   
   
 
@@ -518,7 +443,9 @@ References
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Git/" class="print-no-link">#Git</a>
+        <a href="/tags/Scoop/" class="print-no-link">#Scoop</a>
+      
+        <a href="/tags/Windows/" class="print-no-link">#Windows</a>
       
     </div>
   
@@ -530,8 +457,8 @@ References
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Git - 简单入门</div>
-      <div>https://chen-huaneng.github.io/2024/10/14/2024-10-14-2024-10-14-git/</div>
+      <div>Scoop - A command-line installer for Windows</div>
+      <div>https://chen-huaneng.github.io/2024/01/04/2024-01-04-2024-01-04-Scoop/</div>
     </div>
     <div class="license-meta">
       
@@ -543,7 +470,7 @@ References
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月14日</div>
+          <div>2024年1月4日</div>
         </div>
       
       
@@ -592,9 +519,9 @@ References
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/16/2024-10-16-2024-10-16-license/" title="Open Source License - 常见开源协议介绍">
+                      <a href="/2024/01/13/2024-01-13-2024-01-13-Books-I-Readed/" title="Books - 记录我读过的一些书">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Open Source License - 常见开源协议介绍</span>
+                        <span class="hidden-mobile">Books - 记录我读过的一些书</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -602,8 +529,8 @@ References
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/12/2024-10-12-2024-10-12-linux/" title="Linux - 学习路线">
-                        <span class="hidden-mobile">Linux - 学习路线</span>
+                      <a href="/2024/01/02/2024-01-02-2024-01-02-Anime-I-Watched/" title="Anime - 记录我看过的一些动漫">
+                        <span class="hidden-mobile">Anime - 记录我看过的一些动漫</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
