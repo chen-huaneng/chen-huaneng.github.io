@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 img.lazy {
-    background-image: url('images/loading.gif');
+    background-image: url('images/loading.webp');
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 50px 50px;
@@ -75,7 +75,7 @@ img.lazy {
 }
 
 div.lazy {
-    background-image: url('images/loading.gif');
+    background-image: url('images/loading.webp');
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 50px 50px;

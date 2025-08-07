@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar.jpg">
-  <link rel="icon" href="/imgs/banner/avatar.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar.webp">
+  <link rel="icon" href="/imgs/banner/avatar.webp">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -28,19 +28,19 @@
 <meta property="og:site_name" content="Abel">
 <meta property="og:description" content="通俗易懂地讲解了Knuth-Morris-Pratt算法的原理和next数组的求解方法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/KMP-1.png">
-<meta property="og:image" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/KMP-2.png">
-<meta property="og:image" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/KMP-3.png">
-<meta property="og:image" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/KMP-4.png">
+<meta property="og:image" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/KMP-1.webp">
+<meta property="og:image" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/KMP-2.webp">
+<meta property="og:image" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/KMP-3.webp">
+<meta property="og:image" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/KMP-4.webp">
 <meta property="article:published_time" content="2025-07-26T10:10:11.000Z">
-<meta property="article:modified_time" content="2025-08-03T00:24:48.139Z">
+<meta property="article:modified_time" content="2025-08-07T09:07:32.830Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Algorithm">
-<meta property="article:tag" content="String">
 <meta property="article:tag" content="Two Pointers">
+<meta property="article:tag" content="String">
 <meta property="article:tag" content="KMP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/KMP-1.png">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/2025/07/26/2025-07-26-2025-07-26-kmp/KMP-1.webp">
   
   
   
@@ -86,7 +86,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":40,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":40,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.webp","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -122,7 +122,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 70vh;">
+<div class="header-inner" style="height: 40vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -270,7 +270,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2025/07/26/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/banner/default.webp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
@@ -376,7 +376,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2025-08-03T08:24:48+08:00
+                    本文最后更新于：2025-08-07T17:07:32+08:00
                   
                   
 
@@ -404,12 +404,12 @@
 <p>先由暴力解法讲起，在暴力匹配中，每次遇到不匹配的情况都需要将模式串从头开始遍历，即将主串上的指针向前移动一位后，将模式串的指针回退到模式串的起始位置开始和主串对比。</p>
 <p>下面约定，主串为<span class="math inline">\(S\)</span>，主串中第<span class="math inline">\(i\)</span>个字符记为<span class="math inline">\(S_i\)</span>，模式串为<span class="math inline">\(P\)</span>，模式串中第<span class="math inline">\(j\)</span>个字符记为<span class="math inline">\(P_j\)</span>。</p>
 <figure>
-<img src="./KMP-1.png" srcset="/imgs/banner/loading.gif" lazyload alt="暴力匹配的过程" /><figcaption aria-hidden="true">暴力匹配的过程</figcaption>
+<img src="./KMP-1.webp" srcset="/imgs/banner/loading.webp" lazyload alt="暴力匹配的过程" /><figcaption aria-hidden="true">暴力匹配的过程</figcaption>
 </figure>
 <p>通过观察可以知道，在第3轮比较的过程中，通过比较已经得知主串中的<span class="math inline">\([S_3 \dots S_6]\)</span>的字符信息，因而可以知道<span class="math inline">\(S_4,S_5\)</span>和<span class="math inline">\(P_1\)</span>是不匹配的，因而第4，5轮的匹配是可以通过之前的已知信息来避免的，<strong>而KMP算法的思想也正是通过之前匹配获得的主串和模式串的部分匹配信息来减少匹配次数进而提高算法效率</strong>。接下来将分析如何运用该信息来减少匹配次数。</p>
 <p>现在从更一般的情况来进一步分析，有主串<span class="math inline">\(S\)</span>和模式串<span class="math inline">\(P\)</span>（模式串的长度<span class="math inline">\(\geq m + 1\)</span>，主串的长度<span class="math inline">\(\geq\)</span>模式串的长度），现在有模式串的前<span class="math inline">\(m\)</span>个字符和主串的某个子串相匹配，而第<span class="math inline">\(m + 1\)</span>个字符不匹配，即<span class="math inline">\(P_{m + 1} \neq S_{k + m}\)</span>。</p>
 <figure>
-<img src="./KMP-2.png" srcset="/imgs/banner/loading.gif" lazyload alt="更一般的匹配过程" /><figcaption aria-hidden="true">更一般的匹配过程</figcaption>
+<img src="./KMP-2.webp" srcset="/imgs/banner/loading.webp" lazyload alt="更一般的匹配过程" /><figcaption aria-hidden="true">更一般的匹配过程</figcaption>
 </figure>
 <p>现已知主串的某一子串<span class="math inline">\([S_k, S_{k + 1}, \dots, S_{k + m - 1}]\)</span>和模式串的由<span class="math inline">\(m\)</span>个字符组成的前缀<span class="math inline">\([P_1, P_2, \dots, P_m]\)</span>相匹配，那么为了减少匹配的次数，我们思考能否在主串的匹配子串<span class="math inline">\([S_k, S_{k + 1}, \dots, S_{k + m - 1}]\)</span>中找到这样一个子串（即主串的匹配子串的后缀），满足条件： <span class="math display">\[
 [S_{k + n}, S_{k + n + 1}, \dots, S_{k + m - 1}] = [P_1, P_2, \dots, P_{m - n}]
@@ -473,7 +473,7 @@
 <p>写成伪代码则是<code>j = next[j]</code>，即指向模式串当前字符（当前指针位置<span class="math inline">\(m + 1\)</span>）的指针<span class="math inline">\(j\)</span>将直接跳过模式串的匹配前缀的长度<span class="math inline">\(next[j]\)</span>个字符继续进行比较。</p>
 <p>接下来将介绍如何快速计算给定模式串的<span class="math inline">\(next\)</span>数组，计算模式串的<span class="math inline">\(next\)</span>数组是一个递推的过程：</p>
 <figure>
-<img src="./KMP-3.png" srcset="/imgs/banner/loading.gif" lazyload alt="计算next[j+1]的过程" /><figcaption aria-hidden="true">计算<span class="math inline">\(next[j+1]\)</span>的过程</figcaption>
+<img src="./KMP-3.webp" srcset="/imgs/banner/loading.webp" lazyload alt="计算next[j+1]的过程" /><figcaption aria-hidden="true">计算<span class="math inline">\(next[j+1]\)</span>的过程</figcaption>
 </figure>
 <ol type="1">
 <li><p>当<span class="math inline">\(j = 1\)</span>时，即取模式串的第一个字符时，此时显然没有前后缀存在，故<span class="math inline">\(next[1] = 0\)</span>。</p></li>
@@ -484,7 +484,7 @@
 </ul></li>
 </ol>
 <figure>
-<img src="./KMP-4.png" srcset="/imgs/banner/loading.gif" lazyload alt="当P_{k + 1} \neq P_{j + 1}时，寻找满足条件的h的过程" /><figcaption aria-hidden="true">当<span class="math inline">\(P_{k + 1} \neq P_{j + 1}\)</span>时，寻找满足条件的<span class="math inline">\(h\)</span>的过程</figcaption>
+<img src="./KMP-4.webp" srcset="/imgs/banner/loading.webp" lazyload alt="当P_{k + 1} \neq P_{j + 1}时，寻找满足条件的h的过程" /><figcaption aria-hidden="true">当<span class="math inline">\(P_{k + 1} \neq P_{j + 1}\)</span>时，寻找满足条件的<span class="math inline">\(h\)</span>的过程</figcaption>
 </figure>
 <p>由上述的递推过程中可以看出，KMP算法的时间复杂度为<span class="math inline">\(O(m + n)\)</span>，空间复杂度为<span class="math inline">\(O(m)\)</span>，其中匹配的时间复杂度为<span class="math inline">\(O(n)\)</span>，因为主串的指针不回退，而计算模式串的部分匹配值的时间复杂度为<span class="math inline">\(O(m)\)</span>，这是因为在计算模式串的部分匹配值时，并没有使用暴力匹配，而是利用先前已经得到的部分匹配值的信息来减少匹配次数，其中<span class="math inline">\(m\)</span>为模式串的长度，<span class="math inline">\(n\)</span>为主串的长度。虽然暴力匹配的时间复杂度为<span class="math inline">\(O(mn)\)</span>，但在实际应用中，暴力匹配的实际复杂度接近<span class="math inline">\(O(m + n)\)</span>，这是因为在大部分文本和模式串中（比如在一本小说中搜索goodbye单词），模式串的第一个字符就和主串不匹配，只有在某些情况下（比如在二进制文本中寻找0101001），KMP算法才比暴力匹配快得多（出现了很多部分匹配的情况）。</p>
 <p>现在来考虑当模式串中出现了重复字符时，如何改进<span class="math inline">\(next\)</span>数组为<span class="math inline">\(nextval\)</span>数组提高效率。以下列例子说明：</p>
@@ -605,9 +605,9 @@ References
       
         <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/String/" class="print-no-link">#String</a>
-      
         <a href="/tags/Two-Pointers/" class="print-no-link">#Two Pointers</a>
+      
+        <a href="/tags/String/" class="print-no-link">#String</a>
       
         <a href="/tags/KMP/" class="print-no-link">#KMP</a>
       
@@ -640,7 +640,7 @@ References
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月3日</div>
+          <div>2025年8月7日</div>
         </div>
       
       

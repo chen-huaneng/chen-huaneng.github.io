@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar.jpg">
-  <link rel="icon" href="/imgs/banner/avatar.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/imgs/banner/avatar.webp">
+  <link rel="icon" href="/imgs/banner/avatar.webp">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -28,16 +28,16 @@
 <meta property="og:site_name" content="Abel">
 <meta property="og:description" content="This article will explain in detail about dynamic and static in polymorphism.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chen-huaneng.github.io/2023/11/07/2023-11-07-2023-11-07-java-dynamic-and-static/mindmap.png">
+<meta property="og:image" content="https://chen-huaneng.github.io/2023/11/07/2023-11-07-2023-11-07-java-dynamic-and-static/mindmap.webp">
 <meta property="article:published_time" content="2023-11-07T10:12:22.000Z">
-<meta property="article:modified_time" content="2025-08-02T23:50:27.433Z">
+<meta property="article:modified_time" content="2025-08-07T05:39:11.257Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Static">
 <meta property="article:tag" content="Dynamic">
 <meta property="article:tag" content="Polymorphism">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://chen-huaneng.github.io/2023/11/07/2023-11-07-2023-11-07-java-dynamic-and-static/mindmap.png">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/2023/11/07/2023-11-07-2023-11-07-java-dynamic-and-static/mindmap.webp">
   
   
   
@@ -83,7 +83,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":40,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"chen-huaneng.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":40,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/imgs/banner/loading.webp","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"OCrHH8h6ML9o0nMfXTe8NbCt-gzGzoHsz","app_key":"E986Wb0NvdKXW5IypTNvcH0T","server_url":"https://ocrhh8h6.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -119,7 +119,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 70vh;">
+<div class="header-inner" style="height: 40vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -267,7 +267,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/imgs/posts/2023/11/07/banner.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/imgs/banner/default.webp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
       <div class="banner-text text-center fade-in-up">
@@ -373,7 +373,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于：2025-08-03T07:50:27+08:00
+                    本文最后更新于：2025-08-07T13:39:11+08:00
                   
                   
 
@@ -842,7 +842,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-comment">// No casting</span><br>	<span class="hljs-type">Cat</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(); <span class="hljs-comment">//Compile Error </span><br>    <span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>(); <span class="hljs-comment">//No Error </span><br>    <span class="hljs-type">Dog</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>(); <span class="hljs-comment">//Compile Error </span><br>    <span class="hljs-type">Tree</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(); <span class="hljs-comment">//Compile Error </span><br>    <br>    <span class="hljs-comment">// Have casting</span><br>    <span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> (Cat) <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>(); <span class="hljs-comment">//No Error </span><br>    <span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> (Animal) <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>(); <span class="hljs-comment">//No Error </span><br>    <span class="hljs-type">Dog</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> (Dog) <span class="hljs-keyword">new</span> <span class="hljs-title class_">Animal</span>(); <span class="hljs-comment">//Runtime Error </span><br>    <span class="hljs-type">Cat</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> (Cat) <span class="hljs-keyword">new</span> <span class="hljs-title class_">Dog</span>(); <span class="hljs-comment">//Compile Error </span><br>    <span class="hljs-type">Animal</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> (Animal) <span class="hljs-keyword">new</span> <span class="hljs-title class_">Tree</span>(); <span class="hljs-comment">//Compile Error </span><br>&#125;<br></code></pre></td></tr></table></figure>
 </blockquote>
 <h2 id="conclusion">Conclusion</h2>
-<p><img src="./mindmap.png" srcset="/imgs/banner/loading.gif" lazyload /></p>
+<p><img src="./mindmap.webp" srcset="/imgs/banner/loading.webp" lazyload /></p>
 <section class="footnotes">
 <h2>
 References
@@ -925,7 +925,7 @@ References
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月3日</div>
+          <div>2025年8月7日</div>
         </div>
       
       
@@ -968,9 +968,9 @@ References
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/02/2023-12-02-2023-12-03-how-to-write-blog/" title="Hexo - 如何使用Hexo发布一篇Blog">
+                      <a href="/2023/12/02/2023-12-02-2023-12-03-how-to-write-blog/" title="Hexo - 如何使用Hexo框架的Fluid主题发布一篇Blog">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo - 如何使用Hexo发布一篇Blog</span>
+                        <span class="hidden-mobile">Hexo - 如何使用Hexo框架的Fluid主题发布一篇Blog</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
