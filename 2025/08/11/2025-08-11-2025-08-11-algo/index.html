@@ -21,22 +21,23 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="记录C++的学习过程。">
+    <meta name="description" content="介绍了算法和数据结构的基本概念。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ - （零）学习路径及参考资料">
-<meta property="og:url" content="https://chen-huaneng.github.io/2024/11/03/2024-11-03-2024-11-03-cpp/index.html">
+<meta property="og:title" content="Algorithm - 算法（一）算法和数据结构简介">
+<meta property="og:url" content="https://chen-huaneng.github.io/2025/08/11/2025-08-11-2025-08-11-algo/index.html">
 <meta property="og:site_name" content="Abel">
-<meta property="og:description" content="记录C++的学习过程。">
+<meta property="og:description" content="介绍了算法和数据结构的基本概念。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-03T08:57:13.000Z">
-<meta property="article:modified_time" content="2025-08-11T10:51:00.082Z">
+<meta property="article:published_time" content="2025-08-11T09:06:31.000Z">
+<meta property="article:modified_time" content="2025-08-11T10:43:10.399Z">
 <meta property="article:author" content="Abel">
-<meta property="article:tag" content="C++">
+<meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="Data Structures">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>C++ - （零）学习路径及参考资料 ~ Abel</title>
+  <title>Algorithm - 算法（一）算法和数据结构简介 ~ Abel</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -268,7 +269,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">C++ - （零）学习路径及参考资料</span>
+            <span id="subtitle">Algorithm - 算法（一）算法和数据结构简介</span>
           
         </div>
 
@@ -279,8 +280,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-03 16:57" pubdate>
-          2024年11月3日 下午
+        <time datetime="2025-08-11 17:06" pubdate>
+          2025年8月11日 下午
         </time>
       </span>
     
@@ -336,7 +337,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">C++ - （零）学习路径及参考资料</h1>
+            <h1 id="seo-header">Algorithm - 算法（一）算法和数据结构简介</h1>
             
               <p id="updated-time" class="note note-warning" style="">
                 
@@ -349,15 +350,80 @@
             
               <div class="markdown-body">
                 
-                <h2 id="关于-c">关于 C++</h2>
+                <h2 id="算法是什么">算法是什么</h2>
+<p>算法（<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Algorithm">Algorithm</a>）是一个有限的、明确的、可计算的步骤序列，用于解决某类特定问题或执行特定计算任务。算法通常由输入、输出和一系列操作组成。它们可以用自然语言、伪代码或编程语言来描述。算法具有以下的特性：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list">c++ faq - The Definitive C++ Book Guide and List - Stack Overflow</a> 可以看哪些书入门</li>
-<li><a target="_blank" rel="noopener" href="https://csdiy.wiki/编程入门/cpp/CS106L/">Stanford CS106L: Standard C++ Programming - CS自学指南 (csdiy.wiki)</a> 很不错的一门课，介绍了很多C++的高级用法</li>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/598552/should-i-learn-c-before-learning-c">Should I learn C before learning C++? - Stack Overflow</a> 在学C++之前是否应该学习C的回答</li>
+<li>问题是明确的，包含清晰的输入和输出定义。</li>
+<li>具有可行性，能够在有限步骤、时间和内存空间下完成。</li>
+<li>各步骤都有确定的含义，在相同的输入和运行条件下，输出始终相同。</li>
 </ul>
-<h2 id="学习路线">学习路线</h2>
+<h2 id="分析算法">分析算法</h2>
+<p>分析算法通常指分析运行算法所需要耗费的资源，虽然有时候需要分析内存、通信带宽或者计算机硬件这类资源，但通常在算法分析中只考虑时间复杂度（<a target="_blank" rel="noopener" href="https://www.wikiwand.com/en/articles/Time_complexity">Time Complexity</a>）和空间复杂度（<a target="_blank" rel="noopener" href="https://www.wikiwand.com/en/articles/Space_complexity">Space Complexity</a>）。由于实际测试需要耗费大量的计算资源且难以统一衡量，因此通常采用理论估算的方法来评估算法的效率，这种估算方法被称为渐近复杂度分析（asymptotic complexity analysis），简称复杂度分析。复杂度分析能够体现算法运行所需的时间和空间资源与输入数据大小之间的关系，它描述了随着输入数据大小的增加，算法执行所需时间和空间的增长趋势（复杂度分析关注的不是运行时间或占用空间的具体值，而是时间或空间增长的“快慢”）。</p>
+<h3 id="时间复杂度">时间复杂度</h3>
+<p>时间复杂度是一个定性描述算法运行时间的有关输入数据规模大小的函数，通常用基本操作数或步数来表示。基本操作是指在算法中执行的最小操作，例如加法、乘法、赋值等，通常假设每个基本操作的执行时间是相同且固定的（尽管在实际中执行加法和乘法的时间可能不同）。算法的时间复杂度可能因为相同大小的不同输入数据而不同，通常的做法是取最坏情况的时间复杂度来描述算法的性能。由于时间复杂度的函数通常难以精确计算，且对于小规模的输入数据来说，运行时间通常并不重要，因此通常关注当输入数据规模增大时算法的运行时间增长的趋势。因此，通常用渐近上界（asymptotic upper bound）符号 <span class="math inline">\(O\)</span> （<a target="_blank" rel="noopener" href="https://www.wikiwand.com/en/articles/Big_O_notation">Big <span class="math inline">\(O\)</span> Notation</a>）来表示算法的渐近时间复杂度（简称时间复杂度），例如时间复杂度可以表示为 <span class="math inline">\(O(n)\)</span>、<span class="math inline">\(O(n^2)\)</span>、<span class="math inline">\(O(\log n)\)</span> 等。同样，除了渐近上界符号 <span class="math inline">\(O\)</span>，还有渐近下界符号 <span class="math inline">\(\Omega\)</span>（对应最佳时间复杂度）和渐近紧确界（asymptotically tight bound）符号 <span class="math inline">\(\Theta\)</span>（对应平均时间复杂度）等也可以用于描述时间复杂度。</p>
+<blockquote>
+<p>时间复杂度分析本质上是计算“操作数量 <span class="math inline">\(T(n)\)</span> ”的渐近上界。</p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.hello-algo.com/chapter_computational_complexity/time_complexity/">函数渐近上界</a>：若存在正实数 <span class="math inline">\(c\)</span> 和实数 <span class="math inline">\(n_0\)</span>，使得对于所有的 <span class="math inline">\(n &gt; n_0\)</span>，均有 <span class="math inline">\(T(n) \leq c \cdot f(n)\)</span>，则可以认为 <span class="math inline">\(f(n)\)</span> 给出了 <span class="math inline">\(T(n)\)</span> 的一个渐近上界，记为 <span class="math inline">\(T(n) = O(f(n))\)</span>。</p>
+</blockquote>
+<blockquote>
+<p>一般说快速排序的时间复杂度为 <span class="math inline">\(O(n\log n)\)</span> 是指快速排序在一般情况下的时间复杂度，而不是最坏情况的时间复杂度，这是业内的一个默认规定。</p>
+</blockquote>
+<blockquote>
+<p>可能由于 <span class="math inline">\(O\)</span> 符号过于朗朗上口，因此通常使用它来表示平均时间复杂度，但从严格意义上来讲，这种做法并不规范。因此遇到类似“平均时间复杂度 <span class="math inline">\(O(n)\)</span> ”的表述，直接理解为 <span class="math inline">\(\Theta(n)\)</span>。</p>
+</blockquote>
+<p>在选择算法时，时间复杂度并非越低越好，一方面是需要考虑其他的因素，例如空间复杂度、实现难度、可读性等，另一方面是时间复杂度低并非代表算法的运行时间就一定低（因为时间复杂度只考虑了最高阶的项，且忽略了常数项），例如 <span class="math inline">\(O(n^2)\)</span> 的算法在 <span class="math inline">\(n=10\)</span> 时运行时间可能比 <span class="math inline">\(O(n\log n)\)</span> 的算法还要短，但当 <span class="math inline">\(n\)</span> 增大时，<span class="math inline">\(O(n^2)\)</span> 的算法就会变得很慢。</p>
+<p>时间复杂度中的 <span class="math inline">\(O(\log n)\)</span> 不一定是以2为底的对数，这是因为 <span class="math inline">\(O(\log_i n) = O(\log_i j) \cdot O(\log_j n)\)</span>，而 <span class="math inline">\(\log_i j\)</span> 是一个常数，因此可以忽略不计。实际上，<span class="math inline">\(O(\log n)\)</span> 是忽略底数的表达方式。</p>
+<h3 id="空间复杂度">空间复杂度</h3>
+<p>空间复杂度是一个定性描述算法运行所需要的有关输入数据规模大小的存储空间的函数，这里的存储空间包括存储输入数据所需要的空间（input space）和存储算法运行所需要的空间（auxiliary space）。算法在运行过程中使用的内存空间主要包括以下几种：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/24089577/">C++ Primer 英文版（第 5 版） (豆瓣)</a> 非常细致的一本教材，建议第一次通读第一章到第十六章</li>
+<li>输入空间：用于存储算法的输入数据。</li>
+<li>暂存空间：用于存储算法在运行过程中的变量、对象、函数上下文等数据。</li>
+<li>输出空间：用于存储算法的输出数据。</li>
+</ul>
+<p>一般情况下，空间复杂度的统计范围是“暂存空间”加上“输出空间”。暂存空间可以进一步划分为三个部分：</p>
+<ul>
+<li>暂存数据：用于保存算法运行过程中产生的各种常量、变量、对象等。</li>
+<li>栈帧空间：用于保存调用函数的上下文数据。系统在每次调用函数时都会在栈顶部创建一个栈帧，函数返回后，栈帧空间会被释放。</li>
+<li>指令空间：用于保存编译后的程序指令，在实际统计中通常忽略不计。</li>
+</ul>
+<p>在分析一段程序的空间复杂度时，通常统计暂存数据、栈帧空间和输出数据三部分。和时间复杂度一样，空间复杂度也通常用渐近上界符号 <span class="math inline">\(O\)</span> 来表示，例如空间复杂度可以表示为 <span class="math inline">\(O(n)\)</span>、<span class="math inline">\(O(n^{\alpha})\)</span>、<span class="math inline">\(O(n \log n)\)</span>、<span class="math inline">\(O(2^n)\)</span> 等。空间复杂度是考虑程序运行时占用内存的大小，而不是可执行文件（程序）的大小。与时间复杂度不同的是，通常空间复杂度只关注最差空间复杂度，因为内存空间是一项硬性要求，必须确保在所有输入数据下都有足够的内存空间预留。</p>
+<h2 id="数据结构是什么">数据结构是什么</h2>
+<p>数据结构（<a target="_blank" rel="noopener" href="https://www.wikiwand.com/en/articles/Data_structure">Data Structure</a>）是组织和存储数据的方式，涵盖数据内容、数据之间关系和数据操作方法，它具有以下设计目标：</p>
+<ul>
+<li>空间占用尽量少，以节省计算机内存。</li>
+<li>数据操作尽可能快速，涵盖数据访问、添加、删除、修改等操作。</li>
+<li>提供简洁的数据表示和逻辑信息，以便算法高效运行。</li>
+</ul>
+<p>数据结构是计算机中组织和存储数据的方式，算法是在有限时间内解决特定问题的一组指令或操作步骤，算法与数据结构紧密相连，选择不同的数据结构会对同一个算法的性能产生很大的影响。</p>
+<h3 id="数据结构的分类">数据结构的分类</h3>
+<p>常见的数据结构包括数组、链表、栈、队列、哈希表、树、堆、图等，它们可以从“逻辑结构”和“物理结构”两个维度进行分类。</p>
+<ul>
+<li>逻辑结构：描述了数据元素之间的逻辑关系，逻辑结构可以分为“线性”和“非线性”两大类。
+<ul>
+<li>线性数据结构：数组、链表、栈、队列、哈希表，元素之间是一对一的顺序关系。</li>
+<li>非线性数据结构：树、堆、图、哈希表。非线性数据结构还可以进一步划分为树形结构和网状结构，树形结构的元素之间是一对多的关系，比如树、堆、哈希表，而网状结构的元素之间是多对多的关系，比如图。</li>
+</ul></li>
+<li>物理结构：反映了数据在计算机内存中的存储方式，可以分为连续空间存储（数组）和分散空间存储（链表）。物理结构从底层决定了数据的访问、更新、增删等操作方法，两种物理结构在时间效率和空间效率方面呈现出互补的特点。所有数据结构都是基于数组、链表或者二者的组合实现的</li>
+</ul>
+<blockquote>
+<p>链表在初始化后，仍可以在程序运行过程中对其长度进行调整，因此也称为“动态数据结构”。数组在初始化后长度不可变，因此也成为“静态数据结构”。</p>
+</blockquote>
+<h2 id="迭代和递归">迭代和递归</h2>
+<p>迭代（iteration）是一种重复执行某个任务的控制结构，在迭代中，程序会在满足一定的条件下重复执行某段代码，直到这个条件不再满足为止。迭代通常使用循环结构来实现，例如 <code>for</code>、<code>while</code> 等语句。</p>
+<p>递归（recursion）是一种通过函数调用自身来解决问题的算法策略。迭代代表了一种“自下而上”地解决问题的思考范式，而递归则代表了一种“自上而下”地解决问题的思考范式（将问题分解为更小子问题的分治策略）。递归通常需要一个基准条件（base case）来终止递归调用，否则会导致无限递归。</p>
+<p>递归函数每次调用自身时，系统都会为新开启的函数分配内存，以存储局部变量、调用地址和其他信息，这会导致两方面的结果：</p>
+<ul>
+<li>函数的上下文数据都被存储在被称为“栈帧空间”的内存区域中，直至函数被返回后才会被释放。因此，递归通常比迭代更加耗费内存空间。（在实际中，编程语言允许的递归深度通常是有限的，过深的递归可能导致栈溢出错误。）</li>
+<li>递归调用函数会产生额外的函数调用开销，例如参数传递、返回值处理等。因此递归通常比迭代的时间效率更低。</li>
+</ul>
+<p>可以通过使用一个显式的栈来模拟调用栈的行为，从而将递归转化为迭代，但是这样转化可能会降低代码的可读性，并且在某些复杂问题中，模拟系统调用栈的行为可能会非常复杂，因此一般不值得做这样的转化。</p>
+<h3 id="尾递归">尾递归</h3>
+<p>如果函数在返回前的最后一步才进行递归调用，则该函数可以被编译器或解释器优化为迭代调用，使其在空间效率上与迭代相当，这种递归称为尾递归（tail recursion）。但是许多编译器或解释器并不支持尾递归优化，例如，<code>Python</code> 默认不支持尾递归优化，因此即使函数是尾递归形式，仍然可能会遇到栈溢出问题。</p>
+<ul>
+<li>普通递归：当函数返回到上一层级的函数后，需要继续执行代码，因此系统需要保存上一层调用的上下文。</li>
+<li>尾递归：递归调用是函数返回前的最后一个操作，这意味着函数返回到上一层级后，无需继续执行其他操作，因此系统无需保存上一层函数的上下文。</li>
 </ul>
 
                 
@@ -377,7 +443,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/C/" class="category-chain-item">C++</a>
+  <a href="/categories/Algorithm/" class="category-chain-item">Algorithm</a>
   
   
 
@@ -392,7 +458,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/C/" class="print-no-link">#C++</a>
+        <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
+      
+        <a href="/tags/Data-Structures/" class="print-no-link">#Data Structures</a>
       
     </div>
   
@@ -404,8 +472,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>C++ - （零）学习路径及参考资料</div>
-      <div>https://chen-huaneng.github.io/2024/11/03/2024-11-03-2024-11-03-cpp/</div>
+      <div>Algorithm - 算法（一）算法和数据结构简介</div>
+      <div>https://chen-huaneng.github.io/2025/08/11/2025-08-11-2025-08-11-algo/</div>
     </div>
     <div class="license-meta">
       
@@ -417,7 +485,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年11月3日</div>
+          <div>2025年8月11日</div>
         </div>
       
       
@@ -466,9 +534,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/14/2024-11-14-2024-11-14-website/" title="Website - 有趣的网站合集">
+                      <a href="/2025/08/11/2025-08-11-2025-08-11-cpp-input-output/" title="C++ - （一）输入和输出">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Website - 有趣的网站合集</span>
+                        <span class="hidden-mobile">C++ - （一）输入和输出</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -476,8 +544,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/30/2024-10-30-2024-10-30-research/" title="Academic - 初入学术殿堂">
-                        <span class="hidden-mobile">Academic - 初入学术殿堂</span>
+                      <a href="/2025/08/07/2025-08-07-2025-08-07-webp/" title="Hexo - 使用WebP格式的图片加速Hexo网页访问速度">
+                        <span class="hidden-mobile">Hexo - 使用WebP格式的图片加速Hexo网页访问速度</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -553,6 +621,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -756,6 +830,50 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] },
+              tags: 'ams'
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
