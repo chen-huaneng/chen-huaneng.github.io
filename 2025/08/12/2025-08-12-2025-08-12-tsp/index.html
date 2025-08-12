@@ -21,23 +21,26 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="记录我的Zotero使用过程和一些资料存档。">
+    <meta name="description" content="给出了一些求解Traveling Salesman Problem的精确算法和启发式算法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Zotero - 学术文献管理神器">
-<meta property="og:url" content="https://chen-huaneng.github.io/2024/10/29/2024-10-29-2024-10-29-zotero/index.html">
+<meta property="og:title" content="TSP - 精确算法和启发式算法">
+<meta property="og:url" content="https://chen-huaneng.github.io/2025/08/12/2025-08-12-2025-08-12-tsp/index.html">
 <meta property="og:site_name" content="Abel">
-<meta property="og:description" content="记录我的Zotero使用过程和一些资料存档。">
+<meta property="og:description" content="给出了一些求解Traveling Salesman Problem的精确算法和启发式算法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-29T12:17:07.000Z">
-<meta property="article:modified_time" content="2025-08-07T14:28:40.182Z">
+<meta property="article:published_time" content="2025-08-12T01:39:29.000Z">
+<meta property="article:modified_time" content="2025-08-12T01:57:53.069Z">
 <meta property="article:author" content="Abel">
-<meta property="article:tag" content="Academic">
-<meta property="article:tag" content="Zotero">
+<meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="TSP">
+<meta property="article:tag" content="Heuristic">
+<meta property="article:tag" content="Concorde">
+<meta property="article:tag" content="LKH">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Zotero - 学术文献管理神器 ~ Abel</title>
+  <title>TSP - 精确算法和启发式算法 ~ Abel</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -269,7 +272,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Zotero - 学术文献管理神器</span>
+            <span id="subtitle">TSP - 精确算法和启发式算法</span>
           
         </div>
 
@@ -280,8 +283,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-29 20:17" pubdate>
-          2024年10月29日 晚上
+        <time datetime="2025-08-12 09:39" pubdate>
+          2025年8月12日 上午
         </time>
       </span>
     
@@ -337,12 +340,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Zotero - 学术文献管理神器</h1>
+            <h1 id="seo-header">TSP - 精确算法和启发式算法</h1>
             
               <p id="updated-time" class="note note-warning" style="">
                 
                   
-                    本文最后更新于：2025年8月7日 晚上
+                    本文最后更新于：2025年8月12日 上午
                   
                 
               </p>
@@ -350,64 +353,18 @@
             
               <div class="markdown-body">
                 
-                <h2 id="zotero-是什么">Zotero 是什么</h2>
-<p>简单来说，Zotero 就是一款免费、可拓展的 PDF （主要是学术文献）管理工具。更多的介绍在网上有很多，可以看看<a target="_blank" rel="noopener" href="https://www.zotero.org/">官网的介绍</a>。</p>
-<blockquote>
-<p>注意甄别网上的教程，因为 Zotero 更新到 Zotero 7 之后增加了很多功能和特性，有很多插件已经不再维护，很多教程也已经过期了。</p>
-</blockquote>
-<h2 id="如何安装">如何安装</h2>
-<p>使用 Scoop 安装只需要一行代码： <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scoop install extras/zotero<br></code></pre></td></tr></table></figure></p>
-<p>如果你不知道什么是 Scoop <a href="https://chen-huaneng.github.io/2024/01/04/2024-1-4-2024-01-04-Scoop/">请点我</a>。</p>
-<p>其他安装方法请自行搜索。</p>
-<h2 id="如何使用">如何使用</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&amp;mid=2650476690&amp;idx=2&amp;sn=a6fabd4a5f6a985fb07627a76024c697&amp;chksm=83d00d54b4a784426a54bfe2bfe3935d22ee2822b46b68573540024fdfac19f69ac5f81c1f36&amp;scene=178&amp;cur_album_id=1319074508795641857#rd">Web of Science 手动导出文献到 Zotero，简单又高效！ (qq.com)</a> - 自动导出出问题的时候参考</li>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&amp;mid=2650476977&amp;idx=1&amp;sn=9e9991fa02c8fc532e69d65b264136b6&amp;chksm=83d00c77b4a785614277926dc82e419d44bc443a50846725d13225fbd647e86161934af41a2e&amp;scene=178&amp;cur_album_id=1319074508795641857#rd">Zotero 7 重命名，如何将 “等” 改为 “et al.”？ (qq.com)</a> - 如题</li>
-</ul>
-<h3 id="如何移动文献而不是复制文献到另一个分类">如何移动文献而不是复制文献到另一个分类</h3>
-<p>把要移动的文献在按住 <code>Shift</code> 的情况下拖拽到相应的分类中。</p>
-<h2 id="插件介绍">插件介绍</h2>
-<blockquote>
-<p>提醒：切勿本末倒置，这一切都是为了更好地阅读文献而不是强行将一个软件加入你的工作流中，建议先从尝试使用 Zotero 开始，等遇到需求之后再去安装插件，而不是一开始就捣鼓插件。</p>
-</blockquote>
-<p><strong>比较推荐的社区</strong>：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.zotero.org/support/plugins">plugins | Zotero Documentation</a> - 官方的插件列表</li>
-<li><a target="_blank" rel="noopener" href="https://zotero-chinese.com/plugins/">Zotero 插件商店 | Zotero 中文社区 (zotero-chinese.com)</a> - 中文社区，但是非官方</li>
-</ul>
-<p><strong>第三方博客</strong>：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/630691757">Zotero！还有多少惊喜我不知道！ - 知乎 (zhihu.com)</a> - 可以参考插件推荐列表，注意是否支持最新版的 Zotero</li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/681536174">Zotero 7 使用入门教程：安装与配置 - 知乎 (zhihu.com)</a> - 整体还是比较清晰的，可以看看插件推荐</li>
-<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/402589277/answer/3196530555">有哪些好用的zotero插件? - 知乎 (zhihu.com)</a> - 根据插件列表查看是否需要即可，文章比较水</li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/647756683">Zotero安装教程+插件安装（获取SCI-Hub和知网数据）+坚果云同步配置 - 知乎 (zhihu.com)</a> - 同样是插件列表参考一下即可</li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/707668416">适配 Zotero 7，最新40个兼容插件合集（2024年7月8日更新） - 知乎 (zhihu.com)</a> - 快速浏览插件，按需自取部分即可</li>
-<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26857521/answer/2662236762">如何高效管理文献？ - 知乎 (zhihu.com)</a> - 毕导写的回答，很有趣，虽然可能有点过时了</li>
-</ul>
-<h3 id="我使用的插件介绍">我使用的插件介绍</h3>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.zotero.org/download/">Zotero | Your personal research assistant</a> - Edge 浏览器插件，官方开发，用来一键导入文献</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/windingwind/zotero-pdf-translate">windingwind/zotero-pdf-translate: Translate PDF, EPub, webpage, metadata, annotations, notes to the target language. Support 20+ translate services. (github.com)</a> - 翻译插件</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/syt2/zotero-scipdf">syt2/zotero-scipdf: Download PDF from Sci-Hub automatically For Zotero7 (github.com)</a> - 用来下载 PDF，向 Sci-hub 学术女神致敬</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/l0o0/jasminum">l0o0/jasminum: A Zotero add-on to retrive CNKI meta data. 一个简单的Zotero 插件，用于识别中文元数据 (github.com)</a> - 知名的茉莉花插件，用于支持中文文献元数据</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/ChenglongMa/zoplicate?tab=readme-ov-file#readme">ChenglongMa/zoplicate: A plugin that does one thing only: Detect and manage duplicate items in Zotero. (github.com)</a> - 管理（批量合并、删除、手动标记非重复）重复的条目</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/volatile-static/Chartero">volatile-static/Chartero: Chart in Zotero (github.com)</a> - 统计阅读时长、查看文献中的所有图片快速导航</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/MuiseDestiny/zotero-figure?tab=readme-ov-file#readme">MuiseDestiny/zotero-figure: 一个基于 PDFFigure2 的 PDF 图表解析插件 (github.com)</a> - 更好的图片体验（单击复制、双击独立窗口预览……）</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/windingwind/zotero-better-notes#readme">windingwind/zotero-better-notes: Everything about note management. All in Zotero. (github.com)</a> - 更好的笔记、笔记管理</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/MuiseDestiny/zotero-gpt?tab=readme-ov-file">MuiseDestiny/zotero-gpt: GPT Meet Zotero. (github.com)</a> - 结合GPT
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/chatanywhere/GPT_API_free?tab=readme-ov-file#免费使用">chatanywhere/GPT_API_free: Free ChatGPT API Key，免费ChatGPT API，支持GPT4 API（免费），ChatGPT国内可用免费转发API，直连无需代理。可以搭配ChatBox等软件/插件使用，极大降低接口使用成本。国内即可无限制畅快聊天。 (github.com)</a> - 免费 ChatGPT API</li>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV17N4y1o7vx/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">Zotero GPT - 使用教程，配置免费密钥！！！_哔哩哔哩_bilibili</a> - 视频教程</li>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1zBpUeDEzM/?vd_source=8f6ac8ba344f8ea3b071481f41e2ce0d">【Zotero7插件】Awesome GPT_哔哩哔哩_bilibili</a> - 视频教程</li>
-</ul></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/MuiseDestiny/zotero-reference#readme">MuiseDestiny/zotero-reference: PDF references add-on for Zotero. (github.com)</a> - 增强参考文献的查找</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/windingwind/zotero-actions-tags?tab=readme-ov-file">windingwind/zotero-actions-tags: Customize your Zotero workflow. (github.com)</a> - 标签管理</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/MuiseDestiny/zotero-style#readme">MuiseDestiny/zotero-style: Ethereal Style for Zotero (github.com)</a> - 显示文献的影响因子、分区、文献阅读时间、快速标签设置等等内容，上手难度稍大
-<ul>
-<li><a target="_blank" rel="noopener" href="https://zotero-chinese.github.io/user-guide/plugins/style.html">Ethereal Style for Zotero | Zotero 中文社区 (zotero-chinese.github.io)</a> - 比较好的参考文档</li>
-</ul></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/retorquere/zotero-better-bibtex?tab=readme-ov-file">retorquere/zotero-better-bibtex: Make Zotero effective for us LaTeX holdouts</a> - 更好地导出参考文献用于 <span class="math inline">\(\LaTeX\)</span></li>
-</ul>
+                <h2 id="精确算法">精确算法</h2>
+<p><a target="_blank" rel="noopener" href="https://www.math.uwaterloo.ca/tsp/concorde/index.html">Concorde</a> 是一个求解TSP的精确算法，由 <a target="_blank" rel="noopener" href="https://www.wikiwand.com/en/articles/ANSI_C">ANSI C</a> 编写。在 <a target="_blank" rel="noopener" href="https://www.math.uwaterloo.ca/tsp/concorde/downloads/downloads.htm">Concorde Downloads</a> 页面可以下载到最新版本的Concorde。下载后通过在命令行输入下面的命令进行解压，解压后会得到一个名为 <code>concorde</code> 的文件夹，编译的过程参考<a target="_blank" rel="noopener" href="https://www.freesion.com/article/5581560004/">Ubuntu（Linux）安装concorde过程</a>或者参考<a target="_blank" rel="noopener" href="https://github.com/perrygeo/pytsp/wiki/Installing-Solvers">Installing Solvers · perrygeo/pytsp Wiki</a>。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell">gunzip co031219.tgz<br>tar xvf co031219.tar<br></code></pre></td></tr></table></figure>
+<p>Concorde 需要 linear programming solver，常用的有 <a target="_blank" rel="noopener" href="https://www.math.uwaterloo.ca/~bico/qsopt/index.html">QSOpt</a> 和 IBM 的 <a href="%5BMathematical%20program%20solvers%20-%20IBM%20CPLEX%5D(https://www.ibm.com/products/ilog-cplex-optimization-studio/cplex-optimizer)">CPLEX</a>，由于 Concorde 自从2003年之后就没有更新过，因此当前 CPLEX 的版本已经不再合适，因此选用 QSOpt。QSOpt 的路径假设为 <code>path=/home/kaiyouhu/qsopt</code>，用下面的命令下载 QSOpt 的头文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> qsopt<br><span class="hljs-built_in">cd</span> qsopt<br>wget -O qsopt.a http://www.math.uwaterloo.ca/~bico/qsopt/beta/codes/PIC/qsopt.PIC.a <span class="hljs-comment"># WSL上的Ubuntu测试有效</span><br>wget http://www.math.uwaterloo.ca/~bico/qsopt/beta/codes/linux64/qsopt.h<br>wget http://www.math.uwaterloo.ca/~bico/qsopt/beta/codes/linux64/qsopt<br></code></pre></td></tr></table></figure>
+<p>然后在 <code>concorde</code> 文件夹下使用下面的命令编译 Concorde，编译完成后会在当前目录下生成一个名为 <code>TSP</code> 的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">CFLAGS=<span class="hljs-string">&quot;-fPIC -O2 -g&quot;</span> ./configure --with-qsopt=/home/kaiyouhu/qsopt <span class="hljs-comment"># 如果 QSOpt 的路径不同记得修改</span><br><span class="hljs-comment"># continue</span><br>make<br><span class="hljs-built_in">cd</span> TSP<br>./concorde -s 99 -k 100 <span class="hljs-comment"># -s 99 表示使用随机种子 99，-k 100 表示使用 100 个城市的 TSP 实例进行测试</span><br></code></pre></td></tr></table></figure>
+<p>在 Python 中使用 Concorde 可以参考 <a target="_blank" rel="noopener" href="https://github.com/jvkersch/pyconcorde">pyconcorde</a>，该项目是 Concorde 的 Python 接口，需要注意的是这个 Python 接口不支持 Windows 系统，但是支持 WSL，具体的安装细节<a target="_blank" rel="noopener" href="https://github.com/jvkersch/pyconcorde">参考文档说明</a>。</p>
+<h2 id="启发式算法">启发式算法</h2>
+<p><a target="_blank" rel="noopener" href="http://akira.ruc.dk/~keld/research/LKH/">LKH</a> 是解决 TSP 的 <a target="_blank" rel="noopener" href="https://www.wikiwand.com/en/articles/Lin%E2%80%93Kernighan_heuristic">Lin-Kernighan</a> 启发式算法的有效实现，基于ANSI C编写。在此之外，LKH 还有一个改进的 <a target="_blank" rel="noopener" href="http://akira.ruc.dk/~keld/research/LKH-3/">LKH-3</a> 版本，支持多种约束条件（Asymmetric capacitated vehicle routing problem, Multiple traveling salesmen problem, Sequential ordering problem…）的 TSP 求解。在 <a target="_blank" rel="noopener" href="http://akira.ruc.dk/~keld/research/LKH/">LKH</a> 页面可以下载到最新版本的 LKH 实现代码。下载后通过在命令行输入下面的命令进行解压，解压后会得到一个名为 <code>LKH-2.0.10</code> 的文件夹，然后在 Linux 或者 WSL 下输入命令 <code>make</code> 编译 LKH 代码，编译完成后会在当前目录下生成一个名为 <code>LKH</code> 的文件。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">tar xvfz LKH<span class="hljs-literal">-2</span>.<span class="hljs-number">0.10</span>.tgz<br><span class="hljs-built_in">cd</span> LKH<span class="hljs-literal">-2</span>.<span class="hljs-number">0.10</span><br>make<br></code></pre></td></tr></table></figure>
+<p>在 Python 中使用 LKH 可以参考 <a target="_blank" rel="noopener" href="https://github.com/ntnu-arl/LKH_TSP">LKH_TSP</a>，该项目是 LKH 的 Python 接口，需要注意的是这个 Python 接口不支持 Windows 系统，但是可以在 WSL 中运行。</p>
 
                 
               </div>
@@ -426,7 +383,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Academic/" class="category-chain-item">Academic</a>
+  <a href="/categories/TSP/" class="category-chain-item">TSP</a>
   
   
 
@@ -441,9 +398,15 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Academic/" class="print-no-link">#Academic</a>
+        <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
-        <a href="/tags/Zotero/" class="print-no-link">#Zotero</a>
+        <a href="/tags/TSP/" class="print-no-link">#TSP</a>
+      
+        <a href="/tags/Heuristic/" class="print-no-link">#Heuristic</a>
+      
+        <a href="/tags/Concorde/" class="print-no-link">#Concorde</a>
+      
+        <a href="/tags/LKH/" class="print-no-link">#LKH</a>
       
     </div>
   
@@ -455,8 +418,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Zotero - 学术文献管理神器</div>
-      <div>https://chen-huaneng.github.io/2024/10/29/2024-10-29-2024-10-29-zotero/</div>
+      <div>TSP - 精确算法和启发式算法</div>
+      <div>https://chen-huaneng.github.io/2025/08/12/2025-08-12-2025-08-12-tsp/</div>
     </div>
     <div class="license-meta">
       
@@ -468,13 +431,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月29日</div>
+          <div>2025年8月12日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月7日</div>
+          <div>2025年8月12日</div>
         </div>
       
       
@@ -517,9 +480,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/30/2024-10-30-2024-10-30-research/" title="Academic - 初入学术殿堂">
+                      <a href="/2025/08/12/2025-08-12-2025-08-12-amazon-delivery/" title="Dataset - Amazon最后一公里物流配送数据集">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Academic - 初入学术殿堂</span>
+                        <span class="hidden-mobile">Dataset - Amazon最后一公里物流配送数据集</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -527,8 +490,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/28/2024-10-28-2024-10-28-datamining/" title="Data Mining - 数据挖掘（一）简单入门">
-                        <span class="hidden-mobile">Data Mining - 数据挖掘（一）简单入门</span>
+                      <a href="/2025/08/11/2025-08-11-2025-08-11-cpp-variables-types/" title="C++ - （二）变量和类型">
+                        <span class="hidden-mobile">C++ - （二）变量和类型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -572,12 +535,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -781,50 +738,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] },
-              tags: 'ams'
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
