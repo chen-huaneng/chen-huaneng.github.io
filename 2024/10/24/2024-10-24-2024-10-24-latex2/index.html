@@ -29,7 +29,7 @@
 <meta property="og:description" content="记录一些使用 LaTeX 的技巧。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-24T07:15:12.000Z">
-<meta property="article:modified_time" content="2025-08-11T13:54:55.998Z">
+<meta property="article:modified_time" content="2025-08-14T09:19:58.206Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="LaTeX">
 <meta name="twitter:card" content="summary_large_image">
@@ -341,7 +341,7 @@
               <p id="updated-time" class="note note-warning" style="">
                 
                   
-                    本文最后更新于：2025年8月11日 晚上
+                    本文最后更新于：2025年8月14日 下午
                   
                 
               </p>
@@ -358,17 +358,11 @@
 <h2 id="宏包">宏包</h2>
 <h3 id="各种宏包的作用">各种宏包的作用</h3>
 <ul>
-<li>beamer: for presentations</li>
 <li>todonotes: comments and TODO management</li>
-<li>tikz: make amazing graphics</li>
-<li>pgfplots: create graphs in $$</li>
-<li>listings: source code printer for <span class="math inline">\(\LaTeX\)</span></li>
+<li>pgfplots: create graphs in <span class="math inline">\(\LaTeX\)</span></li>
 <li><a target="_blank" rel="noopener" href="https://www.ctan.org/pkg/spreadtab">spreadtab</a>: create spreadsheets in <span class="math inline">\(\LaTeX\)</span></li>
 <li>gchords, guitar: guitar chords and tabulature</li>
 <li>cwpuzzle: crossword puzzles</li>
-<li>geometry: 设置页面参数（页边距、页眉、页脚、纸张大小等）</li>
-<li>multicol: 在一个页面中分多栏</li>
-<li>fancyhdr: 改善页眉页脚样式的定义方式</li>
 <li><a target="_blank" rel="noopener" href="https://www.ams.org/arc/resources/amslatex-about.html">AMS-LaTeX</a>: 数学公式amsmath包
 <ul>
 <li><a target="_blank" rel="noopener" href="https://reformship.github.io/pages/1capacity/4writing/LaTeX公式.pdf">LaTeX公式.pdf (reformship.github.io)</a> - 中文版数学公式速查手册</li>
@@ -501,12 +495,42 @@ z = r\cdot e^{2\pi i}
 \Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
 \rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert
 \]</span></p>
+<p>当然可能经常遇到的是不知道需要多大的括号，这时候就可以使用自动高度的括号命令 <code>\left</code> 和 <code>\right</code>，但是它们必须配对使用，可以对比一下下面没有使用自动高度的括号。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex">f(x)=<span class="hljs-keyword">\ln</span><span class="hljs-keyword">\left</span>(1+<span class="hljs-keyword">\frac</span>&#123;1&#125;&#123;x&#125;<span class="hljs-keyword">\right</span>)<br>f(x)<span class="hljs-built_in">&amp;</span>=<span class="hljs-keyword">\ln</span>(1+<span class="hljs-keyword">\frac</span>&#123;1&#125;&#123;x&#125;)<br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\begin{align*}
+f(x)&amp;=\ln\left(1+\frac{1}{x}\right) \\
+f(x)&amp;=\ln(1+\frac{1}{x})
+\end{align*}
+\]</span></p>
+<p>如果只想要左边的可以把右边的命令变成 <code>\right.</code>，如果只想要右边的类似。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex">f(x) = <span class="hljs-keyword">\left</span><span class="hljs-keyword">\&#123;</span><span class="hljs-keyword">\begin</span>&#123;align*&#125; 1, <span class="hljs-built_in">&amp;</span> x &lt; 0<span class="hljs-keyword">\\</span> x, <span class="hljs-built_in">&amp;</span> x <span class="hljs-keyword">\geq</span> 0 <span class="hljs-keyword">\end</span>&#123;align*&#125; <span class="hljs-keyword">\right</span>.<br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+f(x) = \left\{\begin{align*} 1, &amp; x &lt; 0\\ x, &amp; x \geq 0 \end{align*} \right.
+\]</span></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\int</span><span class="hljs-built_in">_</span>&#123;a&#125;<span class="hljs-built_in">^</span>&#123;b&#125;&#123;<span class="hljs-keyword">\frac</span>&#123;f&#x27;(x)&#125;&#123;g(x)&#125;<span class="hljs-keyword">\ </span><span class="hljs-keyword">\mathrm</span>&#123;d&#125;x&#125;=<br><span class="hljs-keyword">\left</span>.<span class="hljs-keyword">\frac</span>&#123;f(x)&#125;&#123;g(x)&#125;<span class="hljs-keyword">\ </span><span class="hljs-keyword">\right</span>|<span class="hljs-built_in">_</span>a<span class="hljs-built_in">^</span>b+<br><span class="hljs-keyword">\int</span><span class="hljs-built_in">_</span>&#123;a&#125;<span class="hljs-built_in">^</span>&#123;b&#125;<span class="hljs-keyword">\frac</span>&#123;f(x)g&#x27;(x)&#125;&#123;g<span class="hljs-built_in">^</span>2(x)&#125;<span class="hljs-keyword">\mathrm</span>&#123;d&#125;x<span class="hljs-keyword">\\</span><br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\int_{a}^{b}{\frac{f&#39;(x)}{g(x)}\ \mathrm{d}x}=
+\left.\frac{f(x)}{g(x)}\ \right|_a^b+
+\int_{a}^{b}\frac{f(x)g&#39;(x)}{g^2(x)}\mathrm{d}x\\
+\]</span></p>
 <h3 id="省略号">省略号</h3>
 <p>略号用 <code>\dots</code>, <code>\cdots</code>, <code>\vdots</code>, <code>\ddots</code> 等命令表示。<code>\dots</code> 和 <code>\cdots</code> 的纵向位置不同，前者一般用于有下标的序列。</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\[</span> x<span class="hljs-built_in">_</span>1,x<span class="hljs-built_in">_</span>2,<span class="hljs-keyword">\dots</span> ,x<span class="hljs-built_in">_</span>n<span class="hljs-keyword">\quad</span> 1,2,<span class="hljs-keyword">\cdots</span> ,n<span class="hljs-keyword">\quad</span><br><span class="hljs-keyword">\vdots</span><span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\ddots</span> <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
 <p>效果展示： <span class="math display">\[
 x_1,x_2,\dots ,x_n\quad 1,2,\cdots ,n\quad
 \vdots\quad \ddots
+\]</span></p>
+<h3 id="空格-1">空格</h3>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs latex">A<span class="hljs-keyword">\,</span>B<br>A<span class="hljs-keyword">\ </span>B<br>A<span class="hljs-keyword">\space</span> B<br>A<span class="hljs-keyword">\quad</span> B<br>A<span class="hljs-keyword">\qquad</span> B<br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\begin{align*}
+&amp;A\,B \\
+&amp;A\ B \\
+&amp;A\space B \\
+&amp;A\quad B \\
+&amp;A\qquad B \\
+\end{align*}
 \]</span></p>
 <h3 id="矩阵">矩阵</h3>
 <p><code>amsmath</code> 的 <code>pmatrix</code>, <code>bmatrix</code>, <code>Bmatrix</code>, <code>vmatrix</code>, <code>Vmatrix</code> 等环境可以在矩阵两边加上各种分隔符。</p>
@@ -581,6 +605,31 @@ x,\quad x&gt;0
 <p><span class="math display">\[
 \overbrace{a+b+c}^A = \underbrace{a-b-c}_B
 \]</span></p>
+<p>如果遇到无法对齐的情况，可以通过 <code>\vphantom&#123;&#125;</code> 来增加一个虚拟高度对齐。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs latex">J[y]=<br><span class="hljs-keyword">\int</span><span class="hljs-built_in">_</span>0<span class="hljs-built_in">^</span>r<br><span class="hljs-keyword">\underbrace</span>&#123;<span class="hljs-keyword">\vphantom</span>&#123;<span class="hljs-keyword">\Bigg</span>|&#125;<span class="hljs-keyword">\pi</span><br>    x<span class="hljs-keyword">\left</span>[<span class="hljs-keyword">\\</span>rho gh<span class="hljs-built_in">^</span>2+2<span class="hljs-keyword">\sigma</span><span class="hljs-keyword">\sqrt</span>&#123;1+<span class="hljs-keyword">\dot</span> y<span class="hljs-built_in">^</span>2&#125;<span class="hljs-keyword">\right</span>]<br>&#125;<span class="hljs-built_in">_</span>&#123;F(<span class="hljs-keyword">\dot</span> y,y;x)&#125;<span class="hljs-keyword">\mathrm</span>&#123;d&#125;x<br>+<br><span class="hljs-keyword">\underbrace</span><br>&#123;<br>    <span class="hljs-keyword">\vphantom</span>&#123;<span class="hljs-keyword">\Bigg</span>|&#125;2<span class="hljs-keyword">\pi</span> r<span class="hljs-keyword">\Delta</span><span class="hljs-keyword">\sigma</span> l<br>&#125;<span class="hljs-built_in">_</span>&#123;<span class="hljs-keyword">\phi</span>(l;r)&#125;<br></code></pre></td></tr></table></figure>
+<p>无法对齐的情况： <span class="math display">\[
+J[y]=
+\int_0^r
+\underbrace{\pi
+    x\left[\\rho gh^2+2\sigma\sqrt{1+\dot y^2}\right]
+}_{F(\dot y,y;x)}\mathrm{d}x
++
+\underbrace
+{
+    2\pi r\Delta\sigma l
+}_{\phi(l;r)}
+\]</span> 加了虚拟高度对齐之后，这里加了一个 <code>\Bigg|</code> 的高度： <span class="math display">\[
+J[y]=
+\int_0^r
+\underbrace{\vphantom{\Bigg|}\pi
+    x\left[\\rho gh^2+2\sigma\sqrt{1+\dot y^2}\right]
+}_{F(\dot y,y;x)}\mathrm{d}x
++
+\underbrace
+{
+    \vphantom{\Bigg|}2\pi r\Delta\sigma l
+}_{\phi(l;r)}
+\]</span></p>
 <h3 id="上下划线">上下划线</h3>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\overline</span> &#123;z<span class="hljs-built_in">_</span>&#123;1&#125;+z<span class="hljs-built_in">_</span>&#123;2&#125;&#125; = <span class="hljs-keyword">\overline</span> &#123;z<span class="hljs-built_in">_</span>&#123;1&#125;&#125;+<span class="hljs-keyword">\overline</span> &#123;z<span class="hljs-built_in">_</span>&#123;2&#125;&#125;<br></code></pre></td></tr></table></figure>
 <p><span class="math display">\[
@@ -594,6 +643,26 @@ x,\quad x&gt;0
 \iint \limits_{\Omega}x^2\mathrm{d}x \\
 \iiint \limits_{V} x^3\mathrm{d} x
 \end{align*}
+\]</span></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\underset</span>&#123;x<span class="hljs-built_in">^</span>2+y<span class="hljs-built_in">^</span>2<span class="hljs-keyword">\le</span>1&#125;&#123;<span class="hljs-keyword">\iint</span>&#125;e<span class="hljs-built_in">^</span>x<span class="hljs-keyword">\cos</span> y<span class="hljs-keyword">\,</span><span class="hljs-keyword">\mathrm</span>&#123;d&#125;x<span class="hljs-keyword">\mathrm</span>&#123;d&#125;y=<br><span class="hljs-keyword">\underset</span>&#123;x<span class="hljs-built_in">^</span>2+y<span class="hljs-built_in">^</span>2=1&#125;&#123;<span class="hljs-keyword">\oint</span>&#125;e<span class="hljs-built_in">^</span>x<span class="hljs-keyword">\cos</span> y<span class="hljs-keyword">\,</span><span class="hljs-keyword">\mathrm</span>&#123;d&#125;y=<br><span class="hljs-keyword">\pi</span><br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\underset{x^2+y^2\le1}{\iint}e^x\cos y\,\mathrm{d}x\mathrm{d}y=
+\underset{x^2+y^2=1}{\oint}e^x\cos y\,\mathrm{d}y=
+\pi
+\]</span></p>
+<h3 id="符号名">符号名</h3>
+<p>如果遇到在 <span class="math inline">\(\LaTeX\)</span> 中尚未存在的数学名称，比如反双曲正切，可以用 <code>\operatorname</code> 为该函数名创造正体形式：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\operatorname</span>&#123;arctanh&#125;x<br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\operatorname{arctanh}x
+\]</span></p>
+<blockquote>
+<p>这样会在 <code>x</code> 之前自动添加 1 像素的间距。</p>
+</blockquote>
+<p>当然还有 <code>\mathop</code> 命令可以将数学符号定义为大型运算符，使其支持 <code>\limits</code> 控制上下标位置。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\mathop</span>&#123;<span class="hljs-keyword">\star</span>&#125;<span class="hljs-keyword">\limits</span><span class="hljs-built_in">_</span>&#123;i=1&#125;<span class="hljs-built_in">^</span>&#123;n&#125; x<span class="hljs-built_in">_</span>i  <span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\text</span>&#123;vs&#125; <span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\star</span><span class="hljs-built_in">_</span>&#123;i=1&#125;<span class="hljs-built_in">^</span>&#123;n&#125; x<span class="hljs-built_in">_</span>i<br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\mathop{\star}\limits_{i=1}^{n} x_i  \quad \text{vs} \quad \star_{i=1}^{n} x_i
 \]</span></p>
 <h2 id="faq">FAQ</h2>
 <p><strong>book, report 和 article 有什么区别</strong>：<a target="_blank" rel="noopener" href="https://tex.stackexchange.com/questions/36988/regarding-the-book-report-and-article-document-classes-what-are-the-mai">koma script - Regarding the <code>book</code>, <code>report</code>, and <code>article</code> document classes: what are the main differences? - TeX - LaTeX Stack Exchange</a></p>
@@ -661,7 +730,7 @@ x,\quad x&gt;0
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月11日</div>
+          <div>2025年8月14日</div>
         </div>
       
       
