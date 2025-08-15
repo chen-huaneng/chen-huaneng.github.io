@@ -29,7 +29,7 @@
 <meta property="og:description" content="记录一些使用 LaTeX 的技巧。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-24T07:15:12.000Z">
-<meta property="article:modified_time" content="2025-08-14T09:19:58.206Z">
+<meta property="article:modified_time" content="2025-08-15T00:45:06.521Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="LaTeX">
 <meta name="twitter:card" content="summary_large_image">
@@ -341,7 +341,7 @@
               <p id="updated-time" class="note note-warning" style="">
                 
                   
-                    本文最后更新于：2025年8月14日 下午
+                    本文最后更新于：2025年8月15日 早上
                   
                 
               </p>
@@ -514,6 +514,39 @@ f(x) = \left\{\begin{align*} 1, &amp; x &lt; 0\\ x, &amp; x \geq 0 \end{align*} 
 \left.\frac{f(x)}{g(x)}\ \right|_a^b+
 \int_{a}^{b}\frac{f(x)g&#39;(x)}{g^2(x)}\mathrm{d}x\\
 \]</span></p>
+<h4 id="分隔符"><span class="math inline">\(|\)</span> 分隔符</h4>
+<p>由于符号 <code>|</code> 经常用在不同的地方，导致出现各种滥用，在 <span class="math inline">\(\LaTeX\)</span> 中，<code>\mid</code> 符号主要用于表示“给定”或“在…条件下”，尤其在数学表达式中作为分隔符使用，它和直接输入的竖线 <code>|</code> 有显著区别，主要体现在间距的处理上。</p>
+<p><code>\mid</code> 可以用于集合定义与条件概率：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\&#123;</span> x <span class="hljs-keyword">\in</span> <span class="hljs-keyword">\mathbb</span>&#123;R&#125;<span class="hljs-keyword">\mid</span> x &gt; 0<span class="hljs-keyword">\&#125;</span> <span class="hljs-comment">% 表示实数集中大于 0 的元素</span><br>P(A <span class="hljs-keyword">\mid</span> B) <span class="hljs-comment">% 表示事件 B 发生的条件下，事件 A 的概率</span><br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\{ x \in \mathbb{R}\mid x &gt; 0\} % 表示实数集中大于 0 的元素
+\]</span></p>
+<p><span class="math display">\[
+P(A \mid B) % 表示事件 B 发生的条件下，事件 A 的概率
+\]</span></p>
+<p><code>\mid</code> 会在两侧的符号中间适当添加空格，而直接输入 <code>|</code> 会没有额外空格，导致拥挤：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\&#123;</span>x <span class="hljs-keyword">\mid</span> x &gt; 0<span class="hljs-keyword">\&#125;</span><br><span class="hljs-keyword">\&#123;</span>x | x &gt; 0<span class="hljs-keyword">\&#125;</span><br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\begin{align*}
+\{x \mid x &gt; 0\} \\
+\{x | x &gt; 0\}
+\end{align*}
+\]</span></p>
+<blockquote>
+<p>在集合定义中的冒号则一般使用 <code>\colon</code>，比直接使用 <code>:</code> 间距更优：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\&#123;</span> x : x &gt; 0 <span class="hljs-keyword">\&#125;</span>  <span class="hljs-comment">% 普通冒号</span><br><span class="hljs-keyword">\&#123;</span> x <span class="hljs-keyword">\colon</span> x &gt; 0 <span class="hljs-keyword">\&#125;</span>  <span class="hljs-comment">% 更佳间距</span><br></code></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\begin{align*}
+\{ x : x &gt; 0 \} \\  % 普通冒号
+\{ x \colon x &gt; 0 \}  % 更佳间距
+\end{align*}
+\]</span></p>
+</blockquote>
+<p>绝对值则一般使用 <code>\lvert</code> 和 <code>\rvert</code>，范数则使用 <code>\lVert</code> 和 <code>\rVert</code>，在需要使用竖线作为关系符号（如表示 ”<span class="math inline">\(a\)</span> 整除 <span class="math inline">\(b\)</span>“）时，应该使用 <code>\mathrel&#123;|&#125;</code>。</p>
+<blockquote>
+<p>关于 <code>\mathrel&#123;&#125;</code> 和 <code>\mathbin</code> 之间的关系可以参考这个回答：<a target="_blank" rel="noopener" href="https://tex.stackexchange.com/questions/38982/what-is-the-difference-between-mathbin-vs-mathrel">math mode - What is the difference between vs. ?</a></p>
+<p>顾名思义，<code>\mathbin</code> 用于调整周围间距以符合二元运算符的规范（binary operator），而 <code>\mathrel</code> 则修改间距以表示二元关系（binary relation）。</p>
+</blockquote>
 <h3 id="省略号">省略号</h3>
 <p>略号用 <code>\dots</code>, <code>\cdots</code>, <code>\vdots</code>, <code>\ddots</code> 等命令表示。<code>\dots</code> 和 <code>\cdots</code> 的纵向位置不同，前者一般用于有下标的序列。</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\[</span> x<span class="hljs-built_in">_</span>1,x<span class="hljs-built_in">_</span>2,<span class="hljs-keyword">\dots</span> ,x<span class="hljs-built_in">_</span>n<span class="hljs-keyword">\quad</span> 1,2,<span class="hljs-keyword">\cdots</span> ,n<span class="hljs-keyword">\quad</span><br><span class="hljs-keyword">\vdots</span><span class="hljs-keyword">\quad</span> <span class="hljs-keyword">\ddots</span> <span class="hljs-keyword">\]</span><br></code></pre></td></tr></table></figure>
@@ -730,7 +763,7 @@ J[y]=
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月14日</div>
+          <div>2025年8月15日</div>
         </div>
       
       
