@@ -685,9 +685,9 @@
     
     <tags>
       
-      <tag>Academic</tag>
-      
       <tag>Zotero</tag>
+      
+      <tag>Academic</tag>
       
     </tags>
     
@@ -1335,22 +1335,22 @@
   
   
   <entry>
-    <title></title>
+    <title>about</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<p><img src="/imgs/about/banner.webp" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『梦想是去世界各地旅行！』</span></p><h2 id="关于我">关于我</h2><p>南方某高校硕士研究生在读，对机器学习（Machine Learning）和运筹优化（Operations Research）等方向感兴趣，学术合作请通过<a href="mailto:huanengchen@foxmail.com">我的邮箱</a>联系。在学术工作外，对计算机科学（Computer Science）和数学（Mathematics）的诸多领域同样有浓厚的兴趣，可以通过邮件与我交流。</p><p>喜欢设计简洁、优雅、轻便小巧的东西（比如：Logitech MX Anywhere 3 和 Vim/Neovim）。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、孙燕姿、蔡宥绮、Adele的歌，喜欢的曲风就比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……</p><p><img src="/imgs/about/gloria.webp" /></p><h2 id="关于我的更多信息">关于我的更多信息</h2><ul><li>看过的动漫：<a href="https://chen-huaneng.github.io/2024/01/02/2024-01-02-2024-01-02-Anime-I-Watched/">Anime - 记录我看过的一些动漫</a></li><li>读过的书：<a href="https://chen-huaneng.github.io/2024/01/13/2024-01-13-2024-01-13-Books-I-Readed/">Books - 记录我读过的一些书</a></li><li>其他看过的影视作品及书籍：<a href="https://www.douban.com/people/204214644/">豆瓣 - 大豆</a></li></ul><h2 id="正在做计划做的事">正在做/计划做的事</h2><ul><li><strong>和🦆🦆的友谊天长地久</strong></li><li>刷算法题，请看 <a href="https://leetcode.cn/u/abel_chen/">LeetCode</a> 进度</li><li>参与开源项目，详情见 <a href="https://github.com/chen-huaneng">GitHub</a> 仓库</li><li>持续更新<a href="https://chen-huaneng.github.io/">博客</a>和<a href="https://www.zhihu.com/people/yun-tun-5-10">知乎</a></li><li>读文献，完成毕业论文</li><li>学习C++、机器学习和运筹学</li><li>旅游，请看<a href="https://chen-huaneng.github.io/image/">时光胶囊</a></li><li>完成一次马拉松</li><li>实习</li><li>……</li></ul><h2 id="未完待续">未完待续……</h2><p>如果你对如何搭建这个博客感兴趣，可以看看我写的这篇<a href="https://chen-huaneng.github.io/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/">简短的介绍</a>，如果对学术主页的搭建感兴趣，可以看看这篇关于<a href="https://chen-huaneng.github.io/2025/07/29/2025-07-29-2025-07-29-academic/">搭建学术主页</a>的说明。</p><p><img src="/imgs/about/continue.webp" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;"> 『💓对感兴趣的东西会继续探索的😉！<bf>所以要持续关注我的博客鸭🦆！</bf>』 </span></p><hr /><p align="center">Updated on August 11, 2025 at 9:36</p>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>about</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<p><img src="/imgs/about/banner.webp" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;">『梦想是去世界各地旅行！』</span></p><h2 id="关于我">关于我</h2><p>南方某高校硕士研究生在读，对机器学习（Machine Learning）和运筹优化（Operations Research）等方向感兴趣，学术合作请通过<a href="mailto:huanengchen@foxmail.com">我的邮箱</a>联系。在学术工作外，对计算机科学（Computer Science）和数学（Mathematics）的诸多领域同样有浓厚的兴趣，可以通过邮件与我交流。</p><p>喜欢设计简洁、优雅、轻便小巧的东西（比如：Logitech MX Anywhere 3 和 Vim/Neovim）。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、孙燕姿、蔡宥绮、Adele的歌，喜欢的曲风就比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……</p><p><img src="/imgs/about/gloria.webp" /></p><h2 id="关于我的更多信息">关于我的更多信息</h2><ul><li>看过的动漫：<a href="https://chen-huaneng.github.io/2024/01/02/2024-01-02-2024-01-02-Anime-I-Watched/">Anime - 记录我看过的一些动漫</a></li><li>读过的书：<a href="https://chen-huaneng.github.io/2024/01/13/2024-01-13-2024-01-13-Books-I-Readed/">Books - 记录我读过的一些书</a></li><li>其他看过的影视作品及书籍：<a href="https://www.douban.com/people/204214644/">豆瓣 - 大豆</a></li></ul><h2 id="正在做计划做的事">正在做/计划做的事</h2><ul><li><strong>和🦆🦆的友谊天长地久</strong></li><li>刷算法题，请看 <a href="https://leetcode.cn/u/abel_chen/">LeetCode</a> 进度</li><li>参与开源项目，详情见 <a href="https://github.com/chen-huaneng">GitHub</a> 仓库</li><li>持续更新<a href="https://chen-huaneng.github.io/">博客</a>和<a href="https://www.zhihu.com/people/yun-tun-5-10">知乎</a></li><li>读文献，完成毕业论文</li><li>学习C++、机器学习和运筹学</li><li>旅游，请看<a href="https://chen-huaneng.github.io/image/">时光胶囊</a></li><li>完成一次马拉松</li><li>实习</li><li>……</li></ul><h2 id="未完待续">未完待续……</h2><p>如果你对如何搭建这个博客感兴趣，可以看看我写的这篇<a href="https://chen-huaneng.github.io/2023/12/02/2023-12-2-2023-12-03-how-to-write-blog/">简短的介绍</a>，如果对学术主页的搭建感兴趣，可以看看这篇关于<a href="https://chen-huaneng.github.io/2025/07/29/2025-07-29-2025-07-29-academic/">搭建学术主页</a>的说明。</p><p><img src="/imgs/about/continue.webp" /></p><p align="center"><span style="background: linear-gradient(to right, #ffffff, #c0c0c0); padding: 5px; border-radius: 5px; color: #000000;"> 『💓对感兴趣的东西会继续探索的😉！<bf>所以要持续关注我的博客鸭🦆！</bf>』 </span></p><hr /><p align="center">Updated on August 11, 2025 at 9:36</p>]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
