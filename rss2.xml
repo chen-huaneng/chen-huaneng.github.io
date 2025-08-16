@@ -9,8 +9,33 @@
     <atom:link href="https://chen-huaneng.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Abel的Blog，专注于算法题解、技术文章和生活感悟。探索编程世界，记录技术成长，分享个人见解。在这里，发现编程之美，体验技术的乐趣，共同成长的点滴。 Abel&#39;s Blog focuses on algorithm problem-solving, technical articles, and reflections on life. Explore the beauty of programming, document technical growth, and share personal insights.</description>
-    <pubDate>Sat, 16 Aug 2025 02:24:59 GMT</pubDate>
+    <pubDate>Sat, 16 Aug 2025 05:14:25 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Math - 样本方差（sample variance）的分母为什么是 n - 1</title>
+      <link>https://chen-huaneng.github.io/2025/08/16/2025-08-16-2025-08-16-sample-variance/</link>
+      <guid>https://chen-huaneng.github.io/2025/08/16/2025-08-16-2025-08-16-sample-variance/</guid>
+      <pubDate>Sat, 16 Aug 2025 02:34:36 GMT</pubDate>
+      
+      <description>解答了为什么样本方差（sample variance）的分母是n-1这个问题。</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>按照定义，方差的 estimator 应该是： <span class="math display">\[\begin{equation}S^2 = \frac{1}{n}\sum_{i = 1}^n\left(X_i - \overline{X}\right)^2 \label{eq:sample-variance}\end{equation}\]</span> 但是这个 estimator 有 bias，因为： <span class="math display">\[\begin{align*}E(S^2) &amp;= \frac{1}{n}\sum_{i = 1}^nE\left[\left(X_i - \overline{X}\right)^2\right] \\&amp;= \frac{1}{n}E\left[\sum_{i = 1}^n\left(X_i - \mu + \mu - \overline{X}\right)^2\right]\\&amp;= \frac{1}{n}E\left[\sum_{i = 1}^n\left(X_i - \mu\right)^2  - n \left(\overline{X} - \mu \right)^2\right] \\&amp;= \frac{1}{n} \left[\sum_{i = 1}^nE\left(\left(X_i - \mu\right)^2\right) - nE\left(\left(\overline{X} - \mu\right)^2\right)\right] \\&amp;= \frac{1}{n}\left[n\operatorname{Var}(X) - n\operatorname{Var}(\overline{X})\right] \\&amp;= \operatorname{Var}(X) - \operatorname{Var}(\overline{X}) \\&amp;= \sigma^2 - \frac{\sigma^2}{n} = \frac{n - 1}{n}\sigma^2\end{align*}\]</span></p><blockquote><p>关于 <span class="math inline">\(\operatorname{Var}(\overline{X}) = \frac{\sigma^2}{n}\)</span> 的证明参考：<a href="https://math.stackexchange.com/questions/1363505/prove-that-e-overlinex-mu2-frac1n-sigma2">Prove that <span class="math inline">\(E (\overline{X} - \mu)^2 = \frac{1}{n}\sigma^2\)</span></a></p></blockquote><p>因此为了避免使用有 bias 的 estimator，通常使用它的修正值： <span class="math display">\[S^2 = \frac{1}{n - 1}\sum_{i = 1}^n\left(X_i - \overline{X}\right)^2\]</span> 这个时候就引出了问题，为什么分母是 <span class="math inline">\(n - 1\)</span> 而不是 <span class="math inline">\(n - 2\)</span> 或者 <span class="math inline">\(n - 3\)</span> 之类的，又或者为什么一定要进行这个修正呢，不进行修正会造成什么后果。接下来我们就对这些问题进行分析。</p><p>正常情况下，如果已知随机变量 <span class="math inline">\(X\)</span> 的期望为 <span class="math inline">\(\mu\)</span>，那么可以按照下面这个公式计算方差 <span class="math inline">\(\sigma^2\)</span>： <span class="math display">\[\sigma^2 = E\left[\left(X - \mu\right)^2\right]\]</span> 但是在现实应用中往往不知道准确分布，也就无法得知 <span class="math inline">\(X\)</span> 的具体分布是什么，计算起来也很复杂，因此在实践中经常采样之后，用下面的 <span class="math inline">\(S^2\)</span> 来近似 <span class="math inline">\(\sigma^2\)</span>： <span class="math display">\[S^2 = \frac{1}{n}\sum_{i = 1}^n\left(X_i - \mu\right)^2\]</span> 但是在现实中，往往连 <span class="math inline">\(X\)</span> 的期望 <span class="math inline">\(\mu\)</span> 也不清楚，只知道样本的均值： <span class="math display">\[\overline{X} = \frac{1}{n}\sum_{i = 1}^nX_i\]</span> 那么就会按照公式 <span class="math inline">\(\eqref{eq:sample-variance}\)</span> 来计算 <span class="math inline">\(S^2\)</span>，其中 <span class="math inline">\(n - 1\)</span> 是为了对自由度进行校正，这叫做贝塞尔校正（<a href="https://www.wikiwand.com/en/articles/Bessel&#39;s_correction">Bessel's correction</a>），为什么是减掉 <span class="math inline">\(1\)</span>，这是因为当我们计算出样本均值 <span class="math inline">\(\overline{X}\)</span> 后，当我们再用公式 <span class="math inline">\(\eqref{eq:sample-variance}\)</span> 计算样本方差的时候，我们只需要知道样本中任意 <span class="math inline">\(n - 1\)</span> 个值（比如 <span class="math inline">\(X_1, X_2, \dots,X_{n -1}\)</span>），我们就可以通过样本均值 <span class="math inline">\(\overline{X}\)</span> 和这 <span class="math inline">\(n - 1\)</span> 个值来计算得到剩下的那个值（比如这里是 <span class="math inline">\(X_n\)</span>）。也就是说，当我们用样本均值 <span class="math inline">\(\overline{X}\)</span> 来代替总体的期望 <span class="math inline">\(\mu\)</span> 用于计算样本方差的时候，样本中就只剩下 <span class="math inline">\(n - 1\)</span> 个独立不互相依赖的值（也就是所谓的“自由度”，Degrees of freedom），因为另外一个值可以通过样本均值 <span class="math inline">\(\overline{X}\)</span> 和那 <span class="math inline">\(n - 1\)</span> 个样本值通过计算得到。</p><p>自由度的意义就是要求这些变量（样本）之间是相互独立，互不干扰的。比如说多个专家在对一个项目的可行性进行评估的时候，如果刚好有一个专家是另外两个专家的上级，那么这两个专家难免会受到上级的影响（利益相关）从而做出的判断就不是独立于那个上级专家的判断，这样就造成了两个专家的“自由度”的丧失，从而导致最终结果出现偏差。</p><p>这也是为什么在统计实践中，需要通过减少偏差来提高数据的可信性，通过竭力避免样本数据之间各种各样的隐含的关联关系（比如样本均值 <span class="math inline">\(\overline{X}\)</span> 和 <span class="math inline">\(n\)</span> 个样本之间的关系 <span class="math inline">\(\overline{X} = \frac{1}{n}\sum_{i = 1}^nX_i\)</span>）提高数据之间的独立性就是这样一种提高数据可信性的方法之一。而解决的策略也十分清晰，就是发现其中的隐含关系，然后通过校正来避免 bias。</p><p>那么自由度变小会对样本方差产生什么样的影响呢，答案是样本方差会变小。</p><p>我们知道，方差是通过计算样本和均值之间的距离来描述样本的分散程度，数据之间差异越大，方差越大，数据之间越是趋同，方差越小。在样本方差中，因为样本均值 <span class="math inline">\(\overline{X}\)</span> 就是根据样本来计算的，让原本独立、随机的、没有偏差的样本数据，在计算加工过程中引入了偏差，减少了数据之间的差异性，这种趋同效应使得样本方差 <span class="math inline">\(S^2\)</span> 变小了。</p><p>所以样本方差 <span class="math inline">\(S^2\)</span> 公式里分母的 <span class="math inline">\(n - 1\)</span> 减去的 <span class="math inline">\(1\)</span> 是为了校正样本均值 <span class="math inline">\(\overline{X}\)</span> 的引入所带来的偏差，它不是代表某一个样本，而是对自由度的补偿，让缩小的样本方差重新变大一点。这也是在推导过程中最终得到 <span class="math inline">\(\frac{n - 1}{n}\sigma^2\)</span> 的一个直观理解。</p><p>样本方差偏小是不是采样出现问题？因为越接近平均值，就越容易被采样？从直觉上来说好像是这样的，比如下面的这个鱼类长度的分布，数据聚集在平均值 <span class="math inline">\(106\)</span> （蓝线）附近，如果在这个群体中采样，在平均值周围的确有更大的概率被采样到。</p><p><img src="./fish.webp" /></p><p>但是，直觉是靠不住的，因为上面的分布只是现实世界复杂多样的分布中的一种，还有很多的分布，其数据不在平均值附近，而是分散在四处。例如，下面这个西班牙流感死亡年龄的分布：</p><p><img src="./flu.webp" /></p><p>数据并没有聚集在平均值 <span class="math inline">\(43\)</span> 附近，如果采样，就会发现样本更大的概率是远离平均值，而不是在平均值附近。所以样本方差出现偏小的原因，并不是平均值附近被采样到的概率更大，这只是在部分情况下成立，在很多情况下并不成立。</p><p>总结一下，样本方差出现偏差的原因和采样无关，也和平均值附近更容易被采样无关，更好的解释是，计算过程中引入的样本平均值降低了样本的自由度，减少了数据的差异性，而我们通过贝塞尔校正使样本方差的分母为 <span class="math inline">\(n - 1\)</span> 来弥补丢失的样本自由度，从而使得样本方差是无偏的（unbiased）。</p><h2 id="参考资料">参考资料</h2><ul><li><a href="https://www.zhihu.com/question/20099757/answer/658048814">为什么样本方差（sample variance）的分母是 n-1？</a> 一个很好的回答，用多个例子通俗易懂地说明了样本方差的分母是 <span class="math inline">\(n - 1\)</span> 的原因和偏差产生的原因</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://chen-huaneng.github.io/categories/Math/">Math</category>
+      
+      
+      <category domain="https://chen-huaneng.github.io/tags/Math/">Math</category>
+      
+      <category domain="https://chen-huaneng.github.io/tags/Statistics/">Statistics</category>
+      
+      
+      <comments>https://chen-huaneng.github.io/2025/08/16/2025-08-16-2025-08-16-sample-variance/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Algorithm - 求两个整数的最大公约数（GCD）的几种算法</title>
@@ -86,9 +111,9 @@
       <category domain="https://chen-huaneng.github.io/categories/Dataset/">Dataset</category>
       
       
-      <category domain="https://chen-huaneng.github.io/tags/Dataset/">Dataset</category>
-      
       <category domain="https://chen-huaneng.github.io/tags/TSP-D/">TSP-D</category>
+      
+      <category domain="https://chen-huaneng.github.io/tags/Dataset/">Dataset</category>
       
       <category domain="https://chen-huaneng.github.io/tags/FSTSP/">FSTSP</category>
       
@@ -113,9 +138,9 @@
       <category domain="https://chen-huaneng.github.io/categories/Dataset/">Dataset</category>
       
       
-      <category domain="https://chen-huaneng.github.io/tags/Dataset/">Dataset</category>
-      
       <category domain="https://chen-huaneng.github.io/tags/TSP-D/">TSP-D</category>
+      
+      <category domain="https://chen-huaneng.github.io/tags/Dataset/">Dataset</category>
       
       
       <comments>https://chen-huaneng.github.io/2025/08/12/2025-08-12-2025-08-12-tsp-d-instances/#disqus_thread</comments>
@@ -138,9 +163,9 @@
       <category domain="https://chen-huaneng.github.io/categories/Dataset/">Dataset</category>
       
       
-      <category domain="https://chen-huaneng.github.io/tags/Dataset/">Dataset</category>
-      
       <category domain="https://chen-huaneng.github.io/tags/TSP-D/">TSP-D</category>
+      
+      <category domain="https://chen-huaneng.github.io/tags/Dataset/">Dataset</category>
       
       <category domain="https://chen-huaneng.github.io/tags/TSP/">TSP</category>
       
@@ -179,9 +204,9 @@
       
       <category domain="https://chen-huaneng.github.io/tags/Python/">Python</category>
       
-      <category domain="https://chen-huaneng.github.io/tags/Dataset/">Dataset</category>
-      
       <category domain="https://chen-huaneng.github.io/tags/TSP-D/">TSP-D</category>
+      
+      <category domain="https://chen-huaneng.github.io/tags/Dataset/">Dataset</category>
       
       <category domain="https://chen-huaneng.github.io/tags/TSP/">TSP</category>
       
@@ -266,31 +291,6 @@
       
       
       <comments>https://chen-huaneng.github.io/2025/08/11/2025-08-11-2025-08-11-cpp-input-output/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Algorithm - 算法（一）算法和数据结构简介</title>
-      <link>https://chen-huaneng.github.io/2025/08/11/2025-08-11-2025-08-11-algo/</link>
-      <guid>https://chen-huaneng.github.io/2025/08/11/2025-08-11-2025-08-11-algo/</guid>
-      <pubDate>Mon, 11 Aug 2025 09:06:31 GMT</pubDate>
-      
-      <description>介绍了算法和数据结构的基本概念。</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="算法是什么">算法是什么</h2><p>算法（<a href="https://en.wikipedia.org/wiki/Algorithm">Algorithm</a>）是一个有限的、明确的、可计算的步骤序列，用于解决某类特定问题或执行特定计算任务。算法通常由输入、输出和一系列操作组成。它们可以用自然语言、伪代码或编程语言来描述。算法具有以下的特性：</p><ul><li>问题是明确的，包含清晰的输入和输出定义。</li><li>具有可行性，能够在有限步骤、时间和内存空间下完成。</li><li>各步骤都有确定的含义，在相同的输入和运行条件下，输出始终相同。</li></ul><h2 id="分析算法">分析算法</h2><p>分析算法通常指分析运行算法所需要耗费的资源，虽然有时候需要分析内存、通信带宽或者计算机硬件这类资源，但通常在算法分析中只考虑时间复杂度（<a href="https://www.wikiwand.com/en/articles/Time_complexity">Time Complexity</a>）和空间复杂度（<a href="https://www.wikiwand.com/en/articles/Space_complexity">Space Complexity</a>）。由于实际测试需要耗费大量的计算资源且难以统一衡量，因此通常采用理论估算的方法来评估算法的效率，这种估算方法被称为渐近复杂度分析（asymptotic complexity analysis），简称复杂度分析。复杂度分析能够体现算法运行所需的时间和空间资源与输入数据大小之间的关系，它描述了随着输入数据大小的增加，算法执行所需时间和空间的增长趋势（复杂度分析关注的不是运行时间或占用空间的具体值，而是时间或空间增长的“快慢”）。</p><h3 id="时间复杂度">时间复杂度</h3><p>时间复杂度是一个定性描述算法运行时间的有关输入数据规模大小的函数，通常用基本操作数或步数来表示。基本操作是指在算法中执行的最小操作，例如加法、乘法、赋值等，通常假设每个基本操作的执行时间是相同且固定的（尽管在实际中执行加法和乘法的时间可能不同）。算法的时间复杂度可能因为相同大小的不同输入数据而不同，通常的做法是取最坏情况的时间复杂度来描述算法的性能。由于时间复杂度的函数通常难以精确计算，且对于小规模的输入数据来说，运行时间通常并不重要，因此通常关注当输入数据规模增大时算法的运行时间增长的趋势。因此，通常用渐近上界（asymptotic upper bound）符号 <span class="math inline">\(O\)</span> （<a href="https://www.wikiwand.com/en/articles/Big_O_notation">Big <span class="math inline">\(O\)</span> Notation</a>）来表示算法的渐近时间复杂度（简称时间复杂度），例如时间复杂度可以表示为 <span class="math inline">\(O(n)\)</span>、<span class="math inline">\(O(n^2)\)</span>、<span class="math inline">\(O(\log n)\)</span> 等。同样，除了渐近上界符号 <span class="math inline">\(O\)</span>，还有渐近下界符号 <span class="math inline">\(\Omega\)</span>（对应最佳时间复杂度）和渐近紧确界（asymptotically tight bound）符号 <span class="math inline">\(\Theta\)</span>（对应平均时间复杂度）等也可以用于描述时间复杂度。</p><blockquote><p>时间复杂度分析本质上是计算“操作数量 <span class="math inline">\(T(n)\)</span> ”的渐近上界。</p></blockquote><blockquote><p><a href="https://www.hello-algo.com/chapter_computational_complexity/time_complexity/">函数渐近上界</a>：若存在正实数 <span class="math inline">\(c\)</span> 和实数 <span class="math inline">\(n_0\)</span>，使得对于所有的 <span class="math inline">\(n &gt; n_0\)</span>，均有 <span class="math inline">\(T(n) \leq c \cdot f(n)\)</span>，则可以认为 <span class="math inline">\(f(n)\)</span> 给出了 <span class="math inline">\(T(n)\)</span> 的一个渐近上界，记为 <span class="math inline">\(T(n) = O(f(n))\)</span>。</p></blockquote><blockquote><p>一般说快速排序的时间复杂度为 <span class="math inline">\(O(n\log n)\)</span> 是指快速排序在一般情况下的时间复杂度，而不是最坏情况的时间复杂度，这是业内的一个默认规定。</p></blockquote><blockquote><p>可能由于 <span class="math inline">\(O\)</span> 符号过于朗朗上口，因此通常使用它来表示平均时间复杂度，但从严格意义上来讲，这种做法并不规范。因此遇到类似“平均时间复杂度 <span class="math inline">\(O(n)\)</span> ”的表述，直接理解为 <span class="math inline">\(\Theta(n)\)</span>。</p></blockquote><p>在选择算法时，时间复杂度并非越低越好，一方面是需要考虑其他的因素，例如空间复杂度、实现难度、可读性等，另一方面是时间复杂度低并非代表算法的运行时间就一定低（因为时间复杂度只考虑了最高阶的项，且忽略了常数项），例如 <span class="math inline">\(O(n^2)\)</span> 的算法在 <span class="math inline">\(n=10\)</span> 时运行时间可能比 <span class="math inline">\(O(n\log n)\)</span> 的算法还要短，但当 <span class="math inline">\(n\)</span> 增大时，<span class="math inline">\(O(n^2)\)</span> 的算法就会变得很慢。</p><p>时间复杂度中的 <span class="math inline">\(O(\log n)\)</span> 不一定是以2为底的对数，这是因为 <span class="math inline">\(O(\log_i n) = O(\log_i j) \cdot O(\log_j n)\)</span>，而 <span class="math inline">\(\log_i j\)</span> 是一个常数，因此可以忽略不计。实际上，<span class="math inline">\(O(\log n)\)</span> 是忽略底数的表达方式。</p><h3 id="空间复杂度">空间复杂度</h3><p>空间复杂度是一个定性描述算法运行所需要的有关输入数据规模大小的存储空间的函数，这里的存储空间包括存储输入数据所需要的空间（input space）和存储算法运行所需要的空间（auxiliary space）。算法在运行过程中使用的内存空间主要包括以下几种：</p><ul><li>输入空间：用于存储算法的输入数据。</li><li>暂存空间：用于存储算法在运行过程中的变量、对象、函数上下文等数据。</li><li>输出空间：用于存储算法的输出数据。</li></ul><p>一般情况下，空间复杂度的统计范围是“暂存空间”加上“输出空间”。暂存空间可以进一步划分为三个部分：</p><ul><li>暂存数据：用于保存算法运行过程中产生的各种常量、变量、对象等。</li><li>栈帧空间：用于保存调用函数的上下文数据。系统在每次调用函数时都会在栈顶部创建一个栈帧，函数返回后，栈帧空间会被释放。</li><li>指令空间：用于保存编译后的程序指令，在实际统计中通常忽略不计。</li></ul><p>在分析一段程序的空间复杂度时，通常统计暂存数据、栈帧空间和输出数据三部分。和时间复杂度一样，空间复杂度也通常用渐近上界符号 <span class="math inline">\(O\)</span> 来表示，例如空间复杂度可以表示为 <span class="math inline">\(O(n)\)</span>、<span class="math inline">\(O(n^{\alpha})\)</span>、<span class="math inline">\(O(n \log n)\)</span>、<span class="math inline">\(O(2^n)\)</span> 等。空间复杂度是考虑程序运行时占用内存的大小，而不是可执行文件（程序）的大小。与时间复杂度不同的是，通常空间复杂度只关注最差空间复杂度，因为内存空间是一项硬性要求，必须确保在所有输入数据下都有足够的内存空间预留。</p><h2 id="数据结构是什么">数据结构是什么</h2><p>数据结构（<a href="https://www.wikiwand.com/en/articles/Data_structure">Data Structure</a>）是组织和存储数据的方式，涵盖数据内容、数据之间关系和数据操作方法，它具有以下设计目标：</p><ul><li>空间占用尽量少，以节省计算机内存。</li><li>数据操作尽可能快速，涵盖数据访问、添加、删除、修改等操作。</li><li>提供简洁的数据表示和逻辑信息，以便算法高效运行。</li></ul><p>数据结构是计算机中组织和存储数据的方式，算法是在有限时间内解决特定问题的一组指令或操作步骤，算法与数据结构紧密相连，选择不同的数据结构会对同一个算法的性能产生很大的影响。</p><h3 id="数据结构的分类">数据结构的分类</h3><p>常见的数据结构包括数组、链表、栈、队列、哈希表、树、堆、图等，它们可以从“逻辑结构”和“物理结构”两个维度进行分类。</p><ul><li>逻辑结构：描述了数据元素之间的逻辑关系，逻辑结构可以分为“线性”和“非线性”两大类。<ul><li>线性数据结构：数组、链表、栈、队列、哈希表，元素之间是一对一的顺序关系。</li><li>非线性数据结构：树、堆、图、哈希表。非线性数据结构还可以进一步划分为树形结构和网状结构，树形结构的元素之间是一对多的关系，比如树、堆、哈希表，而网状结构的元素之间是多对多的关系，比如图。</li></ul></li><li>物理结构：反映了数据在计算机内存中的存储方式，可以分为连续空间存储（数组）和分散空间存储（链表）。物理结构从底层决定了数据的访问、更新、增删等操作方法，两种物理结构在时间效率和空间效率方面呈现出互补的特点。所有数据结构都是基于数组、链表或者二者的组合实现的</li></ul><blockquote><p>链表在初始化后，仍可以在程序运行过程中对其长度进行调整，因此也称为“动态数据结构”。数组在初始化后长度不可变，因此也成为“静态数据结构”。</p></blockquote><h2 id="迭代和递归">迭代和递归</h2><p>迭代（iteration）是一种重复执行某个任务的控制结构，在迭代中，程序会在满足一定的条件下重复执行某段代码，直到这个条件不再满足为止。迭代通常使用循环结构来实现，例如 <code>for</code>、<code>while</code> 等语句。</p><p>递归（recursion）是一种通过函数调用自身来解决问题的算法策略。迭代代表了一种“自下而上”地解决问题的思考范式，而递归则代表了一种“自上而下”地解决问题的思考范式（将问题分解为更小子问题的分治策略）。递归通常需要一个基准条件（base case）来终止递归调用，否则会导致无限递归。</p><p>递归函数每次调用自身时，系统都会为新开启的函数分配内存，以存储局部变量、调用地址和其他信息，这会导致两方面的结果：</p><ul><li>函数的上下文数据都被存储在被称为“栈帧空间”的内存区域中，直至函数被返回后才会被释放。因此，递归通常比迭代更加耗费内存空间。（在实际中，编程语言允许的递归深度通常是有限的，过深的递归可能导致栈溢出错误。）</li><li>递归调用函数会产生额外的函数调用开销，例如参数传递、返回值处理等。因此递归通常比迭代的时间效率更低。</li></ul><p>可以通过使用一个显式的栈来模拟调用栈的行为，从而将递归转化为迭代，但是这样转化可能会降低代码的可读性，并且在某些复杂问题中，模拟系统调用栈的行为可能会非常复杂，因此一般不值得做这样的转化。</p><h3 id="尾递归">尾递归</h3><p>如果函数在返回前的最后一步才进行递归调用，则该函数可以被编译器或解释器优化为迭代调用，使其在空间效率上与迭代相当，这种递归称为尾递归（tail recursion）。但是许多编译器或解释器并不支持尾递归优化，例如，<code>Python</code> 默认不支持尾递归优化，因此即使函数是尾递归形式，仍然可能会遇到栈溢出问题。</p><ul><li>普通递归：当函数返回到上一层级的函数后，需要继续执行代码，因此系统需要保存上一层调用的上下文。</li><li>尾递归：递归调用是函数返回前的最后一个操作，这意味着函数返回到上一层级后，无需继续执行其他操作，因此系统无需保存上一层函数的上下文。</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://chen-huaneng.github.io/categories/Algorithm/">Algorithm</category>
-      
-      
-      <category domain="https://chen-huaneng.github.io/tags/Algorithm/">Algorithm</category>
-      
-      <category domain="https://chen-huaneng.github.io/tags/Data-Structures/">Data Structures</category>
-      
-      
-      <comments>https://chen-huaneng.github.io/2025/08/11/2025-08-11-2025-08-11-algo/#disqus_thread</comments>
       
     </item>
     
