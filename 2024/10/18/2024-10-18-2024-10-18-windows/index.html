@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://chen-huaneng.github.io/2024/10/18/2024-10-18-2024-10-18-windows/startup1.webp">
 <meta property="og:image" content="https://chen-huaneng.github.io/2024/10/18/2024-10-18-2024-10-18-windows/startup2.webp">
 <meta property="article:published_time" content="2024-10-18T00:57:12.000Z">
-<meta property="article:modified_time" content="2025-08-07T14:28:40.168Z">
+<meta property="article:modified_time" content="2025-08-16T09:34:20.698Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary_large_image">
@@ -353,7 +353,7 @@
               <p id="updated-time" class="note note-warning" style="">
                 
                   
-                    本文最后更新于：2025年8月7日 晚上
+                    本文最后更新于：2025年8月16日 下午
                   
                 
               </p>
@@ -385,7 +385,16 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs mysql">&#123;F42EE2D3-909F-4907-8871-4C22FC0BF756&#125;  Document文档<br>&#123;A0C69A99-21C8-4671-8703-7934162FCF1D&#125;  Music音乐<br>&#123;7d83ee9b-2244-4e70-b1f5-5393042af1e4&#125;  Downloads下载<br>&#123;374DE290-123F-4565-9164-39C4925E467B&#125;  Downloads下载<br>&#123;754AC886-DF64-4CBA-86B5-F7FBF4FBCEF5&#125;  Desktop桌面<br>&#123;35286A68-3C57-41A1-BBB1-0EAE73D76C95&#125;  Videos视频<br>&#123;0DDD015D-B06C-45D5-8C4C-F59713854639&#125;  Pictures图片<br></code></pre></td></tr></table></figure>
 <p><img src="./windows6.webp" srcset="/imgs/banner/loading.webp" lazyload /></p>
 <p>最后重启电脑即可。</p>
-<h3 id="c-盘太慢了怎么办4">C 盘太慢了怎么办<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span class="hint--top hint--rounded" aria-label="[没有在C盘装东西，桌面也没文件，为什么C盘莫名其妙就满了？ - 知乎 (zhihu.com)](https://www.zhihu.com/question/456677257/answer/1899626991)">[4]</span></a></sup></h3>
+<h3 id="c-盘太满了怎么办4">C 盘太满了怎么办<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span class="hint--top hint--rounded" aria-label="[没有在C盘装东西，桌面也没文件，为什么C盘莫名其妙就满了？ - 知乎 (zhihu.com)](https://www.zhihu.com/question/456677257/answer/1899626991)">[4]</span></a></sup></h3>
+<p><strong>清理系统文件</strong></p>
+<p>右键系统 C 盘，然后选择：属性、磁盘清理、点击”清理系统文件“、然后在“以前的 Windows 安装”及“临时 Windows 安装文件”选项打勾并进行清理。</p>
+<p><strong>清理系统更新文件</strong></p>
+<ol type="1">
+<li>Win + R 键打开运行窗口输入 <code>services.msc</code></li>
+<li>找到 WindowsUpdate 服务项，右键选择禁用</li>
+<li>打开 <code>C:\Windows\SoftwareDistribution</code>，可以删除 DataStore 和 Download 文件夹下的所有临时更新文件</li>
+<li>按照 1. 2. 的步骤重新开启 WindowsUpdate 服务项</li>
+</ol>
 <p><strong>转移各种应用数据，2~40G</strong></p>
 <p>Windows 从 Vista 开始引入 UAC 后，默认情况下应用程序运行时不允许修改默认程序安装目录下(“C:Files”和“C:Files(x86)”)的文件。因此应用程序运行时如果需要保存部分数据到硬盘中，通常放在“C:”（不区分用户，一般来说很小）或者“C:&lt;用户登录名&gt;”下。</p>
 <p>根据安装的具体应用以及应用使用情况，应用安装运行一段时间后，“C:&lt;用户登录名&gt;”这个文件的大小通常在2G以上，上限可能会很大。例如Android Studio，默认会把SDK和AVD放在这个目录下，使用多个模拟器的话可能会占用数十G空间。</p>
@@ -421,7 +430,28 @@
 <p>在运行输入框中输入 <code>shell:startup</code> 命令后点击确定。打开系统启动项目文件夹。</p>
 <p><img src="./startup1.webp" srcset="/imgs/banner/loading.webp" lazyload /></p>
 <p>把要添加的程序快捷方式拖到该文件夹下即可。</p>
-<img src="./startup2.webp" srcset="/imgs/banner/loading.webp" lazyload />
+<p><img src="./startup2.webp" srcset="/imgs/banner/loading.webp" lazyload /></p>
+<h3 id="关闭-windows-的自动更新">关闭 Windows 的自动更新</h3>
+<p>打开注册表：Win + R，输入 <code>regedit</code> 回车，在注册表编辑界面找到路径：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings<br></code></pre></td></tr></table></figure>
+<p>看到这里面有几个参数设置选项：</p>
+<ul>
+<li>PauseFeatureUpdatesEndTime</li>
+<li>PauseQualityUpdatesEndTime</li>
+<li>PauseUpdatesExpiryTime</li>
+</ul>
+<p>分布双击这 3 个选项，在弹出的编辑框里，把日期的年份，直接修改到想要暂停更新的年份，比如想暂停到 2035 年，那就输入 <code>2035</code>。</p>
+<h3 id="c-盘中几个目录的用途说明">C 盘中几个目录的用途说明</h3>
+<ul>
+<li><strong>C:\Program Files</strong>，64 位的软件安装目录，所有用户都能使用，程序安装到这里需要管理员权限。若程序数据也写在这个目录下，软件每次启动都会要求授予管理员权限，存在很大的安全隐患。</li>
+<li><strong>C:\Program Files(x86)</strong>， 和上面的一样，只是该目录用于存放 32 位的应用。</li>
+<li><strong>C:\Users\用户名\AppData\Roaming</strong>，通过环境变量 %AppData% 可以访问，这里用来存放当前登录用户所产生的数据，对其他的用户不可见。如果你在公司网络，加入了域，这个文件夹会通过网路同步，让你的数据在不同的计算机上漫游。该目录常被滥用。</li>
+<li><strong>C:\Users\用户名\AppData\Local</strong>，通过环境变量 %LocalAppData% 可以访问，这个目录和上面的基本一样，不过仅限本地，加入了域也不会同步。一般情况下，如果不加入域，Roaming 和 Local 并没有什么区别，但是需要网络同步的时候，尽量把不必要的数据留在本地。个人使用的软件可以装在 C:\Users\用户名\AppData\Local\Programs 下面 。</li>
+<li><strong>C:\ProgramData</strong>，和 AppData 的区别在于，这里存放的数据是公用的，如果你希望软件的数据在所有的用户之间保持一致，那么程序生成的数据应当存放在这里。</li>
+<li><strong>C:\Users\用户名</strong>，用户的家目录。Linux 和 MacOS 用户应该很熟悉，所有个人数据都应该放在家目录下。一些跨平台软件喜欢在这里写数据，并生成一堆文件名以 <code>.</code> 开头的文件，这在 Linux 下是隐藏文件，但 Windows 文件管理器并不按这个逻辑处理，用户只能主动给所有点号开的文件加上隐藏属性，并文件管理器里设置成不显示。</li>
+<li><strong>C:\Users\用户名\Documents</strong>，又称我的文档。看名字就知道，这里存放的是用户主动保存的数据。比如各种文稿，照片，音乐，视频，档案 之类的。有的软件会无脑把程序数据写在这里，导致文档目录混乱。有些数据（日志、配置、缓存数据）是给软件服务的，用户无法直接使用这些文件，那么这些数据就应该放到 AppData 下面去。</li>
+</ul>
+关于软件安装和数据存放的位置，取决于软件开发者和安装包制作工具的设定。希望所有的开发者都遵循规范，做到程序和数据分离，不要在程序安装目录下写数据，更不要把数据写到 <code>C:\</code> 根目录下，简直是灾难。将程序和数据放在正确的位置，数据备份和软件升级也会更容易。
 <section class="footnotes">
 <h2>
 References
@@ -507,7 +537,7 @@ References
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月7日</div>
+          <div>2025年8月16日</div>
         </div>
       
       
