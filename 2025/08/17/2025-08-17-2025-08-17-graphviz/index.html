@@ -28,14 +28,16 @@
 <meta property="og:site_name" content="Abel">
 <meta property="og:description" content="介绍了用代码绘制流程图的软件Graphviz，并对使用场景进行说明。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chen-huaneng.github.io/2025/08/17/2025-08-17-2025-08-17-graphviz/example.webp">
 <meta property="article:published_time" content="2025-08-17T07:16:34.000Z">
-<meta property="article:modified_time" content="2025-08-17T07:38:39.177Z">
+<meta property="article:modified_time" content="2025-08-17T07:48:49.783Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Academic">
 <meta property="article:tag" content="PDF">
 <meta property="article:tag" content="Picture">
 <meta property="article:tag" content="Drawing">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://chen-huaneng.github.io/2025/08/17/2025-08-17-2025-08-17-graphviz/example.webp">
   
   
   
@@ -369,6 +371,15 @@
 <h3 id="安装-graphviz">安装 Graphviz</h3>
 <p>Windows 中如果安装了 Scoop，直接在命令行中输入：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop install main/graphviz<br></code></pre></td></tr></table></figure>
+<p>如果安装成功，在命令行中输入下面的命令会显示 Graphviz 的版本信息：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">dot <span class="hljs-literal">-V</span><br></code></pre></td></tr></table></figure>
+<p>把下面的代码保存到一个 <code>.dot</code> 文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs dot">## &quot;It encodes the so-called philosophers dilemma.  Neato pretty much approximates the way how humans would layout the graph.&quot; Contributed by Manfred Jeusfield.<br>## Command to generate the layout: &quot;neato -Tpng thisfile &gt; thisfile.png&quot; <br><br><br>digraph PhiloDilemma &#123;<br>fontname=&quot;Helvetica,Arial,sans-serif&quot;<br>node [fontname=&quot;Helvetica,Arial,sans-serif&quot;]<br>edge [fontname=&quot;Helvetica,Arial,sans-serif&quot;]<br>layout=neato<br>node [shape=box];  bec3; rel3; bec2; rel2; acq2; acq3; bec1; rel1; acq1;<br>node [shape=circle,fixedsize=true,width=0.9];  hu3; th3; ri3; ea3; hu2; th2; ri2; ea2; hu1; th1; ri1; ea1;<br>ri3-&gt;acq2;<br>ri3-&gt;acq3;<br>hu3-&gt;acq3;<br>bec3-&gt;hu3;<br>th3-&gt;bec3;<br>rel3-&gt;th3;<br>rel3-&gt;ri3;<br>ea3-&gt;rel3;<br>acq3-&gt;ea3;<br>ri2-&gt;acq1;<br>ri2-&gt;acq2;<br>hu2-&gt;acq2;<br>bec2-&gt;hu2;<br>th2-&gt;bec2;<br>rel2-&gt;th2;<br>rel2-&gt;ri2;<br>ea2-&gt;rel2;<br>acq2-&gt;ea2;<br>ri1-&gt;acq3;<br>ri1-&gt;acq1;<br>hu1-&gt;acq1;<br>bec1-&gt;hu1;<br>th1-&gt;bec1;<br>rel1-&gt;th1;<br>rel1-&gt;ri1;<br>ea1-&gt;rel1;<br>acq1-&gt;ea1;<br><br>overlap=false<br>label=&quot;PetriNet Model PhiloDilemma\nExtracted from ConceptBase and layed out by Graphviz &quot;<br>fontsize=12;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>比如保存为 <code>example.dot</code> 文件，然后在命令行中输入：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">neato <span class="hljs-literal">-Tpng</span> example.dot &gt; example.png<br></code></pre></td></tr></table></figure>
+<p>渲染完之后会在文件夹下看到一个 <code>example.png</code> 文件，打开就可以看到效果，大致像下面这样：</p>
+<p><img src="./example.webp" srcset="/imgs/banner/loading.webp" lazyload /></p>
+<p>当然可以把 <code>-Tpng</code> 改成 <code>-Tpdf</code> ，把 <code>example.png</code> 改成 <code>example.pdf</code> 来输出 PDF 格式的图片。</p>
 <h3 id="graphviz-学习资料">Graphviz 学习资料</h3>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://dreampuf.github.io/GraphvizOnline/">Graphviz Online</a> 在线编译渲染图片，左边是 <code>dot</code> 语言代码，右边会实时渲染相应的图片，还可以选择导出的格式</li>
