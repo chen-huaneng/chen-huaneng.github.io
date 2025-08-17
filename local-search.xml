@@ -53,9 +53,9 @@
       
       <tag>Algorithm</tag>
       
-      <tag>Math</tag>
-      
       <tag>Academic</tag>
+      
+      <tag>Math</tag>
       
     </tags>
     
@@ -171,9 +171,9 @@
     
     <tags>
       
-      <tag>Dataset</tag>
-      
       <tag>TSP-D</tag>
+      
+      <tag>Dataset</tag>
       
       <tag>FSTSP</tag>
       
@@ -200,9 +200,9 @@
     
     <tags>
       
-      <tag>Dataset</tag>
-      
       <tag>TSP-D</tag>
+      
+      <tag>Dataset</tag>
       
     </tags>
     
@@ -227,11 +227,11 @@
     
     <tags>
       
-      <tag>Dataset</tag>
+      <tag>TSP</tag>
       
       <tag>TSP-D</tag>
       
-      <tag>TSP</tag>
+      <tag>Dataset</tag>
       
       <tag>STSP</tag>
       
@@ -270,11 +270,11 @@
       
       <tag>Python</tag>
       
-      <tag>Dataset</tag>
+      <tag>TSP</tag>
       
       <tag>TSP-D</tag>
       
-      <tag>TSP</tag>
+      <tag>Dataset</tag>
       
       <tag>Haversine formula</tag>
       
@@ -440,9 +440,9 @@
     
     <tags>
       
-      <tag>Vim</tag>
-      
       <tag>Neovim</tag>
+      
+      <tag>Vim</tag>
       
     </tags>
     
@@ -614,9 +614,9 @@
     
     <tags>
       
-      <tag>Vim</tag>
-      
       <tag>Neovim</tag>
+      
+      <tag>Vim</tag>
       
     </tags>
     
@@ -641,9 +641,9 @@
     
     <tags>
       
-      <tag>GUI</tag>
-      
       <tag>Windows</tag>
+      
+      <tag>GUI</tag>
       
       <tag>Rainmeter</tag>
       
@@ -737,7 +737,7 @@
     <link href="/2024/10/30/2024-10-30-2024-10-30-research/"/>
     <url>/2024/10/30/2024-10-30-2024-10-30-research/</url>
     
-    <content type="html"><![CDATA[<h2 id="文献相关">文献相关</h2><h3 id="检索引擎">检索引擎</h3><p><strong>主要的搜索引擎</strong>：</p><ul><li><a href="https://www.cnki.net/">中国知网 (cnki.net)</a> - 著名垄断机构，不多介绍</li><li><a href="https://www.webofscience.com/wos/alldb/basic-search">Document Search - All Databases (webofscience.com)</a> - 主要用来查英文文献</li></ul>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-73d275c4" role="button" aria-expanded="false" aria-controls="collapse-73d275c4">        <div class="fold-arrow">▶</div>web of science      </div>      <div class="fold-collapse collapse" id="collapse-73d275c4">        <div class="fold-content">          <ul><li><a href="https://zhuanlan.zhihu.com/p/384906270">硕博士应该知道的Web of Science文献检索与分析技巧 - 知乎 (zhihu.com)</a></li></ul><p><strong>Web of Science的基本检索技巧</strong></p><p>A. <strong>不区分大小写：</strong>Gold catalysis 与 gold CATALYSIS 检索结果一致。</p><p>B. <strong>检索运算符（布尔运算符）：</strong>AND（与），OR（或），NOT（非）, NEAR，SAME。其中最常用的是前三种。使用 AND 可查找包含被该运算符分开的所有检索词的记录；使用 OR 可查找包含被该运算符分开的任何检索词的记录；使用 NOT 可将包含特定检索词的记录从检索结果中排除；使用 NEAR/x 可查找由该运算符连接的检索词之间相隔指定数量的单词的记录；在“地址”检索中，使用 SAME 将检索限制为出现在“全记录”同一地址中的检索词。</p><p>C. **通配符（*？<span class="math inline">\(）**：星号 (\*) 表示任何字符组，包括空字符(如Fan J*可以指Fan Jie，Fan Jun, Fan Jian, Fan Jia等)；问号 (?) 表示任意一个字符，对于检索最后一个字符不确定的作者姓氏非常有用。例如，Barthold? 可查找 Bartholdi 和 Bartholdy，但不会查找 Barthod；美元符号 (\$) 表示零或一个字符，对于查找同一单词的英国拼写和美国拼写非常有用。例如，flavo\)</span>r 可查找 flavor 和 flavour。</p><p>D. <strong>括号</strong>：括号用于将合成布尔运算符进行分组。例如：</p><ul><li>(Antibiotic OR Antiviral) AND (Alga* OR Seaweed)</li><li>(Pagets OR Paget's) AND (cell* AND tumor*)</li></ul>        </div>      </div>    </div><ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed (nih.gov)</a> - 文献相关度高，主要用于关键词精确查找相关文献</li><li><a href="https://scholar.google.com/">Google Scholar</a> - 搜索的文献量大，相关性会低一些</li><li><a href="https://www.mendeley.com/?interaction_required=true">Mendeley - Reference Management Software</a></li><li>Sci-Hub 不用多介绍，将知识带给每个人</li></ul>    <div class="fold">      <div class="fold-title fold-warning collapsed" data-toggle="collapse" href="#collapse-482713c1" role="button" aria-expanded="false" aria-controls="collapse-482713c1">        <div class="fold-arrow">▶</div>Magic      </div>      <div class="fold-collapse collapse" id="collapse-482713c1">        <div class="fold-content">          <p>Sci-Hub 主要用于精确搜索，要先获取需要文献的 DOI (Digital Object Unique Identifier)，然后再根据 DOI 去找对应的 PDF。</p><p>DOI 是指数字对象唯一标识符，可以理解为数字资源唯一的“身份证号码”，可以用DOI来标识文献、视频、报告或书籍等数字资源。目前，大部分学术文献（主要为2000年之后的文献）都有专属的 DOI，只要知道了一篇文献的 DOI，就能够查询到该文献的作者、标题、期刊、官方链接等信息。</p><p>每个 DOI 都由前缀和后缀两部分组成，之间用 <code>/</code> 分开，并且前缀以 <code>.</code> 再分为两部分。前缀由国际数字对象识别号基金会（International DOI Foundation）确定，后缀部分由资源发布者自行指定，用于区分一个单独的数字资料，具有唯一性。</p><p>一般来说，年份久远（2000年之前）的文献没有 DOI。至于中文文献，因为目前国内 DOI 的使用还处于初级阶段，所以现在还不能通过 DOI 来下载国内文献。</p><p>所有 DOI 均以“10”开头，如：</p><p>10.1016/j.foodres.2017.07.078</p><p>10.1080/09205063.2018.1465664</p><p><strong>镜像网址</strong>：</p><ul><li><a href="https://sci-hub.se/">Sci-Hub: 将知识带给每个人</a></li><li><a href="https://sci-hub.st/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://sci-hub.ru/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://www.sci-hub.ru/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://www.sci-hub.st/">Sci-Hub: 将知识带给每个人</a></li><li><a href="https://www.sci-hub.se/">Sci-Hub: 将知识带给每个人</a></li><li><a href="https://www.sci-hub.wf/">Sci-Hub journal:latest sci-hub mirror links</a></li><li><a href="https://www.sci-hub.ee/">sci-hub proxy search links</a></li><li><a href="https://www.sci-hub.ren/">Sci-Hub: removing barriers in the way of science</a></li><li><a href="https://www.sci-hub.yt/">Sci-Hub official website</a></li><li><a href="https://www.sci-hub.ru/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://www.wellesu.com/">sci-hub brasil (wellesu.com)</a></li><li><a href="https://www.tesble.com/">Science Hub (tesble.com)</a></li><li><a href="https://sci-hub.kvnp.top/">sci-hub:scihub最新可用地址 (kvnp.top)</a></li><li><a href="https://sci-hub.shop/">Sci-Hub journal:latest sci-hub mirror links</a></li></ul><p><strong>论坛</strong>：</p><ul><li><a href="https://discuss.sci-hub.org.cn/d/279">Sci-Hub最新可用官方网站网址（2024年10月19日更新） - Sci-Hub中文社区</a></li><li><a href="https://sci-hub.org.cn/">Sci-Hub文献检索 | 科学是照亮世界的火把</a></li><li><a href="https://tool.yovisun.com/scihub/">SCI-Hub论文下载可用网址链接（实时更新） - YoviSun工具集</a></li><li><a href="https://lovescihub.wordpress.com/">Love Science,Love Sci-Hub! – The latest Sci-Hub working domain (wordpress.com)</a></li></ul>        </div>      </div>    </div><p>其他：</p><ul><li><a href="https://www.researchgate.net/">Home Feed | ResearchGate</a></li><li><a href="https://pubsonline.informs.org/">PubsOnLine (informs.org)</a></li><li><a href="https://www.ablesci.com/">文献互助平台 - 科研通(AbleSci.com)</a></li><li><a href="https://pubscholar.cn/">PubScholar公益学术平台</a></li><li><a href="https://www.xueshufan.com/user/home">学术范 - 高效做科研 (xueshufan.com)</a></li><li><a href="https://xueshu.baidu.com/">百度学术 - 保持学习的态度 (baidu.com)</a></li><li><a href="https://cn.bing.com/academic">搜索 学术 (bing.com)</a></li><li><a href="https://bbs.yuyingufen.com/">谷粉学术论坛-文献互助 (yuyingufen.com)</a></li><li><a href="https://search.crossref.org/">Crossref Metadata Search</a></li><li><a href="https://www.scihub.net.cn/">Sci-Hub:SciHub科研学术网址导航</a></li></ul><h3 id="查找文献中的代码">查找文献中的代码</h3><ul><li><a href="https://www.catalyzex.com/">CatalyzeX: open-source AI code to catalyze your research</a></li><li><a href="https://paperswithcode.com/">The latest in Machine Learning | Papers With Code</a></li><li><a href="https://github.com/">GitHub</a>：一般通过 <a href="https://scholar.google.com/">Google Scholar</a> 可以找到相应的作者，然后顺藤摸瓜可以找到相应的 GitHub 仓库，或者直接检索相应的模型，如果都没有的话可能需要用其他办法</li><li>直接发邮件给 Paper 作者</li></ul><h3 id="查找相关的文献">查找相关的文献</h3><p>这里说的相关，既包括引用（这个比较容易找到）和被引，也包括主题相关（大多数时候关键词检索很难找到想要找的文献）。</p><ul><li><a href="https://www.semanticscholar.org/">Semantic Scholar | AI-Powered Research Tool</a>：可以通过查找引用这篇文章的 Paper 来寻找相关的文献</li></ul><p><img src="./paper1.webp" /></p><ul><li><a href="https://www.connectedpapers.com/">Connected Papers | Find and explore academic papers</a>：<ul><li>年份越往后的颜色越深，越往前则颜色越浅</li><li>文献之间的关系是通过相似性而不是引用来连接</li><li>文献节点的大小表示被引用的次数的多少</li></ul></li></ul><p><img src="./paper2.webp" /></p><h3 id="读文献的方法论">读文献的方法论</h3><ul><li><a href="https://www.zhihu.com/question/31189581/answer/1540665172">你认为在精读英文文献时有哪些好习惯？ - 知乎 (zhihu.com)</a></li><li><a href="https://www.zhihu.com/question/345516318/answer/1138235280">研究生们刚开始看英文文献是怎么看的？ - 知乎 (zhihu.com)</a></li><li><a href="https://www.zhihu.com/question/304334959/answer/553782865">研究生新生要怎么看论文？ - 知乎 (zhihu.com)</a></li><li><a href="https://www.zhihu.com/question/304334959/answer/1312667716">研究生新生要怎么看论文？ - 知乎 (zhihu.com)</a></li><li><a href="https://www.zhihu.com/question/23924014/answer/26470331">如何有针对地高效地阅读一篇学术论文？ - 知乎 (zhihu.com)</a></li></ul><h3 id="论文降重">论文降重</h3><ul><li><a href="https://www.paperpass.com/">PaperPass官网-论文查重-论文降重-论文检测-免费论文查重检测系统-智齿数汇</a></li><li><a href="https://app.scribbr.com/plagiarism-checker">Scribbr Plagiarism Checker step 1 – Upload document - Scribbr</a></li><li><a href="https://cx.cnki.net/#/login">知网查重-知网个人查重服务 (cnki.net)</a></li></ul><h3 id="文献翻译">文献翻译</h3><ul><li><a href="https://copytranslator.github.io/">CopyTranslator</a></li><li><a href="https://www.zhiyunwenxian.cn/">知云文献翻译客户端软件 (zhiyunwenxian.cn)</a></li><li><a href="https://fanyi.caiyunapp.com/">彩云小译官网 - 高效准确的翻译工具 | 文字翻译 | 文档翻译 | 网页翻译 | 浏览器插件 | 双语对照 | 术语库 (caiyunapp.com)</a></li><li><a href="https://fanyi.atman360.com/index">Atman Cloud Translation (atman360.com)</a> - 主要针对医学领域</li></ul><h3 id="其他">其他</h3><ul><li><a href="https://csrankings.org/#/index?all&amp;us">CSRankings: Computer Science Rankings</a> - 根据文献对学校/机构进行排名，针对计算机</li></ul><h2 id="faq">FAQ</h2><h3 id="知网中期刊的综合影响因子和复合影响因子分别是什么意思">知网中期刊的“综合影响因子”和“复合影响因子”分别是什么意思？</h3><p>最通俗的解释就是，被引用次数和发表论文总数的占比。分值越高证明该期刊含金量以及大家认同度越高。当然这个分值也不是绝对的，很多期刊收录的论文不管引用还是下载量很高，没有任何影响因子。所以很少有单位评判一本期刊好坏以此为依据。目前大家评判标准还是以：</p><ul><li><strong>国内：南核—北核—科核—知网专刊——知网收录——其它数据库（万方、维普、龙源）</strong></li><li><strong>国际：SSCI——SCI——EI——CPCI</strong></li></ul><blockquote><p><a href="https://zhuanlan.zhihu.com/p/84200607">什么是北大核心、南大核心、SCI、SSCI、CSSCI？ - 知乎 (zhihu.com)</a></p></blockquote><h3 id="如何获得-springer-和-cambridge-出版图书的清晰电子版">如何获得 Springer 和 Cambridge 出版图书的清晰电子版</h3><p>Library Genesis 上的一些资源来自个人扫描，而非出版社提供的电子版，往往会很模糊。事实上可以从 Sci-Hub 直接获得：</p><ul><li><a href="https://link.springer.com/">SpringerLink</a> 直接使用图书的链接或 doi 即可；</li><li><a href="https://www.cambridge.org/core">CambridgeCore</a> 需要使用图书章节的链接或 doi。</li></ul><h3 id="论文中引用网页内容在文中怎么标注">论文中引用网页内容在文中怎么标注</h3><p>如果论文格式有要求就按照学校或者通知的要求标注，这里讲一下在 <span class="math inline">\(\LaTeX\)</span> 中如何引用。首先在 <code>bib</code> 文件中以如下格式存储，正文中以 <code>\cite</code> 或者其他引用命令引用，同时注意在正文前调用 <code>\usepackage&#123;url&#125;</code> 使得链接显示：</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs latex">@online&#123;PCSELsim2023,<br>howpublished = &#123;[EB/OL]&#125;,<br>url = &#123;https://www.semergytech.com/products/&#125;,<br>year=&#123;[2023-10-12]&#125;,<br>title = &#123;PCSELSim: PCSEL Modeling and Simulation Tool&#125;,<br>author = &#123;Semergytech&#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>一部分教程会使用 <code>@misc</code> 而非 <code>@online</code>，<code>misc</code> 对应文献类型为“其他”，属于用通用模板硬凑出相应格式，不推荐。其他格式可以参考 Zepling Lee 维护的 <a href="https://github.com/zepinglee/gbt7714-bibtex-style">zepinglee/gbt7714-bibtex-style: GB/T 7714-2015 BibTeX Style</a>。对于引用字段的说明：</p><ul><li>主要责任者：作者名字；如果没有作者，可以写这篇报道的责任机构，比如说央视网、XXX研究所、XXX局等</li><li>题名：这一项一般没有什么异议，直接复制粘贴就好</li><li>文献类型标志：在 GB2015 附录 B 的表 B.1 中，可以找到电子公告的文献类型标识代码是 EB</li><li>文献载体类型：在 GB2015 附录 B 的表 B.2 中，可以找到联机网络的载体类型标识代码是 OL</li><li>更新或修改日期：资源的发布日期</li><li>引用日期：在着手写论文到提交论文之间都可以</li><li>获取和访问路径：网址</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="文献相关">文献相关</h2><h3 id="检索引擎">检索引擎</h3><p><strong>主要的搜索引擎</strong>：</p><ul><li><a href="https://www.cnki.net/">中国知网 (cnki.net)</a> - 著名垄断机构，不多介绍</li><li><a href="https://www.webofscience.com/wos/alldb/basic-search">Document Search - All Databases (webofscience.com)</a> - 主要用来查英文文献</li></ul>    <div class="fold">      <div class="fold-title fold-info collapsed" data-toggle="collapse" href="#collapse-73d275c4" role="button" aria-expanded="false" aria-controls="collapse-73d275c4">        <div class="fold-arrow">▶</div>web of science      </div>      <div class="fold-collapse collapse" id="collapse-73d275c4">        <div class="fold-content">          <ul><li><a href="https://zhuanlan.zhihu.com/p/384906270">硕博士应该知道的Web of Science文献检索与分析技巧 - 知乎 (zhihu.com)</a></li></ul><p><strong>Web of Science的基本检索技巧</strong></p><p>A. <strong>不区分大小写：</strong>Gold catalysis 与 gold CATALYSIS 检索结果一致。</p><p>B. <strong>检索运算符（布尔运算符）：</strong>AND（与），OR（或），NOT（非）, NEAR，SAME。其中最常用的是前三种。使用 AND 可查找包含被该运算符分开的所有检索词的记录；使用 OR 可查找包含被该运算符分开的任何检索词的记录；使用 NOT 可将包含特定检索词的记录从检索结果中排除；使用 NEAR/x 可查找由该运算符连接的检索词之间相隔指定数量的单词的记录；在“地址”检索中，使用 SAME 将检索限制为出现在“全记录”同一地址中的检索词。</p><p>C. **通配符（*？<span class="math inline">\(）**：星号 (\*) 表示任何字符组，包括空字符(如Fan J*可以指Fan Jie，Fan Jun, Fan Jian, Fan Jia等)；问号 (?) 表示任意一个字符，对于检索最后一个字符不确定的作者姓氏非常有用。例如，Barthold? 可查找 Bartholdi 和 Bartholdy，但不会查找 Barthod；美元符号 (\$) 表示零或一个字符，对于查找同一单词的英国拼写和美国拼写非常有用。例如，flavo\)</span>r 可查找 flavor 和 flavour。</p><p>D. <strong>括号</strong>：括号用于将合成布尔运算符进行分组。例如：</p><ul><li>(Antibiotic OR Antiviral) AND (Alga* OR Seaweed)</li><li>(Pagets OR Paget's) AND (cell* AND tumor*)</li></ul>        </div>      </div>    </div><ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed (nih.gov)</a> - 文献相关度高，主要用于关键词精确查找相关文献</li><li><a href="https://scholar.google.com/">Google Scholar</a> - 搜索的文献量大，相关性会低一些</li><li><a href="https://www.mendeley.com/?interaction_required=true">Mendeley - Reference Management Software</a></li><li>Sci-Hub 不用多介绍，将知识带给每个人</li></ul>    <div class="fold">      <div class="fold-title fold-warning collapsed" data-toggle="collapse" href="#collapse-482713c1" role="button" aria-expanded="false" aria-controls="collapse-482713c1">        <div class="fold-arrow">▶</div>Magic      </div>      <div class="fold-collapse collapse" id="collapse-482713c1">        <div class="fold-content">          <p>Sci-Hub 主要用于精确搜索，要先获取需要文献的 DOI (Digital Object Unique Identifier)，然后再根据 DOI 去找对应的 PDF。</p><p>DOI 是指数字对象唯一标识符，可以理解为数字资源唯一的“身份证号码”，可以用DOI来标识文献、视频、报告或书籍等数字资源。目前，大部分学术文献（主要为2000年之后的文献）都有专属的 DOI，只要知道了一篇文献的 DOI，就能够查询到该文献的作者、标题、期刊、官方链接等信息。</p><p>每个 DOI 都由前缀和后缀两部分组成，之间用 <code>/</code> 分开，并且前缀以 <code>.</code> 再分为两部分。前缀由国际数字对象识别号基金会（International DOI Foundation）确定，后缀部分由资源发布者自行指定，用于区分一个单独的数字资料，具有唯一性。</p><p>一般来说，年份久远（2000年之前）的文献没有 DOI。至于中文文献，因为目前国内 DOI 的使用还处于初级阶段，所以现在还不能通过 DOI 来下载国内文献。</p><p>所有 DOI 均以“10”开头，如：</p><p>10.1016/j.foodres.2017.07.078</p><p>10.1080/09205063.2018.1465664</p><p><strong>镜像网址</strong>：</p><ul><li><a href="https://sci-hub.se/">Sci-Hub: 将知识带给每个人</a></li><li><a href="https://sci-hub.st/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://sci-hub.ru/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://www.sci-hub.ru/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://www.sci-hub.st/">Sci-Hub: 将知识带给每个人</a></li><li><a href="https://www.sci-hub.se/">Sci-Hub: 将知识带给每个人</a></li><li><a href="https://www.sci-hub.wf/">Sci-Hub journal:latest sci-hub mirror links</a></li><li><a href="https://www.sci-hub.ee/">sci-hub proxy search links</a></li><li><a href="https://www.sci-hub.ren/">Sci-Hub: removing barriers in the way of science</a></li><li><a href="https://www.sci-hub.yt/">Sci-Hub official website</a></li><li><a href="https://www.sci-hub.ru/">Sci-Hub: 对每个人的知识</a></li><li><a href="https://www.wellesu.com/">sci-hub brasil (wellesu.com)</a></li><li><a href="https://www.tesble.com/">Science Hub (tesble.com)</a></li><li><a href="https://sci-hub.kvnp.top/">sci-hub:scihub最新可用地址 (kvnp.top)</a></li><li><a href="https://sci-hub.shop/">Sci-Hub journal:latest sci-hub mirror links</a></li></ul><p><strong>论坛</strong>：</p><ul><li><a href="https://discuss.sci-hub.org.cn/d/279">Sci-Hub最新可用官方网站网址（2024年10月19日更新） - Sci-Hub中文社区</a></li><li><a href="https://sci-hub.org.cn/">Sci-Hub文献检索 | 科学是照亮世界的火把</a></li><li><a href="https://tool.yovisun.com/scihub/">SCI-Hub论文下载可用网址链接（实时更新） - YoviSun工具集</a></li><li><a href="https://lovescihub.wordpress.com/">Love Science,Love Sci-Hub! – The latest Sci-Hub working domain (wordpress.com)</a></li></ul>        </div>      </div>    </div><p>其他：</p><ul><li><a href="https://www.researchgate.net/">Home Feed | ResearchGate</a></li><li><a href="https://pubsonline.informs.org/">PubsOnLine (informs.org)</a></li><li><a href="https://www.ablesci.com/">文献互助平台 - 科研通(AbleSci.com)</a></li><li><a href="https://pubscholar.cn/">PubScholar公益学术平台</a></li><li><a href="https://www.xueshufan.com/user/home">学术范 - 高效做科研 (xueshufan.com)</a></li><li><a href="https://xueshu.baidu.com/">百度学术 - 保持学习的态度 (baidu.com)</a></li><li><a href="https://cn.bing.com/academic">搜索 学术 (bing.com)</a></li><li><a href="https://bbs.yuyingufen.com/">谷粉学术论坛-文献互助 (yuyingufen.com)</a></li><li><a href="https://search.crossref.org/">Crossref Metadata Search</a></li><li><a href="https://www.scihub.net.cn/">Sci-Hub:SciHub科研学术网址导航</a></li></ul><h3 id="查找文献中的代码">查找文献中的代码</h3><ul><li><a href="https://www.catalyzex.com/">CatalyzeX: open-source AI code to catalyze your research</a></li><li><a href="https://paperswithcode.com/">The latest in Machine Learning | Papers With Code</a></li><li><a href="https://github.com/">GitHub</a>：一般通过 <a href="https://scholar.google.com/">Google Scholar</a> 可以找到相应的作者，然后顺藤摸瓜可以找到相应的 GitHub 仓库，或者直接检索相应的模型，如果都没有的话可能需要用其他办法</li><li>直接发邮件给 Paper 作者</li></ul><h3 id="查找相关的文献">查找相关的文献</h3><p>这里说的相关，既包括引用（这个比较容易找到）和被引，也包括主题相关（大多数时候关键词检索很难找到想要找的文献）。</p><ul><li><a href="https://www.semanticscholar.org/">Semantic Scholar | AI-Powered Research Tool</a>：可以通过查找引用这篇文章的 Paper 来寻找相关的文献</li></ul><p><img src="./paper1.webp" /></p><ul><li><a href="https://www.connectedpapers.com/">Connected Papers | Find and explore academic papers</a>：<ul><li>年份越往后的颜色越深，越往前则颜色越浅</li><li>文献之间的关系是通过相似性而不是引用来连接</li><li>文献节点的大小表示被引用的次数的多少</li></ul></li></ul><p><img src="./paper2.webp" /></p><h3 id="读文献的方法论">读文献的方法论</h3><ul><li><a href="https://www.zhihu.com/question/31189581/answer/1540665172">你认为在精读英文文献时有哪些好习惯？ - 知乎 (zhihu.com)</a></li><li><a href="https://www.zhihu.com/question/345516318/answer/1138235280">研究生们刚开始看英文文献是怎么看的？ - 知乎 (zhihu.com)</a></li><li><a href="https://www.zhihu.com/question/304334959/answer/553782865">研究生新生要怎么看论文？ - 知乎 (zhihu.com)</a></li><li><a href="https://www.zhihu.com/question/304334959/answer/1312667716">研究生新生要怎么看论文？ - 知乎 (zhihu.com)</a></li><li><a href="https://www.zhihu.com/question/23924014/answer/26470331">如何有针对地高效地阅读一篇学术论文？ - 知乎 (zhihu.com)</a></li></ul><h3 id="论文降重">论文降重</h3><ul><li><a href="https://www.paperpass.com/">PaperPass官网-论文查重-论文降重-论文检测-免费论文查重检测系统-智齿数汇</a></li><li><a href="https://app.scribbr.com/plagiarism-checker">Scribbr Plagiarism Checker step 1 – Upload document - Scribbr</a></li><li><a href="https://cx.cnki.net/#/login">知网查重-知网个人查重服务 (cnki.net)</a></li></ul><h3 id="文献翻译">文献翻译</h3><ul><li><a href="https://copytranslator.github.io/">CopyTranslator</a></li><li><a href="https://www.zhiyunwenxian.cn/">知云文献翻译客户端软件 (zhiyunwenxian.cn)</a></li><li><a href="https://fanyi.caiyunapp.com/">彩云小译官网 - 高效准确的翻译工具 | 文字翻译 | 文档翻译 | 网页翻译 | 浏览器插件 | 双语对照 | 术语库 (caiyunapp.com)</a></li><li><a href="https://fanyi.atman360.com/index">Atman Cloud Translation (atman360.com)</a> - 主要针对医学领域</li></ul><h3 id="其他">其他</h3><ul><li><a href="https://csrankings.org/#/index?all&amp;us">CSRankings: Computer Science Rankings</a> - 根据文献对学校/机构进行排名，针对计算机</li></ul><h2 id="绘图及数据可视化">绘图及数据可视化</h2><ul><li><a href="https://www.drawio.com/">draw.io</a> 绘制流程图和简单的示意图</li><li>Powerpoint + Icon 绘制简单的示意图</li><li>Python + Matplotlib 数据分析和数据可视化，学习 Python 过程中顺带学习</li><li><a href="https://inkscape.org/">Inkscape</a> 通用矢量美化，通过教程跟着做项目，比如 <a href="https://www.youtube.com/@LogosByNick">Inkscape Beginner Tutorial | Icon Drawing with Basic Shapes</a></li><li><a href="https://asymptote.sourceforge.io/">Asymptote</a> 创建高质量的精确数学图形、科学图表、技术图解、三维线框/曲面图，完美集成 <span class="math inline">\(\LaTeX\)</span>，直接从官网文档开始学习</li><li><a href="https://www.gimp.org/">GIMP</a> 开源版 Photoshop，后期处理图片，同样通过教程跟着做项目</li></ul><h2 id="faq">FAQ</h2><h3 id="知网中期刊的综合影响因子和复合影响因子分别是什么意思">知网中期刊的“综合影响因子”和“复合影响因子”分别是什么意思？</h3><p>最通俗的解释就是，被引用次数和发表论文总数的占比。分值越高证明该期刊含金量以及大家认同度越高。当然这个分值也不是绝对的，很多期刊收录的论文不管引用还是下载量很高，没有任何影响因子。所以很少有单位评判一本期刊好坏以此为依据。目前大家评判标准还是以：</p><ul><li><strong>国内：南核—北核—科核—知网专刊——知网收录——其它数据库（万方、维普、龙源）</strong></li><li><strong>国际：SSCI——SCI——EI——CPCI</strong></li></ul><blockquote><p><a href="https://zhuanlan.zhihu.com/p/84200607">什么是北大核心、南大核心、SCI、SSCI、CSSCI？ - 知乎 (zhihu.com)</a></p></blockquote><h3 id="如何获得-springer-和-cambridge-出版图书的清晰电子版">如何获得 Springer 和 Cambridge 出版图书的清晰电子版</h3><p>Library Genesis 上的一些资源来自个人扫描，而非出版社提供的电子版，往往会很模糊。事实上可以从 Sci-Hub 直接获得：</p><ul><li><a href="https://link.springer.com/">SpringerLink</a> 直接使用图书的链接或 doi 即可；</li><li><a href="https://www.cambridge.org/core">CambridgeCore</a> 需要使用图书章节的链接或 doi。</li></ul><h3 id="论文中引用网页内容在文中怎么标注">论文中引用网页内容在文中怎么标注</h3><p>如果论文格式有要求就按照学校或者通知的要求标注，这里讲一下在 <span class="math inline">\(\LaTeX\)</span> 中如何引用。首先在 <code>bib</code> 文件中以如下格式存储，正文中以 <code>\cite</code> 或者其他引用命令引用，同时注意在正文前调用 <code>\usepackage&#123;url&#125;</code> 使得链接显示：</p><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs latex">@online&#123;PCSELsim2023,<br>howpublished = &#123;[EB/OL]&#125;,<br>url = &#123;https://www.semergytech.com/products/&#125;,<br>year=&#123;[2023-10-12]&#125;,<br>title = &#123;PCSELSim: PCSEL Modeling and Simulation Tool&#125;,<br>author = &#123;Semergytech&#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>一部分教程会使用 <code>@misc</code> 而非 <code>@online</code>，<code>misc</code> 对应文献类型为“其他”，属于用通用模板硬凑出相应格式，不推荐。其他格式可以参考 Zepling Lee 维护的 <a href="https://github.com/zepinglee/gbt7714-bibtex-style">zepinglee/gbt7714-bibtex-style: GB/T 7714-2015 BibTeX Style</a>。对于引用字段的说明：</p><ul><li>主要责任者：作者名字；如果没有作者，可以写这篇报道的责任机构，比如说央视网、XXX研究所、XXX局等</li><li>题名：这一项一般没有什么异议，直接复制粘贴就好</li><li>文献类型标志：在 GB2015 附录 B 的表 B.1 中，可以找到电子公告的文献类型标识代码是 EB</li><li>文献载体类型：在 GB2015 附录 B 的表 B.2 中，可以找到联机网络的载体类型标识代码是 OL</li><li>更新或修改日期：资源的发布日期</li><li>引用日期：在着手写论文到提交论文之间都可以</li><li>获取和访问路径：网址</li></ul>]]></content>
     
     
     <categories>
@@ -774,9 +774,9 @@
     
     <tags>
       
-      <tag>Zotero</tag>
-      
       <tag>Academic</tag>
+      
+      <tag>Zotero</tag>
       
     </tags>
     
@@ -801,11 +801,11 @@
     
     <tags>
       
+      <tag>Math</tag>
+      
       <tag>Machine Learning</tag>
       
       <tag>Data Mining</tag>
-      
-      <tag>Math</tag>
       
     </tags>
     
@@ -855,9 +855,9 @@
     
     <tags>
       
-      <tag>Vim</tag>
-      
       <tag>Neovim</tag>
+      
+      <tag>Vim</tag>
       
     </tags>
     
@@ -1111,9 +1111,9 @@
     
     <tags>
       
-      <tag>Interview</tag>
-      
       <tag>Algorithm</tag>
+      
+      <tag>Interview</tag>
       
     </tags>
     
@@ -1435,22 +1435,22 @@
   
   
   <entry>
-    <title>Images</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<div class="markdown-body"><h2 id="下一站去哪">下一站去哪</h2><div class="note note-success">            <ul><li>新疆</li><li>西藏</li><li>四川 九寨沟 黄龙 都江堰 三星堆 四姑娘山 峨眉山</li><li>张家界</li><li>桂林</li><li>甘肃 敦煌莫高窟 月牙泉 鸣沙山 张掖七彩丹霞</li><li>北京 故宫 长城 天坛 国博 圆明园 环球影城</li><li>南京 南京博物院 同胞纪念馆</li><li>山东 大明湖 趵突泉 泰山</li><li>陕西 华山 秦始皇陵</li><li>青海湖</li><li>上海 迪士尼</li><li>苏州</li><li><a href="https://simple.wikipedia.org/wiki/Mount_Pico">Mount Pico</a> in the Azores, the tallest mountain in Portugal</li></ul>          </div><h2 id="上海">2025-06-03 上海</h2><p><img src="/imgs/images/20250603.webp" /></p><h2 id="浙江杭州西湖">2025-06-01 浙江杭州西湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250601-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250601-2.webp" /></div></div></div><h2 id="浙江杭州千岛湖">2025-05-31 浙江杭州千岛湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250531-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250531-2.webp" /></div></div></div><h2 id="安徽黄山歙县深渡镇">2025-05-30 安徽黄山歙县深渡镇</h2><p><img src="/imgs/images/20250530.webp" /></p><h2 id="安徽黄山">2025-05-29 安徽黄山</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250529-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250529-2.webp" /></div></div></div><h2 id="湖北省博物馆">2025-05-27 湖北省博物馆</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250527-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250527-2.webp" /></div></div></div><h2 id="湖北武汉">2025-05-26 湖北武汉</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250526-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250526-2.webp" /></div></div></div><h2 id="厦门椰风寨">2025-05-23 厦门椰风寨</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250523-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250523-2.webp" /></div></div></div><h2 id="厦门上李水库">2025-05-21 厦门上李水库</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250521-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250521-2.webp" /></div></div></div><h2 id="厦门仙岳公园">2025-03-08 厦门仙岳公园</h2><p><img src="/imgs/images/20250308.webp" /></p><h2 id="广东珠海">2025-01-13 广东珠海</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250113-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250113-2.webp" /></div></div></div><h2 id="澳门">2025-01-12 澳门</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250112-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250112-2.webp" /></div></div></div><h2 id="香港">2025-01-11 香港</h2><p><img src="/imgs/images/20250111.webp" /></p><h2 id="邓紫棋演唱会">2024-12-22 邓紫棋演唱会</h2><p><img src="/imgs/images/20241222.webp" /></p><h2 id="天津">2024-09-25 天津</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240925-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240925-2.webp" /></div></div></div><h2 id="清华大学">2024-09-24 清华大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240924-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240924-2.webp" /></div></div></div><h2 id="陕西西安">2024-09-21 陕西西安</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240921-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240921-2.webp" /></div></div></div><h2 id="广东深圳">2024-09-11 广东深圳</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240911-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240911-2.webp" /></div></div></div><h2 id="厦门园林博览园">2024-07-20 厦门园林博览园</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240720-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240720-2.webp" /></div></div></div><h2 id="厦门海湾公园">2024-06-21 厦门海湾公园</h2><p><img src="/imgs/images/20240621.webp" /></p><h2 id="福建泉州">2024-02-22 福建泉州</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240222-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240222-2.webp" /></div></div></div><h2 id="三明大田">2023-10-03 三明大田</h2><p><img src="/imgs/images/20231003.webp" /></p><h2 id="厦门鼓浪屿">2023-04-01 厦门鼓浪屿</h2><p><img src="/imgs/images/20230401.webp" /></p><h2 id="厦门大学">2023-03-31 厦门大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20230331-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20230331-2.webp" /></div></div></div></div>]]></content>
+    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title></title>
+    <title>Images</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[/** 统计网站运行的时间 **/!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2023/12/01 00:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<div class="markdown-body"><h2 id="下一站去哪">下一站去哪</h2><div class="note note-success">            <ul><li>新疆</li><li>西藏</li><li>四川 九寨沟 黄龙 都江堰 三星堆 四姑娘山 峨眉山</li><li>张家界</li><li>桂林</li><li>甘肃 敦煌莫高窟 月牙泉 鸣沙山 张掖七彩丹霞</li><li>北京 故宫 长城 天坛 国博 圆明园 环球影城</li><li>南京 南京博物院 同胞纪念馆</li><li>山东 大明湖 趵突泉 泰山</li><li>陕西 华山 秦始皇陵</li><li>青海湖</li><li>上海 迪士尼</li><li>苏州</li><li><a href="https://simple.wikipedia.org/wiki/Mount_Pico">Mount Pico</a> in the Azores, the tallest mountain in Portugal</li></ul>          </div><h2 id="上海">2025-06-03 上海</h2><p><img src="/imgs/images/20250603.webp" /></p><h2 id="浙江杭州西湖">2025-06-01 浙江杭州西湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250601-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250601-2.webp" /></div></div></div><h2 id="浙江杭州千岛湖">2025-05-31 浙江杭州千岛湖</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250531-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250531-2.webp" /></div></div></div><h2 id="安徽黄山歙县深渡镇">2025-05-30 安徽黄山歙县深渡镇</h2><p><img src="/imgs/images/20250530.webp" /></p><h2 id="安徽黄山">2025-05-29 安徽黄山</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250529-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250529-2.webp" /></div></div></div><h2 id="湖北省博物馆">2025-05-27 湖北省博物馆</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250527-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250527-2.webp" /></div></div></div><h2 id="湖北武汉">2025-05-26 湖北武汉</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250526-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250526-2.webp" /></div></div></div><h2 id="厦门椰风寨">2025-05-23 厦门椰风寨</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250523-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250523-2.webp" /></div></div></div><h2 id="厦门上李水库">2025-05-21 厦门上李水库</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250521-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250521-2.webp" /></div></div></div><h2 id="厦门仙岳公园">2025-03-08 厦门仙岳公园</h2><p><img src="/imgs/images/20250308.webp" /></p><h2 id="广东珠海">2025-01-13 广东珠海</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250113-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250113-2.webp" /></div></div></div><h2 id="澳门">2025-01-12 澳门</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20250112-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20250112-2.webp" /></div></div></div><h2 id="香港">2025-01-11 香港</h2><p><img src="/imgs/images/20250111.webp" /></p><h2 id="邓紫棋演唱会">2024-12-22 邓紫棋演唱会</h2><p><img src="/imgs/images/20241222.webp" /></p><h2 id="天津">2024-09-25 天津</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240925-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240925-2.webp" /></div></div></div><h2 id="清华大学">2024-09-24 清华大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240924-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240924-2.webp" /></div></div></div><h2 id="陕西西安">2024-09-21 陕西西安</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240921-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240921-2.webp" /></div></div></div><h2 id="广东深圳">2024-09-11 广东深圳</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240911-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240911-2.webp" /></div></div></div><h2 id="厦门园林博览园">2024-07-20 厦门园林博览园</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240720-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240720-2.webp" /></div></div></div><h2 id="厦门海湾公园">2024-06-21 厦门海湾公园</h2><p><img src="/imgs/images/20240621.webp" /></p><h2 id="福建泉州">2024-02-22 福建泉州</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20240222-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20240222-2.webp" /></div></div></div><h2 id="三明大田">2023-10-03 三明大田</h2><p><img src="/imgs/images/20231003.webp" /></p><h2 id="厦门鼓浪屿">2023-04-01 厦门鼓浪屿</h2><p><img src="/imgs/images/20230401.webp" /></p><h2 id="厦门大学">2023-03-31 厦门大学</h2><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/imgs/images/20230331-1.webp" /></div><div class="group-image-wrap"><img src="/imgs/images/20230331-2.webp" /></div></div></div></div>]]></content>
     
   </entry>
   
