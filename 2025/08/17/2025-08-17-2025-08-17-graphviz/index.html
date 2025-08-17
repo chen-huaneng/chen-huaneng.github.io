@@ -21,24 +21,25 @@
   <meta name="author" content="Abel">
   <meta name="keywords" content="Algorithm Problem Solving, Technical Articles, Life Reflections, Programming, Technical Sharing, Coding Reflection, Technical Growth, Algorithm Learning, Personal Blog, Abel, Beauty of Coding, 算法题解, 技术文章, 生活感悟, 编程, 技术分享, 编程思考, 技术成长, 算法学习, 个人博客, 编程之美">
   
-    <meta name="description" content="介绍了如何通过PDF.js将PDF内嵌入Hexo框架下的Fluid主题中。">
+    <meta name="description" content="介绍了用代码绘制流程图的软件Graphviz，并对使用场景进行说明。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo - 使用PDF.js在Hexo的Fluid主题中嵌入PDF">
-<meta property="og:url" content="https://chen-huaneng.github.io/2025/08/03/2025-08-03-2025-08-03-pdfjs/index.html">
+<meta property="og:title" content="Graphviz - 自动图形绘制软件">
+<meta property="og:url" content="https://chen-huaneng.github.io/2025/08/17/2025-08-17-2025-08-17-graphviz/index.html">
 <meta property="og:site_name" content="Abel">
-<meta property="og:description" content="介绍了如何通过PDF.js将PDF内嵌入Hexo框架下的Fluid主题中。">
+<meta property="og:description" content="介绍了用代码绘制流程图的软件Graphviz，并对使用场景进行说明。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-03T07:22:17.000Z">
-<meta property="article:modified_time" content="2025-08-07T14:44:22.892Z">
+<meta property="article:published_time" content="2025-08-17T07:16:34.000Z">
+<meta property="article:modified_time" content="2025-08-17T07:38:39.177Z">
 <meta property="article:author" content="Abel">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Fluid">
+<meta property="article:tag" content="Academic">
 <meta property="article:tag" content="PDF">
+<meta property="article:tag" content="Picture">
+<meta property="article:tag" content="Drawing">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hexo - 使用PDF.js在Hexo的Fluid主题中嵌入PDF ~ Abel</title>
+  <title>Graphviz - 自动图形绘制软件 ~ Abel</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -270,7 +271,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Hexo - 使用PDF.js在Hexo的Fluid主题中嵌入PDF</span>
+            <span id="subtitle">Graphviz - 自动图形绘制软件</span>
           
         </div>
 
@@ -281,8 +282,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-08-03 15:22" pubdate>
-          2025年8月3日 下午
+        <time datetime="2025-08-17 15:16" pubdate>
+          2025年8月17日 下午
         </time>
       </span>
     
@@ -338,12 +339,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hexo - 使用PDF.js在Hexo的Fluid主题中嵌入PDF</h1>
+            <h1 id="seo-header">Graphviz - 自动图形绘制软件</h1>
             
               <p id="updated-time" class="note note-warning" style="">
                 
                   
-                    本文最后更新于：2025年8月7日 晚上
+                    本文最后更新于：2025年8月17日 下午
                   
                 
               </p>
@@ -351,22 +352,30 @@
             
               <div class="markdown-body">
                 
-                <h2 id="需求来源">需求来源</h2>
-<p>由于部分资料来源和某些自己写的笔记都是以 <code>PDF</code> 形式存在的，因此就在寻找能够实现将 <code>PDF</code> 内嵌入博客中的方法，避免查看 <code>PDF</code> 需要下载的麻烦。通过<a target="_blank" rel="noopener" href="https://yuzhang.net/2023/11/07/如何在hexo博客中嵌入PDF/">Yu's Space</a>的博客中了解到可以通过 <code>PDF.js</code> 来实现，于是通过一番尝试实现。</p>
-<h2 id="具体实现">具体实现</h2>
-<p>接下来以 Hexo 框架的 Fluid 主题为例来说明实现的步骤：</p>
-<ol type="1">
-<li><p>首先，下载 <a target="_blank" rel="noopener" href="https://mozilla.github.io/pdf.js/getting_started/#download">PDF.js</a> 并将下载的文件解压到 <code>\source\js\pdfjs</code> 文件夹下（当然如果不存在这个文件夹可以手动创建）。</p></li>
-<li><p>在 Hexo 的配置文件 <code>_config.yml</code> 中进行修改，跳过渲染 <code>pdfjs</code> 相关的配置：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">skip_render:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">&#x27;js/pdfjs/**&#x27;</span><br></code></pre></td></tr></table></figure></li>
-<li><p>在 <code>source</code> 文件夹下新建一个 <code>pdf</code> 文件夹用于存放需要嵌入的 <code>PDF</code> 文件，尽量不要在 <code>PDF</code> 文件命名中加入特殊字符，如 <code>&amp;</code> 等，避免渲染失败。</p></li>
-<li><p>在需要嵌入 <code>PDF</code> 的 <code>markdown</code> 文件中的嵌入位置添加下面的代码和 <code>PDF</code> 的相对路径：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> </span></span><br><span class="hljs-tag"><span class="language-xml">  <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/js/pdfjs/web/viewer.html?file=/pdf/Cauchy-Schwarz 不等式之本質與意義-林琦焜.pdf&quot;</span> </span></span><br><span class="hljs-tag"><span class="language-xml">  <span class="hljs-attr">style</span>=<span class="hljs-string">&#x27;width:100%;height:800px&#x27;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span></span><br></code></pre></td></tr></table></figure></li>
-</ol>
-<p>如果操作成功的话，显示效果如下所示：</p>
-<iframe src="/js/pdfjs/web/viewer.html?file=/pdf/Cauchy-Schwarz不等式之本質與意義-林琦焜.pdf" style="width:100%;height:800px">
-</iframe>
-<p>另外，在 <a target="_blank" rel="noopener" href="https://github.com/mozilla/pdf.js">pdf.js</a> 的 Github 仓库中还有使用 <code>CDN</code> 引入的方式来实现，由于我对这个方法不是很了解，故没有尝试，如果有成功的小伙伴愿意分享相关的方法可以通过<a href="mailto:huanengchen@foxmail.com">我的邮件</a>联系我。</p>
+                <h2 id="graphviz-是什么">Graphviz 是什么</h2>
+<p><a target="_blank" rel="noopener" href="https://graphviz.org/about/">Graphviz</a> 是一个开源的、用文本描述来绘制关系图、网络图的工具包。不需要用鼠标拖拽画图，而是用简单的文本语言（主要是 <code>DOT</code> 语言）描述图中的点和线（节点和边），然后 Graphviz 自动计算布局并生成图片。</p>
+<p>Graphviz 的核心思想是声明式绘图。只需要说清楚“有什么节点”和“哪些节点之间有连接”，以及一些基本的样式要求（颜色、形状、标签），剩下的布局（节点摆在哪、线怎么走）交给 Graphviz 的布局引擎（如 dot, neato, fdp 等）自动完成。</p>
+<h2 id="为什么选择-graphviz">为什么选择 Graphviz</h2>
+<p>相比于 draw.io 等交互式图形化绘图软件，Graphviz 绘图的主要优势在于：</p>
+<ul>
+<li>可以使用代码生成图，而不需要自己控制图形的位置，数据来源可以是数据库、API 或者其他程序（比如根据 TSP 求解代码自动生成最短路径的可视化，不需要手动绘制图形）</li>
+<li>图表需要频繁修改且需要版本控制（Git）支持</li>
+<li>处理非常庞大或结构高度重复的图，如果图中有成百上千个节点和连接则适合用 Graphviz 绘图</li>
+<li>对图表风格一致性的要求比较高，需要生成大量风格（颜色、形状、字体、连线样式）完全一致的图表</li>
+<li>支持 <code>pdf</code>、<code>svg</code>、<code>png</code> 等格式</li>
+</ul>
+<p>如果主要画需要精细控制布局的图，或者图表是临时性（一次性）的，或者说图表复杂度不高，且更新频率很低，则采用 draw.io 等交互式图形化绘图软件会更好。</p>
+<h2 id="入门-graphviz">入门 Graphviz</h2>
+<h3 id="安装-graphviz">安装 Graphviz</h3>
+<p>Windows 中如果安装了 Scoop，直接在命令行中输入：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">scoop install main/graphviz<br></code></pre></td></tr></table></figure>
+<h3 id="graphviz-学习资料">Graphviz 学习资料</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://dreampuf.github.io/GraphvizOnline/">Graphviz Online</a> 在线编译渲染图片，左边是 <code>dot</code> 语言代码，右边会实时渲染相应的图片，还可以选择导出的格式</li>
+<li><a target="_blank" rel="noopener" href="https://edotor.net/">Edotor — Your Favorite Online Graphviz Editor</a> 同样是一个在线编译的网站</li>
+<li><a target="_blank" rel="noopener" href="https://graphviz.readthedocs.io/en/stable/index.html">Graphviz — graphviz 0.21 documentation</a> Python 的 Graphviz 包文档，里面有关 Graphviz 的部分是通用的，可以集成 Python 实现更多功能</li>
+<li><a target="_blank" rel="noopener" href="https://graphviz.org/documentation/">Documentation | Graphviz</a> Graphviz 官方文档，适合作为查询手册，哪里不知道就来查询一下</li>
+</ul>
 
                 
               </div>
@@ -385,7 +394,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  <a href="/categories/Drawing/" class="category-chain-item">Drawing</a>
   
   
 
@@ -400,11 +409,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
-      
-        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+        <a href="/tags/Academic/" class="print-no-link">#Academic</a>
       
         <a href="/tags/PDF/" class="print-no-link">#PDF</a>
+      
+        <a href="/tags/Picture/" class="print-no-link">#Picture</a>
+      
+        <a href="/tags/Drawing/" class="print-no-link">#Drawing</a>
       
     </div>
   
@@ -416,8 +427,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo - 使用PDF.js在Hexo的Fluid主题中嵌入PDF</div>
-      <div>https://chen-huaneng.github.io/2025/08/03/2025-08-03-2025-08-03-pdfjs/</div>
+      <div>Graphviz - 自动图形绘制软件</div>
+      <div>https://chen-huaneng.github.io/2025/08/17/2025-08-17-2025-08-17-graphviz/</div>
     </div>
     <div class="license-meta">
       
@@ -429,13 +440,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年8月3日</div>
+          <div>2025年8月17日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月7日</div>
+          <div>2025年8月17日</div>
         </div>
       
       
@@ -478,18 +489,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/08/04/2025-08-04-2025-08-04-neovim/" title="Neovim - 重构编辑器配置">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Neovim - 重构编辑器配置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/08/03/2025-08-03-2025-08-03-inequality/" title="Math - Cauchy-Schwarz不等式的几种证明方法">
-                        <span class="hidden-mobile">Math - Cauchy-Schwarz不等式的几种证明方法</span>
+                      <a href="/2025/08/17/2025-08-17-2025-08-17-p-np/" title="Algorithm - P、NP、NPC和NP-Hard问题">
+                        <span class="hidden-mobile">Algorithm - P、NP、NPC和NP-Hard问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
