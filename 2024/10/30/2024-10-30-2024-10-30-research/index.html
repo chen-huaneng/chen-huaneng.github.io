@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://chen-huaneng.github.io/2024/10/30/2024-10-30-2024-10-30-research/paper1.webp">
 <meta property="og:image" content="https://chen-huaneng.github.io/2024/10/30/2024-10-30-2024-10-30-research/paper2.webp">
 <meta property="article:published_time" content="2024-10-30T10:50:24.000Z">
-<meta property="article:modified_time" content="2025-08-16T12:48:31.647Z">
+<meta property="article:modified_time" content="2025-08-17T03:16:06.065Z">
 <meta property="article:author" content="Abel">
 <meta property="article:tag" content="Academic">
 <meta name="twitter:card" content="summary_large_image">
@@ -344,7 +344,7 @@
               <p id="updated-time" class="note note-warning" style="">
                 
                   
-                    本文最后更新于：2025年8月16日 晚上
+                    本文最后更新于：2025年8月17日 上午
                   
                 
               </p>
@@ -466,7 +466,16 @@
 <h3 id="论文中引用网页内容在文中怎么标注">论文中引用网页内容在文中怎么标注</h3>
 <p>如果论文格式有要求就按照学校或者通知的要求标注，这里讲一下在 <span class="math inline">\(\LaTeX\)</span> 中如何引用。首先在 <code>bib</code> 文件中以如下格式存储，正文中以 <code>\cite</code> 或者其他引用命令引用，同时注意在正文前调用 <code>\usepackage&#123;url&#125;</code> 使得链接显示：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs latex">@online&#123;PCSELsim2023,<br>howpublished = &#123;[EB/OL]&#125;,<br>url = &#123;https://www.semergytech.com/products/&#125;,<br>year=&#123;[2023-10-12]&#125;,<br>title = &#123;PCSELSim: PCSEL Modeling and Simulation Tool&#125;,<br>author = &#123;Semergytech&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>一部分教程会使用 <code>@misc</code> 而非 <code>@online</code>，<code>misc</code> 对应文献类型为“其他”，属于用通用模板硬凑出相应格式，不推荐。其他格式可以参考 Zepling Lee 维护的 <a target="_blank" rel="noopener" href="https://github.com/zepinglee/gbt7714-bibtex-style">zepinglee/gbt7714-bibtex-style: GB/T 7714-2015 BibTeX Style</a>。</p>
+<p>一部分教程会使用 <code>@misc</code> 而非 <code>@online</code>，<code>misc</code> 对应文献类型为“其他”，属于用通用模板硬凑出相应格式，不推荐。其他格式可以参考 Zepling Lee 维护的 <a target="_blank" rel="noopener" href="https://github.com/zepinglee/gbt7714-bibtex-style">zepinglee/gbt7714-bibtex-style: GB/T 7714-2015 BibTeX Style</a>。对于引用字段的说明：</p>
+<ul>
+<li>主要责任者：作者名字；如果没有作者，可以写这篇报道的责任机构，比如说央视网、XXX研究所、XXX局等</li>
+<li>题名：这一项一般没有什么异议，直接复制粘贴就好</li>
+<li>文献类型标志：在 GB2015 附录 B 的表 B.1 中，可以找到电子公告的文献类型标识代码是 EB</li>
+<li>文献载体类型：在 GB2015 附录 B 的表 B.2 中，可以找到联机网络的载体类型标识代码是 OL</li>
+<li>更新或修改日期：资源的发布日期</li>
+<li>引用日期：在着手写论文到提交论文之间都可以</li>
+<li>获取和访问路径：网址</li>
+</ul>
 
                 
               </div>
@@ -531,7 +540,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年8月16日</div>
+          <div>2025年8月17日</div>
         </div>
       
       
