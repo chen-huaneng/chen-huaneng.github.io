@@ -30,6 +30,8 @@ params:
   DateFormat: "2006-01-02"
   defaultTheme: auto # dark, light
 
+  EnableInstantClick: true # http://instantclick.io/download
+
   ShowFullTextinRSS: true
   ShowPostNavLinks: true # Adds a Previous / Next post suggestion under a single post
   ShowCodeCopyButtons: true
