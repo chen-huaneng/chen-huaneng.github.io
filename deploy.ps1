@@ -25,5 +25,7 @@ if ($gitStatus -or $gitAhead) {
 }
 
 # 重新生成静态网页
-rm -Recurse .\public\
+if (Test-Path .\public\) {
+    rm -Recurse .\public\
+}
 hugo server -D

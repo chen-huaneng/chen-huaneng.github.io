@@ -39,7 +39,6 @@ params:
 
   UseHugoToc: true
   showtoc: true
-  tocopen: true
 
   enableReward: true # 启用赞赏功能
   # 赞赏描述 (可在文章 `frontmatter` 中设置)

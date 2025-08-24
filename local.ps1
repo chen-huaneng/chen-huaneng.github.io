@@ -1,3 +1,5 @@
 # 生成并启动Hugo
-rm -Recurse .\public\
+if (Test-Path .\public\) {
+    rm -Recurse .\public\
+}
 hugo server -D
