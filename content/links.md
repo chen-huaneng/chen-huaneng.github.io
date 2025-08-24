@@ -1,6 +1,5 @@
 ---
 title: "友链"
-layout: "links"
 hideMeta: true
 showtoc: false
 searchHidden: true

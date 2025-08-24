@@ -19,7 +19,7 @@ if ($gitStatus -or $gitAhead) {
     }
 
     # 推送到远程仓库
-    # git push -u origin main
+    git push -u origin main
 } else {
     Write-Host "没有检测到修改或未推送的提交，跳过 Git 操作。"
 }
