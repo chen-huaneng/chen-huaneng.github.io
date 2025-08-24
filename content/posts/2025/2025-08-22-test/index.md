@@ -607,4 +607,6 @@ $$
 
 ### 嵌入 PDF
 
-{{< embed-pdf url="./static/pdf/Cauchy-Schwarz不等式之本質與意義-林琦焜.pdf" >}}
+PDF 是根据相对于 Hugo 根目录解析的，比如放在 `/static/pdf/` 文件夹则 `src="/pdf/test.pdf"`，如果是放在 `/content/posts/2025/2025-08-22-test/` 文件夹则 `src="/posts/2025/2025-08-22-test/test.pdf"`
+
+{{< pdf-embed src="/pdf/Cauchy-Schwarz不等式之本質與意義-林琦焜.pdf" >}}

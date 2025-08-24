@@ -1,0 +1,8 @@
+{{ $src := .Get "src" }}
+
+<iframe 
+  src="/js/pdfjs/web/viewer.html?file={{ $src | safeURL }}" 
+  style="width: 100%; height: 800px; border: none; overflow: hidden;"
+  title="PDF 文档查看器"
+  loading="lazy">
+</iframe>
