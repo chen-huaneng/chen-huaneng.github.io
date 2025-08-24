@@ -2,7 +2,7 @@ baseURL: "https://chen-huaneng.github.io/"
 defaultContentLanguage: "zh"
 hasCJKLanguage: true           # 自动检测是否包含中文日文韩文
 title: "Abel"
-theme: ["PaperMod"]
+theme: ["hugo-embed-pdf-shortcode", "PaperMod"]
 pagination.pagerSize: 15 # 每页文章数量
 languages:
   zh:
@@ -164,3 +164,4 @@ outputs:
     - JSON # necessary for search
 
 timeZone: "Asia/Shanghai"
+enableInlineShortcodes: true

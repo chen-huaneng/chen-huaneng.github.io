@@ -605,4 +605,6 @@ $$
 
 {{< figure src="test2.webp" title="绘梨衣" caption="Sakura & 绘梨衣 の Rilakkuma" >}}
 
+### 嵌入 PDF
 
+{{< embed-pdf url="./static/pdf/Cauchy-Schwarz不等式之本質與意義-林琦焜.pdf" >}}
