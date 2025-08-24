@@ -4,26 +4,27 @@ layout: "links"
 hideMeta: true
 showtoc: false
 searchHidden: true
+enableReward: false
 ---
 
 {{< friend 
 	name="宫水三叶" 
 	url="https://sharingsource.github.io/"	
-	logo="/friends/Miyamizu_Mitsuha.png"
+	logo="/images/Miyamizu_Mitsuha.png"
 	description="算法爱好者，退役 OIer，现微软工程师"
 >}}
 
 {{< friend 
 	name="城子的小屋"
 	url="https://xcz.me/"
-	logo="/friends/xcz.me.jpg"
+	logo="/images/xcz.me.jpg"
 	description="小城子的博客"
 >}}
 
 {{< friend 
 	name="Thanafox's Blog"
 	url="https://blog.thanafox.com/"
-	logo="/friends/thanafox.jpg"
+	logo="/images/thanafox.jpg"
 	description="常应常静，常清净矣。"
 >}}
 

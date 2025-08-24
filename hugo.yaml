@@ -49,11 +49,11 @@ params:
   fancybox: true
 
   assets:
-    favicon: "/icon/favicon.ico" # generate by https://favicon.io/
-    favicon16x16: "/icon/favicon-16x16.png"
-    favicon32x32: "/icon/favicon-32x32.png"
-    apple_touch_icon: "/icon/apple-touch-icon.png"
-    safari_pinned_tab: "/icon/favicon.ico"
+    favicon: "/images/favicon.ico" # generate by https://favicon.io/
+    favicon16x16: "/images/favicon-16x16.png"
+    favicon32x32: "/images/favicon-32x32.png"
+    apple_touch_icon: "/images/apple-touch-icon.png"
+    safari_pinned_tab: "/images/favicon.ico"
     disableHLJS: true  # 不使用highlight.js
 
   label:
@@ -77,8 +77,6 @@ params:
       url: "https://www.zhihu.com/people/yun-tun-5-10"
     - name: "wechat"
       url: "images/wechat.jpg"
-    - name: "buymeacoffee"
-      url: ""
     - name: "rss"
       url: "/index.xml"
 
