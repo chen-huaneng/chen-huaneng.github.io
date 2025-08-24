@@ -1,35 +1,77 @@
 {{- $u := urls.Parse .Destination -}}
 {{- $src := $u.String -}}
+{{- $webpSrc := "" -}}
+
 {{- if not $u.IsAbs -}}
   {{- $path := strings.TrimPrefix "./" $u.Path }}
   {{- with or (.PageInner.Resources.Get $path) (resources.Get $path) -}}
-    {{- $src = .RelPermalink -}}
+    {{- $isConvertible := false -}}
+    {{- $image := . -}}
+    
+    {{- with .Exif -}}
+      {{- if eq .Tags.Orientation 3 }}
+        {{- $image = $image.Resize (printf "%dx%d r180" $image.Width $image.Height) -}}
+      {{- else if eq .Tags.Orientation 6 }}
+        {{- $image = $image.Resize (printf "%dx%d r270" $image.Height $image.Width) -}}
+      {{- else if eq .Tags.Orientation 8 }}
+        {{- $image = $image.Resize (printf "%dx%d r90" $image.Height $image.Width) -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- $src = $image.RelPermalink -}}
+    {{- if in (slice "png" "jpg" "jpeg" "bmp" "tiff") .MediaType.SubType -}}
+      {{- $isConvertible = true -}}
+      {{- $webpSrc = ($image.Resize (printf "%dx%d webp q50" $image.Width $image.Height)).RelPermalink -}}
+    {{- end -}}
+
     {{- with $u.RawQuery -}}
       {{- $src = printf "%s?%s" $src . -}}
+      {{- if $isConvertible -}}
+        {{- $webpSrc = printf "%s?%s" $webpSrc . -}}
+      {{- end -}}
     {{- end -}}
     {{- with $u.Fragment -}}
       {{- $src = printf "%s#%s" $src . -}}
+      {{- if $isConvertible -}}
+        {{- $webpSrc = printf "%s#%s" $webpSrc . -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
+
+{{- $cdnPrefix := .Page.Site.Params.cdnPrefix -}} 
+{{- if $cdnPrefix -}}
+  {{- $src = printf "%s%s" $cdnPrefix $src -}}
+{{- end -}}
+
 {{- $attributes := merge .Attributes (dict "alt" .Text "src" $src "title" (.Title | transform.HTMLEscape) "loading" "lazy") -}}
 
 {{- if .Page.Site.Params.fancybox -}}
 <div class="post-img-view">
   <a data-fancybox="gallery" href="{{ $src | safeURL }}">
-    <img
-      {{- range $k, $v := $attributes -}}
-        {{- if $v -}}
-          {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
-        {{- end -}}
-      {{- end -}}>
+    <picture>
+      {{- if $webpSrc -}}
+        <source type="image/webp" srcset="{{ $webpSrc }}">
+      {{- end -}}
+      <img
+        {{- range $k, $v := $attributes -}}
+          {{- if $v -}}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
+          {{- end -}}
+        {{- end -}}>
+    </picture>
   </a>
 </div>
 {{- else -}}
-<img
-  {{- range $k, $v := $attributes -}}
-    {{- if $v -}}
-      {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
-    {{- end -}}
-  {{- end -}}>
+<picture>
+  {{- if $webpSrc -}}
+    <source type="image/webp" srcset="{{ $webpSrc }}">
+  {{- end -}}
+  <img
+    {{- range $k, $v := $attributes -}}
+      {{- if $v -}}
+        {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
+      {{- end -}}
+    {{- end -}}>
+</picture>
 {{- end -}}
