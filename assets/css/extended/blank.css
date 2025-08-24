@@ -1,0 +1,24 @@
+/*
+This is just a placeholder blank stylesheet so as to support adding custom styles budled with theme's default styles
+
+Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
+*/
+/* 页面默认字体保持霞鹜文楷，代码部分使用 Maple Mono */
+body {
+    font-family: "LXGW WenKai Screen", "Maple Mono", sans-serif !important;
+}
+
+/* 代码块和行内代码使用 Maple Mono */
+.post-content pre, code {
+    font-family: "Maple Mono", monospace;
+    max-height: 40rem;
+}
+
+/* maple-mono-latin-400-normal */
+@font-face {
+  font-family: 'Maple Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/maple-mono@latest/latin-400-normal.woff) format('woff');
+}

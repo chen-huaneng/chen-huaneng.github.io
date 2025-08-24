@@ -1,0 +1,51 @@
+# Hugo 生成的公共目录
+/public/
+/public/**/*
+
+# Hugo 资源缓存目录
+/resources/_gen/
+
+# 主题目录（如果使用git submodule管理主题则不需要忽略）
+# /themes/
+
+# 临时文件和备份文件
+*.tmp
+*.bak
+*~
+*.swp
+*.swo
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日志文件
+*.log
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# IDE/编辑器配置文件
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.idea/
+*.iml
+*.ipr
+*.iws
+
+# Hugo 配置中的敏感信息文件（如果单独存放）
+config.secret.toml
+config.secret.yaml
+config.secret.json
+
+# 其他可能的构建产物
+/node_modules/
+/npm-debug.log
+/yarn-error.log
+/build/
+/dist/

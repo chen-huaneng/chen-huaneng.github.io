@@ -1,0 +1,166 @@
+baseURL: "https://chen-huaneng.github.io/"
+defaultContentLanguage: "zh"
+hasCJKLanguage: true           # 自动检测是否包含中文日文韩文
+title: "Abel"
+theme: ["PaperMod"]
+pagination.pagerSize: 15 # 每页文章数量
+languages:
+  zh:
+    # RFC 5646 语言标记, Hugo 使用此值填充内置 RSS 模板中的语言元素和内置别名模板中 html 元素的 lang 属性
+    languageCode: "zh-CN"
+    # 语言名称，通常在渲染语言切换器时使用
+    languageName: "中文"
+
+enableRobotsTXT: true #允许爬虫抓取到搜索引擎
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  math: false
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: "Abel" 
+  description: "Abel's Blog"
+  author: "Abel"
+  keywords: [Blog, Portfolio, Code, Math, Life, Travel, Music, Computer Science, Operations Research, Run, Game, Photography, Reading, Delicacy, Movie]
+  DateFormat: "2006-01-02"
+  defaultTheme: auto # dark, light
+
+  ShowFullTextinRSS: true
+  ShowPostNavLinks: true # Adds a Previous / Next post suggestion under a single post
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+
+  UseHugoToc: true
+  showtoc: true
+  tocopen: true
+
+  enableReward: true # 启用赞赏功能
+  # 赞赏描述 (可在文章 `frontmatter` 中设置)
+  rewardDescription: "如果本文对你有所帮助，可以点击上方按钮请作者喝杯咖啡！"
+  # 路径相对于博客工程的 static 目录。如下文件在 `static/images/wechat_pay.jpg`
+  WechatPay: "images/wechat_pay.jpg" # 设置微信收款码图片 
+  Alipay: "images/alipay.png" # 设置支付宝收款码图片
+
+  fancybox: true
+
+  assets:
+    favicon: "/icon/favicon.ico" # generate by https://favicon.io/
+    favicon16x16: "/icon/favicon-16x16.png"
+    favicon32x32: "/icon/favicon-32x32.png"
+    apple_touch_icon: "/icon/apple-touch-icon.png"
+    safari_pinned_tab: "/icon/favicon.ico"
+    disableHLJS: true  # 不使用highlight.js
+
+  label:
+    text: "Abel"
+    icon: "/icon/apple-touch-icon.png"
+    iconHeight: 30
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to my blog
+
+  socialIcons:
+    - name: "email"
+      url: "mailto:huanengchen@foxmail.com"
+    - name: "github"
+      url: "https://github.com/chen-huaneng"
+    - name: "twitter"
+      url: "https://x.com/ChenHuaneng"
+    - name: "zhihu"
+      url: "https://www.zhihu.com/people/yun-tun-5-10"
+    - name: "wechat"
+      url: "images/wechat.jpg"
+    - name: "buymeacoffee"
+      url: ""
+    - name: "rss"
+      url: "/index.xml"
+
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  cover:
+    responsiveImages: false
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    ignoreLocation: true
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: home
+      name: "首页"
+      pre: '<i class="fa-solid fa-house"></i>'
+      url: "/"
+      weight: 1
+    - identifier: "archive"
+      name: "归档" 
+      pre: '<i class="fa-solid fa-box-archive"></i>'
+      url: "/archives"
+      weight: 5
+    - identifier: "timecapsule"
+      name: "时光胶囊" 
+      pre: '<i class="fa-solid fa-earth-asia"></i>'
+      url: "/timecapsule"
+      weight: 10
+    - identifier: "about"
+      name: "关于" 
+      pre: '<i class="fa-solid fa-user-graduate"></i>'
+      url: "/about"
+      weight: 15
+    - identifier: "links"
+      name: "友链"
+      pre: "<i class='fa fa-link'></i>"
+      weight: 20
+      url: "/links"
+    - identifier: "search"
+      name: "搜索"
+      pre: "<i class='fa fa-search'></i>"
+      url: "/search"
+      weight: 25
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+
+markup:
+  # 代码高亮
+  highlight:
+    lineNos: true # 行号
+    style: "github-dark" # 主题
+    lineNumbersInTable: false # 分隔行号和代码
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters: # https://gohugo.io/content-management/mathematics/
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - $
+            - $
+          - - \(
+            - \)
+        enable: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+timeZone: "Asia/Shanghai"
