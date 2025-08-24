@@ -17,6 +17,7 @@ body {
 /* maple-mono-latin-400-normal */
 @font-face {
   font-family: 'Maple Mono';
+  unicode-range: U+0025-00F0; /* U+0025-00F0 数字、字母、拉丁语等 https://koobai.com/unicode_range/ */
   font-style: normal;
   font-display: swap;
   font-weight: 400;

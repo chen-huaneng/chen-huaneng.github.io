@@ -1,6 +1,6 @@
 baseURL: "https://chen-huaneng.github.io/"
 defaultContentLanguage: "zh"
-hasCJKLanguage: true           # 自动检测是否包含中文日文韩文
+hasCJKLanguage: true # 自动检测是否包含中文日文韩文
 title: "Abel"
 theme: ["PaperMod"]
 pagination.pagerSize: 15 # 每页文章数量
@@ -21,24 +21,23 @@ minify:
   minifyOutput: true
 
 params:
-  math: false
-  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  math: false # 默认是否启用 Mathjax
+  env: "production" # to enable google analytics, opengraph, twitter-cards and schema.
   title: "Abel" 
   description: "Abel's Blog"
   author: "Abel"
   keywords: [Blog, Portfolio, Code, Math, Life, Travel, Music, Computer Science, Operations Research, Run, Game, Photography, Reading, Delicacy, Movie]
-  DateFormat: "2006-01-02"
-  defaultTheme: auto # dark, light
+  DateFormat: "2006-01-02" # 注意 Hugo 只能使用这个日期
+  defaultTheme: "auto" # dark, light
 
-  EnableInstantClick: true # http://instantclick.io/download
-
-  ShowFullTextinRSS: true
+  ShowFullTextinRSS: true # 是否在 RSS 中展示全文，方便订阅 RSS 的人在 RSS 阅读器中浏览
   ShowPostNavLinks: true # Adds a Previous / Next post suggestion under a single post
-  ShowCodeCopyButtons: true
+  ShowCodeCopyButtons: true # 展示代码块复制按钮
   ShowRssButtonInSectionTermList: true
+  hideAuthor: true # 在文章页隐藏作者
 
-  UseHugoToc: true
-  showtoc: true
+  UseHugoToc: true # 使用 Hugo 的目录样式
+  showtoc: true # 是否启用目录
 
   enableReward: true # 启用赞赏功能
   # 赞赏描述 (可在文章 `frontmatter` 中设置)
@@ -47,7 +46,7 @@ params:
   WechatPay: "images/wechat_pay.jpg" # 设置微信收款码图片 
   Alipay: "images/alipay.png" # 设置支付宝收款码图片
 
-  fancybox: true
+  fancybox: true # 图片灯箱，方便查看图片
 
   assets:
     favicon: "/images/favicon.ico" # generate by https://favicon.io/
@@ -55,7 +54,7 @@ params:
     favicon32x32: "/images/favicon-32x32.png"
     apple_touch_icon: "/images/apple-touch-icon.png"
     safari_pinned_tab: "/images/favicon.ico"
-    disableHLJS: true  # 不使用highlight.js
+    disableHLJS: true  # 不使用 PaperMod 主题的 highlight.js
 
   label:
     text: "Abel"
@@ -101,7 +100,7 @@ params:
 
 menu:
   main:
-    - identifier: home
+    - identifier: "home"
       name: "首页"
       pre: '<i class="fa-solid fa-house"></i>'
       url: "/"
@@ -113,8 +112,8 @@ menu:
       weight: 5
     - identifier: "timecapsule"
       name: "时光胶囊" 
-      pre: '<i class="fa-solid fa-earth-asia"></i>'
-      url: "/timecapsule"
+      pre: '<i class="fa-solid fa-mountain-sun"></i>'
+      url: "/timecapsule/"
       weight: 10
     - identifier: "about"
       name: "关于" 
@@ -131,15 +130,16 @@ menu:
       pre: "<i class='fa fa-search'></i>"
       url: "/search"
       weight: 25
+
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
-
 markup:
   # 代码高亮
   highlight:
+    noClasses: false
     lineNos: true # 行号
-    style: "github-dark" # 主题
     lineNumbersInTable: false # 分隔行号和代码
+
   goldmark:
     extensions:
       passthrough:
@@ -162,4 +162,11 @@ outputs:
     - RSS
     - JSON # necessary for search
 
-timeZone: "Asia/Shanghai"
+timeZone: "Asia/Shanghai" # 时区
+
+# https://gohugo.io/hugo-modules/use-modules/
+module:
+  imports:
+    path: "github.com/mfg92/hugo-shortcode-gallery" # https://github.com/mfg92/hugo-shortcode-gallery
+
+timeout: 60000 # This is required for larger galleries to be build (60 sec)

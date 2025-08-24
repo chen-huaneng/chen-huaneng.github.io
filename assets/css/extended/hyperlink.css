@@ -1,0 +1,24 @@
+.post-content a {
+    position: relative;
+    text-decoration: none; /* 移除下划线 */
+    color: var(--primary); /* 链接默认颜色 */
+    z-index: 1; /* 确保文字在遮罩上方 */
+}
+
+/* 文字上方的半透明遮罩效果 */
+.post-content a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0; /* 遮罩从文字底部开始 */
+    width: 100%;
+    height: 25%; /* 遮罩高度为文字的25%，不完全覆盖 */
+    background-color: rgba(17, 153, 158, 0.4); /* 半透明遮罩 */
+    transition: all 0.3s ease;
+    z-index: -1; /* 遮罩在文字下方 */
+}
+
+/* 设置悬停时的文字颜色 */
+.post-content a:hover {
+    color: lightseagreen;
+}
