@@ -1,0 +1,214 @@
+/* 限定所有样式只作用于.home-info内部 */
+.home-info {
+    /* 可以添加article本身的样式 */
+}
+
+/* 响应式设计 */
+.home-info .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.home-info .col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* 图片布局 */
+.home-info .float-right {
+    float: right !important;
+}
+
+.home-info .ml-4 {
+    margin-left: 1.5rem !important;
+}
+
+.home-info .mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.home-info .d-none {
+    display: none !important;
+}
+
+.home-info .d-md-block {
+    display: block !important;
+}
+
+@media (max-width: 767px) {
+    .home-info .d-md-block {
+        display: none !important;
+    }
+}
+
+/* 弹性布局 */
+.home-info .d-flex {
+    display: flex !important;
+}
+
+/* 图片样式 */
+.home-info .img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.home-info .img-thumbnail {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 文本样式 */
+.home-info .h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0rem;
+    font-weight: 1000;
+    line-height: 1.2;
+}
+
+.home-info .text-profile-position {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.home-info .text-profile-bio {
+    line-height: 1.5;
+    text-align: justify; /* 两端对齐 */
+    margin-top: 0.5rem;
+}
+
+.home-info .entry-footer {
+    margin-top: 0.5rem;
+}
+
+/* 教育经历与荣誉奖项整体容器 */
+.home-info .profile-details {
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    background: var(--entry);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+/* 每个section的分隔与内边距 */
+.home-info .profile-section {
+    padding: 0rem 0rem;
+    border-bottom: 1px solid var(--border-light); /* 分隔线 */
+}
+
+/* 最后一个section去掉底部边框 */
+.home-info .profile-section:last-child {
+    border-bottom: none;
+}
+
+/* 标题样式 */
+.home-info .profile-section h6 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+/* 教育经历列表 */
+.home-info .education-item {
+    margin-bottom: 0rem; /* 每条教育经历间距 */
+    margin-left: 1.5rem;
+}
+
+/* 教育经历内容布局 */
+.home-info .education-content {
+    width: 100%;
+}
+
+.home-info .education-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 顶部对齐 */
+    flex-wrap: wrap; /* 小屏幕自动换行 */
+}
+
+.home-info .education-title {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 0rem;
+    color: var(--text-dark);
+}
+
+.home-info .education-info {
+    flex: 1; /* 占满剩余空间 */
+    font-size: 14px;
+    padding-right: 1rem; /* 与时间保持距离 */
+}
+
+.home-info .education-date {
+    white-space: nowrap; /* 时间不换行 */
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* 给荣誉奖项所在的section添加顶部间距，与教育经历section分隔开 */
+.home-info .profile-section:nth-child(2) {
+    margin-top: 1rem; /* 可根据需要调整这个值，如0.8rem、1.2rem等 */
+}
+
+/* 荣誉奖项列表 */
+.home-info .honors-list {
+    padding-left: 1.5rem;
+}
+
+.home-info .honors-item {
+    margin-bottom: 0rem; /* 每条奖项间距 */
+}
+
+/* 荣誉奖项布局 */
+.home-info .honors-meta {
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.home-info .honors-title {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.home-info .honors-year {
+    white-space: nowrap;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* 响应式调整 */
+@media (max-width: 767px) {
+    .home-info .education-meta,
+    .home-info .honors-meta {
+        flex-direction: column; /* 小屏幕纵向排列 */
+    }
+
+    .home-info .education-date,
+    .home-info .honors-year {
+        margin-top: 0.3rem;
+        align-self: flex-start; /* 时间左对齐（小屏幕） */
+    }
+
+    .home-info .profile-details {
+        padding: 0.8rem;
+    }
+}

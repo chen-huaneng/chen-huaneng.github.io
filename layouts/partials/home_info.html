@@ -1,0 +1,74 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <div class="row">
+        <div class="col">
+            <div class="figure float-right ml-4 mb-3 d-none d-md-block">
+                <img src="{{ .portrait | default "/images/portrait.webp" }}" class="figure-img img-fluid img-thumbnail" style="height: 300px;" data-placement="center" alt="Profile photo">
+            </div>
+            
+            <!-- 称呼 -->
+            <div class="d-flex">
+                <header class="entry-header">
+                    <h1 class="h1">{{ .Title | markdownify }}</h1>
+                </header>
+            </div>
+            
+            <!-- 职位信息 -->
+            <div class="text-profile-position">
+                <span><i class="fa-solid fa-graduation-cap"></i>&nbsp;{{ .position | default "" }}</span>
+            </div>
+            
+            <!-- 个人简介内容 -->
+            <div class="text-profile-bio">
+                {{ .Content | markdownify }}
+            </div>
+        </div>
+    </div>
+    
+    <!-- 社交媒体 -->
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+
+    <!-- 教育经历和荣誉奖项部分 -->
+    <div class="profile-details mt-4">
+        <!-- 教育经历 -->
+        <div class="profile-section">
+            <h6><i class="fa-solid fa-building-columns"></i>&nbsp;Education</h6>
+            <ul class="list-unstyled education-list">
+                {{ range .education }}
+                <li class="education-item">
+                    <div class="education-content">
+                        <div class="education-title">{{ .school }}</div>
+                        <div class="education-meta">
+                            <div class="education-info">
+                                {{ .degree }}
+                                {{ with .department }}<br>{{ . }}{{ end }}
+                            </div>
+                            <div class="education-date"><em>{{ .startDate }} - {{ .endDate }}</em></div>
+                        </div>
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+
+        <!-- 荣誉奖项 -->
+        <div class="profile-section">
+            <h6><i class="fa-solid fa-medal"></i>&nbsp;Honors &amp; Awards</h6>
+            <ul class="list-unstyled honors-list">
+                {{ range .honors }}
+                <li class="honors-item">
+                    <div class="honors-content">
+                        <div class="honors-meta">
+                            <div class="honors-title">{{ .title }}</div>
+                            <div class="honors-year"><em>{{ .year }}</em></div>
+                        </div>
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</article>
+{{- end }}

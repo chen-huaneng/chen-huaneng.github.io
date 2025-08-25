@@ -64,8 +64,28 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Title: "Abel"
+    Content: "厦门大学硕士研究生在读，对机器学习和运筹优化等方向感兴趣，学术合作请通过邮件联系。学术工作外，对计算机科学和数学的诸多领域同样有浓厚的兴趣。工作和学习之外的爱好同样广泛，包括但不限于长跑，羽毛球，乒乓球，篮球，游泳，阅读，骑行，旅游，摄影，健身，品鉴和制作美食，电子游戏，听音乐，看电影、动漫和电视剧，写博客和技术分享。喜欢听邓紫棋、周杰伦、林俊杰、陈奕迅、孙燕姿、蔡宥绮、Adele、张学友、刘德华、王心凌的歌，喜欢的曲风比较杂，基本什么类型都听。喜欢的书很多，比如刘慈欣的《三体》三部曲、余华的《活着》、三毛的《撒哈拉的故事》、林海音的《城南旧事》、陈忠实的《白鹿原》、张纯如的《南京大屠杀》、阿来的《尘埃落定》、当年明月的《明朝那些事儿》……"
+    portrait: "/images/portrait.jpg" # 展示图片
+    position: "M.S. student @ Xiamen University" # 职位信息
+    AlignSocialIconsTo: "center" # 社交图标位置, 可选: "left", "center", "right"
+    # 教育经历
+    education:
+      - school: "Xiamen University"
+        degree: "M.S. Student"
+        department: "Department of Management Science"
+        startDate: "Sep. 2025"
+        endDate: "present"
+      - school: "Xiamen University"
+        degree: "B.S. in Management Science"
+        startDate: "Sep. 2021"
+        endDate: "Jun. 2025"
+    # 荣誉奖项
+    honors:
+      - title: "Second Prize in Asia and Pacific Mathematical Contest in Modeling"
+        year: "2023"
+      - title: "First Prize at the Provincial Level in the China Undergraduate Mathematical Contest in Modeling"
+        year: "2023"
 
   socialIcons:
     - name: "email"
@@ -103,7 +123,7 @@ menu:
   main:
     - identifier: "home"
       name: "首页"
-      pre: '<i class="fa-solid fa-house"></i>'
+      pre: '<i class="fa-solid fa-user-graduate"></i>'
       url: "/"
       weight: 1
     - identifier: "archive"
@@ -116,21 +136,16 @@ menu:
       pre: '<i class="fa-solid fa-mountain-sun"></i>'
       url: "/timecapsule/"
       weight: 10
-    - identifier: "about"
-      name: "关于" 
-      pre: '<i class="fa-solid fa-user-graduate"></i>'
-      url: "/about"
-      weight: 15
     - identifier: "links"
       name: "友链"
       pre: "<i class='fa fa-link'></i>"
-      weight: 20
+      weight: 15
       url: "/links"
     - identifier: "search"
       name: "搜索"
       pre: "<i class='fa fa-search'></i>"
       url: "/search"
-      weight: 25
+      weight: 20
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
