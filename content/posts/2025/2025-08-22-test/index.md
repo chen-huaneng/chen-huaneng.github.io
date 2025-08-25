@@ -591,13 +591,23 @@ $$
 
 {{< bilibili src="//player.bilibili.com/player.html?isOutside=true&aid=115021304561914&bvid=BV1LsbhzBEfJ&cid=31665424057&p=1" >}}
 
-### YouTube Shortcode
+### YouTube
 
 {{< youtube hjD9jTi_DQ4 >}}
 
-### Vimeo Shortcode
+### Vimeo
 
 {{< vimeo 152985022 >}}
+
+###  代码高亮
+
+{{< highlight html >}}
+
+<div class="shortcode">
+    <p>shortcode test</p>
+</div>
+{{< /highlight >}}
+
 
 ## 自定义功能
 

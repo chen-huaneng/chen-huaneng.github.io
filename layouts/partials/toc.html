@@ -3,8 +3,7 @@
 {{- if $has_headers -}}
 <!-- 默认左侧展开目录 -->
 <div class="toc side left">
-    <!-- 默认添加 open 属性使目录展开 -->
-    <details open>
+    <details {{if (.Param "TocOpen") }} open{{ end }}>
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">{{- i18n "toc" | default "Table of Contents" }}</span>
         </summary>

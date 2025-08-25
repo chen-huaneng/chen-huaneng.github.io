@@ -10,7 +10,7 @@ enableReward: false
 {{< timeline date="2025-08-24" title="增加时光胶囊板块" description="用shortcode实现了画廊自动排布图片，方便增减图片。" tags="博客" >}}
 {{< timeline date="2025-08-23" title="支持插入数学公式" description="用Mathjax引擎渲染数学公式，修复行内公式和行间公式渲染错误，增加友链板块。" tags="博客" >}}
 {{< timeline date="2025-08-22" title="完善细节" description="添加测试博客功能的文章，实现了插入Bilibili视频，用Fancybox实现图片灯箱。" tags="博客" >}}
-{{< timeline date="2025-08-21" title="主题配置" description="根据PaperMod官方文档修改了相应的配置。" tags="博客" >}}
+{{< timeline date="2025-08-21" title="主题配置" description="根据PaperMod官方文档修改了相应的配置，基于PDF.js实现插入PDF的shortcode。" tags="博客" >}}
 {{< timeline date="2025-08-21" title="开源lessTabs浏览器插件" description="开源lessTabs浏览器插件，支持在当前页面预览链接。" tags="开源" >}}
 {{< timeline date="2025-08-20" title="更换框架" description="把博客框架从Hexo转到Hugo，构建速度快很多，PaperMod主题比Fluid主题简洁。" tags="博客" >}}
 {{< timeline date="2025-08-19" title="发布LaTeX笔记模板" description="重构LaTeX笔记模板，将原来的LaTeX模板用于排版书籍，精简代码。" tags="学习" url="https://github.com/chen-huaneng/latex-template" >}}

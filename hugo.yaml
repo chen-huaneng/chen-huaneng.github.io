@@ -38,6 +38,7 @@ params:
 
   UseHugoToc: true # 使用 Hugo 的目录样式
   showtoc: true # 是否启用目录
+  tocopen: false # 是否默认展开目录
 
   enableReward: true # 启用赞赏功能
   # 赞赏描述 (可在文章 `frontmatter` 中设置)
