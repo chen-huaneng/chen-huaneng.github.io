@@ -1,12 +1,13 @@
-.post-content a {
+/* 只对不包含图片的链接生效 */
+.post-content a:not(:has(img)) {
     position: relative;
     text-decoration: none; /* 移除下划线 */
     color: var(--primary); /* 链接默认颜色 */
     z-index: 1; /* 确保文字在遮罩上方 */
 }
 
-/* 文字上方的半透明遮罩效果 */
-.post-content a::before {
+/* 文字上方的半透明遮罩效果（仅对纯文本链接） */
+.post-content a:not(:has(img))::before {
     content: '';
     position: absolute;
     left: 0;
@@ -18,7 +19,7 @@
     z-index: -1; /* 遮罩在文字下方 */
 }
 
-/* 设置悬停时的文字颜色 */
-.post-content a:hover {
+/* 悬停效果（仅对纯文本链接） */
+.post-content a:not(:has(img)):hover {
     color: lightseagreen;
 }
