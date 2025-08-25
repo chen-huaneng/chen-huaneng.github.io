@@ -81,3 +81,20 @@
         display: none;
     }
 }
+
+/* 移除全局超链接的样式 */
+.no-link-styles a {
+    position: static !important;
+    color: inherit !important; /* 继承父元素颜色 */
+    z-index: auto !important;
+}
+
+/* 移除遮罩效果 */
+.no-link-styles a::before {
+    display: none !important;
+}
+
+/* 移除悬停效果 */
+.no-link-styles a:hover {
+    color: inherit !important;
+}
