@@ -1,5 +1,6 @@
 ---
 title: "时光胶囊"
+layout: "timecapsule"
 hideMeta: true
 showtoc: false
 searchHidden: true
