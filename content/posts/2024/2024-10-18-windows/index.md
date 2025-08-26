@@ -2,8 +2,8 @@
 date: '2024-10-18 08:57:12'
 title: 'Windows'
 description: "记录我解决一些Windows 10疑难问题的历程。"
-tags: [[Windows, ]]
-categories: [[Blog]]
+tags: [Windows, ]
+categories: [Blog]
 math: false
 ---
 
@@ -13,15 +13,15 @@ math: false
 
 一般来说，在 `C:\Users` 这个路径下应该有一个当前用户的文件夹，比如在下面的图中应该有一个 `Abel` 的文件夹，并且查看选项中已经勾选了显示隐藏文件这一个选项：
 
-![](windows.webp)
+![](windows.png)
 
 在查看菜单最右边有一个选项，单击打开“文件夹选项”，选中“查看”一栏，在高级设置里取消勾选“隐藏受操作系统保护的文件”，应用后就能看到自己的用户文件夹，最后选择确定。
 
-![](windows2.webp)
+![](windows2.png)
 
-![](windows3.webp)
+![](windows3.png)
 
-![](windows4.webp)
+![](windows4.png)
 
 > 提示：找到你想要的文件做好修改之后最后还是把这些文件隐藏显示会安全一点。
 
@@ -123,23 +123,23 @@ mklink /j C:\Windows\Installer <e:\Backup>\Installer
 
 按下 Win 徽标键，直接键入 `services` 或者 `服务` 打开第一个：
 
-![](edge.webp)
+![](edge.png)
 
 找到跟 Microsoft Edge 更新有关的两个选项，右键选择属性，将启动类型改为自动，重新更新 Edge 即可：
 
-![](edge2.webp)
+![](edge2.png)
 
-![](edge3.webp)
+![](edge3.png)
 
 ### 添加软件到开机自启
 
 在运行输入框中输入 `shell:startup` 命令后点击确定。打开系统启动项目文件夹。
 
-![](startup1.webp)
+![](startup1.png)
 
 把要添加的程序快捷方式拖到该文件夹下即可。
 
-![](startup2.webp)
+![](startup2.png)
 
 ### 关闭 Windows 的自动更新
 

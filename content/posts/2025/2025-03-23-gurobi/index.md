@@ -1,9 +1,9 @@
 ---
 date: '2025-03-23 11:21:02'
-title: 'Gurobi'
+title: 'Python - Gurobi'
 description: ""
-tags: [[Python, Gurobi, ]]
-categories: [[Python]]
+tags: [Python, Gurobi, ]
+categories: [Python]
 math: true
 ---
 

@@ -1,9 +1,9 @@
 ---
 date: '2025-08-07 22:06:48'
-title: 'Webp'
+title: 'Hexo - 使用WebP格式的图片加速Hexo网页访问速度'
 description: ""
-tags: [[Hexo, Website, Picture]]
-categories: [[Hexo]]
+tags: [Hexo, Website, Picture]
+categories: [Hexo]
 math: false
 ---
 

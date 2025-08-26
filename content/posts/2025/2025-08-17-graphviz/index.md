@@ -1,9 +1,9 @@
 ---
 date: '2025-08-17 15:16:34'
-title: 'Graphviz'
+title: 'Graphviz - 自动图形绘制软件'
 description: ""
-tags: [[Drawing, Academic, Picture, PDF]]
-categories: [[Drawing, ]]
+tags: [Drawing, Academic, Picture, PDF]
+categories: [Drawing, ]
 math: false
 ---
 
@@ -97,7 +97,7 @@ neato -Tpng example.dot > example.png
 
 渲染完之后会在文件夹下看到一个 `example.png` 文件，打开就可以看到效果，大致像下面这样：
 
-![](example.webp)
+![](example.png)
 
 当然可以把 `-Tpng` 改成 `-Tpdf` ，把 `example.png` 改成 `example.pdf` 来输出 PDF 格式的图片。
 

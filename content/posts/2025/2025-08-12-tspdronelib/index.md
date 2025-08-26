@@ -1,9 +1,9 @@
 ---
 date: '2025-08-12 15:02:24'
-title: 'Tspdronelib'
+title: 'Dataset - TSPDroneLIB by Bogyrbayeva et al. (2023)'
 description: ""
-tags: [[Dataset, TSP-D, FSTSP]]
-categories: [[Dataset, ]]
+tags: [Dataset, TSP-D, FSTSP]
+categories: [Dataset, ]
 math: true
 ---
 

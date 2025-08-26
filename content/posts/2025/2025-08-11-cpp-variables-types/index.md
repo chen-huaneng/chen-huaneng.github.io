@@ -1,9 +1,9 @@
 ---
 date: '2025-08-11 19:26:12'
-title: 'Cpp Variables Types'
+title: 'C++ - （二）变量和类型'
 description: ""
-tags: [[C++,]]
-categories: [[C++, ]]
+tags: [C++,]
+categories: [C++, ]
 math: false
 ---
 
@@ -203,7 +203,7 @@ int *p3, *p4; // both p3 and p4 are pointers to int
 
 由于存在 `int* p;` 这样的定义方式，因此容易混淆基类型和声明符号的关系，基类型是 `int`，而声明符号 `*` 用于修饰变量 `p`，表示 `p` 是一个指向整数的指针，而不是一个整数。因此推荐将声明符号紧贴变量名，以提高代码的可读性。
 
-![](pointer.webp)
+![](pointer.png)
 
 声明符号的理解方式是从右到左的，即声明符号修饰的是它右边的变量名。比如指向指针的指针（pointers to pointers）是指一个指针变量存储了另一个指针的地址。如上图所示，`pi` 是指向整数的指针，而 `ppi` 是指向指针的指针。
 

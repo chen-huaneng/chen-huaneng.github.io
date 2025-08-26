@@ -1,9 +1,9 @@
 ---
 date: '2025-08-14 20:10:29'
-title: 'Gcd'
+title: 'Algorithm - 求两个整数的最大公约数（GCD）的几种算法'
 description: ""
-tags: [[Algorithm, GCD, Math, Binary, Number Theory]]
-categories: [[Algorithm, ]]
+tags: [Algorithm, GCD, Math, Binary, Number Theory]
+categories: [Algorithm, ]
 math: true
 ---
 
@@ -520,5 +520,4 @@ g++ -std=c++17 temp.cpp -o temp
 - [实数范围内的求模（求余）运算：负数求余究竟怎么求](https://ceeji.net/blog/mod-in-real/) 关于负数和实数的求模运算可以参考这篇博客
 - [Introduction to Algorithms (4/e)](https://book.douban.com/subject/35591269/) 大名鼎鼎的《算法导论》
 - [Binary GCD - Algorithmica](https://en.algorithmica.org/hpc/algorithms/gcd/) 一个很好的算法参考网站
-
 

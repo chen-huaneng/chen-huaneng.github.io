@@ -1,9 +1,9 @@
 ---
 date: '2024-10-28 16:26:21'
-title: 'Latex'
+title: 'LaTeX - （四）制作自己的模板'
 description: ""
-tags: [[LaTeX]]
-categories: [[LaTeX]]
+tags: [LaTeX]
+categories: [LaTeX]
 math: true
 ---
 
@@ -61,9 +61,9 @@ Compiled with fontconfig version 2.15.0; using 2.15.0
 
 我的笔记模板和书籍模板都可以在我的仓库 [chen-huaneng/latex-template](https://github.com/chen-huaneng/latex-template) 中找到。
 
-![书籍模板样式预览](book-demo.webp)
+![书籍模板样式预览](book-demo.jpg)
 
-![笔记模板样式预览](note-demo.webp)
+![笔记模板样式预览](note-demo.jpg)
 
 ## 参考文档
 

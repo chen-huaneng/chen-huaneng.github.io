@@ -1,9 +1,9 @@
 ---
 date: '2024-11-19 16:20:38'
-title: 'Intersection'
+title: 'Math - 二维图形相交问题'
 description: ""
-tags: [[Math, Geometry, Polygon]]
-categories: [[Math]]
+tags: [Math, Geometry, Polygon]
+categories: [Math]
 math: true
 ---
 
@@ -20,7 +20,7 @@ math: true
 
 比如下图的(a)和(b)就分别表示了线段穿过多边形内部和多边形的顶点的情况，图(c)则表示图(a)的情况，无人机应该如何绕行的情况。
 
-![论文的Fig. D.6. Avoiding restricted areas.](intersection.webp)
+![论文的Fig. D.6. Avoiding restricted areas.](intersection.png)
 
 乍一看会觉得这个算法很巧妙，因为文章中用来计算三角形面积和多边形的面积公式只需要用到顶点和端点的坐标值即可。对这个公式感兴趣的可以参考[Shoelace formula - Wikiwand](https://www.wikiwand.com/en/articles/Shoelace_formula)和[【国际数学竞赛】任意多边形面积计算公式 - 知乎](https://zhuanlan.zhihu.com/p/110025234)。
 
@@ -40,11 +40,11 @@ $$
 2. 如果取的点不好，存在误判的可能，当然可以通过取更多的点来防止这种情况的发生，但是相对于效率而言不是很好的解决方法
 3. 如果多边形的边数为 $n$，取点的数量为 $k$，那么这个算法的时间复杂度为 $O(kn)$
 
-![多边形划分三角形的情况举例](intersection2.webp)
+![多边形划分三角形的情况举例](intersection2.png)
 
 比如，如果取的点是红色的点，因为所有的点根据上面的算法得到的三角形面积和的值不等于多边形的面积值，所以会判断这个线段没有穿过多边形。
 
-![一个误判的例子](intersection3.webp)
+![一个误判的例子](intersection3.png)
 
 因为论文提出的算法可能存在的效率底下和误判情况，我就思考能不能用更好的方法来替换上面所说的方法，参考[python - Determine if a line segment intersects a polygon - Stack Overflow](https://stackoverflow.com/questions/6050392/determine-if-a-line-segment-intersects-a-polygon)这个问题，我发现了一个很简单的思路：
 
@@ -55,7 +55,7 @@ $$
 
 这个算法的好处在于，时间复杂度是 $O(n)$，其中 $n$ 是多边形的边数，而且不会出现误判的情况。
 
-![参考Stackoverflow的回答](intersection4.webp)
+![参考Stackoverflow的回答](intersection4.png)
 
 这里只讨论了针对多边形的情况，对于不是多边形，比如说针对任意的封闭曲面的情况，我的一个简单思路是，用多边形去模拟封闭曲面（类似于微积分的思想，以直代曲），当然具体实现可能不是用这种方法，只是提供一种可能的思路。另外，这里讨论的问题也只针对二维的情况，对于三维的情况，这里的方法就不适用了。
 

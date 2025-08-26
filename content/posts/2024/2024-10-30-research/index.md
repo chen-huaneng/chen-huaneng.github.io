@@ -1,9 +1,9 @@
 ---
 date: '2024-10-30 18:50:24'
 title: 'Research'
-description: ""
-tags: [[Academic]]
-categories: [[Academic]]
+description: "Academic - 初入学术殿堂"
+tags: [Academic]
+categories: [Academic]
 math: true
 ---
 
@@ -109,14 +109,14 @@ DOI 是指数字对象唯一标识符，可以理解为数字资源唯一的“�
 
 - [Semantic Scholar | AI-Powered Research Tool](https://www.semanticscholar.org/)：可以通过查找引用这篇文章的 Paper 来寻找相关的文献
 
-![](paper1.webp)
+![](paper1.png)
 
 - [Connected Papers | Find and explore academic papers](https://www.connectedpapers.com/)：
   - 年份越往后的颜色越深，越往前则颜色越浅
   - 文献之间的关系是通过相似性而不是引用来连接
   - 文献节点的大小表示被引用的次数的多少
 
-![](paper2.webp)
+![](paper2.png)
 
 ### 读文献的方法论
 

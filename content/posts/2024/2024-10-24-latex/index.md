@@ -2,8 +2,8 @@
 date: '2024-10-24 09:11:37'
 title: 'Latex'
 description: "本文主要介绍如何在 Windows 10 环境下安装 TeX Live。"
-tags: [[LaTeX, ]]
-categories: [[LaTeX]]
+tags: [LaTeX, ]
+categories: [LaTeX]
 math: true
 ---
 
@@ -165,7 +165,7 @@ sudo apt install fontconfig
 
 接下来，在主系统中将镜像装载，装载成功后会如图显示一个光盘和硬盘的图标 `DVD Drive (F:) TeXLive2025` 例如这里挂载到 `F\` 中，而后进入 `bash` （或者 `zsh`）并执行命令：
 
-![](latex.webp)
+![](latex.png)
 
 ```bash
 sudo mkdir /mnt/f # 注意更改路径
@@ -299,7 +299,7 @@ sudo /usr/local/texlive/2025/bin/x86_64-linux/tlmgr path add
 
 然后在 `Powershell` 中就可以直接使用 $\TeX$ 的命令了：
 
-![](latex-2.webp)
+![](latex-2.png)
 
 ### 升级宏包
 

@@ -2,8 +2,8 @@
 date: '2024-10-16 16:55:30'
 title: 'Latex'
 description: ""
-tags: [[LaTeX]]
-categories: [[LaTeX]]
+tags: [LaTeX]
+categories: [LaTeX]
 math: true
 ---
 

@@ -1,9 +1,9 @@
 ---
 date: '2025-08-12 14:45:16'
-title: 'Tsp D Instances'
+title: 'Dataset - TSP-D Instances by Bouman et al. (2018)'
 description: ""
-tags: [[TSP-D, Dataset,]]
-categories: [[Dataset, ]]
+tags: [TSP-D, Dataset,]
+categories: [Dataset, ]
 math: true
 ---
 

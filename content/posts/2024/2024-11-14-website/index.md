@@ -1,9 +1,9 @@
 ---
 date: '2024-11-14 18:56:53'
-title: 'Website'
+title: 'Website - 有趣、实用的网站合集'
 description: ""
-tags: [[Website]]
-categories: [[Blog]]
+tags: [Website]
+categories: [Blog]
 math: true
 ---
 
@@ -247,7 +247,7 @@ math: true
 
 ### Java
 
-- [Overview (Java SE 17 & JDK 17)](https://docs.oracle.com/en/java/javase/17/docs/api/)
+- [Overview](https://docs.oracle.com/en/java/javase/17/docs/api/)
 
 ### 算法与数据结构
 

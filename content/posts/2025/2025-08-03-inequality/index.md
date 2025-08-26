@@ -1,9 +1,9 @@
 ---
 date: '2025-08-03 08:45:26'
 title: 'Inequality'
-description: ""
-tags: [[Math, Inequality]]
-categories: [[Math, ]]
+description: "Math - Cauchy-Schwarz不等式的几种证明方法"
+tags: [Math, Inequality]
+categories: [Math, ]
 math: true
 ---
 
@@ -216,7 +216,7 @@ $$
 $$
 换句话说，$\lambda$ 取 $\frac{\mathbf{a}^{\mathsf{T}}\cdot\mathbf{b}}{\Vert\mathbf{a}\Vert^2}$ 是有几何意义的，并非无中生有靠灵感而得来。此时 $\lambda \mathbf{a}$ 正是向量 $\mathbf{b}$ 在 $\mathbf{a}$ 上的投影，而 $\Vert\mathbf{c}\Vert$ 则是 $\mathbf{b}$ 到 $\mathbf{a}$ 的最短距离。$\lambda$ 还有一个很出名的解释就是 Lagrange 乘子（Lagrange multiplier）：为求 $\mathbf{b}$ 到 $\mathbf{a}$ 的最短距离我们必须调整 $\lambda$ 使得 $\mathbf{a} \perp (\mathbf{b} - \lambda \mathbf{a})$，如果是函数则该条件换为微分或梯度（gradient）等于零。 
 
-![](vector.webp)
+![](vector.png)
 
 回到公式 $\eqref{eq:vector2}$，我们可以化简为：
 $$

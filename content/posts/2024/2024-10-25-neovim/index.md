@@ -1,9 +1,9 @@
 ---
 date: '2024-10-25 15:47:46'
-title: 'Neovim'
+title: 'Neovim - 个性化配置属于自己的编辑器'
 description: "本文简要介绍了Neovim和我配置Neovim的过程。"
-tags: [[Vim, Neovim]]
-categories: [[Neovim]]
+tags: [Vim, Neovim]
+categories: [Neovim]
 math: true
 ---
 
@@ -13,7 +13,7 @@ math: true
 
 最终效果展示：
 
-![](1.webp)
+![](1.png)
 
 ## 为什么有这篇文章
 
@@ -1092,5 +1092,4 @@ return {
 - [github/copilot.vim: Neovim plugin for GitHub Copilot](https://github.com/github/copilot.vim)：支持在 Neovim 中接入 Copilot
 
 [^1]:[key bindings - Is it possible to map control forward-slash with vim - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/26611/is-it-possible-to-map-control-forward-slash-with-vim)
-
 

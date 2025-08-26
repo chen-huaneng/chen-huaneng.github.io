@@ -5,6 +5,7 @@ description: ""
 tags: [Git]
 categories: [Git]
 math: false
+
 ---
 
 ## 学习 Git
@@ -23,7 +24,7 @@ math: false
 
 ## Git 使用指南
 
-
+![](demo.png)
 
 ### Git 如何推送当前目录到远程仓库
 
@@ -70,29 +71,35 @@ git commit -a -m "delete some unused file."
 丢弃工作目录所有修改（保留未跟踪文件）
 
    ```bash
-   git restore .   # Git 2.23+ 推荐方式（最安全）
+git restore .   # Git 2.23+ 推荐方式（最安全）
    ```
+
 这会丢弃所有已跟踪文件（tracked files）的修改，恢复到最近一次 `git commit` 的状态。未跟踪的文件（Untracked files）不会被删除（如新创建的文件）。
 
 如果还需删除未跟踪的文件/目录（如新增的无用文件）
 
    ```bash
-   git clean -df   # 删除未跟踪文件/目录（强制删除）
+git clean -df   # 删除未跟踪文件/目录（强制删除）
    ```
+
 注意事项：
 
 - 不可恢复：这些操作会永久丢弃本地修改，确认不需要这些更改后再执行。
+
 - 检查状态：操作前建议先用 `git status` 查看修改内容，确认无误再执行。
+
 - 暂存区的修改：如果文件已 `git add`（在暂存区），先用
+
   ```bash
   git reset -- .   # 将暂存区文件移出（但保留工作目录修改）
   ```
+
   然后再执行 `git restore .`
 
 ### Git 嵌套 Git[^1][^2]
 
-[^1]:[Git嵌套Git仓库|极客教程](https://geek-docs.com/git/git-questions/1152_git_nested_git_repositories.html)
-[^2]:[[toolschain\] 怎么运用git 嵌套git 管理（子文件夹中也有个git） 并且如何简单设置使用repo的笔记 本文是求助GPT的记录 实践有用-CSDN博客](https://blog.csdn.net/weixin_46479223/article/details/134838519)
+[^1]: [Git嵌套Git仓库|极客教程](https://geek-docs.com/git/git-questions/1152_git_nested_git_repositories.html)
+[^2]: [[toolschain\] 怎么运用git 嵌套git 管理（子文件夹中也有个git） 并且如何简单设置使用repo的笔记 本文是求助GPT的记录 实践有用-CSDN博客](https://blog.csdn.net/weixin_46479223/article/details/134838519)
 
 **添加子模块**：需要将子模块添加到主项目中。可以通过`git submodule add <仓库URL> <子模块路径>`命令完成。例如，假设我们的子模块是一个名为`common`的库，并且需要放在主项目的`libs`目录下，那么可以使用以下命令：
 
@@ -126,7 +133,7 @@ git submodule add https://github.com/example/common.git example
 在启动 Lazygit 并提示“未在 Git 仓库中”时，它允许你直接在当前目录下创建一个新的 Git 仓库。可以按照以下步骤完成初始化：
 
 1. 创建新 Git 仓库：当 Lazygit 提示是否要创建一个新的 Git 仓库时，输入 `y` 并按回车键。
-  
+
 2. 设置分支名称：Lazygit 会询问你要设置的分支名称。可以选择：
    - 留空：直接按回车，将使用 Git 的默认分支名称（一般是 `main` 或 `master`，取决于 Git 配置）。
    - 自定义名称：输入自定义分支名称并按回车。
@@ -145,4 +152,3 @@ Lazygit 提供了快捷键操作，常见的有以下几个：
 - **`b`**：切换或新建分支。
 - **`q`**：退出 Lazygit。
 - **`?`**：查看所有快捷键说明。
-

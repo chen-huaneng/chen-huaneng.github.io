@@ -1,9 +1,9 @@
 ---
 date: '2025-08-16 10:34:36'
-title: 'Sample Variance'
+title: 'Math - 样本方差（sample variance）的分母为什么是 n - 1'
 description: ""
-tags: [[Math, Statistics, ]]
-categories: [[Math, ]]
+tags: [Math, Statistics, ]
+categories: [Math, ]
 math: true
 ---
 

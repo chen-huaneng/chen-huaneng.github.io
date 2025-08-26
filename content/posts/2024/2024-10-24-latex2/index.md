@@ -1,9 +1,9 @@
 ---
 date: '2024-10-24 15:15:12'
-title: 'Latex2'
+title: 'LaTeX - （三）使用技巧'
 description: "记录一些使用 LaTeX 的技巧。"
-tags: [[LaTeX]]
-categories: [[LaTeX]]
+tags: [LaTeX]
+categories: [LaTeX]
 math: true
 ---
 
@@ -762,5 +762,4 @@ $$
 ## FAQ
 
 **book, report 和 article 有什么区别**：[koma script - Regarding the `book`, `report`, and `article` document classes: what are the main differences? - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/36988/regarding-the-book-report-and-article-document-classes-what-are-the-mai)
-
 

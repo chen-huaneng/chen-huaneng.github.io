@@ -1,9 +1,9 @@
 ---
 date: '2025-08-12 09:39:29'
-title: 'Tsp'
+title: 'TSP - 精确算法和启发式算法'
 description: ""
-tags: [[TSP, Algorithm, Heuristic, Concorde, LKH]]
-categories: [[TSP,]]
+tags: [TSP, Algorithm, Heuristic, Concorde, LKH]
+categories: [TSP,]
 math: false
 ---
 

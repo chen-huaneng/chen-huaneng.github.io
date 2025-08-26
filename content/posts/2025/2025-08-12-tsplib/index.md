@@ -1,9 +1,9 @@
 ---
 date: '2025-08-12 14:32:03'
-title: 'Tsplib'
+title: 'Dataset - TSPLIB by Reinelt (1991)'
 description: ""
-tags: [[TSP, TSP-D, Dataset, STSP, ATSP, HCP, SOP, CVRP, TSPLIB]]
-categories: [[Dataset, ]]
+tags: [TSP, TSP-D, Dataset, STSP, ATSP, HCP, SOP, CVRP, TSPLIB]
+categories: [Dataset, ]
 math: false
 ---
 

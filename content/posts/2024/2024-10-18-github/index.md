@@ -2,8 +2,8 @@
 date: '2024-10-18 08:02:09'
 title: 'Github'
 description: "介绍有关GitHub使用的一些知识。"
-tags: [[Github, Git, ]]
-categories: [[Git]]
+tags: [Github, Git, ]
+categories: [Git]
 math: false
 ---
 
@@ -15,25 +15,25 @@ math: false
 
 有时候会遇到这样的情况，当你找到一个很不错的项目的时候，想和开发者交流一些相关的问题。于是你找到该用户的主页，一般情况下，开发者会在 `GitHub` 主页留下自己的联系邮箱，如下图所示，这是我的 `GitHub` 个人主页：
 
-![](github.webp)
+![](github.png)
 
 但是有的开发者不会留邮箱，比如：
 
-![](github2.webp)
+![](github2.png)
 
 这种情况下你可以发 Issus，但是这样别人也会看到，但是还有一个更隐蔽的方法，可以拿到这个开发者的邮箱。
 
 首先，找到这个开发者的一个Repo，随便找一条Commit记录：
 
-![](github3.webp)
+![](github3.png)
 
 这个Commit对应的链接是 `https://github.com/helloworld/benchmark-fastapi-template/commit/7745a07900d2f0e5487f4125a21348f23c1148ba` ，现在只需要在这个链接的末尾加上 `.patch` ，变成 `https://github.com/helloworld/benchmark-fastapi-template/commit/7745a07900d2f0e5487f4125a21348f23c1148ba.patch` 就可以看到纯文本形式的Commit记录。而开发者的邮箱就在上面。
 
-![](github4.webp)
+![](github4.png)
 
 如果开发者设置了邮箱不可见的选项，就可能看不到邮箱，但是可以通过找Repo里面最早的提交记录来获取，也许有机会在开发者刚开始Commit的时候还没有设置邮箱不可见，如果还是不能成功，还是发Issue或者通过其他渠道获取吧。
 
-![](github5.webp)
+![](github5.png)
 
 > 注意：如果自己设置了邮箱不可见，记得在本地的 `Git` 中设置 `git config --global user.email "username@users.noreply.github.com"`，如果在设置之前提交了还要记得重置上次提交的作者信息 `git commit --amend --reset-authorc`，否则远程仓库会拒绝提交[^2]。
 
@@ -48,7 +48,7 @@ math: false
 2. 按下回车键后，会得到一个JSON格式的返回结果。
 3. 在返回结果中，可以找到一个 `created_at` 字段，值就是用户注册时间。
 
-![](github6.webp)
+![](github6.png)
 
 ### 如何美化 `GitHub` 个人主页
 

@@ -1,9 +1,9 @@
 ---
 date: '2025-07-29 11:17:28'
-title: 'Academic'
+title: 'Academic - 搭建学术主页'
 description: ""
-tags: [[Hexo, Academic, Fluid, Jekyll, Website]]
-categories: [[Academic]]
+tags: [Hexo, Academic, Fluid, Jekyll, Website]
+categories: [Academic]
 math: false
 ---
 
@@ -11,7 +11,7 @@ math: false
 
 这个需求来源于我想要在当前博客的页面中添加一个用于展示学术成果的页面，但是当前博客使用的框架是Hexo，主题是Fluid，而想用的学术页面的框架是基于Jekyll的[luost26/academic-homepage](https://github.com/luost26/academic-homepage)，因此需要在我的Github Page部署两个不同的框架，即Hexo和Jekyll。目前的想法是将用于学术成果展示的页面部署在博客的一个子页面下。
 
-![最终效果](banner.webp)
+![最终效果](banner.png)
 
 ## 本地部署
 

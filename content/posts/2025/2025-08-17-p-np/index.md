@@ -1,9 +1,9 @@
 ---
 date: '2025-08-17 07:50:43'
-title: 'P Np'
+title: 'Algorithm - P、NP、NPC和NP-Hard问题'
 description: ""
-tags: [[Algorithm, Academic, Math, ]]
-categories: [[Algorithm, ]]
+tags: [Algorithm, Academic, Math, ]
+categories: [Algorithm, ]
 math: true
 ---
 
@@ -49,7 +49,7 @@ B-SAT 属于 NPC 问题。这是有严格证明的，感兴趣的可以查阅 [C
 
 有了第一个 NPC 问题后，一大堆 NPC 问题就出现了，因为再证明一个新的 NPC 问题只需要将一个已知的 NPC 问题约化到它就行了。后来，Hamilton 回路成了 NPC 问题，TSP 也成了 NPC 问题。现在被证明是 NPC 问题的有很多，任何一个找到了多项式算法的话所有的 NP 问题都可以完美解决了。因此说，正是因为 NPC 问题的存在，P=NP 变得难以置信。
 
-![](npc.drawio.webp)
+![](npc.drawio.png)
 
 总结一下，对于 P、NP 和 NPC 问题，这些概念讨论的都是决策问题，即答案是“是”或“否”的问题（例如：是否存在一条长度小于 K 的路径？这个公式是否可满足？）。
 
@@ -61,7 +61,7 @@ B-SAT 属于 NPC 问题。这是有严格证明的，感兴趣的可以查阅 [C
 
 一个问题是 [NP-Hard](https://www.wikiwand.com/en/articles/NP-hardness) 类问题当且仅当它满足 NP 中的**每一个**问题都可以在**多项式时间**内**归约**到这个问题，和 NPC 类问题的区别在于，NP-Hard 类问题不要求它本身是一个 NP 问题。NP-Hard 问题**不一定**是决策问题，也**不一定**能在多项式时间内验证一个解 ，只要求所有的 NP 问题都能归约到它。NP-Hard 问题至少和 NP 问题一样难，如果一个 NP-Hard 问题存在多项式时间算法，那么所有 NP 问题（包括 NPC）都存在多项式时间算法（P=NP）。反之，如果 P ≠ NP，那么任何 NP-Hard 问题都不存在多项式时间算法。NP-Hard 类包含所有 NP-Complete 问题（因为 NPC 问题满足归约要求且属于 NP），但也包含那些**不属于 NP** 的、甚至**更难**的问题。属于**非决策问题**的 NP-Hard 问题：许多经典的**优化问题**（求最大值、最小值）的决策版本是 NPC，但它们的优化版本本身通常被认为是 NP-Hard（因为它们通常比决策版本更难或等价），比如 TSP 和 B-SAT（所有的 NPC 问题）、停机问题（[Halting Problem](https://www.wikiwand.com/en/articles/Halting_problem)）、旅行商问题的优化版本（求访问所有城市的最短回路长度）和判定一个围棋或国际象棋位置是否必胜。
 
-![](npc.webp)
+![](npc.png)
 
 所以当我们以后遇到一个实际问题，如果在一般情况下（对于所有可能的输入），不存在已知的、对所有输入都高效（多项式时间）的精确求解算法，我们应该说这个问题是 NPC 或者是 NP-Hard 的，而不是 NP。不能用精确求解算法的情况下，一般有这几种解决方法：小规模输入（回溯和分支定界等）采用精确算法，近似算法（在多项式时间内找到**不一定最优但质量有保证**的解），启发式算法（在多项式时间内找到**通常较好但不保证质量**的解，如贪心、局部搜索、遗传算法）和随机算法（利用随机性，有时能快速找到解或以高概率找到好解，如 Monte Carlo 算法）。
 

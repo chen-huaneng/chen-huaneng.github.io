@@ -1,9 +1,9 @@
 ---
 date: '2025-08-12 11:04:05'
-title: 'Amazon Delivery'
+title: 'Dataset - Amazon最后一公里物流配送数据集'
 description: ""
-tags: [[Dataset, Python, TSP-D, TSP, Haversine formula,]]
-categories: [[Dataset,]]
+tags: [Dataset, Python, TSP-D, TSP, Haversine formula,]
+categories: [Dataset,]
 math: true
 ---
 

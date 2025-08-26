@@ -1,9 +1,9 @@
 ---
 date: '2025-08-11 18:52:27'
-title: 'Cpp Input Output'
+title: 'C++ - （一）输入和输出'
 description: ""
-tags: [[C++, ]]
-categories: [[C++,]]
+tags: [C++, ]
+categories: [C++,]
 math: false
 ---
 

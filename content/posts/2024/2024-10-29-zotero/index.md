@@ -1,9 +1,9 @@
 ---
 date: '2024-10-29 20:17:07'
-title: 'Zotero'
+title: 'Zotero - 学术文献管理神器'
 description: ""
-tags: [[Zotero, Academic]]
-categories: [[Academic]]
+tags: [Zotero, Academic]
+categories: [Academic]
 math: true
 ---
 
@@ -70,5 +70,4 @@ scoop install extras/zotero
 - [MuiseDestiny/zotero-style: Ethereal Style for Zotero (github.com)](https://github.com/MuiseDestiny/zotero-style#readme) - 显示文献的影响因子、分区、文献阅读时间、快速标签设置等等内容，上手难度稍大
   - [Ethereal Style for Zotero | Zotero 中文社区 (zotero-chinese.github.io)](https://zotero-chinese.github.io/user-guide/plugins/style.html) - 比较好的参考文档
 - [retorquere/zotero-better-bibtex: Make Zotero effective for us LaTeX holdouts](https://github.com/retorquere/zotero-better-bibtex?tab=readme-ov-file) - 更好地导出参考文献用于 $\LaTeX$
-
 

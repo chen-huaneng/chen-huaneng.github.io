@@ -1,9 +1,9 @@
 ---
 date: '2024-11-20 21:27:20'
-title: 'Rainmeter'
+title: 'Rainmeter - 美化你的桌面'
 description: ""
-tags: [[Rainmeter, GUI, Windows]]
-categories: [[Rainmeter]]
+tags: [Rainmeter, GUI, Windows]
+categories: [Rainmeter]
 math: false
 ---
 
@@ -13,11 +13,11 @@ math: false
 
 简单来说，[Rainmeter](https://www.rainmeter.net/) 就是给想要对 Windows 桌面进行美化的用户一个方便的修改软件。效果图可以参考我修改前后的界面对比（当然壁纸也换了，可以忽略）：
 
-![修改前的电脑桌面](origin.webp)
+![修改前的电脑桌面](origin.png)
 
-![原壁纸](before.webp)
+![原壁纸](before.png)
 
-![修改后的电脑桌面](after.webp)
+![修改后的电脑桌面](after.png)
 
 你可能会觉得奇怪，第一张怎么只有壁纸，因为我一般把软件放在 Windows 10 的磁贴上，所以桌面一般不放图标，再加上把任务栏隐藏后，看起来就只有壁纸了。从增加 Rainmeter 前后的桌面对比还是能比较明显看出来增加了不少功能：
 

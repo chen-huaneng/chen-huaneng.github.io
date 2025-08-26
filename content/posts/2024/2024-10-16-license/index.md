@@ -2,8 +2,8 @@
 date: '2024-10-16 10:02:56'
 title: 'License'
 description: ""
-tags: [[Open Source License, ]]
-categories: [[Blog]]
+tags: [Open Source License, ]
+categories: [Blog]
 math: false
 ---
 
@@ -14,7 +14,7 @@ math: false
 
 世界上的开源许可证（Open Source License）大概有上百种，今天我们来介绍下几种我们常见的开源协议。大致有GPL、BSD、MIT、Mozilla、Apache和LGPL等。
 
-![](license.webp)
+![](license.png)
 
 ### Apache License
 
@@ -98,5 +98,5 @@ CC 许可协议更多的是在设计类工程中使用，而不是开发类，�
 
 [^3]: [Paul Bagwell - Just made a simple description of popular free... (archive.org)](https://web.archive.org/web/20110503183702/http://pbagwl.com/post/5078147450/description-of-popular-software-licenses)
 
-![](license2.webp)
+![](license2.png)
 
