@@ -59,7 +59,7 @@ enableReward: false
 {{< timeline date="2023-04-01" title="第二次去鼓浪屿" description="拍到了很多可可爱爱的猫咪！" tags="游记" url="/timecapsule/images/IMG_20230401_101000.jpg" >}}
 {{< timeline date="2023-03-31" title="雨夜漫步" description="在学校瞎逛，看到了不一样的学校夜景。" tags="游记" url="/timecapsule/images/IMG_20230331_225806.jpg" >}}
 
-<iframe src="https://www.google.com/maps/d/embed?mid=12IwXT4pvmz44lTmj4xbiYjzpUuKxR-Y&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+{{< google-map width="800" height="500" >}}
 
 {{< gallery 
 match="images/*" 

@@ -1,0 +1,12 @@
+{{ $width := .Get "width" | default "640" }}
+{{ $height := .Get "height" | default "480" }}
+
+<iframe 
+  src="https://www.google.com/maps/d/embed?mid=12IwXT4pvmz44lTmj4xbiYjzpUuKxR-Y&ehbc=2E312F&noprof=1" 
+  width="{{ $width }}" 
+  height="{{ $height }}" 
+  style="border: 0; max-width: 100%;"
+  allowfullscreen="" 
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>

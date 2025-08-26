@@ -49,6 +49,7 @@ params:
   Alipay: "images/alipay.png" # 设置支付宝收款码图片
 
   fancybox: true # 图片灯箱，方便查看图片
+  enableimgloop: true # 图片轮播
 
   assets:
     favicon: "/images/favicon.ico" # generate by https://favicon.io/
@@ -156,8 +157,6 @@ markup:
     noClasses: false
     lineNos: true # 行号
     lineNumbersInTable: false # 分隔行号和代码
-  renderer:
-    unsafe: true # 用于在.md文件中渲染html
 
   goldmark:
     extensions:
