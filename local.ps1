@@ -9,4 +9,4 @@ if (Test-Path .\public\) {
     }
 }
 
-hugo server -D
+hugo server --buildDrafts --disableFastRender

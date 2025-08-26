@@ -1,6 +1,6 @@
 ---
 date: '{{ .Date }}'
-title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+title: ''
 description: ""
 tags: []
 categories: []
