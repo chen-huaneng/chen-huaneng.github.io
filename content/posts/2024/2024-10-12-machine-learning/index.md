@@ -2,8 +2,8 @@
 date: '2024-10-12 10:00:29'
 title: 'Machine Learning'
 description: ""
-tags: [[Machine Learning, Data Mining]]
-categories: [[Machine Learning]]
+tags: [Machine Learning, Data Mining]
+categories: [Machine Learning]
 math: true
 ---
 
@@ -36,19 +36,19 @@ python -m ipykernel install --name <虚拟环境的名字，如ml> --display-nam
 
 接下来就可以直接打开 `Jupyter notebook` 直接切换虚拟环境了。
 
-![](jupyter.webp)
+![](jupyter.png)
 
 同样，在 `Jupyter Lab` 中也可以直接切换虚拟环境：
 
 新建一个在 `ml` 虚拟环境下的新 `.ipynb` 文件，默认在当前目录下新建。
 
-![](jupyterlab.webp)
+![](jupyterlab.png)
 
 在已有的 `.ipynb` 文件下切换内核。
 
-![](jupyterlab2.webp)
+![](jupyterlab2.png)
 
-![](jupyterlab3.webp)
+![](jupyterlab3.png)
 
 ### 如何将多个 `.ipynb` 文件合成一个 `.ipynb` 文件
 
@@ -203,7 +203,7 @@ conda clean --all
 
 右键点击任意的 `.ipynb` 文件的属性页面，更改默认的打开方式。
 
-![](jupyter2.webp)
+![](jupyter2.png)
 
 搜索找到 Anaconda 的安装文件夹，我个人安装的路径是：
 
@@ -234,7 +234,6 @@ jupyter nbconvert --to pdf filename.ipynb
 ```bash
 jupyter nbconvert --help
 ```
-
 
 
 

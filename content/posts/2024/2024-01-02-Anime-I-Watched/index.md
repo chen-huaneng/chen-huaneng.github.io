@@ -1,13 +1,11 @@
 ---
 date: '2024-01-02 23:44:30'
 title: 'Anime I Watched'
-description: ""
-tags: [[Anime]]
-categories: [[Blog]]
+description: "有部分动漫之前看过，但是忘记了，全靠回忆记录，所以可能有所遗漏，有些总集篇和部分番外没有记录。"
+tags: [Anime]
+categories: [Blog]
 math: false
 ---
-
-> 有部分动漫之前看过，但是忘记了，全靠回忆记录，所以可能有所遗漏，有些总集篇和部分番外没有记录。
 
 # 日漫篇
 
@@ -17,7 +15,7 @@ math: false
 
 ### 反叛的鲁路修(2006)
 
-![](geass1.webp)
+![](geass1.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -30,7 +28,7 @@ math: false
 
 ### 反叛的鲁路修R2(2008)
 
-![](geass2.webp)
+![](geass2.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -40,7 +38,7 @@ math: false
 
 ### 复活的鲁路修(2019)
 
-![](geass.webp)
+![](geass.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -50,7 +48,7 @@ math: false
 
 ## 赛博朋克：边缘行者 *Cyberpunk: Edgerunners* (2022)
 
-![](cyberpunk.webp)
+![](cyberpunk.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -64,7 +62,7 @@ math: false
 
 ### 紫罗兰永恒花园 (2018)
 
-![](violet.webp)
+![](violet.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -74,7 +72,7 @@ math: false
 
 ### 紫罗兰永恒花园外传：永远与自动手记人偶 ヴァイオレット・エヴァーガーデン 外伝 - 永遠と自動手記人形 (2019)
 
-![](violet1.webp)
+![](violet1.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -84,7 +82,7 @@ math: false
 
 ### 紫罗兰永恒花园 Extra Episode ヴァイオレット・エヴァーガーデン Extra Episode (2018)
 
-![](violet2.webp)
+![](violet2.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -94,7 +92,7 @@ math: false
 
 ### 紫罗兰永恒花园 剧场版 劇場版 ヴァイオレット・エヴァーガーデン (2020)
 
-![](violet3.webp)
+![](violet3.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -108,7 +106,7 @@ math: false
 
 ### 辉夜大小姐想让我告白：天才们的恋爱头脑战 第一季 かぐや様は告らせたい～天才たちの恋愛頭脳戦～ (2019)
 
-![](kaguya.webp)
+![](kaguya.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -118,7 +116,7 @@ math: false
 
 ### 辉夜大小姐想让我告白：天才们的恋爱头脑战 第二季 かぐや様は告らせたい？～天才たちの恋愛頭脳戦～ (2020)
 
-![](kaguya1.webp)
+![](kaguya1.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -128,7 +126,7 @@ math: false
 
 ### 辉夜大小姐想让我告白：天才们的恋爱头脑战 OVA かぐや様は告らせたい？～天才たちの恋愛頭脳戦～ OVA (2021)
 
-![](kaguya2.webp)
+![](kaguya2.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -138,7 +136,7 @@ math: false
 
 ### 辉夜大小姐想让我告白：究极浪漫 かぐや様は告らせたい-ウルトラロマンティック- (2022)
 
-![](kaguya3.webp)
+![](kaguya3.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -148,7 +146,7 @@ math: false
 
 ### 辉夜大小姐想让我告白：初吻不会结束 かぐや様は告らせたい-ファーストキッスは終わらない- (2022)
 
-![](kaguya4.webp)
+![](kaguya4.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -160,7 +158,7 @@ math: false
 
 ### 【我推的孩子】 【推しの子】 (2023)
 
-![](oshinoko.webp)
+![](oshinoko.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -170,7 +168,7 @@ math: false
 
 ### 【我推的孩子】 第二季 【推しの子】2期 (2024)
 
-![](oshinoko1.webp)
+![](oshinoko1.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -182,7 +180,7 @@ math: false
 
 ### 间谍过家家 第一季 SPY×FAMILY (2022)
 
-![](spyfamily.webp)
+![](spyfamily.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -192,7 +190,7 @@ math: false
 
 ### 间谍过家家 第一季 Part.2 SPY×FAMILY 第2クール (2022)
 
-![](spyfamily1.webp)
+![](spyfamily1.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -202,7 +200,7 @@ math: false
 
 ### 间谍过家家 第二季 SPY×FAMILY Season 2 (2023)
 
-![](spyfamily2.webp)
+![](spyfamily2.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -216,7 +214,7 @@ math: false
 
 ### 暗杀教室 第一期 *Assassination Classroom* (2015)
 
-![](assassination.webp)
+![](assassination.jpg)
 
 
 
@@ -228,7 +226,7 @@ math: false
 
 ### 暗杀教室 第二期 *Assassination Classroom* (2016)
 
-![](assassination1.webp)
+![](assassination1.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -238,7 +236,7 @@ math: false
 
 ### 暗杀教室：修学旅行篇 暗殺教室 修学旅行編 (2013)
 
-![](assassination2.webp)
+![](assassination2.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -248,7 +246,7 @@ math: false
 
 ## 你的名字。 君の名は。 (2016)
 
-![](yourname.webp)
+![](yourname.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -258,7 +256,7 @@ math: false
 
 ## 千与千寻 千と千尋の神隠し (2001)
 
-![](spirited.webp)
+![](spirited.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -270,7 +268,7 @@ math: false
 
 ### 未来日记 未来日記 (2011)
 
-![](futurediary.webp)
+![](futurediary.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -280,7 +278,7 @@ math: false
 
 ### 未来日记Redial 未来日記リダイヤル (2013)
 
-![](futurediary1.webp)
+![](futurediary1.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -294,7 +292,7 @@ math: false
 
 ### 雾山五行 (2020)
 
-![](foghill.webp)
+![](foghill.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -304,7 +302,7 @@ math: false
 
 ### 雾山五行·犀川幻紫林 (2023)
 
-![](foghill1.webp)
+![](foghill1.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -316,7 +314,7 @@ math: false
 
 ### 伍六七 (2018)
 
-![](killerseven.webp)
+![](killerseven.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -326,7 +324,7 @@ math: false
 
 ### 伍六七之最强发型师 (2019)
 
-![](killerseven1.webp)
+![](killerseven1.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -336,7 +334,7 @@ math: false
 
 ### 伍六七之玄武国篇 (2021)
 
-![](killerseven2.webp)
+![](killerseven2.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |
@@ -346,7 +344,7 @@ math: false
 
 ### 伍六七之暗影宿命 (2023)
 
-![](killerseven3.webp)
+![](killerseven3.jpg)
 
 |   类别   | 评分 / 10 |
 | :------: | :-------: |

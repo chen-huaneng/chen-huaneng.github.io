@@ -2,12 +2,12 @@
 date: '2024-10-11 19:48:38'
 title: 'How To Use Obsidian Callout'
 description: ""
-tags: [[Obsidian]]
-categories: [[Obsidian]]
+tags: [Obsidian]
+categories: [Obsidian]
 math: false
 ---
 
-# 参考资料
+## 参考资料
 
 - 官方文档：[Callouts - Obsidian Help](https://help.obsidian.md/Editing+and+formatting/Callouts)
 - 中文教程：
@@ -18,7 +18,7 @@ math: false
 
 [Obsidian - 简单入门 - Abel's Blog (chen-huaneng.github.io)](https://chen-huaneng.github.io/2024/10/11/2024-10-11-2024-10-11-how-to-use-obsidian/)中相关的段落
 
-# 具体实现及效果（需要在Obsidian中输入代码块中的内容才可以看到效果）
+## 具体实现及效果（需要在Obsidian中输入代码块中的内容才可以看到效果）
 
 >提要：中英文测试文本分别采用  
 >The quick brown fox jumps over the lazy dog  
@@ -26,13 +26,13 @@ math: false
 
 >注意：在Callout语法中的段落中不能出现空行，否则空行以下的文本将不会被包含在框内
 
-## Obsidian内置的Callout样式
+### Obsidian内置的Callout样式
 
 参考官方给出的文档：[Callouts - Obsidian Help](https://help.obsidian.md/Editing+and+formatting/Callouts)
 
 > 提示：想看Callout的效果也可以点击上面的官方文档查看
 
-## Blue-Topaz主题内置的Callout样式
+### Blue-Topaz主题内置的Callout样式
 
 ```obsidian
 >[!info] 前置条件
@@ -43,9 +43,9 @@ math: false
 
 [Blue-Topaz](https://github.com/PKM-er/Blue-topaz-example)主题内置的一些Callout样式见下表：
 
-![Callout](callout.webp)
+![Callout](callout.png)
 
-### blank
+#### blank
 
 ```obsidian
 >[!blank] blank
@@ -53,7 +53,7 @@ math: false
 >一去二三里烟村四五家亭台六七座八九十支花  
 ```
 
-### def
+#### def
 
 ```obsidian
 >[!def] def
@@ -61,7 +61,7 @@ math: false
 >一去二三里烟村四五家亭台六七座八九十支花  
 ```
 
-### thm
+#### thm
 
 ```obsidian
 >[!thm] thm
@@ -69,7 +69,7 @@ math: false
 >一去二三里烟村四五家亭台六七座八九十支花  
 ```
 
-### lem
+#### lem
 
 ```obsidian
 >[!lem] lem
@@ -77,7 +77,7 @@ math: false
 >一去二三里烟村四五家亭台六七座八九十支花  
 ```
 
-### cor
+#### cor
 
 ```obsidian
 >[!cor] cor
@@ -85,7 +85,7 @@ math: false
 >一去二三里烟村四五家亭台六七座八九十支花  
 ```
 
-### pro
+#### pro
 
 ```obsidian
 >[!pro] pro
@@ -93,7 +93,7 @@ math: false
 >一去二三里烟村四五家亭台六七座八九十支花  
 ```
 
-### hibox
+#### hibox
 
 ```obsidian
 >[!hibox] hibox
@@ -101,7 +101,7 @@ math: false
 >一去二三里烟村四五家亭台六七座八九十支花  
 ```
 
-### col2
+#### col2
 
 ```obsidian
 >[!col2] col2
@@ -109,7 +109,7 @@ math: false
 >一去二三里烟村四五家亭台六七座八九十支花  
 ```
 
-### kanban
+#### kanban
 
 ```obsidian
 >[!kanban] kanban
@@ -117,7 +117,7 @@ math: false
 >一去二三里烟村四五家亭台六七座八九十支花  
 ```
 
-### flex
+#### flex
 
 ```obsidian
 >[!flex] flex

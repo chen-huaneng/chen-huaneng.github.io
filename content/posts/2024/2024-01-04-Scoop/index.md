@@ -2,8 +2,8 @@
 date: '2024-01-04 22:35:00'
 title: 'Scoop'
 description: ""
-tags: [[Scoop, Windows]]
-categories: [[Scoop]]
+tags: [Scoop, Windows]
+categories: [Scoop]
 math: false
 ---
 

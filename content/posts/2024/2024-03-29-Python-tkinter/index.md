@@ -2,8 +2,8 @@
 date: '2024-03-29 17:31:24'
 title: 'Python Tkinter'
 description: ""
-tags: [[Python, Tkinter, GUI]]
-categories: [[Python]]
+tags: [Python, Tkinter, GUI]
+categories: [Python]
 math: false
 ---
 
@@ -191,5 +191,5 @@ window.mainloop()
 
 用 Tkinter 实现了一个博客管理器，主要用于管理我自己的博客文章，源代码和程序仓库[请点我](https://github.com/chen-huaneng/BlogManager)。
 
-![](banner.webp)
+![](banner.png)
 

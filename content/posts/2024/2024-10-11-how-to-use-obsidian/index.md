@@ -2,8 +2,8 @@
 date: '2024-10-11 19:09:23'
 title: 'How To Use Obsidian'
 description: ""
-tags: [[Obsidian]]
-categories: [[Obsidian]]
+tags: [Obsidian]
+categories: [Obsidian]
 math: false
 ---
 
@@ -434,7 +434,7 @@ Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔�
 
 ##### 语法说明
 
-YAML front matter==必须放在Obsidian的.md文件的开头部分才能被识别==，基本语法如下：
+YAML front matter **必须放在Obsidian的.md文件的开头部分才能被识别**，基本语法如下：
 
 ```YAML
 ---
@@ -520,7 +520,7 @@ created: {{date}}
 >
 >插件安装之后即可直接使用，没有单独的配置项，功能如下图所示：
 >
->![cm-editor-syntax-highlight-obsidian](plugin1.webp)
+>![cm-editor-syntax-highlight-obsidian](plugin1.png)
 
 ##### 2. Advanced Tables
 
@@ -535,7 +535,7 @@ created: {{date}}
 >
 > 所以现在一些简单的表格，我都会在ob里边直接编写。插件的配置项比较简单，我为了便于使用时判断是否启用，一般都会把插件里边的选项信息汉化一下，这里截图放一下机翻汉化的配置信息说明：
 >
-> ![Advanced Tables](plugin2.webp)
+> ![Advanced Tables](plugin2.png)
 
 ##### 3. Obsidian Activity History
 
@@ -548,11 +548,11 @@ created: {{date}}
 >
 > 作者在README提供了三种视图的示例，如下：
 >
-> ![Obsidian Activity History](plugin3.webp)
+> ![Obsidian Activity History](plugin3.png)
 >
 > 因为第三种比较好看，因此我这里记录下个人配置出第三种效果的配置信息，同样本地针对插件的配置项做了简单的汉化处理：
 >
-> ![Obsidian Activity History](plugin4.webp)
+> ![Obsidian Activity History](plugin4.png)
 >
 > 配置完毕之后，在任意你想展示此活动历史的地方，添加如下代码切换到预览即可看到效果。
 >
@@ -575,7 +575,7 @@ created: {{date}}
 >
 > 配置信息如图：
 >
-> ![Clearing Unused Images](plugin5.webp)
+> ![Clearing Unused Images](plugin5.png)
 >
 > 这是个非常优秀的插件，通常我会打开命令面板调用命令将未使用的图片进行清理。之前在typora中则没有这样的插件，慢慢地已经积累了不少无用的图片在附件库，有了这个插件，从此不会再有这种顾虑。
 
@@ -590,13 +590,13 @@ created: {{date}}
 >
 > 配置信息如图：
 >
-> ![Ckecklist](plugin6.webp)
+> ![Ckecklist](plugin6.png)
 >
 > 只需要在待办列表之前添加tudo标签即可自动捕获，当然这个可调整。 
 >
 > **效果展示**
 >
-> ![Clearing Unused Images](plugin7.webp)
+> ![Clearing Unused Images](plugin7.png)
 
 ##### 6. Admonition
 
@@ -610,7 +610,7 @@ created: {{date}}
 >
 > 官方提供的动图已经非常直观了，这里直接借用展示：
 >
-> ![Admonition](plugin15.webp)
+> ![Admonition](plugin15.gif)
 >
 > [Obsidian - Callout语法 - Abel's Blog (chen-huaneng.github.io)](https://chen-huaneng.github.io/2024/10/11/2024-10-11-2024-10-11-how-to-use-obsidian-callout/)
 >
@@ -632,7 +632,7 @@ created: {{date}}
 >
 > **效果展示**
 >
-> ![BetterFn](plugin16.webp)
+> ![BetterFn](plugin16.gif)
 
 ##### 8. Dataview
 
@@ -666,11 +666,11 @@ created: {{date}}
 >
 > 通过命令面板创建思维导图：
 >
-> ![enhancing-mindmap](plugin8.webp)
+> ![enhancing-mindmap](plugin8.png)
 >
 > 还可以将文件切换到Markdown模式进行管理与编辑。
 >
-> ![enhancing-mindmap](plugin9.webp)
+> ![enhancing-mindmap](plugin9.png)
 
 ##### 10. Mind Map
 
@@ -683,7 +683,7 @@ created: {{date}}
 >
 > 使用姿势如下图：
 >
-> ![Mind Map](plugin17.webp)
+> ![Mind Map](plugin17.gif)
 
 ##### 11. Footnote Shortcut
 
@@ -696,7 +696,7 @@ created: {{date}}
 >
 > 我在用的是Window电脑，建议将热键设置为 `ctrl + alt + 1`，操作如下图(借用官方介绍的图)：
 >
-> ![Footnote Shortcut](plugin18.webp)
+> ![Footnote Shortcut](plugin18.gif)
 
 ##### 12. Image Toolkit
 
@@ -709,7 +709,7 @@ created: {{date}}
 >
 > 使用操作如图：
 >
-> ![Image Toolkit](plugin19.webp)
+> ![Image Toolkit](plugin19.gif)
 >
 > 我借助编辑模式预览的插件能实时展示图片，只不过编辑模式下该插件无法工作。[issue](https://github.com/sissilab/obsidian-image-toolkit/issues/26)已经有人提过，期待后期适配。
 
@@ -744,7 +744,7 @@ created: {{date}}
 >
 > 简单用法如下图：
 >
-> ![Natural Language Dates](plugin20.webp)
+> ![Natural Language Dates](plugin20.gif)
 
 ##### 15. Remember cursor position
 
@@ -769,7 +769,7 @@ created: {{date}}
 >
 > 如果你通过搜索打开某篇笔记，左侧侧边栏并不会随着笔记展开，这个插件能够在右下角展示当前文件的路径：
 >
-> ![show-file-path](plugin10.webp)
+> ![show-file-path](plugin10.png)
 
 ##### 17. Tidy Footnotes
 
@@ -790,7 +790,7 @@ created: {{date}}
 >
 > 默认情况下，当你在笔记里编辑的时候，该插件会自动智能解析相同的关键字并提示给你：
 >
-> ![Various Complements](plugin21.webp)
+> ![Various Complements](plugin21.gif)
 >
 > 同时还支持自定义词库，可以先在表格编辑添加，三列内容如下：
 >
@@ -813,7 +813,7 @@ created: {{date}}
 >
 > **使用**
 >
-> ![Recent Files](plugin11.webp)
+> ![Recent Files](plugin11.png)
 
 ##### 20. Typewriter Scroll Obsidian Plugin
 
@@ -826,7 +826,7 @@ created: {{date}}
 >
 > 官方动图如下：
 >
-> ![Typewriter Scroll Obsidian Plugin](plugin22.webp)
+> ![Typewriter Scroll Obsidian Plugin](plugin22.gif)
 
 ##### 21. Maximise Active Pane（在最新版本的ob中似乎不能正常工作）
 
@@ -839,7 +839,7 @@ created: {{date}}
 >
 > 官方动图如下：
 >
-> ![Maximise Active Pane](plugin23.webp)
+> ![Maximise Active Pane](plugin23.gif)
 
 ##### 22. Emoji Toolbar
 
@@ -852,7 +852,7 @@ created: {{date}}
 >
 > 官方动图如下：
 >
-> ![Emoji Toolbar](plugin24.webp)
+> ![Emoji Toolbar](plugin24.gif)
 
 ##### 23. Obsidian Charts
 
@@ -865,11 +865,11 @@ created: {{date}}
 >
 > 官方动图如下：
 >
-> ![Obsidian Charts](plugin25.webp)
+> ![Obsidian Charts](plugin25.gif)
 >
 > 以及：
 >
-> ![Obsidian Charts](plugin26.webp)
+> ![Obsidian Charts](plugin26.gif)
 
 ##### 24. Autocomplete
 
@@ -882,7 +882,7 @@ created: {{date}}
 >
 > 官方动图如下：
 >
-> ![Autocomplete](plugin27.webp)
+> ![Autocomplete](plugin27.gif)
 
 ##### 25. Search on Internet
 
@@ -895,7 +895,7 @@ created: {{date}}
 >
 > 配置信息如图：
 >
-> ![Search on Internet](plugin12.webp)
+> ![Search on Internet](plugin12.png)
 >
 > 可以添加自定义的搜索引擎，我这里添加了Bing搜索。
 >
@@ -903,7 +903,7 @@ created: {{date}}
 >
 > 官方动图如下：
 >
-> ![Search on Internet](plugin28.webp)
+> ![Search on Internet](plugin28.gif)
 
 ##### 26. Obsidian Orthography
 
@@ -916,7 +916,7 @@ created: {{date}}
 >
 > 官方动图如下：
 >
-> ![Obsidian Orthography](plugin29.webp)
+> ![Obsidian Orthography](plugin29.gif)
 
 ##### 27. Text Snippets
 
@@ -929,7 +929,7 @@ created: {{date}}
 >
 > 官方动图如下：
 >
-> ![Text Snippets](plugin30.webp)
+> ![Text Snippets](plugin30.gif)
 
 ##### 28. Extract url content
 
@@ -942,7 +942,7 @@ created: {{date}}
 >
 > 官方动图如下：
 >
-> ![Extract url content](plugin31.webp)
+> ![Extract url content](plugin31.gif)
 
 ##### 29. Link Favicons
 
@@ -961,7 +961,7 @@ created: {{date}}
 >
 > **效果展示**
 >
-> ![Link Favicons](plugin13.webp)
+> ![Link Favicons](plugin13.png)
 
 ##### 30. Obsidian Annotator
 
@@ -983,7 +983,7 @@ created: {{date}}
 >
 > **效果展示**
 >
-> ![Obsidian Annotator](plugin32.webp)
+> ![Obsidian Annotator](plugin32.gif)
 
 ##### 31. Obsidian Weread
 
@@ -1117,7 +1117,7 @@ created: {{date}}
 >
 > **效果展示**
 >
-> ![Banners](plugin14.webp)
+> ![Banners](plugin14.png)
 
 #### 3.2.2 Templater 
 
@@ -1346,7 +1346,7 @@ created: {{date}}
 - 功能：通过Cubox剪藏网页的文章，然后将剪藏在Cubox中的网页文章导出为Markdown格式的文件储存在本地中，实现与Obsidian的联动。
 - 效果展示：
 
-![Cubox](cubox.webp)
+![Cubox](cubox.gif)
 
 - 解决的痛点：原文链接失效或者原文丢失。
 - 配置：[官网](https://cubox.pro/)下载Cubox并注册就可以使用了。
@@ -1400,9 +1400,9 @@ created: {{date}}
 
 - 要在编辑模式下实现双链的实时预览的悬浮窗口需要加上`ctrl`才能实现，而在阅读模式下只需把鼠标指向该位置就可以。
 
-![](other.webp)
+![](other.png)
 
 - Obsidian自带的大纲可以直接拖动大纲标题实现标题及标题内容的移动，可以用在移动标题及内容到某个特定位置的功能。
 
-![](other2.webp)
+![](other2.gif)
 

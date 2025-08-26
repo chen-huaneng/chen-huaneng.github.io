@@ -2,8 +2,8 @@
 date: '2024-10-14 11:26:53'
 title: 'Git'
 description: ""
-tags: [[Git]]
-categories: [[Git]]
+tags: [Git]
+categories: [Git]
 math: false
 ---
 
@@ -23,7 +23,7 @@ math: false
 
 ## Git 使用指南
 
-![](demo.webp)
+
 
 ### Git 如何推送当前目录到远程仓库
 
@@ -145,5 +145,4 @@ Lazygit 提供了快捷键操作，常见的有以下几个：
 - **`b`**：切换或新建分支。
 - **`q`**：退出 Lazygit。
 - **`?`**：查看所有快捷键说明。
-
 

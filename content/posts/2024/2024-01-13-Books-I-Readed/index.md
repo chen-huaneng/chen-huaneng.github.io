@@ -2,12 +2,12 @@
 date: '2024-01-13 21:07:36'
 title: 'Books I Readed'
 description: ""
-tags: [[Book]]
-categories: [[Blog]]
+tags: [Book]
+categories: [Blog]
 math: false
 ---
 
-> 部分读过的书籍可能没有记录，大部分读的是电子书。这个记录里面不包括读过的教材，而是基于我自主意愿读过的书。
+> 部分读过的书籍可能没有记录，大部分读的是电子书，这个记录里面不包括读过的教材。
 
 ## 2022年
 

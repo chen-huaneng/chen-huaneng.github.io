@@ -2,8 +2,8 @@
 date: '2024-10-11 21:20:13'
 title: 'Java Faq'
 description: ""
-tags: [[Java]]
-categories: [[Java]]
+tags: [Java]
+categories: [Java]
 math: false
 ---
 
