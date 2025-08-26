@@ -1,15 +1,14 @@
 .pe-friend {
     overflow: auto;
-    height: 10rem;
-    width: 49%;
+    height: 7rem;
+    width: 33%;
     display: inline-block !important;
     border-radius: .5rem;
-    background: none;
-
-    -webkit-transition: all ease-out 0.3s;
-    -moz-transition: all ease-out 0.3s;
-    -o-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
+    background: var(--entry);
+    border-radius: var(--radius);
+    margin-right: .1rem;
+    margin-bottom: -.3rem;
+    border: 1px solid var(--border);
 }
 
 .dark .pe-friend:hover {
@@ -18,38 +17,31 @@
 
 .pe-friend:hover {
     background: rgb(214, 214, 214);
-    transition: transform 1s;
-    webkit-transform: scale(1.1);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.1);
 }
 
 .pe-friend-logo-wrap {
-    width: 9.2rem;
+    width: 5rem;
     float: left;
-    margin-right: -.5rem;
 }
 
 .pe-friend-logo {
-    width: 5.6rem;
-    height: 5.6rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50% !important;
-    padding: .2rem;
-    margin: 2rem 1rem 1rem 1.4rem !important;
+    padding: 0rem;
+    margin-top: 1.2rem !important;
+    margin-left: .4rem !important;
     background-color: #fff;
 }
 
 .pe-friend-info {
-    margin-top: 1.8rem;
-    margin-right: 1.8rem;
+    margin-top: 1rem;
 }
 
 .pe-friend-name {
     text-overflow: ellipsis;
-    font-size: 100%;
-    margin-bottom: .5rem;
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--primary);
 }
 
@@ -60,11 +52,16 @@
 }
 
 @media screen and (max-width: 60rem) {
-    .pe-friend-logo-wrap {
-        width: 8.4rem;
-        margin: auto;
+    .pe-friend {
+        overflow: auto;
+        height: 5rem;
+        width: 49%;
+        display: inline-block !important;
+        border-radius: .5rem;
+        background: var(--entry);
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
     }
-
     .pe-friend-info {
         height: 100%;
         margin: auto;
@@ -74,27 +71,14 @@
     }
 
     .pe-friend-name {
-        font-size: 1.8rem;
+        font-size: 1rem;
     }
 
     .pe-friend-description {
         display: none;
     }
-}
 
-/* 移除全局超链接的样式 */
-.no-link-styles a {
-    position: static !important;
-    color: inherit !important; /* 继承父元素颜色 */
-    z-index: auto !important;
-}
-
-/* 移除遮罩效果 */
-.no-link-styles a::before {
-    display: none !important;
-}
-
-/* 移除悬停效果 */
-.no-link-styles a:hover {
-    color: inherit !important;
+    .pe-friend-logo {
+        display: none;
+    }
 }

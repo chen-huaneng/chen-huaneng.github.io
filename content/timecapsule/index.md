@@ -7,7 +7,8 @@ searchHidden: true
 enableReward: false
 ---
 
-{{< timeline date="2025-08-25" title="完善Shortcodes" description="增加时间轴，修复友链的超链接CSS模板错误和时光胶囊板块的图片渲染问题，修改首页样式，增加荣誉奖项、教育经历和个人图片。" tags="博客" >}}
+{{< timeline date="2025-08-26" title="重新部署博客" description="修复自定义页面背景色和归档不同的问题，友链页面适配移动端。" tags="博客" >}}
+{{< timeline date="2025-08-25" title="完善首页样式" description="增加时间轴，修复友链的超链接CSS模板错误和时光胶囊板块的图片渲染问题，修改首页样式，增加荣誉奖项、教育经历和个人图片。" tags="博客" >}}
 {{< timeline date="2025-08-24" title="增加时光胶囊板块" description="用shortcode实现了画廊自动排布图片，方便增减图片。" tags="博客" >}}
 {{< timeline date="2025-08-23" title="支持插入数学公式" description="用Mathjax引擎渲染数学公式，修复行内公式和行间公式渲染错误，增加友链板块。" tags="博客" >}}
 {{< timeline date="2025-08-22" title="完善细节" description="添加测试博客功能的文章，实现了插入Bilibili视频，用Fancybox实现图片灯箱。" tags="博客" >}}
