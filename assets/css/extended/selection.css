@@ -1,0 +1,11 @@
+/* 更改选中文字的背景色和文字颜色 */
+::selection {
+    background-color: #eceff4; /* 选中背景色 */
+    color: #69a5c7; /* 选中文字颜色 */
+}
+
+/* 兼容 Firefox 浏览器 */
+::-moz-selection {
+    background-color: #eceff4; /* 选中背景色 */
+    color: #69a5c7; /* 选中文字颜色 */
+}
