@@ -1,6 +1,6 @@
 ---
 date: '2024-10-12 10:00:29'
-title: 'Machine Learning'
+title: 'Data Mining - 数据挖掘（零）环境配置'
 description: ""
 tags: [Machine Learning, Data Mining]
 categories: [Machine Learning]

@@ -1,6 +1,6 @@
 ---
 date: '2024-10-16 16:55:30'
-title: 'Latex'
+title: 'LaTeX - （一）简单入门'
 description: ""
 tags: [LaTeX]
 categories: [LaTeX]

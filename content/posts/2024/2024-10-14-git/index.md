@@ -1,6 +1,6 @@
 ---
 date: '2024-10-14 11:26:53'
-title: 'Git'
+title: 'Git简单入门'
 description: ""
 tags: [Git]
 categories: [Git]

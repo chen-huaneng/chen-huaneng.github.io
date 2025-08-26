@@ -1,6 +1,6 @@
 ---
 date: '2024-10-18 08:57:12'
-title: 'Windows'
+title: 'Windows疑难问题解答记录'
 description: "记录我解决一些Windows 10疑难问题的历程。"
 tags: [Windows, ]
 categories: [Blog]

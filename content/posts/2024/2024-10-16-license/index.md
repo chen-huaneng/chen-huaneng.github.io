@@ -1,6 +1,6 @@
 ---
 date: '2024-10-16 10:02:56'
-title: 'License'
+title: '常见开源协议介绍'
 description: ""
 tags: [Open Source License, ]
 categories: [Blog]
