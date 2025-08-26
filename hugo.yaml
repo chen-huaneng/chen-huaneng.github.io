@@ -195,3 +195,7 @@ module:
     path: "github.com/mfg92/hugo-shortcode-gallery" # https://github.com/mfg92/hugo-shortcode-gallery
 
 timeout: 60000 # This is required for larger galleries to be build (60 sec)
+
+caches:
+  images:
+    dir: :cacheDir/images
