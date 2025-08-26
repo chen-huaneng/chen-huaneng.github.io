@@ -101,14 +101,13 @@
 </script>
 {{- end }}
 
-{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (or (.Param "ShowCodeCopyButtons") (.Param "ShowMacDots") (.Param "ShowCodeLang") (.Param "ShowExpandButton"))) }}
+{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (ne .Layout "links") (or (.Param "ShowCodeCopyButtons") (.Param "ShowMacDots") (.Param "ShowCodeLang"))) }}
 <style>
     .code-toolbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 5px 10px;
-        {{/*  background: var(--code-block-bg);  */}}
         background: #232323;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
@@ -133,7 +132,7 @@
         display: flex;
         align-items: center;
     }
-    .expand-button, .copy-code {
+    .copy-code {
         background: none;
         border: none;
         cursor: pointer;
@@ -141,52 +140,37 @@
     }
     .highlight {
         position: relative;
-    }
-    .highlight.collapsible {
-        max-height: {{ .Site.Params.codeMaxHeight | default "300px" }};
-        overflow: hidden;
-    }
-    .highlight.expanded {
-        max-height: none;
+        /* 确保代码块容器本身不限制横向滚动 */
+        overflow-x: auto;
     }
     .highlight pre {
         margin-bottom: 0;
-    }
-    .expand-button {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: transparent;
-        padding: 5px 10px;
-        border-radius: 5px 5px 0 0;
-        display: none;
-        height: 30px;
-        &:hover {
-            background: rgba(255,255,255,.1);
-            color: #fff;
-        }
-    }
-    .highlight.collapsible .expand-button {
-        display: block;
+        /* 移除pre的默认滚动限制 */
+        overflow: visible;
     }
     .highlight table {
         margin-bottom: 0;
+        display: block;
+        width: 100%;
     }
     .post-content pre code {
         overflow-x: auto;
-        overflow-y: hidden;
+        display: block; /* 让code成为块级元素，确保滚动容器有效 */
+    }
+    .highlight table td:nth-child(2) {
+        width: 100%; /* 确保代码列占满剩余宽度 */
     }
 </style>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const codeBlocks = document.querySelectorAll('.highlight');
-        const maxHeight = parseInt('{{ .Site.Params.codeMaxHeight | default "300" }}');
         
         codeBlocks.forEach((block) => {
             const pre = block.querySelector('pre');
             const code = pre.querySelector('code');
+            // 定义codeblock变量，用于新的复制逻辑
+            const codeblock = block;
 
             // Determine if a toolbar is needed
             let toolbarNeeded = false;
@@ -248,6 +232,23 @@
                     rightGroup.appendChild(copyButton);
 
                     copyButton.addEventListener('click', () => {
+                        if ('clipboard' in navigator) {
+                            // 获取所有span元素
+                            let spans = codeblock.getElementsByTagName("span");
+                            let content = "";
+                            // 遍历所有span，只拼接class为"cl"的元素内容
+                            for (let i = 0; i < spans.length; ++i) {
+                                // 检查当前span是否包含class="cl"
+                                if (spans[i].classList.contains('cl')) {
+                                    content += spans[i].textContent;
+                                }
+                            }
+                            navigator.clipboard.writeText(content);
+                            copyingDone();
+                            return;
+                        }
+
+                        // 保留原有的备选复制方案
                         let textToCopy = code.textContent;
                         if (code.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
                             textToCopy = Array.from(code.parentNode.parentNode.parentNode.querySelectorAll('td:nth-child(2)'))
@@ -255,12 +256,6 @@
                                 .join('\n');
                         }
                         
-                        if ('clipboard' in navigator) {
-                            navigator.clipboard.writeText(textToCopy);
-                            copyingDone();
-                            return;
-                        }
-
                         const textArea = document.createElement('textarea');
                         textArea.value = textToCopy;
                         document.body.appendChild(textArea);
@@ -296,6 +291,23 @@
                 }
 
                 copyButton.addEventListener('click', () => {
+                    if ('clipboard' in navigator) {
+                        // 获取所有span元素
+                        let spans = codeblock.getElementsByTagName("span");
+                        let content = "";
+                        // 遍历所有span，只拼接class为"cl"的元素内容
+                        for (let i = 0; i < spans.length; ++i) {
+                            // 检查当前span是否包含class="cl"
+                            if (spans[i].classList.contains('cl')) {
+                                content += spans[i].textContent;
+                            }
+                        }
+                        navigator.clipboard.writeText(content);
+                        copyingDone();
+                        return;
+                    }
+
+                    // 保留原有的备选复制方案
                     let textToCopy = code.textContent;
                     if (code.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
                         textToCopy = Array.from(code.parentNode.parentNode.parentNode.querySelectorAll('td:nth-child(2)'))
@@ -303,12 +315,6 @@
                             .join('\n');
                     }
                     
-                    if ('clipboard' in navigator) {
-                        navigator.clipboard.writeText(textToCopy);
-                        copyingDone();
-                        return;
-                    }
-
                     const textArea = document.createElement('textarea');
                     textArea.value = textToCopy;
                     document.body.appendChild(textArea);
@@ -325,23 +331,6 @@
                     setTimeout(() => {
                         copyButton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
                     }, 2000);
-                }
-            }
-
-            if ({{ .Param "ShowExpandButton" }}) {
-                const expandButton = document.createElement('button');
-                expandButton.classList.add('expand-button');
-                expandButton.innerHTML = '&#9660;'; // Down arrow
-                block.appendChild(expandButton);
-
-                if (pre.offsetHeight > maxHeight) {
-                    block.classList.add('collapsible');
-                    expandButton.style.display = 'block';
-
-                    expandButton.addEventListener('click', () => {
-                        block.classList.toggle('expanded');
-                        expandButton.innerHTML = block.classList.contains('expanded') ? '&#9650;' : '&#9660;';
-                    });
                 }
             }
         });

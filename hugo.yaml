@@ -39,8 +39,6 @@ params:
   # 代码块功能
   ShowMacDots: true # Mac色块
   ShowCodeLang: true # 语言显示
-  ShowExpandButton: true # 代码块折叠
-  codeMaxHeight: "300px" # 代码块最大折叠高度
   ShowCodeCopyButtons: true # 展示代码块复制按钮
 
   UseHugoToc: true # 使用 Hugo 的目录样式
@@ -163,6 +161,7 @@ markup:
     noClasses: false
     lineNos: true # 行号
     lineNumbersInTable: false # 分隔行号和代码
+    codeFences: true
 
   goldmark:
     extensions:
