@@ -4,7 +4,7 @@ $gitAhead = git status -b --porcelain | Select-String "ahead"
 
 # 判断是否有修改或者未推送的提交
 if ($gitStatus -or $gitAhead) {
-    Write-Host "检测到修改或未推送的提交，开始处理..."
+    Write-Host "检测到修改或未推送的提交，开始处理..." -ForegroundColor Green
     
     if ($gitStatus) {
         # 添加所有修改的文件
@@ -15,23 +15,11 @@ if ($gitStatus -or $gitAhead) {
         $commitMessage = "Auto commit at $currentTime"
         git commit -m $commitMessage
     } else {
-        Write-Host "没有检测到新的修改，但有未推送的提交。"
+        Write-Host "没有检测到新的修改，但有未推送的提交。" -ForegroundColor Green
     }
 
     # 推送到远程仓库
     git push -u origin main
 } else {
-    Write-Host "没有检测到修改或未推送的提交，跳过 Git 操作。"
+    Write-Host "没有检测到修改或未推送的提交，跳过 Git 操作。" -ForegroundColor Red
 }
-
-# 生成并启动Hugo
-if (Test-Path .\public\) {
-    # 获取public目录下所有内容，排除shortcode-gallery
-    $itemsToDelete = Get-ChildItem -Path .\public\ -Exclude "shortcode-gallery"
-    
-    if ($itemsToDelete) {
-        # 强制删除筛选后的内容（包括子目录和只读文件）
-        $itemsToDelete | Remove-Item -Recurse
-    }
-}
-hugo server -D
