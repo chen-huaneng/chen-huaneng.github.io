@@ -31,6 +31,9 @@
 
 <script>
     document.querySelector('.pe-reward-overlay').addEventListener('click', evt =>  {
-        evt.target.classList.add('hidden');
+        // 只有点击遮罩层本身才关闭，点击二维码区域不关闭
+        if (evt.target.classList.contains('pe-reward-overlay')) {
+            evt.target.classList.add('hidden');
+        }
     });
 </script>

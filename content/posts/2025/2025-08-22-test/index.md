@@ -667,7 +667,7 @@ PDF 是根据相对于 Hugo 根目录解析的，比如放在 `/static/pdf/` 文
 
 - [使用Hugo实现响应式和优化的图片 | 流动](https://liudon.com/posts/responsive-and-optimized-images-with-hugo/)
 
-- [Hugo 食用之 Render Image | ♪(^∇^*)](https://ilunp.com/posts/hugo/hugo-render-image/)
+- [Hugo 食用之 Render Image](https://ilunp.com/posts/hugo/hugo-render-image/)
 
 - [调整 PaperMod 的页面结构以及新增功能 | aiken's blog](https://aikenh.cn/posts/调整papermod的页面结构以及新增功能/)
 
@@ -690,7 +690,5 @@ PDF 是根据相对于 Hugo 根目录解析的，比如放在 `/static/pdf/` 文
 - [短代码测试 | INNERSO](https://innerso.prvcy.page/posts/shortcode-test/)
 
 - [自定义 Hugo Shortcodes 简码 | 一路向北](https://ztygcs.github.io/posts/博客/自定义-hugo-shortcodes-简码/)
-
-- [hugo stack 主题美化](https://yelleis.top/p/61fdb627/)
 
 - [Hugo | 在文章中插入轮播图片 | 小球飞鱼](https://mantyke.icu/posts/2021/cf2cf0fb/)
