@@ -1,13 +1,11 @@
 ---
 date: '2023-12-10 21:53:19'
 title: 'Beautify Your Blog Using Javascript'
-description: ""
-tags: [[Hexo, Fluid, Website, Javascript]]
-categories: [[Hexo]]
+description: "本篇文章介绍了一些可以在Hexo的Fluid主题中实现的博客美化的效果"
+tags: [Hexo, Fluid, Website, Javascript]
+categories: [Hexo]
 math: false
 ---
-
-> 本篇文章介绍了一些可以在Hexo的Fluid主题中实现的博客美化的效果
 
 ## 实现雪花的效果
 
@@ -579,7 +577,6 @@ document.addEventListener('visibilitychange', function() {
 	}
 });
 ```
-
 
 
 

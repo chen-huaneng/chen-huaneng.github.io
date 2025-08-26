@@ -2,12 +2,10 @@
 date: '2023-12-04 17:50:22'
 title: 'Java Integer Cache'
 description: ""
-tags: [[Java, "Integer Cache"]]
-categories: [[Java]]
+tags: [Java, "Integer Cache"]
+categories: [Java]
 math: false
 ---
-
-# Java Integer Cache
 
 这篇文章是为了介绍 Java中 Integer 缓存(Cache)的。这是Java 5之后引出的新功能，目的是为了节省内存空间和提高性能。在开始正式介绍之前先来看以下的一些例子，并猜测一下它们的输出：
 
@@ -439,7 +437,7 @@ new BigDecimal(BigInteger.TEN,		10, 0),
 
 在前面的测试中，我们测试了 `integerNew == integer1`，结果是 `false`，这在我们了解缓存机制之前没有问题，因为 `==` 判断的是两个对象变量引用的是否是同一个对象，但是当我们了解了缓存机制之后，这似乎和我们的解释有一些不同：
 
-![](shell.webp)
+![](shell.png)
 
 从上面的图中的运行结果来看，`i == j` 和 `i == k` 都没有问题，而 `j == k` 却是 `false`。参考[Java Integer Cache] [^9]，这是因为缓存的机制只针对自动装箱的包装类，而不能对 `Integer` 的 `constructor` 生效：
 
