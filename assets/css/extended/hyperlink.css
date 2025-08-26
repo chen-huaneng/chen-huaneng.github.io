@@ -3,20 +3,12 @@
     position: relative;
     text-decoration: none; /* 移除下划线 */
     color: var(--primary); /* 链接默认颜色 */
-    z-index: 1; /* 确保文字在遮罩上方 */
-}
-
-/* 文字上方的半透明遮罩效果（仅对纯文本链接） */
-.post-content a:not(:has(img))::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0; /* 遮罩从文字底部开始 */
-    width: 100%;
-    height: 25%; /* 遮罩高度为文字的25%，不完全覆盖 */
-    background-color: rgba(17, 153, 158, 0.4); /* 半透明遮罩 */
+    /* 使用背景渐变实现行内遮罩效果 */
+    background-image: linear-gradient(to bottom, rgba(17, 153, 158, 0.4) 0%, rgba(17, 153, 158, 0.4) 100%);
+    background-repeat: repeat-x;
+    background-position: 0 88%; /* 控制遮罩位置 */
+    background-size: 100% 25%; /* 控制遮罩高度 */
     transition: all 0.3s ease;
-    z-index: -1; /* 遮罩在文字下方 */
 }
 
 /* 悬停效果（仅对纯文本链接） */
