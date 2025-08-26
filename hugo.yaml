@@ -173,6 +173,8 @@ markup:
           - - \(
             - \)
         enable: true
+    renderer:
+      unsafe: true # 允许在.md文件中引入html
 
 outputs:
   home:

@@ -1,0 +1,142 @@
+<div class="app">
+    <form class="plate">
+      {{ range $index, $src := .Params }}
+        <label class="item">
+          <input type="radio" name="item" {{ if eq $index 0 }}checked="checked"{{ end }}/>
+          <img src="{{ $src }}"/>
+        </label>
+      {{ end }}
+    </form>
+  </div>
+  
+
+<style>
+/** side by side **/
+.app:nth-of-type(1) {
+    place-self: center right;
+  }
+  .app:nth-of-type(2) {
+    place-self: center left;
+  }
+  
+  .app {
+    --preview-item-width: calc(100% / (var(--item-count) - 1));
+    --preview-item-height: 10%;
+    width: 50vmin;
+    height: 80vmin;
+    margin: auto;
+  }
+  
+  .app [type="radio"] {
+    display: none;
+  }
+  
+  .app .plate {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .app .plate .item {
+    display: block;
+    width: var(--preview-item-width);
+    height: var(--preview-item-height);
+    position: absolute;
+    bottom: 0;
+    left: var(--left);
+    transform-origin: top left;
+    transition: transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s,
+      box-shadow 0.6s;
+  }
+  
+  .app .plate .item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .app .plate .item.active {
+    --preview-item-width: 100%;
+    bottom: var(--preview-item-height); /* bubble up */
+    left: 0 !important;
+    height: calc(100% - var(--preview-item-height));
+    box-shadow: 0 0 0 transparent;
+    animation: anim 2s 1;
+    transform: translate3d(0, 0, -10px);
+    transition: transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 0s;
+  }
+  
+  .app .plate .item.active img {
+    object-fit: contain;
+  }
+  
+  /* 
+  optional
+  */
+  
+  .app .plate {
+    perspective: 100px;
+    perspective-origin: center center;
+    transform-style: preserve-3d;
+    pointer-events: none;
+  }
+  
+  .app .plate::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    transform: rotateX(90deg);
+    transform-origin: bottom center;
+  }
+  
+  .app .plate .item:not(.active) {
+    transform-origin: center;
+    transform: scale(0.8) translate3d(0, 0, -5px);
+    pointer-events: auto;
+  }
+  
+  .app .plate .item:not(.active):hover {
+    transform-origin: center;
+    transform: scale(0.8) translate3d(0, -1px, -5px);
+    box-shadow: 0 20px 10px -10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  /*
+  animation
+  */
+  
+  @keyframes anim {
+    from {
+      transform: rotateY(6deg) rotateX(3deg);
+    }
+  }
+</style>
+
+
+<script>
+document.querySelectorAll('.app').forEach(init)
+
+function init(app) {
+  const items = app.querySelectorAll('.item')
+  app.style.setProperty('--item-count', items.length)
+  const form = app.querySelector('.plate')
+  form.addEventListener('input', () => update(app))
+  update(app)
+}
+
+function update(app) {
+  const items = Array.from(app.querySelectorAll('.item'))
+  const active = items.filter(x => x.querySelector(':checked'))[0]
+  const inactives = items.filter(x => x != active)
+  // toggle class
+  items.forEach(x => x.classList.toggle('active', x === active))
+  // re-calc anim props
+  inactives.forEach((x, i, xs) => x.style.setProperty('--left', `${i / xs.length}e2%`))
+}
+</script>

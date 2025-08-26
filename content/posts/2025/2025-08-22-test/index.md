@@ -624,3 +624,27 @@ PDF 是根据相对于 Hugo 根目录解析的，比如放在 `/static/pdf/` 文
 ### 图片轮播
 
 {{< imgloop "test2.webp,test.jpg,test3.jpg,test4.jpg,https://images.unsplash.com/photo-1702382930514-9759f4ca5469" >}}
+
+### 摘录引用
+
+{{< blockquote author="钱钟书" link="https://book.douban.com/subject/11524204/" title="《围城》重印前记" >}}
+“年复一年，创作的冲动随年衰减，创作的能力逐渐消失——也许两者根本上是一回事，我们常把自己的写作冲动误认为自己的写作才能，自以为要写就意味着会写。”
+{{< /blockquote >}}
+
+### 图片瀑布流
+
+可以引入外链图片，也可以引入本地图片，默认路径为 `/static/`。
+
+<gallery>
+    <img src="/images/showcase/test.jpg">
+    <img src="/images/showcase/test2.webp">
+    <img src="/images/showcase/test3.jpg">
+    <img src="/images/showcase/test4.jpg">
+    <img src="https://images.unsplash.com/photo-1702382930514-9759f4ca5469">
+</gallery>
+
+### 图片橱窗
+
+图片地址默认仍然是博客根目录下 `static` 文件夹，或者引入外链图片也可以。
+
+{{< image-showcase "/images/showcase/test.jpg" "/images/showcase/test2.webp" "/images/showcase/test3.jpg" "/images/showcase/test4.jpg">}}
