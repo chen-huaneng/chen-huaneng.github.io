@@ -648,7 +648,3 @@ PDF 是根据相对于 Hugo 根目录解析的，比如放在 `/static/pdf/` 文
 图片地址默认仍然是博客根目录下 `static` 文件夹，或者引入外链图片也可以。
 
 {{< image-showcase "/images/showcase/test.jpg" "/images/showcase/test2.webp" "/images/showcase/test3.jpg" "/images/showcase/test4.jpg">}}
-
-### 热力图
-
-{{< heatmap >}}
