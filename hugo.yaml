@@ -33,9 +33,15 @@ params:
 
   ShowFullTextinRSS: true # 是否在 RSS 中展示全文，方便订阅 RSS 的人在 RSS 阅读器中浏览
   ShowPostNavLinks: true # Adds a Previous / Next post suggestion under a single post
-  ShowCodeCopyButtons: true # 展示代码块复制按钮
   ShowRssButtonInSectionTermList: true
   hideAuthor: true # 在文章页隐藏作者
+
+  # 代码块功能
+  ShowMacDots: true # Mac色块
+  ShowCodeLang: true # 语言显示
+  ShowExpandButton: true # 代码块折叠
+  codeMaxHeight: "300px" # 代码块最大折叠高度
+  ShowCodeCopyButtons: true # 展示代码块复制按钮
 
   UseHugoToc: true # 使用 Hugo 的目录样式
   showtoc: true # 是否启用目录
