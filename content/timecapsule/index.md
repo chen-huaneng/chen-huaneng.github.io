@@ -7,7 +7,7 @@ searchHidden: true
 enableReward: false
 ---
 
-{{< timeline date="2025-08-26" title="重新部署博客" description="修复自定义页面背景色和归档不同的问题，友链和时光胶囊页面适配移动端，禁用主题切换，更改选中文字背景色。" tags="博客" >}}
+{{< timeline date="2025-08-26" title="重新部署博客" description="修复自定义页面背景色和归档不同的问题，友链和时光胶囊页面适配移动端，禁用主题切换，更改选中文字背景色，添加页脚版权说明。" tags="博客" >}}
 {{< timeline date="2025-08-25" title="完善首页样式" description="增加时间轴，修复友链的超链接CSS模板错误和时光胶囊板块的图片渲染问题，修改首页样式，增加荣誉奖项、教育经历和个人图片。" tags="博客" >}}
 {{< timeline date="2025-08-24" title="增加时光胶囊板块" description="用shortcode实现了画廊自动排布图片，方便增减图片。" tags="博客" >}}
 {{< timeline date="2025-08-23" title="支持插入数学公式" description="用Mathjax引擎渲染数学公式，修复行内公式和行间公式渲染错误，增加友链板块。" tags="博客" >}}
@@ -58,6 +58,8 @@ enableReward: false
 {{< timeline date="2023-10-03" title="国庆回家" description="在家里看到了很好看的晚霞，人生是旷野。" tags="游记" url="/timecapsule/images/IMG_20231003_181307.jpg" >}}
 {{< timeline date="2023-04-01" title="第二次去鼓浪屿" description="拍到了很多可可爱爱的猫咪！" tags="游记" url="/timecapsule/images/IMG_20230401_101000.jpg" >}}
 {{< timeline date="2023-03-31" title="雨夜漫步" description="在学校瞎逛，看到了不一样的学校夜景。" tags="游记" url="/timecapsule/images/IMG_20230331_225806.jpg" >}}
+
+<iframe src="https://www.google.com/maps/d/embed?mid=12IwXT4pvmz44lTmj4xbiYjzpUuKxR-Y&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
 
 {{< gallery 
 match="images/*" 

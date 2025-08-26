@@ -156,6 +156,8 @@ markup:
     noClasses: false
     lineNos: true # 行号
     lineNumbersInTable: false # 分隔行号和代码
+  renderer:
+    unsafe: true # 用于在.md文件中渲染html
 
   goldmark:
     extensions:

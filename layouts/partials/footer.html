@@ -17,7 +17,15 @@
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a> · Build:&nbsp;{{ now.Format "2006-01-02 15:04:05" | safeHTML }}
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+    {{- print " · "}}
+    <span>
+        Build:&nbsp;{{ now.Format "2006-01-02 15:04:05" | safeHTML }}
+    </span>
+    {{- print " · "}}
+    <span>
+        <i class="fa-brands fa-creative-commons"></i>&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-creative-commons-by"></i></a>&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-creative-commons-nc"></i></a>&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-creative-commons-sa"></i></a>
     </span>
 </footer>
 {{- end }}
