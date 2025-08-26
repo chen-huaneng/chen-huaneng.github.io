@@ -7,13 +7,13 @@ searchHidden: true
 enableReward: false
 ---
 
-{{< timeline date="2025-08-26" title="重新部署博客" description="修复自定义页面背景色和归档不同的问题，友链页面适配移动端。" tags="博客" >}}
+{{< timeline date="2025-08-26" title="重新部署博客" description="修复自定义页面背景色和归档不同的问题，友链和时光胶囊页面适配移动端。" tags="博客" >}}
 {{< timeline date="2025-08-25" title="完善首页样式" description="增加时间轴，修复友链的超链接CSS模板错误和时光胶囊板块的图片渲染问题，修改首页样式，增加荣誉奖项、教育经历和个人图片。" tags="博客" >}}
 {{< timeline date="2025-08-24" title="增加时光胶囊板块" description="用shortcode实现了画廊自动排布图片，方便增减图片。" tags="博客" >}}
 {{< timeline date="2025-08-23" title="支持插入数学公式" description="用Mathjax引擎渲染数学公式，修复行内公式和行间公式渲染错误，增加友链板块。" tags="博客" >}}
 {{< timeline date="2025-08-22" title="完善细节" description="添加测试博客功能的文章，实现了插入Bilibili视频，用Fancybox实现图片灯箱。" tags="博客" >}}
 {{< timeline date="2025-08-21" title="主题配置" description="根据PaperMod官方文档修改了相应的配置，基于PDF.js实现插入PDF的shortcode。" tags="博客" >}}
-{{< timeline date="2025-08-21" title="开源lessTabs浏览器插件" description="开源lessTabs浏览器插件，支持在当前页面预览链接。" tags="开源" >}}
+{{< timeline date="2025-08-21" title="开源lessTabs插件" description="开源lessTabs浏览器插件，支持在当前页面预览链接。" tags="开源" >}}
 {{< timeline date="2025-08-20" title="更换框架" description="把博客框架从Hexo转到Hugo，构建速度快很多，PaperMod主题比Fluid主题简洁。" tags="博客" >}}
 {{< timeline date="2025-08-19" title="发布LaTeX笔记模板" description="重构LaTeX笔记模板，将原来的LaTeX模板用于排版书籍，精简代码。" tags="学习" url="https://github.com/chen-huaneng/latex-template" >}}
 {{< timeline date="2025-08-08" title="逛逛公园" description="试了一下支付宝的碰一碰支付，NFC还要先点到支付宝才能支付，不是特别方便。" tags="生活" url="/timecapsule/images/MVIMG_20250808_170538.jpg" >}}
