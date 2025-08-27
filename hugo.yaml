@@ -124,6 +124,7 @@ params:
     ignoreLocation: true
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
+    limit: 10  # refer: https://www.fusejs.io/api/methods.html#search
 
 menu:
   main:

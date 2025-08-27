@@ -33,7 +33,7 @@
         {{ end }}
         <!-- title 可点击，默认就是跳转时间轴所在页 -->
         <div class="timeline__description">
-            {{ $description }}
+            {{ $description | markdownify }}
         </div>
     </div>
 </div>

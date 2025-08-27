@@ -443,7 +443,7 @@ $$
 ### 箭头
 
 $$
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 \gets\ \to\ \leftarrow\ \rightarrow\ \uparrow\ \Uparrow\ \downarrow\ \Downarrow\ \updownarrow\ \Updownarrow \\
 \displaylines{\Leftarrow\ \Rightarrow\ \leftrightarrow\ \Leftrightarrow\ \mapsto\ \hookleftarrow 
@@ -451,7 +451,7 @@ $$
 \Longrightarrow\ \longleftrightarrow\ \Longleftrightarrow\ \longmapsto\ \hookrightarrow\ \rightharpoonup \\
 \rightharpoondown\ \leadsto\ \nearrow\ \searrow\ \swarrow\ \nwarrow
 \end{aligned}
-\end{equation}
+\end{equation*}
 $$
 
 ### 符号
@@ -577,6 +577,16 @@ f(x) = \sqrt{1+x}, \quad x \ge -1
 f(x) \sim x^2, \quad x\to\infty
 $$
 
+### 编号引用
+
+$$
+\begin{equation}
+\overline{X} = \frac{1}{n}\sum_{i = 1}^nX_i\label{eq:test}
+\end{equation}
+$$
+
+公式 $\eqref{eq:test}$ 是样本平均值的计算公式。
+
 ## Hugo Rich Content and Shortcodes
 
 ### Figure Shortcode
@@ -648,6 +658,35 @@ PDF 是根据相对于 Hugo 根目录解析的，比如放在 `/static/pdf/` 文
 图片地址默认仍然是博客根目录下 `static` 文件夹，或者引入外链图片也可以。
 
 {{< image-showcase "/images/showcase/test.jpg" "/images/showcase/test2.webp" "/images/showcase/test3.jpg" "/images/showcase/test4.jpg">}}
+
+### 边注
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
+
+这是一段正文，继续正文内容。
 
 ## 参考
 

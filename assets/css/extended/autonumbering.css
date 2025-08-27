@@ -1,6 +1,7 @@
 /* ========= 文章和目录自动编号（从二级标题开始）============ */
+/* 初始化 sidenote 和二级标题计数器 */
 body {
-    counter-reset: h2
+    counter-reset: h2 sidenote-counter
 }
 
 h2 {

@@ -1,0 +1,130 @@
+/* 初始化 sidenote 专属计数器在 autonumbering.css 中实现 */
+/* 每次调用 sidenote 递增 */
+.sidenote {
+  display: inline;
+  counter-increment: sidenote-counter;
+}
+
+/* 控制编号显示为上标，紧贴正文 */
+.sidenote-mark::after {
+  content: counter(sidenote-counter);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  vertical-align: super; /* 上标效果 */
+  margin-left: -6px; /* 避免贴太紧，可以调小/去掉 */
+}
+
+.sidenote-checkbox {
+  display: none;
+}
+
+.sidenote-mark {
+  cursor: pointer;
+  position: relative;
+}
+
+.sidenote-content {
+  position: absolute;
+  right: 0;
+  width: 12rem;
+  margin-right: calc(-1 * 12rem - 1rem);
+  cursor: default;
+}
+
+.sidenote-content::before {
+  content: counter(sidenote-counter) '.';
+  position: absolute;
+  left: -4rem;
+  top: 0;
+  bottom: 0;
+  width: 3.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.sidenote:hover .sidenote-mark::after,
+.sidenote:hover .sidenote-content::before {
+  color: rgb(2 132 199 / 1);
+}
+
+.sidenote:active,
+.sidenote:active .sidenote-content {
+  color: rgb(2 132 199 / 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sidenote-content,
+  .sidenote-mark {
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media not all and (min-width: 1024px) {
+  .sidenote-checkbox ~ .sidenote-content {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .sidenote-checkbox:checked ~ .sidenote-content {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0 0 0 1rem;
+    margin: 0.5rem 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    display: block;
+    min-width: 100%;
+    color: rgb(2 132 199 / 1);
+  }
+
+  .sidenote-checkbox:checked ~ .sidenote-mark {
+    text-decoration: none;
+    color: rgb(2 132 199 / 1);
+  }
+
+  .sidenote-mark {
+    text-decoration: underline;
+    text-decoration-color: #0284c7;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .sidenote-mark::after {
+    content: counter(sidenote-counter);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    vertical-align: super; /* 上标效果 */
+    margin-left: -6px; /* 避免贴太紧，可以调小/去掉 */
+  }
+
+  .sidenote-content::before {
+    display: none;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
