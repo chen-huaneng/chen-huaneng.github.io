@@ -8,13 +8,6 @@ enableReward: false
 ---
 
 {{< friend 
-	name="宫水三叶" 
-	url="https://sharingsource.github.io/"	
-	logo="/images/Miyamizu_Mitsuha.png"
-	description="算法爱好者，退役 OIer，现微软工程师"
->}}
-
-{{< friend 
 	name="城子的小屋"
 	url="https://xcz.me/"
 	logo="/images/xcz.me.jpg"
