@@ -96,6 +96,8 @@ params:
   socialIcons:
     - name: "email"
       url: "mailto:huanengchen@foxmail.com"
+    - name: "orcid"
+      url: "https://orcid.org/0009-0000-0221-2419"
     - name: "github"
       url: "https://github.com/chen-huaneng"
     - name: "twitter"
