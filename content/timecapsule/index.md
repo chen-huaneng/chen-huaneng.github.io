@@ -7,6 +7,7 @@ searchHidden: true
 enableReward: false
 ---
 
+{{< timeline date="2025-11-06" title="精简内容" description="删除不必要的个人简介和图片。" tags="博客" >}}
 {{< timeline date="2025-08-27" title="增加边注" description="添加边注shortcode并适配移动端，限制搜索结果数量来提高搜索速度，重新排版时光胶囊板块布局，迁移旧博客的文章。" tags="博客" >}}
 {{< timeline date="2025-08-26" title="重新部署博客" description="修复自定义页面背景色和归档不同的问题，友链和时光胶囊页面适配移动端，禁用主题切换，更改选中文字背景色，添加页脚版权说明。" tags="博客" >}}
 {{< timeline date="2025-08-25" title="完善首页样式" description="增加时间轴，修复友链的超链接CSS模板错误和时光胶囊板块的图片渲染问题，修改首页样式，增加荣誉奖项、教育经历和个人图片。" tags="博客" >}}
@@ -58,5 +59,3 @@ previewType="blur"
 embedPreview=true 
 loadJQuery=false 
 >}}
-
-{{< google-map width="800" height="500" >}}
