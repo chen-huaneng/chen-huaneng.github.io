@@ -463,6 +463,31 @@ $$
 >
 > 顾名思义，`\mathbin` 用于调整周围间距以符合二元运算符的规范（binary operator），而 `\mathrel` 则修改间距以表示二元关系（binary relation）。
 
+#### 组合数
+
+组合数有两种表示方式，第一种是以组合数（combinations）的英文首字母作为主体，被选中数量和可选数量作为上下标的形式，另外一种是以括号括起来的形式。
+
+第一种形式要注意 $\mathrm{C}$ 要写作正体，即加上 `\mathrm{}` 的命令，第二种形式比较常用的是使用 amsmath 宏包提供的 `\binom{}{}` 命令，还可以使用 `\tbinom{}{}` 和 `\dbinom{}{}`，当然还有一种比较好记的形式是 `{n \choose k}`，要注意花括号不能省略。
+
+```latex
+\mathrm{C}_n^k
+\binom{n}{k}
+\tbinom{n}{k}
+\dbinom{n}{k}
+{n \choose k}
+```
+
+效果展示：
+$$
+\begin{align*}
+\mathrm{C}_n^k \\
+\binom{n}{k} \\
+\tbinom{n}{k} \\
+\dbinom{n}{k} \\
+{n \choose k}
+\end{align*}
+$$
+
 ### 省略号
 
 略号用 `\dots`, `\cdots`, `\vdots`, `\ddots` 等命令表示。`\dots` 和 `\cdots` 的纵向位置不同，前者一般用于有下标的序列。
