@@ -39,6 +39,10 @@ math: true
 - [易班网](https://www.yiban.cn/)
 - [厦门大学教务服务平台](https://jw.xmu.edu.cn/new/index.html)
 - [厦门大学24365就业育人数智平台](https://jy.xmu.edu.cn/)
+- [厦门大学研究生院](https://gs.xmu.edu.cn/)
+- [厦门大学统一身份认证](https://ids.xmu.edu.cn/authserver/login?type=qrLogin&service=https%3A%2F%2Fc-identity.xmu.edu.cn%2Fauth%2Frealms%2Fxmu%2Fbroker%2Fcas-client%2Fendpoint%3Fstate%3DLcLqGnQ7W4g6knShGgKq_3nDMCvO5l8e8ZQ6EW_UMQg.DZomfINn-mA.Tronclass%23%2F)
+- [研究生选课](https://yjsxk.xmu.edu.cn/yjsxkapp/sys/xsxkapp/index.html)
+- [申报指南 -欢迎访问国家留学网！](https://www.csc.edu.cn/chuguo)
 
 {% endfold %}
 
@@ -66,7 +70,6 @@ math: true
 - [Sci-Hub: 将知识带给每个人](https://sci-hub.ru/)
 - [DDoS-Guard](https://sci-hub.st/)
 - [Sci-Hub: 对每个人的知识](https://sci-hub.se/)
-- [Sci-Hub journal:latest sci-hub mirror links](https://sci-hub.shop/)
 - [中国知网](https://www.cnki.net/)
 - [Mendeley - Reference Management Software](https://www.mendeley.com/?interaction_required=true)
 - [PubMed](https://pubmed.ncbi.nlm.nih.gov/)
@@ -86,6 +89,7 @@ math: true
 - [Glgoo 学术搜索](https://gg.xueshu5.com/)
 - [arXiv.org e-Print archive](https://arxiv.org/)
 - [Libgen最新可用镜像网址（2025年8月11日更新） - Sci-Hub中文社区](https://discuss.sci-hub.org.cn/d/2579)
+- [Welcome](https://www.engineeringvillage.com/home.url)
 
 ### 论文查重
 
@@ -106,6 +110,13 @@ math: true
 - [Research Rabbit](https://researchrabbitapp.com/home)
 
 {% endfold %}
+
+## 竞赛/比赛
+
+- [中国研究生创新实践系列大赛管理平台](https://cpipc.acge.org.cn/cw/hp/4)
+- [中国研究生创新实践系列大赛管理平台](https://cpipc.acge.org.cn/)
+- [能源经济学术创意大赛](https://energy.qibebt.ac.cn/eneco/contribution/index.html#/index)
+- [首页-统计建模大赛官网](http://tjjmds.ai-learning.net/)
 
 ## 实习/公务员
 
@@ -195,6 +206,11 @@ math: true
 - [Homepage - Yinmin Zhong](https://www.yinminzhong.com/)
 - [changgy tech blog CTB](https://changgy.com/)
 - [Tw93](https://tw93.fun/)
+- [Yingfa Chen 陈英发](https://chen-yingfa.github.io/)
+- [小球飞鱼](https://mantyke.icu/)
+- [Gallery - I am Matze](https://matze.rocks/images/)
+- [PRIN BLOG - 半吊子全栈开发者的日常](https://prin.pw/)
+- [Homepage of Serge Richard](https://www.math.nagoya-u.ac.jp/~richard/) 一位数学系教授，里面的笔记很有用
 
 {% endfold %}
 
@@ -237,6 +253,10 @@ math: true
 - [Pix2Text (P2T) - Free Mathpix Alternative](https://p2t.breezedeus.com/)
 - [公式识别](https://simpletex.cn/ai/latex_ocr)
 - [Detexify LaTeX handwritten symbol recognition](https://detexify.kirelabs.org/classify.html)
+- [在线LaTeX公式编辑器-编辑器](https://www.latexlive.com/home)
+- [LaTeX 工作室](https://www.latexstudio.net/)
+- [Math2Tex - Online Handwriting & Equation OCR to LaTeX & Text](https://www.math2tex.com/)
+- [Mathcha - Online Math Editor](https://www.mathcha.io/) 方便在线画 TikZ 图并导出 $\LaTeX$ 代码
 
 ### Markdown
 
@@ -288,6 +308,11 @@ math: true
 - [秘塔AI搜索](https://metaso.cn/)
 - [ChatGPT](https://chatgpt.com/)
 - [Cherry Studio 官方网站 - 全能的 AI 助手](https://www.cherry-ai.com/)
+- [豆包 - 字节跳动旗下 AI 智能助手](https://www.doubao.com/chat/)
+- [Gamma](https://gamma.app/)
+- [AI Model & API Providers Analysis | Artificial Analysis](https://artificialanalysis.ai/) AI 模型对比
+- [DeepWiki | AI documentation you can talk to, for every repo](https://deepwiki.com/) AI 辅助理解 Github 仓库
+- [Google AI Studio](https://aistudio.google.com/)
 
 ### Operations Research
 
@@ -418,6 +443,7 @@ math: true
 - [Download 1,451,700 free icons (SVG, PNG)](https://icons8.com/icons)
 - [Iconbuddy — 250,000+ open source free svg icons](https://iconbuddy.com/)
 - [Pictogrammers - Open-source iconography for designers and developers](https://pictogrammers.com/)
+- [The best Favicon Generator (completely free) - favicon.io](https://favicon.io/) 各种格式到icon的转换器
 
 {% endfold %}
 
@@ -589,13 +615,15 @@ math: true
 - [熊猫搜盘_百度网盘搜索](https://www.sopandas.cn/)
 - [盘搜 - 基于TG频道的网盘搜索工具](https://pansou.jkai.de/)
 - [虫部落快搜 - 搜索快人一步 - Google](https://search.chongbuluo.com/)
+- [Torrent Search | TorrentSeeker](https://torrentseeker.com/) 种子搜索
 
 {% endfold %}
 
 ### 旅游
 
-- [地图小程序](https://wia.amap.com/#/manage/maps?orgId=10018082590121574957)
-- [腾讯文档](https://docs.qq.com/desktop)
+- [地图小程序](https://wia.amap.com/#/manage/maps?orgId=10018082590121574957) 高德地图标记想去的地方
+- [腾讯文档](https://docs.qq.com/desktop) 腾讯文档来规划行程或者使用飞书多维表格
+- [我的地图](https://www.google.com/maps/d/) 谷歌地图方便标记国外的地点
 - [海の見える駅 〜徒歩0分の景勝地〜](https://seaside-station.com/) 介绍可以看到日本海的站点的站点。它于2006年开放，目的是散布充满旅行感的精美车站，这与旅游景点不同，这是很难看到的。
 - [全球地铁线路图与查询指南 - Metro Line Hub](https://www.metrolinehub.com/zh) 全球地铁线路与查询指南
 
@@ -617,6 +645,9 @@ math: true
 - [用户登录](https://bucd.icu/#/login)
 - [YIY公告板](https://yiyone.work/)
 - [登录 - 魔戒.net](https://mojie.co/login)
+- [登录 — Akkcloud](https://mirror.akpnaca.com/auth/login)
+- [www.donkX.net](https://dash.donkx.work/#/login)
+- [主页 | OverWall - 探索新的世界](https://www.overwatch.cat/)
 
 {% endfold %}
 
@@ -633,6 +664,7 @@ math: true
 - [HiPPTER | PPT资源导航 | PPT模板图表等设计素材免费下载](https://www.hippter.com/)
 - [PPT菜鸟逆袭记-免费ppt模板下载,PPT模板,PPT图表,PPT动画,PPT教程分享](https://www.pptfan.com/)
 - [稻壳儿官网_WPS模板内容服务平台_PPT模板_精美办公模板素材_会员免费下载_工作总结_求职简历_教学课件等多品类模板应有尽有](https://docer.wps.cn/webmall/2023/#/home/)
+- [PPT模板免费下载_精美免费PPT模板下载 -【优品PPT】](https://www.ypppt.com/)
 
 ### 壁纸
 
@@ -680,6 +712,7 @@ math: true
 - [Z-Library – the world’s largest e-book library. Your gateway to knowledge and culture.](https://101ml.fi/)
 - [Z-Library – 世界上最大的电子图书馆。自由访问知识和文化。](https://zh.zlib.by/)
 - [Flow - 在线 EPUB 阅读器](https://www.flowoss.com/zh-CN?url=heeee.com) EPUB阅读器
+- [Libgen最新可用镜像网址（2025年10月29日更新） - Sci-Hub中文社区](https://discuss.sci-hub.org.cn/d/2579)
 
 {% endfold %}
 
@@ -697,4 +730,7 @@ math: true
 - [NanmiCoder/MediaCrawler: 小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫 | 知乎问答文章｜评论爬虫](https://github.com/NanmiCoder/MediaCrawler) 网络爬虫
 - [ambientCG - Free Textures, HDRIs and Models](https://ambientcg.com/) 材质
 - [Kitbox Pro - KitboxPro免费在线工具箱](https://www.kitboxpro.com/) 集成工具箱
+- [在线时间转换器 | 时间戳和时区计算](https://calctools.online/zh/time/converter) 时间转换器
+- [Online FlowChart & Diagrams Editor - Mermaid Live Editor](https://mermaid.live/edit#pako:eNqlWGtPG9kZ_ivWSFu1CiG-jMc2EpVSYKtI7iYi6Yd2QKNZGMCysV17vGkWpYI0BpvgSzeEsFyysCUhSbk425Q4Npf_Es2Z8XzKX-h75pwzF9ttVyofwD6e87zved7nfd5jFripzLTCDXEzqcz9qTk5p_rujU6kffAzEhBRaRcdPkFrG-jyrVE9RbVNc6X2-XwrOewf8KWV-1Je-dPwJHvcd_36r30jQRHVNtDFU1Su6McvzbcHSWPrcWf1kfHoYzox7Rv23f18voZOP6LWOlmF1513-2n4JA2p5BlckMCFROPoSGsuAhYERgePjfryl-NjY_rTinax8_m8ZK6s6uuXxvlTtPwTWmt9Pi9ThC--8HU_TqFDFDogdqof7GyT5s4iBdt6bOOh0vPO_msIPZNTFOnrwkweErVey6qUHJxVVJZwiBIQCormUgVVl_XTmtZ8iy6LNipsl4CDT6WSz4azt7MDhxbwY6nMlE_fPEX1V2jn9b2b478duyfFb_5hbBzo--Eh24NPgh-jW3l2IItefIbjTfTuURxSTskPlFze77fD8XRPWNTa1figPKUmvlG05rFx2Da_PyCZQqU6jb8a66_jgzhf6xc5DNppoN3FSU8ekCvFFEStWSHkG-UVrblKNgGcsf1er77Um0X4qHPSQBfPbIyw7xd4K4WIgPj2aCLABfpuzXol51UpU1ClmVxmvmt_hOzkLcG01tyCuRmP3x6xFYNKy2ax8t8U43qeolO2-F7JULR-kpFTkLmUSuRVKAB50y0anoqG7xENwTX3P1pycaDsnVQvfEgkRGB-8olvFYiF_wDZeIVuxNVnKrARaB_w_AL5_H_qjec9debDEPrSuDihRRr2jY6OA8G4-JU9UnkiQuAYa-nDPztXK-Rgkx5IW8K8IBr7J-hky3i1pB__aL55Zy7Wze3lmUzua6zHLUo8sZY7t-6MaRdXIFDgH_KGkHYV7ABUUXxEJFqWsil5SpESacIKaux2Tp91JcW0FF0gHxBm9FIdrf4AfMAZv4RWiEM59PIlKjVQvWQuPiJNAWe1-Yp6DxdzlQo3OC0IUKNDX2w0nDasMvxJD5RNfdjPTqPMK7lZJT31QJpJFfJzkpyelnJKVp5KQpZGu6S_WELFHdR65ugcdjMU8PjGcuf0JbiEXl7Ud8pdLN69cysel27__h4ckhSXnMBe11pPtPYZ7uz3p2h1D57R60edq7o1KFwBAywiCN0yA29QTJzxpmU-fw8hiNtgk3jTQvWquVIBjXnQggwtJGrnm6hIe5qIg3iXpQhSjzVUPNPaG-iq2Hm15LRpvWq0j8lBbn2Ftl_AuZ0IrDdijH_LnvgYWRbIVCq7TQaL0ZlKuy8sE7mBh4_WXIdD_gbMvo_XONtoJKpXIbBApyYRn9ZsuSNgDd7OfirvecLgGBAaeHOpUAh4pAN9YPUhRiMp4Na82kbFl-jqH0bx0OurZLetYSGIFYP3gvfhxmN06mtldHCIGjXz-wpq1fTqd_Abu-1KDTX-ZvxYBXrhJuEqo0CrKIRcF43ac-1qV189sHGh-aG7srmMqkypCr5AfCoVMcNLVwgqbhWR2IQbmpZP4HtslUwlhu6ayCRjDAjKsSzcRqPuL4S7RjPUxGoK2yCFsIdqQRDRh59IS4EXYiWu7gHP9mnwipWQ1nwClxxIsce_CKTDf4QZ5PaJvrdCZAuNpM6qoETSDD2TkrSAfrTfNRHsGNTvhCg19L7uC9Q7ZfhUeusj7Ya1gCkjPdbfhIUoDRD7-SYs0F6L-PubMOM84vcQFAmIbou69RVzqBKNLGezCnhkPptIpchc6rUulkMkwArpCeb0Eu4GnPq4AqTKaiKThirQQDmyhk9ZyCuSmpHm5aQi5TKZeRs_yHACorlY1p-8CfwlCCrQ2n_X2h90uF00asAttHRXV8BxoOHwnL-G8y7V9Z0j1nJlBz3A4IOi7dgQB1_znNuKx9i7_Nxt5rDY7_IH4CxKCLy9AnOsf42tInaZswMSYiC86PJkVNrSyxUiRPcd62fm29VuTjSeiaUnfmjBqeV_Upz3uhvh_59ZHGGpwN3SrpEP2tmejj2lomVwz04HjZUcbpTEKGDsmfttYhRuComxzhfAJ-bkbxQpnbmP7do1Qn3XfKSr-9i95wRMALx3HBMUZwovV8i6JyaJ4Jzx41n_kRxh11WnZrgKI1FGfj4tZ_NzGfWXSfhumpj-FdGH-5souYsaq2f64hKDpcYUZa5BBoX91QkIu2ldye4qs8BOZmYmr6g3cN_dYF-RylAWsg6TYdbGpXWIBkVoXQzWkwiZtrCbZZ7HKll_rbWqZKyh2mnncNk7NKOU65iY9F0b9gUwr6UDfeOYaJVMO3SyRsQB1KDWKxIUBMxAYh79Bt2rzEdHRXIlgG7GU7H0XH_xGLVb5uaZfvKvSW6Am80lprkhNVdQBjiQ_byM33ILGGuCU-egFSa4IXg5LeeSE9xE-iHsycrpP4L7sW25TGF2jhuakVN5eFfIToNZjibk2ZzsPAJWreRGMoW0yg0FAhYEN7TA_Rne-QOD_kBYCPHBcDQcDfojA9wDbuh6OCQMhiOxWCzoj8EnQvjhAPetFTUyGA5F_NFoKMYHhLCfH-CU6YSayf2O_AvE-k_Iw38DirVQLA) 流程图
+- [Traveling Salesman Problem](https://www.math.uwaterloo.ca/tsp/index.html) TSP 问题相关的资料
 
