@@ -7,9 +7,10 @@ categories: ['Math']
 math: true
 ---
 
-##  一重积分的变限积分函数求导
+## 变限积分函数求导
 
-对一重积分的变限积分函数进行求导一般使用莱布尼茨积分法则（Leibniz integral rule），用于计算积分上下限都是 $t$ 的函数且被积函数也依赖于 $t$ 的积分的导数。下面来详细证明这个公式：
+对变限积分函数进行求导一般使用莱布尼茨积分法则（[Leibniz integral rule](https://www.wikiwand.com/en/articles/Leibniz_integral_rule)），用于计算积分上下限都是 $t$ 的函数且被积函数也依赖于 $t$ 的积分的导数。下面来详细证明这个公式：
+
 $$
 \frac{d}{dt}\int_{a(t)}^{b(t)} f(x,t) \, dx = f(b(t),t)b'(t) - f(a(t),t)a'(t) + \int_{a(t)}^{b(t)} \frac{\partial f}{\partial t}(x,t) \, dx
 $$
@@ -120,3 +121,7 @@ $$
 3. 被积函数 $f(x,t)$ 随 $t$ 变化带来的影响：$\int_{a(t)}^{b(t)} \frac{\partial f}{\partial t}(x,t) \, dx$
 
 这就像在计算一个动态变化的面积，面积的变化来自三个因素：上边界移动、下边界移动和内部「高度」的变化。
+
+## 参考资料
+
+对于如何将莱布尼茨积分法则用于含有变上限的二重积分的函数的例子可以参考：[Applying Leibniz's Rule to Double Integrals with Variable Limits](https://math.stackexchange.com/questions/5111725/applying-leibnizs-rule-to-double-integrals-with-variable-limits)
