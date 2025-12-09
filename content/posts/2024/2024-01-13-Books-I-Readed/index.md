@@ -1,6 +1,6 @@
 ---
 date: '2024-01-13 21:07:36'
-title: 'Books I Readed'
+title: '【Reading】我读过的书'
 description: ""
 tags: [Book]
 categories: [Blog]

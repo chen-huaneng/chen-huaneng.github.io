@@ -1,6 +1,6 @@
 ---
 date: '2025-08-11 19:26:12'
-title: 'C++ - （二）变量和类型'
+title: '【C++】（二）变量和类型'
 description: ""
 tags: [C++,]
 categories: [C++, ]

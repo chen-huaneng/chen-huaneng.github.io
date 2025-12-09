@@ -1,6 +1,6 @@
 ---
 date: '2024-10-25 15:47:46'
-title: 'Neovim - 个性化配置属于自己的编辑器'
+title: '【Neovim】个性化配置属于自己的编辑器'
 description: "本文简要介绍了Neovim和我配置Neovim的过程。"
 tags: [Vim, Neovim]
 categories: [Neovim]

@@ -1,6 +1,6 @@
 ---
 date: '2025-08-17 07:50:43'
-title: 'Algorithm - P、NP、NPC和NP-Hard问题'
+title: '【Algorithm】P、NP、NPC和NP-Hard问题'
 description: ""
 tags: [Algorithm, Academic, Math, ]
 categories: [Algorithm, ]

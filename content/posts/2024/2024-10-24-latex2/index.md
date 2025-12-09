@@ -1,6 +1,6 @@
 ---
 date: '2024-10-24 15:15:12'
-title: 'LaTeX - （三）使用技巧'
+title: '【LaTeX】（三）使用技巧'
 description: "记录一些使用 LaTeX 的技巧。"
 tags: [LaTeX]
 categories: [LaTeX]

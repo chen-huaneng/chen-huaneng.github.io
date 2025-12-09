@@ -1,6 +1,6 @@
 ---
 date: '2025-08-14 20:10:29'
-title: 'Algorithm - 求两个整数的最大公约数（GCD）的几种算法'
+title: '【Algorithm】求两个整数的最大公约数（GCD）的几种算法'
 description: ""
 tags: [Algorithm, GCD, Math, Binary, Number Theory]
 categories: [Algorithm, ]

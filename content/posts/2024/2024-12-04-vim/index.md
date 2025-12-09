@@ -1,6 +1,6 @@
 ---
 date: '2024-12-04 11:54:58'
-title: 'Neovim - 编辑器的使用技巧'
+title: '【Neovim】编辑器的使用技巧'
 description: "简要介绍了一些经常使用到的 Neovim 编辑技巧。"
 tags: [Vim, Neovim]
 categories: [Neovim]

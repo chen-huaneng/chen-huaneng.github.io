@@ -1,6 +1,6 @@
 ---
 date: '2024-01-02 23:44:30'
-title: 'Anime I Watched'
+title: '【Anime】我看过的动画'
 description: "有部分动漫之前看过，但是忘记了，全靠回忆记录，所以可能有所遗漏，有些总集篇和部分番外没有记录。"
 tags: [Anime]
 categories: [Blog]

@@ -1,6 +1,6 @@
 ---
 date: '2024-10-28 16:26:21'
-title: 'LaTeX - （四）制作自己的模板'
+title: '【LaTeX】（四）制作自己的模板'
 description: ""
 tags: [LaTeX]
 categories: [LaTeX]

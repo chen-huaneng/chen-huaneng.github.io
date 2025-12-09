@@ -1,6 +1,6 @@
 ---
 date: '2024-10-28 18:49:35'
-title: 'Data Mining - 数据挖掘（一）简单入门'
+title: '【Data Mining】数据挖掘简单入门'
 description: ""
 tags: [Machine Learning, Math, Data Mining]
 categories: [Machine Learning]

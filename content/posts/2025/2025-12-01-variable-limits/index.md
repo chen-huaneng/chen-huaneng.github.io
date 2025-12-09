@@ -1,6 +1,6 @@
 ---
 date: '2025-12-01T10:31:36+08:00'
-title: 'Math - 变限积分函数的求导'
+title: '【Math】变限积分函数的求导'
 description: "详细讲解了如何对变限积分函数进行求导。"
 tags: ['Math', 'Leibniz', 'Limits', 'Integral', 'Differentiation']
 categories: ['Math']

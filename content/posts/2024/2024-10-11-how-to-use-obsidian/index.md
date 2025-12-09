@@ -1,6 +1,6 @@
 ---
 date: '2024-10-11 19:09:23'
-title: 'How To Use Obsidian'
+title: '【Obsidian】How To Use Obsidian'
 description: ""
 tags: [Obsidian]
 categories: [Obsidian]

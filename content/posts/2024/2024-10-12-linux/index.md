@@ -1,6 +1,6 @@
 ---
 date: '2024-10-12 20:21:01'
-title: 'Linux学习路线'
+title: '【Linux】学习路线'
 description: ""
 tags: [Linux, ]
 categories: [Linux, ]

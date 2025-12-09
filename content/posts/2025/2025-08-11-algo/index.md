@@ -1,6 +1,6 @@
 ---
 date: '2025-08-11 17:06:31'
-title: 'Algorithm - 算法（一）算法和数据结构简介'
+title: '【Algorithm】算法和数据结构简介'
 description: ""
 tags: [Algorithm, Data Structures]
 categories: [Algorithm]

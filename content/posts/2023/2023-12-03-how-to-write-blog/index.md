@@ -1,6 +1,6 @@
 ---
 date: '2023-12-02 21:34:22'
-title: '如何使用Hexo框架的Fluid主题发布一篇Blog'
+title: '【Hexo】如何使用Hexo框架的Fluid主题发布一篇Blog'
 description: ""
 tags: ["Hexo", "Fluid", Website]
 categories: ["Hexo"]

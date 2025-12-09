@@ -1,6 +1,6 @@
 ---
 date: '2024-01-04 22:35:00'
-title: 'Scoop - A command-line installer for Windows'
+title: '【Scoop】A command-line installer for Windows'
 description: ""
 tags: [Scoop, Windows]
 categories: [Scoop]

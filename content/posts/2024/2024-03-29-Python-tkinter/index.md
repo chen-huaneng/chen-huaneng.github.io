@@ -1,6 +1,6 @@
 ---
 date: '2024-03-29 17:31:24'
-title: 'Python Tkinter'
+title: '【Python】Python Tkinter'
 description: ""
 tags: [Python, Tkinter, GUI]
 categories: [Python]

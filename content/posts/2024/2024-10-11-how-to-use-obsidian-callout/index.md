@@ -1,6 +1,6 @@
 ---
 date: '2024-10-11 19:48:38'
-title: 'How To Use Obsidian Callout'
+title: '【Obsidian】How To Use Obsidian Callout'
 description: ""
 tags: [Obsidian]
 categories: [Obsidian]

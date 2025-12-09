@@ -1,6 +1,6 @@
 ---
 date: '2025-08-07 22:06:48'
-title: 'Hexo - 使用WebP格式的图片加速Hexo网页访问速度'
+title: '【Hexo】使用WebP格式的图片加速Hexo网页访问速度'
 description: ""
 tags: [Hexo, Website, Picture]
 categories: [Hexo]

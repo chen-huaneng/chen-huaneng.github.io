@@ -1,6 +1,6 @@
 ---
 date: '2025-08-04 13:49:14'
-title: 'Neovim - 重构编辑器配置'
+title: '【Neovim】重构编辑器配置'
 description: ""
 tags: [Neovim, Vim]
 categories: [Neovim]

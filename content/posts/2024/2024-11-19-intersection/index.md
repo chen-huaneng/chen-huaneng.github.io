@@ -1,6 +1,6 @@
 ---
 date: '2024-11-19 16:20:38'
-title: 'Math - 二维图形相交问题'
+title: '【Math】二维图形相交问题'
 description: ""
 tags: [Math, Geometry, Polygon]
 categories: [Math]

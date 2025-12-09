@@ -1,6 +1,6 @@
 ---
 date: '2024-11-20 21:27:20'
-title: 'Rainmeter - 美化你的桌面'
+title: '【Rainmeter】美化你的桌面'
 description: ""
 tags: [Rainmeter, GUI, Windows]
 categories: [Rainmeter]

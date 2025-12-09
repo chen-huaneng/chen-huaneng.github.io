@@ -1,6 +1,6 @@
 ---
 date: '2024-10-29 20:17:07'
-title: 'Zotero - 学术文献管理神器'
+title: '【Zotero】学术文献管理神器'
 description: ""
 tags: [Zotero, Academic]
 categories: [Academic]

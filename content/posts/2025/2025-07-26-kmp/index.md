@@ -1,6 +1,6 @@
 ---
 date: '2025-07-26 18:10:11'
-title: 'KMP - Knuth-Morris-Pratt算法详解'
+title: '【Algorithm】Knuth-Morris-Pratt算法详解'
 description: ""
 tags: [Algorithm, Two Pointers, String, KMP]
 categories: [Algorithm]

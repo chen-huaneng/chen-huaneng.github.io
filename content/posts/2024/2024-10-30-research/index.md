@@ -1,6 +1,6 @@
 ---
 date: '2024-10-30 18:50:24'
-title: 'Academic - 初入学术殿堂'
+title: '【Academic】初入学术殿堂'
 description: ""
 tags: [Academic]
 categories: [Academic]

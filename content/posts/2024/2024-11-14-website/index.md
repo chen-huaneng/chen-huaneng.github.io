@@ -1,6 +1,6 @@
 ---
 date: '2024-11-14 18:56:53'
-title: 'Website - 有趣、实用的网站合集'
+title: '【Website】有趣、实用的网站合集'
 description: ""
 tags: [Website]
 categories: [Blog]

@@ -1,6 +1,6 @@
 ---
 date: '2025-12-09T11:40:22+08:00'
-title: 'Helix - 在类 Vim/Emacs/Helix/VSCode/Neovim 模态文本编辑器中使用 Esc 键切换中英输入法'
+title: '【Helix】在类 Vim/Emacs/Helix/VSCode/Neovim 模态文本编辑器中使用 Esc 键切换中英输入法'
 description: "介绍如何在类 Vim/Emacs/Helix/VSCode/Neovim 模态文本编辑器中使用 Esc 键切换中英输入法。"
 tags: ["Helix", "Windows", "Vim", "Neovim"]
 categories: ["Helix"]

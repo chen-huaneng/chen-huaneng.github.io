@@ -1,5 +1,5 @@
 ---
-title: "Hugo支持的语法测试"
+title: "【Hugo】Hugo支持的语法测试"
 date: 2025-08-22T16:20:18+08:00
 math: true
 description: "测试 Hugo 静态博客框架支持的语法。"

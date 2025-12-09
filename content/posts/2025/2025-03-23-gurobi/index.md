@@ -1,6 +1,6 @@
 ---
 date: '2025-03-23 11:21:02'
-title: 'Python - Gurobi'
+title: '【Python】Gurobi求解器'
 description: ""
 tags: [Python, Gurobi, ]
 categories: [Python]

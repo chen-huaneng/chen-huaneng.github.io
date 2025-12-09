@@ -1,6 +1,6 @@
 ---
 date: '2023-12-04 17:50:22'
-title: 'Java Integer Cache'
+title: '【Java】Integer Cache'
 description: ""
 tags: [Java, "Integer Cache"]
 categories: [Java]

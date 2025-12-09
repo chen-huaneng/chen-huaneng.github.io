@@ -1,6 +1,6 @@
 ---
 date: '2025-08-17 15:16:34'
-title: 'Graphviz - 自动图形绘制软件'
+title: '【Graphviz】自动图形绘制软件'
 description: ""
 tags: [Drawing, Academic, Picture, PDF]
 categories: [Drawing, ]

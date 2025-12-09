@@ -1,6 +1,6 @@
 ---
 date: '2024-10-24 09:11:37'
-title: 'LaTeX - （二）如何安装LaTeX'
+title: '【LaTeX】（二）如何安装LaTeX'
 description: "本文主要介绍如何在 Windows 10 环境下安装 TeX Live。"
 tags: [LaTeX, ]
 categories: [LaTeX]

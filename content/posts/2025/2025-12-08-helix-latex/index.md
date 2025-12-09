@@ -1,6 +1,6 @@
 ---
 date: '2025-12-08T23:03:38+08:00'
-title: 'Helix - 支持 LaTeX 编译和正反向搜索'
+title: '【Helix】支持 LaTeX 编译和正反向搜索'
 description: "介绍如何在 Helix 中配置 LaTeX 的自动编译以及正反向搜索。"
 tags: ["Helix", "LaTeX"]
 categories: ["Helix"]

@@ -1,6 +1,6 @@
 ---
 date: '2025-07-29 11:17:28'
-title: 'Academic - 搭建学术主页'
+title: '【Academic】搭建学术主页'
 description: ""
 tags: [Hexo, Academic, Fluid, Jekyll, Website]
 categories: [Academic]

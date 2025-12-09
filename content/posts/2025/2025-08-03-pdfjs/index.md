@@ -1,6 +1,6 @@
 ---
 date: '2025-08-03 15:22:17'
-title: 'Hexo - 使用PDF.js在Hexo的Fluid主题中嵌入PDF'
+title: '【Hexo】使用PDF.js在Hexo的Fluid主题中嵌入PDF'
 description: ""
 tags: [Fluid, Hexo, PDF]
 categories: [Hexo]

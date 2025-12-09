@@ -1,6 +1,6 @@
 ---
 date: '2025-08-03 08:45:26'
-title: 'Math - Cauchy-Schwarz不等式的几种证明方法'
+title: '【Math】Cauchy-Schwarz不等式的几种证明方法'
 description: ""
 tags: [Math, Inequality]
 categories: [Math, ]

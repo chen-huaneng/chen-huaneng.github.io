@@ -1,6 +1,6 @@
 ---
 date: '2023-11-07 18:12:22'
-title: 'Dynamic And Static in Java'
+title: '【Java】Dynamic And Static in Java'
 description: ""
 tags: ["Java", "Polymorphism"]
 categories: ["Java"]
