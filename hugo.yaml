@@ -7,9 +7,9 @@ pagination.pagerSize: 15 # 每页文章数量
 languages:
   zh:
     # RFC 5646 语言标记, Hugo 使用此值填充内置 RSS 模板中的语言元素和内置别名模板中 html 元素的 lang 属性
-    languageCode: "zh-CN"
+    local: "zh-CN"
     # 语言名称，通常在渲染语言切换器时使用
-    languageName: "中文"
+    label: "中文"
 
 enableRobotsTXT: true #允许爬虫抓取到搜索引擎
 buildDrafts: false
