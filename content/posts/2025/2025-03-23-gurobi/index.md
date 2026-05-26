@@ -16,8 +16,10 @@ math: true
 首先打开命令行终端，用 `Conda` 或者 `Miniconda` 单独创建一个环境：
 
 ```powershell
-conda create --n name_env
+conda create -n name_env
 ```
+
+如果因为 `Conda` 的启动环境导致 `pwsh` 启动缓慢，可以参考：[conda init powershell slows shell startup immensely. · Issue #11648 · conda/conda](https://github.com/conda/conda/issues/11648#issuecomment-3609884824) 的方案来解决该问题。
 
 激活环境：
 
