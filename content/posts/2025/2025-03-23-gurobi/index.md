@@ -9,14 +9,14 @@ math: true
 
 ## 申请 `Gurobi` 学术许可和安装 `Gurobi`
 
-申请 `Gurobi` 学术许可和安装可以参考[Gurobi最新安装与学术许可申请教程（2025） - 知乎](https://zhuanlan.zhihu.com/p/24819586963)
+申请 `Gurobi` 学术许可和安装可以参考[Gurobi最新安装与学术许可申请教程（2025） - 知乎](https://zhuanlan.zhihu.com/p/24819586963)或者官方的引导：[Getting Started with Gurobi Optimizer – Gurobi Help Center](https://support.gurobi.com/hc/en-us/articles/14799677517585-Getting-Started-with-Gurobi-Optimizer)
 
 ## 配置 `Python` 环境
 
-首先打开命令行终端，用 `Conda` 单独创建一个环境：
+首先打开命令行终端，用 `Conda` 或者 `Miniconda` 单独创建一个环境：
 
 ```powershell
-conda create --name name_env
+conda create --n name_env
 ```
 
 激活环境：

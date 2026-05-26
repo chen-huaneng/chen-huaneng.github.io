@@ -211,6 +211,7 @@ math: true
 - [Gallery - I am Matze](https://matze.rocks/images/)
 - [PRIN BLOG - 半吊子全栈开发者的日常](https://prin.pw/)
 - [Homepage of Serge Richard](https://www.math.nagoya-u.ac.jp/~richard/) 一位数学系教授，里面的笔记很有用
+- [Alaye的小屋 - 技术分享，碎片小记](https://alayedong.cn/)
 
 {% endfold %}
 
