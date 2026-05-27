@@ -23,7 +23,7 @@ minify:
 params:
   math: false # 默认是否启用 Mathjax
   env: "production" # to enable google analytics, opengraph, twitter-cards and schema.
-  title: "Abel" 
+  title: "Abel"
   description: "Abel's Blog"
   author: "Abel"
   keywords: [Blog, Portfolio, Code, Math, Life, Travel, Music, Computer Science, Operations Research, Run, Game, Photography, Reading, Delicacy, Movie]
@@ -49,7 +49,7 @@ params:
   # 赞赏描述 (可在文章 `frontmatter` 中设置)
   rewardDescription: "如果本文对你有所帮助，可以点击上方按钮请作者喝杯咖啡！"
   # 路径相对于博客工程的 static 目录。如下文件在 `static/images/wechat_pay.jpg`
-  WechatPay: "images/wechat_pay.jpg" # 设置微信收款码图片 
+  WechatPay: "images/wechat_pay.jpg" # 设置微信收款码图片
   Alipay: "images/alipay.png" # 设置支付宝收款码图片
 
   fancybox: true # 图片灯箱，方便查看图片
@@ -136,12 +136,12 @@ menu:
       url: "/"
       weight: 1
     - identifier: "archive"
-      name: "归档" 
+      name: "归档"
       pre: '<i class="fa-solid fa-box-archive"></i>'
       url: "/archives"
       weight: 5
     - identifier: "timecapsule"
-      name: "时光胶囊" 
+      name: "时光胶囊"
       pre: '<i class="fa-solid fa-mountain-sun"></i>'
       url: "/timecapsule/"
       weight: 10
