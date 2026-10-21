@@ -11,7 +11,11 @@
     {{- $src = $image.RelPermalink -}}
     {{- if in (slice "png" "jpg" "jpeg" "bmp" "tiff") .MediaType.SubType -}}
       {{- $isConvertible = true -}}
-      {{- $webpSrc = ($image.Resize (printf "%dx%d webp q50" $image.Width $image.Height)).RelPermalink -}}
+      {{- if and (gt $image.Width 0) (gt $image.Height 0) -}}
+        {{- $webpSrc = ($image.Fit (printf "%dx%d webp q50" $image.Width $image.Height)).RelPermalink -}}
+      {{- else -}}
+        {{- $webpSrc = $src -}}
+      {{- end -}}
     {{- end -}}
 
     {{- with $u.RawQuery -}}

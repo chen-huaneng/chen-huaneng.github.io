@@ -24,7 +24,7 @@ enableReward: false
 {{< friend 
 	name="ZLA 小站"
 	url="https://zla.pub/"
-	logo="https://gravatar.zla.app/avatar/me"
+	logo="/images/zla.png"
 	description="月亮不抱你，星星会落在你怀里✨🌙"
 >}}
 
