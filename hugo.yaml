@@ -166,6 +166,11 @@ markup:
     lineNumbersInTable: false # 分隔行号和代码
     codeFences: true
 
+  # 目录层级：与 SuzuBlog 一致，从二级标题开始，最深显示到四级
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+
   goldmark:
     extensions:
       passthrough:

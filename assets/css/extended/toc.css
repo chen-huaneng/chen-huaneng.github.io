@@ -1,53 +1,262 @@
-.toc {
-    margin: 0 2px 40px 2px;
-    border: 1px solid var(--border);
-    background: var(--code-bg);
-    border-radius: var(--radius);
-    padding: 0.4em 0;
+/* ==========================================================================
+   文章目录（TOC）—— 移植自 SuzuBlog
+   · 桌面端（≥1320px）：右侧固定悬浮卡片，滚动时高亮当前章节并让条目居中
+   · 移动端：右下角悬浮按钮 + 抽屉（点击外部 / Esc / 点条目后自动收起）
+   · 面板在页面顶部与底部附近淡出，复刻 SuzuBlog 浮动目录的手感
+   · 零第三方依赖：视觉全部在此，交互逻辑见 assets/js/toc.js
+   · 目录编号沿用 autonumbering.css 里的 .toc 计数器（1 / 1.1 / 1.1.1）
+   ========================================================================== */
+
+:root {
+    /* 面板尺寸 */
+    --toc-width: 14rem;                     /* 对应 max-w-56 */
+    --toc-panel-bg: #f9fafb;                /* 对应 bg-gray-light */
+    --toc-panel-radius: 0.5rem;             /* 对应 rounded-lg */
+    --toc-panel-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+
+    /* 文字层级 */
+    --toc-title-color: #ff9fb2;             /* 对应 text-primary（primary-300） */
+    --toc-link-color: #1f2937;              /* 对应 text-gray-dark */
+    --toc-link-hover: #ff9fb2;              /* 对应 text-hover-primary */
+    --toc-link-active: #ff9fb2;             /* 对应 text-primary */
+
+    /* 悬浮按钮 */
+    --toc-fab-bg: #ff9fb2;                  /* 对应 bg-primary */
+    --toc-fab-color: #fefefe;               /* 对应 text-background */
+    --toc-fab-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+
+    /* 滚动条 */
+    --toc-scrollbar-thumb: #ffccd6;         /* primary-200 */
+    --toc-scrollbar-thumb-hover: #fe6e8e;   /* primary-400 */
+
+    /* 动效 */
+    --toc-duration: 300ms;
+    --toc-easing: ease-in-out;
 }
-.toc.side {
-    font-size: .8em;
+
+/* PaperMod 深色模式由 <html data-theme="dark"> 驱动；body.dark 兼容旧写法 */
+:root[data-theme="dark"],
+body.dark {
+    --toc-panel-bg: #1f2937;                /* 对应 dark:bg-gray-light */
+    --toc-title-color: #ffccd6;             /* 对应 dark:text-primary（primary-200） */
+    --toc-link-color: #d1d5db;              /* 对应 dark:text-gray-dark */
+    --toc-link-hover: #ffccd6;
+    --toc-link-active: #ffccd6;
+    --toc-fab-bg: #ffccd6;
+    --toc-fab-color: #161b22;
+    --toc-panel-shadow: 0 4px 6px -1px rgb(0 0 0 / 40%), 0 2px 4px -2px rgb(0 0 0 / 40%);
 }
-@media screen and (min-width: 1350px) {
-    .toc.side {
-        position: fixed;
-        top: 118px;
-        z-index: 1;
-        max-height: calc(100% - 150px);
-        overflow: auto;
+
+/* ==========================================================================
+   目录面板
+   ========================================================================== */
+.toc-panel {
+    position: fixed;
+    z-index: 40;
+    box-sizing: border-box;
+    width: min(var(--toc-width), calc(100vw - 4rem));
+    max-height: 60vh;                       /* 对应 max-h-[60vh] */
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.75rem;                       /* 对应 p-3 */
+    background: var(--toc-panel-bg);
+    border-radius: var(--toc-panel-radius);
+    box-shadow: var(--toc-panel-shadow);
+    line-height: 1.5;
+    overflow-wrap: break-word;              /* 对应 break-words */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity var(--toc-duration) var(--toc-easing),
+        transform var(--toc-duration) var(--toc-easing),
+        visibility var(--toc-duration) var(--toc-easing);
+
+    /* Firefox 细滚动条（对应 scrollbar-custom） */
+    scrollbar-width: thin;
+    scrollbar-color: var(--toc-scrollbar-thumb) transparent;
+}
+
+/* ---------- 移动端：右下角抽屉 ---------- */
+.toc-panel {
+    right: 2rem;                            /* 对应 right-8 */
+    bottom: calc(7rem + 3rem + 0.5rem);     /* 悬浮按钮顶部 + 间距 */
+    transform: translateY(0.75rem) scale(0.98);
+}
+
+.toc-panel.is-visible.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+/* ---------- 桌面端：右侧固定悬浮卡片 ---------- */
+@media screen and (min-width: 1320px) {
+    .toc-panel {
+        top: 9rem;                          /* 对应 top-36 */
+        right: calc((100vw - 1280px) / 2 + 10px);
+        bottom: auto;
+        transform: translateY(0.5rem);
     }
-    .toc.side::-webkit-scrollbar-thumb {
-        border: 5px solid var(--code-bg);
+
+    .toc-panel.is-visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
     }
-    .toc.side.left {
-        left: 15px;
-        width: 250px;
-    }
 }
 
-.toc details summary {
-    cursor: pointer;
-    margin-inline-start: 15px;
+.toc-panel::-webkit-scrollbar {
+    width: 6px;
 }
 
-.toc .details {
-    display: inline;
-    font-weight: 500;
+.toc-panel::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.toc .inner {
-    padding: 5px 5px 5px 15px;
+.toc-panel::-webkit-scrollbar-thumb {
+    background-color: var(--toc-scrollbar-thumb);
+    border-radius: 4px;
 }
 
-.toc ul {
+.toc-panel::-webkit-scrollbar-thumb:hover {
+    background-color: var(--toc-scrollbar-thumb-hover);
+}
+
+/* ==========================================================================
+   标题与条目
+   ========================================================================== */
+.toc-title {
+    margin: 0 0 1rem;                       /* 对应 mb-4 */
+    font-size: 1.125rem;                    /* 对应 text-lg */
+    font-weight: 600;                       /* 对应 font-semibold */
+    line-height: 1.4;
+    color: var(--toc-title-color);
+}
+
+.toc-body ul {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
-.toc li ul {
-    margin-inline-start: 15px;
+/* 每深一级缩进 0.7em，对应 SuzuBlog 的 marginLeft: (level - 2) * 0.7em */
+.toc-body ul ul {
+    margin-inline-start: 0.7em;
 }
 
-.toc li a:hover {
-    color: lightseagreen;
+.toc-body li {
+    margin: 0;
+    list-style: none;
+}
+
+.toc-body a {
+    display: block;
+    padding: 0.25rem 0;                     /* 对应 py-1 */
+    font-size: 1rem;                        /* 对应 text-base */
+    line-height: 1.5;
+    color: var(--toc-link-color);
+    text-decoration: none;
+    transition: color var(--toc-duration) var(--toc-easing);
+}
+
+/* 需要覆盖主题 post-single.css 里的 .toc a:hover 下划线 */
+.toc-body a:hover,
+.toc-body a:focus-visible {
+    color: var(--toc-link-hover);
+    text-decoration: none;
+}
+
+/* 当前阅读位置：加粗 + 樱花粉
+   toc.js 把 is-active 加在 <a> 上（与 aria-current 同元素），
+   这里同时兼容加在 <li> 上的旧写法 */
+.toc-body a.is-active,
+.toc-body li.is-active > a {
+    color: var(--toc-link-active);
+    font-weight: 700;                       /* 对应 font-bold */
+}
+
+/* ==========================================================================
+   悬浮按钮
+   ========================================================================== */
+.toc-fab {
+    position: fixed;
+    right: 2rem;                            /* 对应 right-8 */
+    bottom: 7rem;                           /* 对应 bottom-28，位于回到顶部按钮之上 */
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;                            /* 对应 h-12 w-12 */
+    height: 3rem;
+    padding: 0.75rem;                       /* 对应 p-3 */
+    border: none;
+    border-radius: 9999px;
+    background: var(--toc-fab-bg);
+    color: var(--toc-fab-color);
+    box-shadow: var(--toc-fab-shadow);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(0.5rem);
+    transition:
+        opacity var(--toc-duration) var(--toc-easing),
+        transform var(--toc-duration) var(--toc-easing),
+        visibility var(--toc-duration) var(--toc-easing);
+}
+
+.toc-fab svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.toc-fab.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+}
+
+.toc-fab:hover {
+    transform: scale(1.1);                  /* 对应 hover:scale-110 */
+}
+
+/* 抽屉打开时按钮下沉，复刻 SuzuBlog 的 translate-y-2 */
+.toc-fab.is-open,
+.toc-fab.is-open:hover {
+    transform: translateY(0.5rem);
+}
+
+@media screen and (min-width: 1320px) {
+    .toc-fab {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   细节
+   ========================================================================== */
+/* 从目录跳转时给标题留出呼吸空间（PaperMod 的锚点脚本用 scrollIntoView） */
+.post-content :is(h1, h2, h3, h4, h5, h6) {
+    scroll-margin-top: 1rem;
+}
+
+/* 尊重系统「减少动态效果」偏好 */
+@media (prefers-reduced-motion: reduce) {
+    .toc-panel,
+    .toc-fab,
+    .toc-body a {
+        transition: none;
+    }
+}
+
+/* 打印时不显示浮动目录 */
+@media print {
+    .toc-panel,
+    .toc-fab {
+        display: none;
+    }
 }

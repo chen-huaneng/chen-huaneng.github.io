@@ -1,0 +1,242 @@
+/* ==========================================================================
+   正文标题层级 —— 移植自 SuzuBlog（markdownComponents.tsx 的 h2–h6）
+   · 作用范围：仅 .post-content 内的标题，不影响文章大标题、列表页、归档、目录面板
+   · 纯 CSS 实现，零 JavaScript；标题编号仍由 autonumbering.css 的 ::before 计数器提供
+     （因此本文件只使用 ::after 做装饰，绝不占用 ::before）
+
+   效果拆解
+   h2  全宽细线 + 樱花粉短横线（20%），悬停时延展到 35%
+   h3  左侧樱花粉粗竖条，悬停时由 4px 加粗到 6px
+   h4  左侧天空蓝粗竖条，悬停时由 4px 加粗到 6px
+   h5  左侧灰色细竖条（居中 2/3 高），悬停时加粗
+   h6  底部灰色虚线短横线（10%），悬停时延展到 15%
+   所有标题悬停 / 键盘聚焦时文字转为樱花粉，300ms ease-in-out 过渡
+
+   调参：只改下面两个变量块（浅色 / 深色）与各标题的 size / margin 即可
+   ========================================================================== */
+
+:root {
+    /* 层级主色（对应 SuzuBlog 的 primary-300 / secondary-400 / gray-400） */
+    --heading-primary: #ff9fb2;            /* 樱花粉，h2/h3 竖条与短横线 */
+    --heading-primary-strong: #fe6e8e;     /* 悬停时锚点用色，primary-400 */
+    --heading-secondary: #60afd0;          /* 天空蓝，h4 竖条 */
+    --heading-muted: #9ca3af;              /* 中性灰，h5 竖条与 h6 虚线 */
+
+    /* h2 的全宽下边框，跟随 PaperMod 的 --border 自动适配深浅色 */
+    --heading-rule: var(--border);
+
+    /* h2 / h6 短横线宽度（默认态 / 悬停态） */
+    --heading-h2-line: 20%;
+    --heading-h2-line-hover: 35%;
+    --heading-h6-line: 10%;
+    --heading-h6-line-hover: 15%;
+
+    /* 动效 */
+    --heading-duration: 300ms;
+    --heading-easing: ease-in-out;
+
+    /* 标题末尾的 # 锚点 */
+    --heading-anchor-size: 0.6em;
+    --heading-anchor-gap: 0.4em;
+}
+
+/* PaperMod 深色模式由 <html data-theme="dark"> 驱动；body.dark 兼容旧写法 */
+:root[data-theme="dark"],
+body.dark {
+    --heading-primary: #ffccd6;            /* primary-200 */
+    --heading-secondary: #91c7e0;          /* secondary-300 */
+    --heading-muted: #6b7280;              /* gray-500 */
+}
+
+/* ==========================================================================
+   通用：定位基准 + 文字颜色过渡
+   ========================================================================== */
+.post-content :is(h2, h3, h4, h5, h6) {
+    position: relative;
+    transition: color var(--heading-duration) var(--heading-easing);
+}
+
+/* 悬停 / 聚焦标题时文字转为樱花粉（对应 SuzuBlog 的 text-hover-primary） */
+.post-content :is(h2, h3, h4, h5, h6):hover,
+.post-content :is(h2, h3, h4, h5, h6):focus-within {
+    color: var(--heading-primary);
+}
+
+/* ==========================================================================
+   h2：全宽细线 + 樱花粉短横线，悬停延展
+   ========================================================================== */
+.post-content h2 {
+    margin: 1.5rem 0;                      /* my-6 */
+    padding-bottom: 0.25rem;               /* pb-1 */
+    border-bottom: 2px solid var(--heading-rule);
+    font-size: 1.875em;                    /* text-3xl，相对正文字号 18px ≈ 33.8px */
+    font-weight: 800;                      /* font-extrabold */
+    line-height: 2;                        /* leading-loose */
+}
+
+.post-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -0.1em;                        /* 压在灰色细线上 */
+    left: 0;
+    width: var(--heading-h2-line);
+    border-bottom: 4px solid var(--heading-primary);
+    border-radius: 0.375rem;               /* rounded-md */
+    transition: width var(--heading-duration) var(--heading-easing);
+}
+
+.post-content h2:hover::after,
+.post-content h2:focus-within::after {
+    width: var(--heading-h2-line-hover);
+}
+
+/* ==========================================================================
+   h3 / h4：左侧竖条（樱花粉 / 天空蓝）
+   ========================================================================== */
+.post-content h3 {
+    margin: 1.25rem 0;                     /* my-5 */
+    padding-left: 0.75rem;                 /* pl-3 */
+    font-size: 1.5em;                      /* text-2xl */
+    font-weight: 700;                      /* font-bold */
+    line-height: 1.5;                      /* leading-normal */
+}
+
+.post-content h4 {
+    margin: 1rem 0;                        /* my-4 */
+    padding-left: 0.75rem;
+    font-size: 1.25em;                     /* text-xl */
+    font-weight: 600;                      /* font-semibold */
+    line-height: 1.5;
+}
+
+.post-content :is(h3, h4)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.25rem;                        /* w-1 */
+    height: 100%;                          /* h-full */
+    border-radius: 9999px;
+    transition: width var(--heading-duration) var(--heading-easing);
+}
+
+.post-content h3::after {
+    background: var(--heading-primary);
+}
+
+.post-content h4::after {
+    background: var(--heading-secondary);
+}
+
+.post-content :is(h3, h4):hover::after,
+.post-content :is(h3, h4):focus-within::after {
+    width: 0.375rem;                       /* group-hover:w-1.5 */
+}
+
+/* ==========================================================================
+   h5：左侧灰色细竖条（居中 2/3 高）
+   ========================================================================== */
+.post-content h5 {
+    margin: 0.75rem 0;                     /* my-3 */
+    padding-left: 0.75rem;
+    font-size: 1.125em;                    /* text-lg */
+    font-weight: 500;                      /* font-medium */
+    line-height: 1.5;
+}
+
+.post-content h5::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0.125rem;                       /* w-0.5 */
+    height: 66.6667%;                      /* h-2/3 */
+    transform: translateY(-50%);
+    background: var(--heading-muted);
+    border-radius: 9999px;
+    transition: width var(--heading-duration) var(--heading-easing);
+}
+
+.post-content h5:hover::after,
+.post-content h5:focus-within::after {
+    width: 0.25rem;                        /* group-hover:w-1 */
+}
+
+/* ==========================================================================
+   h6：底部灰色虚线短横线，悬停延展
+   ========================================================================== */
+.post-content h6 {
+    margin: 0.5rem 0;                      /* my-2 */
+    font-size: 1em;                        /* text-base，与正文同号但更重 */
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.post-content h6::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: var(--heading-h6-line);
+    border-bottom: 1px dashed var(--heading-muted);
+    border-radius: 0.375rem;
+    transition: width var(--heading-duration) var(--heading-easing);
+}
+
+.post-content h6:hover::after,
+.post-content h6:focus-within::after {
+    width: var(--heading-h6-line-hover);
+}
+
+/* ==========================================================================
+   标题锚点：# 默认隐藏（PaperMod 的 anchored_headings 写入 hidden 属性），
+   悬停标题时出现在文字末尾，点击可复制该章节的链接
+   ========================================================================== */
+.post-content :is(h2, h3, h4, h5, h6) .anchor {
+    font-size: var(--heading-anchor-size);
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    user-select: none;
+}
+
+.post-content :is(h2, h3, h4, h5, h6):hover .anchor,
+.post-content :is(h2, h3, h4, h5, h6):focus-within .anchor {
+    display: inline-flex;
+    margin-inline-start: var(--heading-anchor-gap);
+    color: var(--heading-primary);
+}
+
+.post-content .anchor:hover {
+    color: var(--heading-primary-strong);
+}
+
+/* ==========================================================================
+   细节
+   ========================================================================== */
+/* 移动端略微收紧标题的外边距，避免小屏留白过多 */
+@media screen and (max-width: 640px) {
+    .post-content h2 {
+        margin: 1.25rem 0;
+    }
+
+    .post-content h3 {
+        margin: 1rem 0;
+    }
+}
+
+/* 尊重系统「减少动态效果」偏好 */
+@media (prefers-reduced-motion: reduce) {
+    .post-content :is(h2, h3, h4, h5, h6),
+    .post-content :is(h2, h3, h4, h5, h6)::after {
+        transition: none;
+    }
+}
+
+/* 打印时不显示装饰线与锚点 */
+@media print {
+    .post-content :is(h2, h3, h4, h5, h6)::after,
+    .post-content :is(h2, h3, h4, h5, h6) .anchor {
+        display: none;
+    }
+}

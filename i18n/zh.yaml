@@ -17,6 +17,9 @@
 - id: toc
   translation: "目录"
 
+- id: toc_toggle
+  translation: "开关目录"
+
 - id: translations
   translation: "语言"
 

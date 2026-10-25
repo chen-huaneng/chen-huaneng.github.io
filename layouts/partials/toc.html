@@ -1,98 +1,60 @@
-{{- $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content -}}
-{{- $has_headers := ge (len $headers) 1 -}}
-{{- if $has_headers -}}
-<!-- 默认左侧展开目录 -->
-<div class="toc side left">
-    <details {{if (.Param "TocOpen") }} open{{ end }}>
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">{{- i18n "toc" | default "Table of Contents" }}</span>
-        </summary>
+{{- /* ==========================================================================
+   文章目录（TOC）—— 移植自 SuzuBlog
+   · 目录结构完全交给 Hugo 原生 .TableOfContents 生成（不再用正则解析 .Content）
+   · 桌面端右侧悬浮卡片、移动端悬浮按钮 + 抽屉，样式见 assets/css/extended/toc.css
+   · 滚动高亮 / 条目居中 / 抽屉开合由 assets/js/toc.js 提供（原生 JS，零第三方依赖）
+   说明：目录层级由 hugo.yaml 的 markup.tableOfContents 控制
+   ========================================================================== */ -}}
+{{- $tocHTML := .TableOfContents -}}
+{{- if and $tocHTML (in $tocHTML "<li") -}}
+{{- $title := i18n "toc" | default "目录" -}}
+{{- $toggle := i18n "toc_toggle" | default "开关目录" -}}
 
-        <div class="inner">
-            {{- if (.Param "UseHugoToc") }}
-            {{- .TableOfContents -}}
-            {{- else }}
-            {{- $largest := 6 -}}
-            {{- range $headers -}}
-            {{- $headerLevel := index (findRE "[1-6]" . 1) 0 -}}
-            {{- $headerLevel := len (seq $headerLevel) -}}
-            {{- if lt $headerLevel $largest -}}
-            {{- $largest = $headerLevel -}}
-            {{- end -}}
-            {{- end -}}
+{{- /* 去掉 Hugo 自带的外层 <nav id="TableOfContents">，避免与下面的 nav 嵌套；
+       若 Hugo 版本变更导致外壳结构不同，下面的替换不会生效，但目录仍可正常显示 */ -}}
+{{- $list := replaceRE `(?s)^\s*<nav[^>]*>` "" $tocHTML -}}
+{{- $list = replaceRE `(?s)</nav>\s*$` "" $list -}}
 
-            {{- $firstHeaderLevel := len (seq (index (findRE "[1-6]" (index $headers 0) 1) 0)) -}}
+{{- /* 移动端/窄屏：右下角悬浮按钮 */ -}}
+<button id="toc-fab" class="toc-fab" type="button" aria-controls="toc-panel" aria-expanded="false"
+    aria-label="{{ $toggle }}" title="{{ $toggle }}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="8" y1="6" x2="21" y2="6"></line>
+        <line x1="8" y1="12" x2="21" y2="12"></line>
+        <line x1="8" y1="18" x2="21" y2="18"></line>
+        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+    </svg>
+</button>
 
-            {{- $.Scratch.Set "bareul" slice -}}
-            <ul>
-                {{- range seq (sub $firstHeaderLevel $largest) -}}
-                <ul>
-                    {{- $.Scratch.Add "bareul" (sub (add $largest .) 1) -}}
-                    {{- end -}}
-                    {{- range $i, $header := $headers -}}
-                    {{- $headerLevel := index (findRE "[1-6]" . 1) 0 -}}
-                    {{- $headerLevel := len (seq $headerLevel) -}}
+{{- /* 目录面板：桌面端固定右侧，移动端为抽屉 */ -}}
+<nav id="toc-panel" class="toc-panel toc" aria-labelledby="toc-title">
+    <p class="toc-title" id="toc-title">{{ $title }}</p>
+    <div class="toc-body">{{ $list | safeHTML }}</div>
+</nav>
 
-                    {{/* get id="xyz" */}}
-                    {{- $id := index (findRE "(id=\"(.*?)\")" $header 9) 0 }}
+{{- /* 无 JS 时退化为正文上方的静态目录，保证内容可访问 */ -}}
+<noscript>
+    <style>
+        .toc-panel {
+            position: static;
+            width: auto;
+            max-height: none;
+            margin: 0 0 var(--content-gap);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: none;
+        }
 
-                    {{- /* strip id="" to leave xyz, no way to get regex capturing groups in hugo */ -}}
-                    {{- $cleanedID := replace (replace $id "id=\"" "") "\"" "" }}
-                    {{- $header := replaceRE "<h[1-6].*?>((.|\n])+?)</h[1-6]>" "$1" $header -}}
+        .toc-fab {
+            display: none;
+        }
+    </style>
+</noscript>
 
-                    {{- if ne $i 0 -}}
-                    {{- $prevHeaderLevel := index (findRE "[1-6]" (index $headers (sub $i 1)) 1) 0 -}}
-                    {{- $prevHeaderLevel := len (seq $prevHeaderLevel) -}}
-                    {{- if gt $headerLevel $prevHeaderLevel -}}
-                    {{- range seq $prevHeaderLevel (sub $headerLevel 1) -}}
-                    <ul>
-                        {{/* the first should not be recorded */}}
-                        {{- if ne $prevHeaderLevel . -}}
-                        {{- $.Scratch.Add "bareul" . -}}
-                        {{- end -}}
-                        {{- end -}}
-                        {{- else -}}
-                        </li>
-                        {{- if lt $headerLevel $prevHeaderLevel -}}
-                        {{- range seq (sub $prevHeaderLevel 1) -1 $headerLevel -}}
-                        {{- if in ($.Scratch.Get "bareul") . -}}
-                    </ul>
-                    {{/* manually do pop item */}}
-                    {{- $tmp := $.Scratch.Get "bareul" -}}
-                    {{- $.Scratch.Delete "bareul" -}}
-                    {{- $.Scratch.Set "bareul" slice}}
-                    {{- range seq (sub (len $tmp) 1) -}}
-                    {{- $.Scratch.Add "bareul" (index $tmp (sub . 1)) -}}
-                    {{- end -}}
-                    {{- else -}}
-                </ul>
-                </li>
-                {{- end -}}
-                {{- end -}}
-                {{- end -}}
-                {{- end }}
-                <li>
-                    <a href="#{{- $cleanedID -}}" aria-label="{{- $header | plainify -}}">{{- $header | safeHTML -}}</a>
-                    {{- else }}
-                <li>
-                    <a href="#{{- $cleanedID -}}" aria-label="{{- $header | plainify -}}">{{- $header | safeHTML -}}</a>
-                    {{- end -}}
-                    {{- end -}}
-                    <!-- {{- $firstHeaderLevel := len (seq (index (findRE "[1-6]" (index $headers 0) 1) 0)) -}} -->
-                    {{- $firstHeaderLevel := $largest }}
-                    {{- $lastHeaderLevel := len (seq (index (findRE "[1-6]" (index $headers (sub (len $headers) 1)) 1) 0)) }}
-                </li>
-                {{- range seq (sub $lastHeaderLevel $firstHeaderLevel) -}}
-                {{- if in ($.Scratch.Get "bareul") (add . $firstHeaderLevel) }}
-            </ul>
-            {{- else }}
-            </ul>
-            </li>
-            {{- end -}}
-            {{- end }}
-            </ul>
-            {{- end }}
-        </div>
-    </details>
-</div>
-{{- end }}
+{{- $tocJS := resources.Get "js/toc.js" | js.Build (dict "minify" true) | fingerprint "sha256" -}}
+<script defer src="{{ $tocJS.RelPermalink }}" integrity="{{ $tocJS.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end -}}
