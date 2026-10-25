@@ -31,3 +31,6 @@
 
 - id: code_copied
   translation: "已复制！"
+
+- id: new_tab
+  translation: "在新标签页打开："

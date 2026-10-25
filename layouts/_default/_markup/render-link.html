@@ -1,6 +1,23 @@
-<a href="{{ .Destination | safeURL }}"
-    {{ if strings.HasPrefix .Destination "http" }} 
-        target="_blank" 
-        rel="noopener nofollow noreferrer" 
-    {{ end }}>
-{{ .Text  | safeHTML }}</a>
+{{- /*
+  链接渲染钩子：对齐 SuzuBlog 的交互约定
+  · 站内链接（/xxx、#anchor、相对路径、本站绝对地址）→ 当前标签页打开
+  · 站外 http(s) 链接 → 新标签页打开，并补 aria-label 供读屏器播报
+  站点域名取自 site.Home.Permalink，换域名后无需改这里
+  urls.Parse 用 try 包裹：正文中若出现畸形目标（如误写成嵌套链接），降级为普通站内链接而不中断构建
+*/ -}}
+{{- $dest := .Destination -}}
+{{- $isExternal := false -}}
+{{- $parsed := try (urls.Parse $dest) -}}
+{{- if not $parsed.Err -}}
+    {{- $u := $parsed.Value -}}
+    {{- $homeHost := (urls.Parse site.Home.Permalink).Host -}}
+    {{- $isExternal = and $u.IsAbs (in (slice "http" "https") $u.Scheme) (ne (lower $u.Host) (lower $homeHost)) -}}
+{{- end -}}
+<a href="{{ $dest | safeURL }}"
+    {{- with .Title }} title="{{ . }}"{{ end }}
+    {{- if $isExternal }}
+    target="_blank"
+    rel="noopener nofollow noreferrer"
+    aria-label="{{ i18n "new_tab" | default "在新标签页打开：" }}{{ .Text | plainify }}"
+    {{- end }}>
+{{- .Text | safeHTML -}}</a>
