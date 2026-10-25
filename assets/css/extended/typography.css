@@ -1,0 +1,322 @@
+/* ==========================================================================
+   正文排版 —— 移植自 SuzuBlog（markdownComponents.tsx + markdown.css）
+   · 作用范围：仅 .post-content，不影响首页、列表页、归档与目录面板
+   · 与已有文件的分工：
+       headings.css  → h2–h6 的字号 / 字重 / 边距 / 装饰（不再重复定义）
+       hyperlink.css → 正文超链接
+       本文件        → 段落、列表、引用块、表格、分隔线、行内代码、脚注
+
+   Tailwind 到 CSS 的换算（与 headings.css 保持一致，1rem = 16px）
+     my-6 = 1.5rem      leading-relaxed = 1.625    tracking-wide = 0.025em
+     space-y-1.5 = 0.375rem   px-4 py-3 = 1rem / 0.75rem   rounded-lg = 0.5rem
+
+   调参：只改下面两个变量块（浅色 / 深色）即可
+   ========================================================================== */
+
+:root {
+    /* 版心节奏 */
+    --post-leading: 1.625;                 /* leading-relaxed */
+    --post-tracking: 0.025em;              /* tracking-wide */
+    --post-paragraph-gap: 1.5rem;          /* my-6 */
+    --post-list-gap: 1rem;                 /* markdown-unordered-list margin-block */
+    --post-list-gap-nested: 0.45rem;
+    --post-list-item-gap: 0.375rem;        /* space-y-1.5 */
+    --post-list-leading: 1.75;             /* .markdown-list-item line-height */
+
+    /* 配色（SuzuBlog 的 primary / secondary / accent 调色板） */
+    --post-primary-200: #ffccd6;
+    --post-primary-300: #ff9fb2;
+    --post-primary-400: #fe6e8e;
+    --post-secondary-300: #91c7e0;
+    --post-secondary-400: #60afd0;
+    --post-secondary-500: #3b95bc;
+    --post-accent-300: #81e6d9;
+    --post-gray-light: #f9fafb;
+    --post-gray-muted: #9ca3af;
+
+    /* 引用块 */
+    --post-quote-accent: var(--post-primary-300);
+    --post-quote-bg: rgb(249 250 251 / 75%);   /* bg-gray-light bg-opacity-75 */
+    --post-quote-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+    --post-quote-shadow-hover: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+
+    /* 表格 */
+    --post-table-border: #d1d5db;              /* border-gray-300 / -400 */
+    --post-table-head-bg: rgb(255 159 178 / 90%);
+    --post-table-head-color: #ffffff;
+    --post-table-cell-bg: var(--post-gray-light);
+    --post-table-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+
+    /* 行内代码 */
+    --post-inline-code-bg: rgb(255 159 178 / 20%);
+    --post-inline-code-color: var(--post-primary-400);
+
+    /* 分隔线 */
+    --post-hr-color: var(--post-primary-300);
+
+    /* 动效 */
+    --post-duration: 300ms;
+    --post-easing: ease-in-out;
+}
+
+/* PaperMod 深色模式由 <html data-theme="dark"> 驱动；body.dark 兼容旧写法 */
+:root[data-theme="dark"],
+body.dark {
+    --post-quote-accent: var(--post-primary-200);
+    --post-quote-bg: rgb(31 41 55 / 75%);      /* dark:bg-gray-light */
+    --post-quote-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
+    --post-table-border: #3f4756;
+    --post-table-cell-bg: #1f2937;             /* dark:bg-gray-light */
+    --post-table-shadow: 0 4px 6px -1px rgb(0 0 0 / 40%), 0 2px 4px -2px rgb(0 0 0 / 40%);
+    --post-inline-code-color: var(--post-primary-200); /* dark:text-primary-200 */
+}
+
+/* ==========================================================================
+   1. 段落：字间距 / 行间距 / 段落间距
+   ========================================================================== */
+.post-content p {
+    margin-block: var(--post-paragraph-gap);
+    line-height: var(--post-leading);
+    letter-spacing: var(--post-tracking);
+}
+
+/* 正文内的 h1（文章大标题 .post-title 不在 .post-content 内，不受影响）
+   h2–h6 的字号 / 字重 / 边距与装饰统一由 headings.css 负责 */
+.post-content h1 {
+    margin: 2rem 0 1.5rem;
+    font-size: 2.25em;                         /* 比 h2 的 1.875em 高一级 */
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+/* ==========================================================================
+   2. 列表
+   SuzuBlog 用 list-style: none + ::before 自绘标记：
+     一级圆形实心（樱花粉）、二级圆环（天空蓝）、三级旋转方块（青绿）
+     有序列表用 counters() 输出 1.1 / 1.1.1 的层级编号
+   ========================================================================== */
+.post-content :is(ul, ol) {
+    margin-block: var(--post-list-gap);
+    padding-inline-start: 0;
+    list-style: none;
+}
+
+.post-content :is(ul, ol) :is(ul, ol) {
+    margin-block: var(--post-list-gap-nested);
+}
+
+.post-content li {
+    line-height: var(--post-list-leading);
+}
+
+.post-content li + li {
+    margin-top: var(--post-list-item-gap);
+}
+
+/* ---------- 无序列表：自绘标记 ---------- */
+.post-content ul > li {
+    position: relative;
+    padding-inline-start: 1.35rem;
+}
+
+.post-content ul > li::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 0.72em;
+    inset-inline-start: 0.2rem;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--post-primary-300) 78%, transparent);
+    transform: translateY(-50%);
+}
+
+.post-content ul ul > li::before {
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 2px solid color-mix(in oklab, var(--post-secondary-400) 78%, transparent);
+    background: transparent;
+}
+
+.post-content ul ul ul > li::before {
+    width: 0.42rem;
+    height: 0.42rem;
+    border: 0;
+    border-radius: 2px;
+    background: color-mix(in oklab, var(--post-accent-300) 76%, transparent);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* ---------- 有序列表：层级计数 ---------- */
+.post-content ol {
+    counter-reset: post-ol;
+}
+
+.post-content ol > li {
+    position: relative;
+    padding-inline-start: 2.65rem;
+    counter-increment: post-ol;
+}
+
+.post-content ol > li::before {
+    content: counters(post-ol, '.') '.';
+    position: absolute;
+    inset-block-start: 0.18rem;
+    inset-inline-start: 0;
+    min-width: 2rem;
+    color: color-mix(in oklab, var(--post-secondary-500) 82%, transparent);
+    font-size: 0.9em;
+    font-weight: 700;
+    line-height: 1.7;
+    text-align: end;
+}
+
+/* ==========================================================================
+   3. 引用块
+   ========================================================================== */
+.post-content blockquote {
+    width: 95%;
+    margin: 0.75rem auto;
+    padding: 0.125rem 0.5rem 0.125rem 0.75rem;
+    border: 0;
+    border-inline-start: 4px solid var(--post-quote-accent);
+    border-radius: 0.375rem;                   /* rounded-md */
+    background: var(--post-quote-bg);
+    font-style: italic;
+    box-shadow: var(--post-quote-shadow);
+    transition: box-shadow var(--post-duration) var(--post-easing);
+}
+
+.post-content blockquote:hover {
+    box-shadow: var(--post-quote-shadow-hover);
+}
+
+/* ==========================================================================
+   4. 表格
+   没有 wrapper 元素，圆角与描边直接落在 table 上
+   ========================================================================== */
+.post-content table {
+    width: 100%;
+    margin-block: 1.5rem;
+    border: 1px solid var(--post-table-border);
+    border-radius: 0.5rem;                     /* rounded-lg */
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    box-shadow: var(--post-table-shadow);
+}
+
+.post-content :is(th, td) {
+    padding: 0.75rem 1rem;                     /* px-4 py-3 */
+    border: 0;
+    border-bottom: 1px solid var(--post-table-border);
+}
+
+/* 只画单元格之间的竖线，避免与 table 外框重叠 */
+.post-content tr > * + * {
+    border-inline-start: 1px solid var(--post-table-border);
+}
+
+.post-content th {
+    background: var(--post-table-head-bg);
+    color: var(--post-table-head-color);
+    font-weight: 600;                          /* font-semibold */
+    text-align: start;
+}
+
+.post-content td {
+    background: var(--post-table-cell-bg);
+    font-weight: 500;                          /* font-medium */
+}
+
+.post-content tbody tr:last-child > td {
+    border-bottom: 0;
+}
+
+/* ==========================================================================
+   5. 行内代码（不含 pre 内的代码块）
+   ========================================================================== */
+.post-content :not(pre) > code {
+    display: inline-block;
+    margin-inline: 0.25rem;                    /* mx-1 */
+    padding: 0 0.125rem;                       /* px-0.5 */
+    border-radius: 0.5rem;                     /* rounded-lg */
+    background: var(--post-inline-code-bg);
+    color: var(--post-inline-code-color);
+    font-size: 0.9em;
+    font-weight: 700;                          /* font-bold */
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   6. 分隔线：渐变细线（对应 SuzuBlog 的 via-primary 渐变横线）
+   ========================================================================== */
+.post-content hr {
+    width: 40%;
+    height: 2px;
+    margin: 3rem auto;
+    border: 0;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--post-hr-color),
+        transparent
+    );
+}
+
+/* ==========================================================================
+   7. 脚注
+   正文段落加了 1.5rem 边距，脚注里必须收紧，否则会撑成一大段空白
+   ========================================================================== */
+.post-content .footnotes {
+    margin-top: 3rem;                          /* mt-12 */
+    padding-top: 1.25rem;                      /* pt-5 */
+    border-top: 1px solid color-mix(in oklab, var(--post-primary-300) 30%, transparent);
+    font-size: 0.875rem;
+    color: var(--secondary);
+}
+
+/* Goldmark 在脚注容器开头会插入一条 <hr>，用上边框替代 */
+.post-content .footnotes hr {
+    display: none;
+}
+
+.post-content .footnotes ol {
+    margin-block: 0;
+    padding-inline-start: 1.25rem;
+    list-style: decimal;                       /* 恢复原生编号 */
+    counter-reset: none;
+}
+
+.post-content .footnotes ol > li {
+    padding-inline-start: 0.25rem;
+    counter-increment: none;
+}
+
+.post-content .footnotes ol > li::before {
+    content: none;
+}
+
+.post-content .footnotes p {
+    margin-block: 0.25rem;                     /* !my-1 */
+}
+
+.post-content .footnotes li {
+    margin-block: 0.5rem;                      /* !my-2 */
+    line-height: var(--post-leading);
+}
+
+/* ==========================================================================
+   8. 其他细节
+   ========================================================================== */
+/* SuzuBlog 的 strong 为 font-semibold：字体缺 600 时浏览器会自动回退到 700 */
+.post-content strong {
+    font-weight: 600;
+}
+
+/* 尊重系统「减少动态效果」偏好 */
+@media (prefers-reduced-motion: reduce) {
+    .post-content blockquote {
+        transition: none;
+    }
+}

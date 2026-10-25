@@ -1,0 +1,449 @@
+/* ==========================================================================
+   代码块 —— 视觉移植自 SuzuBlog（renderCodeBlock.tsx / shiki.css / CodeBlockCopy.tsx）
+   · 只做 CSS 覆盖，不引入 Shiki / Prism / Highlight.js
+   · 语法配色：Chroma 的类名（markup.highlight.noClasses = false）按 Nord 主题重着色
+   · 顶部工具条（红黄绿圆点 + 语言标签 + 复制按钮）由 layouts/partials/footer.html
+     的脚本注入，本文件只负责它的外观，不改动任何脚本
+
+   结构与 SuzuBlog 的对应关系
+     SuzuBlog                        PaperMod
+     div.rounded-lg.bg-gray-700  →   .highlight（容器）
+     三个窗口圆点                →   .mac-dots（用 box-shadow 画出后两个）
+     居中语言标签                →   .lang-label
+     复制按钮                    →   .copy-code
+     .shiki 内边距与行号         →   pre.chroma / .ln / .line
+
+   调参：只改下面两个变量块（浅色 / 深色）即可
+   ========================================================================== */
+
+:root {
+    /* 容器（SuzuBlog: bg-gray-700 + rounded-lg + shadow-sm） */
+    --code-surface: #374151;                    /* gray-700 */
+    --code-radius: 0.5rem;                      /* rounded-lg */
+    --code-shadow: 0 1px 2px 0 rgb(2 6 23 / 5%);
+    --code-shadow-hover: 0 4px 6px -1px rgb(2 6 23 / 10%), 0 2px 4px -2px rgb(2 6 23 / 10%);
+
+    /* 工具条（SuzuBlog: pt-8 顶栏 + text-sm font-semibold text-gray-300） */
+    --code-toolbar-height: 2rem;                /* pt-8 */
+    --code-toolbar-color: #d1d5db;              /* gray-300 */
+    --code-dot-red: #ef4444;                    /* bg-red-500 */
+    --code-dot-yellow: #facc15;                 /* bg-yellow-400 */
+    --code-dot-green: #22c55e;                  /* bg-green-500 */
+
+    /* 复制按钮（SuzuBlog: rounded-md bg-secondary-300 px-2 py-1 text-xs） */
+    --code-copy-bg: #91c7e0;                    /* secondary-300 */
+    --code-copy-bg-hover: #60afd0;              /* secondary-400 */
+    --code-copy-color: #161b22;                 /* 深色文字，保证浅蓝底上的对比度 */
+
+    /* 正文与行号 */
+    --code-text: #d8dee9;                       /* Nord nord4 */
+    --code-line-number: #cfcfcf;
+
+    /* 滚动条（SuzuBlog: scrollbar-custom） */
+    --code-scrollbar: #ffccd6;                  /* primary-200 */
+    --code-scrollbar-hover: #fe6e8e;            /* primary-400 */
+
+    /* Nord 语法配色 */
+    --code-comment: #7b88a1;
+    --code-keyword: #81a1c1;
+    --code-function: #88c0d0;
+    --code-string: #a3be8c;
+    --code-number: #b48ead;
+    --code-type: #8fbcbb;
+    --code-constant: #81a1c1;
+    --code-variable: #d8dee9;
+    --code-punctuation: #eceff4;
+    --code-error: #bf616a;
+    --code-warning: #ebcb8b;
+    --code-inserted: #a3be8c;
+    --code-deleted: #bf616a;
+    --code-line-highlight: rgb(235 203 139 / 12%);
+}
+
+/* 代码块本身在两套主题下都保持深色底（与 SuzuBlog 一致），
+   因此这里不需要按 data-theme 切换容器配色 */
+:root[data-theme="dark"],
+body.dark {
+    --code-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
+    --code-shadow-hover: 0 4px 6px -1px rgb(0 0 0 / 45%), 0 2px 4px -2px rgb(0 0 0 / 45%);
+    --code-scrollbar: #ffccd6;
+    --code-scrollbar-hover: #fe6e8e;
+}
+
+/* ==========================================================================
+   1. 容器：深灰底 + 大圆角 + 阴影，悬停阴影加深
+   ========================================================================== */
+.post-content .highlight {
+    position: relative;
+    margin-block: 1.5rem;
+    padding: 0;
+    background: var(--code-surface);
+    border-radius: var(--code-radius);
+    box-shadow: var(--code-shadow);
+    overflow: hidden;                          /* 让圆角裁剪内部滚动区域 */
+    direction: ltr;                            /* 长代码行不应反转滚动方向 */
+    transition: box-shadow 300ms ease-in-out;
+}
+
+.post-content .highlight:hover {
+    box-shadow: var(--code-shadow-hover);
+}
+
+/* ==========================================================================
+   2. 顶部工具条
+   ========================================================================== */
+.post-content .highlight .code-toolbar {
+    height: var(--code-toolbar-height);
+    min-height: var(--code-toolbar-height);
+    padding: 0 0.75rem;
+    background: transparent;
+    border-radius: 0;
+    color: var(--code-toolbar-color);
+    font-size: 0.875rem;                       /* text-sm */
+    font-weight: 600;                          /* font-semibold */
+    line-height: 1;
+}
+
+/* 红黄绿三个窗口圆点：本体是第一个点，后两个用 box-shadow 画出 */
+.post-content .highlight .mac-dots {
+    width: 0.75rem;                            /* h-3 */
+    height: 0.75rem;
+    margin-inline: 0 2.5rem;                   /* 预留后两个圆点的位置 */
+    border-radius: 50%;
+    background-color: var(--code-dot-red);
+    box-shadow:
+        1.25rem 0 0 0 var(--code-dot-yellow),  /* 12px 圆点 + 8px 间距 */
+        2.5rem 0 0 0 var(--code-dot-green);
+}
+
+.post-content .highlight .lang-label {
+    flex: 1 1 auto;
+    margin: 0;
+    color: var(--code-toolbar-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-transform: uppercase;                 /* SuzuBlog 用 toUpperCase() */
+}
+
+/* 复制按钮是绝对定位、不占宽度，左侧圆点组却占 52px；
+   给右侧同宽占位，语言标签才能真正居中 */
+.post-content .highlight .code-toolbar .toolbar-group:last-child {
+    min-width: 3.25rem;
+}
+
+/* 复制按钮：浅蓝胶囊 + 深色文字，常驻显示，悬停轻微放大
+   主题的 .copy-code 默认 display: none，只在 :hover 时显示，这里覆盖成常驻 */
+.post-content .highlight .copy-code {
+    display: block;
+    top: 50%;                                  /* 在 32px 工具条里垂直居中 */
+    right: 0.75rem;
+    padding: 0.125rem 0.5rem;                  /* px-2 py-1 */
+    border-radius: 0.375rem;                   /* rounded-md */
+    background: var(--code-copy-bg);
+    color: var(--code-copy-color);
+    font-size: 0.75rem;                        /* text-xs */
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+    translate: 0 -50%;
+    transition:
+        background-color 300ms ease-in-out,
+        transform 300ms ease-in-out;
+}
+
+.post-content .highlight .copy-code:hover,
+.post-content .highlight .copy-code:focus-visible {
+    background: var(--code-copy-bg-hover);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   3. 代码区域：内边距、行高、横向滚动
+   ========================================================================== */
+.post-content .highlight pre.chroma {
+    margin: 0;
+    padding: 0.5rem 0.01rem;                   /* SuzuBlog .shiki padding */
+    overflow-x: auto;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--code-scrollbar) transparent;
+}
+
+.post-content .highlight pre.chroma > code {
+    display: block;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+    color: var(--code-text);
+    font-size: 1rem;                           /* SuzuBlog code 为 text-base */
+    line-height: 1.5;
+}
+
+.post-content .highlight .chroma {
+    color: var(--code-text);
+    background-color: transparent;
+}
+
+/* 每行右侧留白，避免文字紧贴滚动条 */
+.post-content .highlight .line {
+    padding-inline-end: 0.5rem;
+}
+
+/* 行号：灰白半透明，右对齐 */
+.post-content .highlight .ln {
+    min-width: 1.5rem;
+    margin: 0 1em;
+    padding: 0;
+    color: var(--code-line-number);
+    opacity: 0.5;
+    text-align: end;
+    user-select: none;
+}
+
+/* ==========================================================================
+   3.1 无语言标注的代码（Markdown 用 4 个空格缩进的代码块）
+   Goldmark 不会给它们包 .highlight，这里补一套外观，避免文章里出现两种代码块
+   ========================================================================== */
+.post-content pre:not(.chroma) {
+    margin-block: 1.5rem;
+    padding: 1rem;
+    border-radius: var(--code-radius);
+    background: var(--code-surface);
+    box-shadow: var(--code-shadow);
+    color: var(--code-text);
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--code-scrollbar) transparent;
+}
+
+.post-content pre:not(.chroma) > code {
+    display: block;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.post-content pre:not(.chroma)::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.post-content pre:not(.chroma)::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.post-content pre:not(.chroma)::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: var(--code-scrollbar);
+}
+
+.post-content pre:not(.chroma)::-webkit-scrollbar-thumb:hover {
+    background-color: var(--code-scrollbar-hover);
+}
+
+/* ==========================================================================
+   4. 滚动条（SuzuBlog 的 scrollbar-custom）
+   ========================================================================== */
+.post-content .highlight pre.chroma::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.post-content .highlight pre.chroma::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.post-content .highlight pre.chroma::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: var(--code-scrollbar);
+}
+
+.post-content .highlight pre.chroma::-webkit-scrollbar-thumb:hover {
+    background-color: var(--code-scrollbar-hover);
+}
+
+/* ==========================================================================
+   5. 语法配色：Nord（SuzuBlog 使用 Shiki 的 nord 主题）
+   选择器统一带 .post-content .highlight 前缀，只压过主题的 chroma-styles.css，
+   不影响搜索框、标签等页面内其他位置
+   ========================================================================== */
+
+/* 背景与正文色 */
+.post-content .highlight .bg {
+    background-color: transparent;
+}
+
+/* 错误 / 高亮行 */
+.post-content .highlight .err {
+    color: var(--code-error);
+}
+
+.post-content .highlight .hl {
+    background-color: var(--code-line-highlight);
+}
+
+/* 关键字 */
+.post-content .highlight :is(.k, .kc, .kd, .kn, .kp, .kr) {
+    color: var(--code-keyword);
+}
+
+.post-content .highlight .kt {
+    color: var(--code-type);
+}
+
+/* 名称 */
+.post-content .highlight :is(.na, .nb, .bp, .nf, .fm, .nl, .py) {
+    color: var(--code-function);
+}
+
+.post-content .highlight :is(.nc, .nn) {
+    color: var(--code-type);
+}
+
+.post-content .highlight :is(.no, .nd) {
+    color: var(--code-constant);
+}
+
+.post-content .highlight .nd {
+    font-weight: 700;
+}
+
+.post-content .highlight .ne {
+    color: var(--code-error);
+}
+
+.post-content .highlight .ni {
+    color: var(--code-variable);
+}
+
+.post-content .highlight :is(.nv, .vc, .vg, .vi, .vm, .nx) {
+    color: var(--code-variable);
+}
+
+.post-content .highlight .nt {
+    color: var(--code-keyword);
+}
+
+/* 字符串 */
+.post-content .highlight :is(.s, .sb, .sc, .s2, .si, .sx, .s1, .ss, .ld) {
+    color: var(--code-string);
+}
+
+.post-content .highlight :is(.sa, .dl) {
+    color: var(--code-keyword);
+}
+
+.post-content .highlight :is(.sd, .sh) {
+    color: var(--code-comment);
+}
+
+.post-content .highlight :is(.se, .sr) {
+    color: var(--code-warning);
+}
+
+/* 数字 */
+.post-content .highlight :is(.m, .mb, .mf, .mh, .mi, .il, .mo) {
+    color: var(--code-number);
+}
+
+/* 运算符与标点 */
+.post-content .highlight :is(.o, .ow) {
+    color: var(--code-keyword);
+}
+
+.post-content .highlight .p {
+    color: var(--code-punctuation);
+}
+
+/* 注释 */
+.post-content .highlight :is(.c, .ch, .cm, .c1, .cs, .cp) {
+    color: var(--code-comment);
+    font-style: italic;
+}
+
+.post-content .highlight .cpf {
+    color: var(--code-comment);
+    font-style: italic;
+    font-weight: 700;
+}
+
+/* diff 等泛型 */
+.post-content .highlight .gd {
+    color: var(--code-deleted);
+    background-color: rgb(191 97 106 / 10%);
+}
+
+.post-content .highlight .gi {
+    color: var(--code-inserted);
+    background-color: rgb(163 190 140 / 10%);
+}
+
+.post-content .highlight :is(.gh, .gu) {
+    color: var(--code-function);
+    font-weight: 700;
+}
+
+.post-content .highlight .gp {
+    color: var(--code-comment);
+}
+
+.post-content .highlight .ge {
+    font-style: italic;
+}
+
+.post-content .highlight .gs {
+    font-weight: 700;
+}
+
+.post-content .highlight :is(.gr, .gt) {
+    color: var(--code-error);
+}
+
+.post-content .highlight .gl {
+    text-decoration: underline;
+}
+
+.post-content .highlight .go {
+    color: var(--code-variable);
+}
+
+/* ==========================================================================
+   6. 细节
+   ========================================================================== */
+/* 尊重系统「减少动态效果」偏好 */
+@media (prefers-reduced-motion: reduce) {
+    .post-content .highlight,
+    .post-content .highlight .copy-code {
+        transition: none;
+    }
+
+    .post-content .highlight .copy-code:hover,
+    .post-content .highlight .copy-code:focus-visible {
+        transform: none;
+    }
+}
+
+/* 打印时去掉深色背景，避免整页黑块 */
+@media print {
+    .post-content .highlight {
+        background: transparent;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .post-content .highlight .code-toolbar {
+        display: none;
+    }
+
+    .post-content .highlight :is(pre.chroma, pre.chroma > code, .chroma),
+    .post-content pre:not(.chroma) {
+        color: #1f2328;
+    }
+}
