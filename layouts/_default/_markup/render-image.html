@@ -1,3 +1,15 @@
+{{- /* ==========================================================================
+   图片渲染钩子：WebP 自适应 + Fancybox 灯箱 + SuzuBlog 风格图片标题
+
+   语法：![替代文本|布局或宽度](图片地址 "图片说明")
+     布局：center（默认）/ wide / full / left / right / thumbnail
+     宽度：60%（占正文宽度百分比，可与其他标记用逗号组合）
+
+   图注来源：优先使用 Markdown 标题（引号内的文字），
+             没有标题时回退到替代文本；两者都为空则不输出 <figcaption>
+   样式：assets/css/extended/image.css（仅作用于 .post-content .post-figure）
+   ========================================================================== */ -}}
+
 {{- $u := urls.Parse .Destination -}}
 {{- $src := $u.String -}}
 {{- $webpSrc := "" -}}
@@ -36,17 +48,66 @@
 {{- $cdnPrefix := .Page.Site.Params.cdnPrefix -}}
 {{- if $cdnPrefix -}}
   {{- $src = printf "%s%s" $cdnPrefix $src -}}
+  {{- if $webpSrc -}}
+    {{- $webpSrc = printf "%s%s" $cdnPrefix $webpSrc -}}
+  {{- end -}}
 {{- end -}}
 
-{{- $attributes := merge .Attributes (dict "alt" .Text "src" $src "title" (.Title | transform.HTMLEscape) "loading" "lazy") -}}
+{{- /* ---------- 从替代文本中解析布局元数据：|60%, right ---------- */ -}}
+{{- $label := .PlainText | default "" -}}
+{{- $meta := "" -}}
+{{- if strings.Contains $label "|" -}}
+  {{- $parts := strings.Split $label "|" -}}
+  {{- $label = trim (index $parts 0) " " -}}
+  {{- $meta = trim (index $parts 1) " " -}}
+{{- end -}}
 
-{{- if .Page.Site.Params.fancybox -}}
-<div class="post-img-view">
-  <a data-fancybox="gallery" href="{{ $src | safeURL }}">
+{{- $layout := "center" -}}
+{{- $widthPercent := 0 -}}
+{{- range $token := strings.Split $meta "," -}}
+  {{- $token = lower (trim $token " ") -}}
+  {{- if findRE `^[0-9]{1,3}%$` $token -}}
+    {{- $widthPercent = int (strings.TrimSuffix "%" $token) -}}
+    {{- if gt $widthPercent 100 -}}
+      {{- $widthPercent = 100 -}}
+    {{- end -}}
+  {{- else if in (slice "center" "wide" "full" "left" "right" "thumbnail") $token -}}
+    {{- $layout = $token -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ---------- 图注：Markdown 标题优先，其次替代文本 ---------- */ -}}
+{{- $caption := "" -}}
+{{- with .Title -}}
+  {{- $caption = . -}}
+{{- end -}}
+{{- if and (not $caption) $label -}}
+  {{- $caption = $label -}}
+{{- end -}}
+
+{{- /* 没有替代文本时用图注充当 alt，保证图片始终有可读描述 */ -}}
+{{- $altText := $label -}}
+{{- if not $altText -}}
+  {{- $altText = $caption -}}
+{{- end -}}
+
+{{- $attributes := merge .Attributes (dict "alt" $altText "src" $src "loading" "lazy") -}}
+{{- with .Title -}}
+  {{- $attributes = merge $attributes (dict "title" (. | transform.HTMLEscape)) -}}
+{{- end -}}
+
+{{- $style := "" -}}
+{{- if gt $widthPercent 0 -}}
+  {{- $style = printf "width:%d%%" $widthPercent -}}
+{{- end -}}
+
+<figure class="post-figure post-figure--{{ $layout }}" data-layout="{{ $layout }}"{{ with $style }} style="{{ . | safeCSS }}"{{ end }}>
+  {{- if .Page.Site.Params.fancybox }}
+  <a class="post-figure__link" data-fancybox="gallery" href="{{ $src | safeURL }}"{{ with $caption }} data-caption="{{ . }}"{{ end }}>
     <picture>
-      {{- if $webpSrc -}}
-        <source type="image/webp" srcset="{{ $webpSrc }}">
-      {{- end -}}
+      {{- if $webpSrc }}
+      <source type="image/webp" srcset="{{ $webpSrc }}">
+      {{- end }}
       <img
         {{- range $k, $v := $attributes -}}
           {{- if $v -}}
@@ -55,17 +116,20 @@
         {{- end -}}>
     </picture>
   </a>
-</div>
-{{- else -}}
-<picture>
-  {{- if $webpSrc -}}
+  {{- else }}
+  <picture>
+    {{- if $webpSrc }}
     <source type="image/webp" srcset="{{ $webpSrc }}">
-  {{- end -}}
-  <img
-    {{- range $k, $v := $attributes -}}
-      {{- if $v -}}
-        {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
-      {{- end -}}
-    {{- end -}}>
-</picture>
-{{- end -}}
+    {{- end }}
+    <img
+      {{- range $k, $v := $attributes -}}
+        {{- if $v -}}
+          {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
+        {{- end -}}
+      {{- end -}}>
+  </picture>
+  {{- end }}
+  {{- with $caption }}
+  <figcaption class="post-figure__caption">{{ . }}</figcaption>
+  {{- end }}
+</figure>

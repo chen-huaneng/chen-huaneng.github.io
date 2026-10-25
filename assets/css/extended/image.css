@@ -1,0 +1,213 @@
+/* ==========================================================================
+   正文图片标题（图注）—— 移植自 SuzuBlog（MarkdownImage.tsx / markdown.css）
+   · 作用范围：仅 .post-content 中由 render-image 钩子生成的 .post-figure
+     不影响封面、头像、列表缩略图、瀑布流与 {{< figure >}} 短代码
+   · 标记语法：![替代文本|布局或宽度](图片地址 "图片说明")
+       布局：center（默认）/ wide / full / left / right / thumbnail
+       宽度：60%（占正文宽度百分比），可与布局标记用逗号组合
+   · 图注：Markdown 标题优先，其次替代文本，二者皆无则不渲染
+   · 与主题的分工：图片仍由 render-image 钩子输出 loading="lazy" 与
+     data-fancybox，本文件只负责排版外观，不接管灯箱逻辑
+
+   Tailwind 到 CSS 的换算（与 headings.css / typography.css 保持一致，1rem = 16px）
+     my-6 = 1.5rem     mt-2 = 0.5rem     text-sm = 0.875rem
+     leading-relaxed = 1.625             max-w-48 = 12rem
+     text-gray-500 = var(--secondary)    dark:text-gray-400 = var(--secondary)
+
+   调参：只改下面两个变量块（浅色 / 深色）即可
+   ========================================================================== */
+
+:root {
+    /* 图片本体 */
+    --post-image-gap: 1.5rem;                  /* my-6，与正文段落节奏一致 */
+    --post-image-radius: var(--radius);
+    --post-image-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+    --post-image-shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 12%), 0 4px 6px -4px rgb(0 0 0 / 12%);
+    --post-image-hover-scale: 1.01;            /* group-hover/image:scale-[1.01] */
+
+    /* 图注 */
+    --post-caption-color: var(--secondary);    /* text-gray-500 / dark:text-gray-400 */
+    --post-caption-size: 0.875rem;             /* text-sm */
+    --post-caption-leading: 1.625;             /* leading-relaxed */
+    --post-caption-gap: 0.5rem;                /* mt-2 */
+    --post-caption-tracking: var(--post-tracking, 0.025em);
+
+    /* 特殊布局 */
+    --post-image-thumbnail-width: 12rem;       /* max-w-48 */
+    --post-image-full-width: 1000px;           /* full 布局在桌面端的最大宽度 */
+
+    /* 动效 */
+    --post-image-duration: 300ms;
+    --post-image-easing: ease-in-out;
+}
+
+/* PaperMod 深色模式由 <html data-theme="dark"> 驱动；body.dark 兼容旧写法 */
+:root[data-theme="dark"],
+body.dark {
+    --post-image-shadow: 0 4px 6px -1px rgb(0 0 0 / 40%), 0 2px 4px -2px rgb(0 0 0 / 40%);
+    --post-image-shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 50%), 0 4px 6px -4px rgb(0 0 0 / 50%);
+}
+
+/* ==========================================================================
+   1. 基础容器：图片与图注整体居中
+   ========================================================================== */
+.post-content .post-figure {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    margin: var(--post-image-gap) auto;
+    text-align: center;
+}
+
+/* 图片本体：圆角 + 轻阴影，悬停微放大（SuzuBlog 的 shadow-md → hover:shadow-lg） */
+.post-content .post-figure img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: var(--post-image-radius);
+    box-shadow: var(--post-image-shadow);
+    transition:
+        box-shadow var(--post-image-duration) var(--post-image-easing),
+        transform var(--post-image-duration) var(--post-image-easing);
+}
+
+/* <picture> 是行内元素，改成块级才能撑满容器宽度 */
+.post-content .post-figure > picture {
+    display: block;
+    max-width: 100%;
+}
+
+/* Fancybox 灯箱链接：与图片同宽，避免点击热区横向溢出 */
+.post-content .post-figure > .post-figure__link {
+    display: block;
+    max-width: 100%;
+    line-height: 0;
+    cursor: zoom-in;
+    border-radius: var(--post-image-radius);
+}
+
+.post-content .post-figure > .post-figure__link:focus-visible {
+    outline: 2px solid var(--post-link-color, #60afd0);
+    outline-offset: 4px;
+}
+
+/* 仅在支持悬停的设备上做放大，触屏点击不会残留缩放状态 */
+@media (hover: hover) {
+    .post-content .post-figure > .post-figure__link:hover img,
+    .post-content .post-figure > .post-figure__link:focus-visible img {
+        transform: scale(var(--post-image-hover-scale));
+        box-shadow: var(--post-image-shadow-hover);
+    }
+}
+
+/* ==========================================================================
+   2. 图注：居中、灰色小字，长文本在移动端自动换行不溢出
+   ========================================================================== */
+.post-content .post-figure > .post-figure__caption {
+    display: block;
+    max-width: 100%;
+    margin-top: var(--post-caption-gap);
+    color: var(--post-caption-color);
+    font-size: var(--post-caption-size);
+    font-weight: 400;
+    font-style: normal;
+    line-height: var(--post-caption-leading);
+    letter-spacing: var(--post-caption-tracking);
+    text-align: center;
+
+    /* 长英文、URL 也能断行，避免撑破正文栏宽 */
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* 图注里若出现行内元素，保持与图注同色同号 */
+.post-content .post-figure > .post-figure__caption code {
+    font-size: 0.9em;
+}
+
+/* ==========================================================================
+   3. wide / full：通栏展示
+   wide 只撑满正文栏；full 在桌面端突破正文栏宽，但左右至少留出 --gap
+   ========================================================================== */
+.post-content .post-figure[data-layout="wide"] img,
+.post-content .post-figure[data-layout="full"] img {
+    width: 100%;
+}
+
+/* 手写宽度（行内 style）时不再突破，避免负外边距导致偏移 */
+@media screen and (min-width: 1024px) {
+    .post-content .post-figure[data-layout="full"]:not([style]) {
+        --post-figure-full-width: min(calc(100vw - 2 * var(--gap)), var(--post-image-full-width));
+
+        width: var(--post-figure-full-width);
+        max-width: none;
+        margin-inline: calc(50% - var(--post-figure-full-width) / 2);
+    }
+}
+
+/* ==========================================================================
+   4. left / right：桌面端文字环绕，移动端自动退回通栏
+   ========================================================================== */
+@media screen and (min-width: 768px) {
+    .post-content .post-figure[data-layout="left"],
+    .post-content .post-figure[data-layout="right"] {
+        max-width: 50%;
+        margin-block: 0.5rem 1rem;
+    }
+
+    .post-content .post-figure[data-layout="left"] {
+        float: left;
+        margin-inline: 0 1.25rem;
+    }
+
+    .post-content .post-figure[data-layout="right"] {
+        float: right;
+        margin-inline: 1.25rem 0;
+    }
+
+    /* 正文以浮动图片收尾时清除浮动，避免高度塌陷压到页脚 */
+    .post-content:has(.post-figure[data-layout="left"], .post-figure[data-layout="right"])::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+/* ==========================================================================
+   5. thumbnail：12rem 内联小图（对应 max-w-48 align-middle）
+   ========================================================================== */
+.post-content .post-figure[data-layout="thumbnail"] {
+    display: inline-block;
+    width: var(--post-image-thumbnail-width);
+    max-width: 100%;
+    margin: 0.25rem 0.75rem 0.75rem 0;
+    vertical-align: middle;
+}
+
+.post-content .post-figure[data-layout="thumbnail"] img {
+    width: 100%;
+}
+
+/* ==========================================================================
+   6. 细节：移动端收紧间距、减少动态效果、打印
+   ========================================================================== */
+@media screen and (max-width: 640px) {
+    .post-content .post-figure {
+        margin-block: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .post-content .post-figure img {
+        transition: none;
+    }
+}
+
+@media print {
+    .post-content .post-figure img {
+        box-shadow: none;
+    }
+}
