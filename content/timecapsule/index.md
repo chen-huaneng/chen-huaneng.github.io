@@ -6,6 +6,7 @@ showtoc: false
 searchHidden: true
 ---
 
+{{< timeline date="2026-10-25" title="博客装修" description="删除部分博客功能，重写目录、标题、代码块和文章字间距等功能。" tags="博客" >}}
 {{< timeline date="2025-08-27" title="迁移旧博客文章" description="将新博客框架完善，基于需求修改原有 PaperMod 主题，迁移旧博客的文章。" tags="博客" >}}
 {{< timeline date="2025-08-21" title="开源lessTabs插件" description="开源lessTabs浏览器插件，支持在当前页面预览链接。" tags="开源" url="https://github.com/chen-huaneng/Edge-plugins" >}}
 {{< timeline date="2025-08-20" title="更换框架" description="把博客框架从[Hexo](https://hexo.io/zh-cn/)转到[Hugo](https://gohugo.io/)，构建速度快很多，[PaperMod](https://github.com/adityatelange/hugo-PaperMod/)主题比[Fluid](https://github.com/fluid-dev/hexo-theme-fluid)主题简洁。" tags="博客" >}}
