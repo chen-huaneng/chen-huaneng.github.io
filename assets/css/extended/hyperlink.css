@@ -1,17 +1,56 @@
-/* 只对不包含图片的链接生效 */
-.post-content a:not(:has(img)) {
-    position: relative;
-    text-decoration: none; /* 移除下划线 */
-    color: var(--primary); /* 链接默认颜色 */
-    /* 使用背景渐变实现行内遮罩效果 */
-    background-image: linear-gradient(to bottom, rgba(17, 153, 158, 0.4) 0%, rgba(17, 153, 158, 0.4) 100%);
-    background-repeat: repeat-x;
-    background-position: 0 88%; /* 控制遮罩位置 */
-    background-size: 100% 25%; /* 控制遮罩高度 */
-    transition: all 0.3s ease;
+/* ==========================================================================
+   文章正文超链接样式（仅作用于 .post-content 内部，勿影响导航/页脚/标题）
+   1. 默认态：#60AFD0 + 实线（长）下划线
+   2. 悬停态：#166F6B + 点状下划线
+   3. 外链：右上角自动追加 Font Awesome 图标（纯 CSS，无 JavaScript）
+   需要调参时只改下面 :root 中的变量即可
+   ========================================================================== */
+
+:root {
+    --post-link-color: #60afd0;
+    --post-link-color-hover: #166f6b;
+    --post-link-underline-thickness: 1px;
+    --post-link-underline-offset: 0.3em;
+    --post-link-icon-size: 0.7em;
+    --post-link-transition: 220ms ease;
 }
 
-/* 悬停效果（仅对纯文本链接） */
-.post-content a:not(:has(img)):hover {
-    color: lightseagreen;
+/* ---------- 1. 基础态：链接颜色 + 实线长下划线 ---------- */
+/* :not(.anchor) 排除标题旁自动生成的 # 锚点；:not(:has(img)) 排除图片链接（灯箱） */
+.post-content a:not(.anchor):not(:has(img)) {
+    color: var(--post-link-color);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: var(--post-link-underline-thickness);
+    text-underline-offset: var(--post-link-underline-offset);
+    text-decoration-skip-ink: auto; /* 下划线自动断开，避开 g、y 等下伸笔画 */
+    transition: color var(--post-link-transition);
+}
+
+/* ---------- 2. 悬停态：颜色加深 + 点状下划线 ---------- */
+.post-content a:not(.anchor):not(:has(img)):hover,
+.post-content a:not(.anchor):not(:has(img)):focus-visible {
+    color: var(--post-link-color-hover);
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px; /* 点线过细会看不清，悬停时单独加粗 */
+}
+
+/* ---------- 3. 外链标识：仅站外 http(s) 链接在右上角显示图标 ---------- */
+/* [href^="http"] 命中绝对地址；再用 :not([href*="站点域名"]) 排除站内绝对地址 */
+.post-content a[href^="http"]:not([href*="chen-huaneng.github.io"]):not(:has(img))::after {
+    content: "\f35d"; /* Font Awesome: up-right-from-square 外链图标 */
+    font-family: "Font Awesome 7 Free", "Font Awesome 6 Free", "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: var(--post-link-icon-size);
+    line-height: 0; /* 避免撑高行距 */
+    display: inline-block;
+    margin-inline-start: 0.2em;
+    vertical-align: super; /* 抬到右上角，同时避开底部下划线 */
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+/* 悬停时图标与文字一同响应 */
+.post-content a[href^="http"]:not([href*="chen-huaneng.github.io"]):not(:has(img)):hover::after {
+    opacity: 1;
 }
