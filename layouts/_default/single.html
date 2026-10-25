@@ -42,11 +42,6 @@
   </div>
   {{- end }}
 
-  <!-- 赞赏 -->
-  {{ if .Param "enableReward" }}
-  {{ partial "reward.html" . }}
-  {{ end }}
-
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">

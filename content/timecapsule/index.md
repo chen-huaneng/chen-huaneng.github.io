@@ -4,7 +4,6 @@ layout: "timecapsule"
 hideMeta: true
 showtoc: false
 searchHidden: true
-enableReward: false
 ---
 
 {{< timeline date="2025-08-27" title="迁移旧博客文章" description="将新博客框架完善，基于需求修改原有 PaperMod 主题，迁移旧博客的文章。" tags="博客" >}}

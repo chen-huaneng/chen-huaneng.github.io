@@ -658,35 +658,6 @@ PDF 是根据相对于 Hugo 根目录解析的，比如放在 `/static/pdf/` 文
 
 {{< image-showcase "/images/showcase/test.jpg" "/images/showcase/test2.webp" "/images/showcase/test3.jpg" "/images/showcase/test4.jpg">}}
 
-### 边注
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文{{< sidenote >}}这是侧边注释内容，可以包含**Markdown格式**{{< /sidenote >}}，继续正文内容。
-
-这是一段正文，继续正文内容。
-
 ### 嵌入谷歌地图
 
 {{< google-map width="800" height="500" >}}

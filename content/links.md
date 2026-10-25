@@ -4,7 +4,6 @@ layout: "links"
 hideMeta: true
 showtoc: false
 searchHidden: true
-enableReward: false
 ---
 
 {{< friend 
