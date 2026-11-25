@@ -2,7 +2,7 @@
 date: '2026-10-29T10:44:53+08:00'
 title: '【AI】ChatGPT的使用技巧'
 description: "介绍一些我在使用ChatGPT过程中会用到的小技巧。"
-tags: [ChatGPT, Academic, AI，]
+tags: ["ChatGPT", "Academic", "AI"]
 categories: [AI]
 math: false
 ---

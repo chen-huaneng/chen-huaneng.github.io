@@ -1,0 +1,18 @@
+{{- $summary := .Markup.Render.Summary -}}
+{{- $preview := "" -}}
+{{- if in (slice "manual" "frontmatter") $summary.Type -}}
+  {{- $preview = $summary.Text -}}
+{{- else if strings.TrimSpace .Description -}}
+  {{- $preview = .Description | markdownify -}}
+{{- else -}}
+  {{- /* Only use introductory prose from the rendered article. */ -}}
+  {{- $prose := replaceRE `(?is)<(pre|figure|table|blockquote)\b[^>]*>.*?</(?:pre|figure|table|blockquote)\s*>` "" .Content -}}
+  {{- range findRE `(?is)<p(?:\s[^>]*)?>.*?</p>` $prose -}}
+    {{- if . | plainify | strings.TrimSpace -}}
+      {{- $preview = . -}}
+      {{- break -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $text := replaceRE `\s+` " " ($preview | plainify | htmlUnescape) | strings.TrimSpace -}}
+{{- return (strings.Truncate 120 $text) -}}

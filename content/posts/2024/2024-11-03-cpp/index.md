@@ -1,9 +1,9 @@
 ---
 date: '2024-11-03 16:57:13'
 title: '【C++】（零）学习路径及参考资料'
-description: ""
-tags: [[C++]]
-categories: [[C++]]
+description: "汇总 C++ 学习路线和参考资料，涵盖入门书籍、CS106L 课程和进阶用法。"
+tags: ["C++"]
+categories: ["C++"]
 math: false
 ---
 

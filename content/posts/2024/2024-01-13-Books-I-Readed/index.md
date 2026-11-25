@@ -1,7 +1,7 @@
 ---
 date: '2024-01-13 21:07:36'
 title: '【Reading】我读过的书'
-description: ""
+description: "按年份整理自己的阅读记录，附作者、译者、出版社和 ISBN。"
 tags: [Book]
 categories: [Blog]
 math: false

@@ -1,0 +1,10 @@
+{{- with . }}
+<div class="entry-topics">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+  <ul class="entry-categories" aria-label="主题">
+    {{- range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+    {{- end }}
+  </ul>
+</div>
+{{- end }}
