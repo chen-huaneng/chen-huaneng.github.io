@@ -656,6 +656,20 @@ $$
 
 ## 自定义功能
 
+### 嵌入 Steam 商店卡片
+
+`id` 是必填的 Steam App ID，可以从商店链接 `/app/` 后面找到。例如，[《杀戮尖塔》](https://store.steampowered.com/app/646570/Slay_the_Spire/) 的 App ID 是 `646570`。`width` 和 `height` 为可选参数，默认宽度是 `100%`，高度是 `200` 像素。宽度可填像素数或百分比，且最多占满正文区域。如果卡片底部内容被裁切，可以增大 `height`。
+
+```text
+{{</* steam 646570 */>}}
+{{</* steam 646570 "646" "220" */>}}
+{{</* steam id="646570" width="80%" height="220" */>}}
+```
+
+下面是使用默认尺寸的实际效果：
+
+{{< steam 646570 >}}
+
 ### fancybox
 
 {{< figure src="test2.webp" title="绘梨衣" caption="Sakura & 绘梨衣 の Rilakkuma" >}}

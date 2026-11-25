@@ -1,0 +1,26 @@
+{{- $id := "" -}}
+{{- $width := "" -}}
+{{- $height := "" -}}
+{{- if .IsNamedParams -}}
+    {{- $id = .Get "id" -}}
+    {{- $width = .Get "width" -}}
+    {{- $height = .Get "height" -}}
+{{- else -}}
+    {{- $id = .Get 0 -}}
+    {{- $width = .Get 1 -}}
+    {{- $height = .Get 2 -}}
+{{- end -}}
+{{- if not (findRE `^[0-9]+$` (string $id)) -}}
+    {{- errorf "steam shortcode requires a numeric Steam App ID at %s" .Position -}}
+{{- end -}}
+{{- $width = string (default "100%" $width) -}}
+{{- if findRE `^[0-9]+$` $width -}}
+    {{- $width = printf "%spx" $width -}}
+{{- end -}}
+<iframe
+    src="https://store.steampowered.com/widget/{{ $id }}/"
+    style="display: block; width: {{ $width }}; max-width: 100%; border: 0"
+    height="{{ default "200" $height }}"
+    title="Steam 商店卡片（App {{ $id }}）"
+    loading="lazy"
+></iframe>
